@@ -1,1 +1,18 @@
+# Jupyter
 .ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Downloaded source files — large, external, re-downloadable by notebooks
+# Each track's downloads/ folder is populated on first notebook run
+*/downloads/*
+!*/downloads/.gitkeep
+
+# IDE
+.vscode/
+.idea/
