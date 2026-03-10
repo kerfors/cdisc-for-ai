@@ -37,6 +37,8 @@ One BC — Glucose Measurement (C105585) — produces 8 DSSs in the LB domain:
 
 *\*GLUCSERPL specimen is SERUM in source — flagged as QC-07; expected SERUM OR PLASMA per the naming pattern.*
 
+*GLUCPE carries a different TESTCD_NCIt (C163446) than the parent BC's NCIt_Code (C105585) — flagged as QC-14. The remaining 7 DSSs share the BC-level NCIt code.*
+
 ## Domain distribution
 
 | Domain | BCs | DSSs | Notable |
@@ -50,7 +52,7 @@ One BC — Glucose Measurement (C105585) — produces 8 DSSs in the LB domain:
 
 ## QC findings
 
-The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 13 checks — structural integrity (QC-01 to QC-10) and curation principle compliance (QC-11 to QC-13). No blocking errors. Key findings:
+The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 14 checks — structural integrity (QC-01 to QC-10) and curation principle compliance (QC-11 to QC-14). No blocking errors. Key findings:
 
 **CT mapping gaps (QC-01, QC-02).** 4 specimen NCIt codes and 3 method terms in COSMoS could not be resolved to SDTM CT submission values. These are source-level gaps — the COSMoS export references NCIt codes that are not in the current SDTM Specimen Type or Method codelists. Unit mapping is complete.
 
@@ -63,6 +65,8 @@ The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 13 check
 **Retired BCs (QC-10).** 4 BCs marked as retired are still in the export.
 
 **Placeholder BCs (QC-12).** 6 BCs have temporary IDs (NEW_*) — NCIt codes not yet assigned.
+
+**TESTCD_NCIt differs from NCIt_Code (QC-14).** 7 DSSs carry a TESTCD-level NCIt code that differs from the parent BC's NCIt_Code. Affected tests: HEIGHT, WEIGHT, INTP (ECG Interpretation), GLUCPE, MICROCY, LENGTH, and HCG. The TESTCD_NCIt column in the interim file makes this visible. The reason for the mismatch is not confirmed — possibly a legacy artefact from pre-COSMoS NCIt assignments. Both codes are valid; NCIt_Code identifies the BC concept, TESTCD_NCIt identifies the specific test.
 
 The full QC report is in [`reports/COSMoS_BC_DSS_QC.xlsx`](../reports/COSMoS_BC_DSS_QC.xlsx).
 
