@@ -1,12 +1,12 @@
 # Making COSMoS Work for Study Design
 
-Open questions on column naming and measurement identifiers — for discussion with the CDISC community.
+Open questions on column naming, measurement identifiers, and BC scope — for discussion with the CDISC community.
 
 ## Context
 
 The [`cosmos-bc-dss`](../) pipeline flattens the COSMoS two-level structure (Biomedical Concepts → Dataset Specializations) into a [single flat file](../interim/COSMoS_BC_DSS.xlsx). One row per Dataset Specialization, with BC identity carried along — so that anyone implementing SDTM mappings can look up a measurement and see everything needed in one place.
 
-The file is structurally complete and [validated](COSMoS_Content_and_QC.md). What remains are two naming and identity questions that benefit from community input.
+The file is structurally complete and [validated](COSMoS_Content_and_QC.md). What remains are naming, identity, and scope questions that benefit from community input.
 
 ## Column naming
 
@@ -47,6 +47,18 @@ An earlier question — whether these codes should receive their own NCIt C-code
 This matters for automation. Study design tools (USDM, OpenStudyBuilder) need to reference specific measurement specifications — not just the abstract concept "Glucose Measurement" but specifically "Glucose in Serum, quantitative, reported in mg/dL or mmol/L." Without persistent identifiers at this level, every sponsor builds their own lookup, and every integration rebuilds the same mapping.
 
 The flat file makes this gap visible by putting the DS codes front and center as the primary key for operational rows.
+
+## BC scope: what counts as a Biomedical Concept?
+
+COSMoS includes Trial Summary (TS) parameters as Biomedical Concepts — things like SPONSOR, ACTSUB (Actual Subject Number), SENDTC (Study End Date), TCNTRL (Control Type). These are study-level metadata attributes, not subject-level observations.
+
+The BC model was designed around measurements — observable results with specimens, methods, units, and result scales. TS parameters have none of these. Their DSS rows contain only TSPARMCD, TSPARM, TSVAL, and codelist reference fields. No specimen, no method, no units.
+
+The `sdtm-test-codes` track made this distinction explicit: the Extract notebook excludes TSPARMCD/TSPARM as "study-level metadata, not observation test codes." COSMoS made a different choice — include them, presumably so that every SDTM domain with test codes gets the same machine-readable specification.
+
+The result is that "Biomedical Concept" in COSMoS means something broader than its name implies. It covers both subject-level observations and study-level metadata. The interim file's `BC_Scope` column (Subject/Study) makes this visible, and QC-15 reports the count in every validation run.
+
+For a study designer, this matters at the point of filtering. Someone selecting laboratory measurements or vital signs should not see SPONSOR or ACTSUB in the same list. The `BC_Scope`, `Domain`, and `Domain_Class` columns all provide workable filters — but only if the consumer knows to apply them. A machine-actionable file intended for study design tools would likely need to make this separation structural rather than filter-dependent.
 
 ## About
 

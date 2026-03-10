@@ -52,7 +52,7 @@ One BC — Glucose Measurement (C105585) — produces 8 DSSs in the LB domain:
 
 ## QC findings
 
-The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 14 checks — structural integrity (QC-01 to QC-10) and curation principle compliance (QC-11 to QC-14). No blocking errors. Key findings:
+The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 15 checks — structural integrity (QC-01 to QC-10) and curation principle compliance (QC-11 to QC-15). No blocking errors. Key findings:
 
 **CT mapping gaps (QC-01, QC-02).** 4 specimen NCIt codes and 3 method terms in COSMoS could not be resolved to SDTM CT submission values. These are source-level gaps — the COSMoS export references NCIt codes that are not in the current SDTM Specimen Type or Method codelists. Unit mapping is complete.
 
@@ -67,6 +67,8 @@ The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 14 check
 **Placeholder BCs (QC-12).** 6 BCs have temporary IDs (NEW_*) — NCIt codes not yet assigned.
 
 **TESTCD_NCIt differs from NCIt_Code (QC-14).** 7 DSSs carry a TESTCD-level NCIt code that differs from the parent BC's NCIt_Code. Affected tests: HEIGHT, WEIGHT, INTP (ECG Interpretation), GLUCPE, MICROCY, LENGTH, and HCG. The TESTCD_NCIt column in the interim file makes this visible. The reason for the mismatch is not confirmed — possibly a legacy artefact from pre-COSMoS NCIt assignments. Both codes are valid; NCIt_Code identifies the BC concept, TESTCD_NCIt identifies the specific test.
+
+**Study-level BCs (QC-15).** COSMoS includes Trial Summary parameters and Clinical Trial Attributes as Biomedical Concepts, although these are study-level metadata rather than patient-level observations. The `BC_Scope` column (Subject/Study) makes this transparent. The `sdtm-test-codes` track explicitly excludes TSPARMCD/TSPARM as "study-level metadata, not observation test codes" — a deliberate scope difference between the two tracks. Filter on `BC_Scope=Subject` to get only patient-level content. See [`COSMoS_Study_Design_Questions.md`](COSMoS_Study_Design_Questions.md) for further discussion.
 
 The full QC report is in [`reports/COSMoS_BC_DSS_QC.xlsx`](../reports/COSMoS_BC_DSS_QC.xlsx).
 
