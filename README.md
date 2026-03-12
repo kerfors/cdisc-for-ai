@@ -23,9 +23,11 @@ Each track produces one machine-actionable reference file. Each reference file i
 | [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | [`SDTM_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | NCI EVS, NCIt, UMLS |
 | [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? | `Measurement_Specifications.xlsx` *(planned)* | COSMoS BC/DSS, SDTM CT |
 
-The [`sdtm-test-codes/`](sdtm-test-codes/) track has a complete pipeline from source to reference file. The [`cosmos-bc-dss/`](cosmos-bc-dss/) track currently produces a validated [interim file](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) — column naming and final reference file generation are pending discussion with the CDISC community.
+The [`sdtm-test-codes/`](sdtm-test-codes/) track has a complete pipeline from source to reference file. The [`cosmos-bc-dss/`](cosmos-bc-dss/) track produces a validated [interim file](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) — column naming and final reference file generation are pending discussion with the CDISC community.
 
-The progression tells a story: first you establish *what* is measured (test identity), then *how* it is measured (measurement specifications).
+An exploratory [merged interim file](cosmos-bc-dss/interim/Study_Design_Merge.xlsx) joins both tracks into a single two-sheet reference — test identity (green) enriched with measurement specifications (yellow). This serves as the reference file for the [`specimen-findings-ct-mapping`](skills/specimen-findings-ct-mapping/) skill.
+
+The progression tells a story: first you establish *what* is measured (test identity), then *how* it is measured (measurement specifications), then you use both to *resolve* protocol terms to CDISC standards.
 
 ## Pipeline pattern
 
@@ -41,7 +43,7 @@ downloads/  →  interim/  →  machine_actionable/
 - **machine_actionable/** — the reference files, one per track
 - **reports/** — QC and validation output, separate from reference files
 
-Each notebook does one thing: **Extract/Flatten**, **Validate**, or **Enrich**. Validation is separated from production so QC can re-run independently when sources update. Details are documented in the notebooks themselves.
+Each notebook does one thing: **Extract/Flatten**, **Validate**, **Compare**, **Enrich**, or **Merge**. Validation and comparison are separated from production so QC can re-run independently when sources update. Details are documented in the notebooks themselves.
 
 ## Repository structure
 
@@ -63,7 +65,8 @@ cdisc-for-ai/
 │   ├── docs/
 │   └── README.md
 ├── skills/
-│   └── sdtm-ct-analysis/
+│   ├── sdtm-ct-analysis/
+│   └── specimen-findings-ct-mapping/
 └── README.md
 ```
 

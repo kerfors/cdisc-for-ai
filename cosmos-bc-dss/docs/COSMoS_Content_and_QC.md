@@ -50,27 +50,57 @@ One BC — Glucose Measurement (C105585) — produces 8 DSSs in the LB domain:
 | VS (Vital Signs) | 12 | 16 | 15 quantitative |
 | EG (ECG) | 33 | 33 | All quantitative, 18 with units |
 
-## QC findings
+## Internal validation
 
-The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 15 checks — structural integrity (QC-01 to QC-10) and curation principle compliance (QC-11 to QC-15). No blocking errors. Key findings:
+The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs 17 checks (QC-01 to QC-15). No blocking errors. Full report: [`reports/COSMoS_BC_DSS_QC.xlsx`](../reports/COSMoS_BC_DSS_QC.xlsx).
 
-**CT mapping gaps (QC-01, QC-02).** 4 specimen NCIt codes and 3 method terms in COSMoS could not be resolved to SDTM CT submission values. These are source-level gaps — the COSMoS export references NCIt codes that are not in the current SDTM Specimen Type or Method codelists. Unit mapping is complete.
+| Check | Description | Severity | Count |
+|---|---|---|---|
+| QC-01 | CT unmapped: Specimen | ERROR | 4 |
+| QC-02 | CT unmapped: Method | WARNING | 3 |
+| QC-03 | CT unmapped: Unit | PASS | 0 |
+| QC-04 | DSSs with no TESTCD | INFO | 46 |
+| QC-05 | Specimen present but Specimen_NCIt blank | WARNING | 38 |
+| QC-06 | Quantitative DSSs without units | WARNING | 106 |
+| QC-07 | GLUCSERPL specimen mismatch | WARNING | 1 |
+| QC-08 | Multi-result DSS (same TESTCD+Domain+Specimen) | INFO | 32 |
+| QC-09 | BC_only_no_DS count by category | INFO | 194 |
+| QC-10 | Retired BCs in export | WARNING | 4 |
+| QC-11a | Result_Scale "Qualitative" not in curation principles | WARNING | 491 |
+| QC-11b | Result_Scale "datetime" not in curation principles | WARNING | 7 |
+| QC-11c | Result_Scale unexpected values | PASS | 0 |
+| QC-12 | Placeholder BC_IDs (NEW_*) | INFO | 6 |
+| QC-13 | Preferred term not stripped from synonyms | WARNING | 5 |
+| QC-14 | TESTCD_NCIt differs from NCIt_Code | INFO | 7 |
+| QC-15 | BC_Scope=Study (trial-level metadata) | INFO | 193 |
 
-**DSSs without TESTCD (QC-04).** 46 DSSs have no test code in the COSMoS source. These span domains like DS (Disposition), IS (Immunogenicity), DM (Demographics), and PR (Procedures) — domains where the concept may not map to a traditional TESTCD/TEST codelist pair.
+### Key findings
 
-**Quantitative DSSs without units (QC-06).** 106 rows classified as quantitative have no Allowed_Units. Spread across 12 domains including MK (25), RP (27), and FT (16). Some of these are genuine gaps; others may reflect early-stage curation.
+**CT mapping gaps (QC-01, QC-02, QC-05).** 4 specimen NCIt codes and 3 method terms could not be resolved to SDTM CT submission values. 38 DSSs have specimen text but no Specimen_NCIt as a result. Unit mapping is complete. These are source-level gaps — COSMoS references NCIt codes not in the current SDTM CT codelists.
 
-**Result Scale vocabulary (QC-11a/b).** COSMoS uses "Qualitative" (491 DSSs) and "datetime" (7 DSSs) as result scale values. The [BC Curation Principles](https://cdisc-org.github.io/COSMoS/bc_starter_package/doc/BC%20Curation%20Principles%20and%20Completion%20GLs.xlsx) valid set does not include "Qualitative" (it uses "Nominal" and "Ordinal") or "datetime" (likely maps to "Temporal"). Not errors — but vocabulary alignment between COSMoS source data and the curation principles would help downstream consumers.
+**Quantitative DSSs without units (QC-06).** 106 rows across 12 domains. MK (25), RP (27), FT (16) dominate. Mix of genuine gaps and early-stage curation.
 
-**Retired BCs (QC-10).** 4 BCs marked as retired are still in the export.
+**Result Scale vocabulary (QC-11a/b).** COSMoS uses "Qualitative" (491 DSSs) and "datetime" (7) which don't appear in the [BC Curation Principles](https://cdisc-org.github.io/COSMoS/bc_starter_package/doc/BC%20Curation%20Principles%20and%20Completion%20GLs.xlsx) valid set ("Nominal"/"Ordinal" and "Temporal" respectively). Not errors — vocabulary alignment between source and curation principles would help downstream consumers.
 
-**Placeholder BCs (QC-12).** 6 BCs have temporary IDs (NEW_*) — NCIt codes not yet assigned.
+**TESTCD_NCIt differs from NCIt_Code (QC-14).** 7 DSSs where the TESTCD-level NCIt code differs from the BC identity: HEIGHT, WEIGHT, INTP, GLUCPE, MICROCY, LENGTH, HCG. Both codes are valid; likely legacy pre-COSMoS assignments. Impacts cross-source joins on NCIt_Code.
 
-**TESTCD_NCIt differs from NCIt_Code (QC-14).** 7 DSSs carry a TESTCD-level NCIt code that differs from the parent BC's NCIt_Code. Affected tests: HEIGHT, WEIGHT, INTP (ECG Interpretation), GLUCPE, MICROCY, LENGTH, and HCG. The TESTCD_NCIt column in the interim file makes this visible. The reason for the mismatch is not confirmed — possibly a legacy artefact from pre-COSMoS NCIt assignments. Both codes are valid; NCIt_Code identifies the BC concept, TESTCD_NCIt identifies the specific test.
+**Study-level BCs (QC-15).** 193 BCs are trial-level metadata (TS parameters), not patient-level observations. `BC_Scope` column distinguishes them. The `sdtm-test-codes` track deliberately excludes these — filter on `BC_Scope=Subject` for patient-level content.
 
-**Study-level BCs (QC-15).** COSMoS includes Trial Summary parameters and Clinical Trial Attributes as Biomedical Concepts, although these are study-level metadata rather than patient-level observations. The `BC_Scope` column (Subject/Study) makes this transparent. The `sdtm-test-codes` track explicitly excludes TSPARMCD/TSPARM as "study-level metadata, not observation test codes" — a deliberate scope difference between the two tracks. Filter on `BC_Scope=Subject` to get only patient-level content. See [`COSMoS_Study_Design_Questions.md`](COSMoS_Study_Design_Questions.md) for further discussion.
+**Other findings.** 4 retired BCs still in export (QC-10). 6 placeholder BC_IDs with NEW_* prefix (QC-12). 5 BCs with preferred term not stripped from synonyms (QC-13). 46 DSSs without TESTCD in non-test-code domains (QC-04). 32 multi-result DSSs dominated by IS specimen variants (QC-08).
 
-The full QC report is in [`reports/COSMoS_BC_DSS_QC.xlsx`](../reports/COSMoS_BC_DSS_QC.xlsx).
+## Cross-source comparison against NCIt
+
+The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSMoS definitions and synonyms against the authoritative NCIt source (via [`SDTM_Test_Identity.xlsx`](../../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx)). Scoped to subject-level Findings BCs — 372 matched to extensible SDTM CT test codes. Full report: [`reports/COSMoS_BC_NCIt_Compare.xlsx`](../reports/COSMoS_BC_NCIt_Compare.xlsx).
+
+**Definitions are nearly identical.** 369 of 372 match. 3 differ: ALBCREAT (COSMoS adds "protein", specifies "urine sample"), HBA1CHGB ("glycosylated" vs "glycated"), TUMERGE (reworded). Editorial divergences, not pipeline artifacts.
+
+**Synonyms diverge more.** 242 of 372 match. Of the 130 that differ: 78 are NCIt supersets (NCIt carries more variant names — expected), 25 are COSMoS supersets (curated additions not in NCIt — potential NCIt enrichment candidates), 25 have unique terms in both directions.
+
+**159 Findings BCs couldn't be compared** — their TESTCDs come from non-extensible instrument-specific codelists (RS: 114, FT: 23, QS: 13) outside the green file's scope. 5 of these are QC-14 cases where the NCIt_Code mismatch prevents the join.
+
+## Planned: LOINC validation
+
+135 LB dataset specializations carry LOINC codes. These have not yet been validated against LOINC itself — confirming that the LOINC code matches the specimen, method, and scale specified in the DSS. The [LOINC web services](http://xml4pharmaserver.com/WebServices/LOINC_webservices.html) provide the lookup needed to cross-check these programmatically.
 
 ## About
 

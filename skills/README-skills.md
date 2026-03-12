@@ -17,7 +17,12 @@ In regulated environments, "I asked AI and it gave a good answer" is not defensi
 | Skill | Purpose | Input |
 |---|---|---|
 | [`sdtm-ct-analysis/`](sdtm-ct-analysis/) | Structural categorization of SDTM Controlled Terminology | NCI EVS SDTM Terminology file |
+| [`specimen-findings-ct-mapping/`](specimen-findings-ct-mapping/) | Map specimen-based measurement terms to CDISC CT and COSMoS specifications | [`Study_Design_Merge.xlsx`](../cosmos-bc-dss/interim/Study_Design_Merge.xlsx) |
+
+`sdtm-ct-analysis` is a two-step inductive analysis workflow — category discovery followed by profile generation. Produces structural understanding of SDTM CT, not operational mappings.
+
+`specimen-findings-ct-mapping` *(exploratory)* resolves measurement terms (from SoA tables, lab catalogs, or similar sources) to SDTM TESTCDs and, where COSMoS coverage exists, to dataset specialization level (specimen, method, scale, units, LOINC). Uses semantic clinical reasoning, not string matching. Produces candidate mappings for SME review. Evolving from an earlier CT-only mapping prompt — now uses the merged green+yellow reference file for two-level resolution.
 
 ## Planned
 
-Skills that use the machine-actionable reference files (from the data tracks in this repository) as input for practical tasks — mapping study design terms from protocol lab sections to CDISC standards, CT code assignment, and similar workflows.
+Additional skills using the reference files for practical tasks — panel decomposition, unit harmonization, LOINC cross-validation.
