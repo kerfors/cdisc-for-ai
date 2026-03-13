@@ -3,14 +3,15 @@
 | | |
 |---|---|
 | **Document** | SME curation guide for CT mapping review |
-| **Version** | 2.1 |
-| **Date** | 2026-03-12 |
+| **Version** | 2.2 |
+| **Date** | 2026-03-13 |
 | **Companion** | `CT_Mapping_Prompt.md` |
 
 ### Version log
 
 | Version | Date | Changes |
 |---|---|---|
+| 2.2 | 2026-03-13 | Reference file changed to Specimen_Findings.xlsx (from sdtm-findings track). Domain scope expanded to all specimen-based domains (driven by Domain_Metadata). |
 | 2.1 | 2026-03-12 | Post-test-run fixes: explicit two-step workflow box, Selected per DS_Code row, Spec_Resolution=Partial FAQ, Review Notes section walkthrough. |
 | 2.0 | 2026-03-12 | Two-level resolution (TESTCD + DS_Code). Reference file now Study_Design_Merge.xlsx. Added specification review workflow, Spec_Resolution guidance. Generalized input column names. |
 | 1.2 | 2025-02-21 | Added Review Notes; LLM approach section; duplicate TESTCD encoding guidance |
@@ -29,7 +30,7 @@ An LLM generates candidate CDISC CT mappings for your measurement terms. Your jo
 | File | Purpose |
 |---|---|
 | `CT_Mapping_Prompt.md` | LLM prompt — paste into chat with the reference file |
-| `Study_Design_Merge.xlsx` | Reference file — single source of truth (produced by Study_Design_Merge notebook) |
+| `Specimen_Findings.xlsx` | Reference file — single source of truth (produced by Specimen_Findings notebook) |
 | `Review_Notes_<Group>.md` | LLM-generated review notes — start here |
 
 ### Input: your term list
@@ -48,7 +49,7 @@ The LLM uses clinical domain knowledge, not string matching. It resolves in two 
 
 **Step 2 — Specification:** for TESTCDs with COSMoS coverage (Has_COSMoS=Yes), resolves specimen/method context against the Measurement_Specs sheet. Parses inline spec hints from the term string ("Urine - Potassium", "hsCRP (quantitative)") and matches against available DS_Codes.
 
-**Caveats:** The LLM may miss rarely-used TESTCDs, propose semantically close but imprecise matches (review Partials), or be uncertain about panel composition. Specification resolution depends on COSMoS coverage — only ~7% of TESTCDs have DS_Code specifications available.
+**Caveats:** The LLM may miss rarely-used TESTCDs, propose semantically close but imprecise matches (review Partials), or be uncertain about panel composition. Specification resolution depends on COSMoS coverage — only a small fraction of TESTCDs have specimen-based DS_Code specifications available. Not all specimen-based domains have DSSs yet; the README sheet documents current coverage.
 
 ---
 
@@ -116,13 +117,13 @@ For rows with Has_COSMoS=Yes:
 
 **Two TESTCDs seem identical?** Duplicate encoding. Select per sponsor convention; if unsure, prefer the systematic/chemical name.
 
-**What does Has_COSMoS=No mean?** The TESTCD is valid but COSMoS hasn't published a specification for it yet. ~93% of TESTCDs are in this state. The mapping is still useful — it resolves the concept. Specification will follow as COSMoS coverage grows.
+**What does Has_COSMoS=No mean?** The TESTCD is valid but COSMoS hasn't published a specimen-based specification for it yet. The vast majority of TESTCDs are in this state. The mapping is still useful — it resolves the concept. Specification will follow as COSMoS coverage grows.
 
 **Has_COSMoS=Yes but my protocol's method/unit isn't in the DS_Codes?** This is Spec_Resolution=Partial. The TESTCD mapping is correct but COSMoS doesn't carry a DS_Code matching your exact method or unit. Accept the TESTCD; note the gap for downstream specification. Common example: microscopic counts where no method dimension exists in the available DS_Codes.
 
 **Decompose panels?** Not here. Panel decomposition depends on your laboratory's specific panel definitions.
 
-**Reference file currency?** Check the README sheet generation date. Re-run the Study_Design_Merge notebook for newer source data.
+**Reference file currency?** Check the README sheet generation date. Re-run the Specimen_Findings notebook for newer source data.
 
 ---
 

@@ -3,14 +3,15 @@
 | | |
 |---|---|
 | **Document** | LLM prompt for specimen-based Findings CT mapping |
-| **Version** | 2.1 |
-| **Date** | 2026-03-12 |
+| **Version** | 2.2 |
+| **Date** | 2026-03-13 |
 | **Companion** | `Lab_SME_Curation_Guide.md` |
 
 ### Version log
 
 | Version | Date | Changes |
 |---|---|---|
+| 2.2 | 2026-03-13 | Reference file changed to Specimen_Findings.xlsx (from sdtm-findings track). Domain scope expanded to all specimen-based domains (driven by Domain_Metadata). Column Domains→SDTM_Domains. DS_Name added to output spec. Measurement_Specs scoped to specimen domains only. |
 | 2.1 | 2026-03-12 | Post-test-run fixes: rationale field relaxed to multi-sentence for complex matches; Panel row colour specified. |
 | 2.0 | 2026-03-12 | Two-level resolution (TESTCD → DS_Code). Generalized input columns. Reference file now Study_Design_Merge.xlsx. Step 2 specification resolution, Spec_Resolution column, inline spec hint parsing. Row fan-out per DS_Code. Evolved from SoA_CT_Mapping_Prompt v1.3. |
 | 1.3 | 2025-02-21 | Rule 5: added TEST to verbatim-copy list; Partial must carry candidate TESTCD |
@@ -21,7 +22,7 @@
 
 ## Reference file
 
-`Study_Design_Merge.xlsx` — read the README sheet first. It documents sheets, columns, coverage, and provenance.
+`Specimen_Findings.xlsx` — read the README sheet first. It documents sheets, columns, coverage, and provenance.
 
 ---
 
@@ -29,7 +30,9 @@
 
 Map each measurement term to all valid TESTCDs (Step 1), then resolve to Dataset Specialization level where COSMoS coverage exists (Step 2). Produce one output row per term × TESTCD × DS_Code combination. TESTCDs without COSMoS coverage produce one row (specification columns blank).
 
-Scope: specimen-based Findings — LB, CP, MB, IS, MS, BS.
+Scope: specimen-based Findings — LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR.
+
+Not all specimen-based domains have COSMoS DSSs yet — the README sheet documents current coverage. Terms mapping to domains without DSSs get TESTCD-level resolution only.
 
 ---
 
@@ -137,9 +140,10 @@ Excel file. One row per Term × TESTCD × DS_Code. TESTCDs without COSMoS covera
 | `TEST` | Green | From Test_Identity — blank for Panel and No_Match |
 | `NCIt_Code` | Green | From Test_Identity — blank for Panel and No_Match |
 | `NCIt_Preferred_Term` | Green | The matching evidence — blank for Panel and No_Match |
-| `Domains` | Green | From Test_Identity — blank for Panel and No_Match |
+| `SDTM_Domains` | Green | From Test_Identity — blank for Panel and No_Match |
 | `Has_COSMoS` | Green | From Test_Identity — blank for Panel and No_Match |
 | `DS_Code` | Yellow | From Measurement_Specs — blank if Has_COSMoS=No, Panel, or No_Match |
+| `DS_Name` | Yellow | From Measurement_Specs — the full specialization name |
 | `Specimen` | Yellow | From Measurement_Specs |
 | `Method` | Yellow | From Measurement_Specs |
 | `Result_Scale` | Yellow | From Measurement_Specs |

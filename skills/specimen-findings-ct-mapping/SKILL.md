@@ -1,14 +1,20 @@
 ---
 name: specimen-findings-ct-mapping
-version: "1.0"
-date: 2026-03-12
+version: "1.1"
+date: 2026-03-13
 description: >
-  Map specimen-based Findings terms (LB, CP, MB, IS, MS, BS) to CDISC controlled
-  terminology — resolving to TESTCD and, where COSMoS coverage exists, to Dataset
-  Specialization level (specimen, method, scale, units, LOINC). Use when the user
-  wants to map laboratory, biomarker, microbiology, or immunogenicity terms to SDTM
-  test codes and measurement specifications.
+  Map specimen-based Findings terms (LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR)
+  to CDISC controlled terminology — resolving to TESTCD and, where COSMoS coverage
+  exists, to Dataset Specialization level (specimen, method, scale, units, LOINC).
+  Use when the user wants to map laboratory, biomarker, microbiology, or immunogenicity
+  terms to SDTM test codes and measurement specifications.
 changes: >
+  v1.1: Reference file changed from Study_Design_Merge.xlsx to Specimen_Findings.xlsx
+  (produced by sdtm-findings/notebooks/Specimen_Findings.ipynb). Domain scope expanded
+  to all specimen-based domains (driven by Domain_Metadata). Measurement_Specs scoped
+  to specimen domains only. COSMoS summary on Test_Identity now specimen-scoped.
+  Column name Domains→SDTM_Domains. New Measurement_Specs columns available (DS_Name,
+  Specimen_NCIt, Method_NCIt, location, laterality, evaluator).
   v1.0: Initial skill. Two-level resolution (TESTCD → DS_Code). Generalized input
   columns. Evolved from standalone SoA_CT_Mapping_Prompt v1.3 / Lab_SME_Curation_Guide v1.2.
 ---
@@ -19,27 +25,35 @@ Maps specimen-based Findings terms to CDISC controlled terminology in two levels
 
 ## Scope
 
-Specimen-based Findings — domains where the pattern is analyte + specimen + method → result:
+Specimen-based Findings — domains where the pattern is analyte + specimen + method → result.
+Identified by `Specimen_Based=Yes` in SDTM_Domain_Metadata.xlsx:
 
 | Domain | Content |
 |---|---|
 | LB | Laboratory |
-| CP | Clinical Pharmacology (PK concentrations) |
-| MB | Microbiology |
 | IS | Immunogenicity Specimen |
-| MS | Mass Spectrometry (bioanalytical) |
-| BS | Biospecimen (biomarker substrates) |
+| GF | Genomics Findings |
+| MB | Microbiology Specimen |
+| MI | Microscopic Findings |
+| MS | Microbiology Susceptibility |
+| BS | Biospecimen Findings |
+| CP | Cell Phenotype |
+| PC | PK Concentrations |
+| PP | PK Parameters |
+| UR | Urinary System Findings |
 
 These domains share matching logic and commonly appear together in protocol lab/biomarker sections.
 
+Not all specimen-based domains have COSMoS Dataset Specializations yet. The README sheet in the reference file documents current coverage. Terms mapping to domains without DSSs get TESTCD-level resolution only.
+
 ## Inputs
 
-**Reference file:** `Study_Design_Merge.xlsx` (produced by `cosmos-bc-dss/notebooks/Study_Design_Merge.ipynb`).
+**Reference file:** `Specimen_Findings.xlsx` (produced by `sdtm-findings/notebooks/Specimen_Findings.ipynb`).
 
-| Sheet | Level | Key | Rows | Used for |
-|---|---|---|---|---|
-| Test_Identity | Concept | TESTCD | ~5,800 | Step 1 — what concept? |
-| Measurement_Specs | Specification | DS_Code | ~1,100 | Step 2 — which variant? |
+| Sheet | Level | Key | Used for |
+|---|---|---|---|
+| Test_Identity | Concept | TESTCD | Step 1 — what concept? |
+| Measurement_Specs | Specification | DS_Code | Step 2 — which variant? |
 
 Read the README sheet first. Every output value must trace to this file verbatim.
 
@@ -79,8 +93,8 @@ Step 2 runs inline per term, not as a separate pass.
 | Column block | Columns |
 |---|---|
 | Input (blue) | Term_Group, Term_ID, Term |
-| Concept match (green) | Match_Count, TESTCD, TEST, NCIt_Code, NCIt_Preferred_Term, Domains, Has_COSMoS |
-| Specification (yellow) | DS_Code, Specimen, Method, Result_Scale, Allowed_Units, LOINC_Code, Spec_Resolution |
+| Concept match (green) | Match_Count, TESTCD, TEST, NCIt_Code, NCIt_Preferred_Term, SDTM_Domains, Has_COSMoS |
+| Specification (yellow) | DS_Code, DS_Name, Specimen, Method, Result_Scale, Allowed_Units, LOINC_Code, Spec_Resolution |
 | Classification (grey) | Match_Type, Match_Rationale, Selected |
 
 Specification columns are populated only where Has_COSMoS=Yes. `Spec_Resolution` indicates resolution depth: Full (term resolved to specific DS_Code), Partial (DS_Code narrowed but spec hints unresolved), None (no COSMoS coverage — TESTCD only).
