@@ -1,0 +1,59 @@
+# SDTM Findings — Consumer Track
+
+Consumer-facing reference files that join SDTM test identity with COSMoS measurement specifications, organized by structural type.
+
+## What this track does
+
+The two source tracks — [`sdtm-test-codes`](../sdtm-test-codes/) (what is measured?) and [`cosmos-bc-dss`](../cosmos-bc-dss/) (how is it measured?) — produce independent reference files. This track joins them into structural-type-specific outputs designed for study design, SoA-to-CDISC mapping, and USDM integration.
+
+Each notebook consumes the same source files but applies different join logic and scoping because the three structural types have fundamentally different data shapes.
+
+## Notebooks and outputs
+
+| Notebook | Structural type | Scope | Output |
+|---|---|---|---|
+| `Specimen_Findings.ipynb` | Specimen-based | LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR | `Specimen_Findings.xlsx` |
+| `Instrument_Findings.ipynb` | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
+| `Measurement_Findings.ipynb` | Measurement | VS, EG, MK, CV | `Measurement_Findings.xlsx` *(planned)* |
+
+## Inputs (shared)
+
+| File | Track | Content |
+|---|---|---|
+| `SDTM_Test_Identity.xlsx` | sdtm-test-codes | Domain-level test codes with NCIt identity |
+| `SDTM_Instrument_Identity.xlsx` | sdtm-test-codes | Instrument-level test codes with NCIt identity |
+| `COSMoS_BC_DSS.xlsx` | cosmos-bc-dss | Flattened BC/DSS (all 31 domains) |
+| `SDTM_Domain_Metadata.xlsx` | sdtm-domain-reference | Domain metadata (structural type flags) |
+
+## File structure
+
+Each output is a two-sheet Excel file:
+
+- **Test_Identity** — one row per TESTCD (full green baseline), enriched with COSMoS summary for the relevant structural type
+- **Measurement_Specs** — one row per Dataset Specialization, scoped to the relevant domains
+
+The link between sheets is TESTCD (and NCIt_Code for precision). This two-step structure matches the mapping workflow: first resolve a term to a concept (TESTCD), then select the specific measurement variant (DS_Code).
+
+## Current state
+
+`Specimen_Findings.xlsx` is complete and running. Coverage reflects COSMoS publication status — domains where COSMoS has not yet published dataset specializations (BS, CP, MS, PC, PP) show zero DSS rows. This is a source coverage gap, not a pipeline issue.
+
+Instrument and Measurement notebooks are planned but not yet built.
+
+## Pipeline position
+
+```
+sdtm-test-codes/SDTM_Test_Identity.xlsx  ──────────┐
+sdtm-test-codes/SDTM_Instrument_Identity.xlsx  ────┤
+cosmos-bc-dss/COSMoS_BC_DSS.xlsx  ─────────────────┤── sdtm-findings/
+sdtm-domain-reference/SDTM_Domain_Metadata.xlsx  ──┘
+                                                     │
+                    sdtm-findings/machine_actionable/
+                      ├── Specimen_Findings.xlsx
+                      ├── Instrument_Findings.xlsx   (planned)
+                      └── Measurement_Findings.xlsx  (planned)
+```
+
+## Provenance
+
+Evolved from `Study_Design_Merge.ipynb` (previously in cosmos-bc-dss). The merge notebook was the first working prototype of a joined reference file; the sdtm-findings track formalizes the approach and splits by structural type.

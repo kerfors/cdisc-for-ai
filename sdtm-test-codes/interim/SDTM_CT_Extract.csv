@@ -1,5 +1,4 @@
 NCIt_code,TESTCD,TEST,domain,domain_label,codelist_testcd,codelist_test,source
-C127786,OCCUR,Occurrence Indicator,ASFATS,Asthma Findings About,ASFATSCD,ASFATS,NCI_EVS
 C184949,ABR,Auditory Brainstem Response,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
 C198231,AIRBNCND,Air to Bone Sound Conduction Comparison,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
 C198232,AIRPRSSR,Air Pressure,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
@@ -35,13 +34,6 @@ C139278,VBLSPCT,Sample Viability Percent,BS,Biospecimen Characteristics,BSTESTCD
 C74720,VOLUME,Volume,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C51948,WBC,Leukocytes,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25345,WIDTH,Width,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
-C199692,CONTEPH,Contrast Enhancement Phase,C19FAT,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
-C124281,EPSDNUM,Number of Episodes,C19FAT,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,C19FAT,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
-C25676,SEV,Severity/Intensity,C19FAT,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
-C124281,EPSDNUM,Number of Episodes,CDFATS,CDAD Findings About,CDFATSCD,CDFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,CDFATS,CDAD Findings About,CDFATSCD,CDFATS,NCI_EVS
-C74720,VOL,Volume,CDFATS,CDAD Findings About,CDFATSCD,CDFATS,NCI_EVS
 C198236,ABC,Abn Blast Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C198237,ABCCE,Abn Blast Cells/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C198238,AKPC,Abn Kappa+ Plasma Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -972,38 +964,6 @@ C214603,VCECE,Viable Cells/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_E
 C214602,VLEUKCE,Viable Leukocytes/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C51948,WBC,Leukocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C135451,WBCCE,Leukocytes/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
-C94596,CUMEXP,Cumulative Exposure,CPFATS,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
-C124328,EPMLDNUM,Number of Mild Episodes,CPFATS,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
-C124329,EPMODNUM,Number of Moderate Episodes,CPFATS,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
-C124330,EPSEVNUM,Number of Severe Episodes,CPFATS,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
-C181313,ABSCNUM,Number of Abscesses,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174273,AGESYMST,Age Symptoms Started,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181316,BIOPSIND,Biopsy Specimen Taken Indicator,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181317,BIOPSNUM,Number of Biopsy Specimens Taken,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181318,BPSPTHAP,Pathologic Appearance of Biopsy Site,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176284,DCDEPIND,Unable to Discon Dependent Indicator,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176277,DEVPNUM,Number of Devices Present,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174280,DVCINSN,Number of Devices Inserted,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181310,EXETRIND,Expected Efficacious Treatment Reg Ind,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C157443,EXTRSCT,Extent of Resection,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181314,FISTATYP,Fistula Anatomical Type,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181312,FISTNUM,Number of Fistulas,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176280,FNDOSAMT,Final Dose Amount,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176281,FNDOSFRQ,Frequency of Final Dose Amount,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174279,ICJRIND,Ileocecal Junction Removed Indicator,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174278,LENRSCT,Length of Resection,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174277,LESNUM,Number of Lesions,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176278,MXDOSAMT,Maximum Dose Amount,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176279,MXDOSFRQ,Frequency of Maximum Dose Amount,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181311,PLLDIAM,Longest Diameter of Primary Lesion,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C181315,PLLOC,Anatomical Location of Primary Lesion,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174228,PROCPRFN,Number of Procedures Performed,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176283,RLDEPIND,Relapse after Discon Dependent Indicator,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176285,SBDEPIND,Substance Dependence Indicator,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174281,SSDISC,Sign/Symptom Leading to Discontinuation,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C174274,STRCTNUM,Number of Strictures,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
-C176282,TPDEPIND,Unable to Taper Dependent Indicator,CRFATS,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C122038,AAUGIX,Aortic Augmentation Index,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C122083,AAUGIX75,Aortic Augmentation Index at 75bpm,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C122084,AAUGPR,Aortic Augmentation Pressure,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1195,152 +1155,25 @@ C142245,VLSTNSLE,Cardiac Valve Stenosis Likely Etiology,CV,Cardiovascular,CVTEST
 C147158,VLVAREA,Valve Area,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C25208,WEIGHT,Weight,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C25345,WIDTH,Width,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
-C118936,ACMITYPE,Acute Myocardial Infarction Type,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119229,CATMTHID,Coronary Artery Thrombosis Method Ident,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119230,ENDPTIND,Endpoint Event Indicator,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119231,HETYPE,Healthcare Encounter Type,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119232,HFLBFNW,Heart Failure New/Worsening Lab Findings,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119233,HFPEFNW,Heart Failure New/Worsening PE Findings,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119234,HFTHERIN,"Heart Failure Therapy, Intensification",CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119235,ISCDIND,Ischemic Discomfort Indicator,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119236,ISCETYP,Ischemic Evidence Type,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119237,MI12EXC,Exclusion of Type 1 and Type 2 MI,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C123443,NINVIMGC,Non-Invasive Imaging Change,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119238,NWSYMP,New or Worsening Symptoms,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119239,PCIAAC,PCI Acute Angiographic Complication,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119240,PRSUCIND,Procedure Success Indicator,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C101230,PRUSTAT,Procedure Urgency Status Type,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C123424,STCTIMNG,"Stent Thrombosis, Coronary, ARC Timing",CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119579,STROKTYP,Stroke Type,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119241,SYMPINDC,Symptom Indicator,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119242,SYMSTDTC,Symptom Onset Date,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C119243,VOC48IND,Vessel Occlusion After CABG 48 Ind,CVFATS,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
-C117037,ACNDEV,Action Taken With Device,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C163412,ACNSBJ,Action Taken With Subject,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184464,ALCDRKN,Number of Alcoholic Drinks,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172476,CALBURN,Calories Burned,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C94596,CUMEXP,Cumulative Exposure,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184449,DACARO,Dietary Alpha Carotene,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172463,DADDSUG,Dietary Added Sugar,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184463,DALCOHOL,Dietary Alcohol,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184441,DARAC,Dietary Arachidonic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184450,DATOCO,Dietary Alpha Tocopherol,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184461,DAVITB12,Dietary Added Vitamin B12,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184462,DAVITE,Dietary Added Vitamin E,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184451,DBCARO,Dietary Beta Carotene,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184465,DBEANPEA,Dietary Beans and Peas,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184446,DBUTR,Dietary Butyric Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184453,DCA,Dietary Calcium,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184452,DCAFFEIN,Dietary Caffeine,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172464,DCAL,Dietary Calories,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184447,DCAPO,Dietary Caproic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184430,DCAPR,Dietary Capric Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184448,DCAPY,Dietary Caprylic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172461,DCARBT,Dietary Total Carbohydrate,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184454,DCHEESE,Dietary Cheese,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184466,DCHOLEST,Dietary Cholesterol,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184467,DCHOLINE,Dietary Choline,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184468,DCITMELB,"Dietary Citrus, Melons, and Berries",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184444,DCPND,Dietary Clupanodonic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C186015,DCRXANB,Dietary Beta-Cryptoxanthin,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184455,DCU,Dietary Copper,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184337,DDAIRYT,Dietary Total Dairy,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184445,DDCHX,Dietary Docosahexaenoic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184471,DEGGS,Dietary Eggs,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184443,DERUC,Dietary Erucic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172471,DFATM,"Dietary Fat, Monounsaturated",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172472,DFATP,"Dietary Fat, Polyunsaturated",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172470,DFATS,"Dietary Fat, Saturated",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172460,DFATT,"Dietary Fat, Total",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184456,DFE,Dietary Iron,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C186016,DFEQ,Dietary Folate Equivalents,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172469,DFIBER,Dietary Fiber,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C186017,DFOLFD,Dietary Food Folate,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C186018,DFOLIC,Dietary Folic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C186019,DFOLTOT,Dietary Total Folate,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184472,DFRTJUCE,Dietary Fruit Juice,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172465,DFRUIT,Dietary Fruit,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184440,DGADL,Dietary Gadoleic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172467,DGRAIN,Dietary Grain,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184484,DGRAINRF,"Dietary Grain, Refined",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184502,DGRAINWH,Dietary Whole Grains,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C78721,DISPAMT,Dispensed Amount,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C25167,DISTANCE,Distance,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184457,DK,Dietary Potassium,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184431,DLAUR,Dietary Lauric Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184437,DLINO,Dietary Linoleic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184438,DLINOL,Dietary Linolenic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184473,DLUTZXAN,Dietary Lutein and Zeaxanthin,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184474,DLYCOP,Dietary Lycopene,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172468,DMEAT,Dietary Meat,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184469,DMEATCUR,"Dietary Meat, Cured",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184480,DMEATORG,"Dietary Meat, Organ",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184504,DMEATPLS,"Dietary Meat, Poultry, and Seafood",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172462,DMG,Dietary Magnesium,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184475,DMILK,Dietary Milk,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184476,DMOISTUR,Dietary Moisture,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184432,DMYRST,Dietary Myristic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184459,DNA,Dietary Sodium,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184477,DNIACIN,Dietary Niacin,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184478,DNUTSEED,Dietary Nuts and Seeds,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184479,DOILS,Dietary Oils,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184436,DOLE,Dietary Oleic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184481,DP,Dietary Phosphorus,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184433,DPALM,Dietary Palmitic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184434,DPALMO,Dietary Palmitoleic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184439,DPARN,Dietary Parinaric Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184482,DPOTATO,Dietary Potatoes,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184483,DPOULTRY,Dietary Poultry,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172459,DPROT,Dietary Protein,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184494,DPROTFD,Dietary Protein Foods,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184485,DRETINOL,Dietary Retinol,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184486,DRIBFLVN,Dietary Riboflavin,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184458,DSE,Dietary Selenium,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184487,DSFHN3FA,Dietary Seafood High in n-3 Fatty Acids,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184488,DSFLN3FA,Dietary Seafood Low in n-3 Fatty Acids,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184489,DSLDFAT,Dietary Solid Fats,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184490,DSOYPROD,Dietary Soy Products,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184435,DSTER,Dietary Stearic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184338,DSUGART,Dietary Total Sugars,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184491,DTHEOBR,Dietary Theobromine,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184492,DTHIAMIN,Dietary Thiamine,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184442,DTMND,Dietary Timnodonic Acid,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184493,DTOMATO,Dietary Tomatoes,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172466,DVEG,Dietary Vegetable,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184470,DVEGDG,"Dietary Vegetables, Dark Green",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184495,DVEGRO,"Dietary Vegetables, Red and Orange",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184496,DVEGSTAR,"Dietary Vegetables, Starchy",D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184497,DVITA,Dietary Vitamin A,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184353,DVITB12,Dietary Vitamin B12,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184498,DVITB6,Dietary Vitamin B6,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184499,DVITC,Dietary Vitamin C,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184500,DVITD,Dietary Vitamin D,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184501,DVITK,Dietary Vitamin K,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184503,DYOGURT,Dietary Yogurt,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C184460,DZN,Dietary Zinc,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C124281,EPSDNUM,Number of Episodes,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C174282,ESTWT,Estimated Weight,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172475,EXCDUR,Exercise Duration,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172473,EXCINTSY,Exercise Intensity,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172474,EXCMPLNC,Exercise Compliance,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172478,LAPCOMPN,Number of Laps Completed,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C163413,PPTFCT,Precipitating Factor,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C170562,PREPAMT,Prepared Amount,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C170563,REMAMT,Remaining Amount,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C78722,RETAMT,Returned Amount,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C163414,RLDEV,Relationship to Device,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C41146,SPEED,Speed,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172479,STEPSTN,Number of Steps Taken,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172477,TTIMPAUS,Total Time Paused,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
-C172480,TTIMPHAC,Total Time Physically Active,D1FATS,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C78721,DISPAMT,Dispensed Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
 C202343,EXPREAMT,Expected Remaining Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
 C189430,LOSTAMT,Lost Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
 C170562,PREPAMT,Prepared Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
 C170563,REMAMT,Remaining Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
 C78722,RETAMT,Returned Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
-C130057,EVENTNUM,Number of Events,DKFATS,Diabetic Kidney Disease Findings About,DKFATSCD,DKFATS,NCI_EVS
-C139175,AGEFTUSE,Age at Full-Time Use,DMFATS,Duchenne Muscular Dystrophy Findings About,DMFATSCD,DMFATS,NCI_EVS
+C135383,AGEDTH,Age at Death,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C135384,AUTOPIND,Autopsy Indicator,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C199843,CUSCDIND,Cond Under Study Contrib to Death Ind,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C135385,DTHCOIND,Death Certificate Obtained Indicator,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C184505,DTHEXIND,Death Expected Indicator,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C170571,DTHWIND,Death Witnessed Indicator,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C135386,HMROIND,Hospital Medical Record Obtained Ind,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C198258,HSDTHIND,Hospitalized at Time of Death Indicator,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C176287,INFOSCOD,Information Source for Cause of Death,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C124331,LOCDTH,Location of Death,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C99531,PRCDTH,Primary Cause of Death,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C174284,SDTHIND,Sudden Death Indicator,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
+C116142,SECDTH,Secondary Cause of Death,DD,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
 C172481,BULBNUM,Number of Bulbs,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
 C53414,COMPOS,Composition,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
 C142234,DIGSMPRT,Digital Sampling Rate,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
@@ -1370,19 +1203,6 @@ C41145,THICKNSS,Thickness,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
 C161328,THRSHCYC,Threshold Cycle,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
 C158156,TRTAMT,Treatment Amount,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
 C48158,WAVLGTH,Wavelength,DO,Device Properties,DOTESTCD,DOTEST,NCI_EVS
-C135383,AGEDTH,Age at Death,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C135384,AUTOPIND,Autopsy Indicator,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C199843,CUSCDIND,Cond Under Study Contrib to Death Ind,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C135385,DTHCOIND,Death Certificate Obtained Indicator,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C184505,DTHEXIND,Death Expected Indicator,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C170571,DTHWIND,Death Witnessed Indicator,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C135386,HMROIND,Hospital Medical Record Obtained Ind,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C198258,HSDTHIND,Hospitalized at Time of Death Indicator,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C176287,INFOSCOD,Information Source for Cause of Death,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C124331,LOCDTH,Location of Death,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C99531,PRCDTH,Primary Cause of Death,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C174284,SDTHIND,Sudden Death Indicator,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
-C116142,SECDTH,Secondary Cause of Death,DTHDX,SDTM Death Diagnosis and Details,DTHDXCD,DTHDX,NCI_EVS
 C102516,ANTPLANE,Anatomical Plane,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C106533,AQMTRXSZ,Image Acquisition Matrix Size,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C94862,ATTCRCT,Attenuation Correction Type,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
@@ -1450,18 +1270,19 @@ C156497,VOXDIMX,X-Axis Voxel Dimension,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C156498,VOXDIMY,Y-Axis Voxel Dimension,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C156499,VOXDIMZ,Z-Axis Voxel Dimension,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C156500,VOXORIEN,Voxel Orientation,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
-C25285,DIAMETER,Diameter,EBFATS,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,EBFATS,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,EBFATS,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
 C116140,AMIEGCHG,Acute Myocardial Ischemia ECG Change,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111131,AVCOND,Atrioventricular Conduction,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111131,AVCOND,Atrioventricular Conduction,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C111132,AXISVOLT,Axis and Voltage,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111132,AXISVOLT,Axis and Voltage,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C111155,CHYPTENL,Chamber Hypertrophy or Enlargement,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111155,CHYPTENL,Chamber Hypertrophy or Enlargement,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C119253,EGARMAX,ECG Maximum Atrial Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C119254,EGARMED,ECG Median Atrial Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C119255,EGARMIN,ECG Minimum Atrial Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C119256,EGARMN,ECG Mean Atrial Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117761,EGCOMP,Comparison to a Prior ECG,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C117761,EGCOMP,Comparison to a Prior ECG,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C119257,EGHRMAX,ECG Maximum Heart Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C123447,EGHRMED,ECG Median Heart Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C119258,EGHRMIN,ECG Minimum Heart Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1472,7 +1293,9 @@ C119261,EGVRMED,ECG Median Ventricular Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C119262,EGVRMIN,ECG Minimum Ventricular Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C119263,EGVRMN,ECG Mean Ventricular Rate,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C41255,INTP,Interpretation,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C41255,INTP,Interpretation,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C111238,IVTIACD,Intraventricular-Intraatrial Conduction,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111238,IVTIACD,Intraventricular-Intraatrial Conduction,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117762,JTAG,"JT Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117763,JTCBAG,"JTcB Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117764,JTCBSB,"JTcB Interval, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1484,8 +1307,10 @@ C117767,JTPAG,"J-Tpeak Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117768,JTPSB,"J-Tpeak Interval, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117769,JTSB,"JT Interval, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111280,MI,Myocardial Infarction,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111280,MI,Myocardial Infarction,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117770,NEWQWAVE,New Q Wave,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111285,PACEMAKR,Pacemaker,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111285,PACEMAKR,Pacemaker,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117771,PPAG,"PP Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117772,PPSM,"PP Interval, Single Measurement",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117773,PRAG,"PR Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1524,6 +1349,7 @@ C117788,QTSB,"QT Interval, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117789,QWAAG,"Q Wave Amplitude, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117790,QWASB,"Q Wave Amplitude, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111307,RHYNOS,Rhythm Not Otherwise Specified,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111307,RHYNOS,Rhythm Not Otherwise Specified,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117791,RRAG,"RR Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C62094,RRMAX,Summary (Max) RR Duration,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C62093,RRMIN,Summary (Min) RR Duration,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1533,8 +1359,11 @@ C117794,RSASB,"RS Wave Amplitude, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117795,RWAAG,"R Wave Amplitude, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117796,RWASB,"R Wave Amplitude, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111312,SNRARRY,Sinus Node Rhythms and Arrhythmias,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111312,SNRARRY,Sinus Node Rhythms and Arrhythmias,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C111320,SPRARRY,Supraventricular Arrhythmias,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111320,SPRARRY,Supraventricular Arrhythmias,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C111321,SPRTARRY,Supraventricular Tachyarrhythmias,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111321,SPRTARRY,Supraventricular Tachyarrhythmias,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117797,STDAG,"ST Segment Depression, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C62163,STDPMAX,Summary (Max) ST Depression,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C62162,STDPMIN,Summary (Min) ST Depression,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1550,9 +1379,11 @@ C117802,STESB,"ST Segment Elevation, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117803,STSDURAG,"ST Segment Duration, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117804,STSDURSB,"ST Segment Duration, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111363,STSTWUW,"ST Segment, T wave, and U wave",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111363,STSTWUW,"ST Segment, T wave, and U wave",EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117805,SWAAG,"S Wave Amplitude, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117806,SWASB,"S Wave Amplitude, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117807,TECHQUAL,Technical Quality,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C117807,TECHQUAL,Technical Quality,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C117808,TPTEAG,"Tpeak-Tend Interval, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117809,TPTESB,"Tpeak-Tend Interval, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117810,TWARAG,"T Wave Area, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1563,226 +1394,461 @@ C117814,TWHAG,"T Wave Amplitude, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117815,TWHSB,"T Wave Amplitude, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C118166,T_AXIS,T Wave Axis,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111330,VTARRY,Ventricular Arrhythmias,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111330,VTARRY,Ventricular Arrhythmias,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C111331,VTTARRY,Ventricular Tachyarrhythmias,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C111331,VTTARRY,Ventricular Tachyarrhythmias,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
+C181313,ABSCNUM,Number of Abscesses,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181313,ABSCNUM,Number of Abscesses,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C118936,ACMITYPE,Acute Myocardial Infarction Type,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C118936,ACMITYPE,Acute Myocardial Infarction Type,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C117037,ACNDEV,Action Taken With Device,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C117037,ACNDEV,Action Taken With Device,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C163412,ACNSBJ,Action Taken With Subject,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C163412,ACNSBJ,Action Taken With Subject,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124437,ACUTSTRS,Most Severe Acute Stressor,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124437,ACUTSTRS,Most Severe Acute Stressor,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
 C88069,AEDCHIND,AE Improve/Resolve with Dechallenge Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C88069,AEDCHIND,AE Improve/Resolve with Dechallenge Ind,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
 C88070,AERCHIND,AE Reappear/Worsen with Rechallenge Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C88070,AERCHIND,AE Reappear/Worsen with Rechallenge Ind,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
 C221539,AGEDSONS,Age At Disease Onset,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124438,AGEEPSD1,Age At First Episode,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124438,AGEEPSD1,Age At First Episode,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C139175,AGEFTUSE,Age at Full-Time Use,FA,Duchenne Muscular Dystrophy Findings About,DMFATSCD,DMFATS,NCI_EVS
 C139175,AGEFTUSE,Age at Full-Time Use,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124439,AGEHOSP1,Age At First Hospitalization,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124439,AGEHOSP1,Age At First Hospitalization,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C127060,AGESTSMK,Age Started Smoking,FA,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
+C174273,AGESYMST,Age Symptoms Started,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174273,AGESYMST,Age Symptoms Started,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124440,AGETRT1,Age At First Treatment,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124440,AGETRT1,Age At First Treatment,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C184464,ALCDRKN,Number of Alcoholic Drinks,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184464,ALCDRKN,Number of Alcoholic Drinks,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C25377,APPEAR,Appearance,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C25377,APPEAR,Appearance,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
 C112221,ASRINDEX,Allergen Skin Response Index,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112222,ASRINT,Allergen Skin Response Intensity,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181316,BIOPSIND,Biopsy Specimen Taken Indicator,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181316,BIOPSIND,Biopsy Specimen Taken Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181317,BIOPSNUM,Number of Biopsy Specimens Taken,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181317,BIOPSNUM,Number of Biopsy Specimens Taken,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C122195,BLISTIND,Blistering Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181318,BPSPTHAP,Pathologic Appearance of Biopsy Site,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181318,BPSPTHAP,Pathologic Appearance of Biopsy Site,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172476,CALBURN,Calories Burned,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172476,CALBURN,Calories Burned,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119229,CATMTHID,Coronary Artery Thrombosis Method Ident,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119229,CATMTHID,Coronary Artery Thrombosis Method Ident,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124441,CHRNSTRS,Most Severe Chronic Stressor,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124441,CHRNSTRS,Most Severe Chronic Stressor,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
 C124442,CLININD,Clinic Stay Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124442,CLININD,Clinic Stay Indicator,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
 C213761,CLINSTDS,Clinical Status of Disease,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C199692,CONTEPH,Contrast Enhancement Phase,FA,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
 C199692,CONTEPH,Contrast Enhancement Phase,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C94596,CUMEXP,Cumulative Exposure,FA,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
+C94596,CUMEXP,Cumulative Exposure,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C94596,CUMEXP,Cumulative Exposure,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184449,DACARO,Dietary Alpha Carotene,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184449,DACARO,Dietary Alpha Carotene,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172463,DADDSUG,Dietary Added Sugar,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172463,DADDSUG,Dietary Added Sugar,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184463,DALCOHOL,Dietary Alcohol,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184463,DALCOHOL,Dietary Alcohol,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184441,DARAC,Dietary Arachidonic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184441,DARAC,Dietary Arachidonic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184450,DATOCO,Dietary Alpha Tocopherol,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184450,DATOCO,Dietary Alpha Tocopherol,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184461,DAVITB12,Dietary Added Vitamin B12,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184461,DAVITB12,Dietary Added Vitamin B12,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184462,DAVITE,Dietary Added Vitamin E,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184462,DAVITE,Dietary Added Vitamin E,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184451,DBCARO,Dietary Beta Carotene,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184451,DBCARO,Dietary Beta Carotene,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184465,DBEANPEA,Dietary Beans and Peas,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184465,DBEANPEA,Dietary Beans and Peas,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184446,DBUTR,Dietary Butyric Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184446,DBUTR,Dietary Butyric Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184453,DCA,Dietary Calcium,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184453,DCA,Dietary Calcium,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184452,DCAFFEIN,Dietary Caffeine,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184452,DCAFFEIN,Dietary Caffeine,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172464,DCAL,Dietary Calories,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172464,DCAL,Dietary Calories,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184447,DCAPO,Dietary Caproic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184447,DCAPO,Dietary Caproic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184430,DCAPR,Dietary Capric Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184430,DCAPR,Dietary Capric Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184448,DCAPY,Dietary Caprylic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184448,DCAPY,Dietary Caprylic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172461,DCARBT,Dietary Total Carbohydrate,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172461,DCARBT,Dietary Total Carbohydrate,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176284,DCDEPIND,Unable to Discon Dependent Indicator,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176284,DCDEPIND,Unable to Discon Dependent Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184454,DCHEESE,Dietary Cheese,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184454,DCHEESE,Dietary Cheese,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184466,DCHOLEST,Dietary Cholesterol,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184466,DCHOLEST,Dietary Cholesterol,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184466,DCHOLEST,Dietary Cholesterol,FA,Pediatric Findings About,PDFATSCD,PDFATS,NCI_EVS
+C184467,DCHOLINE,Dietary Choline,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184467,DCHOLINE,Dietary Choline,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184468,DCITMELB,"Dietary Citrus, Melons, and Berries",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184468,DCITMELB,"Dietary Citrus, Melons, and Berries",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184444,DCPND,Dietary Clupanodonic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184444,DCPND,Dietary Clupanodonic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C186015,DCRXANB,Dietary Beta-Cryptoxanthin,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C186015,DCRXANB,Dietary Beta-Cryptoxanthin,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184455,DCU,Dietary Copper,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184455,DCU,Dietary Copper,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184337,DDAIRYT,Dietary Total Dairy,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184337,DDAIRYT,Dietary Total Dairy,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184445,DDCHX,Dietary Docosahexaenoic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184445,DDCHX,Dietary Docosahexaenoic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184471,DEGGS,Dietary Eggs,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184471,DEGGS,Dietary Eggs,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184443,DERUC,Dietary Erucic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184443,DERUC,Dietary Erucic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176277,DEVPNUM,Number of Devices Present,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176277,DEVPNUM,Number of Devices Present,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172471,DFATM,"Dietary Fat, Monounsaturated",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172471,DFATM,"Dietary Fat, Monounsaturated",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172472,DFATP,"Dietary Fat, Polyunsaturated",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172472,DFATP,"Dietary Fat, Polyunsaturated",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172470,DFATS,"Dietary Fat, Saturated",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172470,DFATS,"Dietary Fat, Saturated",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172460,DFATT,"Dietary Fat, Total",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172460,DFATT,"Dietary Fat, Total",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172460,DFATT,"Dietary Fat, Total",FA,Pediatric Findings About,PDFATSCD,PDFATS,NCI_EVS
+C184456,DFE,Dietary Iron,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184456,DFE,Dietary Iron,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C186016,DFEQ,Dietary Folate Equivalents,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C186016,DFEQ,Dietary Folate Equivalents,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172469,DFIBER,Dietary Fiber,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172469,DFIBER,Dietary Fiber,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C186017,DFOLFD,Dietary Food Folate,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C186017,DFOLFD,Dietary Food Folate,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C186018,DFOLIC,Dietary Folic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C186018,DFOLIC,Dietary Folic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C186019,DFOLTOT,Dietary Total Folate,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C186019,DFOLTOT,Dietary Total Folate,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184472,DFRTJUCE,Dietary Fruit Juice,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184472,DFRTJUCE,Dietary Fruit Juice,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172465,DFRUIT,Dietary Fruit,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172465,DFRUIT,Dietary Fruit,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184440,DGADL,Dietary Gadoleic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184440,DGADL,Dietary Gadoleic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172467,DGRAIN,Dietary Grain,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172467,DGRAIN,Dietary Grain,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184484,DGRAINRF,"Dietary Grain, Refined",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184484,DGRAINRF,"Dietary Grain, Refined",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184502,DGRAINWH,Dietary Whole Grains,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184502,DGRAINWH,Dietary Whole Grains,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C25285,DIAMETER,Diameter,FA,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
 C25285,DIAMETER,Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C78721,DISPAMT,Dispensed Amount,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C78721,DISPAMT,Dispensed Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C25167,DISTANCE,Distance,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C25167,DISTANCE,Distance,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C198212,DISTR,Distribution,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C198212,DISTR,Distribution,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C184457,DK,Dietary Potassium,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184457,DK,Dietary Potassium,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184431,DLAUR,Dietary Lauric Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184431,DLAUR,Dietary Lauric Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184437,DLINO,Dietary Linoleic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184437,DLINO,Dietary Linoleic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184438,DLINOL,Dietary Linolenic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184438,DLINOL,Dietary Linolenic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184473,DLUTZXAN,Dietary Lutein and Zeaxanthin,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184473,DLUTZXAN,Dietary Lutein and Zeaxanthin,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184474,DLYCOP,Dietary Lycopene,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184474,DLYCOP,Dietary Lycopene,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172468,DMEAT,Dietary Meat,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172468,DMEAT,Dietary Meat,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184469,DMEATCUR,"Dietary Meat, Cured",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184469,DMEATCUR,"Dietary Meat, Cured",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184480,DMEATORG,"Dietary Meat, Organ",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184480,DMEATORG,"Dietary Meat, Organ",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184504,DMEATPLS,"Dietary Meat, Poultry, and Seafood",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184504,DMEATPLS,"Dietary Meat, Poultry, and Seafood",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172462,DMG,Dietary Magnesium,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172462,DMG,Dietary Magnesium,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184475,DMILK,Dietary Milk,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184475,DMILK,Dietary Milk,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184476,DMOISTUR,Dietary Moisture,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184476,DMOISTUR,Dietary Moisture,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184432,DMYRST,Dietary Myristic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184432,DMYRST,Dietary Myristic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184459,DNA,Dietary Sodium,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184459,DNA,Dietary Sodium,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184477,DNIACIN,Dietary Niacin,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184477,DNIACIN,Dietary Niacin,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184478,DNUTSEED,Dietary Nuts and Seeds,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184478,DNUTSEED,Dietary Nuts and Seeds,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184479,DOILS,Dietary Oils,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184479,DOILS,Dietary Oils,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184436,DOLE,Dietary Oleic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184436,DOLE,Dietary Oleic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184481,DP,Dietary Phosphorus,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184481,DP,Dietary Phosphorus,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184433,DPALM,Dietary Palmitic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184433,DPALM,Dietary Palmitic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184434,DPALMO,Dietary Palmitoleic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184434,DPALMO,Dietary Palmitoleic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184439,DPARN,Dietary Parinaric Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184439,DPARN,Dietary Parinaric Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184482,DPOTATO,Dietary Potatoes,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184482,DPOTATO,Dietary Potatoes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184483,DPOULTRY,Dietary Poultry,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184483,DPOULTRY,Dietary Poultry,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172459,DPROT,Dietary Protein,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172459,DPROT,Dietary Protein,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184494,DPROTFD,Dietary Protein Foods,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184494,DPROTFD,Dietary Protein Foods,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184485,DRETINOL,Dietary Retinol,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184485,DRETINOL,Dietary Retinol,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184486,DRIBFLVN,Dietary Riboflavin,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184486,DRIBFLVN,Dietary Riboflavin,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C102626,DRSTAT,Drug Resistance Status,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C102626,DRSTAT,Drug Resistance Status,FA,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
+C184458,DSE,Dietary Selenium,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184458,DSE,Dietary Selenium,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184487,DSFHN3FA,Dietary Seafood High in n-3 Fatty Acids,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184487,DSFHN3FA,Dietary Seafood High in n-3 Fatty Acids,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184488,DSFLN3FA,Dietary Seafood Low in n-3 Fatty Acids,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184488,DSFLN3FA,Dietary Seafood Low in n-3 Fatty Acids,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184489,DSLDFAT,Dietary Solid Fats,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184489,DSLDFAT,Dietary Solid Fats,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184490,DSOYPROD,Dietary Soy Products,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184490,DSOYPROD,Dietary Soy Products,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C28108,DSSTAGE,Disease Stage,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184435,DSTER,Dietary Stearic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184435,DSTER,Dietary Stearic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184338,DSUGART,Dietary Total Sugars,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184338,DSUGART,Dietary Total Sugars,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184491,DTHEOBR,Dietary Theobromine,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184491,DTHEOBR,Dietary Theobromine,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184492,DTHIAMIN,Dietary Thiamine,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184492,DTHIAMIN,Dietary Thiamine,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184442,DTMND,Dietary Timnodonic Acid,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184442,DTMND,Dietary Timnodonic Acid,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184493,DTOMATO,Dietary Tomatoes,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184493,DTOMATO,Dietary Tomatoes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174280,DVCINSN,Number of Devices Inserted,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174280,DVCINSN,Number of Devices Inserted,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172466,DVEG,Dietary Vegetable,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172466,DVEG,Dietary Vegetable,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184470,DVEGDG,"Dietary Vegetables, Dark Green",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184470,DVEGDG,"Dietary Vegetables, Dark Green",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184495,DVEGRO,"Dietary Vegetables, Red and Orange",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184495,DVEGRO,"Dietary Vegetables, Red and Orange",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184496,DVEGSTAR,"Dietary Vegetables, Starchy",FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184496,DVEGSTAR,"Dietary Vegetables, Starchy",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184497,DVITA,Dietary Vitamin A,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184497,DVITA,Dietary Vitamin A,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184353,DVITB12,Dietary Vitamin B12,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184353,DVITB12,Dietary Vitamin B12,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184498,DVITB6,Dietary Vitamin B6,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184498,DVITB6,Dietary Vitamin B6,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184499,DVITC,Dietary Vitamin C,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184499,DVITC,Dietary Vitamin C,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184500,DVITD,Dietary Vitamin D,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184500,DVITD,Dietary Vitamin D,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184501,DVITK,Dietary Vitamin K,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184501,DVITK,Dietary Vitamin K,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C117883,DXCRITMT,Diagnostic Criteria Met,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C117883,DXCRITMT,Diagnostic Criteria Met,FA,Multiple Sclerosis Findings About,MSFATSCD,MSFATS,NCI_EVS
+C184503,DYOGURT,Dietary Yogurt,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184503,DYOGURT,Dietary Yogurt,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184460,DZN,Dietary Zinc,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C184460,DZN,Dietary Zinc,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119230,ENDPTIND,Endpoint Event Indicator,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119230,ENDPTIND,Endpoint Event Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124328,EPMLDNUM,Number of Mild Episodes,FA,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
 C124328,EPMLDNUM,Number of Mild Episodes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124329,EPMODNUM,Number of Moderate Episodes,FA,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
 C124329,EPMODNUM,Number of Moderate Episodes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124281,EPSDNUM,Number of Episodes,FA,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
+C124281,EPSDNUM,Number of Episodes,FA,CDAD Findings About,CDFATSCD,CDFATS,NCI_EVS
+C124281,EPSDNUM,Number of Episodes,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C124281,EPSDNUM,Number of Episodes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124281,EPSDNUM,Number of Episodes,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C124281,EPSDNUM,Number of Episodes,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C124330,EPSEVNUM,Number of Severe Episodes,FA,COPD Findings About,CPFATSCD,CPFATS,NCI_EVS
 C124330,EPSEVNUM,Number of Severe Episodes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174282,ESTWT,Estimated Weight,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C174282,ESTWT,Estimated Weight,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C25515,EVENTFRQ,Event Frequency,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C25515,EVENTFRQ,Event Frequency,FA,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
+C130057,EVENTNUM,Number of Events,FA,Diabetic Kidney Disease Findings About,DKFATSCD,DKFATS,NCI_EVS
 C130057,EVENTNUM,Number of Events,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C189431,EVRIPIND,Event Related to Incr Phys Activity Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172475,EXCDUR,Exercise Duration,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172475,EXCDUR,Exercise Duration,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172473,EXCINTSY,Exercise Intensity,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172473,EXCINTSY,Exercise Intensity,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172474,EXCMPLNC,Exercise Compliance,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172474,EXCMPLNC,Exercise Compliance,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181310,EXETRIND,Expected Efficacious Treatment Reg Ind,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181310,EXETRIND,Expected Efficacious Treatment Reg Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C157443,EXTRSCT,Extent of Resection,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C157443,EXTRSCT,Extent of Resection,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181314,FISTATYP,Fistula Anatomical Type,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181314,FISTATYP,Fistula Anatomical Type,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181312,FISTNUM,Number of Fistulas,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181312,FISTNUM,Number of Fistulas,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112283,FLARESZ,Flare Size,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112281,FLRLDIAM,Flare Longest Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112282,FLRMDIAM,Flare Mean Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176280,FNDOSAMT,Final Dose Amount,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176280,FNDOSAMT,Final Dose Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176281,FNDOSFRQ,Frequency of Final Dose Amount,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176281,FNDOSFRQ,Frequency of Final Dose Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C187676,GCIRCPI,Greatest Circ at Point of Interest,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C187676,GCIRCPI,Greatest Circ at Point of Interest,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C119231,HETYPE,Healthcare Encounter Type,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119231,HETYPE,Healthcare Encounter Type,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119232,HFLBFNW,Heart Failure New/Worsening Lab Findings,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119232,HFLBFNW,Heart Failure New/Worsening Lab Findings,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119233,HFPEFNW,Heart Failure New/Worsening PE Findings,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119233,HFPEFNW,Heart Failure New/Worsening PE Findings,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119234,HFTHERIN,"Heart Failure Therapy, Intensification",FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119234,HFTHERIN,"Heart Failure Therapy, Intensification",FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124443,HOSPNUM,Number Of Hospitalizations,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124443,HOSPNUM,Number Of Hospitalizations,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C174279,ICJRIND,Ileocecal Junction Removed Indicator,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174279,ICJRIND,Ileocecal Junction Removed Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C122196,IDRLDIAM,Induration Longest Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C41255,INTP,Interpretation,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119235,ISCDIND,Ischemic Discomfort Indicator,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119235,ISCDIND,Ischemic Discomfort Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119236,ISCETYP,Ischemic Evidence Type,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119236,ISCETYP,Ischemic Evidence Type,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172478,LAPCOMPN,Number of Laps Completed,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172478,LAPCOMPN,Number of Laps Completed,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C96684,LDIAM,Longest Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C96684,LDIAM,Longest Diameter,FA,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
+C96684,LDIAM,Longest Diameter,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C210203,LDURABS,Longest Duration of Abstinence,FA,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
+C174278,LENRSCT,Length of Resection,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174278,LENRSCT,Length of Resection,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174277,LESNUM,Number of Lesions,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174277,LESNUM,Number of Lesions,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174277,LESNUM,Number of Lesions,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
 C117884,LOCONSET,Localization of Onset,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C117884,LOCONSET,Localization of Onset,FA,Multiple Sclerosis Findings About,MSFATSCD,MSFATS,NCI_EVS
 C35461,LONGCRSE,Longitudinal Course,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C35461,LONGCRSE,Longitudinal Course,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C119237,MI12EXC,Exclusion of Type 1 and Type 2 MI,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119237,MI12EXC,Exclusion of Type 1 and Type 2 MI,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176278,MXDOSAMT,Maximum Dose Amount,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176278,MXDOSAMT,Maximum Dose Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176279,MXDOSFRQ,Frequency of Maximum Dose Amount,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176279,MXDOSFRQ,Frequency of Maximum Dose Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C101687,NDLGAUGE,Needle Gauge,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C101687,NDLGAUGE,Needle Gauge,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
 C187675,NEARJNT,Nearest Joint,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C187675,NEARJNT,Nearest Joint,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C123443,NINVIMGC,Non-Invasive Imaging Change,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C123443,NINVIMGC,Non-Invasive Imaging Change,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119238,NWSYMP,New or Worsening Symptoms,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119238,NWSYMP,New or Worsening Symptoms,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C174275,OBJNUM,Number of Objects,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C174276,OBJTYPE,Type of Object,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Asthma Findings About,ASFATSCD,ASFATS,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
 C127786,OCCUR,Occurrence Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Malaria Findings About,MRFATSCD,MRFATS,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Pediatric Findings About,PDFATSCD,PDFATS,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
 C154860,ORCANIND,Origin of Cancer Known Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C154860,ORCANIND,Origin of Cancer Known Ind,FA,Lung Cancer Findings About,LUFATSCD,LUFATS,NCI_EVS
 C117885,OUNIMULT,Onset Unifocal or Multifocal,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C117885,OUNIMULT,Onset Unifocal or Multifocal,FA,Multiple Sclerosis Findings About,MSFATSCD,MSFATS,NCI_EVS
+C119239,PCIAAC,PCI Acute Angiographic Complication,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119239,PCIAAC,PCI Acute Angiographic Complication,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C184724,PDAIND,Prevents Daily Activities Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C184724,PDAIND,Prevents Daily Activities Indicator,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C181311,PLLDIAM,Longest Diameter of Primary Lesion,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181311,PLLDIAM,Longest Diameter of Primary Lesion,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C181315,PLLOC,Anatomical Location of Primary Lesion,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C181315,PLLOC,Anatomical Location of Primary Lesion,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C163413,PPTFCT,Precipitating Factor,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C163413,PPTFCT,Precipitating Factor,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C170562,PREPAMT,Prepared Amount,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C170562,PREPAMT,Prepared Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174228,PROCPRFN,Number of Procedures Performed,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174228,PROCPRFN,Number of Procedures Performed,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119240,PRSUCIND,Procedure Success Indicator,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119240,PRSUCIND,Procedure Success Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C198213,PRURIND,Pruritus Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C198213,PRURIND,Pruritus Indicator,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C101230,PRUSTAT,Procedure Urgency Status Type,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C101230,PRUSTAT,Procedure Urgency Status Type,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C179451,PRYSTUOG,Primary Site of Tumor Origin,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C179451,PRYSTUOG,Primary Site of Tumor Origin,FA,Pancreatic Cancer Findings About,PAFATSCD,PAFATS,NCI_EVS
 C170617,QOLIMP,QOL Impact,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C170617,QOLIMP,QOL Impact,FA,Psoriasis Findings About,PSFATSCD,PSFATS,NCI_EVS
 C179819,REACTGR,Reaction Grade,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C170563,REMAMT,Remaining Amount,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C170563,REMAMT,Remaining Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C154861,RESCTIND,Resected Tumor Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C154861,RESCTIND,Resected Tumor Ind,FA,Lung Cancer Findings About,LUFATSCD,LUFATS,NCI_EVS
+C78722,RETAMT,Returned Amount,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C78722,RETAMT,Returned Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176283,RLDEPIND,Relapse after Discon Dependent Indicator,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176283,RLDEPIND,Relapse after Discon Dependent Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C163414,RLDEV,Relationship to Device,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C163414,RLDEV,Relationship to Device,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C176285,SBDEPIND,Substance Dependence Indicator,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176285,SBDEPIND,Substance Dependence Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,CDAD Findings About,CDFATSCD,CDFATS,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
 C25676,SEV,Severity/Intensity,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,Malaria Findings About,MRFATSCD,MRFATS,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,Psoriasis Findings About,PSFATSCD,PSFATS,NCI_EVS
+C25676,SEV,Severity/Intensity,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C41146,SPEED,Speed,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C41146,SPEED,Speed,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174281,SSDISC,Sign/Symptom Leading to Discontinuation,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174281,SSDISC,Sign/Symptom Leading to Discontinuation,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C123424,STCTIMNG,"Stent Thrombosis, Coronary, ARC Timing",FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C123424,STCTIMNG,"Stent Thrombosis, Coronary, ARC Timing",FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172479,STEPSTN,Number of Steps Taken,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172479,STEPSTN,Number of Steps Taken,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C174274,STRCTNUM,Number of Strictures,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C174274,STRCTNUM,Number of Strictures,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119579,STROKTYP,Stroke Type,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119579,STROKTYP,Stroke Type,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119241,SYMPINDC,Symptom Indicator,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119241,SYMPINDC,Symptom Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C119242,SYMSTDTC,Symptom Onset Date,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119242,SYMSTDTC,Symptom Onset Date,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C210222,TCSCOIND,Tobacco Cessation Counseling Indicator,FA,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
 C127787,TOTNUM,Total Number,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C127787,TOTNUM,Total Number,FA,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
 C82528,TOXGR,Toxicity Grade,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C82528,TOXGR,Toxicity Grade,FA,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C176282,TPDEPIND,Unable to Taper Dependent Indicator,FA,Crohn's Disease Findings About,CRFATSCD,CRFATS,NCI_EVS
 C176282,TPDEPIND,Unable to Taper Dependent Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C124444,TRTSETT,Treatment Setting,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C124444,TRTSETT,Treatment Setting,FA,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
+C172477,TTIMPAUS,Total Time Paused,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172477,TTIMPAUS,Total Time Paused,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C172480,TTIMPHAC,Total Time Physically Active,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172480,TTIMPHAC,Total Time Physically Active,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C204716,UPCCODE,UPC Code,FA,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
+C119243,VOC48IND,Vessel Occlusion After CABG 48 Ind,FA,Cardiovascular Findings About,CVFATSCD,CVFATS,NCI_EVS
 C119243,VOC48IND,Vessel Occlusion After CABG 48 Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C74720,VOL,Volume,FA,CDAD Findings About,CDFATSCD,CDFATS,NCI_EVS
 C74720,VOL,Volume,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112429,WHEALSZ,Wheal Size,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C130186,WHLINT,Wheal Diameter Interpretation,FA,Findings About,FATESTCD,FATEST,NCI_EVS
@@ -1811,22 +1877,6 @@ C181335,TMB,Tumor Mutation Burden,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C17208,TRNSCPTN,Transcription,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189441,VARPROF,Variant Profile,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189440,VNTR,Variable Number Tandem Repeats,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
-C111131,AVCOND,Atrioventricular Conduction,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111132,AXISVOLT,Axis and Voltage,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111155,CHYPTENL,Chamber Hypertrophy or Enlargement,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C117761,EGCOMP,Comparison to a Prior ECG,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C41255,INTP,Interpretation,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111238,IVTIACD,Intraventricular-Intraatrial Conduction,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111280,MI,Myocardial Infarction,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111285,PACEMAKR,Pacemaker,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111307,RHYNOS,Rhythm Not Otherwise Specified,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111312,SNRARRY,Sinus Node Rhythms and Arrhythmias,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111320,SPRARRY,Supraventricular Arrhythmias,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111321,SPRTARRY,Supraventricular Tachyarrhythmias,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111363,STSTWUW,"ST Segment, T wave, and U wave",HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C117807,TECHQUAL,Technical Quality,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111330,VTARRY,Ventricular Arrhythmias,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
-C111331,VTTARRY,Ventricular Tachyarrhythmias,HE,Holter ECG,HETESTCD,HETEST,NCI_EVS
 C170575,ABSABSA,Affected BSA/Total BSA,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
 C198262,IGEXAM,Integumentary System Examination,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
 C74580,SKINTYP,Skin Type,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
@@ -4403,8 +4453,6 @@ C177986,ZIPRASDN,Ziprasidone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184637,ZOLPIDEM,Zolpidem,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184638,ZOPCLN,Zopiclone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147452,ZPP,Zinc Protoporphyrin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C154860,ORCANIND,Origin of Cancer Known Ind,LUFATS,Lung Cancer Findings About,LUFATSCD,LUFATS,NCI_EVS
-C154861,RESCTIND,Resected Tumor Ind,LUFATS,Lung Cancer Findings About,LUFATSCD,LUFATS,NCI_EVS
 C209632,AAN,Acinetobacter anitratus,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C221591,ABA,Acinetobacter baumannii,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C191309,ACBCM,A. calcoaceticus-baumannii Complex,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
@@ -4960,230 +5008,297 @@ C166059,YENDNA,Yersinia enterocolitica DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_E
 C187875,YERSINIA,Yersinia,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C132420,ZEBOV,Zaire Ebolavirus,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C201440,ZKVRNA,Zika Virus RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
-C111124,ABNCE,Abnormal Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181485,ACDOBOD,Acidophil Body,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154805,ALK,ALK Protein,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C132364,AMACR,Alpha-Methylacyl Coenzyme A Racemase,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181495,APOCE,Apoptotic Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181494,APOCECE,Apoptotic Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178037,ARCHCHG,Architectural Changes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C25244,AREA,Area,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135463,ARTLRHYT,Arteriolar Hyaline Thickening,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C184703,ARV7,Androgen Receptor Variant 7,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C200019,ASDCE,Total Assessed Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C201447,ASGMGIND,Adequate Surgical Margins Indicator,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135464,BANFRDX,Banff Diagnostic Category Renal,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98865,BASOCE,Basophils/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C201446,BCL2,BCL2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202418,BCL6,BCL6,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C156546,BD1,Beta-defensin 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C122102,BD2,Beta-defensin 2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139099,BDKRB1,Bradykinin Receptor B1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178041,BIAFFNUM,Number of Biopsy Specimens Affected,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C150836,BLASTCE,Blasts/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C156545,BLDVESD,Blood Vessel Density,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98761,BLSTMBCE,Myeloblasts/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98753,BLSTMKCE,Megakaryoblasts/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C123555,BRCA1,Breast Cancer Type 1 Susceptibility Prot,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202419,CCND1,Cyclin D1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C102260,CD34SM,CD34 Sialomucin,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202431,CD3TCM,CD3 T-Cell Marker,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202433,CD8TGP,T-Cell Surface Glycoprotein CD8,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139098,CDX2AG,CDX2 Antigen,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C191212,CEACAM5,CEA Cell Adhesion Molecule 5,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187946,CEDISTR,Cell Distribution,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C132430,CELLDIFF,Cellular Differentiation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C48938,CELLS,Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C111153,CELLULAR,Cellularity,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178042,CHINFINL,Chronic Inflammatory Infiltrate,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204674,CLLGFBRO,Collagen Fibrosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C209661,CLOCECE,Clonal Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202420,CMYC,c-Myc,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139092,CORBIOMN,Number of Malignant Biopsy Cores,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176336,CRYPABSC,Crypt Abscess,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176337,CRYPARCD,Crypt Architectural Damage,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176335,CRYPTTS,Cryptitis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127763,CY16,Cytokeratin 16,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C18280,CYEXAM,Cytogenetic Examination,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127764,DCLAMP,Dendritic Cell-Lysosomal-Assoc Memb Prot,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181195,DCP,DC Plasmacytoid,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181270,DCPS,DC Plasmacytoid Sub,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C25333,DEPTH,Depth,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C15220,DIAGNOS,Diagnosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C199982,DPTHTINV,Depth of Tumor Invasion,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204680,DYSPLASA,Dysplasia,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C112273,EGFR,Epidermal Growth Factor Receptor,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154806,EGFRVP,EGFR Variant Protein,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C184699,EMVI,Extramural Venous Invasion,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C214716,ENEDIST,Distance to Extranodal Extension,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98720,EOSCE,Eosinophils/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178036,EPIDMG,Epithelial Damage,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C132366,EPISCECE,Squamous Epithelial Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176338,EPITHINT,Epithelial Integrity,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204671,ERCEPRLF,Erythroid Proliferation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C156547,ERLIERLT,"Epi RBM Lngth, Intact/Epi RBM Lngth, Tot",MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178045,EROULC,Erosion and/or Ulceration,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187803,ERPCECE,Erythroid Precursor Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C112274,ESTRCPT,Estrogen Receptor,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C185968,FIBB,Fibroblasts,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127765,FIBROSIS,Fibrosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C132431,FOLH1,Folate Hydrolase 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C166072,FOXP3,Forkhead Box Protein 3,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C147493,GHISTXQL,"General Histopathologic Exam, Qual",MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135465,GLOMLTIS,Glomerulitis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135466,GLOMPATH,Glomerulopathy,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C189621,GOBCE,Goblet Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C189622,GOBCEPIC,Goblet Cells/Epithelial Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204672,GRANPRLF,Granulocyte Proliferation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127616,GRANSGCE,Granulocytes Segmented/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176334,GRNLMA,Granuloma,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C166073,GZMB,Granzyme B,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181484,HEPBLLN,Hepatocellular Ballooning,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C112312,HER2,Human Epidermal Growth Factor Receptor 2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C172514,HGFR,Hepatocyte Growth Factor Receptor,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154802,HISTTYPC,Histologic Type of Cancer,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C191338,HMCEADI,Hematopoietic Cells/Adipocytes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C124345,ICAM1,Intercellular Adhesion Molecule 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C142347,IENFDEN,Intraepidermal Nerve Fiber Density,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181490,IEPINEOA,Intraepithelial Neoplasia,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C221651,IMNCEINL,Immune Cell Infiltration,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C201449,INLNLNUM,Number of Involved Lymph Node Levels,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135467,INTMART,Intimal Arteritis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135468,INTSFBRO,Interstitial Fibrosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202422,IRF4,Interferon Regulatory Factor 4,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C74679,IRON,Iron,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202421,ITGB3,Integrin Subunit Beta 3,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C123557,KI67,Ki-67,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C214717,KRTNCT,Keratinocytes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C106539,LCN2,Lipocalin-2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C25334,LENGTH,Length,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204682,LERBCBLS,Leukoerythroblastosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202428,LEU1,Lymphocyte Antigen T1/Leu-1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202429,LEU16,Membrane Spanning 4-Domains A1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202432,LEU3,T-Cell Surface Antigen T4/Leu-3,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176341,LFA1,Lymphocyte Function-Associated Antigen 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C184702,LNEXCPSD,Lymph Node Extracapsular Spread,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181493,LNININD,Lymph Node Involvement Indicator,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C189620,LNINNUM,Number of Lymph Nodes Involved,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C124448,LNSTATE,Lymph Node State,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181480,LOBLINF,Lobular Inflammation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181482,LPGNLMLG,Large Lipogranuloma,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178035,LYEPIENT,Intraepithelial Lymphocytes/Enterocytes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C51949,LYM,Lymphocytes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98751,LYMCE,Lymphocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C74613,LYMMCE,Lymphoma Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C186078,LYMMCECE,Lymphoma Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187947,LYMPAGG,Lymphoid Aggregates,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127766,LYMPHINV,Lymphatic Invasion,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181488,MALLBOD,Mallory Body,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C111247,MASTCECE,Mast Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C221650,MAXDLMD,Max Dimension Largest Metastatic Deposit,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181481,MCGNLM,Microgranuloma,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135469,MCINTINF,Mononuc Cell Interstitial Inflammation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181487,MEGAMITC,Megamitochondria,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127628,MERCECE,Maturing Erythroid/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98754,METAMYCE,Metamyelocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C90424,MIEXAM,Microscopic Examination,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135470,MITOFIG,Mitotic Figure,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C138982,MITOSCR,Mitotic Score,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204673,MKCPRLF,Megakaryocyte Proliferation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202426,MLANA,Melan-A,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139094,MLH1,MutL Homolog 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C186203,MLH3,MutL Homolog 3,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139093,MMRPINTP,Mismatch Repair Proteins Interpretation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C185932,MMRPROT,MMR Proteins,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154757,MNC,Mononuclear Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178038,MNCINLLP,Infilt of Mono Cells in Lamina Propria,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187677,MONOBLCE,Monoblasts/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98872,MONOCE,Monocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181486,MPHGPIG,"Macrophage, Pigmented",MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139095,MSH2,MutS Homolog 2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C186204,MSH3,MutS Homolog 3,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139096,MSH6,MutS Homolog 6,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135471,MSNGMTRX,Mesangial Matrix,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181479,MVSTS,Microvesicular Steatosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204681,MYCEPRLF,Myeloid Proliferation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98868,MYCYCE,Myelocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154803,MYFIBROS,Myelofibrosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202430,NCAM1,Neural Cell Adhesion Molecule 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181492,NCRPLEOM,Nuclear Pleomorphism,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154801,NEOCE,Neoplastic Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C123556,NEOCECE,Neoplastic Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187701,NEUTBCE,Neutrophils Band Form/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178044,NEUTEPI,Neutrophils in Epithelium,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178043,NEUTLP,Neutrophils in Lamina Propria,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187679,NEUTSGCE,"Neutrophils, Segmented/Total Cells",MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C123558,NKX2_1,NK2 Homeobox 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127767,NORMCECE,Normal Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181656,NT5E,Ecto-5'-Nucleotidase,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181489,NUCLGLCG,"Nuclei, Glycogenated",MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C18000,OVLTGRD,Overall Tumor Grade,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C179766,P16INK4A,p16-INK4A,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C186205,P53,Tumor Protein p53,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C80204,PAP,Prostatic Acid Phosphatase,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C142348,PAX3FKHR,PAX3-FKHR Fusion Protein,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C123559,PCTISCA,Percentage of In situ Carcinoma,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154807,PDL1,Programmed Death Ligand 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135472,PECAM1,Platelet Endo Cell Adhesion Molecule 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98869,PLSMCECE,Mature Plasma Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187987,PLSTCECE,Total Plasma Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202427,PMEL,Premelanosome Protein,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C184700,PMLIGCE,Premalignant Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C184701,PMLIGCEM,Premalignant Cell Morphology,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178040,PMNEPI,Polymorphonuclear Cells in Epithelium,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178039,PMNINLLP,Infilt of PMN Cells in Lamina Propria,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C186206,PMS1,PMS1 Homolog 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C139097,PMS2,PMS1 Homolog 2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127634,PMYCECE,Proliferating Myeloid Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127768,PNLINV,Perineural Invasion,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176339,PNTHCEMP,Paneth Cell Metaplasia,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181483,PORTINF,Portal Inflammation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C117846,PROGESTR,Progesterone Receptor,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187678,PROMONCE,Promonocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C98773,PROMYCE,Promyelocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135473,PTBCPLTS,Peritubular Capillaritis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C147470,PTEN,Phosphatase and Tensin Homolog,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C189346,PYKCE,Pyknotic Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178047,PYSACMSB,Polysaccharides and Mucosubstances,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187680,RETICE,Reticulocytes/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154804,ROS1,ROS1 Protein,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204675,RTCNFBRO,Reticulin Fibrosis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202425,S100,S100 Calcium Binding Proteins,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127769,S100A7,S100 Calcium Binding Protein A7,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127635,S100B,S100 Calcium-Binding Protein B,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202424,SCARD1,"Scavenger Receptor Class D, Member 1",MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C199680,SCFR,Mast/Stem Cell Growth Factor Rec Kit,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C201448,SGMGDIST,Surgical Margin Distance,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C177569,SGMGIREG,Surgical Margin Involvement Region,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C123560,SGMGSTAT,Surgical Margins Status,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C202423,SOX10,SRY-Box Transcription Factor 10,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127770,STRMCECE,Stromal Cells/Total Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181477,STSEXT,Steatosis Extent,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181478,STSLOC,Steatosis Location,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204676,TACSTD2,Tumor Assoc Calcium Signal Transducer 2,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C181491,TBLFRM,Tubule Formation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C117861,TGFB1,Transforming Growth Factor Beta 1,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C41145,THICK,Thickness,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204677,TIGIT,TIGIT,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204678,TILY,Tumor-Infiltrating Lymphocytes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176340,TISABNUM,Number of Abnormal Tissue Samples,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C204679,TLS,Tertiary Lymphoid Structures,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187951,TMBRDCFG,Tumor Border Configuration,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187949,TMDIFF,Tumor Differentiation,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C214715,TMINLIND,Tumor Infiltration Indicator,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C187950,TMINLPTN,Tumor Infiltration Pattern,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C154800,TRCETMCE,Transitional Cells/Tumor Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135474,TUBATRO,Tubular Atrophy,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135475,TUBULTIS,Tubulitis,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C178046,TUMRGR,Tumor Regression,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C176333,ULCER,Ulceration,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C112241,UNSPCE,Unspecified Cells,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127772,VASINV,Vascular Invasion,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C135476,VFBINTMT,Vascular Fibrous Intimal Thickening,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C51948,WBC,Leukocytes,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C25345,WIDTH,Width,MITS,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,MRFATS,Malaria Findings About,MRFATSCD,MRFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,MRFATS,Malaria Findings About,MRFATSCD,MRFATS,NCI_EVS
+C111124,ABNCE,Abnormal Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181485,ACDOBOD,Acidophil Body,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154805,ALK,ALK Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C132364,AMACR,Alpha-Methylacyl Coenzyme A Racemase,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181495,APOCE,Apoptotic Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181494,APOCECE,Apoptotic Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178037,ARCHCHG,Architectural Changes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C25244,AREA,Area,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135463,ARTLRHYT,Arteriolar Hyaline Thickening,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C184703,ARV7,Androgen Receptor Variant 7,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C200019,ASDCE,Total Assessed Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C201447,ASGMGIND,Adequate Surgical Margins Indicator,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135464,BANFRDX,Banff Diagnostic Category Renal,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98865,BASOCE,Basophils/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C201446,BCL2,BCL2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202418,BCL6,BCL6,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C156546,BD1,Beta-defensin 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C122102,BD2,Beta-defensin 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139099,BDKRB1,Bradykinin Receptor B1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178041,BIAFFNUM,Number of Biopsy Specimens Affected,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C150836,BLASTCE,Blasts/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C156545,BLDVESD,Blood Vessel Density,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98761,BLSTMBCE,Myeloblasts/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98753,BLSTMKCE,Megakaryoblasts/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C123555,BRCA1,Breast Cancer Type 1 Susceptibility Prot,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202419,CCND1,Cyclin D1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C102260,CD34SM,CD34 Sialomucin,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202431,CD3TCM,CD3 T-Cell Marker,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202433,CD8TGP,T-Cell Surface Glycoprotein CD8,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139098,CDX2AG,CDX2 Antigen,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C191212,CEACAM5,CEA Cell Adhesion Molecule 5,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187946,CEDISTR,Cell Distribution,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C132430,CELLDIFF,Cellular Differentiation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C48938,CELLS,Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C111153,CELLULAR,Cellularity,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178042,CHINFINL,Chronic Inflammatory Infiltrate,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204674,CLLGFBRO,Collagen Fibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C209661,CLOCECE,Clonal Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202420,CMYC,c-Myc,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139092,CORBIOMN,Number of Malignant Biopsy Cores,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176336,CRYPABSC,Crypt Abscess,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176337,CRYPARCD,Crypt Architectural Damage,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176335,CRYPTTS,Cryptitis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127763,CY16,Cytokeratin 16,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C18280,CYEXAM,Cytogenetic Examination,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127764,DCLAMP,Dendritic Cell-Lysosomal-Assoc Memb Prot,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181195,DCP,DC Plasmacytoid,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181270,DCPS,DC Plasmacytoid Sub,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C25333,DEPTH,Depth,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C15220,DIAGNOS,Diagnosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C199982,DPTHTINV,Depth of Tumor Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204680,DYSPLASA,Dysplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C112273,EGFR,Epidermal Growth Factor Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154806,EGFRVP,EGFR Variant Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C184699,EMVI,Extramural Venous Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C214716,ENEDIST,Distance to Extranodal Extension,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98720,EOSCE,Eosinophils/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178036,EPIDMG,Epithelial Damage,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C132366,EPISCECE,Squamous Epithelial Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176338,EPITHINT,Epithelial Integrity,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204671,ERCEPRLF,Erythroid Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C156547,ERLIERLT,"Epi RBM Lngth, Intact/Epi RBM Lngth, Tot",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178045,EROULC,Erosion and/or Ulceration,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187803,ERPCECE,Erythroid Precursor Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C112274,ESTRCPT,Estrogen Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C185968,FIBB,Fibroblasts,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127765,FIBROSIS,Fibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C132431,FOLH1,Folate Hydrolase 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C166072,FOXP3,Forkhead Box Protein 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C147493,GHISTXQL,"General Histopathologic Exam, Qual",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135465,GLOMLTIS,Glomerulitis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135466,GLOMPATH,Glomerulopathy,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C189621,GOBCE,Goblet Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C189622,GOBCEPIC,Goblet Cells/Epithelial Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204672,GRANPRLF,Granulocyte Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127616,GRANSGCE,Granulocytes Segmented/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176334,GRNLMA,Granuloma,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C166073,GZMB,Granzyme B,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181484,HEPBLLN,Hepatocellular Ballooning,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C112312,HER2,Human Epidermal Growth Factor Receptor 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C172514,HGFR,Hepatocyte Growth Factor Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154802,HISTTYPC,Histologic Type of Cancer,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C191338,HMCEADI,Hematopoietic Cells/Adipocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C124345,ICAM1,Intercellular Adhesion Molecule 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C142347,IENFDEN,Intraepidermal Nerve Fiber Density,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181490,IEPINEOA,Intraepithelial Neoplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C221651,IMNCEINL,Immune Cell Infiltration,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C201449,INLNLNUM,Number of Involved Lymph Node Levels,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135467,INTMART,Intimal Arteritis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135468,INTSFBRO,Interstitial Fibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202422,IRF4,Interferon Regulatory Factor 4,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C74679,IRON,Iron,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202421,ITGB3,Integrin Subunit Beta 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C123557,KI67,Ki-67,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C214717,KRTNCT,Keratinocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C106539,LCN2,Lipocalin-2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C25334,LENGTH,Length,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204682,LERBCBLS,Leukoerythroblastosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202428,LEU1,Lymphocyte Antigen T1/Leu-1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202429,LEU16,Membrane Spanning 4-Domains A1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202432,LEU3,T-Cell Surface Antigen T4/Leu-3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176341,LFA1,Lymphocyte Function-Associated Antigen 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C184702,LNEXCPSD,Lymph Node Extracapsular Spread,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181493,LNININD,Lymph Node Involvement Indicator,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C189620,LNINNUM,Number of Lymph Nodes Involved,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C124448,LNSTATE,Lymph Node State,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181480,LOBLINF,Lobular Inflammation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181482,LPGNLMLG,Large Lipogranuloma,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178035,LYEPIENT,Intraepithelial Lymphocytes/Enterocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C51949,LYM,Lymphocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98751,LYMCE,Lymphocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C74613,LYMMCE,Lymphoma Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C186078,LYMMCECE,Lymphoma Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187947,LYMPAGG,Lymphoid Aggregates,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127766,LYMPHINV,Lymphatic Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181488,MALLBOD,Mallory Body,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C111247,MASTCECE,Mast Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C221650,MAXDLMD,Max Dimension Largest Metastatic Deposit,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181481,MCGNLM,Microgranuloma,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135469,MCINTINF,Mononuc Cell Interstitial Inflammation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181487,MEGAMITC,Megamitochondria,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127628,MERCECE,Maturing Erythroid/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98754,METAMYCE,Metamyelocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C90424,MIEXAM,Microscopic Examination,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135470,MITOFIG,Mitotic Figure,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C138982,MITOSCR,Mitotic Score,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204673,MKCPRLF,Megakaryocyte Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202426,MLANA,Melan-A,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139094,MLH1,MutL Homolog 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C186203,MLH3,MutL Homolog 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139093,MMRPINTP,Mismatch Repair Proteins Interpretation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C185932,MMRPROT,MMR Proteins,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154757,MNC,Mononuclear Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178038,MNCINLLP,Infilt of Mono Cells in Lamina Propria,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187677,MONOBLCE,Monoblasts/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98872,MONOCE,Monocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181486,MPHGPIG,"Macrophage, Pigmented",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139095,MSH2,MutS Homolog 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C186204,MSH3,MutS Homolog 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139096,MSH6,MutS Homolog 6,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135471,MSNGMTRX,Mesangial Matrix,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181479,MVSTS,Microvesicular Steatosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204681,MYCEPRLF,Myeloid Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98868,MYCYCE,Myelocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154803,MYFIBROS,Myelofibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202430,NCAM1,Neural Cell Adhesion Molecule 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181492,NCRPLEOM,Nuclear Pleomorphism,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154801,NEOCE,Neoplastic Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C123556,NEOCECE,Neoplastic Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187701,NEUTBCE,Neutrophils Band Form/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178044,NEUTEPI,Neutrophils in Epithelium,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178043,NEUTLP,Neutrophils in Lamina Propria,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187679,NEUTSGCE,"Neutrophils, Segmented/Total Cells",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C123558,NKX2_1,NK2 Homeobox 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127767,NORMCECE,Normal Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181656,NT5E,Ecto-5'-Nucleotidase,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181489,NUCLGLCG,"Nuclei, Glycogenated",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C18000,OVLTGRD,Overall Tumor Grade,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C179766,P16INK4A,p16-INK4A,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C186205,P53,Tumor Protein p53,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C80204,PAP,Prostatic Acid Phosphatase,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C142348,PAX3FKHR,PAX3-FKHR Fusion Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C123559,PCTISCA,Percentage of In situ Carcinoma,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154807,PDL1,Programmed Death Ligand 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135472,PECAM1,Platelet Endo Cell Adhesion Molecule 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98869,PLSMCECE,Mature Plasma Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187987,PLSTCECE,Total Plasma Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202427,PMEL,Premelanosome Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C184700,PMLIGCE,Premalignant Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C184701,PMLIGCEM,Premalignant Cell Morphology,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178040,PMNEPI,Polymorphonuclear Cells in Epithelium,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178039,PMNINLLP,Infilt of PMN Cells in Lamina Propria,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C186206,PMS1,PMS1 Homolog 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C139097,PMS2,PMS1 Homolog 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127634,PMYCECE,Proliferating Myeloid Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127768,PNLINV,Perineural Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176339,PNTHCEMP,Paneth Cell Metaplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181483,PORTINF,Portal Inflammation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C117846,PROGESTR,Progesterone Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187678,PROMONCE,Promonocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C98773,PROMYCE,Promyelocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135473,PTBCPLTS,Peritubular Capillaritis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C147470,PTEN,Phosphatase and Tensin Homolog,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C189346,PYKCE,Pyknotic Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178047,PYSACMSB,Polysaccharides and Mucosubstances,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187680,RETICE,Reticulocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154804,ROS1,ROS1 Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204675,RTCNFBRO,Reticulin Fibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202425,S100,S100 Calcium Binding Proteins,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127769,S100A7,S100 Calcium Binding Protein A7,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127635,S100B,S100 Calcium-Binding Protein B,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202424,SCARD1,"Scavenger Receptor Class D, Member 1",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C199680,SCFR,Mast/Stem Cell Growth Factor Rec Kit,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C201448,SGMGDIST,Surgical Margin Distance,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C177569,SGMGIREG,Surgical Margin Involvement Region,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C123560,SGMGSTAT,Surgical Margins Status,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C202423,SOX10,SRY-Box Transcription Factor 10,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127770,STRMCECE,Stromal Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181477,STSEXT,Steatosis Extent,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181478,STSLOC,Steatosis Location,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204676,TACSTD2,Tumor Assoc Calcium Signal Transducer 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C181491,TBLFRM,Tubule Formation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C117861,TGFB1,Transforming Growth Factor Beta 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C41145,THICK,Thickness,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204677,TIGIT,TIGIT,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204678,TILY,Tumor-Infiltrating Lymphocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176340,TISABNUM,Number of Abnormal Tissue Samples,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C204679,TLS,Tertiary Lymphoid Structures,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187951,TMBRDCFG,Tumor Border Configuration,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187949,TMDIFF,Tumor Differentiation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C214715,TMINLIND,Tumor Infiltration Indicator,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187950,TMINLPTN,Tumor Infiltration Pattern,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C154800,TRCETMCE,Transitional Cells/Tumor Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135474,TUBATRO,Tubular Atrophy,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135475,TUBULTIS,Tubulitis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C178046,TUMRGR,Tumor Regression,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C176333,ULCER,Ulceration,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C112241,UNSPCE,Unspecified Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C127772,VASINV,Vascular Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C135476,VFBINTMT,Vascular Fibrous Intimal Thickening,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C51948,WBC,Leukocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C25345,WIDTH,Width,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C191306,ALPHANGL,Alpha Angle,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C25244,AREA,Area,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C178018,ASMMASS,Appendicular Skeletal Muscle Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221667,ATFV,Non-Adipose Tissue Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221416,ATV,Adipose Tissue Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C191307,BETAANGL,Beta Angle,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C147472,BMC,Bone Mineral Content,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C61545,BMD,Bone Mineral Density,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C147473,BMDT,Bone Mineral Density T-Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139217,BMDZ,Bone Mineral Density Z-Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139223,BMMTABDT,"Brooke mMRC MMT Score, Abduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139225,BMMTDORS,"Brooke mMRC MMT Score, Dorsiflexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139227,BMMTEVE,"Brooke mMRC MMT Score, Eversion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139220,BMMTEXT,"Brooke mMRC MMT Score, Extension",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139222,BMMTFLX,"Brooke mMRC MMT Score, Flexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139226,BMMTINV,"Brooke mMRC MMT Score, Inversion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139224,BMMTLR,"Brooke mMRC MMT Score, Lat. Rotat.",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139221,BMMTPF,"Brooke mMRC MMT Score, Plantar Flex",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139218,BODYFATP,Body Fat Percentage,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221652,EMCLNPV,EMCL Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221654,EMCLNTW,EMCL Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221653,EMCLNTWV,EMCL Norm for Tissue Water Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181501,ENDURM,Muscle Endurance,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C158256,FATMASS,Fat Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C154909,FOCLOIND,Fontanelle Closure Indicator,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221655,GLYGNPV,Glycogen Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221657,GLYGNTW,Glycogen Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221656,GLYGNTWV,Glycogen Norm for Tissue Water Vol,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181502,GPBAEST,Greulich and Pyle Bone Age Estimation,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139210,GRIPSTR,Grip Strength,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221658,IMCLNPV,IMCL Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221660,IMCLNTW,IMCL Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221659,IMCLNTWV,IMCL Norm for Tissue Water Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181496,ISOMSABD,"Isometric Muscle Strength, Abduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181500,ISOMSADD,"Isometric Muscle Strength, Adduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181497,ISOMSDOR,"Isometric Muscle Strength, Dorsiflexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181499,ISOMSER,"Isometric Muscle Strength, Extern Rotat",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139215,ISOMSEXT,"Isometric Muscle Strength, Extension",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139216,ISOMSFL,"Isometric Muscle Strength, Flexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C181498,ISOMSIR,"Isometric Muscle Strength, Intern Rotat",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C158257,LEANMASS,Lean Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221668,MGBDGR,Myoglobin Deoxygenation Rate,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221669,MGBDGT,Myoglobin Deoxygenation Time,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221670,MGBRGTC,Myoglobin Reoxygenation Time Constant,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C167264,MKEXAM,Musculoskeletal System Examination,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139231,MMTABDT,"MRC MMT Score, Abduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139233,MMTDORS,"MRC MMT Score, Dorsiflexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139235,MMTEVE,"MRC MMT Score, Eversion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139228,MMTEXT,"MRC MMT Score, Extension",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139230,MMTFLX,"MRC MMT Score, Flexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139234,MMTINV,"MRC MMT Score, Inversion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139232,MMTLR,"MRC MMT Score, Lat. Rotat.",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139229,MMTPF,"MRC MMT Score, Plantar Flex",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221661,MYOPNPV,Myoglobin Peak Norm for Phantom Vol,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221663,MYOPNTW,Myoglobin Peak Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221662,MYOPNTWV,Myoglobin Peak Norm for Tissue Water Vol,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139211,PINCHSTR,Pinch Strength,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139212,ROMABDT,"Range of Motion, Abduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139214,ROMDORFL,"Range of Motion, Dorsiflexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139213,ROMEXT,"Range of Motion, Extension",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221665,SATV,Subcutaneous Adipose Tissue Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C128986,SGBESCR,Sharp/Genant Bone Erosion Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C128987,SGJSNSCR,Sharp/Genant JSN Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C178017,SMMASS,Skeletal Muscle Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C128988,SVBESCR,Sharp/Van der Heijde Bone Erosion Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C128989,SVJSNSCR,Sharp/Van der Heijde JSN Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C127774,SWLLIND,Swollen Indicator,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C127775,TNDRIND,Tenderness Indicator,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C221664,VATV,Visceral Adipose Tissue Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C147471,DIAZOINH,Diameter of the Zone of Inhibition,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
 C158255,FLMUTIND,Flagged Mutations Present Indicator,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
 C116255,ICNETAS,Inhibitory Concentration Net Assessment,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
@@ -5202,81 +5317,6 @@ C139124,MIC95R,Microbial IC95 Reference Control Result,MS,Microbiology Susceptib
 C139125,MIC95S,Microbial IC95 Subject Result,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
 C85540,MICROSUS,Microbial Susceptibility,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
 C156550,SUSMUIND,Susceptibility Score Mutations Indicator,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
-C117883,DXCRITMT,Diagnostic Criteria Met,MSFATS,Multiple Sclerosis Findings About,MSFATSCD,MSFATS,NCI_EVS
-C117884,LOCONSET,Localization of Onset,MSFATS,Multiple Sclerosis Findings About,MSFATSCD,MSFATS,NCI_EVS
-C117885,OUNIMULT,Onset Unifocal or Multifocal,MSFATS,Multiple Sclerosis Findings About,MSFATSCD,MSFATS,NCI_EVS
-C191306,ALPHANGL,Alpha Angle,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C25244,AREA,Area,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C178018,ASMMASS,Appendicular Skeletal Muscle Mass,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221667,ATFV,Non-Adipose Tissue Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221416,ATV,Adipose Tissue Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C191307,BETAANGL,Beta Angle,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C147472,BMC,Bone Mineral Content,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C61545,BMD,Bone Mineral Density,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C147473,BMDT,Bone Mineral Density T-Score,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139217,BMDZ,Bone Mineral Density Z-Score,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139223,BMMTABDT,"Brooke mMRC MMT Score, Abduction",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139225,BMMTDORS,"Brooke mMRC MMT Score, Dorsiflexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139227,BMMTEVE,"Brooke mMRC MMT Score, Eversion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139220,BMMTEXT,"Brooke mMRC MMT Score, Extension",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139222,BMMTFLX,"Brooke mMRC MMT Score, Flexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139226,BMMTINV,"Brooke mMRC MMT Score, Inversion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139224,BMMTLR,"Brooke mMRC MMT Score, Lat. Rotat.",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139221,BMMTPF,"Brooke mMRC MMT Score, Plantar Flex",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139218,BODYFATP,Body Fat Percentage,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221652,EMCLNPV,EMCL Norm for Phantom Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221654,EMCLNTW,EMCL Norm for Tissue Weight,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221653,EMCLNTWV,EMCL Norm for Tissue Water Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181501,ENDURM,Muscle Endurance,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C158256,FATMASS,Fat Mass,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C154909,FOCLOIND,Fontanelle Closure Indicator,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221655,GLYGNPV,Glycogen Norm for Phantom Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221657,GLYGNTW,Glycogen Norm for Tissue Weight,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221656,GLYGNTWV,Glycogen Norm for Tissue Water Vol,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181502,GPBAEST,Greulich and Pyle Bone Age Estimation,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139210,GRIPSTR,Grip Strength,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221658,IMCLNPV,IMCL Norm for Phantom Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221660,IMCLNTW,IMCL Norm for Tissue Weight,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221659,IMCLNTWV,IMCL Norm for Tissue Water Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181496,ISOMSABD,"Isometric Muscle Strength, Abduction",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181500,ISOMSADD,"Isometric Muscle Strength, Adduction",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181497,ISOMSDOR,"Isometric Muscle Strength, Dorsiflexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181499,ISOMSER,"Isometric Muscle Strength, Extern Rotat",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139215,ISOMSEXT,"Isometric Muscle Strength, Extension",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139216,ISOMSFL,"Isometric Muscle Strength, Flexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181498,ISOMSIR,"Isometric Muscle Strength, Intern Rotat",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C158257,LEANMASS,Lean Mass,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221668,MGBDGR,Myoglobin Deoxygenation Rate,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221669,MGBDGT,Myoglobin Deoxygenation Time,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221670,MGBRGTC,Myoglobin Reoxygenation Time Constant,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C167264,MKEXAM,Musculoskeletal System Examination,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139231,MMTABDT,"MRC MMT Score, Abduction",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139233,MMTDORS,"MRC MMT Score, Dorsiflexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139235,MMTEVE,"MRC MMT Score, Eversion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139228,MMTEXT,"MRC MMT Score, Extension",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139230,MMTFLX,"MRC MMT Score, Flexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139234,MMTINV,"MRC MMT Score, Inversion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139232,MMTLR,"MRC MMT Score, Lat. Rotat.",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139229,MMTPF,"MRC MMT Score, Plantar Flex",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221661,MYOPNPV,Myoglobin Peak Norm for Phantom Vol,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221663,MYOPNTW,Myoglobin Peak Norm for Tissue Weight,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221662,MYOPNTWV,Myoglobin Peak Norm for Tissue Water Vol,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139211,PINCHSTR,Pinch Strength,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139212,ROMABDT,"Range of Motion, Abduction",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139214,ROMDORFL,"Range of Motion, Dorsiflexion",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139213,ROMEXT,"Range of Motion, Extension",MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221665,SATV,Subcutaneous Adipose Tissue Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C128986,SGBESCR,Sharp/Genant Bone Erosion Score,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C128987,SGJSNSCR,Sharp/Genant JSN Score,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C178017,SMMASS,Skeletal Muscle Mass,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C128988,SVBESCR,Sharp/Van der Heijde Bone Erosion Score,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C128989,SVJSNSCR,Sharp/Van der Heijde JSN Score,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C127774,SWLLIND,Swollen Indicator,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C127775,TNDRIND,Tenderness Indicator,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C221664,VATV,Visceral Adipose Tissue Volume,MUSCTS,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C25515,EVENTFRQ,Event Frequency,NTFATS,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,NTFATS,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,NTFATS,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
 C181572,ABRIAL,"ABR Wave I, Absolute Latency",NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C181574,ABRVA,"ABR Wave V, Amplitude",NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C181573,ABRVAL,"ABR Wave V, Absolute Latency",NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
@@ -5428,57 +5468,6 @@ C120720,THICKMIN,"Thickness, Minimum",OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
 C120721,THICKMN,"Thickness, Mean",OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
 C120722,THICKSD,"Thickness, Standard Deviation",OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
 C147477,VACGRFRQ,Visual Acuity Card Grating Frequency,OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
-C156564,ANATRESP,Anatomic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C94536,BESTRESP,Best Overall Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135477,BMIVLIND,Bone Marrow Involvement Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C173307,BMRRESP,Bone Marrow Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C204684,BMRSTAT,Bone Marrow Status,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C132455,BONERESP,Bone Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123619,CLINRESP,Clinical Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C202441,CLYMRESP,Circulating Lymphocytes Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C204683,CNSSTAT,CNS Status,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C38469,CONSYMPT,Constitutional Symptoms,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135478,CPRFSTAT,Clinical Performance Status,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123620,CYTORESP,Cytogenetic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123621,DRCRIND,Disease Recurrence Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C204685,EMDRESP,Extramedullary Disease Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C201498,HEMAIMP,Hematologic Improvement,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123622,HEMARESP,Hematologic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C202443,HGBRESP,Hemoglobin Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135479,LIVRRESP,Liver Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123623,METBRESP,Metabolic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C132456,METSIND,Metastatic Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C172576,MJPTHIND,Major Pathological Response Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C172577,MNPTHIND,Minor Pathological Response Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123624,MOLRESP,Molecular Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C172578,MRDIND,Minimal Residual Disease Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C124433,MRDRESP,Minimal Residual Disease Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123625,MRPHRESP,Morphologic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C204688,NEURSTAT,Neurological Status,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C142362,NEWLIND,New Lesion Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C103420,NEWLPROG,New Lesion Progression,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C142363,NEWLWIND,New Lesion Worsening Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135480,NTERESP,Non-Target Enhancing Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C142364,NTLWIND,Non-Target Lesion Worsening Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135481,NTNERESP,Non-Target Non-Enhancing Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C94535,NTRGRESP,Non-target Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C96613,OVRLRESP,Overall Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123626,PATHRESP,Pathologic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C204686,PBLTIND,Peripheral Blasts Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C202442,PLATRESP,Platelets Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C123627,RDIORESP,Radiologic Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C132457,SFTSRESP,Soft Tissue Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135482,SPLNRESP,Spleen Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C135483,STRUSTAT,Steroid Use Status,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C124434,SYMPTDTR,Symptomatic Deterioration,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C132458,TMRESP,Tumor Marker Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C202440,TRGNRESP,Target Nodal Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C94534,TRGRESP,Target Response,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C204687,TSCDIND,Testicular Disease Indicator,ONCRTS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C179451,PRYSTUOG,Primary Site of Tumor Origin,PAFATS,Pancreatic Cancer Findings About,PAFATSCD,PAFATS,NCI_EVS
-C184466,DCHOLEST,Dietary Cholesterol,PDFATS,Pediatric Findings About,PDFATSCD,PDFATS,NCI_EVS
-C172460,DFATT,"Dietary Fat, Total",PDFATS,Pediatric Findings About,PDFATSCD,PDFATS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,PDFATS,Pediatric Findings About,PDFATSCD,PDFATS,NCI_EVS
 C37927,COLOR,Color,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C95110,CONSIST,Consistency,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C25333,DEPTH,Depth,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
@@ -5489,8 +5478,6 @@ C25334,LENGTH,Length,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C25677,SHAPE,Shape,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C25757,ULCER,Ulceration,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C25345,WIDTH,Width,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C170617,QOLIMP,QOL Impact,PSFATS,Psoriasis Findings About,PSFATSCD,PSFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,PSFATS,Psoriasis Findings About,PSFATSCD,PSFATS,NCI_EVS
 C210259,AALPHAC,"2-Amino-9H-pyrido[2,3-b]indole",PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C204641,ABP4,4-Aminobiphenyl,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210260,ACETAMID,Acetamide,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
@@ -5940,6 +5927,53 @@ C181525,TSXPARTN,Total Number of Sexual Partners,RP,Reproductive System Findings
 C154881,ULCERIND,Ulcer Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C189359,VAGDLVN,Number of Vaginal Deliveries,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C176359,VBSFRQD,Vaginal Bleeding/Spotting Freq Desc,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C156564,ANATRESP,Anatomic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C94536,BESTRESP,Best Overall Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135477,BMIVLIND,Bone Marrow Involvement Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C173307,BMRRESP,Bone Marrow Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C204684,BMRSTAT,Bone Marrow Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C132455,BONERESP,Bone Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123619,CLINRESP,Clinical Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C202441,CLYMRESP,Circulating Lymphocytes Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C204683,CNSSTAT,CNS Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C38469,CONSYMPT,Constitutional Symptoms,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135478,CPRFSTAT,Clinical Performance Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123620,CYTORESP,Cytogenetic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123621,DRCRIND,Disease Recurrence Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C204685,EMDRESP,Extramedullary Disease Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C201498,HEMAIMP,Hematologic Improvement,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123622,HEMARESP,Hematologic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C202443,HGBRESP,Hemoglobin Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135479,LIVRRESP,Liver Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123623,METBRESP,Metabolic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C132456,METSIND,Metastatic Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C172576,MJPTHIND,Major Pathological Response Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C172577,MNPTHIND,Minor Pathological Response Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123624,MOLRESP,Molecular Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C172578,MRDIND,Minimal Residual Disease Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C124433,MRDRESP,Minimal Residual Disease Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123625,MRPHRESP,Morphologic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C204688,NEURSTAT,Neurological Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C142362,NEWLIND,New Lesion Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C103420,NEWLPROG,New Lesion Progression,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C142363,NEWLWIND,New Lesion Worsening Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135480,NTERESP,Non-Target Enhancing Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C142364,NTLWIND,Non-Target Lesion Worsening Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135481,NTNERESP,Non-Target Non-Enhancing Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C94535,NTRGRESP,Non-target Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C96613,OVRLRESP,Overall Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123626,PATHRESP,Pathologic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C204686,PBLTIND,Peripheral Blasts Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C202442,PLATRESP,Platelets Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C123627,RDIORESP,Radiologic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C132457,SFTSRESP,Soft Tissue Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135482,SPLNRESP,Spleen Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C135483,STRUSTAT,Steroid Use Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C124434,SYMPTDTR,Symptomatic Deterioration,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C132458,TMRESP,Tumor Marker Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C202440,TRGNRESP,Target Nodal Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C94534,TRGRESP,Target Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C204687,TSCDIND,Testicular Disease Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C171499,ADEVAIND,Appropriate Developmental Age Indicator,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C127060,AGESTSMK,Age Started Smoking,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C198360,BIO1DRN,"Num 1st Degree Relatives, Biological",SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
@@ -6037,25 +6071,6 @@ C186215,FUAVSTAT,Follow-Up Availability Status,SS,Subject Status,SSTESTCD,SSTEST
 C204696,INFOSCSS,Information Source for Survival Status,SS,Subject Status,SSTESTCD,SSTEST,NCI_EVS
 C209697,LSCFADTC,Latest Date Subject Confirmed Alive,SS,Subject Status,SSTESTCD,SSTEST,NCI_EVS
 C25717,SURVSTAT,Survival Status,SS,Subject Status,SSTESTCD,SSTEST,NCI_EVS
-C124437,ACUTSTRS,Most Severe Acute Stressor,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124438,AGEEPSD1,Age At First Episode,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124439,AGEHOSP1,Age At First Hospitalization,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124440,AGETRT1,Age At First Treatment,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124441,CHRNSTRS,Most Severe Chronic Stressor,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124442,CLININD,Clinic Stay Indicator,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124281,EPSDNUM,Number of Episodes,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124443,HOSPNUM,Number Of Hospitalizations,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C35461,LONGCRSE,Longitudinal Course,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C124444,TRTSETT,Treatment Setting,SZFATS,Schizophrenia Findings About,SZFATSCD,SZFATS,NCI_EVS
-C102626,DRSTAT,Drug Resistance Status,TBFATS,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
-C96684,LDIAM,Longest Diameter,TBFATS,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,TBFATS,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
-C127787,TOTNUM,Total Number,TBFATS,Tuberculosis Findings About,TBFATSCD,TBFATS,NCI_EVS
-C127060,AGESTSMK,Age Started Smoking,TIFATS,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
-C210203,LDURABS,Longest Duration of Abstinence,TIFATS,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
-C210222,TCSCOIND,Tobacco Cessation Counseling Indicator,TIFATS,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
-C204716,UPCCODE,UPC Code,TIFATS,Tobacco Findings About,TIFATSCD,TIFATS,NCI_EVS
 C214746,ACBSPPD,Absolute Change Baseline in Sum of PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C103347,ACHNAD,Absolute Change From Nadir,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C135506,ACNDOREN,Absolute Change Nadir in Organ Enlarge,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6151,34 +6166,19 @@ C94525,TUMERGE,Tumor Merged,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NC
 C94523,TUMIDENT,Tumor Identification,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C96642,TUSPLIT,Tumor Split,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C119569,VSLIDENT,Vessel Lesion Identification,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
-C94866,BLDFLRT,Blood Flow Rate,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C64546,COLOR,Color,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C135522,GRFTSTAT,Graft Status,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C179823,HEMAIND,Hematoma Indicator,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C25334,LENGTH,Length,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C189437,PDFF,Proton Density Fat Fraction,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C130195,RNLANUM,Number of Renal Arteries,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C130196,RNLVNUM,Number of Renal Veins,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C179824,SGDMGIND,Surgical Damage Indicator,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C198401,UREXAM,Urinary System Examination,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C221690,URFLRT,Urine Flow Rate,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C221691,URFLTM,Urine Flow Time,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C221692,VOIDVOL,Voided Volume,URNSTS,Urinary System,URNSTSCD,URNSTS,NCI_EVS
-C88069,AEDCHIND,AE Improve/Resolve with Dechallenge Ind,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C88070,AERCHIND,AE Reappear/Worsen with Rechallenge Ind,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C25377,APPEAR,Appearance,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C198212,DISTR,Distribution,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C124281,EPSDNUM,Number of Episodes,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C187676,GCIRCPI,Greatest Circ at Point of Interest,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C96684,LDIAM,Longest Diameter,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C174277,LESNUM,Number of Lesions,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C101687,NDLGAUGE,Needle Gauge,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C187675,NEARJNT,Nearest Joint,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C127786,OCCUR,Occurrence Indicator,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C184724,PDAIND,Prevents Daily Activities Indicator,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C198213,PRURIND,Pruritus Indicator,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C25676,SEV,Severity/Intensity,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
-C82528,TOXGR,Toxicity Grade,VNFATS,Vaccines Findings About,VNFATSCD,VNFATS,NCI_EVS
+C94866,BLDFLRT,Blood Flow Rate,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C64546,COLOR,Color,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C135522,GRFTSTAT,Graft Status,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C179823,HEMAIND,Hematoma Indicator,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C25334,LENGTH,Length,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C189437,PDFF,Proton Density Fat Fraction,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C130195,RNLANUM,Number of Renal Arteries,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C130196,RNLVNUM,Number of Renal Veins,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C179824,SGDMGIND,Surgical Damage Indicator,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C198401,UREXAM,Urinary System Examination,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C221690,URFLRT,Urine Flow Rate,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C221691,URFLTM,Urine Flow Time,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
+C221692,VOIDVOL,Voided Volume,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
 C87304,ABI,Ankle-Brachial Index,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C103346,ABSKNF,Abdominal Skinfold Thickness,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C181553,ARMSPAN,Arm Span,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
