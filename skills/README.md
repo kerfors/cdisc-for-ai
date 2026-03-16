@@ -17,7 +17,7 @@ In regulated environments, "I asked AI and it gave a good answer" is not defensi
 | Skill | Purpose | Input |
 |---|---|---|
 | [`sdtm-ct-analysis/`](sdtm-ct-analysis/) | Structural categorization of SDTM Controlled Terminology | NCI EVS SDTM Terminology file |
-| [`specimen-findings-ct-mapping/`](specimen-findings-ct-mapping/) | Map specimen-based measurement terms to CDISC CT and COSMoS specifications | [`Study_Design_Merge.xlsx`](../cosmos-bc-dss/interim/Study_Design_Merge.xlsx) |
+| [`specimen-findings-ct-mapping/`](specimen-findings-ct-mapping/) | Map specimen-based measurement terms to CDISC CT and COSMoS specifications | [`Specimen_Findings.xlsx`](../sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
 
 `sdtm-ct-analysis` is a two-step inductive analysis workflow — category discovery followed by profile generation. Produces structural understanding of SDTM CT, not operational mappings.
 
