@@ -43,8 +43,8 @@ Each reference file is self-describing — with a README sheet documenting colum
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
 | [`sdtm-findings/`](sdtm-findings/) | Specimen-based | Domains with `Specimen_Based=Yes` in Domain_Metadata | `Specimen_Findings.xlsx` |
+| | Measurement | VS, MK, CV (EG deferred) | `Measurement_Findings.xlsx` |
 | | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
-| | Measurement | VS, EG, MK, CV | `Measurement_Findings.xlsx` *(planned)* |
 
 Consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The link between sheets is TESTCD. This two-step structure matches the mapping workflow: first resolve a term to a concept, then select the specific measurement variant.
 
@@ -84,7 +84,7 @@ graph TD
 
     subgraph sdtm-findings
         SF["Specimen_Findings.xlsx"]
-        MF["Measurement_Findings.xlsx ❋"]
+        MF["Measurement_Findings.xlsx"]
         IF["Instrument_Findings.xlsx ❋"]
     end
 
@@ -104,6 +104,10 @@ graph TD
     TI --> SF
     DM --> SF
     BCD --> SF
+
+    TI --> MF
+    DM --> MF
+    BCD --> MF
 
     SF --> SK
 

@@ -114,7 +114,7 @@ Full detail in [COSMoS_Behavioural_Analysis.md](cosmos-bc-dss/docs/COSMoS_Behavi
 | Specimen Findings | LB, MB, MI, CP, BS | TESTCD × specimen × scale | Two sheets: Test_Identity + Measurement_Specs |
 | Immunogenicity Findings | IS | Antibody class × target × scale | Own structure needed |
 | Genomics Findings | GF | Assessment × scale × method | Two-sheet possible, different axis |
-| Measurement Findings | VS, EG, MK, CV | Subject-level measurement | Single sheet |
+| Measurement Findings | VS, EG, MK, CV | Subject-level measurement | Two sheets (VS, MK, CV). EG deferred. |
 | Instrument Findings | QS, FT, RS | Question within instrument | Single sheet + hierarchy |
 | Domain-specific Findings | DD, RP, SC, SR, UR | Domain-specific assessment | Single sheet |
 | Clinical Assessment | FA, TR, TU, IE | Finding about event/intervention | Single sheet + RELREC |
