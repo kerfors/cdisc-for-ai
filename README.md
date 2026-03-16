@@ -10,6 +10,8 @@ A significant share of automated protocol-to-CDISC translation failures are not 
 
 This repository builds flat, self-describing reference files that make existing CDISC standards machine-actionable — following FAIR data principles. Laboratory and measurement standards are the focus area.
 
+For how the analytical layers fit together — CT discovery, domain classification, and COSMoS behavioural analysis — see [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
+
 ## Context
 
 The Unified Study Definitions Model (USDM), CDISC's 360i initiative, and the broader move toward structured, machine-readable protocols are creating demand for standards that work as computable building blocks — not just documentation. When study designs are expressed as data, the standards they reference must also be data.
@@ -27,12 +29,14 @@ Each reference file is self-describing — with a README sheet documenting colum
 | [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | `SDTM_Test_Identity.xlsx` — domain-level test codes | NCI EVS, NCIt, UMLS |
 | | | `SDTM_Instrument_Identity.xlsx` — instrument-level test codes | |
 | [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? | `COSMoS_BC_DSS.xlsx` — flattened BC/DSS interim file | COSMoS BC/DSS exports |
+| | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) | |
 
 ### Reference track
 
 | Track | Purpose | Output |
 |---|---|---|
-| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata — structural types, COSMoS coverage flags, specimen/instrument classification | `SDTM_Domain_Metadata.xlsx` |
+| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata — structural types, COSMoS coverage flags, specimen/instrument classification | `SDTM_Domain_Metadata.xlsx` (pipeline input) |
+| | Structural type + behavioural group classification per domain | `SDTM_Domain_Analysis.xlsx` (analysis) |
 
 ### Consumer tracks
 
@@ -55,84 +59,58 @@ AI mapping skills that consume the reference files.
 
 ## Data flow
 
+```mermaid
+graph TD
+    subgraph Sources
+        EVS["NCI EVS SDTM CT"]
+        COS["COSMoS exports"]
+    end
+
+    subgraph sdtm-test-codes
+        TI["SDTM_Test_Identity.xlsx"]
+        II["SDTM_Instrument_Identity.xlsx"]
+    end
+
+    subgraph cosmos-bc-dss
+        BCD["COSMoS_BC_DSS.xlsx"]
+        BA["Behavioural_Analysis.md"]
+        DPI["Domain_Pattern_Inventory.xlsx"]
+    end
+
+    subgraph sdtm-domain-reference
+        DM["SDTM_Domain_Metadata.xlsx"]
+        DA["SDTM_Domain_Analysis.xlsx"]
+    end
+
+    subgraph sdtm-findings
+        SF["Specimen_Findings.xlsx"]
+        MF["Measurement_Findings.xlsx ❋"]
+        IF["Instrument_Findings.xlsx ❋"]
+    end
+
+    subgraph skills
+        SK["specimen-findings-ct-mapping"]
+    end
+
+    EVS --> TI
+    EVS --> II
+    COS --> BCD
+    BCD --> BA
+    BCD --> DPI
+    EVS --> DM
+    BCD --> DA
+    DM --> DA
+
+    TI --> SF
+    DM --> SF
+    BCD --> SF
+
+    SF --> SK
+
+    DO["SDTM_Domain_Overview.md<br/>repo root"]
 ```
-NCI EVS SDTM CT
-      │
-      ▼
-sdtm-test-codes/ ──► SDTM_Test_Identity.xlsx
-      │           ──► SDTM_Instrument_Identity.xlsx
-      │
-COSMoS exports
-      │
-      ▼
-cosmos-bc-dss/ ────► COSMoS_BC_DSS.xlsx (interim)
-      │
-sdtm-domain-reference/ ──► SDTM_Domain_Metadata.xlsx
-      │
-      ▼
-sdtm-findings/
-  ├── Specimen_Findings.xlsx        ← complete
-  ├── Instrument_Findings.xlsx      ← planned
-  └── Measurement_Findings.xlsx     ← planned
-      │
-      ▼
-skills/specimen-findings-ct-mapping/
-```
 
-## Pipeline pattern
-
-Each track follows the same data flow:
-
-```
-downloads/  →  interim/  →  machine_actionable/
-                              reports/
-                              docs/
-```
-
-- **downloads/** — cached source files, downloaded by notebooks, not committed to git
-- **interim/** — structurally complete pipeline artifacts, not yet enriched to reference quality
-- **machine_actionable/** — the reference files
-- **reports/** — QC and validation output, separate from reference files
-- **docs/** — track-level documentation and analysis write-ups
-
-Each notebook does one thing: **Extract/Flatten**, **Validate**, **Compare**, **Enrich**, or **Merge**. Validation and comparison are separated from production so QC can re-run independently when sources update. Details are documented in the notebooks themselves.
-
-## Repository structure
-
-```
-cdisc-for-ai/
-├── sdtm-test-codes/            ← source: CT extract + NCIt enrich
-│   ├── notebooks/
-│   ├── downloads/
-│   ├── interim/
-│   ├── machine_actionable/
-│   ├── reports/
-│   ├── docs/
-│   └── README.md
-├── cosmos-bc-dss/              ← source: COSMoS flatten + validate
-│   ├── notebooks/
-│   ├── downloads/
-│   ├── interim/
-│   ├── reports/
-│   ├── docs/
-│   └── README.md
-├── sdtm-domain-reference/      ← reference: domain metadata
-│   ├── machine_actionable/
-│   ├── reports/
-│   ├── docs/
-│   └── README.md
-├── sdtm-findings/              ← consumer: joined reference files
-│   ├── notebooks/
-│   ├── machine_actionable/
-│   ├── interim/
-│   ├── reports/
-│   ├── docs/
-│   └── README.md
-├── skills/
-│   ├── specimen-findings-ct-mapping/
-│   └── sdtm-ct-analysis/
-└── README.md
-```
+*❋ = planned*
 
 ## Design decisions
 
