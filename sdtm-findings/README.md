@@ -13,8 +13,8 @@ Each notebook consumes the same source files but applies different join logic an
 | Notebook | Structural type | Scope | Output |
 |---|---|---|---|
 | `Specimen_Findings.ipynb` | Specimen-based | LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR | `Specimen_Findings.xlsx` |
+| `Measurement_Findings.ipynb` | Measurement | VS, MK, CV (EG deferred) | `Measurement_Findings.xlsx` |
 | `Instrument_Findings.ipynb` | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
-| `Measurement_Findings.ipynb` | Measurement | VS, EG, MK, CV | `Measurement_Findings.xlsx` *(planned)* |
 
 ## Inputs (shared)
 
@@ -36,9 +36,9 @@ The link between sheets is TESTCD (and NCIt_Code for precision). This two-step s
 
 ## Current state
 
-`Specimen_Findings.xlsx` is complete and running. Coverage reflects COSMoS publication status — domains where COSMoS has not yet published dataset specializations (BS, CP, MS, PC, PP) show zero DSS rows. This is a source coverage gap, not a pipeline issue.
+`Specimen_Findings.xlsx` and `Measurement_Findings.xlsx` are complete and running. Coverage reflects COSMoS publication status — domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
 
-Instrument and Measurement notebooks are planned but not yet built.
+`Instrument_Findings.xlsx` is planned but not yet built.
 
 ## Pipeline position
 
@@ -50,10 +50,6 @@ sdtm-domain-reference/SDTM_Domain_Metadata.xlsx  ──┘
                                                      │
                     sdtm-findings/machine_actionable/
                       ├── Specimen_Findings.xlsx
-                      ├── Instrument_Findings.xlsx   (planned)
-                      └── Measurement_Findings.xlsx  (planned)
+                      ├── Measurement_Findings.xlsx
+                      └── Instrument_Findings.xlsx   (planned)
 ```
-
-## Provenance
-
-Evolved from `Study_Design_Merge.ipynb` (previously in cosmos-bc-dss). The merge notebook was the first working prototype of a joined reference file; the sdtm-findings track formalizes the approach and splits by structural type.

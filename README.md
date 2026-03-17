@@ -4,17 +4,13 @@ Machine-actionable reference files for CDISC clinical data standards — designe
 
 ## Why
 
-CDISC standards are published as PDFs, spreadsheets, and APIs. They can be used by automated systems, but AI puts new focus on making them work at the language level — for both human and artificial intelligence. The information is there. But it is scattered across multiple sources with no machine-traversable connections between them, and the flat formats hide the semantic structure that both humans and automated systems need to reason correctly.
+Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. In specimen-based and measurement domains, each Dataset Specialization adds an identifiable measurement specification — specimen, method, units, LOINC. But these linkages are scattered across disconnected sources. The CT file presents test codes as submission strings. Reaching the measurement specification requires navigating across BC and DSS exports. A human must mentally reconstruct the connections.
 
-A significant share of automated protocol-to-CDISC translation failures are not caused by missing vocabulary — the concepts exist. They fail because the standards lack the machine-traversable connections needed for automated systems to resolve them. These are infrastructure gaps, not knowledge gaps.
+The move toward structured study definitions (USDM, 360i, OpenStudyBuilder) pushes this specificity upstream — into study design, where it needs to be explicit and machine-readable from the start. Study designers need to *select from* identifiable measurement specifications, not reconstruct them downstream through implicit decisions during test ordering, data collection, and SDTM mapping.
 
-This repository builds flat, self-describing reference files that make existing CDISC standards machine-actionable — following FAIR data principles. Laboratory and measurement standards are the focus area.
+This repository makes the linkages explicit. Each reference file puts related data side by side in rows, with clear keys linking across sheets and tracks — reachable from one place for humans, AI systems, and rule engines alike. The failures this addresses are not knowledge gaps — the concepts exist. They are infrastructure gaps: missing machine-traversable connections between concepts that already exist.
 
 For how the analytical layers fit together — CT discovery, domain classification, and COSMoS behavioural analysis — see [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
-
-## Context
-
-The Unified Study Definitions Model (USDM), CDISC's 360i initiative, and the broader move toward structured, machine-readable protocols are creating demand for standards that work as computable building blocks — not just documentation. When study designs are expressed as data, the standards they reference must also be data.
 
 ## Tracks
 

@@ -3,19 +3,15 @@
 | | |
 |---|---|
 | **Document** | LLM prompt for specimen-based Findings CT mapping |
-| **Version** | 2.2 |
-| **Date** | 2026-03-13 |
+| **Version** | 3.0 |
+| **Date** | 2026-03-17 |
 | **Companion** | `Lab_SME_Curation_Guide.md` |
 
 ### Version log
 
 | Version | Date | Changes |
 |---|---|---|
-| 2.2 | 2026-03-13 | Reference file changed to Specimen_Findings.xlsx (from sdtm-findings track). Domain scope expanded to all specimen-based domains (driven by Domain_Metadata). Column Domains→SDTM_Domains. DS_Name added to output spec. Measurement_Specs scoped to specimen domains only. |
-| 2.1 | 2026-03-12 | Post-test-run fixes: rationale field relaxed to multi-sentence for complex matches; Panel row colour specified. |
-| 2.0 | 2026-03-12 | Two-level resolution (TESTCD → DS_Code). Generalized input columns. Reference file now Study_Design_Merge.xlsx. Step 2 specification resolution, Spec_Resolution column, inline spec hint parsing. Row fan-out per DS_Code. Evolved from SoA_CT_Mapping_Prompt v1.3. |
-| 1.3 | 2025-02-21 | Rule 5: added TEST to verbatim-copy list; Partial must carry candidate TESTCD |
-| 1.2 | 2025-02-21 | Review Notes as companion output; Rule 6 duplicate encodings |
+| 3.0 | 2026-03-17 | First production release. Source_Specimen input column. Selected always blank (hardened). Sibling row colour → amber. Three new review notes sections (domain distribution, duplicate detection, source quality). Spec hint precedence explicit. Version log collapsed. |
 | 1.0 | 2025-02-19 | Initial prompt |
 
 ---
@@ -66,7 +62,7 @@ A TESTCD qualifies as Sibling only if the base analyte is the **sole subject** �
 Named panels (CBC with differential, SPEP, Vectra DA) → one row, Match_Type `Panel`. Do not decompose. Note expected component TESTCDs in the rationale. Flag protocol-dependent or proprietary composition.
 
 ### Rule 4 — Specimen context feeds Step 2
-Specimen in the term string or Term_Group does not restrict TESTCD matching in Step 1 — but it makes specimen-specific result properties (excretion rate, ratio-to-creatinine) relevant Siblings to include. Specimen context is consumed in Step 2 for DS_Code resolution.
+Specimen in the term string, Source_Specimen column, or Term_Group does not restrict TESTCD matching in Step 1 — but it makes specimen-specific result properties (excretion rate, ratio-to-creatinine) relevant Siblings to include. Specimen context is consumed in Step 2 for DS_Code resolution.
 
 ### Rule 5 — Never fabricate
 Every TESTCD, TEST, NCIt C-code, NCIt Preferred Term, and DS_Code in the output must be copied verbatim from the reference file — exact spelling, punctuation, word order. Do not paraphrase, abbreviate, or reformat.
@@ -84,16 +80,19 @@ Runs inline for each TESTCD match where Has_COSMoS=Yes. Look up the TESTCD in Me
 
 ### Spec hint parsing
 
-Terms may carry inline specification context. Parse before matching:
+Terms may carry inline specification context. Parse before matching. Precedence (highest first):
+
+1. Explicit specimen in the term string ("Urine - Potassium" → URINE)
+2. `Source_Specimen` column value (when provided)
+3. `Term_Group` default specimen (Urinalysis → URINE)
 
 | Pattern | Extracts | Example |
 |---|---|---|
 | "Urine - Potassium" | specimen=URINE | Explicit prefix |
 | "hsCRP (quantitative)" | scale hint | Method qualifier |
 | "HbA1c (IFCC, mmol/mol)" | method=IFCC, unit hint | Inline qualifiers |
+| Source_Specimen=URINE | specimen=URINE | Per-term source value |
 | Urinalysis group | specimen=URINE | Term_Group default |
-
-Term_Group default specimen is a hint, not a constraint. Explicit specimen in the term string overrides it.
 
 ### Resolution logic
 
@@ -135,6 +134,7 @@ Excel file. One row per Term × TESTCD × DS_Code. TESTCDs without COSMoS covera
 | `Term_Group` | Blue | Group label as given |
 | `Term_ID` | Blue | Identifier as given |
 | `Term` | Blue | Original term verbatim |
+| `Source_Specimen` | Blue | Specimen from source system (when provided) |
 | `Match_Count` | Green | Total rows for this term (across all TESTCDs and DS_Codes) — supports filtering |
 | `TESTCD` | Green | From Test_Identity — blank for Panel and No_Match |
 | `TEST` | Green | From Test_Identity — blank for Panel and No_Match |
@@ -152,9 +152,9 @@ Excel file. One row per Term × TESTCD × DS_Code. TESTCDs without COSMoS covera
 | `Spec_Resolution` | Yellow | Full / Partial / None |
 | `Match_Type` | Grey | See table above |
 | `Match_Rationale` | Grey | Brief rationale: why this TESTCD matches this term. No_Match, Panel, and Partial may need multiple sentences. |
-| `Selected` | Grey | Blank — for SME review |
+| `Selected` | Grey | Always blank. Never pre-populate with Y, N, or any value. This column exists exclusively for SME curation decisions. |
 
-**Row colours:** No_Match = red · Partial = yellow · Panel = yellow · all others follow column colours.
+**Row colours:** No_Match = red · Sibling = amber · Partial = amber · Panel = amber · Direct follows column block colours.
 
 ### Review notes
 
@@ -164,3 +164,6 @@ Companion markdown (`Review_Notes_<Group>.md`) per Term_Group:
 2. **Panel notes** — each Panel term, composition certainty (standard / protocol-dependent / proprietary), expected component TESTCDs.
 3. **No_Match summary** — each unmatched term with a one-line gap reason.
 4. **Spec resolution notes** — terms where Step 2 produced Partial resolution: what matched, what didn't, what the SME should decide.
+5. **Domain distribution** — when the group contains terms mapping to multiple SDTM domains, list the domain split and flag terms that appear misclassified relative to the group label.
+6. **Duplicate source terms** — term pairs within the group that resolve to the same TESTCD from different source entries. List Term_IDs, names, and whether the duplication is exact (same concept) or near (different measurement forms of the same analyte).
+7. **Source quality observations** — naming errors, terms misclassified relative to their group, generic placeholders requiring study-specific definition, structural taxonomy issues. These feed back to the source system owner, not the SME reviewer.

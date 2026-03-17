@@ -1,58 +1,43 @@
 # Making COSMoS Behavioural Patterns Visible
 
-Insights from analysing 1,127 Biomedical Concepts and 1,123 Dataset Specializations across 31 SDTM domains — and how these patterns relate to the COSMoS model as described in the CDISC GitHub repository.
+Insights from analysing 1,127 Biomedical Concepts and 1,123 Dataset Specializations across 31 SDTM domains.
 
 *cdisc-for-ai project — March 2026*
 
 ---
 
-## 1. What the COSMoS Model Describes
+## 1. The Behavioural Gap
 
-The COSMoS data model, maintained in the CDISC GitHub repository as LinkML schemas (`cosmos_bc_model.yaml` and `cosmos_sdtm_bc_model.yaml`), defines a two-layered architecture:
+The COSMoS data model defines a two-layered architecture: Biomedical Concepts (BCs) for standards-agnostic semantic definition, and SDTM Dataset Specializations (DSSs) for value-level implementation. The model is intentionally generic — one BC schema and one DSS schema serve all domains.
 
-- A **conceptual/abstract layer** — Biomedical Concepts (BCs) that provide standards-agnostic semantic definition, largely based on NCIt concepts.
-- An **implementation layer** — SDTM Dataset Specializations (DSSs) that provide value level definition facilitating metadata-driven automation.
+This generality is a design feature. But the uniform schema masks the fact that the BC→DSS relationship means fundamentally different things depending on which domain you are in:
 
-The model is intentionally generic. One BC schema and one DSS schema serve all domains — from laboratory tests through vital signs, questionnaires, adverse events, concomitant medications, and trial summary parameters. This flexibility is a design feature: the same model can accommodate SDTM, CDASH, and potentially other standards like HL7 FHIR.
+In **LB**, a BC like Glucose fans out into 8 DSSs decomposed by specimen and result scale. Each DSS carries a distinct LOINC code, units, and method — a complete measurement specification.
 
-The CDISC description frames BCs as covering "a wide range of topics, including demographics, laboratory tests, vital signs, concomitant medications, procedures, adverse events, and medical history" — presented uniformly, as a single class of objects.
+In **QS/FT**, each BC is a single question within a standardised instrument (EQ-5D-5L, ADAS-Cog), mapping 1:1 to its DSS. The value is in the BC hierarchy — instrument → subscale → question — not in the implementation layer.
 
-## 2. What the Data Actually Shows
+In **IS**, 7 BCs explode into 290 DSSs. The fan-out is not by specimen (constant: SERUM/PLASMA/BLOOD) but by target antigen — 46 different allergens for IgE alone, times quantitative/qualitative pairs.
 
-When you flatten and analyse the full BC and DSS content, a different picture emerges. The BC→DSS relationship means fundamentally different things depending on which domain you are in.
-
-In **LB**, a BC like Glucose fans out into 8 DSSs decomposed by specimen and result scale. Each DSS carries a distinct LOINC code, units, and method — a complete measurement specification. The DSS adds operational specificity to the concept.
-
-In **QS/FT**, each BC is a single question within a standardised instrument (EQ-5D-5L, ADAS-Cog), mapping 1:1 to its DSS. The DSS adds almost nothing. The value is in the BC hierarchy — instrument → subscale → question — not in the implementation layer.
-
-In **IS**, 7 BCs explode into 290 DSSs. The fan-out is not by specimen (constant: SERUM/PLASMA/BLOOD) but by target antigen — 46 different allergens for IgE alone, times quantitative/qualitative pairs. The target identity is encoded in the DS_Code mnemonic but does not exist as a separate column in the model.
-
-In **MH**, 1 BC produces 11 DSSs — free text format, prespecified format, and 9 disease-specific conditions (Alzheimer's, Essential Tremor, Visual Hallucinations). These are not measurement variants. They are protocol decisions about which conditions to pre-populate in the CRF.
+In **MH**, 1 BC produces 11 DSSs — free text format, prespecified format, and 9 disease-specific conditions. These are protocol decisions about which conditions to pre-populate, not measurement variants.
 
 In **EG**, 33 BCs map 1:1 to their DSSs, all marked Qualitative — despite ECG being inherently quantitative measurements. 18 DSSs have units populated despite the Qualitative scale.
 
-The model schema is the same in every case. The semantics are not.
+The model describes **structure** but not **behaviour** — what the BC→DSS relationship means for a given domain, what decomposition axes apply, what a consumer should expect. Without this, a consumer treats LB and IS both as "Findings with fan-out" and builds the wrong file structure, the wrong mapping logic, or the wrong query.
 
-## 3. The Behavioural Gap
-
-The COSMoS model describes **structure** (BC has attributes, DSS has variables and value-level metadata) but not **behaviour** (what the BC→DSS relationship means for a given domain, what decomposition axes apply, what a consumer should expect from the data).
-
-This is not a criticism — it is a consequence of a generic, flexible model. But it means that consumers of COSMoS data need a behavioural layer to use it effectively. Without understanding that LB decomposes by specimen while IS decomposes by target, a consumer treats both as "Findings with fan-out" and builds the wrong file structure, the wrong mapping logic, or the wrong query.
-
-The cdisc-for-ai project addresses this gap by making the behavioural patterns explicit — classifying domains by how they actually behave, not just by their observation class.
+This analysis makes the behavioural patterns explicit — classifying domains by how they actually behave, not just by their observation class.
 
 ---
 
-## 4. Ten Behavioural Groups
+## 2. Ten Behavioural Groups
 
-Analysis of BC-to-DSS ratios, decomposition axes, and column population patterns reveals ten distinct behavioural groups across the 31 COSMoS domains. The groups differ in what a row represents, which columns carry information, and what consumer file structure is appropriate.
+Analysis of BC-to-DSS ratios, decomposition axes, and column population patterns reveals ten distinct behavioural groups across the 31 COSMoS domains.
 
 | Behavioural Group | Domains | What a Row Represents | Primary Axis | Consumer File Shape |
 |---|---|---|---|---|
 | Specimen Findings | LB, MB, MI, CP, BS | One measurement spec: TESTCD at a specific specimen × scale | Specimen | Two sheets: Test_Identity + Measurement_Specs. Implemented. |
 | Immunogenicity Findings | IS | One antibody class × target antigen × scale | Target/Analyte | Needs own structure. Target not a separate COSMoS column. |
 | Genomics Findings | GF | One genomics assessment by scale and method | Result Scale | Could use two-sheet but different primary axis than LB. |
-| Measurement Findings | VS, EG, MK, CV | One subject-level measurement. VS has location variants. | Location (VS only) | Single sheet. Location/laterality as optional columns. |
+| Measurement Findings | VS, EG, MK, CV | One subject-level measurement. VS has location variants. | Location (VS only) | Two sheets (VS, MK, CV). EG deferred. |
 | Instrument Findings | QS, FT, RS | One question/item within a standardised instrument | Hierarchy (grouping) | Single sheet with hierarchy columns. |
 | Domain-specific Findings | DD, RP, SC, SR, UR | One domain-specific assessment, no decomposition | None (1:1) | Single sheet. Coverage value only. |
 | Clinical Assessment | FA, TR, TU, IE | One finding about an event/intervention/tumour | Method (TR/TU) | Single sheet. Needs RELREC context for full value. |
@@ -62,9 +47,9 @@ Analysis of BC-to-DSS ratios, decomposition axes, and column population patterns
 
 ---
 
-## 5. Six Decomposition Axes
+## 3. Six Decomposition Axes
 
-Not all fan-out is the same. Six distinct axes drive BC-to-DSS decomposition, each with different architectural implications for consumer files.
+Not all fan-out is the same. Six distinct axes drive BC-to-DSS decomposition, each with different implications for consumer files.
 
 | Axis | Active In | What It Means |
 |---|---|---|
@@ -79,9 +64,9 @@ The first five axes answer **"how is this measured?"** — they decompose a conc
 
 ---
 
-## 6. Findings Domains in Detail
+## 4. Findings Domains in Detail
 
-The Findings observation class contains 22 of the 31 COSMoS domains and accounts for the majority of BCs and DSSs. It is also where the behavioural differences are most pronounced — six of the ten behavioural groups are Findings subgroups.
+The Findings observation class contains 22 of the 31 COSMoS domains and accounts for the majority of BCs and DSSs. Six of the ten behavioural groups are Findings subgroups.
 
 ### Specimen Findings — validated scope
 
@@ -107,13 +92,15 @@ The Specimen_Findings.xlsx consumer file covers domains where specimen is the st
 
 ### Measurement Findings
 
-Subject-level measurements without specimen decomposition. Single-sheet consumer file with location/laterality as optional columns.
+Subject-level measurements without specimen decomposition. Two-sheet consumer file (Measurement_Findings.xlsx) with location/laterality as optional columns.
 
 **VS (Vital Signs)** — 12 BCs, 16 DSSs. 4 BCs fan out via _EXT variants (SYSBP/DIABP/PULSE/HR) adding location (7 arteries) and laterality (LEFT/RIGHT). 8 BCs remain 1:1. Method on 1 DSS only. 8 have units. No LOINC. The _EXT pattern is about where on the body, not what sample — a fundamentally different axis from specimen.
 
 **EG (ECG)** — 33 BCs, all 1:1. All marked Qualitative — unexpected for ECG which produces quantitative interval/amplitude measurements. 18 DSSs have units despite the Qualitative scale. No LOINC. This may be a COSMoS modelling choice (ECG interpretations are qualitative assessments of quantitative data) or a data artefact worth verifying.
 
 **MK (Musculoskeletal)** — 49 BCs, 50 DSSs. 1 BC fans out (Sharp Genant joint scoring: foot joints vs hand joints — anatomical location decomposition). 14 have method. 20 have units. No LOINC.
+
+**CV (Cardiovascular)** — 6 BCs, all 1:1. All quantitative. 6 have units. No LOINC.
 
 ### Instrument Findings
 
@@ -153,7 +140,7 @@ Findings about events, interventions, or tumours. Cross-domain links via RELREC.
 
 ---
 
-## 7. Non-Findings Groups
+## 5. Non-Findings Groups
 
 ### Events
 
@@ -189,16 +176,12 @@ Fan-out by substance types, procedure body regions, or protocol specialisations.
 
 ---
 
-## 8. 194 BCs Without Dataset Specializations
+## 6. 194 BCs Without Dataset Specializations
 
-194 BCs have no DSS at all (BC_Type = full_no_ds). These are predominantly parent-level grouping concepts — instruments, assessment classifications, functional test definitions — with Ordinal result scale (122 of 194). They provide hierarchy structure but no operational specifications. 173 have Hierarchy_Path values, confirming their role as grouping nodes rather than leaf-level observations.
+194 BCs have no DSS at all (BC_Type = full_no_ds). Predominantly parent-level grouping concepts — instruments, assessment classifications, functional test definitions — with Ordinal result scale (122 of 194). They provide hierarchy structure but no operational specifications. 173 have Hierarchy_Path values, confirming their role as grouping nodes rather than leaf-level observations.
 
 ---
 
-## 9. Summary
+## About
 
-The COSMoS model provides a correct, intentionally generic schema for Biomedical Concepts and Dataset Specializations. One BC class and one DSS class serve all 31 SDTM domains. This generality enables flexibility and extensibility to future standards.
-
-But the uniform schema masks significant behavioural differences. The BC→DSS relationship means measurement decomposition in LB, hierarchy grouping in QS, target explosion in IS, and protocol-driven specialisation in MH. Consumers of COSMoS data — whether human or machine — need to understand these patterns to build the right file structures, the right mapping logic, and the right queries.
-
-This analysis identifies ten behavioural groups, six decomposition axes, and a fundamental distinction between measurement fan-out ("how is this measured?") and context fan-out ("what does the protocol care about?"). The contribution of the cdisc-for-ai project is making these patterns visible and machine-actionable — not by changing the COSMoS model, but by adding the behavioural layer that consumers need to use it effectively.
+Exploratory work built with AI assistance. Not an official CDISC product. Part of [cdisc-for-ai](https://github.com/kerfors/cdisc-for-ai). Companion reference: [COSMoS_Domain_Pattern_Inventory.xlsx](COSMoS_Domain_Pattern_Inventory.xlsx).

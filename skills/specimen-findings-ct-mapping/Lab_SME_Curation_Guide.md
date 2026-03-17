@@ -3,18 +3,15 @@
 | | |
 |---|---|
 | **Document** | SME curation guide for CT mapping review |
-| **Version** | 2.2 |
-| **Date** | 2026-03-13 |
+| **Version** | 3.0 |
+| **Date** | 2026-03-17 |
 | **Companion** | `CT_Mapping_Prompt.md` |
 
 ### Version log
 
 | Version | Date | Changes |
 |---|---|---|
-| 2.2 | 2026-03-13 | Reference file changed to Specimen_Findings.xlsx (from sdtm-findings track). Domain scope expanded to all specimen-based domains (driven by Domain_Metadata). |
-| 2.1 | 2026-03-12 | Post-test-run fixes: explicit two-step workflow box, Selected per DS_Code row, Spec_Resolution=Partial FAQ, Review Notes section walkthrough. |
-| 2.0 | 2026-03-12 | Two-level resolution (TESTCD + DS_Code). Reference file now Study_Design_Merge.xlsx. Added specification review workflow, Spec_Resolution guidance. Generalized input column names. |
-| 1.2 | 2025-02-21 | Added Review Notes; LLM approach section; duplicate TESTCD encoding guidance |
+| 3.0 | 2026-03-17 | First production release. Source_Specimen input column. Sibling rows now amber (visual parity with Partial/Panel). Review notes expanded to seven sections. Consolidated deliverables documented. Version log collapsed. |
 | 1.0 | 2025-02-19 | Initial guide |
 
 ---
@@ -35,7 +32,7 @@ An LLM generates candidate CDISC CT mappings for your measurement terms. Your jo
 
 ### Input: your term list
 
-Excel or structured list with: `Term_Group` (e.g., Chemistry, Hematology), `Term_ID`, and `Term` (verbatim from source). The group label carries implicit specimen context used in specification resolution.
+Excel or structured list with: `Term_Group` (e.g., Chemistry, Hematology), `Term_ID`, and `Term` (verbatim from source). Optional: `Source_Specimen` — a per-term specimen value from the source system (e.g., BLOOD, URINE, SERUM). When present, it feeds specimen resolution in Step 2.
 
 The reference file contains a README sheet — **read it first**. Every value in the LLM output must trace back to this file verbatim.
 
@@ -47,13 +44,23 @@ The LLM uses clinical domain knowledge, not string matching. It resolves in two 
 
 **Step 1 — Concept:** matches each term against NCIt Preferred Terms, synonyms, and definitions in the Test_Identity sheet. Returns all valid TESTCDs, classifies by match type.
 
-**Step 2 — Specification:** for TESTCDs with COSMoS coverage (Has_COSMoS=Yes), resolves specimen/method context against the Measurement_Specs sheet. Parses inline spec hints from the term string ("Urine - Potassium", "hsCRP (quantitative)") and matches against available DS_Codes.
+**Step 2 — Specification:** for TESTCDs with COSMoS coverage (Has_COSMoS=Yes), resolves specimen/method context against the Measurement_Specs sheet. Specimen precedence: term string > Source_Specimen > Term_Group default. Parses inline spec hints ("Urine - Potassium", "hsCRP (quantitative)") and matches against available DS_Codes.
 
 **Caveats:** The LLM may miss rarely-used TESTCDs, propose semantically close but imprecise matches (review Partials), or be uncertain about panel composition. Specification resolution depends on COSMoS coverage — only a small fraction of TESTCDs have specimen-based DS_Code specifications available. Not all specimen-based domains have DSSs yet; the README sheet documents current coverage.
 
 ---
 
 ## Review workflow
+
+### Visual signals
+
+The output Excel uses colour to signal review priority:
+
+| Row colour | Match types | Meaning |
+|---|---|---|
+| Default (column block colours) | Direct | Confirmed concept match — verify but usually accept |
+| Amber | Sibling, Partial, Panel | Requires SME decision |
+| Red | No_Match | No CT match found — documents the gap |
 
 ### Match types
 
@@ -129,9 +136,12 @@ For rows with Has_COSMoS=Yes:
 
 ## Review Notes structure
 
-The LLM produces a Review Notes file per Term_Group. Four sections:
+The LLM produces review notes per Term_Group (per-group during mapping, then consolidated). Seven sections:
 
 1. **Flagged decisions** — mappings involving judgement calls: naming convention gaps, duplicate encodings, domain surprises, ambiguous terms, unresolved spec hints. Read each flag and verify the LLM's reasoning against your protocol intent.
 2. **Panel notes** — each Panel term with composition certainty (standard / protocol-dependent / proprietary) and expected component TESTCDs. Verify panel names match your lab's definitions.
 3. **No_Match summary** — each unmatched term with a one-line gap reason. Confirm no CT equivalent exists; flag terms needing sponsor-defined extensions.
 4. **Spec resolution notes** — terms where Step 2 produced Partial resolution: what matched, what didn't, what you should decide. Focus here for specification gaps.
+5. **Domain distribution** — when the group spans multiple SDTM domains, the domain split and any terms that appear misclassified relative to the group label. Informs downstream dataset allocation.
+6. **Duplicate source terms** — term pairs resolving to the same TESTCD from different source entries. Feeds back to the source taxonomy owner.
+7. **Source quality observations** — naming errors, misclassified terms, generic placeholders. These feed back to the source system owner, not to you as SME reviewer.
