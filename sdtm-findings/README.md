@@ -8,6 +8,9 @@ The two source tracks — [`sdtm-test-codes`](../sdtm-test-codes/) (what is meas
 
 Each notebook consumes the same source files but applies different join logic and scoping because the three structural types have fundamentally different data shapes.
 
+![Glucose in Specimen Findings](docs/Glucose_in_Specimen_Findings.jpg)
+*Glucose Measurement (C105585) — one BC decomposed into 8 Dataset Specializations in LB. Test_Identity sheet (top), Measurement_Specs sheet (bottom), README sheet (left).*
+
 ## Notebooks and outputs
 
 | Notebook | Structural type | Scope | Output |
