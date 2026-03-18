@@ -12,18 +12,18 @@ Each notebook consumes the same source files but applies different join logic an
 
 | Notebook | Structural type | Scope | Output |
 |---|---|---|---|
-| `Specimen_Findings.ipynb` | Specimen-based | LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR | `Specimen_Findings.xlsx` |
-| `Measurement_Findings.ipynb` | Measurement | VS, MK, CV (EG deferred) | `Measurement_Findings.xlsx` |
+| [`Specimen_Findings.ipynb`](notebooks/Specimen_Findings.ipynb) | Specimen-based | LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR | [`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) |
+| [`Measurement_Findings.ipynb`](notebooks/Measurement_Findings.ipynb) | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) |
 | `Instrument_Findings.ipynb` | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
 
 ## Inputs (shared)
 
 | File | Track | Content |
 |---|---|---|
-| `SDTM_Test_Identity.xlsx` | sdtm-test-codes | Domain-level test codes with NCIt identity |
-| `SDTM_Instrument_Identity.xlsx` | sdtm-test-codes | Instrument-level test codes with NCIt identity |
-| `COSMoS_BC_DSS.xlsx` | cosmos-bc-dss | Flattened BC/DSS (all 31 domains) |
-| `SDTM_Domain_Metadata.xlsx` | sdtm-domain-reference | Domain metadata (structural type flags) |
+| [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | sdtm-test-codes | Domain-level test codes with NCIt identity |
+| [`SDTM_Instrument_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) | sdtm-test-codes | Instrument-level test codes with NCIt identity |
+| [`COSMoS_BC_DSS.xlsx`](../cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) | cosmos-bc-dss | Flattened BC/DSS (all 31 domains) |
+| [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata (structural type flags) |
 
 ## File structure
 
@@ -36,7 +36,7 @@ The link between sheets is TESTCD (and NCIt_Code for precision). This two-step s
 
 ## Current state
 
-`Specimen_Findings.xlsx` and `Measurement_Findings.xlsx` are complete and running. Coverage reflects COSMoS publication status — domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
+[`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) and [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) are complete and running. Coverage reflects COSMoS publication status — domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
 
 `Instrument_Findings.xlsx` is planned but not yet built.
 
