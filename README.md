@@ -50,7 +50,7 @@ AI mapping skills that consume the reference files.
 
 | Skill | Purpose | Reference file |
 |---|---|---|
-| [`specimen-findings-ct-mapping/`](skills/specimen-findings-ct-mapping/) | Map specimen-based terms to SDTM CT: two-level resolution (TESTCD -> DS_Code) | `Specimen_Findings.xlsx` |
+| [`specimen-findings-ct-mapping/`](skills/specimen-findings-ct-mapping/) | Map specimen-based terms to SDTM CT: two-level resolution (TESTCD -> DS_Code) | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
 | [`sdtm-ct-analysis/`](skills/sdtm-ct-analysis/) | Structural analysis of SDTM Controlled Terminology: category discovery and profiling | NCI EVS SDTM CT file |
 
 ## Data flow
@@ -131,6 +131,8 @@ The analytical work produced insights beyond the reference files themselves. Ful
 **Specimen-based Findings is not one pattern.** The SDTM IG groups 11 domains under this label (Section 6.3.5), but the behavioural analysis shows three distinct decomposition logics: LB/MB/MI by specimen, IS by target antigen (up to 92:1 fan-out), and GF by result scale. UR is behaviourally flat despite its IG classification.
 
 **DS_Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are designed for human readability (GLUCSER = Glucose in Serum), not as persistent machine identifiers. They are not unique across domains. Several approaches could make DSSs machine-addressable: URIs from domain + DS_Code, NCIt C-codes at the DSS level, or other mechanisms. The right approach is an open question for the community.
+
+**Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? Is the collection-template framing useful for understanding where DSS-level identifiers add value? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback on any of these is welcome.
 
 ## Design decisions
 
