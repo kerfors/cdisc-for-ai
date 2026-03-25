@@ -22,24 +22,24 @@ Each reference file is self-describing, with a README sheet documenting columns,
 
 | Track | Question | Output | Source |
 |---|---|---|---|
-| [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | `SDTM_Test_Identity.xlsx` -- domain-level test codes | NCI EVS, NCIt, UMLS |
-| | | `SDTM_Instrument_Identity.xlsx` -- instrument-level test codes | |
-| [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? | `COSMoS_BC_DSS.xlsx` -- flattened BC/DSS interim file | COSMoS BC/DSS exports |
+| [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | [`SDTM_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) -- domain-level test codes | NCI EVS, NCIt, UMLS |
+| | | [`SDTM_Instrument_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) -- instrument-level test codes | |
+| [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? | [`COSMoS_BC_DSS.xlsx`](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) -- flattened BC/DSS interim file | COSMoS BC/DSS exports |
 | | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) | |
 
 ### Reference track
 
 | Track | Purpose | Output |
 |---|---|---|
-| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: structural types, COSMoS coverage flags, specimen/instrument classification | `SDTM_Domain_Metadata.xlsx` (pipeline input) |
-| | Structural type + behavioural group classification per domain | `SDTM_Domain_Analysis.xlsx` (analysis) |
+| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: structural types, COSMoS coverage flags, specimen/instrument classification | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
+| | Structural type + behavioural group classification per domain | [`SDTM_Domain_Analysis.xlsx`](sdtm-domain-reference/reports/SDTM_Domain_Analysis.xlsx) (analysis) |
 
 ### Consumer tracks
 
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
-| [`sdtm-findings/`](sdtm-findings/) | Specimen-based | Domains with `Specimen_Based=Yes` in Domain_Metadata | `Specimen_Findings.xlsx` |
-| | Measurement | VS, MK, CV (EG deferred) | `Measurement_Findings.xlsx` |
+| [`sdtm-findings/`](sdtm-findings/) | Specimen-based | Domains with `Specimen_Based=Yes` in Domain_Metadata | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
+| | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
 
 Consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The link between sheets is TESTCD. This two-step structure matches the mapping workflow: first resolve a term to a concept, then select the specific measurement variant.
