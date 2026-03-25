@@ -142,7 +142,7 @@ The analytical work produced insights beyond the reference files themselves. Ful
 
 **Why interim/?** Downloads are external. Interim files are our own pipeline artifacts, visible because they have value as standalone artifacts, even if not the final product.
 
-**Why COSMoS vocabulary in column names?** The consumer files keep COSMoS source vocabulary (DS_Code, DS_Name, BC_Name, Domain_Class) rather than translating to study-design-friendly alternatives. Consumers are CDISC-literate; traceability to source trumps consumer-friendliness.
+**Why renamed columns?** COSMoS source field names are implementation-oriented (vlm_group_id, specimenIdentity, resultScale). The consumer files translate these to more transparent names (DS_Code, Specimen, Result_Scale) while documenting the mapping in the Flatten notebook for traceability.
 
 **Why three consumer notebooks?** The three Findings structural types (specimen-based, instrument-based, measurement) have fundamentally different data shapes and join logic. Splitting by structural type keeps each notebook focused and its output consumable.
 
