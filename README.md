@@ -4,7 +4,7 @@ Machine-actionable reference files for CDISC clinical data standards -- designed
 
 ## Why
 
-Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. In specimen-based and measurement domains, each Dataset Specialization adds an identifiable measurement specification: specimen, method, units, LOINC. But these linkages are scattered across disconnected sources. The CT file presents test codes as submission strings. Reaching the measurement specification requires navigating across BC and DSS exports. A human must mentally reconstruct the connections.
+Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. In specimen-based domains, each Dataset Specialization adds an identifiable measurement specification: specimen, method, units, LOINC. But these linkages are scattered across disconnected sources. The CT file presents test codes as submission strings. Reaching the measurement specification requires navigating across BC and DSS exports. A human must mentally reconstruct the connections.
 
 The move toward structured study definitions (USDM, 360i, OpenStudyBuilder) pushes this specificity upstream, into study design, where it needs to be explicit and machine-readable from the start. A study designer building a lab appendix starts from a medical purpose ("monitor liver function") and needs to arrive at specific, selectable measurement specifications. The CDISC standards already contain the building blocks for this. What is missing is not content but infrastructure: machine-traversable connections between concepts that already exist.
 
