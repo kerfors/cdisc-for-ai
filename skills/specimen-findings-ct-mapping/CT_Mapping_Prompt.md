@@ -3,14 +3,15 @@
 | | |
 |---|---|
 | **Document** | LLM prompt for specimen-based Findings CT mapping |
-| **Version** | 3.0 |
-| **Date** | 2026-03-17 |
+| **Version** | 3.1 |
+| **Date** | 2026-03-26 |
 | **Companion** | `Lab_SME_Curation_Guide.md` |
 
 ### Version log
 
 | Version | Date | Changes |
 |---|---|---|
+| 3.1 | 2026-03-26 | Domain scope aligned with behavioural analysis (LB, MB, MI, CP, BS). Rule 7 added: multi-domain TESTCD flagging for terms also assigned to measurement domains (VS, MK, CV, EG). |
 | 3.0 | 2026-03-17 | First production release. Source_Specimen input column. Selected always blank (hardened). Sibling row colour → amber. Three new review notes sections (domain distribution, duplicate detection, source quality). Spec hint precedence explicit. Version log collapsed. |
 | 1.0 | 2025-02-19 | Initial prompt |
 
@@ -26,7 +27,7 @@
 
 Map each measurement term to all valid TESTCDs (Step 1), then resolve to Dataset Specialization level where COSMoS coverage exists (Step 2). Produce one output row per term × TESTCD × DS_Code combination. TESTCDs without COSMoS coverage produce one row (specification columns blank).
 
-Scope: specimen-based Findings — LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR.
+Scope: specimen-based Findings — LB, MB, MI, CP, BS (see COSMoS_Behavioural_Analysis.md for rationale).
 
 Not all specimen-based domains have COSMoS DSSs yet — the README sheet documents current coverage. Terms mapping to domains without DSSs get TESTCD-level resolution only.
 
@@ -71,6 +72,13 @@ No match → one `No_Match` row with blank CT columns. If clinical knowledge sug
 
 ### Rule 6 — Duplicate encodings
 Two TESTCDs encoding the same analyte under different naming conventions (chemical vs. common name): report the systematic/chemical name as Direct, common name as Sibling. Flag in rationale.
+
+### Rule 7 — Multi-domain TESTCDs
+Some TESTCDs belong to both specimen domains (LB, MB, MI, CP, BS) and measurement domains (VS, MK, CV, EG). When a matched TESTCD has SDTM_Domains containing any measurement domain, flag in the rationale:
+
+> "Also assigned to [VS/MK/CV/EG]. The same concept may be collected as a subject-level measurement (e.g., pulse oximeter) or a specimen-based lab result (e.g., blood gas). Domain assignment depends on collection method — confirm with protocol."
+
+Include this flag regardless of match type. Add to the Review Notes "Flagged decisions" section with the specific domains and clinical context (what the measurement-domain collection looks like vs. the specimen-based collection).
 
 ---
 

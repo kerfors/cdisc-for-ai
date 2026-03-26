@@ -3,14 +3,15 @@
 | | |
 |---|---|
 | **Document** | SME curation guide for CT mapping review |
-| **Version** | 3.0 |
-| **Date** | 2026-03-17 |
+| **Version** | 3.1 |
+| **Date** | 2026-03-26 |
 | **Companion** | `CT_Mapping_Prompt.md` |
 
 ### Version log
 
 | Version | Date | Changes |
 |---|---|---|
+| 3.1 | 2026-03-26 | Domain scope aligned with behavioural analysis (5 domains). Multi-domain TESTCD guidance added — terms also in measurement domains flagged for domain assignment review. |
 | 3.0 | 2026-03-17 | First production release. Source_Specimen input column. Sibling rows now amber (visual parity with Partial/Panel). Review notes expanded to seven sections. Consolidated deliverables documented. Version log collapsed. |
 | 1.0 | 2025-02-19 | Initial guide |
 
@@ -125,6 +126,8 @@ For rows with Has_COSMoS=Yes:
 **Two TESTCDs seem identical?** Duplicate encoding. Select per sponsor convention; if unsure, prefer the systematic/chemical name.
 
 **What does Has_COSMoS=No mean?** The TESTCD is valid but COSMoS hasn't published a specimen-based specification for it yet. The vast majority of TESTCDs are in this state. The mapping is still useful — it resolves the concept. Specification will follow as COSMoS coverage grows.
+
+**TESTCD flagged as "also assigned to VS/MK/CV/EG"?** Some concepts are clinically valid in both specimen-based and measurement domains. Oxygen saturation (OXYSAT) measured by pulse oximeter is a vital sign (VS); measured in a blood gas panel it's a lab result (LB). The same TESTCD, but different collection method and different SDTM domain. The flag means the SME needs to confirm which domain applies for this protocol. If the protocol collects both (e.g., continuous SpO2 monitoring plus blood gas panels), both domains apply and the term should appear in both mapping outputs. The key question: is this collected from a specimen, or measured on the subject?
 
 **Has_COSMoS=Yes but my protocol's method/unit isn't in the DS_Codes?** This is Spec_Resolution=Partial. The TESTCD mapping is correct but COSMoS doesn't carry a DS_Code matching your exact method or unit. Accept the TESTCD; note the gap for downstream specification. Common example: microscopic counts where no method dimension exists in the available DS_Codes.
 

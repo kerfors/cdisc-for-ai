@@ -1,48 +1,41 @@
 ---
 name: specimen-findings-ct-mapping
-version: "2.0"
-date: 2026-03-17
-description: >
-  Map specimen-based Findings terms (LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR)
-  to CDISC controlled terminology — resolving to TESTCD and, where COSMoS coverage
-  exists, to Dataset Specialization level (specimen, method, scale, units, LOINC).
-  Use when the user wants to map laboratory, biomarker, microbiology, or immunogenicity
-  terms to SDTM test codes and measurement specifications.
-changes: >
-  v2.0: First production release. Source_Specimen as optional input column. Batch
-  sizing guidance (~20–30 terms/turn). Consolidation step documented. Review notes
-  expanded to seven sections. Sibling row colour changed to amber. Selected column
-  hardened to always-blank. Version logs collapsed.
-  v1.0: Initial skill. Two-level resolution (TESTCD → DS_Code). Reference file
-  Specimen_Findings.xlsx. Generalized input columns. Evolved from standalone prompts.
+version: "1.2"
+date: 2026-03-26
+description: Map specimen-based Findings terms (LB, MB, MI, CP, BS) to CDISC controlled terminology — resolving to TESTCD and, where COSMoS coverage exists, to Dataset Specialization level.
 ---
 
 # Specimen-based Findings CT Mapping Skill
 
 Maps specimen-based Findings terms to CDISC controlled terminology in two levels: concept identity (TESTCD) and measurement specification (DS_Code). Single conversation.
 
+### Version log
+
+| Version | Date | Changes |
+|---|---|---|
+| 1.2 | 2026-03-26 | Domain scope aligned with behavioural analysis (LB, MB, MI, CP, BS). Test_Identity scoped to in-scope TESTCDs only. Multi-domain TESTCD flagging added (Rule 7). |
+| 1.1 | 2026-03-13 | Reference file changed to Specimen_Findings.xlsx. Domain scope driven by Domain_Metadata. COSMoS summary specimen-scoped. New Measurement_Specs columns. |
+| 1.0 | 2025-02-19 | Initial skill. Two-level resolution (TESTCD → DS_Code). Evolved from standalone SoA_CT_Mapping_Prompt v1.3. |
+
 ## Scope
 
-Specimen-based Findings — domains where the pattern is analyte + specimen + method → result.
-Identified by `Specimen_Based=Yes` in SDTM_Domain_Metadata.xlsx:
+Specimen-based Findings — domains where specimen is the structural decomposition axis.
+Scope from COSMoS behavioural analysis (see COSMoS_Behavioural_Analysis.md).
 
 | Domain | Content |
 |---|---|
 | LB | Laboratory |
-| IS | Immunogenicity Specimen |
-| GF | Genomics Findings |
 | MB | Microbiology Specimen |
 | MI | Microscopic Findings |
-| MS | Microbiology Susceptibility |
-| BS | Biospecimen Findings |
 | CP | Cell Phenotype |
-| PC | PK Concentrations |
-| PP | PK Parameters |
-| UR | Urinary System Findings |
+| BS | Biospecimen Findings |
 
-These domains share matching logic and commonly appear together in protocol lab/biomarker sections.
+**Excluded:** IS (target-driven, not specimen-driven), GF (scale-driven, NCIt-encoded specimen),
+UR (zero decomposition despite metadata flag), MS/PC/PP (no COSMoS coverage).
 
-Not all specimen-based domains have COSMoS Dataset Specializations yet. The README sheet in the reference file documents current coverage. Terms mapping to domains without DSSs get TESTCD-level resolution only.
+Some TESTCDs belong to both specimen and measurement domains (e.g., OXYSAT in LB and VS).
+These appear in the reference file and are flagged for SME review when matched — the same
+concept may require different SDTM domain assignment depending on the collection method.
 
 ## Inputs
 
@@ -55,22 +48,21 @@ Not all specimen-based domains have COSMoS Dataset Specializations yet. The READ
 
 Read the README sheet first. Every output value must trace to this file verbatim.
 
-**Term list:** Excel or structured list with three required columns and one optional:
+**Term list:** Excel or structured list with three columns:
 
-| Column | Required | Content | Example |
-|---|---|---|---|
-| `Term_Group` | Yes | Grouping label — may carry default specimen context | Chemistry, Urinalysis |
-| `Term_ID` | Yes | Source system identifier | C-001, row number |
-| `Term` | Yes | Measurement term string to resolve | Glucose, Urine - Potassium |
-| `Source_Specimen` | No | Per-term specimen value from the source system | BLOOD, URINE, SERUM |
+| Column | Content | Example |
+|---|---|---|
+| `Term_Group` | Grouping label — may carry default specimen context | Chemistry, Urinalysis |
+| `Term_ID` | Source system identifier | C-001, row number |
+| `Term` | Measurement term string to resolve | Glucose, Urine - Potassium |
 
-Column names are generic — the skill works for SoA tables, lab vendor catalogs, panel definitions, or protocol amendments. Specimen precedence for Step 2: term string > Source_Specimen > Term_Group default.
+Column names are generic — the skill works for SoA tables, lab vendor catalogs, panel definitions, or protocol amendments. The `Term_Group` default specimen is a hint, not a constraint; explicit specimen in the `Term` string overrides it.
 
 ## Steps
 
 Read the prompt from: `CT_Mapping_Prompt.md`
 
-Upload the reference file and term list. **Work through each term using clinical reasoning — do not batch-script.** Process terms in groups of approximately 20–30 per conversation turn. Larger groups risk context pressure and reduced match quality. Start with smaller, cleaner groups to establish patterns before tackling large mixed groups.
+Upload the reference file and term list. **Work through each term using clinical reasoning — do not batch-script.**
 
 ### Step 1 — Concept Resolution
 
@@ -80,7 +72,6 @@ Resolve each term to TESTCD(s) against the Test_Identity sheet. Semantic matchin
 
 For TESTCDs where Has_COSMoS=Yes, resolve specimen/method context against the Measurement_Specs sheet:
 - Explicit specimen in the term string ("Urine - Potassium" → URINE)
-- Source_Specimen column value
 - Term_Group default specimen (Urinalysis → URINE)
 - Method/scale/unit hints parsed from the term ("hsCRP (quantitative)")
 
@@ -88,20 +79,18 @@ Step 2 runs inline per term, not as a separate pass.
 
 ## Outputs
 
-**Per-group Excel file** — one row per Term × TESTCD × DS_Code. TESTCDs without COSMoS coverage produce one row with blank specification columns. Sort: Group → Term → Match_Type → DS_Code.
+**Excel file** — one row per Term × TESTCD × DS_Code. TESTCDs without COSMoS coverage produce one row with blank specification columns. Sort: Group → Term → Match_Type → DS_Code.
 
 | Column block | Columns |
 |---|---|
-| Input (blue) | Term_Group, Term_ID, Term, Source_Specimen (when provided) |
+| Input (blue) | Term_Group, Term_ID, Term |
 | Concept match (green) | Match_Count, TESTCD, TEST, NCIt_Code, NCIt_Preferred_Term, SDTM_Domains, Has_COSMoS |
 | Specification (yellow) | DS_Code, DS_Name, Specimen, Method, Result_Scale, Allowed_Units, LOINC_Code, Spec_Resolution |
 | Classification (grey) | Match_Type, Match_Rationale, Selected |
 
 Specification columns are populated only where Has_COSMoS=Yes. `Spec_Resolution` indicates resolution depth: Full (term resolved to specific DS_Code), Partial (DS_Code narrowed but spec hints unresolved), None (no COSMoS coverage — TESTCD only).
 
-**Per-group review notes** — companion markdown per Term_Group. Seven sections (see prompt for specification).
-
-**Consolidated deliverables** — after all groups are mapped, consolidate per-group Excel files into a single workbook (preserving formatting and colour coding) and per-group review notes into a single document. The per-group files are interim working artefacts; the consolidated files are the deliverables for SME review.
+**Review notes** — companion markdown per Term_Group. Flagged decisions, panel notes, No_Match summary. Start SME review here.
 
 ## Companion files
 
