@@ -100,7 +100,7 @@ Subject-level measurements without specimen decomposition. Two-sheet consumer fi
 
 **MK (Musculoskeletal)** — 49 BCs, 50 DSSs. 1 BC fans out (Sharp Genant joint scoring: foot joints vs hand joints — anatomical location decomposition). 14 have method. 20 have units. No LOINC.
 
-**CV (Cardiovascular)** — 6 BCs, all 1:1. All quantitative. 6 have units. No LOINC.
+**CV (Cardiovascular)** — No COSMoS BCs or DSSs published yet. Included in scope based on structural classification (Measurement Findings in SDTM IG) and Measurement=Yes metadata flag. 191 TESTCDs in SDTM CT. Will be populated as COSMoS coverage expands.
 
 ### Instrument Findings
 
