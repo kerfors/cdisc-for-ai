@@ -26,9 +26,10 @@ non-extensible codelists carry 10,166 instrument-level test codes across QS
 
 This track now extracts both in a two-pass pipeline and produces two enriched
 reference files — one per structural type. Domain assignment uses
-`SDTM_Domain_Metadata.xlsx` as the authority for SDTMIG v3.4 domains, with
-explicit overrides for body-system sub-codelists and TAUG-origin domains
-flagged separately.
+`SDTM_Domain_Metadata.xlsx` as the authority for SDTMIG v3.4 domains, including
+a Codelist_Overrides sheet for naming mismatches and body-system sub-codelists,
+and an Instrument_Domain_Rules sheet for keyword-based instrument domain
+assignment. TAUG-origin domains are flagged separately.
 
 Four structural relationships exist in the data but are not declared: codelist
 pairing (TC↔TN), domain ownership, instrument family grouping, and codelist
@@ -64,8 +65,9 @@ consistent across both domain-level and instrument-level codes.
 **Domain assignment is not trivial.** Codelist submission values do not map
 cleanly to SDTM domain abbreviations. The `*TESTCD` pattern (LBTESTCD → LB)
 works for most domains, but `*CD` pattern codelists (MUSCTSCD, MITSCD, URNSTSCD)
-use alternate labels that don't match the SDTMIG domain name. Six body-system
-sub-codelists required explicit overrides. Ten TAUG-origin domains are outside
+use alternate labels that don't match the SDTMIG domain name. Six naming
+mismatches and body-system sub-codelists are handled via the Codelist_Overrides
+sheet in `SDTM_Domain_Metadata.xlsx`. Ten TAUG-origin domains are outside
 SDTMIG v3.4 scope entirely.
 
 ## What would improve things
@@ -102,8 +104,9 @@ SDTM_CT_NCIt_Enrich.ipynb
 
 Domain assignment in the Extract notebook uses `SDTM_Domain_Metadata.xlsx`
 (from the `sdtm-domain-reference` track) as the authority, with a four-tier
-cascade: Domain_Name match → FA sub-codelist detection → body-system override
-→ TAUG fallback.
+cascade: Domain_Name match → FA sub-codelist detection → Codelist_Overrides
+lookup → TAUG fallback. Instrument domain assignment uses the
+Instrument_Domain_Rules sheet for keyword matching.
 
 ## Provenance
 
