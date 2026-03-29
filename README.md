@@ -46,12 +46,11 @@ Consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TES
 
 ## Skills
 
-AI mapping skills that consume the reference files.
+AI skills for working with CDISC standards. The reference files above are designed for skill consumption.
 
 | Skill | Purpose | Reference file |
 |---|---|---|
-| [`specimen-findings-ct-mapping/`](skills/specimen-findings-ct-mapping/) | Map specimen-based terms to SDTM CT: two-level resolution (TESTCD -> DS_Code) | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
-| [`sdtm-ct-analysis/`](skills/sdtm-ct-analysis/) | Structural analysis of SDTM Controlled Terminology: category discovery and profiling | NCI EVS SDTM CT file |
+| [`sdtm-ct-analysis/`](skills/sdtm-ct-analysis/) | Structural analysis of SDTM Controlled Terminology: category discovery and profiling. Part of the analytical foundation behind the reference files. | NCI EVS SDTM CT file |
 
 ## Data flow
 
@@ -84,10 +83,6 @@ graph TD
         IF["Instrument_Findings.xlsx ❋"]
     end
 
-    subgraph skills
-        SK["specimen-findings-ct-mapping"]
-    end
-
     EVS --> TI
     EVS --> II
     COS --> BCD
@@ -104,8 +99,6 @@ graph TD
     TI --> MF
     DM --> MF
     BCD --> MF
-
-    SF --> SK
 
     DO["SDTM_Domain_Overview.md<br/>repo root"]
 ```
