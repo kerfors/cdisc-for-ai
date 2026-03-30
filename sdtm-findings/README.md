@@ -15,7 +15,7 @@ Each notebook consumes the same source files but applies different join logic an
 
 | Notebook | Structural type | Scope | Output |
 |---|---|---|---|
-| [`Specimen_Findings.ipynb`](notebooks/Specimen_Findings.ipynb) | Specimen-based | LB, IS, GF, MB, MI, MS, BS, CP, PC, PP, UR | [`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) |
+| [`Specimen_Findings.ipynb`](notebooks/Specimen_Findings.ipynb) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) |
 | [`Measurement_Findings.ipynb`](notebooks/Measurement_Findings.ipynb) | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) |
 | `Instrument_Findings.ipynb` | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
 
@@ -39,9 +39,17 @@ The link between sheets is TESTCD (and NCIt_Code for precision). This two-step s
 
 ## Current state
 
-[`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) and [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) are complete and running. Coverage reflects COSMoS publication status — domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
+[`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) and [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) are complete and running. Coverage reflects COSMoS publication status -- domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
 
 `Instrument_Findings.xlsx` is planned but not yet built.
+
+## Coverage gap and sponsor content
+
+The Specimen_Findings file makes the coverage gap concrete: of 4,109 TESTCDs in the specimen-based domains, only 100 have COSMoS measurement specifications (DSSs). The remaining 4,009 have standardized identity (TESTCD, NCIt concept, synonyms, definition) but no operationalized measurement detail (specimen, method, units, LOINC).
+
+For laboratory tests in particular, many sponsors already maintain internal lab test catalogues or registries that carry exactly this operational detail. The Test_Identity sheet provides the standardized anchor: TESTCD and NCIt_Code are the join keys. Where COSMoS has published DSSs, use them. Where it has not, sponsors can map their internal catalogue against Test_Identity to fill the gap -- bridging their own operational content to the CDISC identity layer.
+
+This is most immediately relevant for lab tests (LB), where the 2,474 TESTCDs and rich NCIt enrichment provide a solid matching surface. As COSMoS publishes more DSSs, the Measurement_Specs sheet grows and the gap narrows. But sponsors do not need to wait for that to start using Test_Identity for study design and SoA mapping.
 
 ## Pipeline position
 

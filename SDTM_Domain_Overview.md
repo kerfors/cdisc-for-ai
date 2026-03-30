@@ -65,14 +65,14 @@ graph TD
 | Layer | Documents | Machine-actionable outputs |
 |---|---|---|
 | CT discovery | [SDTM_Test_Codes_Summary.md](sdtm-test-codes/docs/SDTM_Test_Codes_Summary.md), [CT_Category_Profiles.md](skills/sdtm-ct-analysis/SDTM_CT_Category_Profiles.md) | [SDTM_Test_Identity.xlsx](sdtm-test-codes/machine_actionable/), [SDTM_Instrument_Identity.xlsx](sdtm-test-codes/machine_actionable/) |
-| Domain reference | This document | [SDTM_Domain_Metadata.xlsx](sdtm-domain-reference/machine_actionable/), [SDTM_Domain_Analysis.xlsx](sdtm-domain-reference/reports/) |
+| Domain reference | This document | [SDTM_Domain_Metadata.xlsx](sdtm-domain-reference/machine_actionable/) |
 | Behavioural analysis | [COSMoS_Behavioural_Analysis.md](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [COSMoS_Content_and_QC.md](cosmos-bc-dss/docs/COSMoS_Content_and_QC.md) | [COSMoS_Domain_Pattern_Inventory.xlsx](cosmos-bc-dss/docs/), [COSMoS_BC_DSS.xlsx](cosmos-bc-dss/interim/) |
 
 ---
 
 ## Two classifications, one join
 
-The two classification systems coexist. Both are columns in `SDTM_Domain_Analysis.xlsx`.
+The two classification systems coexist. Structural Type is a column in `SDTM_Domain_Metadata.xlsx`. Behavioural Group is a column in `COSMoS_Domain_Pattern_Inventory.xlsx`.
 
 **Structural Type** (Layer 2) — IG-grounded. All 56 domains. Stable across COSMoS releases.
 
@@ -82,7 +82,7 @@ They agree for most groups. They diverge within "Specimen-based Findings" (11 do
 
 | Behavioural Group | Domains | Primary axis | Why distinct |
 |---|---|---|---|
-| Specimen Findings | LB, MB, MI, CP, BS | Specimen | Same TESTCD measured in different body fluids |
+| Specimen Findings | LB, MB, MI, CP, BS, MS, PC, PP | Specimen | Same TESTCD measured in different body fluids |
 | Immunogenicity Findings | IS | Target/Analyte | Specimen is constant; fan-out by antigen (up to 92:1) |
 | Genomics Findings | GF | Result Scale | Scale-driven; specimen encoded as NCIt codes |
 
@@ -111,7 +111,7 @@ Full detail in [COSMoS_Behavioural_Analysis.md](cosmos-bc-dss/docs/COSMoS_Behavi
 
 | Behavioural Group | Domains | Row semantics | Consumer file shape |
 |---|---|---|---|
-| Specimen Findings | LB, MB, MI, CP, BS | TESTCD × specimen × scale | Two sheets: Test_Identity + Measurement_Specs |
+| Specimen Findings | LB, MB, MI, CP, BS, MS, PC, PP | TESTCD x specimen x scale | Two sheets: Test_Identity + Measurement_Specs |
 | Immunogenicity Findings | IS | Antibody class × target × scale | Own structure needed |
 | Genomics Findings | GF | Assessment × scale × method | Two-sheet possible, different axis |
 | Measurement Findings | VS, EG, MK, CV | Subject-level measurement | Two sheets (VS, MK, CV). EG deferred. |

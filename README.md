@@ -12,6 +12,14 @@ This repository makes those linkages explicit. Each reference file puts related 
 
 For how the analytical layers fit together, see [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
 
+## Flat files are views, not the architecture
+
+The relationships that make CDISC standards useful -- TESTCD to NCIt concept, concept to LOINC, concept to specimen and method variants, BC to DSS -- already exist. They are scattered across disconnected sources and formats: CT files, COSMoS JSON exports, NCIt OWL files, LOINC tables. No single source lets you traverse from a medical term to a selectable measurement specification.
+
+This project makes those relationships explicit by joining them into flat files. That is useful today -- Excel files reach data managers, statisticians, LLMs, and rule engines. But flat files are projections. They lose the graph structure: the same concept appears in multiple rows, relationships become columns, and traversal requires lookup rather than navigation.
+
+The future is publishing CDISC standards as a graph that tools and AI can traverse directly. Flat files, APIs, SPARQL endpoints, LLM tool access -- these are all views of the same underlying graph. *One Graph, Many Views.* This project demonstrates what those views look like and what content they need. The graph itself is the goal.
+
 ## Tracks
 
 The repository is organized into source tracks, a reference track, and consumer tracks. Source tracks extract and enrich from upstream standards. The reference track provides shared domain metadata. Consumer tracks join source data into structural-type-specific outputs for study design and mapping workflows.
@@ -32,13 +40,12 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | Track | Purpose | Output |
 |---|---|---|
 | [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: structural types, COSMoS coverage flags, specimen/instrument classification | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
-| | Structural type + behavioural group classification per domain | [`SDTM_Domain_Analysis.xlsx`](sdtm-domain-reference/reports/SDTM_Domain_Analysis.xlsx) (analysis) |
 
 ### Consumer tracks
 
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
-| [`sdtm-findings/`](sdtm-findings/) | Specimen-based | Domains with `Specimen_Based=Yes` in Domain_Metadata | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
+| [`sdtm-findings/`](sdtm-findings/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
 | | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
 
@@ -74,7 +81,6 @@ graph TD
 
     subgraph sdtm-domain-reference
         DM["SDTM_Domain_Metadata.xlsx"]
-        DA["SDTM_Domain_Analysis.xlsx"]
     end
 
     subgraph sdtm-findings
@@ -89,8 +95,6 @@ graph TD
     BCD --> BA
     BCD --> DPI
     EVS --> DM
-    BCD --> DA
-    DM --> DA
 
     TI --> SF
     DM --> SF
@@ -125,11 +129,13 @@ The analytical work produced insights beyond the reference files themselves. Ful
 
 **DS_Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are designed for human readability (GLUCSER = Glucose in Serum), not as persistent machine identifiers. They are not unique across domains. Several approaches could make DSSs machine-addressable: URIs from domain + DS_Code, NCIt C-codes at the DSS level, or other mechanisms. The right approach is an open question for the community.
 
+**The standardized identity layer is complete; the measurement specification layer is not.** The specimen-based consumer file carries 4,109 TESTCDs with full NCIt identity across 8 domains, but only 100 have COSMoS measurement specifications. For laboratory tests specifically, sponsors who maintain internal lab test catalogues or registries already have much of the missing operational detail (specimen types, methods, units, LOINC codes). The Test_Identity sheet provides the standardized anchor (TESTCD, NCIt_Code) for mapping that internal content to the CDISC identity layer. Where COSMoS has published DSSs, use them. Where it has not, the identity layer is still there. See the [consumer track README](sdtm-findings/) for detail.
+
 **Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? Is the collection-template framing useful for understanding where DSS-level identifiers add value? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback on any of these is welcome.
 
 ## Design decisions
 
-**Why flat files?** Excel files with README sheets reach the broadest audience: data managers, statisticians, LLMs, rule engines. The graph exists in COSMoS; we project it into a consumable view. *One Graph, Many Views.*
+**Why flat files?** Excel files with README sheets reach the broadest audience today: data managers, statisticians, LLMs, rule engines. The underlying relationships are graph-shaped, but flat projections are the most accessible delivery format until the standards are published as a traversable graph.
 
 **Why "machine-actionable" not "AI-friendly"?** Applies to any automated system, not just LLMs. Aligns with FAIR data principles.
 
