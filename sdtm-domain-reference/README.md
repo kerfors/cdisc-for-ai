@@ -4,23 +4,18 @@ A publicly sourced reference for all SDTMIG v3.4 domains, with a structural anal
 
 ## What this is
 
-Two files with distinct purposes:
+**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists all 56 SDTMIG v3.4 domains with their observation class, structural type, and pipeline flags (`Specimen_Based`, `Has_Test_Codes`). Sourced from public CDISC documentation. Stable -- changes only when a new SDTMIG version is published. Intended for programmatic use by notebooks in other tracks.
 
-**Reference data** — [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists all 56 SDTMIG v3.4 domains with their observation class and factual properties. Sourced from public CDISC documentation. Stable — changes only when a new SDTMIG version is published. Intended for programmatic use by notebooks in other tracks.
-
-**Analysis output** — [`SDTM_Domain_Analysis.xlsx`](reports/SDTM_Domain_Analysis.xlsx) adds our Structural Type categorization and COSMoS coverage counts. Evolves as we refine the categorization or COSMoS updates. Joins to the metadata file on `Domain`.
+Behavioural group classification (COSMoS-empirical, evolving) lives in [`COSMoS_Domain_Pattern_Inventory.xlsx`](../cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) in the cosmos-bc-dss track.
 
 ## Files
 
 ```
 sdtm-domain-reference/
-  README.md                                       ← this file
-  docs/
-    SDTM_Domain_Overview.md                       ← what we learned (narrative)
+  README.md                                       <- this file
   machine_actionable/
-    SDTM_Domain_Metadata.xlsx                     ← reference data (stable)
-  reports/
-    SDTM_Domain_Analysis.xlsx                     ← structural types + COSMoS (evolving)
+    SDTM_Domain_Metadata.xlsx                     <- reference data (stable)
+    README.md                                     <- column descriptions
 ```
 
 ## Structural types (our contribution)
@@ -44,7 +39,7 @@ SDTM classifies domains by observation class (Findings, Events, Interventions, e
 
 Domain list and observation classes: SDTMIG v3.4 public documentation.
 
-Structural type categorization: our analysis — see [`docs/SDTM_Domain_Overview.md`](docs/SDTM_Domain_Overview.md).
+Structural type categorization: our analysis -- see [`SDTM_Domain_Overview.md`](../SDTM_Domain_Overview.md).
 
 COSMoS coverage: point-in-time snapshot from the [`cosmos-bc-dss`](../cosmos-bc-dss/) interim file.
 
