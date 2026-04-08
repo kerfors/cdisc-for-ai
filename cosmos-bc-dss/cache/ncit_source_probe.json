@@ -1,0 +1,840 @@
+{
+  "C100106": {
+    "code": "C100106",
+    "name": "ADAS-Cog CDISC Version Functional Test Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C100109": {
+    "code": "C100109",
+    "name": "BPRS-Anchored Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C100116": {
+    "code": "C100116",
+    "name": "KPS Scale Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C100761": {
+    "code": "C100761",
+    "name": "Brief Psychiatric Rating Scale A Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C100762": {
+    "code": "C100762",
+    "name": "Alzheimer's Disease Assessment Scale-Cognitive CDISC Version Functional Test",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C100768": {
+    "code": "C100768",
+    "name": "Karnofsky Performance Status Scale Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C101869": {
+    "code": "C101869",
+    "name": "AIMS Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C101874": {
+    "code": "C101874",
+    "name": "ECOG Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C101875": {
+    "code": "C101875",
+    "name": "EQ-5D-5L Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C101876": {
+    "code": "C101876",
+    "name": "HAMA Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C102111": {
+    "code": "C102111",
+    "name": "Abnormal Involuntary Movement Scale Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C102116": {
+    "code": "C102116",
+    "name": "Eastern Cooperative Oncology Group Performance Status Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C102117": {
+    "code": "C102117",
+    "name": "European Quality of Life Five Dimension Five Level Scale Questionnaire",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C102118": {
+    "code": "C102118",
+    "name": "Hamilton Anxiety Rating Scale Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C110937": {
+    "code": "C110937",
+    "name": "Musculoskeletal Finding",
+    "sources": [
+      "ACC/AHA",
+      "FDA",
+      "NICHD"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C111095": {
+    "code": "C111095",
+    "name": "Clot Detection",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C112460": {
+    "code": "C112460",
+    "name": "KFSS Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C112522": {
+    "code": "C112522",
+    "name": "Kurtzke Functional Systems Scores Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C115409": {
+    "code": "C115409",
+    "name": "6MWT Functional Test Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C115789": {
+    "code": "C115789",
+    "name": "6 Minute Walk Functional Test 2008 Version",
+    "sources": [
+      "CDISC",
+      "CTRP"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C117720": {
+    "code": "C117720",
+    "name": "Female Reproductive System Finding",
+    "sources": [],
+    "semantic_type": "Finding"
+  },
+  "C118969": {
+    "code": "C118969",
+    "name": "Clinical or Research Assessment Classification",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C119241": {
+    "code": "C119241",
+    "name": "Symptom Indicator",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C120401": {
+    "code": "C120401",
+    "name": "T-Score",
+    "sources": [],
+    "semantic_type": "Quantitative Concept"
+  },
+  "C120994": {
+    "code": "C120994",
+    "name": "APACHE II Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C120996": {
+    "code": "C120996",
+    "name": "Child-Pugh Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C121005": {
+    "code": "C121005",
+    "name": "Acute Physiology and Chronic Health Evaluation II Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C121007": {
+    "code": "C121007",
+    "name": "Child-Pugh Clinical Classification",
+    "sources": [
+      "CDISC",
+      "CPTAC",
+      "GDC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C124598": {
+    "code": "C124598",
+    "name": "Skeletal Examination",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Diagnostic Procedure"
+  },
+  "C124689": {
+    "code": "C124689",
+    "name": "Tanner Scale-Boy Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C124690": {
+    "code": "C124690",
+    "name": "Tanner Scale-Girl Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C124703": {
+    "code": "C124703",
+    "name": "Tanner Scale Boy Version",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C124704": {
+    "code": "C124704",
+    "name": "Tanner Scale Girl Version",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C132527": {
+    "code": "C132527",
+    "name": "CES Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C132532": {
+    "code": "C132532",
+    "name": "Combat Exposure Scale Questionnaire",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C135508": {
+    "code": "C135508",
+    "name": "Organ State",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Qualitative Concept"
+  },
+  "C135705": {
+    "code": "C135705",
+    "name": "CGI Generic Modification Version Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C135706": {
+    "code": "C135706",
+    "name": "PGI Generic Modification Version Questionnaire Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C135738": {
+    "code": "C135738",
+    "name": "Clinical Global Impression Generic Modification Version Questionnaire",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C135739": {
+    "code": "C135739",
+    "name": "Patient Global Impression Generic Modification Version Questionnaire",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C138967": {
+    "code": "C138967",
+    "name": "Isometric Muscle Strength",
+    "sources": [],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C139216": {
+    "code": "C139216",
+    "name": "Isometric Muscle Strength, Flexion",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C139264": {
+    "code": "C139264",
+    "name": "Pregnancy Indicator",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C147551": {
+    "code": "C147551",
+    "name": "ATLAS Clinical Classification Question",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C147589": {
+    "code": "C147589",
+    "name": "ATLAS Score Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C15260": {
+    "code": "C15260",
+    "name": "Immunodiagnostic Procedure",
+    "sources": [],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C154889": {
+    "code": "C154889",
+    "name": "Abnormal Bleeding Indicator",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C15709": {
+    "code": "C15709",
+    "name": "Genetic Testing",
+    "sources": [
+      "CTRP",
+      "NICHD"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C158256": {
+    "code": "C158256",
+    "name": "Fat Mass",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C158424": {
+    "code": "C158424",
+    "name": "Physical Property",
+    "sources": [
+      "FDA"
+    ],
+    "semantic_type": "Qualitative Concept"
+  },
+  "C159204": {
+    "code": "C159204",
+    "name": "Fanconi Anemia Complementation Group Gene Mutation",
+    "sources": [
+      "CPTAC",
+      "CTRP"
+    ],
+    "semantic_type": "Cell or Molecular Dysfunction"
+  },
+  "C160723": {
+    "code": "C160723",
+    "name": "Residual Cancer Burden Index",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C16149": {
+    "code": "C16149",
+    "name": "Progesterone Receptor Status",
+    "sources": [
+      "CPTAC",
+      "CTRP"
+    ],
+    "semantic_type": "Laboratory or Test Result"
+  },
+  "C16152": {
+    "code": "C16152",
+    "name": "HER2/Neu Status",
+    "sources": [
+      "CTRP"
+    ],
+    "semantic_type": "Laboratory or Test Result"
+  },
+  "C171082": {
+    "code": "C171082",
+    "name": "Medical Status",
+    "sources": [],
+    "semantic_type": "Qualitative Concept"
+  },
+  "C17241": {
+    "code": "C17241",
+    "name": "Urinalysis",
+    "sources": [
+      "CDISC",
+      "CTRP"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C17248": {
+    "code": "C17248",
+    "name": "Genetic Variation",
+    "sources": [
+      "BRIDG",
+      "CTDC",
+      "CTRP"
+    ],
+    "semantic_type": "Nucleotide Sequence"
+  },
+  "C177692": {
+    "code": "C177692",
+    "name": "Expression Positive",
+    "sources": [],
+    "semantic_type": "Laboratory or Test Result"
+  },
+  "C18020": {
+    "code": "C18020",
+    "name": "Diagnostic Procedure",
+    "sources": [
+      "CDISC",
+      "CTRP",
+      "ICH",
+      "NICHD",
+      "OORO"
+    ],
+    "semantic_type": "Diagnostic Procedure"
+  },
+  "C181043": {
+    "code": "C181043",
+    "name": "Clinical Findings Indicator",
+    "sources": [],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C18194": {
+    "code": "C18194",
+    "name": "Molecular Diagnostic Method",
+    "sources": [],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C18302": {
+    "code": "C18302",
+    "name": "Genetic Variation Analysis",
+    "sources": [
+      "CDISC",
+      "CTRP"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C188928": {
+    "code": "C188928",
+    "name": "Hormone Receptor Status",
+    "sources": [],
+    "semantic_type": "Laboratory or Test Result"
+  },
+  "C190808": {
+    "code": "C190808",
+    "name": "Recurrence Risk Score",
+    "sources": [],
+    "semantic_type": "Quantitative Concept"
+  },
+  "C190943": {
+    "code": "C190943",
+    "name": "Harvey-Bradshaw Index Clinical Classification Question",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C190945": {
+    "code": "C190945",
+    "name": "Modified Van Assche Index Clinical Classification Question",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C190946": {
+    "code": "C190946",
+    "name": "Rutgeerts Score Clinical Classification Question",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C191036": {
+    "code": "C191036",
+    "name": "Harvey-Bradshaw Index Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C191038": {
+    "code": "C191038",
+    "name": "Modified Van Assche Index Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C191039": {
+    "code": "C191039",
+    "name": "Rutgeerts Score Clinical Classification",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Intellectual Product"
+  },
+  "C19332": {
+    "code": "C19332",
+    "name": "Personal Attribute",
+    "sources": [],
+    "semantic_type": "Organism Attribute"
+  },
+  "C19770": {
+    "code": "C19770",
+    "name": "Molecular Analysis",
+    "sources": [
+      "CDISC",
+      "GDC"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C25150": {
+    "code": "C25150",
+    "name": "Age",
+    "sources": [
+      "BRIDG",
+      "CDISC",
+      "FDA",
+      "INC",
+      "NICHD"
+    ],
+    "semantic_type": "Organism Attribute"
+  },
+  "C25180": {
+    "code": "C25180",
+    "name": "Indicator",
+    "sources": [
+      "NICHD"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C25284": {
+    "code": "C25284",
+    "name": "Type",
+    "sources": [
+      "BRIDG",
+      "CareLex",
+      "CDISC",
+      "GDC"
+    ],
+    "semantic_type": "Functional Concept"
+  },
+  "C25334": {
+    "code": "C25334",
+    "name": "Length",
+    "sources": [
+      "CDISC",
+      "FDA",
+      "NICHD"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C25337": {
+    "code": "C25337",
+    "name": "Number",
+    "sources": [
+      "DIPG/DMG",
+      "PCDC"
+    ],
+    "semantic_type": "Quantitative Concept"
+  },
+  "C25338": {
+    "code": "C25338",
+    "name": "Score",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Quantitative Concept"
+  },
+  "C25447": {
+    "code": "C25447",
+    "name": "Characteristic",
+    "sources": [
+      "CDISC",
+      "NICHD"
+    ],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C35461": {
+    "code": "C35461",
+    "name": "Clinical Course of Disease",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C35552": {
+    "code": "C35552",
+    "name": "Cardiovascular System Finding",
+    "sources": [
+      "CDISC",
+      "NICHD"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C35867": {
+    "code": "C35867",
+    "name": "Morphologic Finding",
+    "sources": [
+      "ICDC",
+      "PCDC"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C36292": {
+    "code": "C36292",
+    "name": "Laboratory Test Result",
+    "sources": [
+      "CTRP",
+      "FDA",
+      "GDC",
+      "NICHD",
+      "OORO",
+      "PCDC"
+    ],
+    "semantic_type": "Laboratory or Test Result"
+  },
+  "C38155": {
+    "code": "C38155",
+    "name": "Recurrent Disease",
+    "sources": [
+      "ACC/AHA",
+      "CDISC",
+      "CTRP",
+      "GDC",
+      "NICHD",
+      "PCDC"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C4876": {
+    "code": "C4876",
+    "name": "Symptom",
+    "sources": [
+      "CDISC",
+      "CDISC-GLOSS"
+    ],
+    "semantic_type": "Sign or Symptom"
+  },
+  "C50995": {
+    "code": "C50995",
+    "name": "Disease Response",
+    "sources": [
+      "GDC",
+      "OORO",
+      "PCDC"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C55073": {
+    "code": "C55073",
+    "name": "Recurrent Disease, Distant Site",
+    "sources": [
+      "DIPG/DMG",
+      "GDC",
+      "OORO"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C60819": {
+    "code": "C60819",
+    "name": "Assay",
+    "sources": [
+      "CDISC",
+      "FDA",
+      "ICDC"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C63331": {
+    "code": "C63331",
+    "name": "Microsatellite Instability Analysis",
+    "sources": [
+      "CTRP",
+      "GDC"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C63479": {
+    "code": "C63479",
+    "name": "Gene Expression Analysis",
+    "sources": [
+      "CTRP"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C63507": {
+    "code": "C63507",
+    "name": "Range of Motion",
+    "sources": [],
+    "semantic_type": "Clinical Attribute"
+  },
+  "C64430": {
+    "code": "C64430",
+    "name": "Protein or Enzyme Type Measurement",
+    "sources": [
+      "CTRP"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  },
+  "C68616": {
+    "code": "C68616",
+    "name": "Start Date",
+    "sources": [
+      "CPTAC",
+      "DIPG/DMG"
+    ],
+    "semantic_type": "Temporal Concept"
+  },
+  "C68741": {
+    "code": "C68741",
+    "name": "Z-Score",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Quantitative Concept"
+  },
+  "C69217": {
+    "code": "C69217",
+    "name": "Age Started",
+    "sources": [
+      "GDC"
+    ],
+    "semantic_type": "Organism Attribute"
+  },
+  "C77140": {
+    "code": "C77140",
+    "name": "Clinical Test Result",
+    "sources": [],
+    "semantic_type": "Finding"
+  },
+  "C81250": {
+    "code": "C81250",
+    "name": "Functional Assessment",
+    "sources": [
+      "CTRP"
+    ],
+    "semantic_type": "Activity"
+  },
+  "C81307": {
+    "code": "C81307",
+    "name": "Estimation Method",
+    "sources": [],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C82394": {
+    "code": "C82394",
+    "name": "Tanner Scale",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C82554": {
+    "code": "C82554",
+    "name": "Flow Rate",
+    "sources": [
+      "BRIDG"
+    ],
+    "semantic_type": "Quantitative Concept"
+  },
+  "C83119": {
+    "code": "C83119",
+    "name": "Physical Examination Finding",
+    "sources": [
+      "GDC",
+      "ICDC"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C83430": {
+    "code": "C83430",
+    "name": "Substance Use Status",
+    "sources": [],
+    "semantic_type": "Qualitative Concept"
+  },
+  "C87802": {
+    "code": "C87802",
+    "name": "Physical Strength",
+    "sources": [],
+    "semantic_type": "Conceptual Entity"
+  },
+  "C91105": {
+    "code": "C91105",
+    "name": "Clinical or Research Assessment Questionnaire",
+    "sources": [],
+    "semantic_type": "Intellectual Product"
+  },
+  "C93491": {
+    "code": "C93491",
+    "name": "Abnormal Indicator",
+    "sources": [
+      "BRIDG"
+    ],
+    "semantic_type": "Qualitative Concept"
+  },
+  "C93645": {
+    "code": "C93645",
+    "name": "Recurrence Indicator",
+    "sources": [
+      "BRIDG"
+    ],
+    "semantic_type": "Finding"
+  },
+  "C94299": {
+    "code": "C94299",
+    "name": "Receptor Status",
+    "sources": [],
+    "semantic_type": "Laboratory or Test Result"
+  },
+  "C96648": {
+    "code": "C96648",
+    "name": "Fat Measurement",
+    "sources": [
+      "CDISC"
+    ],
+    "semantic_type": "Laboratory Procedure"
+  }
+}
