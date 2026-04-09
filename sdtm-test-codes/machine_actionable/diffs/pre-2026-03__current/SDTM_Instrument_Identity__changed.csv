@@ -1,0 +1,161 @@
+NCIt_Code,column,old,new
+C180218,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Erythema/Redness score.
+C180219,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Thickness/Induration score.
+C180220,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Desquamation/Scaling score.
+C180222,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Erythema/Redness score.
+C180223,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Thickness/Induration score.
+C180224,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Desquamation/Scaling score.
+C180226,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Erythema/Redness score.
+C180227,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Thickness/Induration score.
+C180228,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Desquamation/Scaling score.
+C180230,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Erythema/Redness score.
+C180231,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Thickness/Induration score.
+C180232,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Desquamation/Scaling score.
+C180234,TEST,PASI02-Head: Sum of Symptom Scores,PASI02-Head: Sum of Scores
+C180234,NCIt_Preferred_Term,PASI Feldman Version - Head: Sum of Symptom Scores,PASI Feldman Version - Head: Sum of Scores
+C180234,NCIt_Synonyms,PASI02-Head: Sum of Symptom Scores; PASI0217,PASI02-Head: Sum of Scores; PASI0217
+C180234,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Sum of symptom scores.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Sum of scores.
+C180235,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Sum of scores x area score.
+C180237,TEST,PASI02-Up Extrem: Sum of Symptom Scores,PASI02-Up Extrem: Sum of Scores
+C180237,NCIt_Preferred_Term,PASI Feldman Version - Upper Extremities: Sum of Symptom Scores,PASI Feldman Version - Upper Extremities: Sum of Scores
+C180237,NCIt_Synonyms,PASI02-Up Extrem: Sum of Symptom Scores; PASI0220,PASI02-Up Extrem: Sum of Scores; PASI0220
+C180237,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Sum of scores.
+C180238,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Upper Extremities: Sum of scores x area score.
+C180240,TEST,PASI02-Trunk: Sum of Symptom Scores,PASI02-Trunk: Sum of Scores
+C180240,NCIt_Preferred_Term,PASI Feldman Version - Trunk: Sum of Symptom Scores,PASI Feldman Version - Trunk: Sum of Scores
+C180240,NCIt_Synonyms,PASI02-Trunk: Sum of Symptom Scores; PASI0223,PASI02-Trunk: Sum of Scores; PASI0223
+C180240,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Sum of symptom scores.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Sum of scores.
+C180241,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Trunk: Sum of scores x area score.
+C180243,TEST,PASI02-Low Extrem: Sum of Symptom Scores,PASI02-Low Extrem: Sum of Scores
+C180243,NCIt_Preferred_Term,PASI Feldman Version - Lower Extremities: Sum of Symptom Scores,PASI Feldman Version - Lower Extremities: Sum of Scores
+C180243,NCIt_Synonyms,PASI02-Low Extrem: Sum of Symptom Scores; PASI0226,PASI02-Low Extrem: Sum of Scores; PASI0226
+C180243,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Sum of scores.
+C180244,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Lower Extremities: Sum of scores x area score.
+C191066,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Erythema/Redness score.
+C191067,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Thickness/Induration score.
+C191068,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Desquamation/Scaling score.
+C191070,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Erythema/Redness score.
+C191071,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Thickness/Induration score.
+C191072,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Desquamation/Scaling score.
+C191074,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Erythema/Redness score.
+C191075,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Thickness/Induration score.
+C191076,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Desquamation/Scaling score.
+C191078,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Erythema/Redness score.
+C191079,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Thickness/Induration score.
+C191080,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Desquamation/Scaling score.
+C191082,TEST,PASI03-Head: Sum of Symptom Scores,PASI03-Head: Sum of Scores
+C191082,NCIt_Preferred_Term,PASI Fredriksson Version - Head: Sum of Symptom Scores,PASI Fredriksson Version - Head: Sum of Scores
+C191082,NCIt_Synonyms,PASI03-Head: Sum of Symptom Scores; PASI0317,PASI03-Head: Sum of Scores; PASI0317
+C191082,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Sum of symptom scores.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Sum of scores.
+C191083,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Head: Sum of scores x area score.
+C191085,TEST,PASI03-Up Extrem: Sum of Symptom Scores,PASI03-Up Extrem: Sum of Scores
+C191085,NCIt_Preferred_Term,PASI Fredriksson Version - Upper Extremities: Sum of Symptom Scores,PASI Fredriksson Version - Upper Extremities: Sum of Scores
+C191085,NCIt_Synonyms,PASI03-Up Extrem: Sum of Symptom Scores; PASI0320,PASI03-Up Extrem: Sum of Scores; PASI0320
+C191085,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Sum of scores.
+C191086,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Upper Extremities: Sum of scores x area score.
+C191088,TEST,PASI03-Trunk: Sum of Symptom Scores,PASI03-Trunk: Sum of Scores
+C191088,NCIt_Preferred_Term,PASI Fredriksson Version - Trunk: Sum of Symptom Scores,PASI Fredriksson Version - Trunk: Sum of Scores
+C191088,NCIt_Synonyms,PASI03-Trunk: Sum of Symptom Scores; PASI0323,PASI03-Trunk: Sum of Scores; PASI0323
+C191088,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Sum of symptom scores.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Sum of scores.
+C191089,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Trunk: Sum of scores x area score.
+C191091,TEST,PASI03-Low Extrem: Sum of Symptom Scores,PASI03-Low Extrem: Sum of Scores
+C191091,NCIt_Preferred_Term,PASI Fredriksson Version - Lower Extremities: Sum of Symptom Scores,PASI Fredriksson Version - Lower Extremities: Sum of Scores
+C191091,NCIt_Synonyms,PASI03-Low Extrem: Sum of Symptom Scores; PASI0326,PASI03-Low Extrem: Sum of Scores; PASI0326
+C191091,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Sum of scores.
+C191092,NCIt_Definition,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Fredriksson Version (PASI Fredriksson Version) Lower Extremities: Sum of scores x area score.
+C191095,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Erythema/Redness symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Erythema/Redness score.
+C191096,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Thickness/Induration symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Thickness/Induration score.
+C191097,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Desquamation/Scaling score.
+C191099,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Erythema/Redness score.
+C191100,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Thickness/Induration score.
+C191101,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Desquamation/Scaling score.
+C191103,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Erythema/Redness symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Erythema/Redness score.
+C191104,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Thickness/Induration symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Thickness/Induration score.
+C191105,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Desquamation/Scaling score.
+C191107,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Erythema/Redness score.
+C191108,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Thickness/Induration score.
+C191109,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Desquamation/Scaling score.
+C191111,TEST,PASI04-Head: Sum of Symptom Scores,PASI04-Head: Sum of Scores
+C191111,NCIt_Preferred_Term,PASI EMA Version - Head: Sum of Symptom Scores,PASI EMA Version - Head: Sum of Scores
+C191111,NCIt_Synonyms,PASI04-Head: Sum of Symptom Scores; PASI0417,PASI04-Head: Sum of Scores; PASI0417
+C191111,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Sum of symptom scores.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Sum of scores.
+C191112,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Sum of symptom scores x area score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Head: Sum of scores x area score.
+C191114,TEST,PASI04-Up Extrem: Sum of Symptom Scores,PASI04-Up Extrem: Sum of Scores
+C191114,NCIt_Preferred_Term,PASI EMA Version - Upper Extremities: Sum of Symptom Scores,PASI EMA Version - Upper Extremities: Sum of Scores
+C191114,NCIt_Synonyms,PASI04-Up Extrem: Sum of Symptom Scores; PASI0420,PASI04-Up Extrem: Sum of Scores; PASI0420
+C191114,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Sum of scores.
+C191115,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Upper Extremities: Sum of scores x area score.
+C191117,TEST,PASI04-Trunk: Sum of Symptom Scores,PASI04-Trunk: Sum of Scores
+C191117,NCIt_Preferred_Term,PASI EMA Version - Trunk: Sum of Symptom Scores,PASI EMA Version - Trunk: Sum of Scores
+C191117,NCIt_Synonyms,PASI04-Trunk: Sum of Symptom Scores; PASI0423,PASI04-Trunk: Sum of Scores; PASI0423
+C191117,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Sum of symptom scores.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Sum of scores.
+C191118,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Sum of symptom scores x area score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Trunk: Sum of scores x area score.
+C191120,TEST,PASI04-Low Extrem: Sum of Symptom Scores,PASI04-Low Extrem: Sum of Scores
+C191120,NCIt_Preferred_Term,PASI EMA Version - Lower Extremities: Sum of Symptom Scores,PASI EMA Version - Lower Extremities: Sum of Scores
+C191120,NCIt_Synonyms,PASI04-Low Extrem: Sum of Symptom Scores; PASI0426,PASI04-Low Extrem: Sum of Scores; PASI0426
+C191120,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Sum of scores.
+C191121,NCIt_Definition,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index European Medical Agency Version (PASI EMA Version) Lower Extremities: Sum of scores x area score.
+C191124,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Erythema/Redness score.
+C191125,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Thickness/Induration score.
+C191126,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Desquamation/Scaling score.
+C191128,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Erythema/Redness score.
+C191129,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Thickness/Induration score.
+C191130,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Desquamation/Scaling score.
+C191132,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Erythema/Redness score.
+C191133,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Thickness/Induration score.
+C191134,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Desquamation/Scaling score.
+C191136,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Erythema/Redness score.
+C191137,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Thickness/Induration score.
+C191138,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Desquamation/Scaling score.
+C191140,TEST,PASI05-Head: Sum of Symptom Scores,PASI05-Head: Sum of Scores
+C191140,NCIt_Preferred_Term,PASI Bozek Version - Head: Sum of Symptom Scores,PASI Bozek Version - Head: Sum of Scores
+C191140,NCIt_Synonyms,PASI05-Head: Sum of Symptom Scores; PASI0517,PASI05-Head: Sum of Scores; PASI0517
+C191140,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Sum of symptom scores.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Sum of scores.
+C191141,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Head: Sum of scores x area score.
+C191143,TEST,PASI05-Up Extrem: Sum of Symptom Scores,PASI05-Up Extrem: Sum of Scores
+C191143,NCIt_Preferred_Term,PASI Bozek Version - Upper Extremities: Sum of Symptom Scores,PASI Bozek Version - Upper Extremities: Sum of Scores
+C191143,NCIt_Synonyms,PASI05-Up Extrem: Sum of Symptom Scores; PASI0520,PASI05-Up Extrem: Sum of Scores; PASI0520
+C191143,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Sum of scores.
+C191144,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Upper Extremities: Sum of scores x area score.
+C191146,TEST,PASI05-Trunk: Sum of Symptom Scores,PASI05-Trunk: Sum of Scores
+C191146,NCIt_Preferred_Term,PASI Bozek Version - Trunk: Sum of Symptom Scores,PASI Bozek Version - Trunk: Sum of Scores
+C191146,NCIt_Synonyms,PASI05-Trunk: Sum of Symptom Scores; PASI0523,PASI05-Trunk: Sum of Scores; PASI0523
+C191146,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Sum of symptom scores.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Sum of scores.
+C191147,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Trunk: Sum of scores x area score.
+C191149,TEST,PASI05-Low Extrem: Sum of Symptom Scores,PASI05-Low Extrem: Sum of Scores
+C191149,NCIt_Preferred_Term,PASI Bozek Version - Lower Extremities: Sum of Symptom Scores,PASI Bozek Version - Lower Extremities: Sum of Scores
+C191149,NCIt_Synonyms,PASI05-Low Extrem: Sum of Symptom Scores; PASI0526,PASI05-Low Extrem: Sum of Scores; PASI0526
+C191149,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Sum of symptom scores.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Sum of scores.
+C191150,NCIt_Definition,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Sum of symptom scores x area score.,Psoriasis Area and Severity Index Bozek Version (PASI Bozek Version) Lower Extremities: Sum of scores x area score.
+C202517,Domain,RS,QS
+C202517,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202518,Domain,RS,QS
+C202518,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202519,Domain,RS,QS
+C202519,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202520,Domain,RS,QS
+C202520,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202521,Domain,RS,QS
+C202521,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202522,Domain,RS,QS
+C202522,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202523,Domain,RS,QS
+C202523,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202524,Domain,RS,QS
+C202524,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202525,Domain,RS,QS
+C202525,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202526,Domain,RS,QS
+C202526,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202527,Domain,RS,QS
+C202527,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202528,Domain,RS,QS
+C202528,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202529,Domain,RS,QS
+C202529,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202530,Domain,RS,QS
+C202530,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202531,Domain,RS,QS
+C202531,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C202532,Domain,RS,QS
+C202532,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire

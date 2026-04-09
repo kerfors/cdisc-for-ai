@@ -2,6 +2,8 @@
 
 Machine-actionable reference files for CDISC clinical data standards -- designed for both human review and AI consumption.
 
+> **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-Q1, SDTMIG v3.4. See [`docs/Changes_2026-03.md`](docs/Changes_2026-03.md) for what changed since the previous release.
+
 ## Why
 
 Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. In specimen-based domains, each Dataset Specialization adds an identifiable measurement specification: specimen, method, units, LOINC. But these linkages are scattered across disconnected sources. The CT file presents test codes as submission strings. Reaching the measurement specification requires navigating across BC and DSS exports. A human must mentally reconstruct the connections.
@@ -129,7 +131,7 @@ The analytical work produced insights beyond the reference files themselves. Ful
 
 **DS_Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are designed for human readability (GLUCSER = Glucose in Serum), not as persistent machine identifiers. They are not unique across domains. Several approaches could make DSSs machine-addressable: URIs from domain + DS_Code, NCIt C-codes at the DSS level, or other mechanisms. The right approach is an open question for the community.
 
-**The standardized identity layer is complete; the measurement specification layer is not.** The specimen-based consumer file carries 4,109 TESTCDs with full NCIt identity across 8 domains, but only 100 have COSMoS measurement specifications. For laboratory tests specifically, sponsors who maintain internal lab test catalogues or registries already have much of the missing operational detail (specimen types, methods, units, LOINC codes). The Test_Identity sheet provides the standardized anchor (TESTCD, NCIt_Code) for mapping that internal content to the CDISC identity layer. Where COSMoS has published DSSs, use them. Where it has not, the identity layer is still there. See the [consumer track README](sdtm-findings/) for detail.
+**The standardized identity layer is complete; the measurement specification layer is not.** The specimen-based consumer file carries 4,183 TESTCDs with full NCIt identity across 8 domains, but only 104 have COSMoS measurement specifications. For laboratory tests specifically, sponsors who maintain internal lab test catalogues or registries already have much of the missing operational detail (specimen types, methods, units, LOINC codes). The Test_Identity sheet provides the standardized anchor (TESTCD, NCIt_Code) for mapping that internal content to the CDISC identity layer. Where COSMoS has published DSSs, use them. Where it has not, the identity layer is still there. See the [consumer track README](sdtm-findings/) for detail.
 
 **Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? Is the collection-template framing useful for understanding where DSS-level identifiers add value? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback on any of these is welcome.
 

@@ -1,4 +1,58 @@
 NCIt_code,TESTCD,TEST,domain,instrument_label,codelist_testcd,codelist_test,source
+C225120,ARCI0101,ARCI01-Speech Is Slurred,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225121,ARCI0102,ARCI01-Not as Active as Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225122,ARCI0103,ARCI01-Feeling of Just Dragging Along,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225123,ARCI0104,ARCI01-Feel Sluggish,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225124,ARCI0105,ARCI01-Head Feels Heavy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225125,ARCI0106,ARCI01-Feel Like Avoiding People,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225126,ARCI0107,ARCI01-Feel Dizzy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225127,ARCI0108,ARCI01-Harder Than Usual to Move Around,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225128,ARCI0109,ARCI01-Moody,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225129,ARCI0110,ARCI01-People Say I Am Dull Today,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225130,ARCI0111,ARCI01-Feel Drowsy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225131,ARCI0112,ARCI01-Full of Energy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225132,ARCI0113,ARCI01-Today I Say Things in Easiest Way,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225133,ARCI0114,ARCI01-Things Around Seem More Pleasing,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225134,ARCI0115,ARCI01-Pleasant Feeling in My Stomach,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225135,ARCI0116,ARCI01-Feel I Will Lose the Contentment,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225136,ARCI0117,ARCI01-Feel in Complete Harmony w/World,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225137,ARCI0118,ARCI01-Appreciate What Others Are Saying,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225138,ARCI0119,ARCI01-Happy if I Felt as I Feel Now,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225139,ARCI0120,ARCI01-Feel Good Other People Can Tell,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225140,ARCI0121,ARCI01-Feel Something Pleasant Happened,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225141,ARCI0122,ARCI01-Happy if I Felt as I Do Now,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225142,ARCI0123,ARCI01-More Clear Headed Than Dreamy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225143,ARCI0124,ARCI01-Would Be More Popular w/People,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225144,ARCI0125,ARCI01-Feel a Very Pleasant Emptiness,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225145,ARCI0126,ARCI01-Thoughts Come More Easily Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225146,ARCI0127,ARCI01-Feel Less Discouraged Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225147,ARCI0128,ARCI01-Mood to Talk About Feelings,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225148,ARCI0129,ARCI01-More Excited Than Dreamy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225149,ARCI0130,ARCI01-Answering Questions Was Very Easy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225150,ARCI0131,ARCI01-Memory Seems Sharper Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225151,ARCI0132,ARCI01-Could Write for Hours,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225152,ARCI0133,ARCI01-Feel Very Patient,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225153,ARCI0134,ARCI01-Parts of My Body Are Tingling,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225154,ARCI0135,ARCI01-Have a Weird Feeling,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225155,ARCI0136,ARCI01-Movements Seem Faster Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225156,ARCI0137,ARCI01-Have Better Control Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225157,ARCI0138,ARCI01-Movements Seem Slower Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225158,ARCI0139,ARCI01-Hard to Keep Mind on Task/Job,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225159,ARCI0140,ARCI01-Don't Feel Like Reading Right Now,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225160,ARCI0141,ARCI01-Spending Longer on Each Question,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225161,ARCI0142,ARCI01-Hand Feels Clumsy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225162,ARCI0143,ARCI01-Hand Shakes When I Write,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225163,ARCI0144,ARCI01-Have Disturbance in My Stomach,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225164,ARCI0145,ARCI01-Awareness of Bodily Sensations,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225165,ARCI0146,ARCI01-Feel Anxious & Upset,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225166,ARCI0147,ARCI01-Unusual Weakness of My Muscles,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225167,ARCI0148,ARCI01-Thrill Gone Through Me,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225168,ARCI0149,ARCI01-Movement Free Relaxed&Pleasurable,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225169,ARCI0150,ARCI01-PCAG Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225170,ARCI0151,ARCI01-MBG Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225171,ARCI0152,ARCI01-LSD Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225172,ARCI0153,ARCI01-BG Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
+C225173,ARCI0154,ARCI01-A Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,NCI_EVS
 C174103,A4STR101,A4STR1-Was 4-Stair Ascend Performed,FT,4-Stair Ascend Functional Test,A4STR1TC,A4STR1TN,NCI_EVS
 C141706,A4STR102,A4STR1-Time to Do 4-Stair Ascend,FT,4-Stair Ascend Functional Test,A4STR1TC,A4STR1TN,NCI_EVS
 C147590,A4STR103,A4STR1-Wear Orthoses,FT,4-Stair Ascend Functional Test,A4STR1TC,A4STR1TN,NCI_EVS
@@ -973,6 +1027,14 @@ C119118,ADT0111,ADT01-Total,QS,Alcohol Use Disorder Identification Test: Self-Re
 C119119,ADTC0101,ADTC01-How Often Drink Alcohol,QS,Alcohol Use Disorder Identification Test-Consumption Questions Questionnaire,ADTC01TC,ADTC01TN,NCI_EVS
 C119120,ADTC0102,ADTC01-Alcohol Drinks on a Typical Day,QS,Alcohol Use Disorder Identification Test-Consumption Questions Questionnaire,ADTC01TC,ADTC01TN,NCI_EVS
 C119121,ADTC0103,ADTC01-Six or More Drinks One Occasion,QS,Alcohol Use Disorder Identification Test-Consumption Questions Questionnaire,ADTC01TC,ADTC01TN,NCI_EVS
+C225178,ADTC0201,ADTC02-How Often Drink Alcohol,QS,Alcohol Use Disorders Identification Test-Concise Self-Report Version Questionnaire,ADTC02TC,ADTC02TN,NCI_EVS
+C225179,ADTC0202,ADTC02-Alcohol Drinks on a Typical Day,QS,Alcohol Use Disorders Identification Test-Concise Self-Report Version Questionnaire,ADTC02TC,ADTC02TN,NCI_EVS
+C225180,ADTC0203,ADTC02-Six or More Drinks One Occasion,QS,Alcohol Use Disorders Identification Test-Concise Self-Report Version Questionnaire,ADTC02TC,ADTC02TN,NCI_EVS
+C225181,ADTC0204,ADTC02-Total Score,QS,Alcohol Use Disorders Identification Test-Concise Self-Report Version Questionnaire,ADTC02TC,ADTC02TN,NCI_EVS
+C225174,ADTC0301,ADTC03-How Often Drink Alcohol,QS,Alcohol Use Disorders Identification Test-Concise Interview Version Questionnaire,ADTC03TC,ADTC03TN,NCI_EVS
+C225175,ADTC0302,ADTC03-Alcohol Drinks on a Typical Day,QS,Alcohol Use Disorders Identification Test-Concise Interview Version Questionnaire,ADTC03TC,ADTC03TN,NCI_EVS
+C225176,ADTC0303,ADTC03-Six or More Drinks One Occasion,QS,Alcohol Use Disorders Identification Test-Concise Interview Version Questionnaire,ADTC03TC,ADTC03TN,NCI_EVS
+C225177,ADTC0304,ADTC03-Total Score,QS,Alcohol Use Disorders Identification Test-Concise Interview Version Questionnaire,ADTC03TC,ADTC03TN,NCI_EVS
 C163825,ANSD0101,ANSD01-Rate Breathing at Its Worst,QS,Asthma Nighttime Symptom Diary v1.0 Questionnaire,ANSD01TC,ANSD01TN,NCI_EVS
 C163826,ANSD0102,ANSD01-Rate Wheezing at Its Worst,QS,Asthma Nighttime Symptom Diary v1.0 Questionnaire,ANSD01TC,ANSD01TN,NCI_EVS
 C163827,ANSD0103,ANSD01-Rate Shortness of Breath at Worst,QS,Asthma Nighttime Symptom Diary v1.0 Questionnaire,ANSD01TC,ANSD01TN,NCI_EVS
@@ -2229,6 +2291,21 @@ C142073,DRRI1P09,DRRI1-P: Spend My Free Time With Family,QS,Deployment Risk and 
 C142074,DRRI1P10,DRRI1-P: Family Tell Me When Problem,QS,Deployment Risk and Resilience Inventory-2 Questionnaire,DRRI1TC,DRRI1TN,NCI_EVS
 C142075,DRRI1P11,DRRI1-P: Can Be Myself Around Family,QS,Deployment Risk and Resilience Inventory-2 Questionnaire,DRRI1TC,DRRI1TN,NCI_EVS
 C142076,DRRI1P12,DRRI1-P: I Get Along Well With My Family,QS,Deployment Risk and Resilience Inventory-2 Questionnaire,DRRI1TC,DRRI1TN,NCI_EVS
+C225105,DSQ101A,DSQ1-Dead Feeling Exercise Freq,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225106,DSQ101B,DSQ1-Dead Feeling Exercise Sev,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225107,DSQ102A,DSQ1-Soreness After Activities Freq,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225108,DSQ102B,DSQ1-Soreness After Activities Sev,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225109,DSQ103A,DSQ1-Mentally Tired After Effort Freq,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225110,DSQ103B,DSQ1-Mentally Tired After Effort Sev,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225111,DSQ104A,DSQ1-Minimum Exercise Makes Tired Freq,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225112,DSQ104B,DSQ1-Minimum Exercise Makes Tired Sev,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225113,DSQ105A,DSQ1-Drained After Mild Activity Freq,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225114,DSQ105B,DSQ1-Drained After Mild Activity Sev,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225115,DSQ106,DSQ1-Recover 1 to 2 Hour After Activity,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225116,DSQ107,DSQ1-Worsening Fatigue Physical Effort,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225117,DSQ108,DSQ1-Worsening Fatigue Mental Effort,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225118,DSQ109,DSQ1-Feel Worse Activities How Long Last,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
+C225119,DSQ110,DSQ1-Do Not Exercise Make Symptoms Worse,QS,DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item Questionnaire,DSQ1TC,DSQ1TN,NCI_EVS
 C125773,ED102_1,ED1-Able to Communicate Clearly,QS,Expanded Disability Rating Scale - Postacute Interview Caregiver Version Questionnaire,ED1TC,ED1TN,NCI_EVS
 C125774,ED102_2,ED1-How They Communicate Primarily,QS,Expanded Disability Rating Scale - Postacute Interview Caregiver Version Questionnaire,ED1TC,ED1TN,NCI_EVS
 C125775,ED102_3,ED1-Correct Date and Time,QS,Expanded Disability Rating Scale - Postacute Interview Caregiver Version Questionnaire,ED1TC,ED1TN,NCI_EVS
@@ -3305,6 +3382,22 @@ C151300,FAC03021,FAC030-I Feel Fatigued,QS,National Comprehensive Cancer Network
 C151301,FAC03022,FAC030-I Have a Good Appetite,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Brain Symptom Index-24 Version 2 Questionnaire,FAC030TC,FAC030TN,NCI_EVS
 C151302,FAC03023,FAC030-I Am Able to Enjoy Life,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Brain Symptom Index-24 Version 2 Questionnaire,FAC030TC,FAC030TN,NCI_EVS
 C151303,FAC03024,FAC030-Content With Quality of My Life,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Brain Symptom Index-24 Version 2 Questionnaire,FAC030TC,FAC030TN,NCI_EVS
+C225182,FAC03201,FAC032-I Have a Lack of Energy,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225183,FAC03202,FAC032-I Have Pain,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225184,FAC03203,FAC032-I Feel Ill,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225185,FAC03204,FAC032-I Have Been Short of Breath,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225186,FAC03205,FAC032-Trouble Meeting Needs of Family,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225187,FAC03206,FAC032-I Feel Fatigued,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225188,FAC03207,FAC032-I Have Bone Pain,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225189,FAC03208,FAC032-Sleeping Well,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225190,FAC03209,FAC032-Worry My Condition Will Get Worse,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225191,FAC03210,FAC032-I Have Nausea,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225192,FAC03211,FAC032-I Have Mouth Sores,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225193,FAC03212,FAC032-Bothered by Side Effect Treatment,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225194,FAC03213,FAC032-Bothered by Hair Loss,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225195,FAC03214,FAC032-Able to Work,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225196,FAC03215,FAC032-Able to Enjoy Life,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
+C225197,FAC03216,FAC032-Content With Quality of My Life,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 Questionnaire,FAC032TC,FAC032TN,NCI_EVS
 C151304,FAC03601,FAC036-I Have Pain,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Head & Neck Symptom Index-22 Version 2 Questionnaire,FAC036TC,FAC036TN,NCI_EVS
 C151305,FAC03602,FAC036-I Am Losing Weight,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Head & Neck Symptom Index-22 Version 2 Questionnaire,FAC036TC,FAC036TN,NCI_EVS
 C151306,FAC03603,FAC036-I Have Trouble Breathing,QS,National Comprehensive Cancer Network/Functional Assessment of Cancer Therapy-Head & Neck Symptom Index-22 Version 2 Questionnaire,FAC036TC,FAC036TN,NCI_EVS
@@ -3915,6 +4008,58 @@ C208552,FAC10208,FAC102-Get Ringing or Buzzing in My Ears,QS,Functional Assessme
 C208553,FAC10209,FAC102-I Have Trouble Buttoning Buttons,QS,Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 Questionnaire,FAC102TC,FAC102TN,NCI_EVS
 C208554,FAC10210,FAC102-Trouble Feeling Shape of Objects,QS,Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 Questionnaire,FAC102TC,FAC102TN,NCI_EVS
 C208555,FAC10211,FAC102-I Have Trouble Walking,QS,Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 Questionnaire,FAC102TC,FAC102TN,NCI_EVS
+C225198,FAC10401,FAC104-I Have a Lack of Energy,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225199,FAC10402,FAC104-I Have Nausea,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225200,FAC10403,FAC104-Trouble Meeting Needs of Family,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225201,FAC10404,FAC104-I Have Pain,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225202,FAC10405,FAC104-Bothered by Side Effect Treatment,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225203,FAC10406,FAC104-I Feel Ill,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225204,FAC10407,FAC104-Forced to Spend Time in Bed,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225205,FAC10408,FAC104-I Feel Close to My Friends,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225206,FAC10409,FAC104-Emotional Support From My Family,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225207,FAC10410,FAC104-I Get Support From My Friends,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225208,FAC10411,FAC104-My Family Has Accepted My Illness,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225209,FAC10412,FAC104-Satisfied Communication Illness,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225210,FAC10413,FAC104-I Feel Close to My Partner,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225211,FAC10414,FAC104-Satisfied With My Sex Life,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225212,FAC10415,FAC104-I Feel Sad,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225213,FAC10416,FAC104-Satisfied With How I Am Coping,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225214,FAC10417,FAC104-Losing Hope Fight Against Illness,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225215,FAC10418,FAC104-I Feel Nervous,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225216,FAC10419,FAC104-I Worry About Dying,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225217,FAC10420,FAC104-Worry My Condition Will Get Worse,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225218,FAC10421,FAC104-Able to Work,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225219,FAC10422,FAC104-My Work Is Fulfilling,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225220,FAC10423,FAC104-Able to Enjoy Life,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225221,FAC10424,FAC104-I Have Accepted My Illness,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225222,FAC10425,FAC104-Sleeping Well,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225223,FAC10426,FAC104-Enjoy Things I Usually Do for Fun,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225224,FAC10427,FAC104-Content With Quality of My Life,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225225,FAC10428,FAC104-Fatigue Keeps Me From Doing Thing,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225226,FAC10429,FAC104-I Have Been Bothered by Diarrhea,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225227,FAC10430,FAC104-Discomfort/Pain in Stomach Area,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225228,FAC10431,FAC104-Bothered by Constipation,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225229,FAC10432,FAC104-Bothered by a Skin Rash,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225230,FAC10433,FAC104-Bothered by Itching,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225231,FAC10434,FAC104-Bothered by Dry Skin,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225232,FAC10435,FAC104-Bothered by Vitiligo,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225233,FAC10436,FAC104-Have Weakness in My Arms or Legs,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225234,FAC10437,FAC104-Pain/Soreness/Aches Some Muscles,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225235,FAC10438,FAC104-I Have Pain in My Joints,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225236,FAC10439,FAC104-Bothered by Swelling Certain Area,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225237,FAC10440,FAC104-Bothered by Change in Food Tastes,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225238,FAC10441,FAC104-I Have a Loss of Appetite,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225239,FAC10442,FAC104-I Have Been Vomiting,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225240,FAC10443,FAC104-I Have Been Short of Breath,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225241,FAC10444,FAC104-I Have Been Coughing,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225242,FAC10445,FAC104-Bothered by Fevers,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225243,FAC10446,FAC104-Bothered by Headaches,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225244,FAC10447,FAC104-I Have Trouble Sleeping at Night,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225245,FAC10448,FAC104-Bothered by Dry Mouth,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225246,FAC10449,FAC104-Bothered by Worsening Eyesight,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225247,FAC10450,FAC104-Bothered by Short-term Reactions,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225248,FAC10451,FAC104-Troubled Not Knowing Side Effects,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
+C225249,FAC10452,FAC104-Worry Neg Impacts Longterm Health,QS,Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 Questionnaire - 52 Item,FACT104TC,FACT104TN,NCI_EVS
 C112551,FAMS0101,FAMS01-Trouble Meeting Needs of Family,QS,Functional Assessment of Multiple Sclerosis Version 4 Questionnaire,FAMS01TC,FAMS01TN,NCI_EVS
 C112552,FAMS0102,FAMS01-I Am Able to Work,QS,Functional Assessment of Multiple Sclerosis Version 4 Questionnaire,FAMS01TC,FAMS01TN,NCI_EVS
 C112553,FAMS0103,FAMS01-I Have Trouble Walking,QS,Functional Assessment of Multiple Sclerosis Version 4 Questionnaire,FAMS01TC,FAMS01TN,NCI_EVS
@@ -5592,6 +5737,22 @@ C114039,MSQL151,MSQL1-Bowel/Bladder Interfered Activity,QS,Multiple Sclerosis Qu
 C114040,MSQL152,MSQL1-Pain Interfere Enjoyment of Life,QS,Multiple Sclerosis Quality of Life-54 Instrument Questionnaire,MSQL1TC,MSQL1TN,NCI_EVS
 C114041,MSQL153,MSQL1-Rate Your Own Quality-of-Life,QS,Multiple Sclerosis Quality of Life-54 Instrument Questionnaire,MSQL1TC,MSQL1TN,NCI_EVS
 C114042,MSQL154,MSQL1-Describe How Feel About Your Life,QS,Multiple Sclerosis Quality of Life-54 Instrument Questionnaire,MSQL1TC,MSQL1TN,NCI_EVS
+C202517,MTWSR101,"MTWSR1-Angry, Irritable, Frustrated",QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202518,MTWSR102,"MTWSR1-Anxious, Nervous",QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202519,MTWSR103,"MTWSR1-Depressed Mood, Sad",QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202520,MTWSR104,MTWSR1-Difficulty Concentrating,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202521,MTWSR105,"MTWSR1-Inc Appetite, Hungry, Weight Gain",QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202522,MTWSR106,MTWSR1-Sleep Problems/Awakening at Night,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202523,MTWSR107,MTWSR1-Restless,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202524,MTWSR108,MTWSR1-Impatient,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202525,MTWSR109,MTWSR1-Craving to Smoke,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202526,MTWSR110,MTWSR1-Constipation,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202527,MTWSR111,MTWSR1-Dizziness,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202528,MTWSR112,MTWSR1-Coughing,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202529,MTWSR113,MTWSR1-Dreaming or Nightmares,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202530,MTWSR114,MTWSR1-Nausea,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202531,MTWSR115,MTWSR1-Sore Throat,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
+C202532,MTWSR116,MTWSR1-Total Withdrawal Discomfort Score,QS,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire,MTWSR1TC,MTWSR1TN,NCI_EVS
 C100622,NPI1A,NPI1-Beliefs Untrue,QS,Neuropsychiatric Inventory Questionnaire,NPI1TC,NPI1TN,NCI_EVS
 C100623,NPI1A01,NPI1-In Danger,QS,Neuropsychiatric Inventory Questionnaire,NPI1TC,NPI1TN,NCI_EVS
 C100624,NPI1A02,NPI1-Others Are Stealing,QS,Neuropsychiatric Inventory Questionnaire,NPI1TC,NPI1TN,NCI_EVS
@@ -9689,22 +9850,6 @@ C191059,MCHR0103,MCHR01-Behavior,RS,Montreal Classification for Crohn's Disease 
 C121076,MELD0101,MELD01-Score,RS,Model for End Stage Liver Disease Clinical Classification,MELD01TC,MELD01TN,NCI_EVS
 C214309,MELD0201,MELD02-Score,RS,Model for End Stage Liver Disease - Serum Na 2008 Clinical Classification,MELD02TC,MELD02TN,NCI_EVS
 C111520,MRS0101,MRS01-Modified Rankin Scale Score,RS,Modified Rankin Scale Clinical Classification,MRS01TC,MRS01TN,NCI_EVS
-C202517,MTWSR101,"MTWSR1-Angry, Irritable, Frustrated",RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202518,MTWSR102,"MTWSR1-Anxious, Nervous",RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202519,MTWSR103,"MTWSR1-Depressed Mood, Sad",RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202520,MTWSR104,MTWSR1-Difficulty Concentrating,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202521,MTWSR105,"MTWSR1-Inc Appetite, Hungry, Weight Gain",RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202522,MTWSR106,MTWSR1-Sleep Problems/Awakening at Night,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202523,MTWSR107,MTWSR1-Restless,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202524,MTWSR108,MTWSR1-Impatient,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202525,MTWSR109,MTWSR1-Craving to Smoke,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202526,MTWSR110,MTWSR1-Constipation,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202527,MTWSR111,MTWSR1-Dizziness,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202528,MTWSR112,MTWSR1-Coughing,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202529,MTWSR113,MTWSR1-Dreaming or Nightmares,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202530,MTWSR114,MTWSR1-Nausea,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202531,MTWSR115,MTWSR1-Sore Throat,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
-C202532,MTWSR116,MTWSR1-Total Withdrawal Discomfort Score,RS,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,MTWSR1TC,MTWSR1TN,NCI_EVS
 C191060,MVAI101,MVAI1-Extension,RS,Modified Van Assche Index Clinical Classification,MVAI1TC,MVAI1TN,NCI_EVS
 C191061,MVAI102,MVAI1-Hyperintensity T2-weighted Images,RS,Modified Van Assche Index Clinical Classification,MVAI1TC,MVAI1TN,NCI_EVS
 C191062,MVAI103,MVAI1-Rectal Wall Involvement,RS,Modified Van Assche Index Clinical Classification,MVAI1TC,MVAI1TN,NCI_EVS
@@ -9808,16 +9953,16 @@ C180230,PASI0213,PASI02-Low Extrem: Erythema/Redness,RS,Psoriasis Area and Sever
 C180231,PASI0214,PASI02-Low Extrem: Thickness/Induration,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180232,PASI0215,PASI02-Low Extrem: Desquamation/Scaling,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180233,PASI0216,PASI02-Low Extrem: Area Score,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
-C180234,PASI0217,PASI02-Head: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
+C180234,PASI0217,PASI02-Head: Sum of Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180235,PASI0218,PASI02-Head: Sum X Area,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180236,PASI0219,PASI02-Head: Sum X Area X 0.1,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
-C180237,PASI0220,PASI02-Up Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
+C180237,PASI0220,PASI02-Up Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180238,PASI0221,PASI02-Up Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180239,PASI0222,PASI02-Up Extrem: Sum X Area X 0.2,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
-C180240,PASI0223,PASI02-Trunk: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
+C180240,PASI0223,PASI02-Trunk: Sum of Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180241,PASI0224,PASI02-Trunk: Sum X Area,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180242,PASI0225,PASI02-Trunk: Sum X Area X 0.3,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
-C180243,PASI0226,PASI02-Low Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
+C180243,PASI0226,PASI02-Low Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180244,PASI0227,PASI02-Low Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180245,PASI0228,PASI02-Low Extrem: Sum X Area X 0.4,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
 C180246,PASI0229,PASI02-Total Sum,RS,Psoriasis Area and Severity Index Version Feldman Clinical Classification,PASI02TC,PASI02TN,NCI_EVS
@@ -9837,16 +9982,16 @@ C191078,PASI0313,PASI03-Low Extrem: Erythema/Redness,RS,Psoriasis Area and Sever
 C191079,PASI0314,PASI03-Low Extrem: Thickness/Induration,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191080,PASI0315,PASI03-Low Extrem: Desquamation/Scaling,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191081,PASI0316,PASI03-Low Extrem: Area Score,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
-C191082,PASI0317,PASI03-Head: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
+C191082,PASI0317,PASI03-Head: Sum of Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191083,PASI0318,PASI03-Head: Sum X Area,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191084,PASI0319,PASI03-Head: Sum X Area X 0.1,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
-C191085,PASI0320,PASI03-Up Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
+C191085,PASI0320,PASI03-Up Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191086,PASI0321,PASI03-Up Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191087,PASI0322,PASI03-Up Extrem: Sum X Area X 0.2,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
-C191088,PASI0323,PASI03-Trunk: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
+C191088,PASI0323,PASI03-Trunk: Sum of Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191089,PASI0324,PASI03-Trunk: Sum X Area,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191090,PASI0325,PASI03-Trunk: Sum X Area X 0.3,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
-C191091,PASI0326,PASI03-Low Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
+C191091,PASI0326,PASI03-Low Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191092,PASI0327,PASI03-Low Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191093,PASI0328,PASI03-Low Extrem: Sum X Area X 0.4,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
 C191094,PASI0329,PASI03-Total Sum,RS,Psoriasis Area and Severity Index Version Fredriksson Clinical Classification,PASI03TC,PASI03TN,NCI_EVS
@@ -9866,16 +10011,16 @@ C191107,PASI0413,PASI04-Low Extrem: Erythema/Redness,RS,Psoriasis Area and Sever
 C191108,PASI0414,PASI04-Low Extrem: Thickness/Induration,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191109,PASI0415,PASI04-Low Extrem: Desquamation/Scaling,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191110,PASI0416,PASI04-Low Extrem: Area Score,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
-C191111,PASI0417,PASI04-Head: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
+C191111,PASI0417,PASI04-Head: Sum of Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191112,PASI0418,PASI04-Head: Sum X Area,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191113,PASI0419,PASI04-Head: Sum X Area X 0.1,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
-C191114,PASI0420,PASI04-Up Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
+C191114,PASI0420,PASI04-Up Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191115,PASI0421,PASI04-Up Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191116,PASI0422,PASI04-Up Extrem: Sum X Area X 0.2,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
-C191117,PASI0423,PASI04-Trunk: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
+C191117,PASI0423,PASI04-Trunk: Sum of Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191118,PASI0424,PASI04-Trunk: Sum X Area,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191119,PASI0425,PASI04-Trunk: Sum X Area X 0.3,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
-C191120,PASI0426,PASI04-Low Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
+C191120,PASI0426,PASI04-Low Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191121,PASI0427,PASI04-Low Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191122,PASI0428,PASI04-Low Extrem: Sum X Area X 0.4,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
 C191123,PASI0429,PASI04-Total Sum,RS,Psoriasis Area and Severity Index Version EMA Clinical Classification,PASI04TC,PASI04TN,NCI_EVS
@@ -9895,16 +10040,16 @@ C191136,PASI0513,PASI05-Low Extrem: Erythema/Redness,RS,Psoriasis Area and Sever
 C191137,PASI0514,PASI05-Low Extrem: Thickness/Induration,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191138,PASI0515,PASI05-Low Extrem: Desquamation/Scaling,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191139,PASI0516,PASI05-Low Extrem: Area Score,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
-C191140,PASI0517,PASI05-Head: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
+C191140,PASI0517,PASI05-Head: Sum of Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191141,PASI0518,PASI05-Head: Sum X Area,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191142,PASI0519,PASI05-Head: Sum X Area X 0.1,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
-C191143,PASI0520,PASI05-Up Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
+C191143,PASI0520,PASI05-Up Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191144,PASI0521,PASI05-Up Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191145,PASI0522,PASI05-Up Extrem: Sum X Area X 0.2,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
-C191146,PASI0523,PASI05-Trunk: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
+C191146,PASI0523,PASI05-Trunk: Sum of Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191147,PASI0524,PASI05-Trunk: Sum X Area,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191148,PASI0525,PASI05-Trunk: Sum X Area X 0.3,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
-C191149,PASI0526,PASI05-Low Extrem: Sum of Symptom Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
+C191149,PASI0526,PASI05-Low Extrem: Sum of Scores,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191150,PASI0527,PASI05-Low Extrem: Sum X Area,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191151,PASI0528,PASI05-Low Extrem: Sum X Area X 0.4,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS
 C191152,PASI0529,PASI05-Total Sum,RS,Psoriasis Area and Severity Index Version Bozek Clinical Classification,PASI05TC,PASI05TN,NCI_EVS

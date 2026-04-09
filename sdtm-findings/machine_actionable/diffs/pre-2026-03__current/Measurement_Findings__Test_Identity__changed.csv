@@ -1,0 +1,370 @@
+NCIt_Code,column,old,new
+C100945,Has_COSMoS,No,Yes
+C100945,COSMoS_DSS_Count,0,1
+C100945,COSMoS_BC_Name,,Pulse Pressure
+C100945,COSMoS_Categories,,Blood Pressure; Vital Signs
+C100945,COSMoS_Hierarchy,,Personal Attribute
+C100945,COSMoS_Domains,,VS
+C100946,Has_COSMoS,No,Yes
+C100946,COSMoS_DSS_Count,0,1
+C100946,COSMoS_BC_Name,,Forearm Circumference
+C100946,COSMoS_Categories,,Body Measurements; Vital Signs
+C100946,COSMoS_Hierarchy,,Anatomical Circumference
+C100946,COSMoS_Domains,,VS
+C100947,Has_COSMoS,No,Yes
+C100947,COSMoS_DSS_Count,0,1
+C100947,COSMoS_BC_Name,,Hip Circumference
+C100947,COSMoS_Categories,,Body Measurements; Vital Signs
+C100947,COSMoS_Hierarchy,,Anatomical Circumference
+C100947,COSMoS_Domains,,VS
+C103346,Has_COSMoS,No,Yes
+C103346,COSMoS_DSS_Count,0,1
+C103346,COSMoS_BC_Name,,Abdominal Skinfold Thickness
+C103346,COSMoS_Categories,,Body Measurements; Vital Signs
+C103346,COSMoS_Hierarchy,,Skinfold Thickness Analysis
+C103346,COSMoS_Domains,,VS
+C104622,Has_COSMoS,No,Yes
+C104622,COSMoS_DSS_Count,0,1
+C104622,COSMoS_BC_Name,,Total Body Water Measurement
+C104622,COSMoS_Categories,,Body Water Measurement; Vital Signs
+C104622,COSMoS_Hierarchy,,Physical Examination
+C104622,COSMoS_Domains,,VS
+C117976,Has_COSMoS,No,Yes
+C117976,COSMoS_DSS_Count,0,1
+C117976,COSMoS_BC_Name,,Ideal Body Weight
+C117976,COSMoS_Categories,,Body Measurements; Vital Signs
+C117976,COSMoS_Hierarchy,,Weight > Body Weight
+C117976,COSMoS_Domains,,VS
+C122232,Has_COSMoS,No,Yes
+C122232,COSMoS_DSS_Count,0,1
+C122232,COSMoS_BC_Name,,Body Fat Measurement
+C122232,COSMoS_Categories,,Body Measurements; Vital Signs
+C122232,COSMoS_Hierarchy,,Personal Attribute
+C122232,COSMoS_Domains,,VS
+C124475,Has_COSMoS,No,Yes
+C124475,COSMoS_DSS_Count,0,1
+C124475,COSMoS_BC_Name,,Mid-Upper Arm Circumference
+C124475,COSMoS_Categories,,Body Measurements; Vital Signs
+C124475,COSMoS_Hierarchy,,Anatomical Circumference
+C124475,COSMoS_Domains,,VS
+C126083,Has_COSMoS,No,Yes
+C126083,COSMoS_DSS_Count,0,1
+C126083,COSMoS_BC_Name,,Basal Metabolic Rate
+C126083,COSMoS_Categories,,Energy Expenditure; Vital Signs
+C126083,COSMoS_Hierarchy,,Characteristic > Organism Characteristic
+C126083,COSMoS_Domains,,VS
+C132482,Has_COSMoS,No,Yes
+C132482,COSMoS_DSS_Count,0,1
+C132482,COSMoS_BC_Name,,Estimated Body Weight
+C132482,COSMoS_Categories,,Body Measurements; Vital Signs
+C132482,COSMoS_Hierarchy,,Weight > Body Weight
+C132482,COSMoS_Domains,,VS
+C139218,TEST,Body Fat Percentage,Total Body Fat/Total Body Mass
+C139218,NCIt_Preferred_Term,Body Fat Percentage,Total Body Fat to Total Body Mass Ratio Measurement
+C139218,NCIt_Synonyms,BODYFATP,BODYFATP; Body Fat Percentage; Total Body Fat/Total Body Mass
+C139219,TEST,Lean Body Mass to Total Body Mass Ratio,Lean Body Mass/Total Body Mass
+C139219,NCIt_Preferred_Term,Lean Body Mass to Total Body Mass Ratio,Lean Body Mass to Total Body Mass Ratio Measurement
+C139219,NCIt_Synonyms,LBMTBMR,LBMTBMR; Lean Body Mass/Total Body Mass
+C139219,Has_COSMoS,No,Yes
+C139219,COSMoS_DSS_Count,0,1
+C139219,COSMoS_BC_Name,,Lean Body Mass to Total Body Mass Ratio
+C139219,COSMoS_Categories,,Mass Measurement; Vital Signs
+C139219,COSMoS_Hierarchy,,Personal Attribute
+C139219,COSMoS_Domains,,VS
+C147491,Has_COSMoS,No,Yes
+C147491,COSMoS_DSS_Count,0,1
+C147491,COSMoS_BC_Name,,Energy Expenditure
+C147491,COSMoS_Categories,,Energy Expenditure; Vital Signs
+C147491,COSMoS_Hierarchy,,Personal Attribute
+C147491,COSMoS_Domains,,VS
+C147492,Has_COSMoS,No,Yes
+C147492,COSMoS_DSS_Count,0,1
+C147492,COSMoS_BC_Name,,Maximum Predicted Heart Rate
+C147492,COSMoS_Categories,,Vital Signs
+C147492,COSMoS_Hierarchy,,Vital Signs Measurement > Heart Rate
+C147492,COSMoS_Domains,,VS
+C154891,Has_COSMoS,No,Yes
+C154891,COSMoS_DSS_Count,0,1
+C154891,COSMoS_BC_Name,,Neck Circumference
+C154891,COSMoS_Categories,,Body Measurements; Vital Signs
+C154891,COSMoS_Hierarchy,,Anatomical Circumference
+C154891,COSMoS_Domains,,VS
+C156606,Has_COSMoS,No,Yes
+C156606,COSMoS_DSS_Count,0,1
+C156606,COSMoS_BC_Name,,Chest Circumference
+C156606,COSMoS_Categories,,Body Measurements; Vital Signs
+C156606,COSMoS_Hierarchy,,Anatomical Circumference
+C156606,COSMoS_Domains,,VS
+C158256,COSMoS_Hierarchy,Characteristic,Characteristic > Organism Characteristic
+C158297,Has_COSMoS,No,Yes
+C158297,COSMoS_DSS_Count,0,1
+C158297,COSMoS_BC_Name,,Fetal Head Circumference
+C158297,COSMoS_Categories,,Body Measurements; Fetal Body Measurements; Vital Signs
+C158297,COSMoS_Hierarchy,,Anatomical Circumference > Head Circumference
+C158297,COSMoS_Domains,,VS
+C163567,Has_COSMoS,No,Yes
+C163567,COSMoS_DSS_Count,0,1
+C163567,COSMoS_BC_Name,,BMI-for-Age Percentile
+C163567,COSMoS_Categories,,Body Measurements; Vital Signs
+C163567,COSMoS_Domains,,VS
+C163568,Has_COSMoS,No,Yes
+C163568,COSMoS_DSS_Count,0,1
+C163568,COSMoS_BC_Name,,Height-for-Age Percentile
+C163568,COSMoS_Categories,,Body Measurements; Vital Signs
+C163568,COSMoS_Domains,,VS
+C163569,Has_COSMoS,No,Yes
+C163569,COSMoS_DSS_Count,0,1
+C163569,COSMoS_BC_Name,,Weight-for-Age Percentile
+C163569,COSMoS_Categories,,Body Measurements; Vital Signs
+C163569,COSMoS_Domains,,VS
+C163570,Has_COSMoS,No,Yes
+C163570,COSMoS_DSS_Count,0,1
+C163570,COSMoS_BC_Name,,Weight-for-Height Percentile
+C163570,COSMoS_Categories,,Body Measurements; Vital Signs
+C163570,COSMoS_Domains,,VS
+C168125,Has_COSMoS,No,Yes
+C168125,COSMoS_DSS_Count,0,1
+C168125,COSMoS_BC_Name,,Capillary Refill Test
+C168125,COSMoS_Categories,,Cardiovascular Examination; Vital Signs
+C168125,COSMoS_Hierarchy,,Cardiovascular Examination
+C168125,COSMoS_Domains,,VS
+C170639,Has_COSMoS,No,Yes
+C170639,COSMoS_DSS_Count,0,1
+C170639,COSMoS_BC_Name,,Crown to Heel Length
+C170639,COSMoS_Categories,,Body Measurements; Vital Signs
+C170639,COSMoS_Hierarchy,,Length
+C170639,COSMoS_Domains,,VS
+C172607,Has_COSMoS,No,Yes
+C172607,COSMoS_DSS_Count,0,1
+C172607,COSMoS_BC_Name,,Systolic Blood Pressure-for-Height Percentile
+C172607,COSMoS_Categories,,Blood Pressure; Vital Signs
+C172607,COSMoS_Domains,,VS
+C172608,Has_COSMoS,No,Yes
+C172608,COSMoS_DSS_Count,0,1
+C172608,COSMoS_BC_Name,,Systolic Blood Pressure-for-Age Percentile
+C172608,COSMoS_Categories,,Blood Pressure; Vital Signs
+C172608,COSMoS_Domains,,VS
+C172609,Has_COSMoS,No,Yes
+C172609,COSMoS_DSS_Count,0,1
+C172609,COSMoS_BC_Name,,Diastolic Blood Pressure-for-Height Percentile
+C172609,COSMoS_Categories,,Blood Pressure; Vital Signs
+C172609,COSMoS_Domains,,VS
+C172610,Has_COSMoS,No,Yes
+C172610,COSMoS_DSS_Count,0,1
+C172610,COSMoS_BC_Name,,Diastolic Blood Pressure-for-Age Percentile
+C172610,COSMoS_Categories,,Blood Pressure; Vital Signs
+C172610,COSMoS_Domains,,VS
+C174233,Has_COSMoS,No,Yes
+C174233,COSMoS_DSS_Count,0,1
+C174233,COSMoS_BC_Name,,Mandibular Length
+C174233,COSMoS_Categories,,Body Measurements; Vital Signs
+C174233,COSMoS_Domains,,VS
+C174311,Has_COSMoS,No,Yes
+C174311,COSMoS_DSS_Count,0,1
+C174311,COSMoS_BC_Name,,Oxygen Saturation/Fraction Inspired O2
+C174311,COSMoS_Categories,,Oxygen Saturation Measurements; Pulmonary Function Test; Respiratory System Findings; Vital Signs
+C174311,COSMoS_Hierarchy,,Pulmonary Function Test
+C174311,COSMoS_Domains,,VS
+C174370,Has_COSMoS,No,Yes
+C174370,COSMoS_DSS_Count,0,1
+C174370,COSMoS_BC_Name,,Core Body Temperature
+C174370,COSMoS_Categories,,Temperature; Vital Signs
+C174370,COSMoS_Hierarchy,,Physical Examination Finding > Body Temperature Measurement
+C174370,COSMoS_Domains,,VS
+C174371,Has_COSMoS,No,Yes
+C174371,COSMoS_DSS_Count,0,1
+C174371,COSMoS_BC_Name,,Peripheral Body Temperature
+C174371,COSMoS_Categories,,Temperature; Vital Signs
+C174371,COSMoS_Hierarchy,,Physical Examination Finding > Body Temperature Measurement
+C174371,COSMoS_Domains,,VS
+C174372,Has_COSMoS,No,Yes
+C174372,COSMoS_DSS_Count,0,1
+C174372,COSMoS_BC_Name,,Fetal Estimated Weight
+C174372,COSMoS_Categories,,Body Measurements; Fetal Body Measurements; Vital Signs
+C174372,COSMoS_Hierarchy,,Weight > Body Weight > Fetal Body Weight
+C174372,COSMoS_Domains,,VS
+C174373,Has_COSMoS,No,Yes
+C174373,COSMoS_DSS_Count,0,1
+C174373,COSMoS_BC_Name,,Fetal Sagittal Abdominal Diameter
+C174373,COSMoS_Categories,,Body Measurements; Fetal Body Measurements; Vital Signs
+C174373,COSMoS_Hierarchy,,Diameter > Sagittal Abdominal Diameter
+C174373,COSMoS_Domains,,VS
+C174374,Has_COSMoS,No,Yes
+C174374,COSMoS_DSS_Count,0,1
+C174374,COSMoS_BC_Name,,Fetal Weight-for-Gestational Age Percentile
+C174374,COSMoS_Categories,,Body Measurements; Fetal Body Measurements; Vital Signs
+C174374,COSMoS_Hierarchy,,Weight-for-Age Percentile
+C174374,COSMoS_Domains,,VS
+C174375,Has_COSMoS,No,Yes
+C174375,COSMoS_DSS_Count,0,1
+C174375,COSMoS_BC_Name,,Fetal Mandibular Length
+C174375,COSMoS_Categories,,Body Measurements; Fetal Body Measurements; Vital Signs
+C174375,COSMoS_Hierarchy,,Mandibular Length
+C174375,COSMoS_Domains,,VS
+C174376,Has_COSMoS,No,Yes
+C174376,COSMoS_DSS_Count,0,1
+C174376,COSMoS_BC_Name,,Ulnar Length
+C174376,COSMoS_Categories,,Body Measurements; Vital Signs
+C174376,COSMoS_Hierarchy,,Length
+C174376,COSMoS_Domains,,VS
+C17651,Has_COSMoS,No,Yes
+C17651,COSMoS_DSS_Count,0,1
+C17651,COSMoS_BC_Name,,Waist-Hip Ratio
+C17651,COSMoS_Categories,,Body Measurements; Vital Signs
+C17651,COSMoS_Hierarchy,,Personal Attribute
+C17651,COSMoS_Domains,,VS
+C178060,Has_COSMoS,No,Yes
+C178060,COSMoS_DSS_Count,0,1
+C178060,COSMoS_BC_Name,,Calf Circumference
+C178060,COSMoS_Categories,,Body Measurements; Vital Signs
+C178060,COSMoS_Hierarchy,,Anatomical Circumference
+C178060,COSMoS_Domains,,VS
+C181552,Has_COSMoS,No,Yes
+C181552,COSMoS_DSS_Count,0,1
+C181552,COSMoS_BC_Name,,Waist to Heel Length
+C181552,COSMoS_Categories,,Body Measurements; Vital Signs
+C181552,COSMoS_Hierarchy,,Length
+C181552,COSMoS_Domains,,VS
+C181553,Has_COSMoS,No,Yes
+C181553,COSMoS_DSS_Count,0,1
+C181553,COSMoS_BC_Name,,Arm Span
+C181553,COSMoS_Categories,,Body Measurements; Vital Signs
+C181553,COSMoS_Domains,,VS
+C191363,Has_COSMoS,No,Yes
+C191363,COSMoS_DSS_Count,0,1
+C191363,COSMoS_BC_Name,,Extracellular Water to Total Body Water Ratio Measurement
+C191363,COSMoS_Categories,,Body Water Measurement; Vital Signs
+C191363,COSMoS_Hierarchy,,Chemistry Test
+C191363,COSMoS_Domains,,VS
+C191364,Has_COSMoS,No,Yes
+C191364,COSMoS_DSS_Count,0,1
+C191364,COSMoS_BC_Name,,Extracellular Water Measurement
+C191364,COSMoS_Categories,,Body Water Measurement; Vital Signs
+C191364,COSMoS_Hierarchy,,Chemistry Test
+C191364,COSMoS_Domains,,VS
+C191365,Has_COSMoS,No,Yes
+C191365,COSMoS_DSS_Count,0,1
+C191365,COSMoS_BC_Name,,Tibial Length
+C191365,COSMoS_Categories,,Body Measurements; Vital Signs
+C191365,COSMoS_Hierarchy,,Length
+C191365,COSMoS_Domains,,VS
+C199682,Has_COSMoS,No,Yes
+C199682,COSMoS_DSS_Count,0,1
+C199682,COSMoS_BC_Name,,"Heart Rate Variability, Standard Deviation NN Interval Measurement"
+C199682,COSMoS_Categories,,Cardiac Function Study; Heart Rate Variability
+C199682,COSMoS_Hierarchy,,Cardiac Function Study
+C199682,COSMoS_Domains,,VS
+C199996,Has_COSMoS,No,Yes
+C199996,COSMoS_DSS_Count,0,1
+C199996,COSMoS_BC_Name,,Body Cell Mass Measurement
+C199996,COSMoS_Categories,,Mass Measurement; Vital Signs
+C199996,COSMoS_Hierarchy,,Mass Measurement
+C199996,COSMoS_Domains,,VS
+C199997,Has_COSMoS,No,Yes
+C199997,COSMoS_DSS_Count,0,1
+C199997,COSMoS_BC_Name,,Lean Tissue Mass Measurement
+C199997,COSMoS_Categories,,Mass Measurement; Vital Signs
+C199997,COSMoS_Hierarchy,,Mass Measurement
+C199997,COSMoS_Domains,,VS
+C199998,Has_COSMoS,No,Yes
+C199998,COSMoS_DSS_Count,0,1
+C199998,COSMoS_BC_Name,,"Heart Rate Variability, Average Standard Deviation NN Interval Measurement"
+C199998,COSMoS_Categories,,Cardiac Function Study; Heart Rate Variability
+C199998,COSMoS_Hierarchy,,"Cardiac Function Study > Heart Rate Variability, Standard Deviation NN Interval Measurement"
+C199998,COSMoS_Domains,,VS
+C205752,Has_COSMoS,No,Yes
+C205752,COSMoS_DSS_Count,0,1
+C205752,COSMoS_BC_Name,,Body Length-for-Age Percentile
+C205752,COSMoS_Categories,,Body Measurements; Vital Signs
+C205752,COSMoS_Domains,,VS
+C205753,Has_COSMoS,No,Yes
+C205753,COSMoS_DSS_Count,0,1
+C205753,COSMoS_BC_Name,,Head Circumference-for-Age Percentile
+C205753,COSMoS_Categories,,Body Measurements; Vital Signs
+C205753,COSMoS_Domains,,VS
+C214762,Has_COSMoS,No,Yes
+C214762,COSMoS_DSS_Count,0,1
+C214762,COSMoS_BC_Name,,Fetal Size-for-Gestational Age Category
+C214762,COSMoS_Categories,,Body Measurements; Fetal Body Measurements; Vital Signs
+C214762,COSMoS_Hierarchy,,Clinical Observations Category
+C214762,COSMoS_Domains,,VS
+C25157,Has_COSMoS,No,Yes
+C25157,COSMoS_DSS_Count,0,1
+C25157,COSMoS_BC_Name,,Body Surface Area
+C25157,COSMoS_Categories,,Body Measurements; Vital Signs
+C25157,COSMoS_Hierarchy,,Personal Attribute
+C25157,COSMoS_Domains,,VS
+C38082,Has_COSMoS,No,Yes
+C38082,COSMoS_DSS_Count,0,1
+C38082,COSMoS_BC_Name,,Fraction of Inspired Oxygen
+C38082,COSMoS_Categories,,Pulmonary Function Test; Respiratory System Findings; Vital Signs
+C38082,COSMoS_Hierarchy,,Pulmonary Function Test
+C38082,COSMoS_Domains,,VS
+C49679,Has_COSMoS,No,Yes
+C49679,COSMoS_DSS_Count,0,1
+C49679,COSMoS_BC_Name,,Mean Arterial Pressure
+C49679,COSMoS_Categories,,Blood Pressure; Vital Signs
+C49679,COSMoS_Hierarchy,,Vital Signs Measurement > Blood Pressure
+C49679,COSMoS_Domains,,VS
+C60832,COSMoS_Categories,Oximetry Tests; Oxygen Saturation Measurements; Vital Signs,Oximetry Tests; Oxygen Saturation Measurements; Respiratory System Findings; Vital Signs
+C60832,COSMoS_Hierarchy,Diagnostic Procedure,Body Organ or System Test
+C71258,Has_COSMoS,No,Yes
+C71258,COSMoS_DSS_Count,0,1
+C71258,COSMoS_BC_Name,,Lean Body Mass
+C71258,COSMoS_Categories,,Mass Measurement; Vital Signs
+C71258,COSMoS_Hierarchy,,Personal Attribute
+C71258,COSMoS_Domains,,VS
+C76325,Has_COSMoS,No,Yes
+C76325,COSMoS_DSS_Count,0,1
+C76325,COSMoS_BC_Name,,Birth Weight
+C76325,COSMoS_Categories,,Body Measurements; Vital Signs
+C76325,COSMoS_Hierarchy,,Weight
+C76325,COSMoS_Domains,,VS
+C81255,Has_COSMoS,No,Yes
+C81255,COSMoS_DSS_Count,0,1
+C81255,COSMoS_BC_Name,,Head Circumference
+C81255,COSMoS_Categories,,Body Measurements; Vital Signs
+C81255,COSMoS_Hierarchy,,Anatomical Circumference
+C81255,COSMoS_Domains,,VS
+C81298,Has_COSMoS,No,Yes
+C81298,COSMoS_DSS_Count,0,1
+C81298,COSMoS_BC_Name,,Total Body Length
+C81298,COSMoS_Categories,,Body Measurements; Vital Signs
+C81298,COSMoS_Hierarchy,,Length
+C81298,COSMoS_Domains,,VS
+C84372,Has_COSMoS,No,Yes
+C84372,COSMoS_DSS_Count,0,1
+C84372,COSMoS_BC_Name,,Knee to Heel Length Measurement
+C84372,COSMoS_Categories,,Body Measurements; Vital Signs
+C84372,COSMoS_Hierarchy,,Body Frame Size
+C84372,COSMoS_Domains,,VS
+C87054,Has_COSMoS,No,Yes
+C87054,COSMoS_DSS_Count,0,1
+C87054,COSMoS_BC_Name,,Sagittal Abdominal Diameter
+C87054,COSMoS_Categories,,Body Measurements; Vital Signs
+C87054,COSMoS_Hierarchy,,Diameter
+C87054,COSMoS_Domains,,VS
+C87304,Has_COSMoS,No,Yes
+C87304,COSMoS_DSS_Count,0,1
+C87304,COSMoS_BC_Name,,Ankle-Brachial Index
+C87304,COSMoS_Categories,,Blood Pressure; Vital Signs
+C87304,COSMoS_Hierarchy,,Diagnostic Factor
+C87304,COSMoS_Domains,,VS
+C92716,Has_COSMoS,No,Yes
+C92716,COSMoS_DSS_Count,0,1
+C92716,COSMoS_BC_Name,,Fetal Heart Rate
+C92716,COSMoS_Categories,,Fetal Heart Findings; Heart Findings; Vital Signs
+C92716,COSMoS_Hierarchy,,Cardiovascular System Finding > Fetal Heart Finding
+C92716,COSMoS_Domains,,VS
+C98785,Has_COSMoS,No,Yes
+C98785,COSMoS_DSS_Count,0,1
+C98785,COSMoS_BC_Name,,Subscapular Skinfold Thickness
+C98785,COSMoS_Categories,,Body Measurements; Vital Signs
+C98785,COSMoS_Hierarchy,,Skinfold Thickness Analysis
+C98785,COSMoS_Domains,,VS
+C98793,Has_COSMoS,No,Yes
+C98793,COSMoS_DSS_Count,0,1
+C98793,COSMoS_BC_Name,,Triceps Skinfold Thickness
+C98793,COSMoS_Categories,,Body Measurements; Vital Signs
+C98793,COSMoS_Hierarchy,,Skinfold Thickness Analysis
+C98793,COSMoS_Domains,,VS

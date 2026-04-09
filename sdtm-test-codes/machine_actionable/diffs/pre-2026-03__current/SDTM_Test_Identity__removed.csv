@@ -1,0 +1,5 @@
+NCIt_Code,TESTCD,TEST,SDTM_Domains,NCIt_Preferred_Term,NCIt_Synonyms,NCIt_Definition,UMLS_CUI,NCIm_CUI
+C100469,PEPSNGA,Pepsinogen A,LB,Pepsinogen A Measurement,PEPSNGA; PGA; Pepsinogen A,The determination of the amount of pepsinogen A present in a sample.,C3541266,
+C100470,PEPSNGC,Pepsinogen C,LB,Pepsinogen C Measurement,PEPSNGC; PGC; Pepsinogen C,The determination of the amount of pepsinogen C present in a sample.,C3538998,
+C94525,TUMERGE,Tumor Merged,TU,Matted Tumor Mass Present,TUMERGE; TUMOR MERGED,A finding indicating the presence of a malignant tumor mass that is formed following the spread of a malignant tumor to two or more adjacent lymph nodes and the resulting fusion and enlargement of the lymph nodes.,C2986551,
+C96642,TUSPLIT,Tumor Split,TU,Tumor Fragmentation,TUSPLIT; Tumor Mass Fragmentation; Tumor Split,A finding indicating that a tumor mass has been divided into two or more tumors.,C3272924,

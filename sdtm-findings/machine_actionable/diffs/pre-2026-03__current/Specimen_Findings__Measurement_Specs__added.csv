@@ -1,0 +1,5 @@
+TESTCD,TEST,NCIt_Code,COSMoS_BC_ID,BC_Name,BC_Type,DS_Code,DS_Name,COSMoS_Category,Domain,Domain_Class,Result_Scale,Specimen,Specimen_NCIt,Method,Method_NCIt,LOINC_Code_Count,LOINC_Code,Allowed_Units,Standard_Unit,location,laterality,evaluator
+ALBPROT,Albumin/Total Protein,C103453,C103453,Albumin to Total Protein Ratio Measurement,full,ALBPROTURIN,Albumin/Total Protein in Urine,CHEMISTRY,LB,Findings,Quantitative,URINE,C13283,,,1,13992-3,%; g/g; g/kg,g/g,,,
+CREATCLR,Creatinine Clearance,C25747,C25747,Creatinine Clearance,full,CREATCLRSERPL,Creatinine Clearance in Serum or Plasma,CHEMISTRY,LB,Findings,Quantitative,SERUM OR PLASMA,C105706,,,0,,mL/min; mL/s,mL/s,,,
+NACLR,Sodium Clearance,C106568,C106568,Sodium Clearance Measurement,full,NACLRSERPL,Sodium Clearance in Serum or Plasma,CHEMISTRY,LB,Findings,Quantitative,SERUM OR PLASMA,C105706,,,0,,mL/min; mL/s,mL/s,,,
+SODMEXR,Sodium Excretion Rate,C150823,C150823,Sodium Excretion Rate,full,SODEXRURIN,Sodium Excretion Rate in Urine,,LB,Findings,Quantitative,URINE,C13283,,,0,,mmol/day; mmol/s,mmol/s,,,

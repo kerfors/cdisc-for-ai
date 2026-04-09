@@ -1,0 +1,4 @@
+TESTCD,DS_Code,column,old,new
+ALBCREAT,ALBCREATURIN,BC_Name,Albumin To Creatinine Protein Ratio Measurement,Albumin to Creatinine Ratio Measurement
+ALBCREAT,ALBCREATURIN,LOINC_Code_Count,3,1
+ALBCREAT,ALBCREATURIN,LOINC_Code,9318-7; 14585-4; 32294-1,14959-1

@@ -1,6 +1,6 @@
 # Making COSMoS Behavioural Patterns Visible
 
-Insights from analysing 1,127 Biomedical Concepts and 1,123 Dataset Specializations across 31 SDTM domains.
+Insights from analysing 1,345 Biomedical Concepts and 1,326 Dataset Specializations across 32 SDTM domains.
 
 *cdisc-for-ai project — March 2026*
 
@@ -30,14 +30,14 @@ This analysis makes the behavioural patterns explicit — classifying domains by
 
 ## 2. Ten Behavioural Groups
 
-Analysis of BC-to-DSS ratios, decomposition axes, and column population patterns reveals ten distinct behavioural groups across the 31 COSMoS domains.
+Analysis of BC-to-DSS ratios, decomposition axes, and column population patterns reveals ten distinct behavioural groups across the 32 COSMoS domains.
 
 | Behavioural Group | Domains | What a Row Represents | Primary Axis | Consumer File Shape |
 |---|---|---|---|---|
 | Specimen Findings | LB, MB, MI, CP, BS | One measurement spec: TESTCD at a specific specimen × scale | Specimen | Two sheets: Test_Identity + Measurement_Specs. Implemented. |
 | Immunogenicity Findings | IS | One antibody class × target antigen × scale | Target/Analyte | Needs own structure. Target not a separate COSMoS column. |
 | Genomics Findings | GF | One genomics assessment by scale and method | Result Scale | Could use two-sheet but different primary axis than LB. |
-| Measurement Findings | VS, EG, MK, CV | One subject-level measurement. VS has location variants. | Location (VS only) | Two sheets (VS, MK, CV). EG deferred. |
+| Measurement Findings | VS, EG, MK, RE, CV | One subject-level measurement. Mostly flat 1:1; residual location variants on a handful of VS BCs. | Location (residual, VS only) | Two sheets (VS, MK, RE, CV). EG deferred. |
 | Instrument Findings | QS, FT, RS | One question/item within a standardised instrument | Hierarchy (grouping) | Single sheet with hierarchy columns. |
 | Domain-specific Findings | DD, RP, SC, SR, UR | One domain-specific assessment, no decomposition | None (1:1) | Single sheet. Coverage value only. |
 | Clinical Assessment | FA, TR, TU, IE | One finding about an event/intervention/tumour | Method (TR/TU) | Single sheet. Needs RELREC context for full value. |
@@ -57,7 +57,7 @@ Not all fan-out is the same. Six distinct axes drive BC-to-DSS decomposition, ea
 | Result Scale | GF (primary, 8 BCs), LB (secondary, 9 BCs), IS | Same measurement as quantitative value vs qualitative interpretation. |
 | Method | GF (secondary), MB, MI, TR, TU, MK, SR | Same measurement by different analytical techniques. NOT a decomposition driver in LB (0 of 93 BCs). |
 | Target/Analyte | IS only | Same antibody class against different antigens. Encoded in DS_Code mnemonic, not a separate column. Creates up to 92:1 fan-out. |
-| Location/Laterality | VS (4 BCs), MK (1 BC) | Same measurement at different body sites or sides. Different from Specimen — where on the body, not what sample. |
+| Location/Laterality | VS (4 BCs, residual), MK (1 BC) | Same measurement at different body sites or sides. Different from Specimen — where on the body, not what sample. Pre-2026-Q1 this was the primary driver for VS _EXT variants; after the Body Measurement expansion it is a rare residual pattern. |
 | Context/Prespecified | MH, SU, CM, PR, AE, RS | Protocol-driven specialisation: which conditions, substances, or criteria systems to collect. |
 
 The first five axes answer **"how is this measured?"** — they decompose a concept into operational measurement specifications. The sixth axis answers **"what does the protocol care about?"** — it encodes study design decisions, not measurement variability.
@@ -66,13 +66,13 @@ The first five axes answer **"how is this measured?"** — they decompose a conc
 
 ## 4. Findings Domains in Detail
 
-The Findings observation class contains 22 of the 31 COSMoS domains and accounts for the majority of BCs and DSSs. Six of the ten behavioural groups are Findings subgroups.
+The Findings observation class contains 23 of the 32 COSMoS domains and accounts for the majority of BCs and DSSs. Six of the ten behavioural groups are Findings subgroups.
 
 ### Specimen Findings — validated scope
 
 The Specimen_Findings.xlsx consumer file covers domains where specimen is the structural decomposition axis. Two-sheet structure: Test_Identity (one row per TESTCD with NCIt identity and categories) and Measurement_Specs (one row per specimen × scale variant with LOINC and units). TESTCD links the two sheets.
 
-**LB (Laboratory)** — 93 BCs, 142 DSSs. The core case. 30 BCs fan out, driven by specimen (27 BCs) and scale (9 BCs). Method is NOT a decomposition driver (0 BCs) despite being populated on 4 DSSs. LOINC on 135 of 142 DSSs.
+**LB (Laboratory)** — 97 BCs, 146 DSSs. The core case. 30 BCs fan out, driven by specimen (27 BCs) and scale (9 BCs). Method is NOT a decomposition driver (0 BCs) despite being populated on 4 DSSs. LOINC on 136 of 146 DSSs.
 
 **MB (Microbiology Specimen)** — 6 BCs, 7 DSSs. 1 BC fans out. All DSSs have specimen and method. 3 have LOINC. Sparse but structurally identical to LB.
 
@@ -94,11 +94,13 @@ The Specimen_Findings.xlsx consumer file covers domains where specimen is the st
 
 Subject-level measurements without specimen decomposition. Two-sheet consumer file (Measurement_Findings.xlsx) with location/laterality as optional columns.
 
-**VS (Vital Signs)** — 12 BCs, 16 DSSs. 4 BCs fan out via _EXT variants (SYSBP/DIABP/PULSE/HR) adding location (7 arteries) and laterality (LEFT/RIGHT). 8 BCs remain 1:1. Method on 1 DSS only. 8 have units. No LOINC. The _EXT pattern is about where on the body, not what sample — a fundamentally different axis from specimen.
+**VS (Vital Signs)** — 74 BCs, 78 DSSs. Behaviourally a flat measurement catalog: 70 of 74 BCs are 1:1, only 4 still fan out (max 2:1). The old _EXT location/laterality pattern for SYSBP/DIABP/PULSE/HR has collapsed into residual variants on those 4 BCs (location populated on 13 rows, laterality on 9). The 2026-Q1 expansion added ~60 Body Measurement BCs — anatomical circumferences, skinfold thicknesses, BMI/BSA, fetal measurements, energy expenditure, body water measurement — top hierarchy roots are Vital Signs Measurement (11), Anatomical Circumference (8), Personal Attribute (7), Length (5), Weight (5). 76 quantitative, 2 qualitative. Method on 1 DSS. 8 have units. No LOINC. Location/laterality remains a decomposition axis but only as a rare residual, not a primary driver.
 
 **EG (ECG)** — 33 BCs, all 1:1. All marked Qualitative — unexpected for ECG which produces quantitative interval/amplitude measurements. 18 DSSs have units despite the Qualitative scale. No LOINC. This may be a COSMoS modelling choice (ECG interpretations are qualitative assessments of quantitative data) or a data artefact worth verifying.
 
 **MK (Musculoskeletal)** — 49 BCs, 50 DSSs. 1 BC fans out (Sharp Genant joint scoring: foot joints vs hand joints — anatomical location decomposition). 14 have method. 20 have units. No LOINC.
+
+**RE (Respiratory System Findings)** — 135 BCs, 135 DSSs. New in COSMoS 2026-Q1. Pure flat 1:1 catalog — zero fan-out. Dominated by Pulmonary Function Test content: 111 of 135 BCs have "Pulmonary Function Test" as their top-level hierarchy root, and 103 carry the PFT category tag. 125 quantitative, 10 qualitative. 55 have units. No specimen, method, LOINC, location, or laterality — the domain has no decomposition axes at all. The BC catalog covers airway volumes, flow rates, lung capacities, diffusion capacity, respiratory muscle strength, and a small tail of qualitative respiratory findings. Behaviourally closest to Domain-specific Findings despite being grouped under Measurement Findings for structural-type purposes.
 
 **CV (Cardiovascular)** — No COSMoS BCs or DSSs published yet. Included in scope based on structural classification (Measurement Findings in SDTM IG) and Measurement=Yes metadata flag. 191 TESTCDs in SDTM CT. Will be populated as COSMoS coverage expands.
 
@@ -176,9 +178,9 @@ Fan-out by substance types, procedure body regions, or protocol specialisations.
 
 ---
 
-## 6. 194 BCs Without Dataset Specializations
+## 6. 192 BCs Without Dataset Specializations
 
-194 BCs have no DSS at all (BC_Type = full_no_ds). Predominantly parent-level grouping concepts — instruments, assessment classifications, functional test definitions — with Ordinal result scale (122 of 194). They provide hierarchy structure but no operational specifications. 173 have Hierarchy_Path values, confirming their role as grouping nodes rather than leaf-level observations.
+192 BCs have no DSS at all (BC_Type = full_no_ds). Predominantly parent-level grouping concepts — instruments, assessment classifications, functional test definitions — providing hierarchy structure but no operational specifications. Their role is as grouping nodes rather than leaf-level observations.
 
 ---
 

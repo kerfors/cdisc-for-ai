@@ -12,6 +12,7 @@ C74720,VOLUME,Volume,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
 C139281,A260A230,A260/A230 Ratio,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C139280,A260A280,A260/A280 Ratio,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25244,AREA,Area,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
+C201447,ASMIND,Adequate Surgical Margins Indicator,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C41185,CONC,Concentration,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C209474,DSPCOUNT,Derived Specimen Count,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C128948,FIXNAM,Fixative Name,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
@@ -19,11 +20,15 @@ C139282,FLUORLBL,Fluorescent Label,BS,Biospecimen Characteristics,BSTESTCD,BSTES
 C177932,I28S18S,28S/18S,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25334,LENGTH,Length,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C43246,MASS,Mass,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
+C154757,MNC,Mononuclear Cells,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
+C171277,NACONC,Nucleic Acid Concentration,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
+C225530,NAPURT,Nucleic Acid Purity,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25283,QUALITY,Quality,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C63637,RIN,RNA Integrity Number,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25681,SIZE,Size,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25483,SPDMSION,Spatial Dimension,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C106569,SPWEIGHT,Specimen Weight,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
+C225531,TBMGORT,Tumor Bed Margin Orientation,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C25206,TEMP,Temperature,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C41145,THICK,Thickness,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
 C176276,TISSPNUM,Number of Tissue Samples in Specimen,BS,Biospecimen Characteristics,BSTESTCD,BSTEST,NCI_EVS
@@ -278,6 +283,7 @@ C221464,C221464,TLym Conv SC Mem/TLymCv,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_
 C221465,C221465,TLym Help Reg Eff Th17/TLym Help Reg,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221466,C221466,"Lym+Mono Sub, Lin-",CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199815,CCD223X,cCD223 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225534,CD107AX,CD107a Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199821,CD117X,CD117 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221478,CD123X,CD123 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C201372,CD134X,CD134 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -357,6 +363,7 @@ C198244,DCMDN,DC Myeloid Dbl Neg,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C198245,DCMDNDCM,DC Myeloid Dbl Neg/DC Myeloid,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C187673,DCMLE,DC Myeloid/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214593,DCMMYC,DC Myeloid/Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225535,DCMNNCL,DC/Mono NonClassic,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C187726,DCMP,DC Myeloid/DC,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184423,DCMS,DC Myeloid Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C187725,DCMSDC,DC Myeloid Sub/DC,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -459,12 +466,15 @@ C185969,MCPHGM1,Macrophages M1,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185970,MCPHGM2,Macrophages M2,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214604,MCPHGMN,Macrophages/Monocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214605,MCPHGMYC,Macrophages/Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225441,MCPHGP,Macrophages Sub/Macrophages,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185971,MCPHGS,Macrophages Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225536,MCPSMCPS,Macrophages Sub/Macrophages Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214622,MCYLE,Myeloid Cells/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185904,MDSC,MDSC,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185906,MDSCG,MDSC Gran,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185972,MDSCGS,MDSC Gran Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214607,MDSCLES,MDSC/Leuk Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225537,MDSCLYMO,MDSC/Lym+Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185907,MDSCM,MDSC Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185973,MDSCMS,MDSC Mono Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C185974,MDSCS,MDSC Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -492,6 +502,7 @@ C189297,MDSSP,MDSC Sub/MDSC,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181281,MNCL,Mono Classic,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214517,MNCLLE,Mono Classic/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214608,MNCLLES,Mono Classic/Leuk Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225538,MNCLLYMO,Mono Classic/Lym+Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214609,MNCLLYS,Mono Classic/Lym Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C198246,MNCLMN,Mono Classic/Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214606,MNCLMYC,Mono Classic/Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -501,6 +512,7 @@ C181282,MNIF,Mono Inflamm,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181283,MNIN,Mono Intermed,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189299,MNINLE,Mono Intermed/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214610,MNINLES,Mono Intermed/Leuk Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225539,MNINLYMO,Mono Intermed/Lym+Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199701,MNINLYS,Mono Intermed/Lym Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C198247,MNINMN,Mono Intermed/Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214611,MNINMYC,Mono Intermed/Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -515,6 +527,7 @@ C198248,MNNCLMN,Mono NonClassic/Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214614,MNNCLMYC,Mono NonClassic/Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189391,MNNCLS,Mono NonClassic Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189393,MNNCLSP,Mono NonClassic Sub/Mono NonClassic,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C225540,MNNCLYMO,Mono NonClassic/Lym+Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181285,MNPIF,Mono Proinflam,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214617,MNPIFMN,Mono Proinflam/Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214615,MNPIFS,Mono Proinflam Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -1324,6 +1337,10 @@ C117776,PWDURSB,"P Wave Duration, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117777,PWHTAG,"P Wave Amplitude, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117778,PWHTSB,"P Wave Amplitude, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C118164,P_AXIS,P Wave Axis,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C120921,QAMAX,Summary (Max) QA Interval,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C120922,QAMEAN,Summary (Mean) QA Interval,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C120923,QAMEDIAN,Summary (Median) QA Interval,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
+C120924,QAMIN,Summary (Min) QA Interval,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117779,QRSAG,"QRS Duration, Aggregate",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C117780,QRSSB,"QRS Duration, Single Beat",EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C118165,QRS_AXIS,QRS Axis,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
@@ -1679,11 +1696,14 @@ C124330,EPSEVNUM,Number of Severe Episodes,FA,COPD Findings About,CPFATSCD,CPFAT
 C124330,EPSEVNUM,Number of Severe Episodes,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C174282,ESTWT,Estimated Weight,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C174282,ESTWT,Estimated Weight,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C225581,EVCLASS,Event Classification,FA,Findings About Adjudicated Event,EATESTCD,EATEST,NCI_EVS
 C25515,EVENTFRQ,Event Frequency,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C25515,EVENTFRQ,Event Frequency,FA,Nutrition Findings About,NTFATSCD,NTFATS,NCI_EVS
 C130057,EVENTNUM,Number of Events,FA,Diabetic Kidney Disease Findings About,DKFATSCD,DKFATS,NCI_EVS
 C130057,EVENTNUM,Number of Events,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C189431,EVRIPIND,Event Related to Incr Phys Activity Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C225582,EVSTDTC,Start Date/Time of Event,FA,Findings About Adjudicated Event,EATESTCD,EATEST,NCI_EVS
+C53053,EVTYPE,Event Type,FA,Findings About Adjudicated Event,EATESTCD,EATEST,NCI_EVS
 C172475,EXCDUR,Exercise Duration,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C172475,EXCDUR,Exercise Duration,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C172473,EXCINTSY,Exercise Intensity,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
@@ -1758,6 +1778,7 @@ C174275,OBJNUM,Number of Objects,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C174276,OBJTYPE,Type of Object,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C127786,OCCUR,Occurrence Indicator,FA,Asthma Findings About,ASFATSCD,ASFATS,NCI_EVS
 C127786,OCCUR,Occurrence Indicator,FA,COVID-19 Findings About,C19FATCD,C19FAT,NCI_EVS
+C127786,OCCUR,Occurrence Indicator,FA,Findings About Adjudicated Event,EATESTCD,EATEST,NCI_EVS
 C127786,OCCUR,Occurrence Indicator,FA,Ebola Virus Findings About,EBFATSCD,EBFATS,NCI_EVS
 C127786,OCCUR,Occurrence Indicator,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C127786,OCCUR,Occurrence Indicator,FA,Malaria Findings About,MRFATSCD,MRFATS,NCI_EVS
@@ -1795,6 +1816,7 @@ C179451,PRYSTUOG,Primary Site of Tumor Origin,FA,Pancreatic Cancer Findings Abou
 C170617,QOLIMP,QOL Impact,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C170617,QOLIMP,QOL Impact,FA,Psoriasis Findings About,PSFATSCD,PSFATS,NCI_EVS
 C179819,REACTGR,Reaction Grade,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C225583,REL,Relation to Study Treatment or Product,FA,Findings About Adjudicated Event,EATESTCD,EATEST,NCI_EVS
 C170563,REMAMT,Remaining Amount,FA,Type 1 Diabetes Findings About,D1FATSCD,D1FATS,NCI_EVS
 C170563,REMAMT,Remaining Amount,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C154861,RESCTIND,Resected Tumor Ind,FA,Findings About,FATESTCD,FATEST,NCI_EVS
@@ -1864,8 +1886,11 @@ C156505,LVINVIND,Lymphovascular Invasion Indicator,GASTRO,Gastrointestinal,GASTR
 C176291,PAREAULC,Percent Area Covered By Ulcers,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C189437,PDFF,Proton Density Fat Fraction,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C139184,RTAVDIST,Rectal Tumor to Anal Verge Distance,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C225591,STFFNESS,Stiffness,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C174274,STRCTNUM,Number of Strictures,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C181477,STSEXT,Steatosis Extent,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C41145,THICK,Thickness,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C74720,VOLUME,Volume,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C209559,CPNUMAMP,Copy Number Amplification,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181330,CPNUMVAR,Copy Number Variation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181333,GENESIG,Gene Signature,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
@@ -1955,6 +1980,7 @@ C158216,HIV2SR,HIV-2 Seroreactivity,IS,Immunogenicity Specimen Assessments,ISTES
 C128966,HLAIIPRA,HLA Class II Panel Reactive Antibody,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C128967,HLAIPRA,HLA Class I Panel Reactive Antibody,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C81984,HTPHAB,Heterophile Antibodies,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
+C81996,IFNG,Interferon Gamma,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C201421,MABTAB,Modulating Autoab/Total Autoab,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C187780,MBAB,Microbial-induced Antibody,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C181395,MBFAB,Functional Microbial-induced Antibody,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
@@ -1993,6 +2019,7 @@ C100430,AAP,Alanine Aminopeptidase,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C221574,AARGS,Aggrecan Ala-Arg-Gly-Ser Neoepitope,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C189527,AATZPL,Alpha-1 Antitrypsin Z-Polymer,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199923,AB42AB40,Amyloid Beta 1-42/Amyloid Beta 1-40,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225593,AB71A,Activation B7-1 Antigen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184526,ABFBCA,AB-FUBINACA,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C111124,ABNCE,Abnormal Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C150835,ABNCECE,Abnormal Cells/Total Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2126,7 +2153,10 @@ C91372,ANGLBIND,"Antiglobulin Test, Indirect",LB,Laboratory,LBTESTCD,LBTEST,NCI_
 C81974,ANGLOBDR,"Antiglobulin Test, Direct",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C111128,ANGPT1,Angiopoietin 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C163421,ANGPT2,Angiopoietin 2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225594,ANGPTL3,Angiopoietin-Related Protein 3,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225595,ANGPTL38,Angiopoietin-Related Protein 3/8 Complex,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199911,ANGPTL4,Angiopoietin-Related Protein 4,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225596,ANGPTL8,Angiopoietin-Related Protein 8,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74844,ANGTNS1,Angiotensin I,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74845,ANGTNS2,Angiotensin II,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74846,ANGTNSGN,Angiotensinogen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2396,6 +2426,8 @@ C156520,CCL2EXR,Chemokine (C-C Motif) Ligand 2 Excr Rate,LB,Laboratory,LBTESTCD,
 C130158,CCL7,Chemokine (C-C Motif) Ligand 7,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C165951,CCL8,Chemokine (C-C Motif) Ligand 8,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C122103,CCR5,C-C Chemokine Receptor Type 5,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225597,CD14S,Myeloid Cell-Specific LEU-Rich Glycoprot,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C202433,CD28TGP,T-Cell Surface Glycoprotein CD28,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172498,CDCA,Chenodeoxycholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C176239,CDCACM,Chenodeoxycholate Compounds,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199915,CDH1,Cadherin 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2437,6 +2469,7 @@ C177968,CHLRPMZN,Chlorpromazine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C105586,CHOL,Cholesterol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172499,CHOLATE,Cholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C176232,CHOLCM,Cholate Compounds,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225598,CHOLESTR,Cholesteryl Esters,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C181420,CHOLH20S,20(S)-Hydroxycholesterol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C181421,CHOLH22R,22(R)-Hydroxycholesterol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C181422,CHOLH22S,22(S)-Hydroxycholesterol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2639,6 +2672,7 @@ C74756,CYTRPHOS,Triple Phosphate Crystals,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74683,CYTYRO,Tyrosine Crystals,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74757,CYUNCLA,Unclassified Crystals,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74684,CYURIAC,Uric Acid Crystals,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225599,DAGLYCRL,Diacylglycerol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C156537,DALA,Delta Aminolevulinate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C156538,DALACRT,Delta Aminolevulinate/Creatinine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172500,DCA,Deoxycholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2936,6 +2970,10 @@ C163441,GBP2,Guanylate Binding Protein 2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C176305,GCDCA,Glycochenodeoxycholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C176299,GCHT,Glycocholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C82018,GCSF,Granulocyte Colony Stimulating Factor,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225600,GD2C16_0,Ganglioside GD2 Lipoform C16:0,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225601,GD2C18_0,Ganglioside GD2 Lipoform C18:0,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225602,GD2C20_0,Ganglioside GD2 Lipoform C20:0,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225603,GD2C22_0,Ganglioside GD2 Lipoform C22:0,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C150845,GDA,Guanine Deaminase,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C135422,GDF11,Growth Differentiation Factor 11,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C181406,GDF15,Growth Differentiation Factor 15,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3011,6 +3049,7 @@ C186054,GLURLGLU,"Glucose, Radiolabeled/Glucose",LB,Laboratory,LBTESTCD,LBTEST,N
 C74739,GLUTAM,Glutamate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C214678,GLUTENIP,Gluten Immunogenic Peptide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C122122,GLY,Glycine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225604,GLYCA,Glycoprotein Acetyls,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C158221,GLYCREAT,Glycine/Creatinine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C132371,GLYCRL,Glycerol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C100448,GLYCRLFR,Free Glycerol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3050,6 +3089,7 @@ C163449,GSTY1,"Glutathione S-Transferase, Y1",LB,Laboratory,LBTESTCD,LBTEST,NCI_
 C176302,GUDCA,Glycoursodeoxycholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C80165,GUSA,"Glucuronidase, Alpha",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C80170,GUSB,"Glucuronidase, Beta",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225605,GZMA,Granzyme A,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C166073,GZMB,Granzyme B,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C181419,H2FLRZPM,Hydroxyethylflurazepam,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186058,H411DC6A,6a OH-tetrahydro-11-DeH-Corticosterone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3226,6 +3266,7 @@ C184514,IAPOB,IDL Apolipoprotein B,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C127622,IAPP,Islet Amyloid Polypeptide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74718,IBCT,Total Iron Binding Capacity,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74719,IBCU,Unsaturated Iron Binding Capacity,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225606,IC3B,iC3b Complement,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C81986,IC512AG,Islet Cell 512 Antigen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C124344,ICAM,Intercellular Adhesion Molecule,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C124345,ICAM1,Intercellular Adhesion Molecule 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3245,10 +3286,13 @@ C163458,IFI6,Interferon Alpha-Inducible Protein 6,LB,Laboratory,LBTESTCD,LBTEST,
 C163459,IFIT1,Interferon-Induced 56 kDa Protein,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C163460,IFIT3,Interferon-Induced 60 kDa Protein,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C81994,IFNA,Interferon Alpha,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225607,IFNA1,Interferon Alpha Type 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184646,IFNA2,Interferon Alpha Type 2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C81995,IFNB,Interferon Beta,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C81996,IFNG,Interferon Gamma,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C81969,IGA,Immunoglobulin A,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225608,IGA1,Immunoglobulin A Subclass 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225609,IGA2,Immunoglobulin A Subclass 2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184515,IGAC3,Immunoglobulin A/Complement C3,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C111233,IGAGM,IgG IgM IgA Total,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C98745,IGD,Immunoglobulin D,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3275,9 +3319,12 @@ C154738,IGHG4,Immunoglobulin Heavy Constant Gamma 4,LB,Laboratory,LBTESTCD,LBTES
 C81972,IGM,Immunoglobulin M,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C117835,IGSOL,Soluble Immunoglobulin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C128970,IL122340,Interleukin 12+23 p40,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225610,IL16PRO,Pro-Interleukin 16,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172513,IL18BP,Interleukin 18 Binding Protein,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C156519,IL18EXR,Interleukin 18 Excretion Rate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C156518,IL1EXR,Interleukin 1 Excretion Rate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225442,IL1R,Interleukin 1 Receptor,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225611,IL1R1,Interleukin 1 Receptor Type 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C165970,IL1R2,Interleukin 1 Receptor Type 2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C142281,IL1RL1,Interleukin 1 Receptor-Like 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C117836,IL1SR1,Soluble Interleukin-1 Receptor Type I,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3286,6 +3333,7 @@ C158147,IL2R,Interleukin 2 Receptor,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C142282,IL2RA,Interleukin 2 Receptor Subunit Alpha,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C142283,IL2RB,Interleukin 2 Receptor Subunit Beta,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C158220,IL2SR,Soluble Interleukin 2 Receptor,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225612,IL4RA,Interleukin 4 Receptor Subunit Alpha,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C117837,IL6SR,Soluble Interleukin 6 Receptor,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C103410,ILE,Isoleucine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C177984,ILOPRDN,Iloperidone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3316,6 +3364,7 @@ C74811,INTLK15,Interleukin 15,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74812,INTLK16,Interleukin 16,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74813,INTLK17,Interleukin 17,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C214675,INTLK17C,Interleukin 17C,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225613,INTLK17D,Interleukin 17D,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74814,INTLK18,Interleukin 18,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74815,INTLK19,Interleukin 19,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C122131,INTLK1A,Interleukin 1 Alpha,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3390,6 +3439,7 @@ C127624,KLOTHO,Klotho,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C96688,KRCYMG,Megakaryocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C98867,KRCYMGCE,Megakaryocytes/Total Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C154722,KRCYMGLE,Megakaryocytes/Leukocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225614,KRT18,Cytokeratin 18,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186073,KTANST11,11-Ketoandrosterone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C189519,KTBDEXR,Ketone Bodies Excretion Rate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186074,KTETCL11,11-Ketoetiocholanolone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3516,6 +3566,7 @@ C184550,MABCHMCA,MAB-CHMINACA,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147390,MACROBLD,Macroscopic Blood,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C64821,MACROCY,Macrocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C154742,MANNITOL,Mannitol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225615,MAO,Monoamine Oxidase,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C111246,MASTCE,Mast Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C111247,MASTCECE,Mast Cells/Total Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C187812,MASTCELE,Mast Cells/Leukocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3668,7 +3719,6 @@ C64826,MYCYLE,Myelocytes/Leukocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C106547,MYL3,Myosin Light Chain 3,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C130165,MYPC,Myeloid Progenitor Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186084,MYPCCE,Myeloid Progenitor Cells/Total Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C92242,MYPCERPC,Myeloid/Erythroid Ratio,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C106568,NACLR,Sodium Clearance,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C79464,NACREAT,Sodium/Creatinine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C79459,NAG,N-Acetyl Glucosamide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3726,6 +3776,7 @@ C135439,NGF,Nerve Growth Factor,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C198287,NGFA,Nerve Growth Factor Alpha,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C198210,NGFB,Nerve Growth Factor Beta,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C198288,NGFG,Nerve Growth Factor Gamma,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225616,NGRAN,Neurogranin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186085,NHDLLDL,Non-HDL Cholesterol/LDL Cholesterol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147401,NHMCE,Nonhematic Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147402,NHMCELE,Nonhematic Cells/Leukocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3857,8 +3908,6 @@ C184631,PEMOLINE,Pemoline,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184561,PENDRN,Pentedrone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184562,PENTYLN,Pentylone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C100122,PEPSNG,Pepsinogen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C100469,PEPSNGA,Pepsinogen A,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C100470,PEPSNGC,Pepsinogen C,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C100467,PEPSNGI,Pepsinogen I,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C100468,PEPSNGII,Pepsinogen II,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C127632,PERCECE,Proliferating Erythroid/Total Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4177,6 +4226,7 @@ C142291,SPMAGGR,Sperm Aggregation,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147433,SPMMSPM,Motile Sperm/Total Sperm,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C161365,SPMPSPM,"Spermatozoa, Progressive/Spermatozoa",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C106569,SPWEIGHT,Specimen Weight,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225617,SQUALENE,Squalene,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C198290,SRPNA12,Serpin A12,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C209618,SRPNA6,Serpin A6,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199899,SRPNB5,Serpin Family B Member 5,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4198,6 +4248,7 @@ C122153,SULFATE,Sulfate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C92533,SVCAM1,Soluble Vasc Cell Adhesion Molecule 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C191298,SYNVCY,Synoviocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C191297,SYNVCYLE,Synoviocytes/Leukocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225618,T217PA42,Phosphorylated Tau 217/Amyloid Beta 1-42,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74747,T3,Triiodothyronine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74787,T3FR,"Triiodothyronine, Free",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C209457,T3HXCT,Trans-3 Hydroxycotinine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4279,11 +4330,13 @@ C198291,TNF10R3,TNF Receptor Superfamily Member 10c,LB,Laboratory,LBTESTCD,LBTES
 C165990,TNF12,TNF Superfamily Member 12,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C156525,TNF12EXR,TNF Superfamily Member 12 Excretion Rate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C156526,TNF12S,Soluble TNF Superfamily Member 12,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225619,TNF14,TNF Superfamily Member 14,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C174308,TNF5S,Soluble TNF Superfamily Member 5,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C117862,TNFAPI,TNF-a Production Inhibition,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C120666,TNFR1,Tumor Necrosis Factor Receptor 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C165991,TNFR1B,TNF Receptor 1B,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C117864,TNFR1BS,Soluble TNF Receptor 1B,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225620,TNFR4S,Soluble TNF Receptor Superfamily Mem 4,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C174312,TNFR5S,Soluble TNF Receptor Superfamily Mem 5,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199916,TNFR7S,Soluble TNF Receptor Superfamily Mem 7,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C202393,TNFR9S,Soluble TNF Receptor Superfamily Mem 9,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4305,12 +4358,14 @@ C161376,TRAMADOL,Tramadol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C163490,TRANK1,TPR-Ankyrin Repeat-Containing Protein 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C80208,TRAP,Total Radical-Trap Antioxidant Potential,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C100420,TRCYANDP,Tricyclic Antidepressants,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225621,TREM1,Triggering Rcpt Expressed Myeloid Cell 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C96636,TRGTCE,Target Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74874,TRH,Thyrotropin Releasing Hormone,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C92238,TRICH,Trichomonas,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C177982,TRIFLPZN,Trifluoperazine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C64812,TRIG,Triglycerides,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C121183,TRIGHDL,Triglycerides/HDL Cholesterol,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225622,TRIGSPNT,Triglyceride Sapienate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C163491,TRIM21,Tripartite Motif Containing Protein 21,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C187799,TRIM33,E3 Ubiquitin-Protein Ligase TRIM33,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C163492,TRIM38,Tripartite Motif Containing Protein 38,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4434,12 +4489,14 @@ C156511,VTD32425,"24,25-Dihydroxyvitamin D3",LB,Laboratory,LBTESTCD,LBTEST,NCI_E
 C165995,VTRNCTN,Vitronectin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147447,VWFAAC,von Will Factor Act Actual/Control,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C170597,VWFAC,von Will Factor Actual/Control,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225443,WAXESTR,Wax Esters,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C51948,WBC,Leukocytes,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C135451,WBCCE,Leukocytes/Total Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C92246,WBCCLMP,Leukocyte Cell Clumps,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C98493,WBCDIFF,Leukocyte Cell Differential,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C92297,WBCMORPH,Leukocyte Cell Morphology,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C127637,WDR26,WD Repeat-Containing Protein 26,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C225623,WXESSPNT,Wax Ester Sapienate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186098,XLSXLSD,Xylose/Xylose Dose,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147449,XNTHCHR,Xanthochromia,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186099,XYLOSE,Xylose,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4887,6 +4944,8 @@ C204666,PAGM,"Plasmodium Antigen, MLTTRG",MB,Microbiology,MBTESTCD,MBTEST,NCI_EV
 C186178,PARECRNA,Parechovirus RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C187866,PBI,Prevotella bivia,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C209644,PEPTOSTR,Peptostreptococcus,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C225444,PFA,Plasmodium falciparum,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C225687,PFARNA,Plasmodium falciparum RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C221615,PHA,Proteus hauseri,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C204665,PHRP2,Plasmodium Histidine Rich Protein 2,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C199961,PJI,Pneumocystis jiroveci,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
@@ -4973,6 +5032,7 @@ C191327,SPYDNA,Streptococcus pyogenes DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EV
 C186188,SR2RDRPR,SARS-CoV-2 RdRp RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C179764,SSA,Staphylococcus saprophyticus,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C221626,SSAL,Streptococcus salivarius,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C225688,STAPCNDN,"Staphylococcus, Coagulase Negative DNA",MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C189581,STAPHCGN,"Staphylococcus, Coagulase Negative",MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C189580,STAPHCGP,"Staphylococcus, Coagulase Positive",MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C139112,STENMALT,Stenotrophomonas maltophilia,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
@@ -4981,7 +5041,9 @@ C221622,STREPTBH,Streptococcus beta-hemolytic,MB,Microbiology,MBTESTCD,MBTEST,NC
 C221624,STREPTGH,Streptococcus gamma-hemolytic,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C187667,STREPTOC,Streptococcus,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C221628,SVI,Streptococcus viridans,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C225689,TBEVRNA,Tick-Borne Encephalitis Virus RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C184665,TGODNA,Toxoplasma gondii DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C225690,TOSVRNA,Toscana Virus RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C150865,TOXBPCDF,Toxin B-Producing Clostridium difficile,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C150862,TOXCDF,Toxigenic Clostridium difficile,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C184647,TPA,Treponema pallidum,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
@@ -5001,6 +5063,7 @@ C187874,VPADNA,Vibrio parahaemolyticus DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_E
 C186191,VRE,"Enterococcus, Vancomycin-resistant",MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C189555,VZV,Varicella Zoster Virus,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C186192,VZVDNA,Varicella Zoster Virus DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C225691,WNVRNA,West Nile Virus RNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C74664,YEAST,Yeast Cells,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C106504,YEASTBUD,Yeast Budding,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C92239,YEASTHYP,Yeast Hyphae,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
@@ -5020,10 +5083,13 @@ C135463,ARTLRHYT,Arteriolar Hyaline Thickening,MI,SDTM Microscopic Findings,MITS
 C184703,ARV7,Androgen Receptor Variant 7,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C200019,ASDCE,Total Assessed Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C201447,ASGMGIND,Adequate Surgical Margins Indicator,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225710,B7H3,B7 Homolog 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225711,B7H4,B7 Homolog 4,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135464,BANFRDX,Banff Diagnostic Category Renal,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C98865,BASOCE,Basophils/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C201446,BCL2,BCL2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202418,BCL6,BCL6,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225712,BCLNHTYP,Blood Cell Lineage Hyperplasia Type,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C156546,BD1,Beta-defensin 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C122102,BD2,Beta-defensin 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C139099,BDKRB1,Bradykinin Receptor B1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5034,15 +5100,18 @@ C98761,BLSTMBCE,Myeloblasts/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS
 C98753,BLSTMKCE,Megakaryoblasts/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C123555,BRCA1,Breast Cancer Type 1 Susceptibility Prot,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202419,CCND1,Cyclin D1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225713,CCR8,C-C Chemokine Receptor Type 8,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C102260,CD34SM,CD34 Sialomucin,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202431,CD3TCM,CD3 T-Cell Marker,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202433,CD8TGP,T-Cell Surface Glycoprotein CD8,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225714,CDH6,Cadherin 6,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C139098,CDX2AG,CDX2 Antigen,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C191212,CEACAM5,CEA Cell Adhesion Molecule 5,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187946,CEDISTR,Cell Distribution,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C132430,CELLDIFF,Cellular Differentiation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C48938,CELLS,Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C111153,CELLULAR,Cellularity,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C184342,CEMORPH,Cell Morphology,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C178042,CHINFINL,Chronic Inflammatory Infiltrate,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204674,CLLGFBRO,Collagen Fibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C209661,CLOCECE,Clonal Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5068,9 +5137,11 @@ C98720,EOSCE,Eosinophils/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NC
 C178036,EPIDMG,Epithelial Damage,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C132366,EPISCECE,Squamous Epithelial Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C176338,EPITHINT,Epithelial Integrity,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225715,ERCEDYSP,Erythroid Dysplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204671,ERCEPRLF,Erythroid Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C156547,ERLIERLT,"Epi RBM Lngth, Intact/Epi RBM Lngth, Tot",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C178045,EROULC,Erosion and/or Ulceration,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C187802,ERPCE,Erythroid Precursor Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187803,ERPCECE,Erythroid Precursor Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C112274,ESTRCPT,Estrogen Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C185968,FIBB,Fibroblasts,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5082,12 +5153,14 @@ C135465,GLOMLTIS,Glomerulitis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135466,GLOMPATH,Glomerulopathy,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C189621,GOBCE,Goblet Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C189622,GOBCEPIC,Goblet Cells/Epithelial Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225716,GPC3,Glypican 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204672,GRANPRLF,Granulocyte Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C127616,GRANSGCE,Granulocytes Segmented/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C176334,GRNLMA,Granuloma,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C166073,GZMB,Granzyme B,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181484,HEPBLLN,Hepatocellular Ballooning,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C112312,HER2,Human Epidermal Growth Factor Receptor 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225717,HER3,Human Epidermal Growth Factor Receptor 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C172514,HGFR,Hepatocyte Growth Factor Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C154802,HISTTYPC,Histologic Type of Cancer,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C191338,HMCEADI,Hematopoietic Cells/Adipocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5102,7 +5175,10 @@ C202422,IRF4,Interferon Regulatory Factor 4,MI,SDTM Microscopic Findings,MITSCD,
 C74679,IRON,Iron,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202421,ITGB3,Integrin Subunit Beta 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C123557,KI67,Ki-67,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C96688,KRCYMG,Megakaryocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225718,KRCYMGP,Megakaryocytes Sub/Megakaryocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C214717,KRTNCT,Keratinocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225719,LAG3,Lymphocyte Activation Gene-3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C106539,LCN2,Lipocalin-2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C25334,LENGTH,Length,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204682,LERBCBLS,Leukoerythroblastosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5110,6 +5186,7 @@ C202428,LEU1,Lymphocyte Antigen T1/Leu-1,MI,SDTM Microscopic Findings,MITSCD,MIT
 C202429,LEU16,Membrane Spanning 4-Domains A1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202432,LEU3,T-Cell Surface Antigen T4/Leu-3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C176341,LFA1,Lymphocyte Function-Associated Antigen 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225720,LKBLYCE,Leukemic B-Lymphocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C184702,LNEXCPSD,Lymph Node Extracapsular Spread,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181493,LNININD,Lymph Node Involvement Indicator,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C189620,LNINNUM,Number of Lymph Nodes Involved,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5123,6 +5200,7 @@ C74613,LYMMCE,Lymphoma Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C186078,LYMMCECE,Lymphoma Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187947,LYMPAGG,Lymphoid Aggregates,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C127766,LYMPHINV,Lymphatic Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225721,LYTBLYCE,Lymphoma T+B-Lymphocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181488,MALLBOD,Mallory Body,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C111247,MASTCECE,Mast Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C221650,MAXDLMD,Max Dimension Largest Metastatic Deposit,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5134,7 +5212,10 @@ C98754,METAMYCE,Metamyelocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,M
 C90424,MIEXAM,Microscopic Examination,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135470,MITOFIG,Mitotic Figure,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C138982,MITOSCR,Mitotic Score,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225722,MKCMORPH,Megakaryocyte Cell Morphology,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204673,MKCPRLF,Megakaryocyte Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225723,MKCTDSTR,Megakaryocyte Topographic Distribution,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225724,MKCYDYSP,Megakaryocytic Dysplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202426,MLANA,Melan-A,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C139094,MLH1,MutL Homolog 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C186203,MLH3,MutL Homolog 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5149,12 +5230,18 @@ C139095,MSH2,MutS Homolog 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C186204,MSH3,MutS Homolog 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C139096,MSH6,MutS Homolog 6,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135471,MSNGMTRX,Mesangial Matrix,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225725,MSTHLN,Mesothelin,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225726,MTAP,Methylthioadenosine Phosphorylase,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181479,MVSTS,Microvesicular Steatosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225727,MYCEDYSP,Myeloid Dysplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204681,MYCEPRLF,Myeloid Proliferation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225728,MYCSP,Myeloid Cells Sub/Myeloid Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C98868,MYCYCE,Myelocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C154803,MYFIBROS,Myelofibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C92242,MYPCERPC,Myeloid/Erythroid Ratio,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C202430,NCAM1,Neural Cell Adhesion Molecule 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181492,NCRPLEOM,Nuclear Pleomorphism,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225729,NECTIN4,Nectin 4,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C154801,NEOCE,Neoplastic Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C123556,NEOCECE,Neoplastic Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187701,NEUTBCE,Neutrophils Band Form/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5162,6 +5249,7 @@ C178044,NEUTEPI,Neutrophils in Epithelium,MI,SDTM Microscopic Findings,MITSCD,MI
 C178043,NEUTLP,Neutrophils in Lamina Propria,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187679,NEUTSGCE,"Neutrophils, Segmented/Total Cells",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C123558,NKX2_1,NK2 Homeobox 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225730,NODULE,Nodule,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C127767,NORMCECE,Normal Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181656,NT5E,Ecto-5'-Nucleotidase,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181489,NUCLGLCG,"Nuclei, Glycogenated",MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5170,6 +5258,7 @@ C179766,P16INK4A,p16-INK4A,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C186205,P53,Tumor Protein p53,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C80204,PAP,Prostatic Acid Phosphatase,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C142348,PAX3FKHR,PAX3-FKHR Fusion Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225731,PAX5,Paired Box 5,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C123559,PCTISCA,Percentage of In situ Carcinoma,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C154807,PDL1,Programmed Death Ligand 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135472,PECAM1,Platelet Endo Cell Adhesion Molecule 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5186,6 +5275,7 @@ C127634,PMYCECE,Proliferating Myeloid Cells/Total Cells,MI,SDTM Microscopic Find
 C127768,PNLINV,Perineural Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C176339,PNTHCEMP,Paneth Cell Metaplasia,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181483,PORTINF,Portal Inflammation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225732,PRB,Retinoblastoma Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C117846,PROGESTR,Progesterone Receptor,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187678,PROMONCE,Promonocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C98773,PROMYCE,Promyelocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5193,6 +5283,7 @@ C135473,PTBCPLTS,Peritubular Capillaritis,MI,SDTM Microscopic Findings,MITSCD,MI
 C147470,PTEN,Phosphatase and Tensin Homolog,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C189346,PYKCE,Pyknotic Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C178047,PYSACMSB,Polysaccharides and Mucosubstances,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C92296,RBCMORPH,Erythrocyte Cell Morphology,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187680,RETICE,Reticulocytes/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C154804,ROS1,ROS1 Protein,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204675,RTCNFBRO,Reticulin Fibrosis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5208,18 +5299,21 @@ C202423,SOX10,SRY-Box Transcription Factor 10,MI,SDTM Microscopic Findings,MITSC
 C127770,STRMCECE,Stromal Cells/Total Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181477,STSEXT,Steatosis Extent,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181478,STSLOC,Steatosis Location,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225733,SYND1,Syndecan 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204676,TACSTD2,Tumor Assoc Calcium Signal Transducer 2,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C181491,TBLFRM,Tubule Formation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C117861,TGFB1,Transforming Growth Factor Beta 1,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C41145,THICK,Thickness,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204677,TIGIT,TIGIT,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204678,TILY,Tumor-Infiltrating Lymphocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225734,TIM3,T-Cell Ig and Mucin Domain Protein 3,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C176340,TISABNUM,Number of Abnormal Tissue Samples,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C204679,TLS,Tertiary Lymphoid Structures,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187951,TMBRDCFG,Tumor Border Configuration,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187949,TMDIFF,Tumor Differentiation,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C214715,TMINLIND,Tumor Infiltration Indicator,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C187950,TMINLPTN,Tumor Infiltration Pattern,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C225735,TNFR4,TNF Receptor Superfamily Member 4,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C154800,TRCETMCE,Transitional Cells/Tumor Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135474,TUBATRO,Tubular Atrophy,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135475,TUBULTIS,Tubulitis,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
@@ -5229,6 +5323,7 @@ C112241,UNSPCE,Unspecified Cells,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EV
 C127772,VASINV,Vascular Invasion,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C135476,VFBINTMT,Vascular Fibrous Intimal Thickening,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C51948,WBC,Leukocytes,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
+C92297,WBCMORPH,Leukocyte Cell Morphology,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C25345,WIDTH,Width,MI,SDTM Microscopic Findings,MITSCD,MITS,NCI_EVS
 C191306,ALPHANGL,Alpha Angle,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C25244,AREA,Area,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
@@ -5248,7 +5343,7 @@ C139222,BMMTFLX,"Brooke mMRC MMT Score, Flexion",MK,Musculoskeletal System Findi
 C139226,BMMTINV,"Brooke mMRC MMT Score, Inversion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139224,BMMTLR,"Brooke mMRC MMT Score, Lat. Rotat.",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139221,BMMTPF,"Brooke mMRC MMT Score, Plantar Flex",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C139218,BODYFATP,Body Fat Percentage,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C139218,BODYFATP,Total Body Fat/Total Body Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221652,EMCLNPV,EMCL Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221654,EMCLNTW,EMCL Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221653,EMCLNTWV,EMCL Norm for Tissue Water Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
@@ -5495,7 +5590,7 @@ C210166,AIRFLRT,Airflow Rate,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C74799,AMMONIA,Ammonia,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C204639,AMNPHTH1,1-Aminonaphthalene,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C204640,AMNPHTH2,2-Aminonaphthalene,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
-C147298,ANABSN,Anabasine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
+C147298,ANABASN,Anabasine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210268,ANATBN,Anatabine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C147305,ARSENIC,Arsenic,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210167,BATCAPC,Battery Capacity,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
@@ -5608,6 +5703,7 @@ C209607,NCTGLC,Nicotine Glucuronide,PT,Tobacco Product Testing,PTTESTCD,PTTEST,N
 C210336,NDEA,N-Nitrosodiethylamine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210337,NDELA,N-Nitrosodiethanolamine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210338,NDMA,N-Nitrosodimethylamine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
+C225739,NFDPM,"Dry Particulate Matter, Nicotine-Free",PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210342,NICKEL,Nickel,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C147403,NICOTINE,Nicotine,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210205,NICTDSRT,Nicotine Dissolution Rate,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
@@ -5671,6 +5767,7 @@ C210409,T3HCT,Trans-3-Hydroxycotinine,PT,Tobacco Product Testing,PTTESTCD,PTTEST
 C210410,T3HCTGLC,Trans-3-Hydroxycotinine Glucuronide,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210221,TBFLMASS,Tobacco Filler Mass,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210413,TBSNTMN,Tobacco-Specific Nitrosamines,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
+C225740,TBTAR,Tobacco Tar,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210223,TDENIER,Total Denier,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210224,TOCUTSIZ,Tobacco Cut Size,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C204653,TOLUENE,Toluene,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
@@ -5860,6 +5957,8 @@ C158276,ENMPSDTC,Est Next Menstrual Period Start Date,RP,Reproductive System Fin
 C122189,ERLYTRMN,Number of Early Term Births,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C154877,ERYTHIND,Erythema Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C120834,FETLDTHN,Number of Late Fetal Deaths,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225741,FLCENDTC,Follicular Phase End Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225742,FLCSTDTC,Follicular Phase Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C198357,FMPSTDTC,First Menstrual Period Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C201480,FSXIAGE,Age at First Sexual Intercourse,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C201481,FSXOAGE,Age at First Oral Sex,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
@@ -5873,11 +5972,14 @@ C120835,INABORTN,Number of Induced Abortions,RP,Reproductive System Findings,RPT
 C189356,INFRTIND,Infertility Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C41255,INTP,Interpretation,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C189353,IRRMPIND,Irregular Menstrual Periods Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225743,LLTENDTC,Late-Luteal Phase End Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225744,LLTSTDTC,Late-Luteal Phase Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C191351,LMPELTM,Elapsed Time Since LMP,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C81257,LMPSTDTC,Last Menstrual Period Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C154886,MASSIND,Mass Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C19666,MENARAGE,Menarche Age,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C204694,MENARIND,Menarche Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225745,MENENDTC,Menses End Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C156586,MENFDUR,Menses Flow Duration,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C156585,MENFRD,Menses Flow Rate Description,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C106497,MENOAGE,Menopause Age,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
@@ -5885,10 +5987,17 @@ C106541,MENOSTAT,Menopause Status,RP,Reproductive System Findings,RPTESTCD,RPTES
 C156587,MENREG,Menstrual Cycle Regularity,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C119549,MENSDUR,Menstrual Cycle Duration,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C189354,MENSDURA,Average Menstrual Cycle Duration,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225746,MENSTDTC,Menses Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225747,MFLENDTC,Mid-Follicular Phase End Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225748,MFLSTDTC,Mid-Follicular Phase Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C209678,MLRPGIND,Molar Pregnancy Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225749,MLTENDTC,Mid-Luteal Phase End Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225750,MLTSTDTC,Mid-Luteal Phase Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C181524,MRSXIDTC,Date of Most Recent Sexual Intercourse,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C122191,MSCRGIND,Miscarriage Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C154887,MTENDIND,Motion Tenderness Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225751,OVLENDTC,Ovulation Phase End Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C225752,OVLSTDTC,Ovulation Phase Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C16955,PARITY,Parity,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C122192,PCONFIND,Pregnancy Confirmed Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C154883,PEELIND,Peeling Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
@@ -5964,6 +6073,7 @@ C94535,NTRGRESP,Non-target Response,RS,Oncology Response Assessment,ONCRTSCD,ONC
 C96613,OVRLRESP,Overall Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C123626,PATHRESP,Pathologic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C204686,PBLTIND,Peripheral Blasts Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C225736,PDIND,Progressive Disease Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C202442,PLATRESP,Platelets Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C123627,RDIORESP,Radiologic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C132457,SFTSRESP,Soft Tissue Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
@@ -6073,6 +6183,7 @@ C209697,LSCFADTC,Latest Date Subject Confirmed Alive,SS,Subject Status,SSTESTCD,
 C25717,SURVSTAT,Survival Status,SS,Subject Status,SSTESTCD,SSTEST,NCI_EVS
 C214746,ACBSPPD,Absolute Change Baseline in Sum of PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C103347,ACHNAD,Absolute Change From Nadir,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C225755,ACLPNLP,Absolute Change Frm LPERP Nadir to LPERP,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C135506,ACNDOREN,Absolute Change Nadir in Organ Enlarge,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C112218,ACNSD,Absolute Change Nadir in Sum of Diam,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C214747,ACNSPPD,Absolute Change Nadir in Sum of PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6082,6 +6193,7 @@ C25244,AREA,Area,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C147490,BMUPTAKE,Bone Marrow Tracer Uptake,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C132463,BNLNUM,Number of Bone Lesions,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C126056,CALCFIND,Calcification Indicator,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C133462,CURIESC,Curie Absolute Score,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C25285,DIAMETER,Diameter,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C99723,FDP5PS,FDG PET 5PS Score,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C96684,LDIAM,Longest Diameter,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6096,6 +6208,7 @@ C119554,LMBFLIND,Limb Failure Indicator,TR,Tumor or Lesion Properties,TRTESTCD,T
 C124446,LMNDEXAM,Number of Lymph Nodes Examined,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C124447,LMNDPNUM,Number of Lymph Nodes Positive,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C124448,LNSTATE,Lymph Node State,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C225756,LOCGUPT,Location of Greatest Uptake,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C96685,LPERP,Longest Perpendicular,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C119555,LRISCIND,Lesion Revas Ischemia Indicator,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C119556,LRVCLIND,Lesion Revas Clinical Indicator,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6126,6 +6239,8 @@ C132265,PCNSPPD,Percent Change Nadir in Sum of PPD,TR,Tumor or Lesion Properties
 C178054,PCNSV,Percent Change Nadir in Sum of Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C135513,PPD,Product of Perpendicular Diameters,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C96627,RADIODEN,Radiodensity,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C225757,RMIBGSC,Relative MIBG Score,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C225758,SIOPENSC,Siopen Absolute Score,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C181545,SULMAX,SUV Maximum Corrected for Lean Body Mass,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C181546,SULMEAN,SUV Mean Corrected for Lean Body Mass,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C181547,SULPEAK,SUV Peak Corrected for Lean Body Mass,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6162,9 +6277,9 @@ C202450,SPLMIND,Splenomegaly Indicator,TU,Tumor or Lesion Identification,TUTESTC
 C178053,TIND,Target Indicator,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C186217,TUBNIND,Bone Tumors Indicator,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C186218,TUEXMIND,Extramedullary Disease Indicator,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
-C94525,TUMERGE,Tumor Merged,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
+C225437,TUMERGE,Tumor Merged,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C94523,TUMIDENT,Tumor Identification,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
-C96642,TUSPLIT,Tumor Split,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
+C225438,TUSPLIT,Tumor Split,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C119569,VSLIDENT,Vessel Lesion Identification,TU,Tumor or Lesion Identification,TUTESTCD,TUTEST,NCI_EVS
 C94866,BLDFLRT,Blood Flow Rate,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
 C64546,COLOR,Color,UR,Urinary System,URNSTSCD,URNSTS,NCI_EVS
@@ -6224,7 +6339,7 @@ C117976,IDEALWT,Ideal Body Weight,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C41255,INTP,Interpretation,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C84372,KNEEHEEL,Knee to Heel Length,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C71258,LBM,Lean Body Mass,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
-C139219,LBMTBMR,Lean Body Mass to Total Body Mass Ratio,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
+C139219,LBMTBMR,Lean Body Mass/Total Body Mass,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C199997,LTM,Lean Tissue Mass,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C174233,MANDL,Mandibular Length,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C49679,MAP,Mean Arterial Pressure,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
@@ -6242,6 +6357,7 @@ C172607,SBPHPCTL,Systolic BP-for-Height Percentile,VS,Vital Signs,VSTESTCD,VSTES
 C98785,SSSKNF,Subscapular Skinfold Thickness,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C25298,SYSBP,Systolic Blood Pressure,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C104622,TBW,Total Body Water,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
+C225770,TBWTBM,Total Body Water/Total Body Mass,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C174446,TEMP,Temperature,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C174370,TEMPCB,Core Body Temperature,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C174371,TEMPPB,Peripheral Body Temperature,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS

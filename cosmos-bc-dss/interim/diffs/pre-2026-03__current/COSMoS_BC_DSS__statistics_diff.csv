@@ -1,0 +1,63 @@
+Metric,Value_old,Detail_old,Value_new,Detail_new,changed
+ADAS-Cog,112,,112,,False
+ADAS-Cog CDISC Version Functional Test Question,111,,111,,False
+ADC,112,,112,,False
+Alzheimer's Disease Assessment Scale-Cognitive CDISC Version Functional Test,112,,112,,False
+BCs with DSS (full),705,,903,,True
+BCs with parent,888,,1073,,True
+BCs without DSS (full_no_ds),194,,192,,True
+Blood Cell Counts,26,,,,True
+Body Measurements,,,46,,True
+Chemistry Tests,80,,83,,True
+Clinical Findings Indicator,39,,41,,True
+Clinical Trial Attribute,66,,66,,False
+Clinical or Research Assessment Classification,129,,129,,False
+DOMAIN CLASS DISTRIBUTION,,,,,True
+DSS Qualitative,491,,502,,True
+DSS Quantitative,435,,625,,True
+DSS with LOINC,138,,139,,True
+DSS with specimen,485,,489,,True
+DSS with standard unit,360,,419,,True
+Disease Response,32,,,,True
+Electrocardiogram Findings,34,,,,True
+Events,27,"4 domains, 38 DSS",29,"4 domains, 40 DSS",True
+Findings,535,"20 domains, 924 DSS",731,"21 domains, 1125 DSS",True
+Functional Assessment,119,,119,,False
+HIERARCHY,,,,,True
+Hematology Tests,40,,40,,False
+Hierarchy-only BCs,228,,250,,True
+Indicator,46,,45,,True
+Interventions,10,"5 domains, 27 DSS",10,"5 domains, 27 DSS",False
+Laboratory Tests,168,,173,,True
+Musculoskeletal Finding,58,,59,,True
+OVERVIEW,,,,,True
+Oncology Standards,37,,,,True
+Pulmonary Function Test,,,105,,True
+QRS,264,,264,,False
+Reproductive Findings,99,,102,,True
+Respiratory System Findings,,,152,,True
+SDTM domains with DSS,31,,32,,True
+Special-Purpose,133,"2 domains, 134 DSS",133,"2 domains, 134 DSS",False
+TOP 20 CATEGORY TAGS,Count,,Count,,False
+Top-level BCs,239,,272,,True
+Total BCs,1127,,1345,,True
+Total Dataset Specializations,1123,,1326,,True
+Trial Summary,192,,192,,False
+Unique category tags,367,,385,,True
+Vital Signs,,,81,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True
+,,,,,True

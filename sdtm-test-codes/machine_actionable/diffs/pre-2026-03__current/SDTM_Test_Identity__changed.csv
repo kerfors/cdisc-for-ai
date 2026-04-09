@@ -1,0 +1,40 @@
+NCIt_Code,column,old,new
+C100467,NCIt_Synonyms,PEPSNGI; PGI; Pepsinogen I,PEPSNGI; PGA; PGA Measurement; PGI; Pepsinogen A; Pepsinogen A Measurement; Pepsinogen I
+C100468,NCIt_Synonyms,PEPSNGII; PGII; Pepsinogen II,PEPSNGII; PGC; PGC Measurement; PGII; Pepsinogen C; Pepsinogen C Measurement; Pepsinogen II
+C112312,NCIt_Synonyms,ERBB2; HER2; HER2/NEU; Human Epidermal Growth Factor Receptor 2; Receptor Tyrosine-Protein Kinase erbB-2 Measurement,ERBB2; ErbB-2; HER2; HER2/NEU; Human Epidermal Growth Factor Receptor 2; Receptor Tyrosine-Protein Kinase erbB-2 Measurement
+C117885,NCIt_Synonyms,OUNIMULT; Onset Unifocal or Multifocal,Focus of Onset; OUNIMULT; Onset Unifocal or Multifocal
+C132416,NCIt_Preferred_Term,Microoganism Identification,Microorganism Identification
+C139218,TEST,Body Fat Percentage,Total Body Fat/Total Body Mass
+C139218,NCIt_Preferred_Term,Body Fat Percentage,Total Body Fat to Total Body Mass Ratio Measurement
+C139218,NCIt_Synonyms,BODYFATP,BODYFATP; Body Fat Percentage; Total Body Fat/Total Body Mass
+C139219,TEST,Lean Body Mass to Total Body Mass Ratio,Lean Body Mass/Total Body Mass
+C139219,NCIt_Preferred_Term,Lean Body Mass to Total Body Mass Ratio,Lean Body Mass to Total Body Mass Ratio Measurement
+C139219,NCIt_Synonyms,LBMTBMR,LBMTBMR; Lean Body Mass/Total Body Mass
+C147298,NCIt_Synonyms,ANABASN; ANABSN; Anabasine,ANABASN; Anabasine
+C154757,SDTM_Domains,LB; MI,BS; LB; MI
+C172574,NCIt_Synonyms,Lacrimation; TEARSCR; Tear Production; Tear Secretion,LACRIMTN; Lacrimation; TEARSCR; Tear Production; Tear Secretion
+C178048,NCIt_Synonyms,HYPERMIA; Hyperemia,HYPER; HYPERMIA; Hyperemia
+C181477,SDTM_Domains,MI,GASTRO; MI
+C184342,SDTM_Domains,LB,LB; MI
+C187802,SDTM_Domains,LB,LB; MI
+C201372,NCIt_Synonyms,CD134 Expression; CD134X; OX40 Expression; OX40L Receptor Measurement; TAX Transcriptionally-Activated Glycoprotein 1 Receptor Measurement; TNFRSF4 Measurement; Tumor Necrosis Factor Receptor Superfamily Member 4 Measurement,CD134 Expression; CD134X; OX40 Expression; OX40L Receptor Expression Measurement; TAX Transcriptionally-Activated Glycoprotein 1 Receptor Expression Measurement; TNFRSF4 Expression Measurement; Tumor Necrosis Factor Receptor Superfamily Member 4 Expression Measurement
+C201447,TESTCD,ASGMGIND,ASMIND
+C201447,SDTM_Domains,MI,BS; MI
+C201447,NCIt_Synonyms,ASGMGIND; Adequate Surgical Margins Indicator,ASGMGIND; ASMIND; Adequate Surgical Margins Indicator
+C201458,NCIt_Synonyms,CHOCTN; Choline/Creatine,CHOCTN; Cho/CR; Choline/Creatine; Choline/Creatine Ratio
+C202433,TESTCD,CD8TGP,CD28TGP
+C202433,TEST,T-Cell Surface Glycoprotein CD8,T-Cell Surface Glycoprotein CD28
+C202433,SDTM_Domains,MI,LB; MI
+C202433,NCIt_Synonyms,CD8; CD8 Complex; CD8 Complex Measurement; CD8 Measurement; CD8TGP; T-Cell Surface Glycoprotein CD8,CD28TGP; CD8; CD8 Complex; CD8 Complex Measurement; CD8 Measurement; CD8TGP; T-Cell Surface Glycoprotein CD28; T-Cell Surface Glycoprotein CD8
+C202436,NCIt_Synonyms,LACCTN; Lactate/Creatine; Lactic Acid/Creatine,LACCTN; Lac/CR; Lactate/Creatine; Lactate/Creatine Ratio; Lactic Acid/Creatine
+C221559,NCIt_Preferred_Term,MMP 2-Degraded Type IV Collagen Fragment C6M Measurement,MMP 2-Degraded Type VI Collagen Fragment C6M Measurement
+C221560,NCIt_Preferred_Term,MMP 2-Degraded Type IV Collagen Alpha-3 Subunit Fragment C6Ma3 Measurement,MMP 2-Degraded Type VI Collagen Alpha-3 Subunit Fragment C6Ma3 Measurement
+C25206,NCIt_Synonyms,TEMP; Temperatures (Optional); temperature,TEMP; TEMPERATURE; Temperatures (Optional)
+C63637,NCIt_Synonyms,RIN; rna integrity number; rna_integrity_number,RIN; Ribonucleic Acid Integrity; rna integrity number; rna_integrity_number
+C74720,SDTM_Domains,AU; BS; FA; LB; NV; TR,AU; BS; FA; GASTRO; LB; NV; TR
+C74761,NCIt_Preferred_Term,Albumin To Creatinine Protein Ratio Measurement,Albumin to Creatinine Ratio Measurement
+C81996,SDTM_Domains,LB,IS; LB
+C92242,SDTM_Domains,LB,MI
+C92296,SDTM_Domains,LB,LB; MI
+C92297,SDTM_Domains,LB,LB; MI
+C96688,SDTM_Domains,LB,LB; MI

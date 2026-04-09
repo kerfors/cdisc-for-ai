@@ -4,7 +4,7 @@ A publicly sourced reference for all SDTMIG v3.4 domains, with a structural anal
 
 ## What this is
 
-**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists all 56 SDTMIG v3.4 domains with their observation class, structural type, and pipeline flags (`Specimen_Based`, `Has_Test_Codes`). Sourced from public CDISC documentation. Stable -- changes only when a new SDTMIG version is published. Intended for programmatic use by notebooks in other tracks.
+**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists all 57 SDTMIG v3.4 domains with their observation class, structural type, and pipeline flags (`Specimen_Based`, `Has_Test_Codes`). Sourced from public CDISC documentation. Stable -- changes only when a new SDTMIG version is published. Intended for programmatic use by notebooks in other tracks.
 
 Behavioural group classification (COSMoS-empirical, evolving) lives in [`COSMoS_Domain_Pattern_Inventory.xlsx`](../cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) in the cosmos-bc-dss track.
 
@@ -26,7 +26,7 @@ SDTM classifies domains by observation class (Findings, Events, Interventions, e
 |---|---|---|
 | Specimen-based Findings | 11 | BC→DSS decomposition by specimen/method/scale |
 | Instrument Findings | 3 | QRS instruments; BC hierarchy = form→question grouping |
-| Measurement Findings | 4 | Quantitative measurements without specimen |
+| Measurement Findings | 5 | Quantitative measurements without specimen |
 | Domain-specific Findings | 6 | Domain-specific observation patterns |
 | Clinical Assessment Findings | 4 | Findings about events/interventions, tumor assessments |
 | Events | 7 | Clinical occurrences |

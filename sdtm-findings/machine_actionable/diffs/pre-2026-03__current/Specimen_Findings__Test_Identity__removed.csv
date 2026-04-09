@@ -1,0 +1,3 @@
+NCIt_Code,TESTCD,TEST,SDTM_Domains,NCIt_Preferred_Term,NCIt_Synonyms,NCIt_Definition,UMLS_CUI,NCIm_CUI,Has_COSMoS,COSMoS_DSS_Count,COSMoS_BC_Name,COSMoS_Categories,COSMoS_Hierarchy,COSMoS_Domains
+C100469,PEPSNGA,Pepsinogen A,LB,Pepsinogen A Measurement,PEPSNGA; PGA; Pepsinogen A,The determination of the amount of pepsinogen A present in a sample.,C3541266,,No,0,,,,
+C100470,PEPSNGC,Pepsinogen C,LB,Pepsinogen C Measurement,PEPSNGC; PGC; Pepsinogen C,The determination of the amount of pepsinogen C present in a sample.,C3538998,,No,0,,,,

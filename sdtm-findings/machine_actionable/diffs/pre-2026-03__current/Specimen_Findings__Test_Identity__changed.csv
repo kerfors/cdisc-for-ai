@@ -1,0 +1,57 @@
+NCIt_Code,column,old,new
+C100467,NCIt_Synonyms,PEPSNGI; PGI; Pepsinogen I,PEPSNGI; PGA; PGA Measurement; PGI; Pepsinogen A; Pepsinogen A Measurement; Pepsinogen I
+C100468,NCIt_Synonyms,PEPSNGII; PGII; Pepsinogen II,PEPSNGII; PGC; PGC Measurement; PGII; Pepsinogen C; Pepsinogen C Measurement; Pepsinogen II
+C103453,Has_COSMoS,No,Yes
+C103453,COSMoS_DSS_Count,0,1
+C103453,COSMoS_BC_Name,,Albumin to Total Protein Ratio Measurement
+C103453,COSMoS_Categories,,Chemistry Tests; Laboratory Tests; Ratio Measurements
+C103453,COSMoS_Hierarchy,,Chemistry Test > Liver Function Test > Albumin Measurement
+C103453,COSMoS_Domains,,LB
+C106568,Has_COSMoS,No,Yes
+C106568,COSMoS_DSS_Count,0,1
+C106568,COSMoS_BC_Name,,Sodium Clearance Measurement
+C106568,COSMoS_Categories,,Chemistry Tests; Clearance Rates; Laboratory Tests
+C106568,COSMoS_Hierarchy,,Chemistry Test
+C106568,COSMoS_Domains,,LB
+C112312,NCIt_Synonyms,ERBB2; HER2; HER2/NEU; Human Epidermal Growth Factor Receptor 2; Receptor Tyrosine-Protein Kinase erbB-2 Measurement,ERBB2; ErbB-2; HER2; HER2/NEU; Human Epidermal Growth Factor Receptor 2; Receptor Tyrosine-Protein Kinase erbB-2 Measurement
+C119293,COSMoS_Categories,Blood Oxygen Levels; Laboratory Tests,Blood Oxygen Levels; Laboratory Tests; Respiratory System Findings
+C132416,NCIt_Preferred_Term,Microoganism Identification,Microorganism Identification
+C147298,NCIt_Synonyms,ANABASN; ANABSN; Anabasine,ANABASN; Anabasine
+C150823,Has_COSMoS,No,Yes
+C150823,COSMoS_DSS_Count,0,1
+C150823,COSMoS_BC_Name,,Sodium Excretion Rate
+C150823,COSMoS_Categories,,Biological Clearance Rates; Clearance Rates; Excreation Rates; Laboratory Tests
+C150823,COSMoS_Hierarchy,,Excretion Rate
+C150823,COSMoS_Domains,,LB
+C154757,SDTM_Domains,LB; MI,BS; LB; MI
+C181477,SDTM_Domains,MI,GASTRO; MI
+C184342,SDTM_Domains,LB,LB; MI
+C187802,SDTM_Domains,LB,LB; MI
+C201372,NCIt_Synonyms,CD134 Expression; CD134X; OX40 Expression; OX40L Receptor Measurement; TAX Transcriptionally-Activated Glycoprotein 1 Receptor Measurement; TNFRSF4 Measurement; Tumor Necrosis Factor Receptor Superfamily Member 4 Measurement,CD134 Expression; CD134X; OX40 Expression; OX40L Receptor Expression Measurement; TAX Transcriptionally-Activated Glycoprotein 1 Receptor Expression Measurement; TNFRSF4 Expression Measurement; Tumor Necrosis Factor Receptor Superfamily Member 4 Expression Measurement
+C201447,TESTCD,ASGMGIND,ASMIND
+C201447,SDTM_Domains,MI,BS; MI
+C201447,NCIt_Synonyms,ASGMGIND; Adequate Surgical Margins Indicator,ASGMGIND; ASMIND; Adequate Surgical Margins Indicator
+C202433,TESTCD,CD8TGP,CD28TGP
+C202433,TEST,T-Cell Surface Glycoprotein CD8,T-Cell Surface Glycoprotein CD28
+C202433,SDTM_Domains,MI,LB; MI
+C202433,NCIt_Synonyms,CD8; CD8 Complex; CD8 Complex Measurement; CD8 Measurement; CD8TGP; T-Cell Surface Glycoprotein CD8,CD28TGP; CD8; CD8 Complex; CD8 Complex Measurement; CD8 Measurement; CD8TGP; T-Cell Surface Glycoprotein CD28; T-Cell Surface Glycoprotein CD8
+C221559,NCIt_Preferred_Term,MMP 2-Degraded Type IV Collagen Fragment C6M Measurement,MMP 2-Degraded Type VI Collagen Fragment C6M Measurement
+C221560,NCIt_Preferred_Term,MMP 2-Degraded Type IV Collagen Alpha-3 Subunit Fragment C6Ma3 Measurement,MMP 2-Degraded Type VI Collagen Alpha-3 Subunit Fragment C6Ma3 Measurement
+C25206,NCIt_Synonyms,TEMP; Temperatures (Optional); temperature,TEMP; TEMPERATURE; Temperatures (Optional)
+C25747,Has_COSMoS,No,Yes
+C25747,COSMoS_DSS_Count,0,1
+C25747,COSMoS_BC_Name,,Creatinine Clearance
+C25747,COSMoS_Categories,,Chemistry Tests; Clearance Rates; Creatinine Measurements; Laboratory Tests
+C25747,COSMoS_Hierarchy,,Chemistry Test > Creatinine Measurement
+C25747,COSMoS_Domains,,LB
+C63637,NCIt_Synonyms,RIN; rna integrity number; rna_integrity_number,RIN; Ribonucleic Acid Integrity; rna integrity number; rna_integrity_number
+C74720,SDTM_Domains,AU; BS; FA; LB; NV; TR,AU; BS; FA; GASTRO; LB; NV; TR
+C74761,NCIt_Preferred_Term,Albumin To Creatinine Protein Ratio Measurement,Albumin to Creatinine Ratio Measurement
+C74761,COSMoS_BC_Name,Albumin To Creatinine Protein Ratio Measurement,Albumin to Creatinine Ratio Measurement
+C74761,COSMoS_Categories,Chemistry Tests; Laboratory Tests; Ratio Measurements; Urine Protein Measurement,Chemistry Tests; Laboratory Tests; Ratio Measurements
+C74761,COSMoS_Hierarchy,Urine Protein Measurement,Chemistry Test > Liver Function Test > Albumin Measurement
+C81996,SDTM_Domains,LB,IS; LB
+C92242,SDTM_Domains,LB,MI
+C92296,SDTM_Domains,LB,LB; MI
+C92297,SDTM_Domains,LB,LB; MI
+C96688,SDTM_Domains,LB,LB; MI

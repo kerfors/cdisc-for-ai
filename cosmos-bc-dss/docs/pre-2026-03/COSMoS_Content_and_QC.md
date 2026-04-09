@@ -6,7 +6,7 @@
 
 The [Flatten notebook](../notebooks/COSMoS_BC_DSS_Flatten.ipynb) combines the two COSMoS levels — Biomedical Concepts (BCs) and Dataset Specializations (DSSs) — into a single flat Excel file: one row per DSS, BC identity columns carried along. The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs structural QC checks. The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates definitions and synonyms against the authoritative NCIt source.
 
-Output: [`interim/COSMoS_BC_DSS.xlsx`](../interim/COSMoS_BC_DSS.xlsx) — 1,345 BCs across 32 domains, 1,326 DSSs *(2026-03 package)*.
+Output: [`interim/COSMoS_BC_DSS.xlsx`](../interim/COSMoS_BC_DSS.xlsx) — 1,127 BCs across 31 domains, 1,123 DSSs.
 
 ## Glucose — the LB decomposition pattern
 
@@ -31,12 +31,12 @@ This specimen × scale decomposition is the core LB pattern. The behavioural ana
 
 | Domain | BCs | DSSs | Notable |
 |---|---|---|---|
+| LB (Laboratory) | 93 | 142 | All have specimen; 135 have LOINC |
 | IS (Immunogenicity) | 7 | 290 | Target-driven fan-out — antigen × scale |
-| LB (Laboratory) | 97 | 146 | All have specimen; 136 have LOINC |
 | RS (Disease Response) | 129 | 135 | Mostly qualitative; instrument hierarchy |
-| **RE (Respiratory)** | **135** | **135** | **New in 2026-03** — pulmonary function and respiratory mechanics |
 | TS (Trial Summary) | 128 | 129 | Study-level metadata, not measurements |
-| **VS (Vital Signs)** | **74** | **78** | **Major expansion in 2026-03** (was 12/16); location/laterality variants |
+| VS (Vital Signs) | 12 | 16 | Location/laterality variants |
+| EG (ECG) | 33 | 33 | All qualitative; 18 with units |
 
 ## QC summary
 
@@ -44,11 +44,9 @@ This specimen × scale decomposition is the core LB pattern. The behavioural ana
 
 **CT mapping gaps (QC-01/02/05).** 4 specimen NCIt codes not in SDTM CT: C449/DNA (26 usages), C812/RNA (7), C113243 (2), C95940 (3) — the first two are GF domain specimens encoded as NCIt codes rather than CT terms. 3 method terms not in CT: AUTOPSY, C179788, PINCH DYNAMOMETRY. These are source-level gaps — COSMoS references codes not in the current CT codelists.
 
-**Quantitative DSSs without units (QC-06).** 133 rows across 14 domains (was 106 across 12). RP (27), MK (25), FT (16), RE (15), VS (12) dominate. The +27 increase comes entirely from the new RE and expanded VS content shipping without `Allowed_Units` — worth flagging upstream.
+**Quantitative DSSs without units (QC-06).** 106 rows across 12 domains. MK (25), RP (27), FT (16) dominate. Mix of genuine gaps and early-stage curation.
 
-**Retired BCs included in output (QC-10).** 20 BCs (was 4). The 2026-03 cycle retired 16 additional BCs but kept them in the export. Most of the new retirements are DS-domain disposition outcomes (Adverse Event, Dead, Lost To Follow-Up, Physician Decision, Lack of Efficacy, Failure to Meet Randomization Criteria, etc.) — looks like a coordinated rework. Consumers should not consume `[RETIRED]` BCs.
-
-**Result Scale vocabulary (QC-11a/b).** COSMoS uses "Qualitative" (502 DSSs) and "datetime" (7) — not in the [BC Curation Principles](https://cdisc-org.github.io/COSMoS/bc_starter_package/doc/BC%20Curation%20Principles%20and%20Completion%20GLs.xlsx) valid set ("Nominal"/"Ordinal" and "Temporal"). Vocabulary alignment would help downstream consumers.
+**Result Scale vocabulary (QC-11a/b).** COSMoS uses "Qualitative" (491 DSSs) and "datetime" (7) — not in the [BC Curation Principles](https://cdisc-org.github.io/COSMoS/bc_starter_package/doc/BC%20Curation%20Principles%20and%20Completion%20GLs.xlsx) valid set ("Nominal"/"Ordinal" and "Temporal"). Vocabulary alignment would help downstream consumers.
 
 **TESTCD_NCIt ≠ NCIt_Code (QC-14).** 7 DSSs where the TESTCD-level NCIt code differs from the BC identity (HEIGHT, WEIGHT, INTP, GLUCPE, MICROCY, LENGTH, HCG). Both codes valid; legacy pre-COSMoS assignments. Impacts cross-source joins on NCIt_Code.
 
@@ -56,13 +54,13 @@ This specimen × scale decomposition is the core LB pattern. The behavioural ana
 
 ## Cross-source comparison against NCIt
 
-The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSMoS definitions and synonyms against NCIt (via [`SDTM_Test_Identity.xlsx`](../../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx)). Scoped to subject-level Findings BCs — **566 matched** (up from 372 in the previous package, +52%). The comparable pool grew from 531 to 727 as the 2026-03 SDTM CT package closed coverage gaps. Full report: [`reports/COSMoS_BC_NCIt_Compare.xlsx`](../reports/COSMoS_BC_NCIt_Compare.xlsx).
+The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSMoS definitions and synonyms against NCIt (via [`SDTM_Test_Identity.xlsx`](../../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx)). Scoped to subject-level Findings BCs — 372 matched. Full report: [`reports/COSMoS_BC_NCIt_Compare.xlsx`](../reports/COSMoS_BC_NCIt_Compare.xlsx).
 
-**Definitions are nearly identical.** 564 of 566 match (99.6%). Only **one** editorial divergence remains: HBA1CHGB (C111207), where COSMoS uses "glycosylated hemoglobin" and NCIt uses the more precise "glycated hemoglobin A1C". The two earlier divergences are gone — ALBCREAT was harmonized at the source, and TUMERGE was retired entirely as part of the broader SDTM CT consolidation.
+**Definitions are nearly identical.** 369 of 372 match. 3 editorial divergences (ALBCREAT, HBA1CHGB, TUMERGE).
 
-**Synonyms diverge more.** 432 of 566 match. Of the rest: 82 NCIt supersets (more variant names — expected), 25 COSMoS supersets (potential NCIt enrichment candidates), 25 with unique terms in both directions, 2 where COSMoS is empty but NCIt has synonyms. The COSMoS-superset and bidirectional-unique counts are unchanged from the previous cycle — no investment was made on these in 2026-03.
+**Synonyms diverge more.** 242 of 372 match. Of 130 that differ: 78 NCIt supersets (more variant names — expected), 25 COSMoS supersets (potential NCIt enrichment candidates), 25 with unique terms in both directions.
 
-**161 Findings BCs couldn't be compared** — instrument-specific non-extensible codelists (RS:114, FT:23, QS:13, plus a few VS and IE) outside the extensible CT scope. Same domain mix as before; backlog essentially unchanged.
+**159 Findings BCs couldn't be compared** — instrument-specific non-extensible codelists (RS, FT, QS) outside the extensible CT scope.
 
 ## Planned: LOINC validation
 

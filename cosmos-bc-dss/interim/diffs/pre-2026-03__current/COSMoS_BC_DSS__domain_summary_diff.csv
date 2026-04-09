@@ -1,0 +1,33 @@
+Domain,Domain_Label,Domain_Class,BC_Count_old,DS_Count_old,With_Specimen_old,With_Method_old,With_Unit_old,With_LOINC_old,Quantitative_old,Qualitative_old,BC_Count_new,DS_Count_new,With_Specimen_new,With_Method_new,With_Unit_new,With_LOINC_new,Quantitative_new,Qualitative_new,_merge
+AE,Adverse Events,Events,1.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,1,2,0,0,0,0,0,0,both
+BE,Biospecimen Events,Events,7.0,7.0,0.0,0.0,0.0,0.0,0.0,0.0,7,7,0,0,0,0,0,0,both
+CM,Concomitant/Prior Medications,Interventions,1.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,1,4,0,0,0,0,0,0,both
+DD,Death Details,Findings,13.0,13.0,0.0,0.0,0.0,0.0,1.0,12.0,13,13,0,0,0,0,1,12,both
+DM,Demographics,Special-Purpose,5.0,5.0,0.0,0.0,0.0,0.0,1.0,0.0,5,5,0,0,0,0,1,0,both
+DS,Disposition,Events,18.0,18.0,0.0,0.0,0.0,0.0,0.0,0.0,20,20,0,0,0,0,0,0,both
+EC,Exposure as Collected,Interventions,1.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,1,2,0,0,0,0,0,0,both
+EG,ECG Test Results,Findings,33.0,33.0,0.0,0.0,18.0,0.0,0.0,33.0,33,33,0,0,18,0,0,33,both
+EX,Exposure,Interventions,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1,1,0,0,0,0,0,0,both
+FA,Findings About Events or Interventions,Findings,12.0,12.0,0.0,2.0,0.0,0.0,0.0,12.0,12,12,0,2,0,0,0,12,both
+FT,Functional Tests,Findings,23.0,23.0,0.0,0.0,7.0,0.0,23.0,0.0,23,23,0,0,7,0,23,0,both
+GF,Genomics Findings,Findings,10.0,38.0,38.0,38.0,1.0,0.0,16.0,22.0,10,38,38,38,1,0,16,22,both
+IE,Inclusion/Exclusion Criteria Not Met,Findings,2.0,2.0,0.0,0.0,0.0,0.0,0.0,2.0,2,2,0,0,0,0,0,2,both
+IS,Immunogenicity Specimen Assessments,Findings,7.0,290.0,290.0,290.0,185.0,0.0,152.0,138.0,7,290,290,290,185,0,152,138,both
+LB,Laboratory Test Results,Findings,93.0,142.0,142.0,4.0,108.0,135.0,114.0,28.0,97,146,146,4,112,136,118,28,both
+MB,Microbiology Specimen,Findings,6.0,7.0,7.0,7.0,1.0,3.0,0.0,7.0,6,7,7,7,1,3,0,7,both
+MH,Medical History,Events,1.0,11.0,0.0,0.0,0.0,0.0,0.0,0.0,1,11,0,0,0,0,0,0,both
+MI,Microscopic Findings,Findings,3.0,7.0,7.0,7.0,0.0,0.0,7.0,0.0,3,7,7,7,0,0,7,0,both
+MK,Musculoskeletal System Findings,Findings,49.0,50.0,0.0,14.0,20.0,0.0,46.0,4.0,49,50,0,14,20,0,46,4,both
+PR,Procedures,Interventions,4.0,8.0,0.0,0.0,0.0,0.0,0.0,0.0,4,8,0,0,0,0,0,0,both
+QS,Questionnaires,Findings,17.0,17.0,0.0,1.0,0.0,0.0,1.0,16.0,17,17,0,1,0,0,1,16,both
+RE,Respiratory System Findings,Findings,,,,,,,,,135,135,0,0,55,0,125,10,right_only
+RP,Reproductive System Findings,Findings,96.0,96.0,0.0,0.0,8.0,0.0,34.0,55.0,96,96,0,0,8,0,34,55,both
+RS,Disease Response and Clin Classification,Findings,129.0,135.0,0.0,0.0,0.0,0.0,3.0,132.0,129,135,0,0,0,0,3,132,both
+SC,Subject Characteristics,Findings,2.0,2.0,0.0,0.0,0.0,0.0,1.0,1.0,2,2,0,0,0,0,1,1,both
+SR,Skin Response,Findings,12.0,12.0,0.0,3.0,0.0,0.0,6.0,6.0,12,12,0,3,0,0,6,6,both
+SU,Substance Use,Interventions,3.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,3,12,0,0,0,0,0,0,both
+TR,Tumor/Lesion Results,Findings,4.0,9.0,0.0,9.0,4.0,0.0,2.0,7.0,4,9,0,9,4,0,2,7,both
+TS,Trial Summary,Special-Purpose,128.0,129.0,0.0,0.0,0.0,0.0,8.0,0.0,128,129,0,0,0,0,8,0,both
+TU,Tumor/Lesion Identification,Findings,5.0,10.0,0.0,6.0,0.0,0.0,0.0,10.0,5,10,0,6,0,0,0,10,both
+UR,Urinary System Findings,Findings,10.0,10.0,1.0,1.0,0.0,0.0,5.0,5.0,10,10,1,1,0,0,5,5,both
+VS,Vital Signs,Findings,12.0,16.0,0.0,1.0,8.0,0.0,15.0,1.0,74,78,0,1,8,0,76,2,both

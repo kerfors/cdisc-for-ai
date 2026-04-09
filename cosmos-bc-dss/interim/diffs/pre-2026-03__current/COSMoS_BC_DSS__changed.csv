@@ -1,0 +1,154 @@
+COSMoS_BC_ID,DS_Code,column,old,new
+C105448,FAILRAND,BC_Name,Failure to Meet Randomization Criteria,Failure to Meet Randomization Criteria [RETIRED]
+C105448,FAILRAND,BC_Definition,An indication that the subject has been unable to fulfill the criteria required for assignment into a randomized group.,An indication that the subject has been unable to fulfill the criteria required for assignment into a randomized group. [RETIRED]
+C105448,FAILRAND,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C105448,FAILRAND,Hierarchy_Path,Protocol Disposition Event,
+C105448,FAILRAND,Parent_Label,Protocol Disposition Event,
+C105448,FAILRAND,DS_Name,Failure to Meet Randomization Criteria,Failure to Meet Randomization Criteria [RETIRED]
+C105448,FAILRAND,Result_Scale,Nominal,
+C105448,FAILRAND,Decimal_Places,5.0,
+C106576,,BC_Name,Trial Site Terminated by Sponsor,Trial Site Terminated by Sponsor [RETIRED]
+C106576,,BC_Definition,An indication that a clinical study was stopped at a particular site by its sponsor.,An indication that a clinical study was stopped at a particular site by its sponsor. [RETIRED]
+C106576,,BC_Synonyms,Site Terminated By Sponsor,
+C106576,,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C106576,,Result_Scale,Nominal,
+C106576,,Decimal_Places,5.0,
+C119241,,BC_Synonyms,,SYMPINDC
+C119241,,Categories,Indicator,Clinical Findings Indicator; Musculoskeletal Finding; Reproductive Findings; Reproductive Findings; Respiratory System Findings; Skin Response; Symptom Indicator; Symptom Indicator
+C119293,PO2FIO2ARTERIAL,Categories,Blood Oxygen Levels; Laboratory Tests,Blood Oxygen Levels; Laboratory Tests; Respiratory System Findings
+C119293,PO2FIO2ARTERIAL,Domains_with_DS,LB,LB; RE
+C139236,FAILCONT,BC_Name,Failure To Meet Continuation Criteria,Failure To Meet Continuation Criteria [RETIRED]
+C139236,FAILCONT,BC_Definition,An indication that the subject has not been able to meet protocol-defined continuation criteria and will not continue to participate in the clinical trial.,An indication that the subject has not been able to meet protocol-defined continuation criteria and will not continue to participate in the clinical trial. [RETIRED]
+C139236,FAILCONT,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C139236,FAILCONT,Hierarchy_Path,Protocol Disposition Event,
+C139236,FAILCONT,Parent_Label,Protocol Disposition Event,
+C139236,FAILCONT,DS_Name,Failure to Meet Continuation Criteria,Failure to Meet Continuation Criteria [RETIRED]
+C139236,FAILCONT,Result_Scale,Nominal,
+C139236,FAILCONT,Decimal_Places,5.0,
+C156629,,Hierarchy_Path,Adverse Event,Adverse Event [RETIRED]
+C156629,,Parent_Label,Adverse Event,Adverse Event [RETIRED]
+C158256,FATMASS,Hierarchy_Path,Characteristic,Characteristic > Organism Characteristic
+C158256,FATMASS,Parent_Label,Characteristic,Organism Characteristic
+C161410,,BC_Name,Subject Removed at Sponsor Request,Subject Removed at Sponsor Request [RETIRED]
+C161410,,BC_Definition,An indication that the study subject was removed from the study at the sponsor's request.,An indication that the study subject was removed from the study at the sponsor's request. [RETIRED]
+C161410,,BC_Synonyms,Sponsor Request,
+C161410,,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C161410,,Result_Scale,Nominal,
+C161410,,Decimal_Places,5.0,
+C179175,AE,Hierarchy_Path,Adverse Event,Adverse Event [RETIRED]
+C179175,AE,Parent_Label,Adverse Event,Adverse Event [RETIRED]
+C179175,AEPRESP,Hierarchy_Path,Adverse Event,Adverse Event [RETIRED]
+C179175,AEPRESP,Parent_Label,Adverse Event,Adverse Event [RETIRED]
+C179176,,Hierarchy_Path,Adverse Event,Adverse Event [RETIRED]
+C179176,,Parent_Label,Adverse Event,Adverse Event [RETIRED]
+C181043,,BC_Synonyms,,Clinical Finding Indicator
+C181043,,Categories,Disease Response; Disease Response Criteria; Disease Response and Clinical Classification; Oncology Standards; RS,Disease Response; Disease Response Criteria; Disease Response and Clinical Classification; Oncology Standards; RS; Respiratory System Findings
+C191656,SUBJPREG,BC_Name,Pregnant Subject,Pregnant Subject [RETIRED]
+C191656,SUBJPREG,BC_Definition,An indication that the study subject is pregnant.,An indication that the study subject is pregnant. [RETIRED]
+C191656,SUBJPREG,BC_Synonyms,Pregnancy,
+C191656,SUBJPREG,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C191656,SUBJPREG,DS_Name,Subject Pregnancy,Subject Pregnancy [RETIRED]
+C191656,SUBJPREG,Result_Scale,Nominal,
+C191656,SUBJPREG,Decimal_Places,5.0,
+C25180,,Categories,Clinical Trial Attribute; Indicator; Trial Summary,Clinical Findings Indicator; Clinical Trial Attribute; Death Diagnosis and Details; Disease Response; Event Occurrence Indicators; Exposure; Indicator; Oncology Standards; Recurrence; Reproductive Findings; Respiratory System Findings; TU; Trial Summary; Tumor/Lesion Identification; Urinary System Findings
+C25250,PROTCOMP,BC_Name,Complete,Complete [RETIRED]
+C25250,PROTCOMP,BC_Definition,To possess every necessary or normal part or component or step; having come or been brought to a conclusion.,To possess every necessary or normal part or component or step; having come or been brought to a conclusion. [RETIRED]
+C25250,PROTCOMP,BC_Synonyms,Completed;Completion;Completely,
+C25250,PROTCOMP,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C25250,PROTCOMP,DS_Name,Protocol Completed,Protocol Completed [RETIRED]
+C25250,PROTCOMP,Result_Scale,Nominal,
+C25250,PROTCOMP,Decimal_Places,5.0,
+C25365,,Categories,Clinical Trial Attribute; Trial Summary,Clinical Trial Attribute; Respiratory System Findings; Trial Summary
+C25391,,BC_Synonyms,Analytical;Analyzed,Analyze;Analytical;Analyzed
+C25391,,Categories,Analysis,Analysis; ECG Findings; ECG Interpretation; Electrocardiogram Findings; Electrocardiogram Interpretation; Respiratory System Findings
+C25447,,Hierarchy_Path,Fat Mass,
+C25447,,Parent_Label,Fat Mass,
+C28554,DEAD,BC_Name,Dead,Dead [RETIRED]
+C28554,DEAD,BC_Definition,The cessation of life.,The cessation of life. [RETIRED]
+C28554,DEAD,BC_Synonyms,Expired;Death;Died,
+C28554,DEAD,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C28554,DEAD,DS_Name,Dead,Dead [RETIRED]
+C28554,DEAD,Result_Scale,Nominal,
+C28554,DEAD,Decimal_Places,5.0,
+C35571,PROGDISEASE,BC_Name,Progressive Disease,Progressive Disease [RETIRED]
+C35571,PROGDISEASE,BC_Definition,"A clinical, pathologic, and/or molecular finding indicating that the course of a disease is worsening in terms of extent or severity.","A clinical, pathologic, and/or molecular finding indicating that the course of a disease is worsening in terms of extent or severity. [RETIRED]"
+C35571,PROGDISEASE,BC_Synonyms,Disease Progression;PD,
+C35571,PROGDISEASE,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C35571,PROGDISEASE,DS_Name,Progressive Disease,Progressive Disease [RETIRED]
+C35571,PROGDISEASE,Result_Scale,Nominal,
+C35571,PROGDISEASE,Decimal_Places,5.0,
+C36291,,BC_Definition,Finding by Cause.,A term that refers to the classification of a clinical or laboratory finding according to the underlying factors.
+C36291,,BC_Type,full_no_ds,hierarchy_only
+C36291,,Categories,Findings,Findings; Respiratory System Findings
+C36291,,Row_Type,BC_only_no_DS,BC_only_hierarchy
+C41331,ADVEVENT,BC_Name,Adverse Event,Adverse Event [RETIRED]
+C41331,ADVEVENT,BC_Definition,"Any unfavorable or unintended disease, sign, or symptom (including an abnormal laboratory finding) that is temporally associated with the use of a medical treatment or procedure, and that may or may not be considered related to the medical treatment or procedure. Such events can be related to the intervention, dose, route of administration, patient, or caused by an interaction with another drug(s) or procedure(s).","Any unfavorable or unintended disease, sign, or symptom (including an abnormal laboratory finding) that is temporally associated with the use of a medical treatment or procedure, and that may or may not be considered related to the medical treatment or procedure. Such events can be related to the intervention, dose, route of administration, patient, or caused by an interaction with another drug(s) or procedure(s). [RETIRED]"
+C41331,ADVEVENT,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C41331,ADVEVENT,DS_Name,Adverse Event,Adverse Event [RETIRED]
+C41331,ADVEVENT,Result_Scale,Nominal,
+C41331,ADVEVENT,Decimal_Places,5.0,
+C48226,LACKEFFICACY,BC_Name,Lack of Efficacy,Lack of Efficacy [RETIRED]
+C48226,LACKEFFICACY,BC_Definition,The lack of expected or desired effect related to a therapy.,The lack of expected or desired effect related to a therapy. [RETIRED]
+C48226,LACKEFFICACY,BC_Synonyms,Efficacy Lack;Treatment Failure,
+C48226,LACKEFFICACY,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C48226,LACKEFFICACY,DS_Name,Lack of Efficacy,Lack of Efficacy [RETIRED]
+C48226,LACKEFFICACY,Result_Scale,Nominal,
+C48226,LACKEFFICACY,Decimal_Places,5.0,
+C48227,LTFUP,BC_Name,Lost To Follow-Up,Lost To Follow-Up [RETIRED]
+C48227,LTFUP,BC_Definition,The loss or lack of continuation of subject participation after a study has officially closed.,The loss or lack of continuation of subject participation after a study has officially closed. [RETIRED]
+C48227,LTFUP,BC_Synonyms,Lost to Follow-Up,
+C48227,LTFUP,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C48227,LTFUP,DS_Name,Lost to Follow Up,Lost to Follow Up [RETIRED]
+C48227,LTFUP,Result_Scale,Nominal,
+C48227,LTFUP,Decimal_Places,5.0,
+C48250,PHYDECISION,BC_Name,Physician Decision,Physician Decision [RETIRED]
+C48250,PHYDECISION,BC_Definition,"A position, opinion or judgment reached after consideration by a physician with reference to subject.","A position, opinion or judgment reached after consideration by a physician with reference to subject. [RETIRED]"
+C48250,PHYDECISION,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C48250,PHYDECISION,DS_Name,Physician Decision,Physician Decision [RETIRED]
+C48250,PHYDECISION,Result_Scale,Nominal,
+C48250,PHYDECISION,Decimal_Places,5.0,
+C49628,,BC_Name,Trial Screen Failure,Trial Screen Failure [RETIRED]
+C49628,,BC_Definition,The failure of a potential subject of meeting one or more criteria required for participation in a trial.,The failure of a potential subject of meeting one or more criteria required for participation in a trial. [RETIRED]
+C49628,,BC_Synonyms,Screen Failure;Failure to Meet Inclusion/Exclusion Criteria,
+C49628,,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C49628,,Result_Scale,Nominal,
+C49628,,Decimal_Places,5.0,
+C49632,,BC_Name,Study Terminated By Sponsor,Study Terminated By Sponsor [RETIRED]
+C49632,,BC_Definition,An indication that a clinical study was stopped by its sponsor.,An indication that a clinical study was stopped by its sponsor. [RETIRED]
+C49632,,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C49632,,Result_Scale,Nominal,
+C49632,,Decimal_Places,5.0,
+C49634,SUBJWITHDRAW,BC_Name,Withdrawal by Subject,Withdrawal by Subject [RETIRED]
+C49634,SUBJWITHDRAW,BC_Definition,An indication that a study participant has removed themself from the study or from one or more segments of the study.,An indication that a study participant has removed themself from the study or from one or more segments of the study. [RETIRED]
+C49634,SUBJWITHDRAW,BC_Synonyms,Subject Withdrawal;Dropout;Subject Dropped Out,
+C49634,SUBJWITHDRAW,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C49634,SUBJWITHDRAW,DS_Name,Withdrawal By Subject,Withdrawal By Subject [RETIRED]
+C49634,SUBJWITHDRAW,Result_Scale,Nominal,
+C49634,SUBJWITHDRAW,Decimal_Places,5.0,
+C50996,PROTDEV,BC_Name,Protocol Deviation,Protocol Deviation [RETIRED]
+C50996,PROTDEV,BC_Definition,"A variation from processes or procedures defined in a protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. (CDISC Glossary)","A variation from processes or procedures defined in a protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. (CDISC Glossary) [RETIRED]"
+C50996,PROTDEV,BC_Synonyms,Deviation,
+C50996,PROTDEV,Categories,Protocol Disposition Events; Subject Disposition,Subject Disposition
+C50996,PROTDEV,Hierarchy_Path,Protocol Disposition Event,
+C50996,PROTDEV,Parent_Label,Protocol Disposition Event,
+C50996,PROTDEV,DS_Name,Protocol Deviation,Protocol Deviation [RETIRED]
+C50996,PROTDEV,Result_Scale,Nominal,
+C50996,PROTDEV,Decimal_Places,5.0,
+C60832,OXYSAT,BC_Synonyms,SpO2;OXYSAT;O2 Saturation;Hemoglobin Saturation;Oximetry,Blood Oxygen Saturation;Hemoglobin Saturation Measurement;Hemoglobin Saturation;O2 Saturation;Oximetry;Oxygen Content Measurement;Oxygen Saturation;OXYSAT;SpO2;Vital Signs - Oxygen Saturation
+C60832,OXYSAT,Categories,Oximetry Tests; Oxygen Saturation Measurements; Vital Signs,Oximetry Tests; Oxygen Saturation Measurements; Respiratory System Findings; Vital Signs
+C60832,OXYSAT,Hierarchy_Path,Diagnostic Procedure,Body Organ or System Test
+C60832,OXYSAT,Parent_Label,Diagnostic Procedure,Body Organ or System Test
+C60832,OXYSAT,Domains_with_DS,VS,RE; VS
+C74761,ALBCREATURIN,BC_Name,Albumin To Creatinine Protein Ratio Measurement,Albumin to Creatinine Ratio Measurement
+C74761,ALBCREATURIN,BC_Definition,The determination of the ratio of albumin compared to creatinine protein present in a urine sample. The measurement may be expressed as a ratio or percentage.,The determination of the ratio of albumin compared to creatinine present in a sample. The measurement may be expressed as a ratio or percentage.
+C74761,ALBCREATURIN,Categories,Chemistry Tests; Laboratory Tests; Ratio Measurements; Urine Protein Measurement,Chemistry Tests; Laboratory Tests; Ratio Measurements
+C74761,ALBCREATURIN,Hierarchy_Path,Urine Protein Measurement,Chemistry Test > Liver Function Test > Albumin Measurement
+C74761,ALBCREATURIN,Parent_Label,Urine Protein Measurement,Albumin Measurement
+C74761,ALBCREATURIN,LOINC_Code_Count,3.0,1.0
+C74761,ALBCREATURIN,LOINC_Code,9318-7; 14585-4; 32294-1,14959-1
+C82554,,BC_Synonyms,,flowRate;FLRT
+C82554,,Categories,Clinical Test Result; Findings,Clinical Test Result; Findings; Respiratory System Findings
+C82624,,Categories,Chemistry Tests; Gas Measurements; Laboratory Tests,Chemistry Tests; Gas Measurements; Laboratory Tests; Respiratory System Findings
+C94866,URBLR,Categories,Clinical Test Result; Findings; Renal Function Tests; Urinary System Findings,Clinical Test Result; Findings; Renal Function Tests; Respiratory System Findings; Urinary System Findings
+C94866,URBLR,Domains_with_DS,UR,RE; UR
+C94866,URBLR,Decimal_Places,6.0,7.0
