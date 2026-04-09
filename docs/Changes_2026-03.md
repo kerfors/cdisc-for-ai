@@ -42,7 +42,7 @@ Domain-level highlights:
 - **DS, MK, RP, RS** — small additions only.
 - All other domains unchanged in BC/DSS count.
 
-New top-level category tags: *Vital Signs* (81), *Pulmonary Function Test* (105), *Body Measurements* (46), *Respiratory System Findings* (152). Categories *Blood Cell Counts*, *Disease Response*, *Electrocardiogram Findings*, *Oncology Standards* no longer appear as top-level tags (restructured upstream — content moved, not lost).
+Most-used category tags this cycle include *Pulmonary Function Test* (107), *Vital Signs* (88), *Hematology Tests* (54), *Body Measurements* (46, new), and the *Respiratory System Findings* category reflected via the new RE domain. Several categories that previously appeared in my top-20-by-frequency summary — *Blood Cell Counts* (37), *Disease Response* (39), *Electrocardiogram Findings* (35) — dropped out of that view as other categories grew faster this cycle, but the tags themselves are unchanged on the BCs that carry them. COSMoS categories are a flat tag list, not a hierarchy, so there is no "top-level" designation.
 
 Retired BCs: 4 → 20 (full disposition tracked in `COSMoS_Content_and_QC.md` QC-10).
 
