@@ -19,3 +19,11 @@ __pycache__/
 
 # Claude Code
 .claude/worktrees/
+
+# Claude — local reference materials (articles, specs, third-party docs)
+reference/articles/
+reference/specs/
+reference/notes/
+
+# Claude — session memory (local, accumulates across Cowork sessions)
+.auto-memory/
