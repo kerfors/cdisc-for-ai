@@ -27,3 +27,4 @@ reference/notes/
 
 # Claude — session memory (local, accumulates across Cowork sessions)
 .auto-memory/
+coa-structure/notebooks/.ipynb_checkpoints/
