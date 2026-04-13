@@ -193,22 +193,13 @@ Metadata) determines which decomposition pattern applies.
 
 ## Seeding path
 
-The probe demonstrates that existing standards data can seed these registries:
+NCIt C-codes provide the CDISC-scoped identity layer. UMLS CUIs on a subset of
+those concepts offer a potential bridge to external vocabularies (LOINC, SNOMED
+CT) that may carry relevant composition semantics — but the extent to which
+those bridges actually yield usable registry content has not yet been validated
+and is a topic for further exploration.
 
-1. **NCIt C-codes** provide the CDISC-scoped identity layer (definitions,
-   synonyms, classification).
-
-2. **UMLS CUIs** bridge to external vocabularies. The probe found UMLS CUIs on
-   ~30% of instrument concepts and ~40% of container concepts. The green track
-   found ~30% coverage for TESTCDs.
-
-3. **LOINC** (reachable via UMLS CUIs) already has qualified measurement
-   concepts and panel definitions — the composition that CDISC lacks.
-
-4. **SNOMED CT** (also via UMLS) has clinical procedure and specimen
-   qualification relationships.
-
-The seeding is an automation problem. The ongoing governance — who decides what
+The seeding is a research question. The ongoing governance — who decides what
 gets added, how updates flow across release schedules, how conflicts between
 source vocabularies are resolved — is an organisational problem that requires
 CDISC ownership.
@@ -231,17 +222,6 @@ The `cdisc-for-ai` repository makes the current state machine-readable:
 
 These flat files are today's delivery format. The long-term destination is a
 traversable graph — which is essentially the registry described above.
-
-## Evidence summary
-
-| Aspect | Instruments | Specimen tests | Panels |
-|---|---|---|---|
-| NCIt identity | C-code per instrument, per question | C-code per analyte, per specimen | None |
-| NCIt composition | None (classification only) | None (axes independent) | None |
-| COSMoS coverage | 104 DSSs / 359 codelists | Partial DSS coverage | None |
-| UMLS bridge | ~30% instruments have CUIs | ~30% TESTCDs have CUIs | Via LOINC |
-| Composition source | Not modeled anywhere | LOINC has qualified concepts | LOINC has panels |
-| Registry exists? | No | No | No |
 
 ---
 
