@@ -75,7 +75,7 @@ This is not a data quality problem that can be fixed by improving matching algor
 For broader context on the identity vs. measurement specification gap:
 
 - 4,183 TESTCDs across all Findings domains have NCIt concept identity (from the green track SDTM_Test_Identity work)
-- Only 104 TESTCDs have COSMoS measurement specifications (Dataset Specializations)
+- Only 104 TESTCDs have COSMoS recording specifications (Dataset Specializations)
 - At the instrument level: question-container structural coverage is 97%, but instrument-type identity coverage is 72% (clean) to ~97% (with fragile fuzzy matching)
 
 ## What this does NOT say
@@ -94,3 +94,8 @@ All probe outputs are in `coa-structure/interim/`:
 - `Token_Overlap_Review.csv` — 101 rows, the unmatched codelists with best token-overlap candidates and review flags.
 
 Notebook: `coa-structure/notebooks/CoA_Instrument_Identity_Probe.ipynb`
+
+## See also
+
+Interactive visualisation using 6MWT as worked example:
+[The NCIt Story](6MWT_NCIt_Story.html) | [The COSMoS Story](6MWT_COSMoS_Story.html)

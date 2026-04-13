@@ -67,7 +67,7 @@ Framed as constructive questions rather than gap-pointing:
 
 ## Summary
 
-COSMoS's value is on the specification row: describing how clinical concepts are operationally captured in trials. Dataset Specialisation handles the storage side. CRF Specialisation, currently in draft in the COSMoS GitHub, handles the collection side — including the answer codelist bindings that DSS alone cannot carry. Together they cover what no other CDISC or NCIt artifact can cover: the operational specification layer between concept identity and the trial data itself.
+COSMoS's value is on the specification row: describing how clinical concepts are operationally recorded in trials. Dataset Specialisation handles the storage side. CRF Specialisation, currently in draft in the COSMoS GitHub, handles the collection side — including the answer codelist bindings that DSS alone cannot carry. Together they cover what no other CDISC or NCIt artifact can cover: the operational specification layer between concept identity and the trial data itself.
 
 Depth over breadth: fewer instruments with complete specification content, rather than many instruments with thin or partial content. That is where COSMoS is irreplaceable.
 

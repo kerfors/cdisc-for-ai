@@ -109,8 +109,8 @@ SDTM has no panel-level concept.
 COSMoS Biomedical Concepts and Dataset Specializations were architecturally
 positioned to fill this gap. In practice:
 
-- **BCs model collection templates**, not measurement ontology. A DSS is a CRF
-  row template specifying how to capture and store a value.
+- **BCs model recording templates**, not measurement ontology. A DSS is a CRF
+  row template specifying how to record a value.
 
 - **BC identity is unstable.** DS_Codes are mnemonics, not governed identifiers.
   They are not unique across domains.
@@ -121,14 +121,14 @@ positioned to fill this gap. In practice:
 
 - **Coverage is thin.** 104 DSSs vs 4,183 TESTCDs (2.5% coverage).
 
-COSMoS addresses the collection specification need but does not provide the
+COSMoS addresses the recording specification need but does not provide the
 registry/composition layer.
 
 ## Architecture overview
 
 ```mermaid
 graph TB
-    subgraph External["External Vocabularies"]
+    subgraph External["External Vocabularies (potential bridges)"]
         LOINC["LOINC<br/><i>Qualified measurements<br/>Panel definitions</i>"]
         SNOMED["SNOMED CT<br/><i>Clinical procedures<br/>Specimen qualification</i>"]
     end
@@ -143,8 +143,8 @@ graph TB
         PR["Panel<br/>Registry<br/><i>Member tests,<br/>ordering</i>"]
     end
 
-    subgraph Collection["Collection Layer (exists)"]
-        COSMoS["COSMoS BC / DSS<br/><i>CRF row templates,<br/>collection specifications</i>"]
+    subgraph Recording["Recording Layer (exists)"]
+        COSMoS["COSMoS BC / DSS<br/><i>CRF row templates,<br/>recording specifications</i>"]
     end
 
     subgraph Submission["Submission Layer (exists)"]
@@ -154,13 +154,13 @@ graph TB
     NCIt -->|"C-codes"| IR
     NCIt -->|"C-codes"| TR
     NCIt -->|"C-codes"| PR
-    LOINC -.->|"seed via UMLS CUI"| TR
-    LOINC -.->|"seed via UMLS CUI"| PR
-    SNOMED -.->|"seed via UMLS CUI"| TR
+    LOINC -.->|"UMLS CUI bridge?"| TR
+    LOINC -.->|"UMLS CUI bridge?"| PR
+    SNOMED -.->|"UMLS CUI bridge?"| TR
     IR -->|"composition"| COSMoS
     TR -->|"qualification"| COSMoS
     PR -->|"membership"| COSMoS
-    COSMoS -->|"DSS specs"| SDTM
+    COSMoS -->|"recording specs"| SDTM
 
     style IR fill:#5B3A29,color:#fff
     style TR fill:#548235,color:#fff
@@ -172,9 +172,10 @@ graph TB
     style SNOMED fill:#E2EFDA,color:#000
 ```
 
-The dashed lines show the seeding path: UMLS CUIs on NCIt concepts bridge to
-LOINC and SNOMED, which already have the composition semantics that the
-registries need. Solid lines show the intended data flow between layers.
+The dashed lines with question marks show potential bridges: UMLS CUIs on NCIt
+concepts may link to LOINC and SNOMED, which carry composition semantics — but
+the extent to which those bridges yield usable registry content is unexplored.
+Solid lines show the intended data flow between layers.
 
 ## The registry need
 
@@ -214,9 +215,11 @@ The `cdisc-for-ai` repository makes the current state machine-readable:
 - **Brown track** (`coa-structure/`): 359 instrument TESTCD codelists mapped to
   their NCIt instrument and container parents, enriched at all levels. The
   instrument hierarchy level.
+  Interactive case study: [The NCIt Story](6MWT_NCIt_Story.html) |
+  [The COSMoS Story](6MWT_COSMoS_Story.html) — 6MWT as worked example.
 
 - **Yellow layer** (`cosmos-bc-dss/`): COSMoS BC and DSS data flattened for
-  machine use. The collection specification level.
+  machine use. The recording specification level.
 
 - **Consumer files** (`sdtm-findings/`): Joined outputs per structural type.
 
