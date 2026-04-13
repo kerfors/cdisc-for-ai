@@ -1,366 +1,366 @@
-ncit_code,preferred_term,codelist_testcd,question_count,mapped_structurally
-C141676,10 Meter Walk/Run Functional Test Question,TENMW1TC,4,True
-C141679,4 Stair Ascend Functional Test Question,A4STR1TC,4,True
-C141678,4 Stair Descend Functional Test Question,D4STR1TC,4,True
-C115409,6MWT Functional Test Question,SIXMW1TC,6,True
-C100106,ADAS-Cog CDISC Version Functional Test Question,ADCTC,111,True
-C106672,ADCS-ADL MCI Questionnaire Question,ADL03TC,92,True
-C105146,ADCS-ADL Questionnaire Question,ADL01TC,79,True
-C106673,ADCS-ADL Severe Dementia Questionnaire Question,ADL02TC,38,True
-C103490,ADCS-CGIC Questionnaire Question,ACGC01TC,1,True
-C101870,ADNI-AVLT Questionnaire Question,AVL01TC,138,True
-C163398,ADSD Version 1.0 Questionnaire Question,ADSD01TC,7,True
-C101869,AIMS Clinical Classification Question,AIMS01TC,12,True
-C141675,AJCC v7 Clinical Classification Question,AJCC1TC,5,True
-C163399,ANSD Version 1.0 Questionnaire Question,ANSD01TC,7,True
-C120994,APACHE II Clinical Classification Question,APCH1TC,20,True
-C176052,APGAR Score Version 1 Clinical Classification Question,APGR01TC,6,True
-C112456,AQ20 Questionnaire Question,AQ01TC,20,True
-C119091,ARC STC Grade Clinical Classification Question,STCG01TC,1,True
-C119090,ARC STC Timing Clinical Classification Question,,1,False
-C225075,ARCI-49 Questionnaire Question,ARCI01TC,54,True
-C124691,ASCVD 10-Year Risk Estimator Clinical Classification Question,ASCVD1TC,1,True
-C125750,ASEX-Female Version Questionnaire Question,ASEX01TC,6,True
-C125751,ASEX-Male Version Questionnaire Question,ASEX02TC,6,True
-C124692,ASSIGN Score Clinical Classification Question,ASSG01TC,1,True
-C147551,ATLAS Clinical Classification Question,ATLAS1TC,6,True
-C119081,AUDIT Questionnaire Question,ADT01TC,11,True
-C225076,AUDIT-C Interview Version Questionnaire Question,ADTC03TC,4,True
-C119082,AUDIT-C Questionnaire Question,ADTC01TC,3,True
-C225077,AUDIT-C Self-Report Version Questionnaire Question,ADTC02TC,4,True
-C123657,AVLT-REY Functional Test Question,AVL02TC,36,True
-C161631,AVPU Clinical Classification Question,AVPU01TC,1,True
-C120999,BACS Functional Test Question,BACS1TC,13,True
-C101871,BARS Clinical Classification Question,BARS01TC,4,True
-C106674,BDI Clinical Classification Question,BDI01TC,4,True
-C135702,BEBQ Concurrent Version Questionnaire Question,BEBQ01TC,18,True
-C135703,BEBQ Retrospective Version Questionnaire Question,BEBQ02TC,18,True
-C113866,BLCS Questionnaire Question,BLCS01TC,4,True
-C120995,BODE Index Clinical Classification Question,BODE01TC,5,True
-C100107,BPI Questionnaire Question,BPI1TC,69,True
-C100108,BPI Short Form Questionnaire Question,BPI2TC,16,True
-C161632,BPRS 1988 Version Clinical Classification Question,BPRS01TC,19,True
-C100109,BPRS-Anchored Clinical Classification Question,BPRSA1TC,18,True
-C130282,BUERS Clinical Classification Question,BUERS1TC,1,True
-C113867,BWCS Questionnaire Question,BWCS01TC,5,True
-C113863,Borg CR10 Questionnaire Question,BCR101TC,1,True
-C199506,Brief Questionnaire of Smoking Urges Questionnaire Question,QSUB01TC,13,True
-C106676,C-SSRS Already Enrolled Subjects Questionnaire Question,CSS05TC,62,True
-C100113,C-SSRS Baseline Questionnaire Question,CSS01TC,39,True
-C105141,C-SSRS Baseline/Screening Version Phase 1 Study Version 1/14/09 Questionnaire Question,CSS03TC,51,True
-C106677,C-SSRS Baseline/Screening Version Questionnaire Question,CSS04TC,60,True
-C111351,C-SSRS Children's Baseline Questionnaire Question,CSS06TC,37,True
-C111352,C-SSRS Children's Baseline/Screening Questionnaire Question,CSS07TC,43,True
-C111353,C-SSRS Children's Since Last Visit Questionnaire Question,CSS08TC,32,True
-C117993,C-SSRS Lifetime/Recent Version Questionnaire Question,CSS11TC,60,True
-C113864,C-SSRS Pediatric Cognitively Impaired Lifetime Recent Questionnaire Question,CSS10TC,55,True
-C111354,C-SSRS Screening Questionnaire Question,CSS09TC,39,True
-C103491,C-SSRS Since Last Visit Questionnaire Question,CSS02TC,34,True
-C119084,CCQ 1 Week Version Questionnaire Question,CCQ02TC,10,True
-C119083,CCQ 24 Hour Version Questionnaire Question,CCQ01TC,10,True
-C176053,CDAI Version 1 Questionnaire Question,CDAI01TC,23,True
-C124701,CDC Classification System for HIV-Infected Adults and Adolescents Clinical Classification Question,CHIVC1TC,1,True
-C101872,CDR Clinical Classification Question,CDR01TC,8,True
-C154458,CDRS-R Clinical Classification Question,CDRS1TC,41,True
-C132527,CES Questionnaire Question,CES01TC,7,True
-C135705,CGI Generic Modification Version Questionnaire Question,CGI02TC,3,True
-C135704,CGI Original Version Questionnaire Question,,3,False
-C100111,CGI Questionnaire Question,,3,False
-C117992,CHART-SF Interview Version Questionnaire Question,CHSF1TC,28,True
-C119085,CHART-SF Paper Version Questionnaire Question,CHSF2TC,28,True
-C100112,COMM Questionnaire Question,COMM1TC,18,True
-C156674,COVI Clinical Classification Question,COVI01TC,4,True
-C150793,COWAT Functional Test Question,COWAT1TC,4,True
-C101873,COWS Questionnaire Question,COWS1TC,13,True
-C121000,CRQ-SAS First Administration Version Questionnaire Question,CRQ01TC,20,True
-C121001,CRQ-SAS Follow-Up Administration Version Questionnaire Question,CRQ02TC,20,True
-C124697,CRS-R Clinical Classification Question,CRSR01TC,11,True
-C199507,Canadian Cardiovascular Society Grading of Angina Pectoris Clinical Classification Question,CCSGA1TC,1,True
-C120996,Child-Pugh Clinical Classification Question,CPS01TC,8,True
-C199509,Cigarette Evaluation Questionnaire Extended-Screening Clinical Classification Question,,11,False
-C187459,Clinician-Administered PTSD Scale (Current) DSM-5 With DSM IV Scoring 2016 Version Clinical Classification Question,CAP01TC,103,True
-C199508,Comfort Behavior Scale Clinical Classification Question,CBS01TC,12,True
-C187461,Craig Handicap Assessment and Reporting Technique-Short Form Questionnaire Question,,28,False
-C105142,DAD Questionnaire Question,DAD01TC,49,True
-C183553,DIBSS-C Version 1.0 Questionnaire Question,DIBC01TC,10,True
-C119086,DLQI Questionnaire Question,DLQI1TC,18,True
-C141684,DRRI-2 Questionnaire Question,DRRI1TC,210,True
-C115416,DRS Questionnaire Question,DRS01TC,9,True
-C112457,DS Clinical Classification Question,DS01TC,1,True
-C225074,DSQ1 Questionnaire Question,DSQ1TC,15,True
-C161633,E-TRIP Clinical Classification Question,ETRP01TC,3,True
-C101874,ECOG Clinical Classification Question,ECOG1TC,1,True
-C112458,EDSS Clinical Classification Question,EDSS01TC,1,True
-C219736,EORTC QLQ-ANL27 Questionnaire Question,EOR30TC,27,True
-C219737,EORTC QLQ-BIL21 Questionnaire Question,EOR24TC,21,True
-C219738,EORTC QLQ-BM22 Questionnaire Question,EOR03TC,22,True
-C219739,EORTC QLQ-BR42 Questionnaire Question,EOR35TC,42,True
-C161628,EORTC QLQ-C15-PAL Version 1 Questionnaire Question,EOR02TC,15,True
-C161629,EORTC QLQ-C30 Version 3 Questionnaire Question,EOR01TC,45,True
-C219740,EORTC QLQ-CLL17 Questionnaire Question,EOR29TC,17,True
-C170531,EORTC QLQ-CR29 Version 2.1 Questionnaire Question,EOR06TC,35,True
-C219741,EORTC QLQ-H and N43 Phase IV Module Version Questionnaire Question,EOR36TC,43,True
-C219742,EORTC QLQ-INFO25 Questionnaire Question,EOR17TC,27,True
-C172401,EORTC QLQ-LC13 Questionnaire Question,EOR18TC,15,True
-C219743,EORTC QLQ-LMC21 Questionnaire Question,EOR12TC,21,True
-C219744,EORTC QLQ-MY20 Questionnaire Question,EOR19TC,20,True
-C219745,EORTC QLQ-NMIBC24 Questionnaire Question,EOR28TC,24,True
-C219746,EORTC QLQ-OES18 Questionnaire Question,EOR20TC,18,True
-C219747,EORTC QLQ-OG25 Questionnaire Question,EOR21TC,25,True
-C132528,EPDS Questionnaire Question,EPDS01TC,10,True
-C127361,EPIC-26 Questionnaire Question,EPIC1TC,26,True
-C127362,EPIC-CP Questionnaire Question,EPIC2TC,22,True
-C100114,EQ-5D-3L Questionnaire Question,EQ5D01TC,6,True
-C101875,EQ-5D-5L Questionnaire Question,EQ5D02TC,6,True
-C150795,ERT Functional Test Question,EMO1TC,68,True
-C117994,ESRS-A Clinical Classification Question,ESRSA1TC,28,True
-C103492,ESS Questionnaire Question,ESS01TC,9,True
-C123656,EXACT Questionnaire Question,EXACT1TC,22,True
-C125752,Expanded DRS-PI Caregiver Version Questionnaire Question,ED1TC,30,True
-C125753,Expanded DRS-PI Survivor Version Questionnaire Question,ED2TC,26,True
-C179956,FAACT Version 4 Questionnaire Question,FAC065TC,47,True
-C147553,FACIT-Dyspnea 10 Item Short Form Questionnaire Question,FAC084TC,30,True
-C154460,FACIT-Dyspnea Scale 33 Item Bank Version Questionnaire Question,FAC100TC,99,True
-C129099,FACIT-F Version 4 Questionnaire Question,FAC071TC,48,True
-C147554,FACIT-Fatigue 13-Item Version 4 Questionnaire Question,FAC070TC,14,True
-C183554,FACIT-Searchable Item Library Adult Version Questionnaire Question,FSILTC,674,True
-C129102,FACT-B Version 4 Questionnaire Question,FAC005TC,45,True
-C154461,FACT-BL Version 4 Questionnaire Question,FAC006TC,48,True
-C147552,FACT-BMT Version 4 Questionnaire Question,FAC061TC,50,True
-C179957,FACT-BP Version 4 Questionnaire Question,FAC074TC,21,True
-C150799,FACT-BRM Version 4 Questionnaire Question,FAC062TC,40,True
-C150797,FACT-C Version 4 Questionnaire Question,FAC008TC,45,True
-C166191,FACT-COG Version 3 Questionnaire Question,FAC075TC,41,True
-C127363,FACT-G Version 4 Questionnaire Question,FAC001TC,32,True
-C130290,FACT-HEP Version 4 Questionnaire Question,FAC015TC,53,True
-C225079,FACT-ICM Version 4 Questionnaire Question,FACT104TC,52,True
-C150801,FACT-L Version 4 Questionnaire Question,FAC016TC,37,True
-C130289,FACT-LEU Version 4 Questionnaire Question,FAC017TC,44,True
-C130291,FACT-LYM Version 4 Questionnaire Question,FAC018TC,42,True
-C127365,FACT-P Version 4 Questionnaire Question,FAC023TC,39,True
-C150798,FACT-Taxane Version 4 Questionnaire Question,FAC063TC,43,True
-C150800,FACT/GOG-NTX Version 4 Questionnaire Question,FAC057TC,38,True
-C112459,FAMS Questionnaire Question,FAMS01TC,58,True
-C111355,FAQ Questionnaire Question,FAQ01TC,11,True
-C111356,FAQ-NACC UDS Version 2.0 Clinical Classification Question,FAQNA1TC,10,True
-C170530,FAS-NACC UDS Version 3.0 Clinical Classification Question,FASNA1TC,10,True
-C138266,FBRSI Questionnaire Question,FAC029TC,15,True
-C124693,FHS CVD 10-Year Risk Score Clinical Classification Question,FCVD1TC,1,True
-C103493,FIQR Questionnaire Question,FIQR01TC,25,True
-C138267,FKSI-15 Questionnaire Question,FAC039TC,15,True
-C150802,FKSI-DRS Version 4 Questionnaire Question,FAC041TC,9,True
-C138268,FLSI Questionnaire Question,FAC043TC,6,True
-C129103,FOSI Questionnaire Question,FAC049TC,8,True
-C100115,FPSR Questionnaire Question,FPSR1TC,1,True
-C113865,FSS Questionnaire Question,FSS01TC,9,True
-C208398,Fagerstrom Test for Cigarette Dependence Questionnaire Question,FTCD01TC,8,True
-C193280,Falls Efficacy Scale Questionnaire Question,FES01TC,11,True
-C208397,Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 Questionnaire Question,FAC102TC,11,True
-C199504,Functional Assessment of Chronic Illness Therapy-Item GP5 Version 4 Questionnaire Question,FAC101TC,1,True
-C200916,Functional Assessment of Chronic Illness Therapy-Searchable Item Library Pediatric Version Questionnaire Question,FSLPTC,131,True
-C103494,GAD-7 Questionnaire Question,GAD01TC,9,True
-C163400,GAD-7 Version 2 Questionnaire Question,GAD02TC,9,True
-C105145,GCGI Questionnaire Question,GCGI01TC,5,True
-C124696,GCS NINDS Version 1.0 Clinical Classification Question,GCS01TC,12,True
-C106678,GDS Questionnaire Question,GDS01TC,31,True
-C163401,GMSS Version Type 1 Diabetes Questionnaire Question,GMSS01TC,20,True
-C115417,GOSE Questionnaire Question,GOSE1TC,23,True
-C106679,Geriatric Depression Scale Short Form Questionnaire Question,GDS02TC,17,True
-C103495,HADS Questionnaire Question,HADS01TC,16,True
-C115410,HAI Functional Test Question,HAI01TC,1,True
-C130284,HAM-D6 Clinician Version Clinical Classification Question,HAMD4TC,7,True
-C130292,HAM-D6 Self-Report Version Questionnaire Question,HAMDS1TC,6,True
-C101876,HAMA Questionnaire Question,HAMA1TC,15,True
-C101877,HAMD 21 Questionnaire Question,HAMD2TC,24,True
-C130285,HAMD 24 Clinical Classification Question,HAMD3TC,25,True
-C100127,HAMD-17 Questionnaire Question,HAMD1TC,20,True
-C106680,HAQ-DI Questionnaire Question,HAQ01TC,46,True
-C132529,HAQ-DI Without VAS Questionnaire Question,HAQ02TC,45,True
-C138262,HAS-BLED Clinical Classification Question,HSB01TC,7,True
-C163402,HCS Questionnaire Question,HCS01TC,10,True
-C166193,HD-CAB Functional Test Question,HDCAB1TC,7,True
-C190943,Harvey-Bradshaw Index Clinical Classification Question,HBI01TC,13,True
-C174053,IBDQ Questionnaire Question,IBDQ01TC,32,True
-C130286,IDS-C Clinical Classification Question,IDSC1TC,33,True
-C130293,IDS-SR Questionnaire Question,IDSR1TC,33,True
-C103496,IIEF Questionnaire Question,IIEF01TC,15,True
-C141681,IPAQ Long Last 7 Days Self-Administered Format Version Questionnaire Question,IPAQ03TC,53,True
-C141682,IPAQ Long Last 7 Days Telephone Format Version Questionnaire Question,IPAQ02TC,69,True
-C141680,IPAQ Short Last 7 Days Self-administered Format Version Questionnaire Question,IPAQ04TC,18,True
-C141683,IPAQ Short Last 7 Days Telephone Format Version Questionnaire Question,IPAQ01TC,19,True
-C183552,IPSS Questionnaire Question,IPS01TC,9,True
-C113868,IVIS Questionnaire Question,IVIS01TC,5,True
-C170533,KDIGO-AKI Clinical Classification Question,KDIGO1TC,1,True
-C130288,KDPI Clinical Classification Question,KDPI01TC,1,True
-C112460,KFSS Questionnaire Question,KFSS1TC,11,True
-C100116,KPS Scale Questionnaire Question,KPSS01TC,1,True
-C193279,Kidney Disease and Quality of Life-36 Version 1 Questionnaire Question,KDQ1TC,37,True
-C135707,LEC-5 Standard Version Questionnaire Question,LEC01TC,102,True
-C138263,LPSS Clinical Classification Question,LPPSS1TC,1,True
-C100117,MDS-UPDRS Questionnaire Question,UPD2TC,72,True
-C120997,MELD Clinical Classification Question,MELD01TC,1,True
-C113869,MFIS Questionnaire Question,MFIS01TC,21,True
-C112461,MHIS-NACC Questionnaire Question,MHIS01TC,9,True
-C106681,MMRC Questionnaire Question,MMRC01TC,1,True
-C100118,MMSE Functional Test Question,MMS1TC,46,True
-C150794,MMSE-2 Standard Version Functional Test Question,MMS2TC,33,True
-C100119,MNSI Questionnaire Question,MNSI1TC,37,True
-C115418,MPAI-4 Questionnaire Question,MPAI1TC,44,True
-C111357,MRS Clinical Classification Question,MRS01TC,1,True
-C113870,MSQOL-54 Questionnaire Question,MSQL1TC,55,True
-C202151,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification Question,MTWSR1TC,16,True
-C190945,Modified Van Assche Index Clinical Classification Question,MVAI1TC,6,True
-C190944,Montreal Classification for Crohn's Disease Clinical Classification Question,MCHR01TC,3,True
-C129101,NCCN-FACT FBLSI-18 Version 2 Questionnaire Question,FAC028TC,18,True
-C150803,NCCN-FACT FBRSI-24 Version 2 Questionnaire Question,FAC030TC,24,True
-C150804,NCCN-FACT FHNSI-22 Version 2 Questionnaire Question,FAC036TC,22,True
-C129100,NCCN-FACT FKSI-19 Version 2 Questionnaire Question,FAC042TC,19,True
-C129104,NCCN-FACT FOSI-18 Version 2 Questionnaire Question,FAC050TC,18,True
-C127364,NCCN-FACT-FPSI 17 Version 2 Questionnaire Question,FAC052TC,17,True
-C171356,NEWS2 Clinical Classification Question,NEWS1TC,12,True
-C225078,NFBSI-16 Version 2 Questionnaire Question,FAC032TC,16,True
-C119089,NHLBI CAD Grade Clinical Classification Question,CADG01TC,1,True
-C115411,NHPT Functional Test Question,NHPT01TC,2,True
-C100120,NPI Questionnaire Question,NPI1TC,153,True
-C103497,NPS Questionnaire Question,NPS01TC,15,True
-C120998,NSA-16 Clinical Classification Question,NSA01TC,19,True
-C132526,NSAA Clinical Classification Question,NSAA1TC,20,True
-C154462,NSCLC-SAQ Version 1.0 Questionnaire Question,NSCLC1TC,13,True
-C193281,National Early Warning Score 2 Clinical Classification Question,,2,False
-C208402,National Youth Tobacco Survey 2022 Version Questionnaire Question,NY1TC,671,True
-C103498,OAB-q Questionnaire Question,OABQ01TC,33,True
-C103499,OAB-q Short Form Questionnaire Question,OABQ02TC,19,True
-C103500,ODI v2.1a Questionnaire Question,ODI01TC,11,True
-C199505,Observer Global Impression Generic Modification Version Questionnaire Question,OGI01TC,3,True
-C124698,PANSS Clinical Classification Question,PANSS1TC,30,True
-C163403,PARENT-DDS Questionnaire Question,DDS02TC,35,True
-C163404,PARTNER-DDS Questionnaire Question,DDS03TC,36,True
-C115412,PASAT Functional Test Question,PASAT1TC,7,True
-C135701,PASI Clinical Classification Question,,29,False
-C179958,PASI Feldman Version Clinical Classification Question,PASI02TC,29,True
-C135708,PCL-5 Questionnaire Question,PCL01TC,22,True
-C112462,PDDS Questionnaire Question,PDDS01TC,1,True
-C100121,PDQUALIF Questionnaire Question,,33,False
-C135706,PGI Generic Modification Version Questionnaire Question,PGI01TC,4,True
-C125754,PHQ Screener Version Questionnaire Question,PHQ03TC,59,True
-C103502,PHQ-15 Questionnaire Question,PHQ02TC,16,True
-C157728,PHQ-2 Questionnaire Question,PHQ04TC,2,True
-C103501,PHQ-9 Questionnaire Question,PHQ01TC,11,True
-C105143,PI Questionnaire Question,PI01TC,6,True
-C135710,PODCI Adolescent Parent-Reported Version Questionnaire Question,PODCI2TC,92,True
-C135711,PODCI Adolescent Self-Reported Version Questionnaire Question,PODCI3TC,89,True
-C135709,PODCI Pediatric Parent-Reported Version Questionnaire Question,PODCI1TC,92,True
-C105144,PR Questionnaire Question,PR01TC,11,True
-C179955,PRO-CTCAE V1.0 Questionnaire Question,PT01TC,145,True
-C202150,PROMIS Item Bank Version 1.0 Fatigue Short Form 7a Questionnaire Question,PA136TC,7,True
-C202149,PROMIS Item Bank Version 2.0 Cognitive Function Short Form 6a Questionnaire Question,PA016TC,6,True
-C208400,PROMIS Item Bank v1.0 - Sleep Disturbance - Short Form 4a Questionnaire Question,PA215TC,4,True
-C208399,PROMIS Item Bank v2.0 - Cognitive Function - Abilities Subset - Short Form 6a Questionnaire Question,PA020TC,6,True
-C208401,PROMIS-29 Profile Version 2.1 Questionnaire Question,PA261TC,29,True
-C127366,PROSQOLI Questionnaire Question,PROS01TC,10,True
-C138264,PUL 1.2 Functional Test Question,PUL01TC,32,True
-C138265,PUL 2.0 Functional Test Question,PUL02TC,32,True
-C150796,Paced Tapping Functional Test Question,PTAP1TC,46,True
-C147555,Peds-FACIT-F Questionnaire Question,FAC099TC,13,True
-C138269,PedsQL Neuromuscular Module Acute Version 3.0 Child Report Questionnaire Question,PQL14TC,25,True
-C138271,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Child Questionnaire Question,PQL15TC,25,True
-C138272,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Teen Questionnaire Question,PQL13TC,25,True
-C138273,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Adults Questionnaire Question,PQL11TC,25,True
-C138274,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Child Questionnaire Question,PQL17TC,25,True
-C138270,PedsQL Neuromuscular Module Acute Version 3.0 Parent of Toddler Questionnaire Question,PQL18TC,25,True
-C138275,PedsQL Neuromuscular Module Acute Version 3.0 Teen Report Questionnaire Question,PQL12TC,25,True
-C138276,PedsQL Neuromuscular Module Acute Version 3.0 Young Adult Report Questionnaire Question,PQL10TC,25,True
-C138277,PedsQL Neuromuscular Module Acute Version 3.0 Young Child Report Questionnaire Question,PQL16TC,17,True
-C138278,PedsQL Neuromuscular Module Version 3.0 Child Report Questionnaire Question,PQL05TC,25,True
-C138280,PedsQL Neuromuscular Module Version 3.0 Parent Report for Child Questionnaire Question,PQL06TC,25,True
-C138281,PedsQL Neuromuscular Module Version 3.0 Parent Report for Teen Questionnaire Question,PQL04TC,25,True
-C138282,PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Adults Report Questionnaire Question,PQL02TC,25,True
-C138283,PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Child Questionnaire Question,PQL08TC,25,True
-C138279,PedsQL Neuromuscular Module Version 3.0 Parent of Toddler Questionnaire Question,PQL09TC,25,True
-C138284,PedsQL Neuromuscular Module Version 3.0 Teen Report Questionnaire Question,PQL03TC,25,True
-C138285,PedsQL Neuromuscular Module Version 3.0 Young Adult Report Questionnaire Question,PQL01TC,25,True
-C138286,PedsQL Neuromuscular Module Version 3.0 Young Child Report Questionnaire Question,PQL07TC,17,True
-C204238,Penn State Electronic Cigarette Dependence Index Questionnaire Question,PSECD1TC,11,True
-C204237,Perianal Crohn's Disease Activity Index Questionnaire Question,PDAI01TC,6,True
-C190949,Psoriasis Area and Severity Index Bozek Version Clinical Classification Question,PASI05TC,29,True
-C190948,Psoriasis Area and Severity Index European Medical Agency Version Clinical Classification Question,PASI04TC,29,True
-C190947,Psoriasis Area and Severity Index Fredriksson Version Clinical Classification Question,PASI03TC,29,True
-C130295,Q-LES-Q Questionnaire Question,QLES1TC,101,True
-C130296,Q-LES-Q-SF Questionnaire Question,QLES2TC,16,True
-C130287,QIDS-C Clinical Classification Question,QIDSC1TC,20,True
-C130294,QIDS-SR Questionnaire Question,QIDSR1TC,20,True
-C135712,RAND Social Support Survey Questionnaire Question,RSSS01TC,19,True
-C113871,RAND-36 Questionnaire Question,R3601TC,36,True
-C171414,RASS Clinical Classification Question,RASS01TC,1,True
-C100123,RDQ Questionnaire Question,RDQ01TC,25,True
-C166194,RFWT Version 1 Functional Test Question,ROCK01TC,1,True
-C119087,RPQ Questionnaire Question,RPQ01TC,20,True
-C124694,Reynolds CVD 10-Year Risk Score Clinical Classification Question,RCVD01TC,1,True
-C141677,Rising From Floor Functional Test Question,RISEF1TC,4,True
-C190946,Rutgeerts Score Clinical Classification Question,RUTG01TC,1,True
-C171415,SAS Clinical Classification Question,SAS01TC,1,True
-C115413,SDMT Functional Test Question,SDMT01TC,1,True
-C111358,SDS Questionnaire Question,SDS01TC,6,True
-C176054,SES-CD Version 1 Clinical Classification Question,SES01TC,31,True
-C177699,SF10 v1.0 Children Acute Questionnaire Question,SF102TC,10,True
-C177700,SF10 v1.0 Children Standard Questionnaire Question,SF101TC,10,True
-C177701,SF12 v1.0 Acute Questionnaire Question,SF122TC,15,True
-C177702,SF12 v1.0 Standard Questionnaire Question,SF121TC,15,True
-C177703,SF12 v2.0 Acute Questionnaire Question,SF124TC,31,True
-C177704,SF12 v2.0 Standard Questionnaire Question,SF123TC,31,True
-C101878,SF36 v1 0 Acute Questionnaire Question,SF362TC,57,True
-C100171,SF36 v1.0 Standard Questionnaire Question,SF361TC,57,True
-C101880,SF36 v2 0 Acute Questionnaire Question,SF364TC,62,True
-C101879,SF36 v2 0 Standard Questionnaire Question,SF363TC,62,True
-C185743,SF6D Version 2.0 Acute Questionnaire Question,SF6D2TC,10,True
-C185744,SF6D Version 2.0 Standard Questionnaire Question,SF6D1TC,10,True
-C177697,SF8 v1.0 Acute Questionnaire Question,SF82TC,18,True
-C177698,SF8 v1.0 Standard Questionnaire Question,SF81TC,18,True
-C106682,SGRQ-C Questionnaire Question,SGRQC1TC,41,True
-C150805,SIQ Questionnaire Question,SIQ01TC,43,True
-C150806,SIQ-JR Questionnaire Question,SIQ02TC,26,True
-C103503,SIQR Questionnaire Question,SIQR01TC,21,True
-C154463,SMDDS Version 1.0 Questionnaire Question,SMDDS1TC,26,True
-C100125,SOAPP-R Questionnaire Question,SOAPR1TC,26,True
-C103504,SOWS Short Questionnaire Question,,10,False
-C101881,SOWS Subjective Questionnaire Question,SOWSA1TC,16,True
-C170532,SPPB Version 1.2 Functional Test Question,SPPB1TC,35,True
-C115419,SWLS Questionnaire Question,SWLS01TC,5,True
-C204239,Sepsis-related Organ Failure Assessment 27th March 2024 Version Clinical Classification Question,SOFA01TC,7,True
-C100124,Short-Form MPQ-2 Questionnaire Question,SFMP2TC,22,True
-C112463,St George's Respiratory Questionnaire Past 3 Months Version Questionnaire Question,SGRQ01TC,51,True
-C112464,St George's Respiratory Questionnaire Past 4 Weeks Version Questionnaire Question,SGRQ02TC,51,True
-C187460,Stanford Sleepiness Scale Questionnaire Question,SSS01TC,1,True
-C161630,T1-DDS Questionnaire Question,DDS01TC,36,True
-C115414,T25FW Functional Test Question,T25FW1TC,4,True
-C106675,TDI Clinical Classification Question,TDI01TC,4,True
-C119088,TIMI Thrombus Grade Clinical Classification Question,TIMG01TC,1,True
-C124702,TMT Functional Test Question,TMT01TC,2,True
-C147556,TSCC Questionnaire Question,TSCC01TC,54,True
-C147557,TSCYC Questionnaire Question,TSCYC1TC,90,True
-C132530,TSQM Version 1.4 Questionnaire Question,TSQM01TC,14,True
-C115415,TUG Functional Test Question,TUG01TC,1,True
-C124689,Tanner Scale-Boy Clinical Classification Question,TANN02TC,2,True
-C124690,Tanner Scale-Girl Clinical Classification Question,TANN01TC,2,True
-C190950,The Patient Health Questionnaire - 8 Item Questionnaire Question,PHQ05TC,9,True
-C154459,UHDRS 1999 Version Clinical Classification Question,UHDR1TC,112,True
-C100126,UPDRS Clinical Classification Question,UPD1TC,76,True
-C103505,UPS Questionnaire Question,UPS01TC,1,True
-C141674,VALG Clinical Classification Question,VALG01TC,1,True
-C112465,VFQ25-Interviewer Administered Format Questionnaire Question,VFQ1TC,42,True
-C112466,VFQ25-Self Administered Format Questionnaire Question,VFQ2TC,42,True
-C130283,VLERS Clinical Classification Question,VLERS1TC,1,True
-C190951,Voice Handicap Index Questionnaire Question,VHI01TC,34,True
-C124699,WHO Clinical Staging of HIV/AIDS for Adults and Adolescents Clinical Classification Question,WHIVS1TC,1,True
-C124700,WHO Clinical Staging of HIV/AIDS for Children Clinical Classification Question,WHIVS2TC,1,True
-C130303,WHODAS 2.0 12 24-item Version Interviewer-administered Questionnaire Question,WD4TC,49,True
-C130300,WHODAS 2.0 12-item Version Interviewer-administered Questionnaire Question,WD1TC,21,True
-C130301,WHODAS 2.0 12-item Version Proxy-administered Questionnaire Question,WD2TC,16,True
-C130302,WHODAS 2.0 12-item Version Self-administered Questionnaire Question,WD3TC,15,True
-C130297,WHODAS 2.0 36-item Version Interviewer-administered Questionnaire Question,WD5TC,49,True
-C130298,WHODAS 2.0 36-item Version Proxy-administered Questionnaire Question,WD6TC,40,True
-C130299,WHODAS 2.0 36-item Version Self-administered Questionnaire Question,WD7TC,39,True
-C166192,WPAI-GH Version 2 Questionnaire Question,WPAI02TC,10,True
-C100172,WPAI:SHP v2.0 Questionnaire Question,WPAI01TC,10,True
-C124695,West Haven Criteria Clinical Classification Question,,0,False
-C101882,YMRS Questionnaire Question,,11,False
+ncit_code,preferred_term,codelist_testcd,question_count,mapped_structurally,synonyms,definition,display_name,semantic_type,UMLS_CUI,NCIm_CUI,codelist_membership
+C141676,10 Meter Walk/Run Functional Test Question,TENMW1TC,4,True,,A question associated with the 10 Meter Walk/Run functional test.,,Intellectual Product,,CL539766,
+C141679,4 Stair Ascend Functional Test Question,A4STR1TC,4,True,,A question associated with the 4 Stair Ascend functional test.,,Intellectual Product,,CL539779,
+C141678,4 Stair Descend Functional Test Question,D4STR1TC,4,True,,A question associated with the 4 Stair Descend functional test.,,Intellectual Product,,CL539780,
+C115409,6MWT Functional Test Question,SIXMW1TC,6,True,,A question associated with the 6MWT functional test.,,Intellectual Product,C3900189,,
+C100106,ADAS-Cog CDISC Version Functional Test Question,ADCTC,111,True,,A question associated with the ADAS-Cog CDISC version functional test.,,Intellectual Product,C3639096,,
+C106672,ADCS-ADL MCI Questionnaire Question,ADL03TC,92,True,,A question associated with the ADCS-ADL MCI questionnaire.,,Intellectual Product,C3831685,,
+C105146,ADCS-ADL Questionnaire Question,ADL01TC,79,True,,A question associated with the ADCS-ADL questionnaire.,,Intellectual Product,C3831645,,
+C106673,ADCS-ADL Severe Dementia Questionnaire Question,ADL02TC,38,True,,A question associated with the ADCS-ADL Severe Dementia questionnaire.,,Intellectual Product,C3831624,,
+C103490,ADCS-CGIC Questionnaire Question,ACGC01TC,1,True,,A question associated with the ADCS-CGIC questionnaire.,,Intellectual Product,C3641305,,
+C101870,ADNI-AVLT Questionnaire Question,AVL01TC,138,True,,A question associated with the ADNI version of the AVLT questionnaire.,,Intellectual Product,C3640276,,
+C163398,ADSD Version 1.0 Questionnaire Question,ADSD01TC,7,True,,A question associated with the ADSD Version 1.0 questionnaire.,,Intellectual Product,,CL976672,
+C101869,AIMS Clinical Classification Question,AIMS01TC,12,True,,A question associated with the AIMS questionnaire.,,Intellectual Product,C3640275,,
+C141675,AJCC v7 Clinical Classification Question,AJCC1TC,5,True,,A question associated with the AJCC v7 clinical classification.,,Intellectual Product,,CL539767,
+C163399,ANSD Version 1.0 Questionnaire Question,ANSD01TC,7,True,,A question associated with the ANSD Version 1.0 questionnaire.,,Intellectual Product,,CL976671,
+C120994,APACHE II Clinical Classification Question,APCH1TC,20,True,,A question associated with the APACHE II clinical classification.,,Intellectual Product,C4055602,,
+C176052,APGAR Score Version 1 Clinical Classification Question,APGR01TC,6,True,,A question associated with the APGAR Score Version 1 clinical classification.,,Intellectual Product,,CL1413460,
+C112456,AQ20 Questionnaire Question,AQ01TC,20,True,,A question associated with the AQ20 questionnaire.,,Intellectual Product,C3831489,,
+C119091,ARC STC Grade Clinical Classification Question,STCG01TC,1,True,,A question associated with the ARC STC Grade clinical classification.,,Intellectual Product,C3900160,,
+C119090,ARC STC Timing Clinical Classification Question,,1,False,,A question associated with the ARC STC Timing clinical classification.,,Intellectual Product,C3900158,,
+C225075,ARCI-49 Questionnaire Question,ARCI01TC,54,True,,A question associated with the Addiction Research Center Inventory 49 Check-list (ARCI-49) questionnaire.,,Intellectual Product,,,
+C124691,ASCVD 10-Year Risk Estimator Clinical Classification Question,ASCVD1TC,1,True,,A question associated with the ASCVD 10-Year Risk Estimator clinical classification.,,Intellectual Product,C4085921,,
+C125750,ASEX-Female Version Questionnaire Question,ASEX01TC,6,True,,A question associated with the ASEX-Female Version questionnaire.,,Intellectual Product,,CL504405,
+C125751,ASEX-Male Version Questionnaire Question,ASEX02TC,6,True,,A question associated with the ASEX-Male Version questionnaire.,,Intellectual Product,,CL504406,
+C124692,ASSIGN Score Clinical Classification Question,ASSG01TC,1,True,,A question associated with the ASSIGN Score clinical classification.,,Intellectual Product,C4085924,,
+C147551,ATLAS Clinical Classification Question,ATLAS1TC,6,True,,A question associated with the ATLAS clinical classification.,,Intellectual Product,,CL545416,
+C119081,AUDIT Questionnaire Question,ADT01TC,11,True,,A question associated with the AUDIT questionnaire.,,Intellectual Product,C3900142,,
+C225076,AUDIT-C Interview Version Questionnaire Question,ADTC03TC,4,True,,A question associated with the Alcohol Use Disorders Identification Test-Concise Interview Version (AUDIT-C Interview Version) questionnaire.,,Intellectual Product,,,
+C119082,AUDIT-C Questionnaire Question,ADTC01TC,3,True,,A question associated with the AUDIT-C questionnaire.,,Intellectual Product,C3900138,,
+C225077,AUDIT-C Self-Report Version Questionnaire Question,ADTC02TC,4,True,,A question associated with the Alcohol Use Disorders Identification Test-Concise Self-Report Version (AUDIT-C Self-Report Version) questionnaire.,,Intellectual Product,,,
+C123657,AVLT-REY Functional Test Question,AVL02TC,36,True,,A question associated with the AVLT-REY functional test.,,Intellectual Product,C4055566,,
+C161631,AVPU Clinical Classification Question,AVPU01TC,1,True,,A question associated with the AVPU clinical classification.,,Intellectual Product,,CL970325,
+C120999,BACS Functional Test Question,BACS1TC,13,True,,A question associated with the BACS functional test.,,Intellectual Product,C4055404,,
+C101871,BARS Clinical Classification Question,BARS01TC,4,True,,A question associated with the BARS questionnaire.,,Intellectual Product,C3640277,,
+C106674,BDI Clinical Classification Question,BDI01TC,4,True,,A question associated with the BDI questionnaire.,,Intellectual Product,C3831385,,
+C135702,BEBQ Concurrent Version Questionnaire Question,BEBQ01TC,18,True,,A question associated with the BEBQ Concurrent Version questionnaire.,,Intellectual Product,,CL523021,
+C135703,BEBQ Retrospective Version Questionnaire Question,BEBQ02TC,18,True,,A question associated with the BEBQ Retrospective Version questionnaire.,,Intellectual Product,,CL523022,
+C113866,BLCS Questionnaire Question,BLCS01TC,4,True,,A question associated with the BLCS questionnaire.,,Intellectual Product,C3831335,,
+C120995,BODE Index Clinical Classification Question,BODE01TC,5,True,,A question associated with the BODE Index clinical classification.,,Intellectual Product,C4053727,,
+C100107,BPI Questionnaire Question,BPI1TC,69,True,,A question associated with the BPI questionnaire.,,Intellectual Product,C3639097,,
+C100108,BPI Short Form Questionnaire Question,BPI2TC,16,True,,A question associated with the BPI Short Form questionnaire.,,Intellectual Product,C3639098,,
+C161632,BPRS 1988 Version Clinical Classification Question,BPRS01TC,19,True,,A question associated with the BPRS 1988 Version clinical classification.,,Intellectual Product,,CL970340,
+C100109,BPRS-Anchored Clinical Classification Question,BPRSA1TC,18,True,,A question associated with the BPRS-Anchored clinical classification.,,Intellectual Product,C3639099,,
+C130282,BUERS Clinical Classification Question,BUERS1TC,1,True,,A question associated with the BUERS clinical classification.,,Intellectual Product,,CL514023,
+C113867,BWCS Questionnaire Question,BWCS01TC,5,True,,A question associated with the BWCS questionnaire.,,Intellectual Product,C3831233,,
+C113863,Borg CR10 Questionnaire Question,BCR101TC,1,True,,A question associated with the Borg CR10 questionnaire.,,Intellectual Product,C3831315,,
+C199506,Brief Questionnaire of Smoking Urges Questionnaire Question,QSUB01TC,13,True,,A question associated with the Brief Questionnaire of Smoking Urges.,,Intellectual Product,,CL1906871,
+C106676,C-SSRS Already Enrolled Subjects Questionnaire Question,CSS05TC,62,True,,A question associated with the C-SSRS Already Enrolled Subjects questionnaire.,,Intellectual Product,C3830916,,
+C100113,C-SSRS Baseline Questionnaire Question,CSS01TC,39,True,,A question associated with the C-SSRS Baseline questionnaire.,,Intellectual Product,C3639103,,
+C105141,C-SSRS Baseline/Screening Version Phase 1 Study Version 1/14/09 Questionnaire Question,CSS03TC,51,True,,A question associated with the C-SSRS Baseline/Screening Version Phase 1 Study version 1/14/09 questionnaire.,,Intellectual Product,C3641937,,
+C106677,C-SSRS Baseline/Screening Version Questionnaire Question,CSS04TC,60,True,,A question associated with the C-SSRS Baseline/Screening Version questionnaire.,,Intellectual Product,C3830855,,
+C111351,C-SSRS Children's Baseline Questionnaire Question,CSS06TC,37,True,,A question associated with the C-SSRS Children's Baseline questionnaire.,,Intellectual Product,C3830814,,
+C111352,C-SSRS Children's Baseline/Screening Questionnaire Question,CSS07TC,43,True,,A question associated with the C-SSRS Children's Baseline/Screening questionnaire.,,Intellectual Product,C3830774,,
+C111353,C-SSRS Children's Since Last Visit Questionnaire Question,CSS08TC,32,True,,A question associated with the C-SSRS Children's Since Last Visit questionnaire.,,Intellectual Product,C3830738,,
+C117993,C-SSRS Lifetime/Recent Version Questionnaire Question,CSS11TC,60,True,,A question associated with the C-SSRS Lifetime/Recent Version questionnaire.,,Intellectual Product,C3899845,,
+C113864,C-SSRS Pediatric Cognitively Impaired Lifetime Recent Questionnaire Question,CSS10TC,55,True,,A question associated with the C-SSRS Pediatric Cognitively Impaired Lifetime Recent questionnaire.,,Intellectual Product,C3830684,,
+C111354,C-SSRS Screening Questionnaire Question,CSS09TC,39,True,,A question associated with the C-SSRS Screening questionnaire.,,Intellectual Product,C3830641,,
+C103491,C-SSRS Since Last Visit Questionnaire Question,CSS02TC,34,True,,A question associated with the C-SSRS Since Last Visit questionnaire.,,Intellectual Product,C3641306,,
+C119084,CCQ 1 Week Version Questionnaire Question,CCQ02TC,10,True,,A question associated with the CCQ 1 Week Version questionnaire.,,Intellectual Product,C3899829,,
+C119083,CCQ 24 Hour Version Questionnaire Question,CCQ01TC,10,True,,A question associated with the CCQ 24 Hour Version questionnaire.,,Intellectual Product,C3899819,,
+C176053,CDAI Version 1 Questionnaire Question,CDAI01TC,23,True,,A question associated with the CDAI Version 1 questionnaire.,,Intellectual Product,,CL1413461,
+C124701,CDC Classification System for HIV-Infected Adults and Adolescents Clinical Classification Question,CHIVC1TC,1,True,,A question associated with the CDC Classification System for HIV-Infected Adults and Adolescents clinical classification.,,Intellectual Product,C4086046,,
+C101872,CDR Clinical Classification Question,CDR01TC,8,True,,A question associated with the CDR clinical classification.,,Intellectual Product,C3640278,,
+C154458,CDRS-R Clinical Classification Question,CDRS1TC,41,True,,A question associated with the CDRS-R clinical classification.,,Intellectual Product,,CL555387,
+C132527,CES Questionnaire Question,CES01TC,7,True,,A question associated with the CES questionnaire.,,Intellectual Product,,CL519748,
+C135705,CGI Generic Modification Version Questionnaire Question,CGI02TC,3,True,,A question associated with the CGI Generic Modification Version questionnaire.,,Intellectual Product,,CL523024,
+C135704,CGI Original Version Questionnaire Question,,3,False,,A question associated with the CGI Original Version questionnaire.,,Intellectual Product,,CL523023,
+C100111,CGI Questionnaire Question,,3,False,,A question associated with the CGI questionnaire.,,Intellectual Product,C3639101,,
+C117992,CHART-SF Interview Version Questionnaire Question,CHSF1TC,28,True,,A question associated with the CHART-SF questionnaire.,,Intellectual Product,C3899786,,
+C119085,CHART-SF Paper Version Questionnaire Question,CHSF2TC,28,True,,A question associated with the CHART-SF Paper Version questionnaire.,,Intellectual Product,C3899765,,
+C100112,COMM Questionnaire Question,COMM1TC,18,True,,A question associated with the COMM questionnaire.,,Intellectual Product,C3639102,,
+C156674,COVI Clinical Classification Question,COVI01TC,4,True,,A question associated with the COVI clinical classification.,,Intellectual Product,,CL935737,
+C150793,COWAT Functional Test Question,COWAT1TC,4,True,,A question associated with the COWAT functional test.,,Intellectual Product,,CL552652,
+C101873,COWS Questionnaire Question,COWS1TC,13,True,,A question associated with the COWS questionnaire.,,Intellectual Product,C3640279,,
+C121000,CRQ-SAS First Administration Version Questionnaire Question,CRQ01TC,20,True,,A question associated with the CRQ-SAS First Administration Version questionnaire.,,Intellectual Product,C4055311,,
+C121001,CRQ-SAS Follow-Up Administration Version Questionnaire Question,CRQ02TC,20,True,,A question associated with the SAS Follow-Up Administration Version questionnaire.,,Intellectual Product,C4055290,,
+C124697,CRS-R Clinical Classification Question,CRSR01TC,11,True,,A question associated with the CRS-R clinical classification.,,Intellectual Product,C4086111,,
+C199507,Canadian Cardiovascular Society Grading of Angina Pectoris Clinical Classification Question,CCSGA1TC,1,True,,A question associated with the Canadian Cardiovascular Society Grading of Angina Pectoris clinical classification.,,Intellectual Product,,CL1906870,
+C120996,Child-Pugh Clinical Classification Question,CPS01TC,8,True,,A question associated with the Child-Pugh clinical classification.,,Intellectual Product,C4055252,,
+C199509,Cigarette Evaluation Questionnaire Extended-Screening Clinical Classification Question,,11,False,,A question associated with the Cigarette Evaluation Questionnaire Extended-Screening clinical classification.,,Intellectual Product,,CL1906864,
+C187459,Clinician-Administered PTSD Scale (Current) DSM-5 With DSM IV Scoring 2016 Version Clinical Classification Question,CAP01TC,103,True,,A question associated with the Clinician-Administered PTSD Scale (Current) DSM-5 With DSM IV Scoring 2016 Version clinical classification.,,Intellectual Product,,CL1792136,
+C199508,Comfort Behavior Scale Clinical Classification Question,CBS01TC,12,True,,A question associated with the Comfort Behavior Scale clinical classification.,,Intellectual Product,,CL1906865,
+C187461,Craig Handicap Assessment and Reporting Technique-Short Form Questionnaire Question,,28,False,,A question associated with the Craig Handicap Assessment and Reporting Technique-Short Form questionnaire.,,Intellectual Product,,CL1792526,
+C105142,DAD Questionnaire Question,DAD01TC,49,True,,A question associated with the DAD questionnaire.,,Intellectual Product,C3641938,,
+C183553,DIBSS-C Version 1.0 Questionnaire Question,DIBC01TC,10,True,,A question associated with the DIBSS-C Version 1.0 questionnaire.,,Intellectual Product,,CL1771913,
+C119086,DLQI Questionnaire Question,DLQI1TC,18,True,,A question associated with the DLQI questionnaire.,,Intellectual Product,C3899466,,
+C141684,DRRI-2 Questionnaire Question,DRRI1TC,210,True,,A question associated with the DRRI-2 questionnaire.,,Intellectual Product,,CL539774,
+C115416,DRS Questionnaire Question,DRS01TC,9,True,,A question associated with the DRS questionnaire.,,Intellectual Product,C3899456,,
+C112457,DS Clinical Classification Question,DS01TC,1,True,,A question associated with the DS questionnaire.,,Intellectual Product,C3830382,,
+C225074,DSQ1 Questionnaire Question,DSQ1TC,15,True,,A question associated with the DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item (DSQ-PEM 2018) questionnaire.,,Intellectual Product,,,
+C161633,E-TRIP Clinical Classification Question,ETRP01TC,3,True,,A question associated with the E-TRIP clinical classification.,,Intellectual Product,,CL970339,
+C101874,ECOG Clinical Classification Question,ECOG1TC,1,True,,A question associated with the ECOG performance status questionnaire.,,Intellectual Product,C3640280,,
+C112458,EDSS Clinical Classification Question,EDSS01TC,1,True,,A question associated with the EDSS clinical classification.,,Intellectual Product,C3830335,,
+C219736,EORTC QLQ-ANL27 Questionnaire Question,EOR30TC,27,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Anal Cancer 27 Items (EORTC QLQ-ANL27) questionnaire.,,Intellectual Product,,CL1953108,
+C219737,EORTC QLQ-BIL21 Questionnaire Question,EOR24TC,21,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Cholangiocarcinoma and Gallbladder Cancer 21 Items (EORTC QLQ-BIL21) questionnaire.,,Intellectual Product,,CL1953107,
+C219738,EORTC QLQ-BM22 Questionnaire Question,EOR03TC,22,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Bone Metastases 22 Items (EORTC QLQ-BM22) questionnaire.,,Intellectual Product,,CL1953106,
+C219739,EORTC QLQ-BR42 Questionnaire Question,EOR35TC,42,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Breast Cancer 42 Items (EORTC QLQ-BR42) questionnaire.,,Intellectual Product,,CL1953105,
+C161628,EORTC QLQ-C15-PAL Version 1 Questionnaire Question,EOR02TC,15,True,,A question associated with the EORTC QLQ-C15-PAL Version 1 questionnaire.,,Intellectual Product,,CL970328,
+C161629,EORTC QLQ-C30 Version 3 Questionnaire Question,EOR01TC,45,True,,A question associated with the EORTC QLQ-C30 Version 3 questionnaire.,,Intellectual Product,,CL970327,
+C219740,EORTC QLQ-CLL17 Questionnaire Question,EOR29TC,17,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Chronic lymphocytic leukemia 17 Items (EORTC QLQ-CLL17) questionnaire.,,Intellectual Product,,CL1953104,
+C170531,EORTC QLQ-CR29 Version 2.1 Questionnaire Question,EOR06TC,35,True,,A question associated with the EORTC QLQ-CR29 Version 2.1 questionnaire.,,Intellectual Product,,CL1382953,
+C219741,EORTC QLQ-H and N43 Phase IV Module Version Questionnaire Question,EOR36TC,43,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Head and Neck Cancer Phase IV Module Version 43 Items ((EORTC QLQ-H and N43 Phase IV Module Version)) questionnaire.,,Intellectual Product,,CL1953088,
+C219742,EORTC QLQ-INFO25 Questionnaire Question,EOR17TC,27,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Information 25 Items (EORTC QLQ-INFO25) questionnaire.,,Intellectual Product,,CL1953087,
+C172401,EORTC QLQ-LC13 Questionnaire Question,EOR18TC,15,True,,A question associated with the EORTC QLQ-LC13 questionnaire.,,Intellectual Product,,CL1406354,
+C219743,EORTC QLQ-LMC21 Questionnaire Question,EOR12TC,21,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Colorectal Liver Metastases 21 Items (EOC21) questionnaire.,,Intellectual Product,,CL1953086,
+C219744,EORTC QLQ-MY20 Questionnaire Question,EOR19TC,20,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Multiple Myeloma 20 Items (EORTC QLQ-MY20) questionnaire.,,Intellectual Product,,CL1953085,
+C219745,EORTC QLQ-NMIBC24 Questionnaire Question,EOR28TC,24,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Non-Muscle-Invasive Bladder Cancer 24 Items (EORTC QLQ-NMIBC24) questionnaire.,,Intellectual Product,,CL1953084,
+C219746,EORTC QLQ-OES18 Questionnaire Question,EOR20TC,18,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Esophageal Cancer 18 Items (EORTC QLQ-EOS18) questionnaire.,,Intellectual Product,,CL1953083,
+C219747,EORTC QLQ-OG25 Questionnaire Question,EOR21TC,25,True,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Esophago-Gastric Cancer Phase IV Module Version 25 Items (EORTC QLQ-OG25) questionnaire.,,Intellectual Product,,CL1953082,
+C132528,EPDS Questionnaire Question,EPDS01TC,10,True,,A question associated with the EPDS questionnaire.,,Intellectual Product,,CL521178,
+C127361,EPIC-26 Questionnaire Question,EPIC1TC,26,True,,A question associated with the EPIC-26 questionnaire.,,Intellectual Product,,CL508708,
+C127362,EPIC-CP Questionnaire Question,EPIC2TC,22,True,,A question associated with the EPIC-CP questionnaire.,,Intellectual Product,,CL508731,
+C100114,EQ-5D-3L Questionnaire Question,EQ5D01TC,6,True,,A question associated with the EQ-5D-3L questionnaire.,,Intellectual Product,C3639104,,
+C101875,EQ-5D-5L Questionnaire Question,EQ5D02TC,6,True,,A question associated with the EQ-5D-5L questionnaire.,,Intellectual Product,C3640281,,
+C150795,ERT Functional Test Question,EMO1TC,68,True,,A question associated with the ERT functional test.,,Intellectual Product,,CL552654,
+C117994,ESRS-A Clinical Classification Question,ESRSA1TC,28,True,,A question associated with the ESRS-A Clinical Classification.,,Intellectual Product,C3899283,,
+C103492,ESS Questionnaire Question,ESS01TC,9,True,,A question associated with the ESS questionnaire.,,Intellectual Product,C3641307,,
+C123656,EXACT Questionnaire Question,EXACT1TC,22,True,,A question associated with the EXACT questionnaire.,,Intellectual Product,C4055088,,
+C125752,Expanded DRS-PI Caregiver Version Questionnaire Question,ED1TC,30,True,,A question associated with the Expanded DRS-PI Caregiver Version questionnaire.,,Intellectual Product,,CL504407,
+C125753,Expanded DRS-PI Survivor Version Questionnaire Question,ED2TC,26,True,,A question associated with the Expanded DRS-PI Survivor Version questionnaire.,,Intellectual Product,,CL504408,
+C179956,FAACT Version 4 Questionnaire Question,FAC065TC,47,True,,A question associated with the FAACT Version 4 questionnaire.,,Intellectual Product,,CL1662618,
+C147553,FACIT-Dyspnea 10 Item Short Form Questionnaire Question,FAC084TC,30,True,,A question associated with the FACIT-Dyspnea 10 Item Short Form questionnaire.,,Intellectual Product,,CL545403,
+C154460,FACIT-Dyspnea Scale 33 Item Bank Version Questionnaire Question,FAC100TC,99,True,,A question associated with the FACIT-Dyspnea Scale 33 Item Bank Version questionnaire.,,Intellectual Product,,CL555385,
+C129099,FACIT-F Version 4 Questionnaire Question,FAC071TC,48,True,,A question associated with the FACIT-F Version 4 questionnaire.,,Intellectual Product,,CL512441,
+C147554,FACIT-Fatigue 13-Item Version 4 Questionnaire Question,FAC070TC,14,True,,A question associated with the FACIT-Fatigue 13-Item Version 4 questionnaire.,,Intellectual Product,,CL545404,
+C183554,FACIT-Searchable Item Library Adult Version Questionnaire Question,FSILTC,674,True,,A question associated with the FACIT-Searchable Item Library Adult Version questionnaire.,,Intellectual Product,,CL1771914,
+C129102,FACT-B Version 4 Questionnaire Question,FAC005TC,45,True,,A question associated with the FACT-B Version 4 questionnaire.,,Intellectual Product,,CL512479,
+C154461,FACT-BL Version 4 Questionnaire Question,FAC006TC,48,True,,A question associated with the FACT-BL Version 4 questionnaire.,,Intellectual Product,,CL555386,
+C147552,FACT-BMT Version 4 Questionnaire Question,FAC061TC,50,True,,A question associated with the FACT-BMT Version 4 questionnaire.,,Intellectual Product,,CL545402,
+C179957,FACT-BP Version 4 Questionnaire Question,FAC074TC,21,True,,A question associated with the FACT-BP Version 4 questionnaire.,,Intellectual Product,,CL1662621,
+C150799,FACT-BRM Version 4 Questionnaire Question,FAC062TC,40,True,,A question associated with the FACT-BRM Version 4 questionnaire.,,Intellectual Product,,CL552658,
+C150797,FACT-C Version 4 Questionnaire Question,FAC008TC,45,True,,A question associated with the FACT-C Version 4 questionnaire.,,Intellectual Product,,CL552656,
+C166191,FACT-COG Version 3 Questionnaire Question,FAC075TC,41,True,,A question associated with the FACT-COG Version 3 questionnaire.,,Intellectual Product,,CL971453,
+C127363,FACT-G Version 4 Questionnaire Question,FAC001TC,32,True,,A question associated with the FACT-G Version 4 questionnaire.,,Intellectual Product,,CL508788,
+C130290,FACT-HEP Version 4 Questionnaire Question,FAC015TC,53,True,,A question associated with the FACT-HEP Version 4 questionnaire.,,Intellectual Product,,CL514050,
+C225079,FACT-ICM Version 4 Questionnaire Question,FACT104TC,52,True,,A question associated with the Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 - 52 Item (FACT-ICM V4) questionnaire.,,Intellectual Product,,,
+C150801,FACT-L Version 4 Questionnaire Question,FAC016TC,37,True,,A question associated with the FACT-L Version 4 questionnaire.,,Intellectual Product,,CL552660,
+C130289,FACT-LEU Version 4 Questionnaire Question,FAC017TC,44,True,,A question associated with the FACT-LEU Version 4 questionnaire.,,Intellectual Product,,CL514051,
+C130291,FACT-LYM Version 4 Questionnaire Question,FAC018TC,42,True,,A question associated with the FACT-LYM Version 4 questionnaire.,,Intellectual Product,,CL514052,
+C127365,FACT-P Version 4 Questionnaire Question,FAC023TC,39,True,,A question associated with the FACT-P Version 4 questionnaire.,,Intellectual Product,,CL508828,
+C150798,FACT-Taxane Version 4 Questionnaire Question,FAC063TC,43,True,,A question associated with the FACT-Taxane Version 4 questionnaire.,,Intellectual Product,,CL552657,
+C150800,FACT/GOG-NTX Version 4 Questionnaire Question,FAC057TC,38,True,,A question associated with the FACT/GOG-NTX Version 4 questionnaire.,,Intellectual Product,,CL552659,
+C112459,FAMS Questionnaire Question,FAMS01TC,58,True,,A question associated with the FAMS questionnaire.,,Intellectual Product,C3827390,,
+C111355,FAQ Questionnaire Question,FAQ01TC,11,True,,A question associated with the FAQ questionnaire.,,Intellectual Product,C3830186,,
+C111356,FAQ-NACC UDS Version 2.0 Clinical Classification Question,FAQNA1TC,10,True,,A question associated with the FAQ-NACC UDS Version 2.0 clinical classification.,,Intellectual Product,C3830194,,
+C170530,FAS-NACC UDS Version 3.0 Clinical Classification Question,FASNA1TC,10,True,,A question associated with the FAS-NACC UDS Version 3.0 clinical classification.,,Intellectual Product,,CL1382952,
+C138266,FBRSI Questionnaire Question,FAC029TC,15,True,,A question associated with the FBRSI questionnaire.,,Intellectual Product,,CL525761,
+C124693,FHS CVD 10-Year Risk Score Clinical Classification Question,FCVD1TC,1,True,,A question associated with the FHS CVD 10-Year Risk Score clinical classification.,,Intellectual Product,C4086296,,
+C103493,FIQR Questionnaire Question,FIQR01TC,25,True,,A question associated with the FIQR questionnaire.,,Intellectual Product,C3641308,,
+C138267,FKSI-15 Questionnaire Question,FAC039TC,15,True,,A question associated with the FKSI-15 questionnaire.,,Intellectual Product,,CL525760,
+C150802,FKSI-DRS Version 4 Questionnaire Question,FAC041TC,9,True,,A question associated with the FKSI-DRS Version 4 questionnaire.,,Intellectual Product,,CL552661,
+C138268,FLSI Questionnaire Question,FAC043TC,6,True,,A question associated with the FLSI questionnaire.,,Intellectual Product,,CL525767,
+C129103,FOSI Questionnaire Question,FAC049TC,8,True,,A question associated with the FOSI questionnaire.,,Intellectual Product,,CL512488,
+C100115,FPSR Questionnaire Question,FPSR1TC,1,True,,A question associated with the FPSR questionnaire.,,Intellectual Product,C3639105,,
+C113865,FSS Questionnaire Question,FSS01TC,9,True,,A question associated with the FSS questionnaire.,,Intellectual Product,C3830066,,
+C208398,Fagerstrom Test for Cigarette Dependence Questionnaire Question,FTCD01TC,8,True,,A question associated with the Fagerstrom Test for Cigarette Dependence questionnaire.,,Intellectual Product,,CL1935179,
+C193280,Falls Efficacy Scale Questionnaire Question,FES01TC,11,True,,A question associated with the Falls Efficacy Scale questionnaire.,,Intellectual Product,,CL1913239,
+C208397,Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 Questionnaire Question,FAC102TC,11,True,,A question associated with the Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 questionnaire.,,Intellectual Product,,CL1935178,
+C199504,Functional Assessment of Chronic Illness Therapy-Item GP5 Version 4 Questionnaire Question,FAC101TC,1,True,,A question associated with the Functional Assessment of Chronic Illness Therapy-Item GP5 Version 4 questionnaire.,,Intellectual Product,,CL1906869,
+C200916,Functional Assessment of Chronic Illness Therapy-Searchable Item Library Pediatric Version Questionnaire Question,FSLPTC,131,True,,A question associated with the Functional Assessment of Chronic Illness Therapy-Searchable Item Library Pediatric Version questionnaire.,,Intellectual Product,,CL1915173,
+C103494,GAD-7 Questionnaire Question,GAD01TC,9,True,,A question associated with the GAD-7 questionnaire.,,Intellectual Product,C3641309,,
+C163400,GAD-7 Version 2 Questionnaire Question,GAD02TC,9,True,,A question associated with the GAD-7 Version 2 questionnaire.,,Intellectual Product,,CL976670,
+C105145,GCGI Questionnaire Question,GCGI01TC,5,True,,A question associated with the GCGI version 1 questionnaire.,,Intellectual Product,C3641941,,
+C124696,GCS NINDS Version 1.0 Clinical Classification Question,GCS01TC,12,True,,A question associated with the GCS NINDS Version 1.0 clinical classification.,,Intellectual Product,C4086349,,
+C106678,GDS Questionnaire Question,GDS01TC,31,True,,A question associated with the GDS questionnaire.,,Intellectual Product,C3827306,,
+C163401,GMSS Version Type 1 Diabetes Questionnaire Question,GMSS01TC,20,True,,A question associated with the GMSS Version Type 1 Diabetes questionnaire.,,Intellectual Product,,CL976669,
+C115417,GOSE Questionnaire Question,GOSE1TC,23,True,,A question associated with the GOSE questionnaire.,,Intellectual Product,C3899048,,
+C106679,Geriatric Depression Scale Short Form Questionnaire Question,GDS02TC,17,True,GDS-SF Questionnaire Question,A question associated with the Geriatric Depression Scale Short Form questionnaire.,,Intellectual Product,C3830004,,
+C103495,HADS Questionnaire Question,HADS01TC,16,True,,A question associated with the HADS questionnaire.,,Intellectual Product,C3641310,,
+C115410,HAI Functional Test Question,HAI01TC,1,True,,A question associated with the HAI functional test.,,Intellectual Product,C3899002,,
+C130284,HAM-D6 Clinician Version Clinical Classification Question,HAMD4TC,7,True,,A question associated with the HAM-D6 Clinician Version clinical classification.,,Intellectual Product,,CL513131,
+C130292,HAM-D6 Self-Report Version Questionnaire Question,HAMDS1TC,6,True,,A question associated with the HAM-D6 Self-Report Version questionnaire.,,Intellectual Product,,CL513138,
+C101876,HAMA Questionnaire Question,HAMA1TC,15,True,,A question associated with the HAMA questionnaire.,,Intellectual Product,C3640282,,
+C101877,HAMD 21 Questionnaire Question,HAMD2TC,24,True,,A question associated with the HAMD 21 questionnaire.,,Intellectual Product,C3642477,,
+C130285,HAMD 24 Clinical Classification Question,HAMD3TC,25,True,,A question associated with the HAMD 24 clinical classification.,,Intellectual Product,,CL513164,
+C100127,HAMD-17 Questionnaire Question,HAMD1TC,20,True,,A question associated with the HAMD-17 questionnaire.,,Intellectual Product,C3639116,,
+C106680,HAQ-DI Questionnaire Question,HAQ01TC,46,True,,A question associated with the HAQ-DI questionnaire.,,Intellectual Product,C3829852,,
+C132529,HAQ-DI Without VAS Questionnaire Question,HAQ02TC,45,True,,A question associated with the HAQ-DI without VAS questionnaire.,,Intellectual Product,,CL519902,
+C138262,HAS-BLED Clinical Classification Question,HSB01TC,7,True,,A question associated with the HAS-BLED clinical classification.,,Intellectual Product,,CL525757,
+C163402,HCS Questionnaire Question,HCS01TC,10,True,,A question associated with the HCS questionnaire.,,Intellectual Product,,CL976668,
+C166193,HD-CAB Functional Test Question,HDCAB1TC,7,True,,A question associated with the HD-CAB functional test.,,Intellectual Product,,CL971455,
+C190943,Harvey-Bradshaw Index Clinical Classification Question,HBI01TC,13,True,,A question associated with the Harvey-Bradshaw Index clinical classification.,,Intellectual Product,,CL1799546,
+C174053,IBDQ Questionnaire Question,IBDQ01TC,32,True,,A question associated with the IBDQ questionnaire.,,Intellectual Product,,CL1407949,
+C130286,IDS-C Clinical Classification Question,IDSC1TC,33,True,,A question associated with the IDS-C clinical classification.,,Intellectual Product,,CL514169,
+C130293,IDS-SR Questionnaire Question,IDSR1TC,33,True,,A question associated with the IDS-SR questionnaire.,,Intellectual Product,,CL514170,
+C103496,IIEF Questionnaire Question,IIEF01TC,15,True,,A question associated with the IIEF questionnaire.,,Intellectual Product,C3641311,,
+C141681,IPAQ Long Last 7 Days Self-Administered Format Version Questionnaire Question,IPAQ03TC,53,True,,A question associated with the IPAQ Long Last 7 Days Self-Administered Format Version questionnaire.,,Intellectual Product,,CL539777,
+C141682,IPAQ Long Last 7 Days Telephone Format Version Questionnaire Question,IPAQ02TC,69,True,,A question associated with the IPAQ Long Last 7 Days Telephone Format Version questionnaire.,,Intellectual Product,,CL539776,
+C141680,IPAQ Short Last 7 Days Self-administered Format Version Questionnaire Question,IPAQ04TC,18,True,,A question associated with the IPAQ Short Last 7 Days Self-administered Format Version questionnaire.,,Intellectual Product,,CL539778,
+C141683,IPAQ Short Last 7 Days Telephone Format Version Questionnaire Question,IPAQ01TC,19,True,,A question associated with the IPAQ Short Last 7 Days Telephone Format Version questionnaire.,,Intellectual Product,,CL539775,
+C183552,IPSS Questionnaire Question,IPS01TC,9,True,,A question associated with the IPSS questionnaire.,,Intellectual Product,,CL1771916,
+C113868,IVIS Questionnaire Question,IVIS01TC,5,True,,A question associated with the IVIS questionnaire.,,Intellectual Product,C3827294,,
+C170533,KDIGO-AKI Clinical Classification Question,KDIGO1TC,1,True,,A question associated with the KDIGO-AKI clinical classification.,,Intellectual Product,,CL1382959,
+C130288,KDPI Clinical Classification Question,KDPI01TC,1,True,,A question associated with the KDPI clinical classification.,,Intellectual Product,,CL513962,
+C112460,KFSS Questionnaire Question,KFSS1TC,11,True,,A question associated with the KFSS questionnaire.,,Intellectual Product,C3829392,,
+C100116,KPS Scale Questionnaire Question,KPSS01TC,1,True,,A question associated with the KPS Scale questionnaire.,,Intellectual Product,C3639106,,
+C193279,Kidney Disease and Quality of Life-36 Version 1 Questionnaire Question,KDQ1TC,37,True,,A question associated with the Kidney Disease and Quality of Life-36 Version 1 questionnaire.,,Intellectual Product,,CL1913238,
+C135707,LEC-5 Standard Version Questionnaire Question,LEC01TC,102,True,,A question associated with the LEC-5 Standard Version questionnaire.,,Intellectual Product,,CL523026,
+C138263,LPSS Clinical Classification Question,LPPSS1TC,1,True,,A question associated with the LPSS clinical classification.,,Intellectual Product,,CL525756,
+C100117,MDS-UPDRS Questionnaire Question,UPD2TC,72,True,,A question associated with the MDS-UPDRS questionnaire.,,Intellectual Product,C3639107,,
+C120997,MELD Clinical Classification Question,MELD01TC,1,True,,A question associated with the MELD clinical classification.,,Intellectual Product,C4053749,,
+C113869,MFIS Questionnaire Question,MFIS01TC,21,True,,A question associated with the MFIS questionnaire.,,Intellectual Product,C3829089,,
+C112461,MHIS-NACC Questionnaire Question,MHIS01TC,9,True,,A question associated with the MHIS-NACC questionnaire.,,Intellectual Product,C3829081,,
+C106681,MMRC Questionnaire Question,MMRC01TC,1,True,,A question associated with the MMRC questionnaire.,,Intellectual Product,C3828999,,
+C100118,MMSE Functional Test Question,MMS1TC,46,True,,A question associated with the MMSE functional test.,,Intellectual Product,C3639108,,
+C150794,MMSE-2 Standard Version Functional Test Question,MMS2TC,33,True,,A question associated with the MMSE-2 functional test.,,Intellectual Product,,CL552653,
+C100119,MNSI Questionnaire Question,MNSI1TC,37,True,,A question associated with the MNSI questionnaire.,,Intellectual Product,C3639109,,
+C115418,MPAI-4 Questionnaire Question,MPAI1TC,44,True,,A question associated with the MPAI-4 questionnaire.,,Intellectual Product,C3898503,,
+C111357,MRS Clinical Classification Question,MRS01TC,1,True,,A question associated with the MRS clinical classification.,,Intellectual Product,C3828943,,
+C113870,MSQOL-54 Questionnaire Question,MSQL1TC,55,True,,A question associated with the MSQOL-54 questionnaire.,,Intellectual Product,C3828894,,
+C202151,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification Question,MTWSR1TC,16,True,,A question associated with the Minnesota Tobacco Withdrawal Scale-Revised clinical classification.,,Intellectual Product,,CL1921194,
+C190945,Modified Van Assche Index Clinical Classification Question,MVAI1TC,6,True,,A question associated with the Modified Van Assche Index clinical classification.,,Intellectual Product,,CL1799548,
+C190944,Montreal Classification for Crohn's Disease Clinical Classification Question,MCHR01TC,3,True,,A question associated with the Montreal Classification for Crohn's Disease clinical classification.,,Intellectual Product,,CL1799547,
+C129101,NCCN-FACT FBLSI-18 Version 2 Questionnaire Question,FAC028TC,18,True,,A question associated with the NCCN-FACT FBLSI-18 Version 2 questionnaire.,,Intellectual Product,,CL512184,
+C150803,NCCN-FACT FBRSI-24 Version 2 Questionnaire Question,FAC030TC,24,True,,A question associated with the NCCN-FACT FBRSI-24 Version 2 questionnaire.,,Intellectual Product,,CL552662,
+C150804,NCCN-FACT FHNSI-22 Version 2 Questionnaire Question,FAC036TC,22,True,,A question associated with the NCCN-FACT FHNSI-22 Version 2 questionnaire.,,Intellectual Product,,CL552663,
+C129100,NCCN-FACT FKSI-19 Version 2 Questionnaire Question,FAC042TC,19,True,,A question associated with the NCCN-FACT FKSI-19 Version 2 questionnaire.,,Intellectual Product,,CL512204,
+C129104,NCCN-FACT FOSI-18 Version 2 Questionnaire Question,FAC050TC,18,True,,A question associated with the NCCN-FACT FOSI-18 Version 2 questionnaire.,,Intellectual Product,,CL512223,
+C127364,NCCN-FACT-FPSI 17 Version 2 Questionnaire Question,FAC052TC,17,True,,A question associated with the NCCN-FACT-FPSI 17 Version 2 questionnaire.,,Intellectual Product,,CL509499,
+C171356,NEWS2 Clinical Classification Question,NEWS1TC,12,True,,A question associated with the NEWS2 clinical classification.,,Intellectual Product,,CL1405480,
+C225078,NFBSI-16 Version 2 Questionnaire Question,FAC032TC,16,True,,A question associated with the Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 (NFBSI-16 V2) questionnaire.,,Intellectual Product,,,
+C119089,NHLBI CAD Grade Clinical Classification Question,CADG01TC,1,True,,A question associated with the NHLBI CAD Grade clinical classification.,,Intellectual Product,C3898203,,
+C115411,NHPT Functional Test Question,NHPT01TC,2,True,,A question associated with the NHPT functional test.,,Intellectual Product,C3898194,,
+C100120,NPI Questionnaire Question,NPI1TC,153,True,,A question associated with the NPI questionnaire.,,Intellectual Product,C3639110,,
+C103497,NPS Questionnaire Question,NPS01TC,15,True,,A question associated with the NPS questionnaire.,,Intellectual Product,C3642468,,
+C120998,NSA-16 Clinical Classification Question,NSA01TC,19,True,,A question associated with the NSA-16 clinical classification.,,Intellectual Product,C4054427,,
+C132526,NSAA Clinical Classification Question,NSAA1TC,20,True,,A question associated with the NSAA clinical classification.,,Intellectual Product,,CL520112,
+C154462,NSCLC-SAQ Version 1.0 Questionnaire Question,NSCLC1TC,13,True,,A question associated with the NSCLC-SAQ Version 1.0 questionnaire.,,Intellectual Product,,CL555390,
+C193281,National Early Warning Score 2 Clinical Classification Question,,2,False,,A question associated with the National Early Warning Score 2 clinical classification.,,Intellectual Product,,CL1913236,
+C208402,National Youth Tobacco Survey 2022 Version Questionnaire Question,NY1TC,671,True,,A question associated with the National Youth Tobacco Survey 2022 Version questionnaire.,,Intellectual Product,,CL1935183,
+C103498,OAB-q Questionnaire Question,OABQ01TC,33,True,,A question associated with the OAB-q questionnaire.,,Intellectual Product,C3641312,,
+C103499,OAB-q Short Form Questionnaire Question,OABQ02TC,19,True,,A question associated with the OAB-q Short Form questionnaire.,,Intellectual Product,C3641313,,
+C103500,ODI v2.1a Questionnaire Question,ODI01TC,11,True,,A question associated with the ODI v2.1a questionnaire.,,Intellectual Product,C3641314,,
+C199505,Observer Global Impression Generic Modification Version Questionnaire Question,OGI01TC,3,True,,A question associated with the Observer Global Impression Generic Modification Version questionnaire.,,Intellectual Product,,CL1906868,
+C124698,PANSS Clinical Classification Question,PANSS1TC,30,True,,A question associated with the PANSS clinical classification.,,Intellectual Product,C4086712,,
+C163403,PARENT-DDS Questionnaire Question,DDS02TC,35,True,,A question associated with the PARENT-DDS questionnaire.,,Intellectual Product,,CL976667,
+C163404,PARTNER-DDS Questionnaire Question,DDS03TC,36,True,,A question associated with the PARTNER-DDS questionnaire.,,Intellectual Product,,CL976666,
+C115412,PASAT Functional Test Question,PASAT1TC,7,True,,A question associated with the PASAT functional test.,,Intellectual Product,C3898053,,
+C135701,PASI Clinical Classification Question,,29,False,,A question associated with the PASI clinical classification.,,Intellectual Product,,CL523020,
+C179958,PASI Feldman Version Clinical Classification Question,PASI02TC,29,True,,A question associated with the PASI Feldman Version clinical classification.,,Intellectual Product,,CL1662620,
+C135708,PCL-5 Questionnaire Question,PCL01TC,22,True,,A question associated with the PCL-5 questionnaire.,,Intellectual Product,,CL523027,
+C112462,PDDS Questionnaire Question,PDDS01TC,1,True,,A question associated with the PDDS questionnaire.,,Intellectual Product,C3828629,,
+C100121,PDQUALIF Questionnaire Question,,33,False,,A question associated with the PDQUALIF questionnaire.,,Intellectual Product,C3639111,,
+C135706,PGI Generic Modification Version Questionnaire Question,PGI01TC,4,True,,A question associated with the PGI Generic Modification Version questionnaire.,,Intellectual Product,,CL523025,
+C125754,PHQ Screener Version Questionnaire Question,PHQ03TC,59,True,,A question associated with the PHQ Screener Version questionnaire.,,Intellectual Product,,CL504409,
+C103502,PHQ-15 Questionnaire Question,PHQ02TC,16,True,,A question associated with the PHQ-15 questionnaire.,,Intellectual Product,C3641316,,
+C157728,PHQ-2 Questionnaire Question,PHQ04TC,2,True,,A question associated with the PHQ-2 questionnaire.,,Intellectual Product,,CL937327,
+C103501,PHQ-9 Questionnaire Question,PHQ01TC,11,True,,A question associated with the PHQ-9 questionnaire.,,Intellectual Product,C3641315,,
+C105143,PI Questionnaire Question,PI01TC,6,True,,A question associated with the PI version 1 questionnaire.,,Intellectual Product,C3641939,,
+C135710,PODCI Adolescent Parent-Reported Version Questionnaire Question,PODCI2TC,92,True,,A question associated with the PODCI Adolescent Parent-Reported Version questionnaire.,,Intellectual Product,,CL523029,
+C135711,PODCI Adolescent Self-Reported Version Questionnaire Question,PODCI3TC,89,True,,A question associated with the PODCI Adolescent Self-Reported Version questionnaire.,,Intellectual Product,,CL523030,
+C135709,PODCI Pediatric Parent-Reported Version Questionnaire Question,PODCI1TC,92,True,,A question associated with the PODCI Pediatric Parent-Reported Version questionnaire.,,Intellectual Product,,CL523028,
+C105144,PR Questionnaire Question,PR01TC,11,True,,A question associated with the PR version 1 questionnaire.,,Intellectual Product,C3641940,,
+C179955,PRO-CTCAE V1.0 Questionnaire Question,PT01TC,145,True,,A question associated with the PRO-CTCAE V1.0 Version Date 4/26/2020 questionnaire.,,Intellectual Product,,CL1662619,
+C202150,PROMIS Item Bank Version 1.0 Fatigue Short Form 7a Questionnaire Question,PA136TC,7,True,,A question associated with the PROMIS Item Bank Version 1.0 Fatigue Short Form 7a questionnaire.,,Intellectual Product,,CL1921197,
+C202149,PROMIS Item Bank Version 2.0 Cognitive Function Short Form 6a Questionnaire Question,PA016TC,6,True,,A question associated with the PROMIS Item Bank Version 2.0 Cognitive Function Short Form 6a questionnaire.,,Intellectual Product,,CL1921196,
+C208400,PROMIS Item Bank v1.0 - Sleep Disturbance - Short Form 4a Questionnaire Question,PA215TC,4,True,,A question associated with the PROMIS Item Bank v1.0 - Sleep Disturbance - Short Form 4a questionnaire.,,Intellectual Product,,CL1935181,
+C208399,PROMIS Item Bank v2.0 - Cognitive Function - Abilities Subset - Short Form 6a Questionnaire Question,PA020TC,6,True,,A question associated with the PROMIS Item Bank v2.0 - Cognitive Function - Abilities Subset - Short Form 6a questionnaire.,,Intellectual Product,,CL1935180,
+C208401,PROMIS-29 Profile Version 2.1 Questionnaire Question,PA261TC,29,True,,A question associated with the PROMIS-29 Profile Version 2.1 questionnaire.,,Intellectual Product,,CL1935182,
+C127366,PROSQOLI Questionnaire Question,PROS01TC,10,True,,A question associated with the PROSQOLI questionnaire.,,Intellectual Product,,CL508941,
+C138264,PUL 1.2 Functional Test Question,PUL01TC,32,True,,A question associated with the PUL 1.2 functional test.,,Intellectual Product,,CL525763,
+C138265,PUL 2.0 Functional Test Question,PUL02TC,32,True,,A question associated with the PUL 2.0 functional test.,,Intellectual Product,,CL525762,
+C150796,Paced Tapping Functional Test Question,PTAP1TC,46,True,,A question associated with the Paced Tapping functional test.,,Intellectual Product,,CL552655,
+C147555,Peds-FACIT-F Questionnaire Question,FAC099TC,13,True,,A question associated with the Peds-FACIT-F questionnaire.,,Intellectual Product,,CL545405,
+C138269,PedsQL Neuromuscular Module Acute Version 3.0 Child Report Questionnaire Question,PQL14TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Child Report questionnaire.,,Intellectual Product,,CL525766,
+C138271,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Child Questionnaire Question,PQL15TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Child questionnaire.,,Intellectual Product,,CL525764,
+C138272,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Teen Questionnaire Question,PQL13TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Teen questionnaire.,,Intellectual Product,,CL525771,
+C138273,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Adults Questionnaire Question,PQL11TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Adults questionnaire.,,Intellectual Product,,CL525770,
+C138274,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Child Questionnaire Question,PQL17TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Child questionnaire.,,Intellectual Product,,CL525769,
+C138270,PedsQL Neuromuscular Module Acute Version 3.0 Parent of Toddler Questionnaire Question,PQL18TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent of Toddler questionnaire.,,Intellectual Product,,CL525765,
+C138275,PedsQL Neuromuscular Module Acute Version 3.0 Teen Report Questionnaire Question,PQL12TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Teen Report questionnaire.,,Intellectual Product,,CL525768,
+C138276,PedsQL Neuromuscular Module Acute Version 3.0 Young Adult Report Questionnaire Question,PQL10TC,25,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Young Adult Report questionnaire.,,Intellectual Product,,CL525743,
+C138277,PedsQL Neuromuscular Module Acute Version 3.0 Young Child Report Questionnaire Question,PQL16TC,17,True,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Young Child Report questionnaire.,,Intellectual Product,,CL525742,
+C138278,PedsQL Neuromuscular Module Version 3.0 Child Report Questionnaire Question,PQL05TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Child Report questionnaire.,,Intellectual Product,,CL525741,
+C138280,PedsQL Neuromuscular Module Version 3.0 Parent Report for Child Questionnaire Question,PQL06TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Child questionnaire.,,Intellectual Product,,CL525747,
+C138281,PedsQL Neuromuscular Module Version 3.0 Parent Report for Teen Questionnaire Question,PQL04TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Teen questionnaire.,,Intellectual Product,,CL525746,
+C138282,PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Adults Report Questionnaire Question,PQL02TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Adults Report questionnaire.,,Intellectual Product,,CL525745,
+C138283,PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Child Questionnaire Question,PQL08TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Child questionnaire.,,Intellectual Product,,CL525744,
+C138279,PedsQL Neuromuscular Module Version 3.0 Parent of Toddler Questionnaire Question,PQL09TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent of Toddler questionnaire.,,Intellectual Product,,CL525740,
+C138284,PedsQL Neuromuscular Module Version 3.0 Teen Report Questionnaire Question,PQL03TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Teen Report questionnaire.,,Intellectual Product,,CL525751,
+C138285,PedsQL Neuromuscular Module Version 3.0 Young Adult Report Questionnaire Question,PQL01TC,25,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Young Adult Report questionnaire.,,Intellectual Product,,CL525750,
+C138286,PedsQL Neuromuscular Module Version 3.0 Young Child Report Questionnaire Question,PQL07TC,17,True,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Young Child Report questionnaire.,,Intellectual Product,,CL525749,
+C204238,Penn State Electronic Cigarette Dependence Index Questionnaire Question,PSECD1TC,11,True,,A question associated with the Penn State Electronic Cigarette Dependence Index questionnaire.,,Intellectual Product,,CL1926770,
+C204237,Perianal Crohn's Disease Activity Index Questionnaire Question,PDAI01TC,6,True,,A question associated with the Perianal Crohn's Disease Activity Index questionnaire.,,Intellectual Product,,CL1926771,
+C190949,Psoriasis Area and Severity Index Bozek Version Clinical Classification Question,PASI05TC,29,True,,A question associated with the Psoriasis Area and Severity Index Bozek Version clinical classification.,,Intellectual Product,,CL1799544,
+C190948,Psoriasis Area and Severity Index European Medical Agency Version Clinical Classification Question,PASI04TC,29,True,,A question associated with the Psoriasis Area and Severity Index European Medical Agency Version clinical classification.,,Intellectual Product,,CL1799543,
+C190947,Psoriasis Area and Severity Index Fredriksson Version Clinical Classification Question,PASI03TC,29,True,,A question associated with the Psoriasis Area and Severity Index Fredriksson Version clinical classification.,,Intellectual Product,,CL1799542,
+C130295,Q-LES-Q Questionnaire Question,QLES1TC,101,True,,A question associated with the Q-LES-Q questionnaire.,,Intellectual Product,,CL513291,
+C130296,Q-LES-Q-SF Questionnaire Question,QLES2TC,16,True,,A question associated with the Q-LES-Q-SF questionnaire.,,Intellectual Product,,CL513308,
+C130287,QIDS-C Clinical Classification Question,QIDSC1TC,20,True,,A question associated with the QIDS-C clinical classification.,,Intellectual Product,,CL513329,
+C130294,QIDS-SR Questionnaire Question,QIDSR1TC,20,True,,A question associated with the QIDS-SR questionnaire.,,Intellectual Product,,CL513350,
+C135712,RAND Social Support Survey Questionnaire Question,RSSS01TC,19,True,,A question associated with the RAND Social Support Survey questionnaire.,,Intellectual Product,,CL523031,
+C113871,RAND-36 Questionnaire Question,R3601TC,36,True,,A question associated with the RAND-36 questionnaire.,,Intellectual Product,C3828378,,
+C171414,RASS Clinical Classification Question,RASS01TC,1,True,,A question associated with the RASS clinical classification.,,Intellectual Product,,CL1405509,
+C100123,RDQ Questionnaire Question,RDQ01TC,25,True,,A question associated with the RDQ questionnaire.,,Intellectual Product,C3639112,,
+C166194,RFWT Version 1 Functional Test Question,ROCK01TC,1,True,,A question associated with the RFWT Version 1 functional test.,,Intellectual Product,,CL971454,
+C119087,RPQ Questionnaire Question,RPQ01TC,20,True,,A question associated with the RPQ questionnaire.,,Intellectual Product,C3897783,,
+C124694,Reynolds CVD 10-Year Risk Score Clinical Classification Question,RCVD01TC,1,True,,A question associated with the Reynolds CVD 10-Year Risk Score clinical classification.,,Intellectual Product,C4086831,,
+C141677,Rising From Floor Functional Test Question,RISEF1TC,4,True,,A question associated with the Rising From Floor functional test.,,Intellectual Product,,CL539765,
+C190946,Rutgeerts Score Clinical Classification Question,RUTG01TC,1,True,,A question associated with the Rutgeerts Score clinical classification.,,Intellectual Product,,CL1799541,
+C171415,SAS Clinical Classification Question,SAS01TC,1,True,,A question associated with the SAS clinical classification.,,Intellectual Product,,CL1405508,
+C115413,SDMT Functional Test Question,SDMT01TC,1,True,,A question associated with the SDMT functional test.,,Intellectual Product,C3897114,,
+C111358,SDS Questionnaire Question,SDS01TC,6,True,,A question associated with the SDS questionnaire.,,Intellectual Product,C3828207,,
+C176054,SES-CD Version 1 Clinical Classification Question,SES01TC,31,True,,A question associated with the SES-CD Version 1 clinical classification.,,Intellectual Product,,CL1413458,
+C177699,SF10 v1.0 Children Acute Questionnaire Question,SF102TC,10,True,,A question associated with the SF10 v1.0 Children Acute questionnaire.,,Intellectual Product,,CL1643363,
+C177700,SF10 v1.0 Children Standard Questionnaire Question,SF101TC,10,True,,A question associated with the SF10 v1.0 Children Standard questionnaire.,,Intellectual Product,,CL1643362,
+C177701,SF12 v1.0 Acute Questionnaire Question,SF122TC,15,True,,A question associated with the SF12 v1.0 Acute questionnaire.,,Intellectual Product,,CL1643365,
+C177702,SF12 v1.0 Standard Questionnaire Question,SF121TC,15,True,,A question associated with the SF12 v1.0 Standard questionnaire.,,Intellectual Product,,CL1643364,
+C177703,SF12 v2.0 Acute Questionnaire Question,SF124TC,31,True,,A question associated with the SF12 v2.0 Acute questionnaire.,,Intellectual Product,,CL1643367,
+C177704,SF12 v2.0 Standard Questionnaire Question,SF123TC,31,True,,A question associated with the SF12 v2.0 Standard questionnaire.,,Intellectual Product,,CL1643366,
+C101878,SF36 v1 0 Acute Questionnaire Question,SF362TC,57,True,,A question associated with the SF36 v1.0 Acute questionnaire.,,Intellectual Product,C3640283,,
+C100171,SF36 v1.0 Standard Questionnaire Question,SF361TC,57,True,,A question associated with the SF36 v1.0 questionnaire.,,Intellectual Product,C3639158,,
+C101880,SF36 v2 0 Acute Questionnaire Question,SF364TC,62,True,,A question associated with the SF36 v2.0 Acute questionnaire.,,Intellectual Product,C3640285,,
+C101879,SF36 v2 0 Standard Questionnaire Question,SF363TC,62,True,,A question associated with the SF36 v2.0 Standard questionnaire.,,Intellectual Product,C3640284,,
+C185743,SF6D Version 2.0 Acute Questionnaire Question,SF6D2TC,10,True,,A question associated with the SF6D Version 2.0 Acute questionnaire.,,Intellectual Product,,CL1778337,
+C185744,SF6D Version 2.0 Standard Questionnaire Question,SF6D1TC,10,True,,A question associated with the SF6D Version 2.0 Standard questionnaire.,,Intellectual Product,,CL1778338,
+C177697,SF8 v1.0 Acute Questionnaire Question,SF82TC,18,True,,A question associated with the SF8 v1.0 Acute questionnaire.,,Intellectual Product,,CL1643361,
+C177698,SF8 v1.0 Standard Questionnaire Question,SF81TC,18,True,,A question associated with the SF8 v1.0 Standard questionnaire.,,Intellectual Product,,CL1643360,
+C106682,SGRQ-C Questionnaire Question,SGRQC1TC,41,True,,A question associated with the SGRQ-C questionnaire.,,Intellectual Product,C3828155,,
+C150805,SIQ Questionnaire Question,SIQ01TC,43,True,,A question associated with the SIQ questionnaire.,,Intellectual Product,,CL552664,
+C150806,SIQ-JR Questionnaire Question,SIQ02TC,26,True,,A question associated with the SIQ-JR questionnaire.,,Intellectual Product,,CL552665,
+C103503,SIQR Questionnaire Question,SIQR01TC,21,True,,A question associated with the SIQR questionnaire.,,Intellectual Product,C3641317,,
+C154463,SMDDS Version 1.0 Questionnaire Question,SMDDS1TC,26,True,,A question associated with the SMDDS Version 1.0 questionnaire.,,Intellectual Product,,CL555391,
+C100125,SOAPP-R Questionnaire Question,SOAPR1TC,26,True,,A question associated with the SOAPP-R questionnaire.,,Intellectual Product,C3639114,,
+C103504,SOWS Short Questionnaire Question,,10,False,,A question associated with the SOWS Short questionnaire.,,Intellectual Product,C3641318,,
+C101881,SOWS Subjective Questionnaire Question,SOWSA1TC,16,True,,A question associated with the SOWS questionnaire.,,Intellectual Product,C3640286,,
+C170532,SPPB Version 1.2 Functional Test Question,SPPB1TC,35,True,,A question associated with the SPPB Version 1.2 functional test.,,Intellectual Product,,CL1382958,
+C115419,SWLS Questionnaire Question,SWLS01TC,5,True,,A question associated with the SWLS questionnaire.,,Intellectual Product,C3897662,,
+C204239,Sepsis-related Organ Failure Assessment 27th March 2024 Version Clinical Classification Question,SOFA01TC,7,True,,A question associated with the Sepsis-related Organ Failure Assessment 27th March 2024 Version clinical classification.,,Intellectual Product,,CL1926769,
+C100124,Short-Form MPQ-2 Questionnaire Question,SFMP2TC,22,True,,A question associated with the Short-Form MPQ-2 questionnaire.,,Intellectual Product,C3639113,,
+C112463,St George's Respiratory Questionnaire Past 3 Months Version Questionnaire Question,SGRQ01TC,51,True,,A question associated with the SGRQ Past 3 Months Version questionnaire.,,Intellectual Product,C3827934,,
+C112464,St George's Respiratory Questionnaire Past 4 Weeks Version Questionnaire Question,SGRQ02TC,51,True,,A question associated with the SGRQ Past 4 Weeks Version questionnaire.,,Intellectual Product,C3827933,,
+C187460,Stanford Sleepiness Scale Questionnaire Question,SSS01TC,1,True,,A question associated with the Stanford Sleepiness Scale questionnaire.,,Intellectual Product,,CL1792137,
+C161630,T1-DDS Questionnaire Question,DDS01TC,36,True,,A question associated with the T1-DDS questionnaire.,,Intellectual Product,,CL970326,
+C115414,T25FW Functional Test Question,T25FW1TC,4,True,,A question associated with the T25FW functional test.,,Intellectual Product,C3897395,,
+C106675,TDI Clinical Classification Question,TDI01TC,4,True,,A question associated with the TDI questionnaire.,,Intellectual Product,C3827850,,
+C119088,TIMI Thrombus Grade Clinical Classification Question,TIMG01TC,1,True,,A question associated with the TIMI Thrombus Grade clinical classification.,,Intellectual Product,C3897386,,
+C124702,TMT Functional Test Question,TMT01TC,2,True,,A question associated with the TMT functional test.,,Intellectual Product,C4087090,,
+C147556,TSCC Questionnaire Question,TSCC01TC,54,True,,A question associated with the TSCC questionnaire.,,Intellectual Product,,CL545406,
+C147557,TSCYC Questionnaire Question,TSCYC1TC,90,True,,A question associated with the TSCYC questionnaire.,,Intellectual Product,,CL545407,
+C132530,TSQM Version 1.4 Questionnaire Question,TSQM01TC,14,True,,A question associated with the TSQM Version 1.4 questionnaire.,,Intellectual Product,,CL521014,
+C115415,TUG Functional Test Question,TUG01TC,1,True,,A question associated with the TUG functional test.,,Intellectual Product,C3897374,,
+C124689,Tanner Scale-Boy Clinical Classification Question,TANN02TC,2,True,,A question associated with the Tanner Scale-Boy clinical classification.,,Intellectual Product,C4086892,,
+C124690,Tanner Scale-Girl Clinical Classification Question,TANN01TC,2,True,,A question associated with the Tanner Scale-Girl clinical classification.,,Intellectual Product,C4087091,,
+C190950,The Patient Health Questionnaire - 8 Item Questionnaire Question,PHQ05TC,9,True,,A question associated with the the Patient Health Questionnaire - 8 Item.,,Intellectual Product,,CL1799553,
+C154459,UHDRS 1999 Version Clinical Classification Question,UHDR1TC,112,True,,A question associated with the UHDRS 1999 Version clinical classification.,,Intellectual Product,,CL555388,
+C100126,UPDRS Clinical Classification Question,UPD1TC,76,True,,A question associated with the UPDRS clinical classification.,,Intellectual Product,C3639115,,
+C103505,UPS Questionnaire Question,UPS01TC,1,True,,A question associated with the UPS questionnaire.,,Intellectual Product,C3642469,,
+C141674,VALG Clinical Classification Question,VALG01TC,1,True,,A question associated with the VALG clinical classification.,,Intellectual Product,,CL539768,
+C112465,VFQ25-Interviewer Administered Format Questionnaire Question,VFQ1TC,42,True,,A question associated with the VFQ25-Interviewer Administered Format questionnaire.,,Intellectual Product,C3827609,,
+C112466,VFQ25-Self Administered Format Questionnaire Question,VFQ2TC,42,True,,A question associated with the VFQ25-Self Administered Format questionnaire.,,Intellectual Product,C3827567,,
+C130283,VLERS Clinical Classification Question,VLERS1TC,1,True,,A question associated with the VLERS clinical classification.,,Intellectual Product,,CL514184,
+C190951,Voice Handicap Index Questionnaire Question,VHI01TC,34,True,,A question associated with the the Voice Handicap Index questionnaire.,,Intellectual Product,,CL1799554,
+C124699,WHO Clinical Staging of HIV/AIDS for Adults and Adolescents Clinical Classification Question,WHIVS1TC,1,True,,A question associated with the WHO Clinical Staging of HIV/AIDS for Adults and Adolescents clinical classification.,,Intellectual Product,C4086957,,
+C124700,WHO Clinical Staging of HIV/AIDS for Children Clinical Classification Question,WHIVS2TC,1,True,,A question associated with the WHO Clinical Staging of HIV/AIDS for Children clinical classification.,,Intellectual Product,C4086958,,
+C130303,WHODAS 2.0 12 24-item Version Interviewer-administered Questionnaire Question,WD4TC,49,True,,A question associated with the WHODAS 2.0 12+24-item Version Interviewer-administered questionnaire.,,Intellectual Product,,CL514186,
+C130300,WHODAS 2.0 12-item Version Interviewer-administered Questionnaire Question,WD1TC,21,True,,A question associated with the WHODAS 2.0 12-item Version Interviewer-administered questionnaire.,,Intellectual Product,,CL514187,
+C130301,WHODAS 2.0 12-item Version Proxy-administered Questionnaire Question,WD2TC,16,True,,A question associated with the WHODAS 2.0 12-item Version Proxy-administered questionnaire.,,Intellectual Product,,CL514188,
+C130302,WHODAS 2.0 12-item Version Self-administered Questionnaire Question,WD3TC,15,True,,A question associated with the WHODAS 2.0 12-item Version Self-administered questionnaire.,,Intellectual Product,,CL514189,
+C130297,WHODAS 2.0 36-item Version Interviewer-administered Questionnaire Question,WD5TC,49,True,,A question associated with the WHODAS 2.0 36-item Version Interviewer-administered questionnaire.,,Intellectual Product,,CL514190,
+C130298,WHODAS 2.0 36-item Version Proxy-administered Questionnaire Question,WD6TC,40,True,,A question associated with the WHODAS 2.0 36-item Version Proxy-administered questionnaire.,,Intellectual Product,,CL514191,
+C130299,WHODAS 2.0 36-item Version Self-administered Questionnaire Question,WD7TC,39,True,,A question associated with the WHODAS 2.0 36-item Version Self-administered questionnaire.,,Intellectual Product,,CL514192,
+C166192,WPAI-GH Version 2 Questionnaire Question,WPAI02TC,10,True,,A question associated with the WPAI-GH Version 2 questionnaire.,,Intellectual Product,,CL971452,
+C100172,WPAI:SHP v2.0 Questionnaire Question,WPAI01TC,10,True,,A question associated with version 2.0 of the WPAI:SHP questionnaire.,,Intellectual Product,C3639159,,
+C124695,West Haven Criteria Clinical Classification Question,,0,False,,A question associated with the West Haven Criteria clinical classification.,,Intellectual Product,C4086962,,
+C101882,YMRS Questionnaire Question,,11,False,,A question associated with the YMRS questionnaire.,,Intellectual Product,C3640287,,
