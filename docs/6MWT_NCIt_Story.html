@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6MWT — The NCIt Story</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f7f5; color: #333; padding: 32px; }
+
+  h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e0ddd8; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Tree */
+  .tree { position: relative; }
+  .layer-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 6px; margin-top: 20px; }
+  .layer-label:first-child { margin-top: 0; }
+
+  .node { position: relative; margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 4px solid; cursor: default; transition: box-shadow 0.15s; }
+  .node:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .node .code { font-weight: 600; font-size: 0.85rem; }
+  .node .code a { color: inherit; text-decoration: none; border-bottom: 1px dotted #999; }
+  .node .code a:hover { color: #1a5276; border-bottom-color: #1a5276; }
+  .node .name { font-size: 0.82rem; margin-top: 2px; }
+  .node .meta { font-size: 0.72rem; color: #777; margin-top: 3px; }
+  .node .tag { display: inline-block; font-size: 0.68rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+
+  /* Depth indentation */
+  .depth-0 { margin-left: 0; }
+  .depth-1 { margin-left: 36px; }
+  .depth-2 { margin-left: 72px; }
+  .depth-3 { margin-left: 108px; }
+
+  /* NCIt Classification (grey) */
+  .ncit-class { background: #f0efed; border-color: #7F7F7F; }
+  .ncit-class .tag { background: #7F7F7F; color: #fff; }
+  .sw-ncit-class { background: #7F7F7F; }
+
+  /* NCIt Instrument (dark chocolate) */
+  .ncit-instr { background: #faf5f0; border-color: #5B3A29; }
+  .ncit-instr .tag { background: #5B3A29; color: #fff; }
+  .sw-ncit-instr { background: #5B3A29; }
+
+  /* NCIt Question Container (copper) */
+  .ncit-container { background: #fdf6ee; border-color: #CC7A3E; }
+  .ncit-container .tag { background: #CC7A3E; color: #fff; }
+  .sw-ncit-container { background: #CC7A3E; }
+
+  /* SDTM CT TESTCD (green) */
+  .sdtm-ct { background: #f3f7f0; border-color: #548235; }
+  .sdtm-ct .tag { background: #548235; color: #fff; }
+  .sw-sdtm-ct { background: #548235; }
+
+  /* Connector lines */
+  .connector { position: relative; margin-left: 36px; }
+  .connector::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+
+  /* Gap indicator */
+  .gap-band { margin: 16px 0; padding: 10px 16px; background: repeating-linear-gradient(135deg, #fff3e0, #fff3e0 8px, #ffe0b2 8px, #ffe0b2 16px); border-radius: 6px; text-align: center; font-size: 0.78rem; color: #bf6c00; font-weight: 500; border: 1px dashed #e6a030; }
+
+  /* Relationship badge */
+  .rel-badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-top: 4px; font-weight: 500; }
+  .rel-association { background: #f8d7da; color: #842029; border: 1px solid #f1aeb5; }
+  .rel-child { background: #d1e7dd; color: #0f5132; border: 1px solid #a3cfbb; }
+  .rel-arrow { font-size: 0.72rem; color: #999; margin: 0 4px; }
+
+  /* Attribute grid inside nodes */
+  .attr-grid { display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; font-size: 0.78rem; margin-top: 6px; }
+  .attr-grid .attr-label { color: #999; font-weight: 500; white-space: nowrap; }
+  .attr-grid .attr-val { color: #444; }
+  .attr-grid .attr-val strong { font-weight: 600; color: #333; }
+
+  /* Narrative part headers */
+  .part-header { margin: 28px 0 12px 0; padding: 10px 16px; border-radius: 6px; background: #fff; border: 1px solid #ddd; }
+  .part-header .part-num { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+  .part-header .part-title { font-size: 1.0rem; font-weight: 600; color: #333; margin-top: 2px; }
+  .part-header .part-desc { font-size: 0.8rem; color: #666; margin-top: 4px; line-height: 1.5; }
+  .part-header:first-of-type { margin-top: 12px; }
+
+  /* Statistics table */
+  .stats-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin: 12px 0; }
+  .stats-table th { text-align: left; padding: 5px 10px; background: #f5f3f0; color: #666; font-weight: 600; border-bottom: 2px solid #ddd; }
+  .stats-table td { padding: 5px 10px; border-bottom: 1px solid #eee; }
+  .stats-table .num { font-weight: 600; text-align: right; font-family: 'SF Mono', 'Consolas', monospace; }
+  .stats-table .pct { color: #999; font-size: 0.72rem; }
+  .stats-table .highlight { background: #fff3e0; }
+  .stats-table .gap-row { background: #fce4ec; }
+
+  /* Footer */
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; }
+
+  @media print {
+    body { background: #fff; padding: 16px; }
+    .node:hover { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>6-Minute Walk Test (6MWT) — The NCIt Story</h1>
+<p class="subtitle">What SDTM CT + NCIt provides when it works — and why it only works for specific cases</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch sw-ncit-class"></div> NCIt Classification</div>
+  <div class="legend-item"><div class="legend-swatch sw-ncit-instr"></div> NCIt Instrument (C20993)</div>
+  <div class="legend-item"><div class="legend-swatch sw-ncit-container"></div> NCIt Question Container / Subscale (C211913)</div>
+  <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT TESTCD</div>
+</div>
+
+<div class="tree">
+
+  <!-- PART 1 -->
+  <div class="part-header" style="margin-top: 12px;">
+    <div class="part-num">Part 1</div>
+    <div class="part-title">What SDTM CT + NCIt provides — when NCIt has the content</div>
+    <div class="part-desc">For 6MWT, NCIt has done the work. The instrument (C115789), the question container (C115409), and each individual question (C115800–C115805) all have NCIt C-codes with definitions, synonyms, and hierarchy placement. Combined with the SDTM CT codelist SIXMW1TC, this gives rich identity for every TESTCD — from the classification trees at the top down through the green TESTCD layer below. This is what a "smart view" of CT + NCIt looks like when it works.</div>
+  </div>
+
+  <!-- NCIt Classification layer -->
+  <div class="layer-label">NCIt Classification Tree (C20993)</div>
+
+  <div class="node ncit-class depth-0">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C20993" target="evs">C20993</a> <span class="tag">NCIt</span></div>
+    <div class="name">Clinical or Research Assessment Instrument</div>
+    <div class="meta">Root — 2,208 concepts</div>
+  </div>
+
+  <div class="connector">
+    <div class="node ncit-class depth-0">
+      <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C222260" target="evs">C222260</a> <span class="tag">NCIt</span></div>
+      <div class="name">Clinical or Research Functional Assessment Tool</div>
+      <div class="meta">Parent category — depth 1</div>
+    </div>
+  </div>
+
+  <div class="connector" style="margin-left: 72px;">
+    <div class="node ncit-instr depth-0">
+      <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C115789" target="evs">C115789</a> <span class="tag">Instrument</span></div>
+      <div class="name">6 Minute Walk Functional Test 2008 Version</div>
+      <div class="meta">Synonyms: 6MWT | SIX MINUTE WALK | SIXMW1 &nbsp;&bull;&nbsp; UMLS CUI: C3900196</div>
+      <div><span class="rel-badge rel-association">Associations</span> <span class="rel-arrow">&#8594;</span> <span style="font-size:0.72rem; color:#777;">C115800–C115805 (weak link — "is related to", not "contains")</span></div>
+    </div>
+  </div>
+
+  <div class="connector" style="margin-left: 72px;">
+    <div class="node ncit-instr depth-0" style="opacity: 0.55;">
+      <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C225098" target="evs">C225098</a> <span class="tag">Instrument</span></div>
+      <div class="name">6 Minute Walk Functional Test 2002 Version</div>
+      <div class="meta">Sibling — SIXMW2 &nbsp;&bull;&nbsp; no SDTM codelist mapped</div>
+    </div>
+  </div>
+
+  <!-- Gap: NCIt has no composition -->
+  <div class="gap-band">
+    <strong>NCIt structural gap:</strong> no composition link from Instrument to Question Container.<br>
+    The two trees (C20993 and C211913) are disjoint. Both relate to TESTCDs C115800–C115805, but differently:<br>
+    <span style="font-size:0.74rem;">Instrument C115789 &#8594; <span class="rel-badge rel-association" style="font-size:0.68rem;">Associations</span> (weak, non-hierarchical) &nbsp;&nbsp;|&nbsp;&nbsp; Container C115409 &#8594; <span class="rel-badge rel-child" style="font-size:0.68rem;">Child Concepts</span> (parent-child, compositional)</span>
+  </div>
+
+  <!-- NCIt Question Container layer -->
+  <div class="layer-label">NCIt Question Container / Subscale Tree (C211913)</div>
+
+  <div class="node ncit-class depth-0">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C211913" target="evs">C211913</a> <span class="tag">NCIt</span></div>
+    <div class="name">Clinical or Research Assessment Question</div>
+    <div class="meta">Root — 365 concepts (disjoint from C20993)</div>
+  </div>
+
+  <div class="connector">
+    <div class="node ncit-class depth-0">
+      <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C213028" target="evs">C213028</a></div>
+      <div class="name">CDISC QRS Instruments Questions</div>
+      <div class="meta">Intermediate grouping — depth 1</div>
+    </div>
+  </div>
+
+  <div class="connector" style="margin-left: 72px;">
+    <div class="node ncit-container depth-0">
+      <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C115409" target="evs">C115409</a> <span class="tag">Container</span></div>
+      <div class="name">6MWT Functional Test Question <span style="font-size:0.72rem; color:#999; font-weight:normal;">(subscale)</span></div>
+      <div class="meta">Maps to codelist SIXMW1TC &nbsp;&bull;&nbsp; 6 questions &nbsp;&bull;&nbsp; UMLS CUI: C3900189</div>
+      <div><span class="rel-badge rel-child">Child Concepts</span> <span class="rel-arrow">&#8594;</span> <span style="font-size:0.72rem; color:#777;">C115800–C115805 (parent-child = "is composed of")</span></div>
+    </div>
+  </div>
+
+  <!-- SDTM CT + NCIt Identity layer -->
+  <div class="layer-label">SDTM CT + NCIt Identity — "What is measured?"</div>
+
+  <div id="testcd-list"></div>
+
+  <!-- PART 4 — Why this only works for specific cases -->
+  <div class="part-header" style="border-color: #e6a030; background: #fffaf0; margin-top: 32px;">
+    <div class="part-num" style="color: #bf6c00;">Part 2</div>
+    <div class="part-title">Why this only works when NCIt has done the work</div>
+    <div class="part-desc">6MWT is a best case. NCIt has C-codes with real definitions for the instrument, the container, and all 6 questions. But this is the exception, not the rule. The numbers below show exactly where and how the pattern breaks across the full QRS landscape.</div>
+  </div>
+
+  <div style="margin: 12px 0; padding: 14px 16px; background: #fff; border-radius: 8px; border: 1px solid #e0ddd8;">
+    <div style="font-size: 0.82rem; font-weight: 600; color: #333; margin-bottom: 10px;">QRS Codelist Coverage — 359 codelists probed</div>
+
+    <table class="stats-table">
+      <tr><th>Metric</th><th style="text-align:right;">Count</th><th style="text-align:right;">%</th><th>Implication</th></tr>
+      <tr>
+        <td>Codelists with NCIt instrument match</td>
+        <td class="num">258</td><td class="num pct">72%</td>
+        <td>Instrument identity exists — can build classification tree</td>
+      </tr>
+      <tr>
+        <td>Codelists with NCIt container match</td>
+        <td class="num">354</td><td class="num pct">99%</td>
+        <td>Container nearly always present — question grouping works</td>
+      </tr>
+      <tr class="highlight">
+        <td>Codelists with <strong>both</strong> instrument + container</td>
+        <td class="num">254</td><td class="num pct">71%</td>
+        <td>Full Part 1 pattern possible — like 6MWT</td>
+      </tr>
+      <tr class="gap-row">
+        <td>Codelists with container but <strong>no instrument</strong></td>
+        <td class="num">100</td><td class="num pct">28%</td>
+        <td><strong>Gap:</strong> questions exist but no instrument identity — no classification tree</td>
+      </tr>
+      <tr>
+        <td>Codelists with instrument but <strong>no container</strong></td>
+        <td class="num">4</td><td class="num pct">1%</td>
+        <td>Rare edge case — instrument classified but questions not grouped</td>
+      </tr>
+      <tr>
+        <td>Codelists with <strong>neither</strong></td>
+        <td class="num">1</td><td class="num pct">&lt;1%</td>
+        <td>Completely orphaned — no NCIt composition possible</td>
+      </tr>
+    </table>
+
+    <div style="font-size: 0.82rem; font-weight: 600; color: #333; margin: 16px 0 10px 0;">NCIt Tree Utilisation</div>
+
+    <table class="stats-table">
+      <tr><th>Tree</th><th style="text-align:right;">Total Concepts</th><th style="text-align:right;">Mapped to Codelist</th><th style="text-align:right;">Classification Only</th></tr>
+      <tr>
+        <td>Instrument tree (C20993)</td>
+        <td class="num">2,208</td><td class="num">1,220</td>
+        <td class="num">988 <span class="pct">(45%)</span></td>
+      </tr>
+      <tr>
+        <td>Container tree (C211913)</td>
+        <td class="num">365</td><td class="num">354</td>
+        <td class="num">11 <span class="pct">(3%)</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin: 12px 0; padding: 12px 16px; background: #fffaf0; border-radius: 6px; border-left: 4px solid #e6a030; font-size: 0.8rem; line-height: 1.6; color: #7a5700;">
+    <strong>The structural gap is not in any single standard.</strong> It is between them: NCIt classifies but does not compose. CT names TESTCDs but does not describe recording. For 28% of QRS codelists (100 of 359), the instrument layer is simply missing — questions are grouped under a container, but there is no instrument concept to anchor them in the classification tree. Nearly half of the 2,208 instrument concepts (988) exist for classification purposes only, without mapping to any SDTM codelist.<br><br>
+    A composition registry — linking instruments to containers to questions with explicit "is composed of" relationships — would close this gap for all three standards and make the Part 1 pattern the rule rather than the exception.
+  </div>
+
+</div>
+
+<div class="footer">
+  Data sources: NCI EVS SDTM CT 2026-03-27 &bull; COSMoS 2026-Q1 &bull; CoA Instrument Mapping Probe &bull; cdisc-for-ai repo<br>
+  Generated 2026-04-13 &bull; See also: <a href="6MWT_COSMoS_Story.html" style="color:#999;">The COSMoS Story</a>
+</div>
+
+<script>
+const questions = [
+  { testcd: 'SIXMW101', test: 'SIXMW1-Distance at 1 Minute',  ncit: 'C115800',
+    def: '6 Minute Walk Test (6MWT) Distance at 1 minute.',
+    syn: 'SIXMW101; SIXMW1-Distance at 1 Minute' },
+  { testcd: 'SIXMW102', test: 'SIXMW1-Distance at 2 Minutes', ncit: 'C115801',
+    def: '6 Minute Walk Test (6MWT) Distance at 2 minutes.',
+    syn: 'SIXMW102; SIXMW1-Distance at 2 Minutes' },
+  { testcd: 'SIXMW103', test: 'SIXMW1-Distance at 3 Minutes', ncit: 'C115802',
+    def: '6 Minute Walk Test (6MWT) Distance at 3 minutes.',
+    syn: 'SIXMW103; SIXMW1-Distance at 3 Minutes' },
+  { testcd: 'SIXMW104', test: 'SIXMW1-Distance at 4 Minutes', ncit: 'C115803',
+    def: '6 Minute Walk Test (6MWT) Distance at 4 minutes.',
+    syn: 'SIXMW104; SIXMW1-Distance at 4 Minutes' },
+  { testcd: 'SIXMW105', test: 'SIXMW1-Distance at 5 Minutes', ncit: 'C115804',
+    def: '6 Minute Walk Test (6MWT) Distance at 5 minutes.',
+    syn: 'SIXMW105; SIXMW1-Distance at 5 Minutes' },
+  { testcd: 'SIXMW106', test: 'SIXMW1-Distance at 6 Minutes', ncit: 'C115805',
+    def: '6 Minute Walk Test (6MWT) Distance at 6 minutes.',
+    syn: 'SIXMW106; SIXMW1-Distance at 6 Minutes' },
+];
+
+const EVS = 'https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/';
+
+const testcdContainer = document.getElementById('testcd-list');
+questions.forEach((q) => {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'connector';
+  wrapper.style.marginLeft = '72px';
+  wrapper.innerHTML = `
+    <div class="node sdtm-ct depth-0">
+      <div class="code"><a href="${EVS}${q.ncit}" target="evs">${q.ncit}</a> — ${q.testcd} <span class="tag">TESTCD</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">TESTCD</span>   <span class="attr-val"><strong>${q.testcd}</strong></span>
+        <span class="attr-label">TEST</span>     <span class="attr-val"><strong>${q.test}</strong></span>
+        <span class="attr-label">NCIt Code</span><span class="attr-val"><strong>${q.ncit}</strong></span>
+        <span class="attr-label">Definition</span><span class="attr-val">${q.def}</span>
+        <span class="attr-label">Synonyms</span> <span class="attr-val">${q.syn}</span>
+        <span class="attr-label">Codelist</span> <span class="attr-val">SIXMW1TC</span>
+      </div>
+    </div>`;
+  testcdContainer.appendChild(wrapper);
+});
+</script>
+
+</body>
+</html>

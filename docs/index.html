@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDISC for AI</title>
+<style>
+    :root {
+        --text: #1a1a1a;
+        --muted: #555;
+        --rule: #e5e5e5;
+        --link: #0b5fa5;
+        --bg: #fdfdfd;
+    }
+    html { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: inherit; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.55;
+        max-width: 42rem;
+        margin: 3rem auto;
+        padding: 0 1.25rem;
+        font-size: 17px;
+    }
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.01em;
+    }
+    h2 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin: 2.5rem 0 0.75rem;
+        padding-bottom: 0.35rem;
+        border-bottom: 1px solid var(--rule);
+    }
+    p { margin: 0.75rem 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul.files {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul.files li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--rule);
+    }
+    ul.files li:last-child { border-bottom: none; }
+    code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        background: #f3f3f3;
+        padding: 0.1em 0.35em;
+        border-radius: 3px;
+    }
+    .desc {
+        color: var(--muted);
+        display: block;
+        font-size: 0.95em;
+        margin-top: 0.15rem;
+    }
+    footer {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font-size: 0.9em;
+    }
+</style>
+</head>
+<body>
+
+<h1>CDISC for AI</h1>
+
+<p>Machine-actionable reference files built from CDISC SDTM Controlled Terminology, NCIt, and COSMoS Biomedical Concepts and Dataset Specializations. The purpose is to make existing standards more consumable for AI, rule engines, and humans.</p>
+
+<p>Source repository: <a href="https://github.com/kerfors/cdisc-for-ai">github.com/kerfors/cdisc-for-ai</a></p>
+
+<h2>Reference files</h2>
+
+<ul class="files">
+    <li>
+        <code>SDTM_Test_Identity.xlsx</code>
+        <span class="desc">domain-level TESTCDs with NCIt identity</span>
+    </li>
+    <li>
+        <code>SDTM_Instrument_Identity.xlsx</code>
+        <span class="desc">instrument-level codes</span>
+    </li>
+    <li>
+        <code>COSMoS_BC_DSS.xlsx</code>
+        <span class="desc">flattened COSMoS Biomedical Concepts and Dataset Specializations</span>
+    </li>
+    <li>
+        <code>Specimen_Findings.xlsx</code>
+        <span class="desc">specimen-based Findings consumer view (LB, MB, MI, CP, BS, MS, PC, PP)</span>
+    </li>
+    <li>
+        <code>Measurement_Findings.xlsx</code>
+        <span class="desc">measurement-based Findings consumer view (VS, MK, CV)</span>
+    </li>
+</ul>
+
+<h2>COA structure — 6MWT walkthroughs</h2>
+
+<ul class="files">
+    <li>
+        <a href="6MWT_NCIt_Story.html">6MWT — The NCIt Story</a>
+        <span class="desc">6-Minute Walk Test traced through NCI Thesaurus identity</span>
+    </li>
+    <li>
+        <a href="6MWT_COSMoS_Story.html">6MWT — The COSMoS Story</a>
+        <span class="desc">6-Minute Walk Test traced through COSMoS Biomedical Concepts and Dataset Specializations</span>
+    </li>
+</ul>
+
+<footer>
+    Authored by Kerstin Forsberg, with Claude as collaborative partner.
+</footer>
+
+</body>
+</html>
