@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glucose — The Study-Intent Story</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f7f5; color: #333; padding: 32px; max-width: 1200px; margin: 0 auto; }
+
+  h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e0ddd8; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Tree */
+  .tree { position: relative; }
+  .layer-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 6px; margin-top: 20px; }
+  .layer-label:first-child { margin-top: 0; }
+
+  .node { position: relative; margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 4px solid; transition: box-shadow 0.15s; }
+  .node:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .node .code { font-weight: 600; font-size: 0.85rem; }
+  .node .name { font-size: 0.82rem; margin-top: 2px; color: #555; }
+  .node .meta { font-size: 0.72rem; color: #777; margin-top: 3px; }
+  .node .tag { display: inline-block; font-size: 0.68rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+
+  /* COSMoS DSS — parent template for specializations */
+  .cosmos-dss { background: #fffcf0; border-color: #C8A415; padding: 14px 16px; }
+  .cosmos-dss .code { font-size: 0.95rem; }
+  .cosmos-dss .tag { background: #C8A415; color: #fff; }
+  .sw-cosmos-dss { background: #C8A415; }
+
+  /* Case specialization — new layer authored at study design time */
+  .case-spec { background: #f1ecf8; border-color: #6b4c93; }
+  .case-spec .tag { background: #6b4c93; color: #fff; }
+  .sw-case-spec { background: #6b4c93; }
+
+  /* Outside-DSS binding — references to study-design objects */
+  .ext-ref { background: #fff7ed; border-color: #b56424; }
+  .ext-ref .tag { background: #b56424; color: #fff; }
+  .sw-ext-ref { background: #b56424; }
+
+  /* Connector lines */
+  .connector { position: relative; margin-left: 36px; }
+  .connector::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+  .connector-deep { margin-left: 72px; }
+  .connector-deep::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+
+  /* Attribute grid inside nodes */
+  .attr-grid { display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; font-size: 0.78rem; margin-top: 6px; }
+  .attr-grid .attr-label { color: #999; font-weight: 500; white-space: nowrap; }
+  .attr-grid .attr-val { color: #444; }
+  .attr-grid .attr-val strong { font-weight: 600; color: #333; }
+  .attr-grid .attr-val code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #4a3f24; }
+
+  /* Two-column pinning/binding grid inside case-spec nodes */
+  .pin-bind { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .pin-bind .box { padding: 10px 12px; border-radius: 5px; background: #fff; }
+  .pin-bind .box-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #6b4c93; margin-bottom: 6px; }
+  .pin-bind .box.bind .box-label { color: #b56424; }
+  .pin-bind .row { font-size: 0.76rem; margin: 3px 0; line-height: 1.5; }
+  .pin-bind .row code { font-family: 'SF Mono', 'Consolas', monospace; background: #f4f1ec; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #333; }
+  .pin-bind .row strong { color: #333; }
+  .pin-bind .box.empty { background: #faf8f5; color: #999; font-size: 0.76rem; font-style: italic; display: flex; align-items: center; justify-content: center; padding: 14px 12px; }
+
+  /* Narrative part headers */
+  .part-header { margin: 28px 0 12px 0; padding: 10px 16px; border-radius: 6px; background: #fff; border: 1px solid #ddd; }
+  .part-header .part-num { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+  .part-header .part-title { font-size: 1.0rem; font-weight: 600; color: #333; margin-top: 2px; }
+  .part-header .part-desc { font-size: 0.8rem; color: #666; margin-top: 4px; line-height: 1.5; }
+  .part-header:first-of-type { margin-top: 12px; }
+
+  /* Gap-analysis box (reused verbatim from COSMoS story Part 2) */
+  .gap-box { margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 3px solid #b94a48; background: #fdf3f3; font-size: 0.8rem; line-height: 1.5; color: #5a2828; }
+  .gap-box .gap-label { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #b94a48; display: block; margin-bottom: 4px; }
+  .gap-box .gap-grid { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin-top: 6px; font-size: 0.76rem; }
+  .gap-box .gap-grid .dim { font-weight: 600; color: #5a2828; }
+  .gap-box .gap-grid .where { color: #7a3838; }
+  .gap-box code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #5a2828; }
+
+  /* Sponsor-parallel prose */
+  .prose-box { margin: 12px 0 6px 0; padding: 12px 16px; font-size: 0.82rem; color: #444; line-height: 1.6; background: #fff; border-radius: 6px; border: 1px solid #e0ddd8; }
+  .prose-box strong { color: #333; }
+  .prose-box code { font-family: 'SF Mono', 'Consolas', monospace; background: #f4f1ec; padding: 0 4px; border-radius: 3px; font-size: 0.74rem; color: #333; }
+  .prose-box a { color: #1a5276; border-bottom: 1px dotted #1a5276; text-decoration: none; }
+
+  /* Registry need band (shared across the case-study set) */
+  .registry-band { margin: 36px 0 0 0; padding: 20px 24px; border-radius: 8px; background: #2c2e33; color: #e5e0d6; font-size: 0.84rem; line-height: 1.6; border-left: 6px solid #b8956a; }
+  .registry-band .reg-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b8956a; font-weight: 600; display: block; margin-bottom: 6px; }
+  .registry-band .reg-title { font-size: 1.0rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .registry-band code { background: rgba(255,255,255,0.08); padding: 1px 5px; border-radius: 3px; color: #f2e5c9; font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.78rem; }
+  .registry-band em { color: #dbc79a; font-style: normal; font-weight: 500; }
+
+  /* Footer */
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; line-height: 1.6; }
+
+  @media print {
+    body { background: #fff; padding: 16px; }
+    .node:hover { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Glucose Measurement — The Study-Intent Story</h1>
+<p class="subtitle">What study designers author on top of GLUCPL — and why the recording specification is not the whole case</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS DSS — recording template (GLUCPL)</div>
+  <div class="legend-item"><div class="legend-swatch sw-case-spec"></div> Case specialization — authored by study design</div>
+  <div class="legend-item"><div class="legend-swatch sw-ext-ref"></div> Outside-DSS binding — reference to study-design object</div>
+</div>
+
+<div class="tree">
+
+  <!-- PART 1 -->
+  <div class="part-header">
+    <div class="part-num">Part 1</div>
+    <div class="part-title">What COSMoS leaves to study assembly — the case-completion gap</div>
+    <div class="part-desc">
+      A clinical "case" of a glucose measurement requires more than the recording template can carry. The DSS fixes the test-intrinsic dimensions (specimen, method, scale, unit, LOINC) but the protocol-context dimensions that make a glucose value interpretable live elsewhere in the SDTM model — or in study assembly logic that is not part of CDISC standards. Below: dimensions a glucose case needs, and where each lives.
+    </div>
+  </div>
+
+  <div class="gap-box">
+    <span class="gap-label">Encoded inside the DSS template</span>
+    <div class="gap-grid">
+      <span class="dim">Specimen</span>            <span class="where">Assigned: <code>LBSPEC</code> per DSS</span>
+      <span class="dim">Method (when relevant)</span> <span class="where">Assigned: <code>LBMETHOD</code> for some DSSs (TEST STRIP for GLUCUA)</span>
+      <span class="dim">Result scale</span>        <span class="where">Implied by DSS (Quantitative vs Qualitative)</span>
+      <span class="dim">Standard unit</span>       <span class="where">Assigned: <code>LBSTRESU</code> per DSS (mmol/L for quantitative)</span>
+      <span class="dim">LOINC mapping</span>       <span class="where">Listed at DSS metadata level (not in variable spec)</span>
+    </div>
+  </div>
+
+  <div class="gap-box">
+    <span class="gap-label">Slot in the template, value left to per-row collection</span>
+    <div class="gap-grid">
+      <span class="dim">Fasting state</span>       <span class="where">Slot: <code>LBFAST</code> (NY_NY) — in template, not assigned by DSS</span>
+      <span class="dim">Recording date/time</span> <span class="where">Slot: <code>LBDTC</code> — in template, collected per row</span>
+      <span class="dim">Result value</span>        <span class="where">Slot: <code>LBORRES</code>/<code>LBSTRESN</code> — collected per row</span>
+    </div>
+  </div>
+
+  <div class="gap-box">
+    <span class="gap-label">Not in the DSS — must be assembled from elsewhere in SDTM</span>
+    <div class="gap-grid">
+      <span class="dim">Time relative to meal</span>           <span class="where"><code>LBELTM</code> / <code>LBTPT</code> against a defined feeding event in study design</span>
+      <span class="dim">OGTT challenge identifier</span>       <span class="where">Trial design (<code>TI</code>/<code>TS</code>), Visit (<code>SV</code>), or planned timing variables; protocol-specific</span>
+      <span class="dim">Timepoint relative to dose</span>      <span class="where"><code>LBTPTREF</code> + <code>LBELTM</code>; relies on study-defined reference event</span>
+      <span class="dim">Visit / collection context</span>      <span class="where">Visit domain (<code>SV</code>), <code>LBVISIT</code>, study calendar</span>
+      <span class="dim">Patient state qualifiers</span>        <span class="where">Free-form via <code>SUPPLB</code>; no standard vocabulary</span>
+    </div>
+  </div>
+
+  <div style="margin: 16px 0 6px 0; padding: 10px 14px; font-size: 0.8rem; color: #555; line-height: 1.55; background: #fff; border-radius: 6px; border: 1px solid #e0ddd8;">
+    <strong>Summary.</strong> COSMoS does case-construction work where the dimensions are fixed by the test (8 DSSs for the specimen × method × scale matrix). It deliberately does not encode dimensions that vary by study protocol (timing, challenge, visit). A clinically interpretable glucose case = DSS recording template + per-row instance values + study-context assembly. The first piece is standardised; the third is not.
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part-header" style="margin-top: 32px;">
+    <div class="part-num">Part 2</div>
+    <div class="part-title">Specializations of GLUCPL — what a study designer authors on top of the template</div>
+    <div class="part-desc">
+      A study designer does not author GLUCPL. They author cases that <em>specialize</em> it — more-constrained templates in which some of GLUCPL's open slots are pinned to specific values, and some of the outside-DSS dimensions from Part 1 are bound to study-design objects (trial events, timepoint references, activities). Each case is still a schema, not an instance: it describes every observation that matches the case, across every subject and visit. Three illustrative specializations are shown below. The <code>case_id</code> values (<code>ID001</code>, <code>ID002</code>, <code>ID003</code>) are purely syntactic placeholders — the architectural point is that such IDs would need to be governed by a layer that does not yet exist.
+    </div>
+  </div>
+
+  <!-- Parent DSS template -->
+  <div class="layer-label">Parent DSS — recording template (from COSMoS)</div>
+  <div class="node cosmos-dss">
+    <div class="code">GLUCPL — Glucose Concentration in Plasma <span class="tag">DSS — VLM group</span></div>
+    <div class="attr-grid">
+      <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>GLUCPL</strong></span>
+      <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>LB.LBTESTCD</strong></span>
+      <span class="attr-label">Specimen</span>      <span class="attr-val"><strong>PLASMA</strong> (C13356)</span>
+      <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>Quantitative</strong></span>
+      <span class="attr-label">Standard Unit</span> <span class="attr-val"><strong>mmol/L</strong></span>
+      <span class="attr-label">Open slots relevant to specializations</span> <span class="attr-val"><code>LBFAST</code> (NY_NY subset), <code>LBDTC</code>, <code>LBTPTREF</code>, <code>LBELTM</code>, <code>LBTPT</code>, <code>LBVISIT</code></span>
+    </div>
+  </div>
+
+  <!-- Specialization: ID001 FPG -->
+  <div class="layer-label">Specializations authored at study design time</div>
+  <div class="connector">
+    <div class="node case-spec">
+      <div class="code">ID001 — Fasting Plasma Glucose (FPG) <span class="tag">case specialization</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">parent_dss</span>  <span class="attr-val"><strong>GLUCPL</strong></span>
+        <span class="attr-label">case_type</span>   <span class="attr-val">recording-child</span>
+      </div>
+      <div class="pin-bind">
+        <div class="box">
+          <div class="box-label">Inside-DSS pinning</div>
+          <div class="row"><code>LBFAST = Y</code> — pinned on a slot the DSS already reserves</div>
+        </div>
+        <div class="box empty">No outside-DSS binding — fully resolvable from GLUCPL + pinned LBFAST</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specialization: ID002 OGTT 2H -->
+  <div class="connector">
+    <div class="node case-spec">
+      <div class="code">ID002 — OGTT 2-Hour Plasma Glucose <span class="tag">case specialization</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">parent_dss</span>     <span class="attr-val"><strong>GLUCPL</strong></span>
+        <span class="attr-label">case_type</span>      <span class="attr-val">recording-child</span>
+        <span class="attr-label">composes_with</span>  <span class="attr-val">OGTT 75g oral challenge <em>(SoA-scheduling parent, study-design object)</em></span>
+      </div>
+      <div class="pin-bind">
+        <div class="box">
+          <div class="box-label">Inside-DSS pinning</div>
+          <div class="row"><code>LBFAST = N</code> — post-challenge sample</div>
+        </div>
+        <div class="box bind">
+          <div class="box-label">Outside-DSS binding</div>
+          <div class="row"><code>LBTPTREF</code> → reference to the <strong>OGTT 75g oral challenge</strong> event (authored in trial design: <code>TI</code> / <code>TS</code> / <code>TA</code>)</div>
+          <div class="row"><code>LBTPT = "2 hours post glucose load"</code></div>
+          <div class="row"><code>LBELTM = PT2H</code></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outside-DSS reference card for OGTT challenge -->
+  <div class="connector-deep">
+    <div class="node ext-ref">
+      <div class="code">OGTT 75g oral challenge <span class="tag">study-design object</span></div>
+      <div class="meta">Authored per protocol in <code>TI</code> / <code>TS</code> / <code>TA</code>. Not a CDISC-standardised registrable entity. Both ID002 and ID003 reference the same challenge event; the reference must resolve within the study.</div>
+    </div>
+  </div>
+
+  <!-- Specialization: ID003 OGTT Fasting -->
+  <div class="connector">
+    <div class="node case-spec">
+      <div class="code">ID003 — OGTT Fasting (Pre-Challenge) Plasma Glucose <span class="tag">case specialization</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">parent_dss</span>     <span class="attr-val"><strong>GLUCPL</strong></span>
+        <span class="attr-label">case_type</span>      <span class="attr-val">recording-child</span>
+        <span class="attr-label">composes_with</span>  <span class="attr-val">OGTT 75g oral challenge <em>(same SoA-scheduling parent as ID002)</em></span>
+      </div>
+      <div class="pin-bind">
+        <div class="box">
+          <div class="box-label">Inside-DSS pinning</div>
+          <div class="row"><code>LBFAST = Y</code> — pre-challenge baseline</div>
+        </div>
+        <div class="box bind">
+          <div class="box-label">Outside-DSS binding</div>
+          <div class="row"><code>LBTPTREF</code> → reference to the <strong>OGTT 75g oral challenge</strong> event (same event as ID002)</div>
+          <div class="row"><code>LBTPT = "Pre-dose"</code></div>
+          <div class="row"><code>LBELTM = -PT0M</code> (or protocol-specific baseline window)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Architectural note -->
+  <div style="margin: 18px 0 6px 0; padding: 12px 16px; font-size: 0.8rem; color: #555; line-height: 1.6; background: #fff; border-radius: 6px; border: 1px solid #e0ddd8;">
+    <strong>What the three cases show together.</strong> ID001 is the clean case — everything resolves inside the DSS. ID002 and ID003 cross the DSS boundary: both require a stable reference to the same OGTT challenge event, but pin LBFAST differently because they sample before vs after the load. The outside-DSS object (the challenge itself) is authored per protocol and is not today a CDISC-governed registrable entity — each protocol re-authors it. Cases ID002 and ID003 compose GLUCPL with that external reference; the identity of a case is a binding across layers, not a single pointer.
+  </div>
+
+  <div class="registry-band">
+    <span class="reg-eyebrow">Registry need</span>
+    <div class="reg-title">A case-specialization registry</div>
+    Every sponsor catalogue observed in practice holds entries equivalent to the three cases above — FPG, OGTT variants, glucose measurements differentiated by specimen and by clinical use — but as <em>text strings</em> in spec documents and eCRF libraries, not governed identifiers. The anchor they pin onto is already governed: GLUCPL (<code>DS_Code / vlm_group_id</code>), C105585 (NCIt / COSMoS BC), and the surrounding SDTM CT come with curation, stable IDs, and release-versioned provenance. The gap sits one layer up — at the case-specialization layer — where study-design intent lives today as sponsor-local strings with no shared vocabulary. The syntactic IDs used here (<code>ID001</code>, <code>ID002</code>, <code>ID003</code>) mark the slot a governed cross-sponsor layer would fill. A case-specialization registry would assign each case a stable ID, carry its inside-DSS pins and outside-DSS bindings, and give study designers and downstream reviewers a single governed namespace to address intent across sponsor boundaries.
+  </div>
+
+</div>
+
+<div class="footer">
+  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) &bull; SDTM CT 2026-03-27 &bull; SDTMIG v3.4<br>
+  GLUCPL template attributes and slot inventory are extracted from the COSMoS source file. The three specialization cases (ID001, ID002, ID003) are architectural illustrations — syntactic IDs and pinned/bound values reflect how study designers work today; the IDs themselves are placeholders, not references to any sponsor catalogue.<br>
+  Companion doc: <a href="Glucose_COSMoS_Story.html">Glucose_COSMoS_Story.html</a> — the recording view of the same BC.<br>
+  Generated 2026-04-14.
+</div>
+
+</body>
+</html>

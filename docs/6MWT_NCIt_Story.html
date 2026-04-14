@@ -99,6 +99,13 @@
   .stats-table .highlight { background: #fff3e0; }
   .stats-table .gap-row { background: #fce4ec; }
 
+  /* Registry need band (shared across the case-study set) */
+  .registry-band { margin: 36px 0 0 0; padding: 20px 24px; border-radius: 8px; background: #2c2e33; color: #e5e0d6; font-size: 0.84rem; line-height: 1.6; border-left: 6px solid #b8956a; }
+  .registry-band .reg-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b8956a; font-weight: 600; display: block; margin-bottom: 6px; }
+  .registry-band .reg-title { font-size: 1.0rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .registry-band code { background: rgba(255,255,255,0.08); padding: 1px 5px; border-radius: 3px; color: #f2e5c9; font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.78rem; }
+  .registry-band em { color: #dbc79a; font-style: normal; font-weight: 500; }
+
   /* Footer */
   .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; }
 
@@ -262,9 +269,10 @@
     </table>
   </div>
 
-  <div style="margin: 12px 0; padding: 12px 16px; background: #fffaf0; border-radius: 6px; border-left: 4px solid #e6a030; font-size: 0.8rem; line-height: 1.6; color: #7a5700;">
-    <strong>The structural gap is not in any single standard.</strong> It is between them: NCIt classifies but does not compose. CT names TESTCDs but does not describe recording. For 28% of QRS codelists (100 of 359), the instrument layer is simply missing — questions are grouped under a container, but there is no instrument concept to anchor them in the classification tree. Nearly half of the 2,208 instrument concepts (988) exist for classification purposes only, without mapping to any SDTM codelist.<br><br>
-    A composition registry — linking instruments to containers to questions with explicit "is composed of" relationships — would close this gap for all three standards and make the Part 1 pattern the rule rather than the exception.
+  <div class="registry-band">
+    <span class="reg-eyebrow">Registry need</span>
+    <div class="reg-title">An instrument composition registry</div>
+    Across 359 QRS codelists probed, 28% have a container but no instrument-level NCIt concept to anchor them — questions exist, but the classification tree is incomplete. Nearly half of the 2,208 instrument concepts (988) exist for classification only, with no mapping to an SDTM codelist. The gap is not in any single standard: NCIt classifies but does not compose; CT names TESTCDs but does not describe instrument families, subscales, or version lineage. An instrument composition registry would carry stable identifiers for instruments, their subscales, their item membership, and their version relationships — linking classification to composition with explicit <em>is composed of</em> edges rather than the weak <em>is related to</em> associations NCIt currently offers.
   </div>
 
 </div>

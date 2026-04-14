@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glucose — The COSMoS Story</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f7f5; color: #333; padding: 32px; max-width: 1200px; margin: 0 auto; }
+
+  h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e0ddd8; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Tree */
+  .tree { position: relative; }
+  .layer-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 6px; margin-top: 20px; }
+  .layer-label:first-child { margin-top: 0; }
+
+  .node { position: relative; margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 4px solid; transition: box-shadow 0.15s; }
+  .node:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .node .code { font-weight: 600; font-size: 0.85rem; }
+  .node .code a { color: inherit; text-decoration: none; border-bottom: 1px dotted #999; }
+  .node .code a:hover { color: #1a5276; border-bottom-color: #1a5276; }
+  .node .name { font-size: 0.82rem; margin-top: 2px; color: #555; }
+  .node .meta { font-size: 0.72rem; color: #777; margin-top: 3px; }
+  .node .tag { display: inline-block; font-size: 0.68rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+
+  /* SDTM CT TESTCD (green) */
+  .sdtm-ct { background: #f3f7f0; border-color: #548235; }
+  .sdtm-ct .tag { background: #548235; color: #fff; }
+  .sw-sdtm-ct { background: #548235; }
+
+  /* COSMoS BC root (deeper gold) */
+  .cosmos-bc { background: #fdf6dc; border-color: #a8880f; padding: 14px 16px; }
+  .cosmos-bc .code { font-size: 0.95rem; }
+  .cosmos-bc .tag { background: #a8880f; color: #fff; }
+  .sw-cosmos-bc { background: #a8880f; }
+
+  /* COSMoS DSS (gold) */
+  .cosmos-dss { background: #fffcf0; border-color: #C8A415; }
+  .cosmos-dss .tag { background: #C8A415; color: #fff; }
+  .sw-cosmos-dss { background: #C8A415; }
+
+  /* Retired (grey) */
+  .retired { background: #f4f3f0; border-color: #aaa; color: #777; }
+  .retired .tag { background: #999; color: #fff; }
+  .sw-retired { background: #999; }
+
+  /* Connector lines */
+  .connector { position: relative; margin-left: 36px; }
+  .connector::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+  .connector-deep { margin-left: 72px; }
+  .connector-deep::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+
+  /* Attribute grid inside nodes */
+  .attr-grid { display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; font-size: 0.78rem; margin-top: 6px; }
+  .attr-grid .attr-label { color: #999; font-weight: 500; white-space: nowrap; }
+  .attr-grid .attr-val { color: #444; }
+  .attr-grid .attr-val strong { font-weight: 600; color: #333; }
+
+  /* TESTCD group container */
+  .testcd-group { margin: 12px 0 18px 0; }
+
+  /* Narrative part headers */
+  .part-header { margin: 28px 0 12px 0; padding: 10px 16px; border-radius: 6px; background: #fff; border: 1px solid #ddd; }
+  .part-header .part-num { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+  .part-header .part-title { font-size: 1.0rem; font-weight: 600; color: #333; margin-top: 2px; }
+  .part-header .part-desc { font-size: 0.8rem; color: #666; margin-top: 4px; line-height: 1.5; }
+  .part-header:first-of-type { margin-top: 12px; }
+
+  /* SDTM variable table */
+  .var-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin-top: 6px; }
+  .var-table th { text-align: left; padding: 3px 8px; background: #f5f0e0; color: #7d6608; font-weight: 600; border-bottom: 2px solid #e8d88e; }
+  .var-table td { padding: 3px 8px; border-bottom: 1px solid #f0ebe0; }
+  .var-table tr:hover td { background: #fef9e7; }
+  .var-table .var-name { font-weight: 600; font-family: 'SF Mono', 'Consolas', monospace; color: #333; }
+  .var-table .var-role-topic { color: #548235; font-weight: 600; }
+  .var-table .var-role-qualifier { color: #7d6608; }
+  .var-table .var-role-timing { color: #666; }
+  .var-table .empty { color: #bbb; font-style: italic; }
+  .var-table .slot { color: #b8960e; font-style: italic; }
+
+  /* Gap-analysis box */
+  .gap-box { margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 3px solid #b94a48; background: #fdf3f3; font-size: 0.8rem; line-height: 1.5; color: #5a2828; }
+  .gap-box .gap-label { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #b94a48; display: block; margin-bottom: 4px; }
+  .gap-box .gap-grid { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin-top: 6px; font-size: 0.76rem; }
+  .gap-box .gap-grid .dim { font-weight: 600; color: #5a2828; }
+  .gap-box .gap-grid .where { color: #7a3838; }
+  .gap-box code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #5a2828; }
+
+  /* Slot-only annotation */
+  .slot-note { margin: 2px 0; padding: 6px 10px; background: #fef9e7; border-left: 3px solid #C8A415; font-size: 0.74rem; color: #7d6608; line-height: 1.5; border-radius: 4px; }
+
+  /* Flattened row (interim aggregation — BC + TESTCD header + VLM details collapsed into one row per DSS) */
+  .flattened-row { background: #f6f3ea; border-color: #7f6e4a; padding: 14px 16px; }
+  .flattened-row .tag { background: #7f6e4a; color: #fff; }
+  .test-identity-row { background: #f3f7f0; border-color: #548235; padding: 14px 16px; }
+  .test-identity-row .tag { background: #548235; color: #fff; }
+  .sw-test-identity { background: #548235; }
+  .measurement-specs-row { background: #fffcf0; border-color: #C8A415; padding: 14px 16px; }
+  .measurement-specs-row .tag { background: #C8A415; color: #fff; }
+  .sw-measurement-specs { background: #C8A415; }
+  .flat-note { font-size: 0.78rem; color: #5d4f30; margin: 8px 0 10px; line-height: 1.5; }
+  .flat-note code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #4a3f24; }
+  .flat-grid { display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; font-size: 0.74rem; margin-top: 6px; }
+  .flat-grid .flat-label { color: #888; font-weight: 500; font-family: 'SF Mono', 'Consolas', monospace; white-space: nowrap; }
+  .flat-grid .flat-val { color: #333; }
+  .flat-grid .flat-val.empty { color: #bbb; font-style: italic; }
+  .sw-flat { background: #7f6e4a; }
+
+  /* Registry need band (shared across the case-study set) */
+  .registry-band { margin: 36px 0 0 0; padding: 20px 24px; border-radius: 8px; background: #2c2e33; color: #e5e0d6; font-size: 0.84rem; line-height: 1.6; border-left: 6px solid #b8956a; }
+  .registry-band .reg-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b8956a; font-weight: 600; display: block; margin-bottom: 6px; }
+  .registry-band .reg-title { font-size: 1.0rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .registry-band code { background: rgba(255,255,255,0.08); padding: 1px 5px; border-radius: 3px; color: #f2e5c9; font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.78rem; }
+  .registry-band em { color: #dbc79a; font-style: normal; font-weight: 500; }
+
+  /* Footer */
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; line-height: 1.6; }
+
+  @media print {
+    body { background: #fff; padding: 16px; }
+    .node:hover { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Glucose Measurement — The COSMoS Story</h1>
+<p class="subtitle">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-bc-dss</code> track flattens and joins it with enriched TESTCD identity into the Specimen_Findings consumer file</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-bc"></div> COSMoS BC (root concept)</div>
+  <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT TESTCD</div>
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS DSS — VLM group on LB.LBTESTCD</div>
+  <div class="legend-item"><div class="legend-swatch sw-flat"></div> cdisc-for-ai interim (flattened BC_DSS)</div>
+  <div class="legend-item"><div class="legend-swatch sw-test-identity"></div> Specimen_Findings — Test_Identity row</div>
+  <div class="legend-item"><div class="legend-swatch sw-measurement-specs"></div> Specimen_Findings — Measurement_Specs row</div>
+  <div class="legend-item"><div class="legend-swatch sw-retired"></div> Retired BC</div>
+</div>
+
+<div class="tree">
+
+  <!-- PART 1 -->
+  <div class="part-header">
+    <div class="part-num">Part 1</div>
+    <div class="part-title">What COSMoS provides — case-distinct recording specifications</div>
+    <div class="part-desc">
+      NCIt carries two concepts — C105585 Glucose Measurement and C163446 Plasma Equivalent Glucose — and SDTM CT reflects both as distinct TESTCDs: GLUC (C105585) and GLUCPE (C163446). COSMoS has curated them together under a single BC (C105585 Glucose Measurement). GLUCPE's C163446 remains visible at the TESTCD level and is flagged as a legacy cross-reference in the COSMoS QC (TESTCD_NCIt ≠ BC NCIt, QC-14). Under that one BC, COSMoS expands into eight DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. Each DSS is a value-level metadata (VLM) group anchored on <code>LB.LBTESTCD</code> — a bundle of rows that jointly constrain the recording when LBTESTCD takes the relevant value under the relevant conditions. The DS_Code is the <code>vlm_group_id</code> that addresses the bundle. One DSS (GLUCPL) is shown expanded with its full 12-variable spec; the others are summarised by their case-defining attributes. A further DSS (GLUCSERPL) exists in source but is omitted from this view pending QC review. Below each DSS view, the cdisc-for-ai <code>cosmos-bc-dss</code> track then aggregates the BC header, TESTCD header, and VLM rows into one row per DSS — the interim shape the repo carries forward.
+    </div>
+  </div>
+
+  <!-- BC root -->
+  <div class="layer-label">COSMoS BC — one root concept</div>
+  <div class="node cosmos-bc">
+    <div class="code">C105585 — Glucose Measurement <span class="tag">BC</span></div>
+    <div class="meta">Hierarchy Path: Chemistry Test &nbsp;|&nbsp; Categories: Chemistry Tests; Laboratory Tests &nbsp;|&nbsp; Domains_with_DS: LB</div>
+  </div>
+
+  <!-- TESTCD GLUC group -->
+  <div class="testcd-group">
+    <div class="layer-label">SDTM CT TESTCD — source split</div>
+    <div class="connector">
+      <div class="node sdtm-ct">
+        <div class="code">GLUC — Glucose <span class="tag">TESTCD</span></div>
+        <div class="meta">NCIt: C105585 &nbsp;|&nbsp; 7 DSSs in source &nbsp;|&nbsp; 6 shown (GLUCSERPL omitted)</div>
+      </div>
+    </div>
+
+    <!-- Variable-level expansion: GLUCPL -->
+    <div class="connector-deep" style="margin-top: 10px;">
+      <div class="node cosmos-dss">
+        <div class="code">GLUCPL — Glucose Concentration in Plasma <span class="tag">DSS — VLM group</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>GLUCPL</strong></span>
+          <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>LB.LBTESTCD</strong></span>
+          <span class="attr-label">Specimen</span>      <span class="attr-val"><strong>PLASMA</strong> (C13356)</span>
+          <span class="attr-label">Method</span>        <span class="attr-val">—</span>
+          <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>Quantitative</strong></span>
+          <span class="attr-label">Allowed Units</span> <span class="attr-val">mg/dL; g/L; mmol/L</span>
+          <span class="attr-label">Standard Unit</span> <span class="attr-val"><strong>mmol/L</strong></span>
+          <span class="attr-label">LOINC</span>         <span class="attr-val">none mapped</span>
+          <span class="attr-label">SDTMIG since</span>  <span class="attr-val">3-2</span>
+        </div>
+        <div style="font-size:0.74rem; color:#7d6608; margin: 8px 0 4px;">VLM group GLUCPL — 12 rows of value-level metadata on <code style="background:#fff; padding:0 4px; border-radius:3px;">LB.LBTESTCD</code>, jointly specifying the Glucose-in-Plasma recording case:</div>
+        <table class="var-table">
+          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Data Type</th><th>Origin</th><th>Mandatory</th></tr>
+          <tr><td class="var-name">LBTESTCD</td><td class="var-role-topic">Topic</td><td>GLUC</td><td>C65047</td><td></td><td></td><td>Var/Val</td></tr>
+          <tr><td class="var-name">LBTEST</td><td class="var-role-qualifier">Qualifier</td><td>Glucose</td><td>C67154</td><td></td><td></td><td>Var/Val</td></tr>
+          <tr><td class="var-name">LBCAT</td><td class="var-role-qualifier">Qualifier</td><td>CHEMISTRY</td><td></td><td></td><td></td><td>Var only</td></tr>
+          <tr><td class="var-name">LBORRES</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Var only</td></tr>
+          <tr><td class="var-name">LBORRESU</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td>C71620</td><td></td><td></td><td>Var only</td></tr>
+          <tr><td class="var-name">LBSTRESC</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Var only</td></tr>
+          <tr><td class="var-name">LBSTRESN</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Var only</td></tr>
+          <tr><td class="var-name">LBSTRESU</td><td class="var-role-qualifier">Qualifier</td><td>mmol/L</td><td>C71620</td><td></td><td></td><td>Var only</td></tr>
+          <tr><td class="var-name">LBLOINC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td></td><td></td><td></td><td>—</td></tr>
+          <tr><td class="var-name">LBSPEC</td><td class="var-role-qualifier">Qualifier</td><td>PLASMA</td><td>C78734</td><td></td><td></td><td>Var only</td></tr>
+          <tr><td class="var-name">LBFAST</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (subset NY_NY)</td><td>C66742</td><td></td><td></td><td>—</td></tr>
+          <tr><td class="var-name">LBDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td></td><td>Var only</td></tr>
+        </table>
+        <div class="slot-note" style="margin-top: 8px;">
+          <strong>LBFAST is in the template as a slot</strong> with codelist subset NY_NY — meaning the DSS reserves the field for fasting state but the value is collected per row. The DSS does not classify which cases are fasting.
+        </div>
+      </div>
+    </div>
+
+    <!-- Flattened one-row projection of GLUCPL — as the cdisc-for-ai cosmos-bc-dss track aggregates it -->
+    <div class="layer-label" style="margin-left: 72px;">Same GLUCPL — flattened to one row (cdisc-for-ai interim aggregation)</div>
+    <div class="connector-deep" style="margin-top: 6px;">
+      <div class="node flattened-row">
+        <div class="code">GLUCPL — flattened row <span class="tag">interim aggregation</span></div>
+        <div class="flat-note">
+          The cdisc-for-ai <code>cosmos-bc-dss/</code> track aggregates the BC header, TESTCD header, and the 12 VLM rows into a single row per DSS in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>. What survives is the case-defining attributes in a shape suitable for joining across SDTM CT, NCIt, and COSMoS. What is lost is the per-variable VLM detail — role, mandatory flags, codelists, slot-vs-assigned status. Below: the GLUCPL row, all 34 columns, exactly as the interim file contains them.
+        </div>
+        <div class="flat-grid">
+          <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val">C105585</span>
+          <span class="flat-label">NCIt_Code</span>          <span class="flat-val">C105585</span>
+          <span class="flat-label">BC_Name / short_name</span>            <span class="flat-val">Glucose Measurement</span>
+          <span class="flat-label">BC_Definition</span>      <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
+          <span class="flat-label">BC_Synonyms</span>        <span class="flat-val">Glucose</span>
+          <span class="flat-label">BC_Type</span>            <span class="flat-val">full</span>
+          <span class="flat-label">BC_Scope</span>           <span class="flat-val">Subject</span>
+          <span class="flat-label">TESTCD</span>             <span class="flat-val">GLUC</span>
+          <span class="flat-label">TEST</span>               <span class="flat-val">Glucose</span>
+          <span class="flat-label">TESTCD_NCIt</span>        <span class="flat-val">C105585</span>
+          <span class="flat-label">Categories</span>         <span class="flat-val">Chemistry Tests; Laboratory Tests</span>
+          <span class="flat-label">Hierarchy_Path</span>     <span class="flat-val">Chemistry Test</span>
+          <span class="flat-label">Parent_Label</span>       <span class="flat-val">Chemistry Test</span>
+          <span class="flat-label">Row_Type</span>           <span class="flat-val">DSS</span>
+          <span class="flat-label">Domains_with_DS</span>    <span class="flat-val">LB</span>
+          <span class="flat-label">DS_Code / vlm_group_id</span>            <span class="flat-val">GLUCPL</span>
+          <span class="flat-label">DS_Name / short_name</span>            <span class="flat-val">Glucose Concentration in Plasma</span>
+          <span class="flat-label">Domain</span>             <span class="flat-val">LB</span>
+          <span class="flat-label">Domain_Class</span>       <span class="flat-val">Findings</span>
+          <span class="flat-label">Result_Scale</span>       <span class="flat-val">Quantitative</span>
+          <span class="flat-label">Specimen</span>           <span class="flat-val">PLASMA</span>
+          <span class="flat-label">Specimen_NCIt</span>      <span class="flat-val">C13356</span>
+          <span class="flat-label">Method</span>             <span class="flat-val empty">—</span>
+          <span class="flat-label">Method_NCIt</span>        <span class="flat-val empty">—</span>
+          <span class="flat-label">LOINC_Code_Count</span>   <span class="flat-val">0</span>
+          <span class="flat-label">LOINC_Code</span>         <span class="flat-val empty">—</span>
+          <span class="flat-label">Allowed_Units</span>      <span class="flat-val">mg/dL; g/L; mmol/L</span>
+          <span class="flat-label">Standard_Unit</span>      <span class="flat-val">mmol/L</span>
+          <span class="flat-label">COSMoS_Category</span>    <span class="flat-val">CHEMISTRY</span>
+          <span class="flat-label">COSMoS_Subcategory</span> <span class="flat-val empty">—</span>
+          <span class="flat-label">Decimal_Places</span>     <span class="flat-val">7</span>
+          <span class="flat-label">location</span>           <span class="flat-val empty">—</span>
+          <span class="flat-label">laterality</span>         <span class="flat-val empty">—</span>
+          <span class="flat-label">evaluator</span>          <span class="flat-val empty">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other GLUC DSSs as summary cards -->
+    <div class="layer-label" style="margin-left: 72px;">Other GLUC DSSs — summary cards</div>
+    <div id="gluc-dss-list"></div>
+  </div>
+
+  <!-- TESTCD GLUCPE group -->
+  <div class="testcd-group">
+    <div class="connector">
+      <div class="node sdtm-ct">
+        <div class="code">GLUCPE — Plasma Equivalent Glucose <span class="tag">TESTCD</span></div>
+        <div class="meta">TESTCD_NCIt: C163446 &nbsp;|&nbsp; BC NCIt: C105585 (merged by COSMoS — QC-14) &nbsp;|&nbsp; 1 DSS &nbsp;|&nbsp; Used for interstitial fluid (CGM) measurements reported as plasma-equivalent</div>
+      </div>
+    </div>
+    <div id="glucpe-dss-list"></div>
+  </div>
+
+  <!-- Naming note at Part 1 / Part 2 transition -->
+  <div style="margin: 28px 0 0 0; padding: 12px 16px; font-size: 0.78rem; color: #555; line-height: 1.6; background: #fff8ea; border-radius: 6px; border-left: 4px solid #C8A415;">
+    <strong>A note on names.</strong> From Part 1 onward, column labels carry both names: <code>DS_Code / vlm_group_id</code>, <code>DS_Name / short_name</code>, <code>BC_Name / short_name</code>. The first is the cdisc-for-ai consumer-facing name; the second is the COSMoS source field. The rebrand is for readability — <code>vlm_group_id</code> is implementation-oriented and <code>short_name</code> is reused at both BC and DSS levels in source. Pairing preserves source traceability; the mapping is documented in <code>cosmos-bc-dss/notebooks/COSMoS_BC_DSS_Flatten.ipynb</code>.
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part-header" style="margin-top: 32px;">
+    <div class="part-num">Part 2</div>
+    <div class="part-title">What cdisc-for-ai delivers — GLUCPL in the Specimen_Findings consumer</div>
+    <div class="part-desc">
+      The <code>sdtm-findings/</code> consumer track joins the flattened COSMoS DSS rows with NCIt-enriched TESTCD identity (from the <code>sdtm-test-codes/</code> source track) into a two-sheet workbook: <code>sdtm-findings/machine_actionable/Specimen_Findings.xlsx</code>. Sheet <strong>Test_Identity</strong> carries one row per TESTCD with NCIt identity fields (preferred term, synonyms, definition, UMLS/NCIm CUIs) plus COSMoS coverage flags. Sheet <strong>Measurement_Specs</strong> carries one row per DSS with the recording-specification attributes. The two sheets join on <code>TESTCD</code>. Below: the GLUC and GLUCPL rows exactly as delivered.
+    </div>
+  </div>
+
+  <div class="layer-label">Test_Identity — GLUC row (one per TESTCD, NCIt-enriched)</div>
+  <div class="node test-identity-row">
+    <div class="code">GLUC — Glucose <span class="tag">Test_Identity row</span></div>
+    <div class="flat-note">
+      TESTCD-level identity. NCIt fields come from the <code>sdtm-test-codes/</code> source track (NCI EVS SDTM CT package 2026-03-27). COSMoS coverage flags summarise across all DSSs under this TESTCD — here COSMoS_Category aggregates CHEMISTRY and URINALYSIS because GLUC has DSSs in both.
+    </div>
+    <div class="flat-grid">
+      <span class="flat-label">NCIt_Code</span>           <span class="flat-val">C105585</span>
+      <span class="flat-label">TESTCD</span>              <span class="flat-val">GLUC</span>
+      <span class="flat-label">TEST</span>                <span class="flat-val">Glucose</span>
+      <span class="flat-label">SDTM_Domains</span>        <span class="flat-val">LB</span>
+      <span class="flat-label">NCIt_Preferred_Term</span> <span class="flat-val">Glucose Measurement</span>
+      <span class="flat-label">NCIt_Synonyms</span>       <span class="flat-val">GLUC; Glucose</span>
+      <span class="flat-label">NCIt_Definition</span>     <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
+      <span class="flat-label">UMLS_CUI</span>            <span class="flat-val">C0337438</span>
+      <span class="flat-label">NCIm_CUI</span>            <span class="flat-val empty">—</span>
+      <span class="flat-label">Has_COSMoS</span>          <span class="flat-val">Yes</span>
+      <span class="flat-label">COSMoS_DSS_Count</span>    <span class="flat-val">7</span>
+      <span class="flat-label">COSMoS_BC_Name / short_name</span>      <span class="flat-val">Glucose Measurement</span>
+      <span class="flat-label">COSMoS_Category</span>     <span class="flat-val">CHEMISTRY; URINALYSIS</span>
+      <span class="flat-label">COSMoS_Categories</span>   <span class="flat-val">Chemistry Tests; Laboratory Tests</span>
+      <span class="flat-label">COSMoS_Hierarchy</span>    <span class="flat-val">Chemistry Test</span>
+      <span class="flat-label">COSMoS_Domains</span>      <span class="flat-val">LB</span>
+    </div>
+  </div>
+
+  <div class="layer-label">Measurement_Specs — GLUCPL row (one per DSS, recording-specification attributes)</div>
+  <div class="node measurement-specs-row">
+    <div class="code">GLUCPL — Glucose Concentration in Plasma <span class="tag">Measurement_Specs row</span></div>
+    <div class="flat-note">
+      DSS-level recording specification, scoped to the attributes a downstream consumer needs. Joins back to Test_Identity above on <code>TESTCD</code>. Compared to the flattened interim row this sheet drops the BC-level fields already carried in Test_Identity (BC_Definition, BC_Synonyms, BC_Scope, TESTCD_NCIt, Categories, Hierarchy_Path, Parent_Label, Row_Type, Domains_with_DS, Decimal_Places, COSMoS_Subcategory) — the consumer gets recording-focused attributes without duplication.
+    </div>
+    <div class="flat-grid">
+      <span class="flat-label">TESTCD</span>           <span class="flat-val">GLUC</span>
+      <span class="flat-label">TEST</span>             <span class="flat-val">Glucose</span>
+      <span class="flat-label">NCIt_Code</span>        <span class="flat-val">C105585</span>
+      <span class="flat-label">COSMoS_BC_ID</span>     <span class="flat-val">C105585</span>
+      <span class="flat-label">BC_Name / short_name</span>          <span class="flat-val">Glucose Measurement</span>
+      <span class="flat-label">BC_Type</span>          <span class="flat-val">full</span>
+      <span class="flat-label">DS_Code / vlm_group_id</span>          <span class="flat-val">GLUCPL</span>
+      <span class="flat-label">DS_Name / short_name</span>          <span class="flat-val">Glucose Concentration in Plasma</span>
+      <span class="flat-label">COSMoS_Category</span>  <span class="flat-val">CHEMISTRY</span>
+      <span class="flat-label">Domain</span>           <span class="flat-val">LB</span>
+      <span class="flat-label">Domain_Class</span>     <span class="flat-val">Findings</span>
+      <span class="flat-label">Result_Scale</span>     <span class="flat-val">Quantitative</span>
+      <span class="flat-label">Specimen</span>         <span class="flat-val">PLASMA</span>
+      <span class="flat-label">Specimen_NCIt</span>    <span class="flat-val">C13356</span>
+      <span class="flat-label">Method</span>           <span class="flat-val empty">—</span>
+      <span class="flat-label">Method_NCIt</span>      <span class="flat-val empty">—</span>
+      <span class="flat-label">LOINC_Code_Count</span> <span class="flat-val">0</span>
+      <span class="flat-label">LOINC_Code</span>       <span class="flat-val empty">—</span>
+      <span class="flat-label">Allowed_Units</span>    <span class="flat-val">mg/dL; g/L; mmol/L</span>
+      <span class="flat-label">Standard_Unit</span>    <span class="flat-val">mmol/L</span>
+      <span class="flat-label">location</span>         <span class="flat-val empty">—</span>
+      <span class="flat-label">laterality</span>       <span class="flat-val empty">—</span>
+      <span class="flat-label">evaluator</span>        <span class="flat-val empty">—</span>
+    </div>
+  </div>
+
+  <!-- Retired BC, parallel concept -->
+  <div class="layer-label" style="margin-top: 32px;">Parallel: a retired BC outside the C105585 family</div>
+  <div class="node retired">
+    <div class="code">NEW_1 — Urine Glucose Test Strip Measurement [RETIRED] <span class="tag">BC (no DSS)</span></div>
+    <div class="meta">Hierarchy Path: Chemistry Test &gt; Urinalysis &gt; Urine Dipstick Test &nbsp;|&nbsp; Synonym: Urine Glucose Dipstick &nbsp;|&nbsp; Result Scale: Ordinal</div>
+    <div class="slot-note" style="margin-top: 8px; background: #efeeec; border-left-color: #999; color: #555;">
+      A separate BC, not under C105585. Has no NCIt code, no TESTCD, no DSS. The "[RETIRED]" tag in the BC name is the only signal — the entry remains in the flat file as a residual. Its retired functionality is now covered by GLUCUA (Glucose Presence in Urine by Test Strip) under C105585.
+    </div>
+  </div>
+
+  <div class="registry-band">
+    <span class="reg-eyebrow">Registry need</span>
+    <div class="reg-title">A specimen-test qualification registry</div>
+    The recording specification for GLUCPL is complete as delivered — the VLM group binds variables, units, LOINC slots, and default values on the LB row. What the stack does not carry is a governed, stable identifier for the qualified measurement itself — <em>Glucose × Plasma × Quantitative</em> with its recording attributes. Today this identity is addressed via <code>DS_Code</code> mnemonics (GLUCPL, GLUCSERPL, …) that are editorial strings, not unique across domains, and not cross-referenceable. A specimen-test qualification registry would assign each analyte × specimen × method × scale combination a stable ID with governance, version lineage, and cross-references to NCIt and LOINC — turning the DS_Code layer from mnemonic to identifier.
+  </div>
+
+</div>
+
+<div class="footer">
+  Data sources: COSMoS BC + DSS package 2026-Q1 (cdisc_sdtm_dataset_specializations_latest.xlsx, package_date 2025-12-16) &bull; SDTM CT 2026-03-27 &bull; cdisc-for-ai repo<br>
+  All values shown are extracted from <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code> and <code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>. No example data is fabricated.<br>
+  Generated 2026-04-13.
+</div>
+
+<script>
+const glucDss = [
+  { code: 'GLUCBLD',     name: 'Glucose Concentration in Blood',         specimen: 'BLOOD (C12434)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; mmol/L',         std: 'mmol/L', loinc: '2339-0; 15074-8', cat: 'CHEMISTRY' },
+  { code: 'GLUCSER',     name: 'Glucose Concentration in Serum',         specimen: 'SERUM (C13325)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; g/L; mmol/L',    std: 'mmol/L', loinc: 'none mapped',     cat: 'CHEMISTRY' },
+  { code: 'GLUCURIN',    name: 'Glucose Concentration in Urine',         specimen: 'URINE (C13283)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; mmol/L; umol/L', std: 'mmol/L', loinc: '15076-3; 2350-7', cat: 'CHEMISTRY' },
+  { code: 'GLUCURINPRES',name: 'Glucose Presence in Urine',              specimen: 'URINE (C13283)',    method: '—',         scale: 'Qualitative',  units: '—',                     std: '—',      loinc: '2349-9',          cat: 'URINALYSIS' },
+  { code: 'GLUCUA',      name: 'Glucose Presence in Urine by Test Strip',specimen: 'URINE (C13283)',    method: 'TEST STRIP (C50322)', scale: 'Qualitative',  units: '—',                     std: '—',      loinc: '25428-4',         cat: 'URINALYSIS' },
+];
+
+const glucpeDss = [
+  { code: 'GLUCPE', name: 'Plasma Equivalent Glucose', specimen: 'INTERSTITIAL FLUID (C120839)', method: '—', scale: 'Quantitative', units: 'mg/dL; g/L; mmol/L', std: 'mmol/L', loinc: '99504-3; 105272-9', cat: 'CHEMISTRY' },
+];
+
+function renderDss(d) {
+  return `
+    <div class="connector-deep" style="margin-top: 6px;">
+      <div class="node cosmos-dss">
+        <div class="code">${d.code} — ${d.name} <span class="tag">DSS — VLM group</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>${d.code}</strong></span>
+          <span class="attr-label">Specimen</span>      <span class="attr-val"><strong>${d.specimen}</strong></span>
+          <span class="attr-label">Method</span>        <span class="attr-val">${d.method}</span>
+          <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>${d.scale}</strong></span>
+          <span class="attr-label">Allowed Units</span> <span class="attr-val">${d.units}</span>
+          <span class="attr-label">Standard Unit</span> <span class="attr-val"><strong>${d.std}</strong></span>
+          <span class="attr-label">LOINC</span>         <span class="attr-val">${d.loinc}</span>
+          <span class="attr-label">COSMoS Category</span><span class="attr-val">${d.cat}</span>
+        </div>
+      </div>
+    </div>`;
+}
+
+document.getElementById('gluc-dss-list').innerHTML = glucDss.map(renderDss).join('');
+document.getElementById('glucpe-dss-list').innerHTML = glucpeDss.map(renderDss).join('');
+</script>
+
+</body>
+</html>

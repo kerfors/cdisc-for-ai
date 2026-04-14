@@ -89,6 +89,13 @@
   .var-table .var-role-qualifier { color: #7d6608; }
   .var-table .var-role-timing { color: #666; }
 
+  /* Registry need band (shared across the case-study set) */
+  .registry-band { margin: 36px 0 0 0; padding: 20px 24px; border-radius: 8px; background: #2c2e33; color: #e5e0d6; font-size: 0.84rem; line-height: 1.6; border-left: 6px solid #b8956a; }
+  .registry-band .reg-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b8956a; font-weight: 600; display: block; margin-bottom: 6px; }
+  .registry-band .reg-title { font-size: 1.0rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .registry-band code { background: rgba(255,255,255,0.08); padding: 1px 5px; border-radius: 3px; color: #f2e5c9; font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.78rem; }
+  .registry-band em { color: #dbc79a; font-style: normal; font-weight: 500; }
+
   /* Footer */
   .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; }
 
@@ -169,6 +176,12 @@
 
   <div style="margin: 10px 0; padding: 8px 14px; font-size: 0.78rem; color: #666; line-height: 1.5; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
     The dark gold tags (Functional Assessment, QRS, QRS Instrument Questions) are COSMoS-original editorial classifications — they exist nowhere in NCIt or CT. The grey tags are derivable from NCIt synonyms and codelist names. COSMoS had to invent the classification layer because NCIt only provides "is a kind of", not "belongs to" or "is used for".
+  </div>
+
+  <div class="registry-band">
+    <span class="reg-eyebrow">Registry need</span>
+    <div class="reg-title">An instrument composition registry</div>
+    For 6MWT, COSMoS fills the recording specification cleanly — ten SDTM variables per TESTCD, fully specified with roles, codelists, assigned values, and origins. What COSMoS had to invent beyond recording — the classification strings (<em>Functional Assessment</em>, <em>QRS</em>) at the instrument and container levels — is editorial grouping, not governed composition. Subscales, instrument families (FACT-B = FACT-G + Breast Cancer Concern), and version lineage remain unrepresented. An instrument composition registry would own these relationships with stable identifiers, turning what is now sponsor-by-sponsor interpretation into addressable structure.
   </div>
 
 </div>
