@@ -110,6 +110,10 @@
 <h1>6-Minute Walk Test (6MWT) — The COSMoS Story</h1>
 <p class="subtitle">What COSMoS provides for recording and what it had to invent for composition and classification</p>
 
+<div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
+  <strong>Why this story spotlights composition/classification.</strong> 6MWT is an instrument-based Finding (FT). Its 6 TESTCDs share a uniform recording spec — same data type, same units, same role pattern across all of them. So the per-variable recording detail is shown once (SIXMW101) and summarised for the rest. The COSMoS contribution that carries the weight is the classification/composition layer: the instrument-level and container-level BCs, the hierarchy path, and the editorial category strings (<em>Functional Assessment</em>, <em>QRS</em>, <em>QRS Instrument Questions</em>) that tie the 6 questions into an instrument and a container. The companion <a href="Glucose_COSMoS_Story.html">Glucose Story</a> shows the opposite asymmetry — for specimen-based Findings the classification is thin and the recording spec is where the variation lives.
+</div>
+
 <div class="legend">
   <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT TESTCD</div>
   <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS BC / DSS</div>
@@ -139,7 +143,7 @@
   </div>
 
   <div class="cosmos-contrib" style="margin-left: 0;">
-    <span class="cosmos-label">At instrument level (C115789): classification only</span>
+    <span class="cosmos-label">At instrument level (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C115789" target="evs">C115789</a>): classification only</span>
     Parent: <span class="cosmos-field has-val">Functional Assessment</span><br>
     Categories:
     <span class="cat-tag cosmos-original">Functional Assessment</span>
@@ -152,7 +156,7 @@
   </div>
 
   <div class="cosmos-contrib" style="margin-left: 0; margin-top: 6px;">
-    <span class="cosmos-label">At container / subscale level (C115409): grouping node only</span>
+    <span class="cosmos-label">At container / subscale level (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C115409" target="evs">C115409</a>): grouping node only</span>
     Parent: <span class="cosmos-field has-val">CDISC QRS Instruments Questions</span><br>
     Categories:
     <span class="cat-tag cosmos-original">QRS Instrument Questions</span><br>
@@ -160,7 +164,7 @@
   </div>
 
   <div class="cosmos-contrib" style="margin-left: 0; margin-top: 6px;">
-    <span class="cosmos-label">At TESTCD level (C115800–C115805): full composition + classification</span>
+    <span class="cosmos-label">At TESTCD level (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C115800" target="evs">C115800</a>–<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C115805" target="evs">C115805</a>): full composition + classification</span>
     Hierarchy Path: <span class="cosmos-field has-val">Clinical or Research Assessment Question &gt; CDISC QRS Instruments Questions &gt; 6MWT Functional Test Question</span><br>
     Parent BC: <span class="cosmos-field has-val">6MWT Functional Test Question</span><br>
     Categories (7):
@@ -218,20 +222,20 @@ varExample.innerHTML = `
     SIXMW101 — full variable-level specification (10 SDTM variables)
   </div>
   <div style="font-size:0.7rem; color:#999; margin-bottom:6px;">
-    This is what a DSS actually specifies — one row per SDTM variable with role, assigned value, codelist, data type, and origin. Each of the 6 TESTCDs below has this same structure.
+    This is what a DSS actually specifies — one row per SDTM variable with role, assigned value, codelist, data type, origin, and mandatoriness. Each of the 6 TESTCDs below has this same structure.
   </div>
   <table class="var-table">
-    <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Data Type</th><th>Origin</th></tr>
-    <tr><td class="var-name">FTTESTCD</td><td class="var-role-topic">Topic</td><td>SIXMW101</td><td>SIXMW1TC</td><td></td><td></td></tr>
-    <tr><td class="var-name">FTTEST</td><td class="var-role-qualifier">Qualifier</td><td>SIXMW1-Distance at 1 Minute</td><td>SIXMW1TN</td><td></td><td></td></tr>
-    <tr><td class="var-name">FTCAT</td><td class="var-role-qualifier">Qualifier</td><td>SIX MINUTE WALK</td><td>FTCAT</td><td></td><td>Assigned</td></tr>
-    <tr><td class="var-name">FTORRES</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td>integer</td><td>Collected</td></tr>
-    <tr><td class="var-name">FTORRESU</td><td class="var-role-qualifier">Qualifier</td><td>m</td><td>UNIT</td><td></td><td>Collected</td></tr>
-    <tr><td class="var-name">FTSTRESC</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td>integer</td><td>Assigned</td></tr>
-    <tr><td class="var-name">FTSTRESN</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td>integer</td><td>Assigned</td></tr>
-    <tr><td class="var-name">FTSTRESU</td><td class="var-role-qualifier">Qualifier</td><td>m</td><td>UNIT</td><td></td><td>Assigned</td></tr>
-    <tr><td class="var-name">FTASTDEV</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td></td><td>Collected</td></tr>
-    <tr><td class="var-name">FTDTC</td><td class="var-role-timing">Timing</td><td></td><td></td><td></td><td>Collected</td></tr>
+    <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Data Type</th><th>Origin Type</th><th>Origin Source</th><th>Mandatory Var</th><th>Mandatory Val</th></tr>
+    <tr><td class="var-name">FTTESTCD</td><td class="var-role-topic">Topic</td><td>SIXMW101</td><td>SIXMW1TC</td><td></td><td></td><td></td><td>Y</td><td>Y</td></tr>
+    <tr><td class="var-name">FTTEST</td><td class="var-role-qualifier">Qualifier</td><td>SIXMW1-Distance at 1 Minute</td><td>SIXMW1TN</td><td></td><td></td><td></td><td>Y</td><td>Y</td></tr>
+    <tr><td class="var-name">FTCAT</td><td class="var-role-qualifier">Qualifier</td><td>SIX MINUTE WALK</td><td>FTCAT</td><td></td><td>Assigned</td><td>Sponsor</td><td>Y</td><td>Y</td></tr>
+    <tr><td class="var-name">FTORRES</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td>integer</td><td>Collected</td><td>Investigator</td><td>Y</td><td>N</td></tr>
+    <tr><td class="var-name">FTORRESU</td><td class="var-role-qualifier">Qualifier</td><td>m</td><td>UNIT</td><td></td><td>Collected</td><td>Investigator</td><td>Y</td><td>N</td></tr>
+    <tr><td class="var-name">FTSTRESC</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td>integer</td><td>Assigned</td><td>Sponsor</td><td>Y</td><td>N</td></tr>
+    <tr><td class="var-name">FTSTRESN</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td>integer</td><td>Assigned</td><td>Sponsor</td><td>Y</td><td>N</td></tr>
+    <tr><td class="var-name">FTSTRESU</td><td class="var-role-qualifier">Qualifier</td><td>m</td><td>UNIT</td><td></td><td>Assigned</td><td>Sponsor</td><td>Y</td><td>N</td></tr>
+    <tr><td class="var-name">FTASTDEV</td><td class="var-role-qualifier">Qualifier</td><td></td><td></td><td></td><td>Collected</td><td>Investigator</td><td>N</td><td>N</td></tr>
+    <tr><td class="var-name">FTDTC</td><td class="var-role-timing">Timing</td><td></td><td></td><td></td><td>Collected</td><td>Investigator</td><td>Y</td><td>N</td></tr>
   </table>
 `;
 dssContainer.appendChild(varExample);

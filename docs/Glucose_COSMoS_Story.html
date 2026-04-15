@@ -150,6 +150,10 @@
 <h1>Glucose Measurement — The COSMoS Story</h1>
 <p class="subtitle">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-bc-dss</code> track flattens and joins it with enriched TESTCD identity into the Specimen_Findings consumer file</p>
 
+<div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
+  <strong>Why this story spotlights the recording spec.</strong> Glucose Measurement is a specimen-based Finding (LB). Its classification is thin — one BC sitting under <em>Chemistry Test &gt; Laboratory Tests</em> — but it expands into multiple DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. The COSMoS contribution that carries the weight is the per-DSS recording spec, and the case-defining attributes that distinguish GLUCPL from GLUCBLD from GLUCSER and so on. The companion <a href="6MWT_COSMoS_Story.html">6MWT Story</a> shows the opposite asymmetry — for instrument-based Findings the recording spec is uniform and the classification/composition layer is where the variation lives.
+</div>
+
 <div class="legend">
   <div class="legend-item"><div class="legend-swatch sw-cosmos-bc"></div> COSMoS BC (root concept)</div>
   <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT TESTCD</div>
@@ -167,14 +171,14 @@
     <div class="part-num">Part 1</div>
     <div class="part-title">What COSMoS provides — case-distinct recording specifications</div>
     <div class="part-desc">
-      NCIt carries two concepts — C105585 Glucose Measurement and C163446 Plasma Equivalent Glucose — and SDTM CT reflects both as distinct TESTCDs: GLUC (C105585) and GLUCPE (C163446). COSMoS has curated them together under a single BC (C105585 Glucose Measurement). GLUCPE's C163446 remains visible at the TESTCD level and is flagged as a legacy cross-reference in the COSMoS QC (TESTCD_NCIt ≠ BC NCIt, QC-14). Under that one BC, COSMoS expands into eight DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. Each DSS is a value-level metadata (VLM) group anchored on <code>LB.LBTESTCD</code> — a bundle of rows that jointly constrain the recording when LBTESTCD takes the relevant value under the relevant conditions. The DS_Code is the <code>vlm_group_id</code> that addresses the bundle. One DSS (GLUCPL) is shown expanded with its full 12-variable spec; the others are summarised by their case-defining attributes. A further DSS (GLUCSERPL) exists in source but is omitted from this view pending QC review. Below each DSS view, the cdisc-for-ai <code>cosmos-bc-dss</code> track then aggregates the BC header, TESTCD header, and VLM rows into one row per DSS — the interim shape the repo carries forward.
+      NCIt carries two concepts — <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement and <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> Plasma Equivalent Glucose — and SDTM CT reflects both as distinct TESTCDs: GLUC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>) and GLUCPE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a>). COSMoS has curated them together under a single BC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement). GLUCPE's <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> remains visible at the TESTCD level and is flagged as a legacy cross-reference in the COSMoS QC (TESTCD_NCIt ≠ BC NCIt, QC-14). Under that one BC, COSMoS expands into eight DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. Each DSS is a value-level metadata (VLM) group anchored on <code>LB.LBTESTCD</code> — a bundle of rows that jointly constrain the recording when LBTESTCD takes the relevant value under the relevant conditions. The DS_Code is the <code>vlm_group_id</code> that addresses the bundle. One DSS (GLUCPL) is shown expanded with its full 12-variable spec; the others are summarised by their case-defining attributes. A further DSS (GLUCSERPL) exists in source but is omitted from this view pending QC review. Below each DSS view, the cdisc-for-ai <code>cosmos-bc-dss</code> track then aggregates the BC header, TESTCD header, and VLM rows into one row per DSS — the interim shape the repo carries forward.
     </div>
   </div>
 
   <!-- BC root -->
   <div class="layer-label">COSMoS BC — one root concept</div>
   <div class="node cosmos-bc">
-    <div class="code">C105585 — Glucose Measurement <span class="tag">BC</span></div>
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> — Glucose Measurement <span class="tag">BC</span></div>
     <div class="meta">Hierarchy Path: Chemistry Test &nbsp;|&nbsp; Categories: Chemistry Tests; Laboratory Tests &nbsp;|&nbsp; Domains_with_DS: LB</div>
   </div>
 
@@ -184,7 +188,7 @@
     <div class="connector">
       <div class="node sdtm-ct">
         <div class="code">GLUC — Glucose <span class="tag">TESTCD</span></div>
-        <div class="meta">NCIt: C105585 &nbsp;|&nbsp; 7 DSSs in source &nbsp;|&nbsp; 6 shown (GLUCSERPL omitted)</div>
+        <div class="meta">NCIt: <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> &nbsp;|&nbsp; 7 DSSs in source &nbsp;|&nbsp; 6 shown (GLUCSERPL omitted)</div>
       </div>
     </div>
 
@@ -195,7 +199,7 @@
         <div class="attr-grid">
           <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>GLUCPL</strong></span>
           <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>LB.LBTESTCD</strong></span>
-          <span class="attr-label">Specimen</span>      <span class="attr-val"><strong>PLASMA</strong> (C13356)</span>
+          <span class="attr-label">Specimen</span>      <span class="attr-val"><strong>PLASMA</strong> (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a>)</span>
           <span class="attr-label">Method</span>        <span class="attr-val">—</span>
           <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>Quantitative</strong></span>
           <span class="attr-label">Allowed Units</span> <span class="attr-val">mg/dL; g/L; mmol/L</span>
@@ -205,19 +209,19 @@
         </div>
         <div style="font-size:0.74rem; color:#7d6608; margin: 8px 0 4px;">VLM group GLUCPL — 12 rows of value-level metadata on <code style="background:#fff; padding:0 4px; border-radius:3px;">LB.LBTESTCD</code>, jointly specifying the Glucose-in-Plasma recording case:</div>
         <table class="var-table">
-          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Data Type</th><th>Origin</th><th>Mandatory</th></tr>
-          <tr><td class="var-name">LBTESTCD</td><td class="var-role-topic">Topic</td><td>GLUC</td><td>C65047</td><td></td><td></td><td>Var/Val</td></tr>
-          <tr><td class="var-name">LBTEST</td><td class="var-role-qualifier">Qualifier</td><td>Glucose</td><td>C67154</td><td></td><td></td><td>Var/Val</td></tr>
-          <tr><td class="var-name">LBCAT</td><td class="var-role-qualifier">Qualifier</td><td>CHEMISTRY</td><td></td><td></td><td></td><td>Var only</td></tr>
-          <tr><td class="var-name">LBORRES</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Var only</td></tr>
-          <tr><td class="var-name">LBORRESU</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td>C71620</td><td></td><td></td><td>Var only</td></tr>
-          <tr><td class="var-name">LBSTRESC</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Var only</td></tr>
-          <tr><td class="var-name">LBSTRESN</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Var only</td></tr>
-          <tr><td class="var-name">LBSTRESU</td><td class="var-role-qualifier">Qualifier</td><td>mmol/L</td><td>C71620</td><td></td><td></td><td>Var only</td></tr>
-          <tr><td class="var-name">LBLOINC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td></td><td></td><td></td><td>—</td></tr>
-          <tr><td class="var-name">LBSPEC</td><td class="var-role-qualifier">Qualifier</td><td>PLASMA</td><td>C78734</td><td></td><td></td><td>Var only</td></tr>
-          <tr><td class="var-name">LBFAST</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (subset NY_NY)</td><td>C66742</td><td></td><td></td><td>—</td></tr>
-          <tr><td class="var-name">LBDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td></td><td>Var only</td></tr>
+          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Data Type</th><th>Origin Type</th><th>Origin Source</th><th>Mandatory Var</th><th>Mandatory Val</th></tr>
+          <tr><td class="var-name">LBTESTCD</td><td class="var-role-topic">Topic</td><td>GLUC</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C65047" target="evs">C65047</a></td><td></td><td></td><td></td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">LBTEST</td><td class="var-role-qualifier">Qualifier</td><td>Glucose</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C67154" target="evs">C67154</a></td><td></td><td></td><td></td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">LBCAT</td><td class="var-role-qualifier">Qualifier</td><td>CHEMISTRY</td><td></td><td></td><td></td><td></td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBORRES</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Vendor</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBORRESU</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C71620" target="evs">C71620</a></td><td></td><td></td><td></td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBSTRESC</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Vendor</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBSTRESN</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td>float</td><td>Collected</td><td>Vendor</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBSTRESU</td><td class="var-role-qualifier">Qualifier</td><td>mmol/L</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C71620" target="evs">C71620</a></td><td></td><td></td><td></td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBLOINC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td></td><td></td><td></td><td></td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">LBSPEC</td><td class="var-role-qualifier">Qualifier</td><td>PLASMA</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C78734" target="evs">C78734</a></td><td></td><td></td><td></td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">LBFAST</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (subset NY_NY)</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C66742" target="evs">C66742</a></td><td></td><td></td><td></td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">LBDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td></td><td></td><td>Y</td><td>N</td></tr>
         </table>
         <div class="slot-note" style="margin-top: 8px;">
           <strong>LBFAST is in the template as a slot</strong> with codelist subset NY_NY — meaning the DSS reserves the field for fasting state but the value is collected per row. The DSS does not classify which cases are fasting.
@@ -234,8 +238,8 @@
           The cdisc-for-ai <code>cosmos-bc-dss/</code> track aggregates the BC header, TESTCD header, and the 12 VLM rows into a single row per DSS in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>. What survives is the case-defining attributes in a shape suitable for joining across SDTM CT, NCIt, and COSMoS. What is lost is the per-variable VLM detail — role, mandatory flags, codelists, slot-vs-assigned status. Below: the GLUCPL row, all 34 columns, exactly as the interim file contains them.
         </div>
         <div class="flat-grid">
-          <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val">C105585</span>
-          <span class="flat-label">NCIt_Code</span>          <span class="flat-val">C105585</span>
+          <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+          <span class="flat-label">NCIt_Code</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
           <span class="flat-label">BC_Name / short_name</span>            <span class="flat-val">Glucose Measurement</span>
           <span class="flat-label">BC_Definition</span>      <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
           <span class="flat-label">BC_Synonyms</span>        <span class="flat-val">Glucose</span>
@@ -243,7 +247,7 @@
           <span class="flat-label">BC_Scope</span>           <span class="flat-val">Subject</span>
           <span class="flat-label">TESTCD</span>             <span class="flat-val">GLUC</span>
           <span class="flat-label">TEST</span>               <span class="flat-val">Glucose</span>
-          <span class="flat-label">TESTCD_NCIt</span>        <span class="flat-val">C105585</span>
+          <span class="flat-label">TESTCD_NCIt</span>        <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
           <span class="flat-label">Categories</span>         <span class="flat-val">Chemistry Tests; Laboratory Tests</span>
           <span class="flat-label">Hierarchy_Path</span>     <span class="flat-val">Chemistry Test</span>
           <span class="flat-label">Parent_Label</span>       <span class="flat-val">Chemistry Test</span>
@@ -255,7 +259,7 @@
           <span class="flat-label">Domain_Class</span>       <span class="flat-val">Findings</span>
           <span class="flat-label">Result_Scale</span>       <span class="flat-val">Quantitative</span>
           <span class="flat-label">Specimen</span>           <span class="flat-val">PLASMA</span>
-          <span class="flat-label">Specimen_NCIt</span>      <span class="flat-val">C13356</span>
+          <span class="flat-label">Specimen_NCIt</span>      <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a></span>
           <span class="flat-label">Method</span>             <span class="flat-val empty">—</span>
           <span class="flat-label">Method_NCIt</span>        <span class="flat-val empty">—</span>
           <span class="flat-label">LOINC_Code_Count</span>   <span class="flat-val">0</span>
@@ -282,7 +286,7 @@
     <div class="connector">
       <div class="node sdtm-ct">
         <div class="code">GLUCPE — Plasma Equivalent Glucose <span class="tag">TESTCD</span></div>
-        <div class="meta">TESTCD_NCIt: C163446 &nbsp;|&nbsp; BC NCIt: C105585 (merged by COSMoS — QC-14) &nbsp;|&nbsp; 1 DSS &nbsp;|&nbsp; Used for interstitial fluid (CGM) measurements reported as plasma-equivalent</div>
+        <div class="meta">TESTCD_NCIt: <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> &nbsp;|&nbsp; BC NCIt: <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> (merged by COSMoS — QC-14) &nbsp;|&nbsp; 1 DSS &nbsp;|&nbsp; Used for interstitial fluid (CGM) measurements reported as plasma-equivalent</div>
       </div>
     </div>
     <div id="glucpe-dss-list"></div>
@@ -309,7 +313,7 @@
       TESTCD-level identity. NCIt fields come from the <code>sdtm-test-codes/</code> source track (NCI EVS SDTM CT package 2026-03-27). COSMoS coverage flags summarise across all DSSs under this TESTCD — here COSMoS_Category aggregates CHEMISTRY and URINALYSIS because GLUC has DSSs in both.
     </div>
     <div class="flat-grid">
-      <span class="flat-label">NCIt_Code</span>           <span class="flat-val">C105585</span>
+      <span class="flat-label">NCIt_Code</span>           <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
       <span class="flat-label">TESTCD</span>              <span class="flat-val">GLUC</span>
       <span class="flat-label">TEST</span>                <span class="flat-val">Glucose</span>
       <span class="flat-label">SDTM_Domains</span>        <span class="flat-val">LB</span>
@@ -337,8 +341,8 @@
     <div class="flat-grid">
       <span class="flat-label">TESTCD</span>           <span class="flat-val">GLUC</span>
       <span class="flat-label">TEST</span>             <span class="flat-val">Glucose</span>
-      <span class="flat-label">NCIt_Code</span>        <span class="flat-val">C105585</span>
-      <span class="flat-label">COSMoS_BC_ID</span>     <span class="flat-val">C105585</span>
+      <span class="flat-label">NCIt_Code</span>        <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+      <span class="flat-label">COSMoS_BC_ID</span>     <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
       <span class="flat-label">BC_Name / short_name</span>          <span class="flat-val">Glucose Measurement</span>
       <span class="flat-label">BC_Type</span>          <span class="flat-val">full</span>
       <span class="flat-label">DS_Code / vlm_group_id</span>          <span class="flat-val">GLUCPL</span>
@@ -348,7 +352,7 @@
       <span class="flat-label">Domain_Class</span>     <span class="flat-val">Findings</span>
       <span class="flat-label">Result_Scale</span>     <span class="flat-val">Quantitative</span>
       <span class="flat-label">Specimen</span>         <span class="flat-val">PLASMA</span>
-      <span class="flat-label">Specimen_NCIt</span>    <span class="flat-val">C13356</span>
+      <span class="flat-label">Specimen_NCIt</span>    <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a></span>
       <span class="flat-label">Method</span>           <span class="flat-val empty">—</span>
       <span class="flat-label">Method_NCIt</span>      <span class="flat-val empty">—</span>
       <span class="flat-label">LOINC_Code_Count</span> <span class="flat-val">0</span>
@@ -362,12 +366,12 @@
   </div>
 
   <!-- Retired BC, parallel concept -->
-  <div class="layer-label" style="margin-top: 32px;">Parallel: a retired BC outside the C105585 family</div>
+  <div class="layer-label" style="margin-top: 32px;">Parallel: a retired BC outside the <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> family</div>
   <div class="node retired">
     <div class="code">NEW_1 — Urine Glucose Test Strip Measurement [RETIRED] <span class="tag">BC (no DSS)</span></div>
     <div class="meta">Hierarchy Path: Chemistry Test &gt; Urinalysis &gt; Urine Dipstick Test &nbsp;|&nbsp; Synonym: Urine Glucose Dipstick &nbsp;|&nbsp; Result Scale: Ordinal</div>
     <div class="slot-note" style="margin-top: 8px; background: #efeeec; border-left-color: #999; color: #555;">
-      A separate BC, not under C105585. Has no NCIt code, no TESTCD, no DSS. The "[RETIRED]" tag in the BC name is the only signal — the entry remains in the flat file as a residual. Its retired functionality is now covered by GLUCUA (Glucose Presence in Urine by Test Strip) under C105585.
+      A separate BC, not under <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>. Has no NCIt code, no TESTCD, no DSS. The "[RETIRED]" tag in the BC name is the only signal — the entry remains in the flat file as a residual. Its retired functionality is now covered by GLUCUA (Glucose Presence in Urine by Test Strip) under <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>.
     </div>
   </div>
 
@@ -387,15 +391,15 @@
 
 <script>
 const glucDss = [
-  { code: 'GLUCBLD',     name: 'Glucose Concentration in Blood',         specimen: 'BLOOD (C12434)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; mmol/L',         std: 'mmol/L', loinc: '2339-0; 15074-8', cat: 'CHEMISTRY' },
-  { code: 'GLUCSER',     name: 'Glucose Concentration in Serum',         specimen: 'SERUM (C13325)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; g/L; mmol/L',    std: 'mmol/L', loinc: 'none mapped',     cat: 'CHEMISTRY' },
-  { code: 'GLUCURIN',    name: 'Glucose Concentration in Urine',         specimen: 'URINE (C13283)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; mmol/L; umol/L', std: 'mmol/L', loinc: '15076-3; 2350-7', cat: 'CHEMISTRY' },
-  { code: 'GLUCURINPRES',name: 'Glucose Presence in Urine',              specimen: 'URINE (C13283)',    method: '—',         scale: 'Qualitative',  units: '—',                     std: '—',      loinc: '2349-9',          cat: 'URINALYSIS' },
-  { code: 'GLUCUA',      name: 'Glucose Presence in Urine by Test Strip',specimen: 'URINE (C13283)',    method: 'TEST STRIP (C50322)', scale: 'Qualitative',  units: '—',                     std: '—',      loinc: '25428-4',         cat: 'URINALYSIS' },
+  { code: 'GLUCBLD',     name: 'Glucose Concentration in Blood',         specimen: 'BLOOD (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C12434" target="evs">C12434</a>)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; mmol/L',         std: 'mmol/L', loinc: '2339-0; 15074-8', cat: 'CHEMISTRY' },
+  { code: 'GLUCSER',     name: 'Glucose Concentration in Serum',         specimen: 'SERUM (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13325" target="evs">C13325</a>)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; g/L; mmol/L',    std: 'mmol/L', loinc: 'none mapped',     cat: 'CHEMISTRY' },
+  { code: 'GLUCURIN',    name: 'Glucose Concentration in Urine',         specimen: 'URINE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13283" target="evs">C13283</a>)',    method: '—',         scale: 'Quantitative', units: 'mg/dL; mmol/L; umol/L', std: 'mmol/L', loinc: '15076-3; 2350-7', cat: 'CHEMISTRY' },
+  { code: 'GLUCURINPRES',name: 'Glucose Presence in Urine',              specimen: 'URINE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13283" target="evs">C13283</a>)',    method: '—',         scale: 'Qualitative',  units: '—',                     std: '—',      loinc: '2349-9',          cat: 'URINALYSIS' },
+  { code: 'GLUCUA',      name: 'Glucose Presence in Urine by Test Strip',specimen: 'URINE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13283" target="evs">C13283</a>)',    method: 'TEST STRIP (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C50322" target="evs">C50322</a>)', scale: 'Qualitative',  units: '—',                     std: '—',      loinc: '25428-4',         cat: 'URINALYSIS' },
 ];
 
 const glucpeDss = [
-  { code: 'GLUCPE', name: 'Plasma Equivalent Glucose', specimen: 'INTERSTITIAL FLUID (C120839)', method: '—', scale: 'Quantitative', units: 'mg/dL; g/L; mmol/L', std: 'mmol/L', loinc: '99504-3; 105272-9', cat: 'CHEMISTRY' },
+  { code: 'GLUCPE', name: 'Plasma Equivalent Glucose', specimen: 'INTERSTITIAL FLUID (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C120839" target="evs">C120839</a>)', method: '—', scale: 'Quantitative', units: 'mg/dL; g/L; mmol/L', std: 'mmol/L', loinc: '99504-3; 105272-9', cat: 'CHEMISTRY' },
 ];
 
 function renderDss(d) {
