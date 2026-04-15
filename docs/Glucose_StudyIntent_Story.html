@@ -138,7 +138,9 @@
     <div class="part-num">Part 1</div>
     <div class="part-title">What COSMoS leaves to study assembly — the case-completion gap</div>
     <div class="part-desc">
-      A clinical "case" of a glucose measurement requires more than the recording template can carry. The DSS fixes the test-intrinsic dimensions (specimen, method, scale, unit, LOINC) but the protocol-context dimensions that make a glucose value interpretable live elsewhere in the SDTM model — or in study assembly logic that is not part of CDISC standards. Below: dimensions a glucose case needs, and where each lives.
+      <p>A clinical "case" of a glucose measurement requires more than the recording template can carry.</p>
+      <p style="margin-top: 0.6rem;">The DSS fixes the test-intrinsic dimensions (specimen, method, scale, unit, LOINC) but the protocol-context dimensions that make a glucose value interpretable live elsewhere in the SDTM model — or in study assembly logic that is not part of CDISC standards.</p>
+      <p style="margin-top: 0.6rem;">Below: dimensions a glucose case needs, and where each lives.</p>
     </div>
   </div>
 
@@ -174,7 +176,8 @@
   </div>
 
   <div style="margin: 16px 0 6px 0; padding: 10px 14px; font-size: 0.8rem; color: #555; line-height: 1.55; background: #fff; border-radius: 6px; border: 1px solid #e0ddd8;">
-    <strong>Summary.</strong> COSMoS does case-construction work where the dimensions are fixed by the test (8 DSSs for the specimen × method × scale matrix). It deliberately does not encode dimensions that vary by study protocol (timing, challenge, visit). A clinically interpretable glucose case = DSS recording template + per-row instance values + study-context assembly. The first piece is standardised; the third is not.
+    <p><strong>Summary.</strong> COSMoS does case-construction work where the dimensions are fixed by the test (8 DSSs for the specimen × method × scale matrix). It deliberately does not encode dimensions that vary by study protocol (timing, challenge, visit).</p>
+    <p style="margin-top: 0.7rem;">A clinically interpretable glucose case = DSS recording template + per-row instance values + study-context assembly. The first piece is standardised; the third is not.</p>
   </div>
 
   <!-- PART 2 -->
@@ -182,7 +185,9 @@
     <div class="part-num">Part 2</div>
     <div class="part-title">Specializations of GLUCPL — what a study designer authors on top of the template</div>
     <div class="part-desc">
-      A study designer does not author GLUCPL. They author cases that <em>specialize</em> it — more-constrained templates in which some of GLUCPL's open slots are pinned to specific values, and some of the outside-DSS dimensions from Part 1 are bound to study-design objects (trial events, timepoint references, activities). Each case is still a schema, not an instance: it describes every observation that matches the case, across every subject and visit. Three illustrative specializations are shown below. The <code>case_id</code> values (<code>ID001</code>, <code>ID002</code>, <code>ID003</code>) are purely syntactic placeholders — the architectural point is that such IDs would need to be governed by a layer that does not yet exist.
+      <p>A study designer does not author GLUCPL. They author cases that <em>specialize</em> it — more-constrained templates in which some of GLUCPL's open slots are pinned to specific values, and some of the outside-DSS dimensions from Part 1 are bound to study-design objects (trial events, timepoint references, activities).</p>
+      <p style="margin-top: 0.6rem;">Each case is still a schema, not an instance: it describes every observation that matches the case, across every subject and visit.</p>
+      <p style="margin-top: 0.6rem;">Three illustrative specializations are shown below. The <code>case_id</code> values (<code>ID001</code>, <code>ID002</code>, <code>ID003</code>) are purely syntactic placeholders — the architectural point is that such IDs would need to be governed by a layer that does not yet exist.</p>
     </div>
   </div>
 
@@ -277,13 +282,19 @@
 
   <!-- Architectural note -->
   <div style="margin: 18px 0 6px 0; padding: 12px 16px; font-size: 0.8rem; color: #555; line-height: 1.6; background: #fff; border-radius: 6px; border: 1px solid #e0ddd8;">
-    <strong>What the three cases show together.</strong> ID001 is the clean case — everything resolves inside the DSS. ID002 and ID003 cross the DSS boundary: both require a stable reference to the same OGTT challenge event, but pin LBFAST differently because they sample before vs after the load. The outside-DSS object (the challenge itself) is authored per protocol and is not today a CDISC-governed registrable entity — each protocol re-authors it. Cases ID002 and ID003 compose GLUCPL with that external reference; the identity of a case is a binding across layers, not a single pointer.
+    <p><strong>What the three cases show together.</strong> ID001 is the clean case — everything resolves inside the DSS.</p>
+    <p style="margin-top: 0.7rem;">ID002 and ID003 cross the DSS boundary: both require a stable reference to the same OGTT challenge event, but pin LBFAST differently because they sample before vs after the load.</p>
+    <p style="margin-top: 0.7rem;">The outside-DSS object (the challenge itself) is authored per protocol and is not today a CDISC-governed registrable entity — each protocol re-authors it.</p>
+    <p style="margin-top: 0.7rem;">Cases ID002 and ID003 compose GLUCPL with that external reference; the identity of a case is a binding across layers, not a single pointer.</p>
   </div>
 
   <div class="registry-band">
     <span class="reg-eyebrow">Registry need</span>
     <div class="reg-title">A case-specialization registry</div>
-    Every sponsor catalogue observed in practice holds entries equivalent to the three cases above — FPG, OGTT variants, glucose measurements differentiated by specimen and by clinical use — but as <em>text strings</em> in spec documents and eCRF libraries, not governed identifiers. The anchor they pin onto is already governed: GLUCPL (<code>DS_Code / vlm_group_id</code>), C105585 (NCIt / COSMoS BC), and the surrounding SDTM CT come with curation, stable IDs, and release-versioned provenance. The gap sits one layer up — at the case-specialization layer — where study-design intent lives today as sponsor-local strings with no shared vocabulary. The syntactic IDs used here (<code>ID001</code>, <code>ID002</code>, <code>ID003</code>) mark the slot a governed cross-sponsor layer would fill. A case-specialization registry would assign each case a stable ID, carry its inside-DSS pins and outside-DSS bindings, and give study designers and downstream reviewers a single governed namespace to address intent across sponsor boundaries.
+    <p>Every sponsor catalogue observed in practice holds entries equivalent to the three cases above — FPG, OGTT variants, glucose measurements differentiated by specimen and by clinical use — but as <em>text strings</em> in spec documents and eCRF libraries, not governed identifiers.</p>
+    <p style="margin-top: 0.7rem;">The anchor they pin onto is already governed: GLUCPL (<code>DS_Code / vlm_group_id</code>), C105585 (NCIt / COSMoS BC), and the surrounding SDTM CT come with curation, stable IDs, and release-versioned provenance.</p>
+    <p style="margin-top: 0.7rem;">The gap sits one layer up — at the case-specialization layer — where study-design intent lives today as sponsor-local strings with no shared vocabulary. The syntactic IDs used here (<code>ID001</code>, <code>ID002</code>, <code>ID003</code>) mark the slot a governed cross-sponsor layer would fill.</p>
+    <p style="margin-top: 0.7rem;">A case-specialization registry would assign each case a stable ID, carry its inside-DSS pins and outside-DSS bindings, and give study designers and downstream reviewers a single governed namespace to address intent across sponsor boundaries.</p>
   </div>
 
 </div>

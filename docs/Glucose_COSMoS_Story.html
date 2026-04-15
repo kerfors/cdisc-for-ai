@@ -151,7 +151,9 @@
 <p class="subtitle">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-bc-dss</code> track flattens and joins it with enriched TESTCD identity into the Specimen_Findings consumer file</p>
 
 <div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
-  <strong>Why this story spotlights the recording spec.</strong> Glucose Measurement is a specimen-based Finding (LB). Its classification is thin — one BC sitting under <em>Chemistry Test &gt; Laboratory Tests</em> — but it expands into multiple DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. The COSMoS contribution that carries the weight is the per-DSS recording spec, and the case-defining attributes that distinguish GLUCPL from GLUCBLD from GLUCSER and so on. The companion <a href="6MWT_COSMoS_Story.html">6MWT Story</a> shows the opposite asymmetry — for instrument-based Findings the recording spec is uniform and the classification/composition layer is where the variation lives.
+  <p><strong>Why this story spotlights the recording spec.</strong> Glucose Measurement is a specimen-based Finding (LB). Its classification is thin — one BC sitting under <em>Chemistry Test &gt; Laboratory Tests</em> — but it expands into multiple DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit.</p>
+  <p style="margin-top: 0.7rem;">The COSMoS contribution that carries the weight is the per-DSS recording spec, and the case-defining attributes that distinguish GLUCPL from GLUCBLD from GLUCSER and so on.</p>
+  <p style="margin-top: 0.7rem;">The companion <a href="6MWT_COSMoS_Story.html">6MWT Story</a> shows the opposite asymmetry — for instrument-based Findings the recording spec is uniform and the classification/composition layer is where the variation lives.</p>
 </div>
 
 <div class="legend">
@@ -171,7 +173,10 @@
     <div class="part-num">Part 1</div>
     <div class="part-title">What COSMoS provides — case-distinct recording specifications</div>
     <div class="part-desc">
-      NCIt carries two concepts — <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement and <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> Plasma Equivalent Glucose — and SDTM CT reflects both as distinct TESTCDs: GLUC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>) and GLUCPE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a>). COSMoS has curated them together under a single BC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement). GLUCPE's <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> remains visible at the TESTCD level and is flagged as a legacy cross-reference in the COSMoS QC (TESTCD_NCIt ≠ BC NCIt, QC-14). Under that one BC, COSMoS expands into eight DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. Each DSS is a value-level metadata (VLM) group anchored on <code>LB.LBTESTCD</code> — a bundle of rows that jointly constrain the recording when LBTESTCD takes the relevant value under the relevant conditions. The DS_Code is the <code>vlm_group_id</code> that addresses the bundle. One DSS (GLUCPL) is shown expanded with its full 12-variable spec; the others are summarised by their case-defining attributes. A further DSS (GLUCSERPL) exists in source but is omitted from this view pending QC review. Below each DSS view, the cdisc-for-ai <code>cosmos-bc-dss</code> track then aggregates the BC header, TESTCD header, and VLM rows into one row per DSS — the interim shape the repo carries forward.
+      <p>NCIt carries two concepts — <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement and <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> Plasma Equivalent Glucose — and SDTM CT reflects both as distinct TESTCDs: GLUC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>) and GLUCPE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a>). COSMoS has curated them together under a single BC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement). GLUCPE's <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> remains visible at the TESTCD level and is flagged as a legacy cross-reference in the COSMoS QC (TESTCD_NCIt ≠ BC NCIt, QC-14).</p>
+      <p style="margin-top: 0.6rem;">Under that one BC, COSMoS expands into eight DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. Each DSS is a value-level metadata (VLM) group anchored on <code>LB.LBTESTCD</code> — a bundle of rows that jointly constrain the recording when LBTESTCD takes the relevant value under the relevant conditions. The DS_Code is the <code>vlm_group_id</code> that addresses the bundle.</p>
+      <p style="margin-top: 0.6rem;">One DSS (GLUCPL) is shown expanded with its full 12-variable spec; the others are summarised by their case-defining attributes. A further DSS (GLUCSERPL) exists in source but is omitted from this view pending QC review.</p>
+      <p style="margin-top: 0.6rem;">Below each DSS view, the cdisc-for-ai <code>cosmos-bc-dss</code> track then aggregates the BC header, TESTCD header, and VLM rows into one row per DSS — the interim shape the repo carries forward.</p>
     </div>
   </div>
 
@@ -235,7 +240,9 @@
       <div class="node flattened-row">
         <div class="code">GLUCPL — flattened row <span class="tag">interim aggregation</span></div>
         <div class="flat-note">
-          The cdisc-for-ai <code>cosmos-bc-dss/</code> track aggregates the BC header, TESTCD header, and the 12 VLM rows into a single row per DSS in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>. What survives is the case-defining attributes in a shape suitable for joining across SDTM CT, NCIt, and COSMoS. What is lost is the per-variable VLM detail — role, mandatory flags, codelists, slot-vs-assigned status. Below: the GLUCPL row, all 34 columns, exactly as the interim file contains them.
+          <p>The cdisc-for-ai <code>cosmos-bc-dss/</code> track aggregates the BC header, TESTCD header, and the 12 VLM rows into a single row per DSS in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>.</p>
+          <p style="margin-top: 0.6rem;">What survives is the case-defining attributes in a shape suitable for joining across SDTM CT, NCIt, and COSMoS. What is lost is the per-variable VLM detail — role, mandatory flags, codelists, slot-vs-assigned status.</p>
+          <p style="margin-top: 0.6rem;">Below: the GLUCPL row, all 34 columns, exactly as the interim file contains them.</p>
         </div>
         <div class="flat-grid">
           <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
@@ -294,7 +301,9 @@
 
   <!-- Naming note at Part 1 / Part 2 transition -->
   <div style="margin: 28px 0 0 0; padding: 12px 16px; font-size: 0.78rem; color: #555; line-height: 1.6; background: #fff8ea; border-radius: 6px; border-left: 4px solid #C8A415;">
-    <strong>A note on names.</strong> From Part 1 onward, column labels carry both names: <code>DS_Code / vlm_group_id</code>, <code>DS_Name / short_name</code>, <code>BC_Name / short_name</code>. The first is the cdisc-for-ai consumer-facing name; the second is the COSMoS source field. The rebrand is for readability — <code>vlm_group_id</code> is implementation-oriented and <code>short_name</code> is reused at both BC and DSS levels in source. Pairing preserves source traceability; the mapping is documented in <code>cosmos-bc-dss/notebooks/COSMoS_BC_DSS_Flatten.ipynb</code>.
+    <p><strong>A note on names.</strong> From Part 1 onward, column labels carry both names: <code>DS_Code / vlm_group_id</code>, <code>DS_Name / short_name</code>, <code>BC_Name / short_name</code>. The first is the cdisc-for-ai consumer-facing name; the second is the COSMoS source field.</p>
+    <p style="margin-top: 0.7rem;">The rebrand is for readability — <code>vlm_group_id</code> is implementation-oriented and <code>short_name</code> is reused at both BC and DSS levels in source.</p>
+    <p style="margin-top: 0.7rem;">Pairing preserves source traceability; the mapping is documented in <code>cosmos-bc-dss/notebooks/COSMoS_BC_DSS_Flatten.ipynb</code>.</p>
   </div>
 
   <!-- PART 2 -->
@@ -302,7 +311,9 @@
     <div class="part-num">Part 2</div>
     <div class="part-title">What cdisc-for-ai delivers — GLUCPL in the Specimen_Findings consumer</div>
     <div class="part-desc">
-      The <code>sdtm-findings/</code> consumer track joins the flattened COSMoS DSS rows with NCIt-enriched TESTCD identity (from the <code>sdtm-test-codes/</code> source track) into a two-sheet workbook: <code>sdtm-findings/machine_actionable/Specimen_Findings.xlsx</code>. Sheet <strong>Test_Identity</strong> carries one row per TESTCD with NCIt identity fields (preferred term, synonyms, definition, UMLS/NCIm CUIs) plus COSMoS coverage flags. Sheet <strong>Measurement_Specs</strong> carries one row per DSS with the recording-specification attributes. The two sheets join on <code>TESTCD</code>. Below: the GLUC and GLUCPL rows exactly as delivered.
+      <p>The <code>sdtm-findings/</code> consumer track joins the flattened COSMoS DSS rows with NCIt-enriched TESTCD identity (from the <code>sdtm-test-codes/</code> source track) into a two-sheet workbook: <code>sdtm-findings/machine_actionable/Specimen_Findings.xlsx</code>.</p>
+      <p style="margin-top: 0.6rem;">Sheet <strong>Test_Identity</strong> carries one row per TESTCD with NCIt identity fields (preferred term, synonyms, definition, UMLS/NCIm CUIs) plus COSMoS coverage flags. Sheet <strong>Measurement_Specs</strong> carries one row per DSS with the recording-specification attributes. The two sheets join on <code>TESTCD</code>.</p>
+      <p style="margin-top: 0.6rem;">Below: the GLUC and GLUCPL rows exactly as delivered.</p>
     </div>
   </div>
 
@@ -336,7 +347,8 @@
   <div class="node measurement-specs-row">
     <div class="code">GLUCPL — Glucose Concentration in Plasma <span class="tag">Measurement_Specs row</span></div>
     <div class="flat-note">
-      DSS-level recording specification, scoped to the attributes a downstream consumer needs. Joins back to Test_Identity above on <code>TESTCD</code>. Compared to the flattened interim row this sheet drops the BC-level fields already carried in Test_Identity (BC_Definition, BC_Synonyms, BC_Scope, TESTCD_NCIt, Categories, Hierarchy_Path, Parent_Label, Row_Type, Domains_with_DS, Decimal_Places, COSMoS_Subcategory) — the consumer gets recording-focused attributes without duplication.
+      <p>DSS-level recording specification, scoped to the attributes a downstream consumer needs. Joins back to Test_Identity above on <code>TESTCD</code>.</p>
+      <p style="margin-top: 0.6rem;">Compared to the flattened interim row this sheet drops the BC-level fields already carried in Test_Identity (BC_Definition, BC_Synonyms, BC_Scope, TESTCD_NCIt, Categories, Hierarchy_Path, Parent_Label, Row_Type, Domains_with_DS, Decimal_Places, COSMoS_Subcategory) — the consumer gets recording-focused attributes without duplication.</p>
     </div>
     <div class="flat-grid">
       <span class="flat-label">TESTCD</span>           <span class="flat-val">GLUC</span>
@@ -371,14 +383,18 @@
     <div class="code">NEW_1 — Urine Glucose Test Strip Measurement [RETIRED] <span class="tag">BC (no DSS)</span></div>
     <div class="meta">Hierarchy Path: Chemistry Test &gt; Urinalysis &gt; Urine Dipstick Test &nbsp;|&nbsp; Synonym: Urine Glucose Dipstick &nbsp;|&nbsp; Result Scale: Ordinal</div>
     <div class="slot-note" style="margin-top: 8px; background: #efeeec; border-left-color: #999; color: #555;">
-      A separate BC, not under <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>. Has no NCIt code, no TESTCD, no DSS. The "[RETIRED]" tag in the BC name is the only signal — the entry remains in the flat file as a residual. Its retired functionality is now covered by GLUCUA (Glucose Presence in Urine by Test Strip) under <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>.
+      <p>A separate BC, not under <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>. Has no NCIt code, no TESTCD, no DSS. The "[RETIRED]" tag in the BC name is the only signal — the entry remains in the flat file as a residual.</p>
+      <p style="margin-top: 0.6rem;">Its retired functionality is now covered by GLUCUA (Glucose Presence in Urine by Test Strip) under <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>.</p>
     </div>
   </div>
 
   <div class="registry-band">
     <span class="reg-eyebrow">Registry need</span>
     <div class="reg-title">A specimen-test qualification registry</div>
-    The recording specification for GLUCPL is complete as delivered — the VLM group binds variables, units, LOINC slots, and default values on the LB row. What the stack does not carry is a governed, stable identifier for the qualified measurement itself — <em>Glucose × Plasma × Quantitative</em> with its recording attributes. Today this identity is addressed via <code>DS_Code</code> mnemonics (GLUCPL, GLUCSERPL, …) that are editorial strings, not unique across domains, and not cross-referenceable. A specimen-test qualification registry would assign each analyte × specimen × method × scale combination a stable ID with governance, version lineage, and cross-references to NCIt and LOINC — turning the DS_Code layer from mnemonic to identifier.
+    <p>The recording specification for GLUCPL is complete as delivered — the VLM group binds variables, units, LOINC slots, and default values on the LB row.</p>
+    <p style="margin-top: 0.7rem;">What the stack does not carry is a governed, stable identifier for the qualified measurement itself — <em>Glucose × Plasma × Quantitative</em> with its recording attributes.</p>
+    <p style="margin-top: 0.7rem;">Today this identity is addressed via <code>DS_Code</code> mnemonics (GLUCPL, GLUCSERPL, …) that are editorial strings, not unique across domains, and not cross-referenceable.</p>
+    <p style="margin-top: 0.7rem;">A specimen-test qualification registry would assign each analyte × specimen × method × scale combination a stable ID with governance, version lineage, and cross-references to NCIt and LOINC — turning the DS_Code layer from mnemonic to identifier.</p>
   </div>
 
 </div>
