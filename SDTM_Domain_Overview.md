@@ -64,7 +64,7 @@ graph TD
 
 | Layer | Documents | Machine-actionable outputs |
 |---|---|---|
-| CT discovery | [SDTM_Test_Codes_Summary.md](sdtm-test-codes/docs/SDTM_Test_Codes_Summary.md), [CT_Category_Profiles.md](skills/sdtm-ct-analysis/SDTM_CT_Category_Profiles.md) | [SDTM_Test_Identity.xlsx](sdtm-test-codes/machine_actionable/), [SDTM_Instrument_Identity.xlsx](sdtm-test-codes/machine_actionable/) |
+| CT discovery | [SDTM_Test_Codes_Summary.md](sdtm-test-codes/docs/SDTM_Test_Codes_Summary.md), [CT_Category_Profiles.md](skills/sdtm-ct-analysis/SDTM_CT_Category_Profiles.md), [NCIt_Instrument_Identity_Findings.md](sdtm-test-codes/docs/NCIt_Instrument_Identity_Findings.md) | [SDTM_Test_Identity.xlsx](sdtm-test-codes/machine_actionable/), [SDTM_Instrument_Test_Identity.xlsx](sdtm-test-codes/machine_actionable/), [SDTM_Instrument_Identity.xlsx](sdtm-test-codes/machine_actionable/) |
 | Domain reference | This document | [SDTM_Domain_Metadata.xlsx](sdtm-domain-reference/machine_actionable/) |
 | Behavioural analysis | [COSMoS_Behavioural_Analysis.md](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [COSMoS_Content_and_QC.md](cosmos-bc-dss/docs/COSMoS_Content_and_QC.md) | [COSMoS_Domain_Pattern_Inventory.xlsx](cosmos-bc-dss/docs/), [COSMoS_BC_DSS.xlsx](cosmos-bc-dss/interim/) |
 

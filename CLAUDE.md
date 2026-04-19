@@ -23,7 +23,7 @@ Repository: https://github.com/kerfors/cdisc-for-ai
 The repo has three track types. The domain code is the join key across all tracks.
 
 **Source tracks** extract and enrich from upstream standards:
-- `sdtm-test-codes/` — "What is measured?" Extracts TESTCD/TEST from NCI EVS, enriches with NCIt identity (definitions, synonyms, C-codes, UMLS/LOINC mappings). Outputs: `SDTM_Test_Identity.xlsx`, `SDTM_Instrument_Identity.xlsx`.
+- `sdtm-test-codes/` — "What is measured?" Extracts TESTCD/TEST from NCI EVS, enriches with NCIt identity (definitions, synonyms, C-codes, UMLS/LOINC mappings). Outputs: `SDTM_Test_Identity.xlsx` (domain-level test codes), `SDTM_Instrument_Test_Identity.xlsx` (test codes within an instrument codelist), `SDTM_Instrument_Identity.xlsx` (one row per instrument codelist, dual NCIt anchors from C20993 + C211913).
 - `cosmos-bc-dss/` — "How is it measured?" Flattens COSMoS BC and DSS JSON exports into a single interim file. Also produces behavioural analysis docs. Output: `COSMoS_BC_DSS.xlsx` (interim).
 
 **Reference track** provides shared domain metadata:

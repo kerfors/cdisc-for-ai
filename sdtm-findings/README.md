@@ -26,7 +26,8 @@ Each notebook consumes the same source files but applies different join logic an
 | File | Track | Content |
 |---|---|---|
 | [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | sdtm-test-codes | Domain-level test codes with NCIt identity |
-| [`SDTM_Instrument_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) | sdtm-test-codes | Instrument-level test codes with NCIt identity |
+| [`SDTM_Instrument_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Instrument_Test_Identity.xlsx) | sdtm-test-codes | Test codes within an instrument codelist, with NCIt identity |
+| [`SDTM_Instrument_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) | sdtm-test-codes | One row per instrument codelist, dual NCIt anchors (C20993 instrument + C211913 container) |
 | [`COSMoS_BC_DSS.xlsx`](../cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) | cosmos-bc-dss | Flattened BC/DSS (all 32 domains) |
 | [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata (structural type flags) |
 
@@ -43,7 +44,7 @@ The link between sheets is TESTCD (and NCIt_Code for precision). This two-step s
 
 [`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) and [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) are complete and running. Coverage reflects COSMoS publication status -- domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
 
-`Instrument_Findings.xlsx` is planned but not yet built.
+[`Instrument_Findings.xlsx`](machine_actionable/Instrument_Findings.xlsx) now covers QS/FT/RS, with dual NCIt anchors (instrument + container) attached per row via the codelist-grain join.
 
 ## Coverage gap and sponsor content
 
@@ -56,13 +57,14 @@ This is most immediately relevant for lab tests (LB), where the 2,505 TESTCDs an
 ## Pipeline position
 
 ```
-sdtm-test-codes/SDTM_Test_Identity.xlsx  ──────────┐
-sdtm-test-codes/SDTM_Instrument_Identity.xlsx  ────┤
-cosmos-bc-dss/COSMoS_BC_DSS.xlsx  ─────────────────┤── sdtm-findings/
-sdtm-domain-reference/SDTM_Domain_Metadata.xlsx  ──┘
+sdtm-test-codes/SDTM_Test_Identity.xlsx            ──┐
+sdtm-test-codes/SDTM_Instrument_Test_Identity.xlsx ──┤
+sdtm-test-codes/SDTM_Instrument_Identity.xlsx      ──┤
+cosmos-bc-dss/COSMoS_BC_DSS.xlsx                   ──┤── sdtm-findings/
+sdtm-domain-reference/SDTM_Domain_Metadata.xlsx    ──┘
                                                      │
                     sdtm-findings/machine_actionable/
                       ├── Specimen_Findings.xlsx
                       ├── Measurement_Findings.xlsx
-                      └── Instrument_Findings.xlsx   (planned)
+                      └── Instrument_Findings.xlsx
 ```

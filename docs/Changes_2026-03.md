@@ -94,3 +94,7 @@ The empty column in Measurement_Findings is intentional — kept for cross-track
 ## Reproducing
 
 Each track contains a `*_Diff_vs_pre_2026_03.ipynb` notebook (kept where still present) and a `pre-2026-03/` baseline folder. Re-running the source notebooks regenerates the current outputs; the diff notebooks compare current against the baseline and write the CSVs in `diffs/pre-2026-03__current/`.
+
+---
+
+*Subsequent: the file named above as `SDTM_Instrument_Identity.xlsx` was renamed to `SDTM_Instrument_Test_Identity.xlsx` and a new codelist-grain `SDTM_Instrument_Identity.xlsx` was added in April 2026 as part of the instrument identity refactor. See [`Changes_2026-04.md`](Changes_2026-04.md).*

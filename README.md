@@ -2,7 +2,7 @@
 
 Machine-actionable reference files for CDISC clinical data standards -- designed for both human review and AI consumption.
 
-> **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-Q1, SDTMIG v3.4. See [`docs/Changes_2026-03.md`](docs/Changes_2026-03.md) for what changed since the previous release.
+> **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-Q1, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md) (instrument identity refactor). Previous: [`docs/Changes_2026-03.md`](docs/Changes_2026-03.md).
 
 ## Why
 
@@ -33,7 +33,8 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | Track | Question | Output | Source |
 |---|---|---|---|
 | [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | [`SDTM_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) -- domain-level test codes | NCI EVS, NCIt, UMLS |
-| | | [`SDTM_Instrument_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) -- instrument-level test codes | |
+| | | [`SDTM_Instrument_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Test_Identity.xlsx) -- test codes bound to an instrument codelist | |
+| | What instruments? | [`SDTM_Instrument_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) -- one row per instrument codelist, dual NCIt anchors (C20993 + C211913) | |
 | [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? | [`COSMoS_BC_DSS.xlsx`](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) -- flattened BC/DSS interim file | COSMoS BC/DSS exports |
 | | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) | |
 
@@ -49,7 +50,7 @@ Each reference file is self-describing, with a README sheet documenting columns,
 |---|---|---|---|
 | [`sdtm-findings/`](sdtm-findings/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
 | | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings/machine_actionable/Measurement_Findings.xlsx) |
-| | Instrument-based | QS, FT, RS | `Instrument_Findings.xlsx` *(planned)* |
+| | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings/machine_actionable/Instrument_Findings.xlsx) |
 
 Consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The link between sheets is TESTCD. This two-step structure matches the mapping workflow: first resolve a term to a concept, then select the specific measurement variant.
 
@@ -72,6 +73,7 @@ graph TD
 
     subgraph sdtm-test-codes
         TI["SDTM_Test_Identity.xlsx"]
+        ITI["SDTM_Instrument_Test_Identity.xlsx"]
         II["SDTM_Instrument_Identity.xlsx"]
     end
 
@@ -88,11 +90,14 @@ graph TD
     subgraph sdtm-findings
         SF["Specimen_Findings.xlsx"]
         MF["Measurement_Findings.xlsx"]
-        IF["Instrument_Findings.xlsx ❋"]
+        IF["Instrument_Findings.xlsx"]
     end
 
     EVS --> TI
+    EVS --> ITI
     EVS --> II
+    ITI --> IF
+    II --> IF
     COS --> BCD
     BCD --> BA
     BCD --> DPI
@@ -108,8 +113,6 @@ graph TD
 
     DO["SDTM_Domain_Overview.md<br/>repo root"]
 ```
-
-*❋ = planned*
 
 ## Key findings
 

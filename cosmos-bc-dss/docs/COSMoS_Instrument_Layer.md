@@ -95,7 +95,7 @@ Two candidate scopes exist:
 
 Recommendation: scope to the QS, FT, RS domains as classified in the Domain Pattern Inventory, and within that, surface C211913 ancestry as a column. The behavioural classification is the consumer-facing scope; the NCIt anchor is metadata that lets sponsors verify alignment.
 
-**Note on RS heterogeneity.** As section 4 establishes, RS is structurally heterogeneous. Some instrument-shaped RS data lives in per-instrument codelists (AIMS, BPRS-A, KFSS and others), and some lives in the extensible `RSTESTCD` codelist with the criteria framework recorded in `--SCAT` (RECIST 1.1, LUGANO CLASSIFICATION, RANO). The consumer file scope covers both. This means the green-side input is not just `SDTM_Instrument_Identity.xlsx` but also the RS subset of `SDTM_Test_Identity.xlsx` for the classification-framework rows.
+**Note on RS heterogeneity.** As section 4 establishes, RS is structurally heterogeneous. Some instrument-shaped RS data lives in per-instrument codelists (AIMS, BPRS-A, KFSS and others), and some lives in the extensible `RSTESTCD` codelist with the criteria framework recorded in `--SCAT` (RECIST 1.1, LUGANO CLASSIFICATION, RANO). The consumer file scope covers both. This means the green-side input is not just `SDTM_Instrument_Test_Identity.xlsx` (test grain, with instrument-layer NCIt anchors joined from `SDTM_Instrument_Identity.xlsx` at codelist grain) but also the RS subset of `SDTM_Test_Identity.xlsx` for the classification-framework rows.
 
 ### 5.2 Row grain
 

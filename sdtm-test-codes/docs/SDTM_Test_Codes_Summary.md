@@ -10,8 +10,9 @@ focused on test code codelists.*
 | **Categorization** | [`skills/sdtm-ct-analysis/`](../../skills/sdtm-ct-analysis/) — 1,181 codelists → 25 categories |
 | **Extraction** | [`notebooks/SDTM_CT_Extract.ipynb`](../notebooks/SDTM_CT_Extract.ipynb) — two passes, 55 domains + 353 instruments |
 | **Domain metadata** | [`sdtm-domain-reference/SDTM_Domain_Metadata.xlsx`](../../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) — domain assignment authority |
-| **Reference files** | [`SDTM_Test_Identity.xlsx`](../machine_actionable/SDTM_Test_Identity.xlsx) — 5,781 domain-level test codes |
-| | [`SDTM_Instrument_Identity.xlsx`](../machine_actionable/SDTM_Instrument_Identity.xlsx) — 10,166 instrument-level test codes (353 instruments) |
+| **Reference files** | [`SDTM_Test_Identity.xlsx`](../machine_actionable/SDTM_Test_Identity.xlsx) — domain-level test codes |
+| | [`SDTM_Instrument_Test_Identity.xlsx`](../machine_actionable/SDTM_Instrument_Test_Identity.xlsx) — test codes within an instrument codelist |
+| | [`SDTM_Instrument_Identity.xlsx`](../machine_actionable/SDTM_Instrument_Identity.xlsx) — one row per instrument codelist, dual NCIt anchors (C20993 + C211913) — see [`NCIt_Instrument_Identity_Findings.md`](NCIt_Instrument_Identity_Findings.md) |
 
 ---
 
@@ -99,7 +100,13 @@ SDTM_CT_NCIt_Enrich.ipynb
   ├── + Thesaurus.FLAT.zip    (synonyms, definitions)
   ├── + nci_code_cui_map.dat  (UMLS CUI, NCIm CUI)
   ├── → machine_actionable/SDTM_Test_Identity.xlsx
-  └── → machine_actionable/SDTM_Instrument_Identity.xlsx
+  └── → machine_actionable/SDTM_Instrument_Test_Identity.xlsx
+
+SDTM_Instrument_Identity_Enrich.ipynb
+  ├── reads interim/SDTM_CT_Instrument_Extract.csv
+  ├── + Thesaurus.FLAT.zip    (walks C20993 + C211913 descendants)
+  ├── + nci_code_cui_map.dat
+  └── → machine_actionable/SDTM_Instrument_Identity.xlsx    (codelist grain, dual NCIt anchors)
 ```
 
 Domain assignment in the Extract notebook uses `SDTM_Domain_Metadata.xlsx`
