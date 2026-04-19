@@ -1,8 +1,7 @@
 # NCIt Instrument Identity — Probe Findings
 
 **Date:** 2026-04-12  
-**Context:** Exploration of whether NCIt structural classes can provide machine-actionable instrument identity for SDTM CT instrument codelists.  
-**Branch:** `explore/coa-structure`  
+**Context:** Exploration of whether NCIt structural classes can provide machine-actionable instrument identity for SDTM CT instrument codelists. The findings below informed the design of `SDTM_Instrument_Identity_Enrich.ipynb` and the resulting `SDTM_Instrument_Identity.xlsx`.  
 **Status:** Findings only. No architectural proposal.
 
 ---
@@ -86,16 +85,13 @@ For broader context on the identity vs. measurement specification gap:
 
 ## Artifacts
 
-All probe outputs are in `coa-structure/interim/`:
+- `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx` — one row per codelist (359 rows). Dual NCIt anchors: `Instrument_NCIt_Code` (C20993) and `Container_NCIt_Code` (C211913), each with preferred term, synonyms, definition, UMLS and NCIm CUIs. `Instrument_Match_Method` records how each C20993 match was resolved (exact / suffix-strip / normalized / UNMATCHED).
+- `sdtm-test-codes/interim/C20993_Instrument_Hierarchy.csv` — full C20993 descendant tree with depth, parent, and NCIt enrichment. Regenerated each run from NCIt FLAT.
+- `sdtm-test-codes/interim/C211913_Question_Containers.csv` — direct children of C211913 (question containers). Regenerated each run.
 
-- `CoA_Instrument_Mapping_Probe.csv` — 359 rows, one per codelist. Current matching state (258 matched, 101 unmatched).
-- `C20993_Instrument_Hierarchy.csv` — 2,208 rows, full C20993 descendant tree.
-- `C211913_Question_Containers.csv` — 365 rows, question containers with structural codelist mapping.
-- `Token_Overlap_Review.csv` — 101 rows, the unmatched codelists with best token-overlap candidates and review flags.
-
-Notebook: `coa-structure/notebooks/CoA_Instrument_Identity_Probe.ipynb`
+Notebook: `sdtm-test-codes/notebooks/SDTM_Instrument_Identity_Enrich.ipynb`
 
 ## See also
 
 Interactive visualisation using 6MWT as worked example:
-[The NCIt Story](6MWT_NCIt_Story.html) | [The COSMoS Story](6MWT_COSMoS_Story.html)
+[The NCIt Story](../../docs/6MWT_NCIt_Story.html) | [The COSMoS Story](../../docs/6MWT_COSMoS_Story.html)

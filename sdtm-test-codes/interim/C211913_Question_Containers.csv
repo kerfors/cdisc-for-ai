@@ -1,0 +1,366 @@
+NCIt_Code,Preferred_Term,Descendant_Count,Synonyms,Definition,UMLS_CUI,NCIm_CUI
+C141676,10 Meter Walk/Run Functional Test Question,4,,A question associated with the 10 Meter Walk/Run functional test.,,CL539766
+C141679,4 Stair Ascend Functional Test Question,4,,A question associated with the 4 Stair Ascend functional test.,,CL539779
+C141678,4 Stair Descend Functional Test Question,4,,A question associated with the 4 Stair Descend functional test.,,CL539780
+C115409,6MWT Functional Test Question,6,,A question associated with the 6MWT functional test.,C3900189,
+C100106,ADAS-Cog CDISC Version Functional Test Question,111,,A question associated with the ADAS-Cog CDISC version functional test.,C3639096,
+C106672,ADCS-ADL MCI Questionnaire Question,92,,A question associated with the ADCS-ADL MCI questionnaire.,C3831685,
+C105146,ADCS-ADL Questionnaire Question,79,,A question associated with the ADCS-ADL questionnaire.,C3831645,
+C106673,ADCS-ADL Severe Dementia Questionnaire Question,38,,A question associated with the ADCS-ADL Severe Dementia questionnaire.,C3831624,
+C103490,ADCS-CGIC Questionnaire Question,1,,A question associated with the ADCS-CGIC questionnaire.,C3641305,
+C101870,ADNI-AVLT Questionnaire Question,138,,A question associated with the ADNI version of the AVLT questionnaire.,C3640276,
+C163398,ADSD Version 1.0 Questionnaire Question,7,,A question associated with the ADSD Version 1.0 questionnaire.,,CL976672
+C101869,AIMS Clinical Classification Question,12,,A question associated with the AIMS questionnaire.,C3640275,
+C141675,AJCC v7 Clinical Classification Question,5,,A question associated with the AJCC v7 clinical classification.,,CL539767
+C163399,ANSD Version 1.0 Questionnaire Question,7,,A question associated with the ANSD Version 1.0 questionnaire.,,CL976671
+C120994,APACHE II Clinical Classification Question,20,,A question associated with the APACHE II clinical classification.,C4055602,
+C176052,APGAR Score Version 1 Clinical Classification Question,6,,A question associated with the APGAR Score Version 1 clinical classification.,,CL1413460
+C112456,AQ20 Questionnaire Question,20,,A question associated with the AQ20 questionnaire.,C3831489,
+C119091,ARC STC Grade Clinical Classification Question,1,,A question associated with the ARC STC Grade clinical classification.,C3900160,
+C119090,ARC STC Timing Clinical Classification Question,1,,A question associated with the ARC STC Timing clinical classification.,C3900158,
+C225075,ARCI-49 Questionnaire Question,54,,A question associated with the Addiction Research Center Inventory 49 Check-list (ARCI-49) questionnaire.,,
+C124691,ASCVD 10-Year Risk Estimator Clinical Classification Question,1,,A question associated with the ASCVD 10-Year Risk Estimator clinical classification.,C4085921,
+C125750,ASEX-Female Version Questionnaire Question,6,,A question associated with the ASEX-Female Version questionnaire.,,CL504405
+C125751,ASEX-Male Version Questionnaire Question,6,,A question associated with the ASEX-Male Version questionnaire.,,CL504406
+C124692,ASSIGN Score Clinical Classification Question,1,,A question associated with the ASSIGN Score clinical classification.,C4085924,
+C147551,ATLAS Clinical Classification Question,6,,A question associated with the ATLAS clinical classification.,,CL545416
+C119081,AUDIT Questionnaire Question,11,,A question associated with the AUDIT questionnaire.,C3900142,
+C225076,AUDIT-C Interview Version Questionnaire Question,4,,A question associated with the Alcohol Use Disorders Identification Test-Concise Interview Version (AUDIT-C Interview Version) questionnaire.,,
+C119082,AUDIT-C Questionnaire Question,3,,A question associated with the AUDIT-C questionnaire.,C3900138,
+C225077,AUDIT-C Self-Report Version Questionnaire Question,4,,A question associated with the Alcohol Use Disorders Identification Test-Concise Self-Report Version (AUDIT-C Self-Report Version) questionnaire.,,
+C123657,AVLT-REY Functional Test Question,36,,A question associated with the AVLT-REY functional test.,C4055566,
+C161631,AVPU Clinical Classification Question,1,,A question associated with the AVPU clinical classification.,,CL970325
+C120999,BACS Functional Test Question,13,,A question associated with the BACS functional test.,C4055404,
+C101871,BARS Clinical Classification Question,4,,A question associated with the BARS questionnaire.,C3640277,
+C106674,BDI Clinical Classification Question,4,,A question associated with the BDI questionnaire.,C3831385,
+C135702,BEBQ Concurrent Version Questionnaire Question,18,,A question associated with the BEBQ Concurrent Version questionnaire.,,CL523021
+C135703,BEBQ Retrospective Version Questionnaire Question,18,,A question associated with the BEBQ Retrospective Version questionnaire.,,CL523022
+C113866,BLCS Questionnaire Question,4,,A question associated with the BLCS questionnaire.,C3831335,
+C120995,BODE Index Clinical Classification Question,5,,A question associated with the BODE Index clinical classification.,C4053727,
+C100107,BPI Questionnaire Question,69,,A question associated with the BPI questionnaire.,C3639097,
+C100108,BPI Short Form Questionnaire Question,16,,A question associated with the BPI Short Form questionnaire.,C3639098,
+C161632,BPRS 1988 Version Clinical Classification Question,19,,A question associated with the BPRS 1988 Version clinical classification.,,CL970340
+C100109,BPRS-Anchored Clinical Classification Question,18,,A question associated with the BPRS-Anchored clinical classification.,C3639099,
+C130282,BUERS Clinical Classification Question,1,,A question associated with the BUERS clinical classification.,,CL514023
+C113867,BWCS Questionnaire Question,5,,A question associated with the BWCS questionnaire.,C3831233,
+C113863,Borg CR10 Questionnaire Question,1,,A question associated with the Borg CR10 questionnaire.,C3831315,
+C199506,Brief Questionnaire of Smoking Urges Questionnaire Question,13,,A question associated with the Brief Questionnaire of Smoking Urges.,,CL1906871
+C106676,C-SSRS Already Enrolled Subjects Questionnaire Question,62,,A question associated with the C-SSRS Already Enrolled Subjects questionnaire.,C3830916,
+C100113,C-SSRS Baseline Questionnaire Question,39,,A question associated with the C-SSRS Baseline questionnaire.,C3639103,
+C105141,C-SSRS Baseline/Screening Version Phase 1 Study Version 1/14/09 Questionnaire Question,51,,A question associated with the C-SSRS Baseline/Screening Version Phase 1 Study version 1/14/09 questionnaire.,C3641937,
+C106677,C-SSRS Baseline/Screening Version Questionnaire Question,60,,A question associated with the C-SSRS Baseline/Screening Version questionnaire.,C3830855,
+C111351,C-SSRS Children's Baseline Questionnaire Question,37,,A question associated with the C-SSRS Children's Baseline questionnaire.,C3830814,
+C111352,C-SSRS Children's Baseline/Screening Questionnaire Question,43,,A question associated with the C-SSRS Children's Baseline/Screening questionnaire.,C3830774,
+C111353,C-SSRS Children's Since Last Visit Questionnaire Question,32,,A question associated with the C-SSRS Children's Since Last Visit questionnaire.,C3830738,
+C117993,C-SSRS Lifetime/Recent Version Questionnaire Question,60,,A question associated with the C-SSRS Lifetime/Recent Version questionnaire.,C3899845,
+C113864,C-SSRS Pediatric Cognitively Impaired Lifetime Recent Questionnaire Question,55,,A question associated with the C-SSRS Pediatric Cognitively Impaired Lifetime Recent questionnaire.,C3830684,
+C111354,C-SSRS Screening Questionnaire Question,39,,A question associated with the C-SSRS Screening questionnaire.,C3830641,
+C103491,C-SSRS Since Last Visit Questionnaire Question,34,,A question associated with the C-SSRS Since Last Visit questionnaire.,C3641306,
+C119084,CCQ 1 Week Version Questionnaire Question,10,,A question associated with the CCQ 1 Week Version questionnaire.,C3899829,
+C119083,CCQ 24 Hour Version Questionnaire Question,10,,A question associated with the CCQ 24 Hour Version questionnaire.,C3899819,
+C176053,CDAI Version 1 Questionnaire Question,23,,A question associated with the CDAI Version 1 questionnaire.,,CL1413461
+C124701,CDC Classification System for HIV-Infected Adults and Adolescents Clinical Classification Question,1,,A question associated with the CDC Classification System for HIV-Infected Adults and Adolescents clinical classification.,C4086046,
+C101872,CDR Clinical Classification Question,8,,A question associated with the CDR clinical classification.,C3640278,
+C154458,CDRS-R Clinical Classification Question,41,,A question associated with the CDRS-R clinical classification.,,CL555387
+C132527,CES Questionnaire Question,7,,A question associated with the CES questionnaire.,,CL519748
+C135705,CGI Generic Modification Version Questionnaire Question,3,,A question associated with the CGI Generic Modification Version questionnaire.,,CL523024
+C135704,CGI Original Version Questionnaire Question,3,,A question associated with the CGI Original Version questionnaire.,,CL523023
+C100111,CGI Questionnaire Question,3,,A question associated with the CGI questionnaire.,C3639101,
+C117992,CHART-SF Interview Version Questionnaire Question,28,,A question associated with the CHART-SF questionnaire.,C3899786,
+C119085,CHART-SF Paper Version Questionnaire Question,28,,A question associated with the CHART-SF Paper Version questionnaire.,C3899765,
+C100112,COMM Questionnaire Question,18,,A question associated with the COMM questionnaire.,C3639102,
+C156674,COVI Clinical Classification Question,4,,A question associated with the COVI clinical classification.,,CL935737
+C150793,COWAT Functional Test Question,4,,A question associated with the COWAT functional test.,,CL552652
+C101873,COWS Questionnaire Question,13,,A question associated with the COWS questionnaire.,C3640279,
+C121000,CRQ-SAS First Administration Version Questionnaire Question,20,,A question associated with the CRQ-SAS First Administration Version questionnaire.,C4055311,
+C121001,CRQ-SAS Follow-Up Administration Version Questionnaire Question,20,,A question associated with the SAS Follow-Up Administration Version questionnaire.,C4055290,
+C124697,CRS-R Clinical Classification Question,11,,A question associated with the CRS-R clinical classification.,C4086111,
+C199507,Canadian Cardiovascular Society Grading of Angina Pectoris Clinical Classification Question,1,,A question associated with the Canadian Cardiovascular Society Grading of Angina Pectoris clinical classification.,,CL1906870
+C120996,Child-Pugh Clinical Classification Question,8,,A question associated with the Child-Pugh clinical classification.,C4055252,
+C199509,Cigarette Evaluation Questionnaire Extended-Screening Clinical Classification Question,11,,A question associated with the Cigarette Evaluation Questionnaire Extended-Screening clinical classification.,,CL1906864
+C187459,Clinician-Administered PTSD Scale (Current) DSM-5 With DSM IV Scoring 2016 Version Clinical Classification Question,103,,A question associated with the Clinician-Administered PTSD Scale (Current) DSM-5 With DSM IV Scoring 2016 Version clinical classification.,,CL1792136
+C199508,Comfort Behavior Scale Clinical Classification Question,12,,A question associated with the Comfort Behavior Scale clinical classification.,,CL1906865
+C187461,Craig Handicap Assessment and Reporting Technique-Short Form Questionnaire Question,28,,A question associated with the Craig Handicap Assessment and Reporting Technique-Short Form questionnaire.,,CL1792526
+C105142,DAD Questionnaire Question,49,,A question associated with the DAD questionnaire.,C3641938,
+C183553,DIBSS-C Version 1.0 Questionnaire Question,10,,A question associated with the DIBSS-C Version 1.0 questionnaire.,,CL1771913
+C119086,DLQI Questionnaire Question,18,,A question associated with the DLQI questionnaire.,C3899466,
+C141684,DRRI-2 Questionnaire Question,210,,A question associated with the DRRI-2 questionnaire.,,CL539774
+C115416,DRS Questionnaire Question,9,,A question associated with the DRS questionnaire.,C3899456,
+C112457,DS Clinical Classification Question,1,,A question associated with the DS questionnaire.,C3830382,
+C225074,DSQ1 Questionnaire Question,15,,A question associated with the DePaul Symptom Questionnaire - Post Exertional Malaise 2018 Version - 10 Item (DSQ-PEM 2018) questionnaire.,,
+C161633,E-TRIP Clinical Classification Question,3,,A question associated with the E-TRIP clinical classification.,,CL970339
+C101874,ECOG Clinical Classification Question,1,,A question associated with the ECOG performance status questionnaire.,C3640280,
+C112458,EDSS Clinical Classification Question,1,,A question associated with the EDSS clinical classification.,C3830335,
+C219736,EORTC QLQ-ANL27 Questionnaire Question,27,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Anal Cancer 27 Items (EORTC QLQ-ANL27) questionnaire.,,CL1953108
+C219737,EORTC QLQ-BIL21 Questionnaire Question,21,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Cholangiocarcinoma and Gallbladder Cancer 21 Items (EORTC QLQ-BIL21) questionnaire.,,CL1953107
+C219738,EORTC QLQ-BM22 Questionnaire Question,22,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Bone Metastases 22 Items (EORTC QLQ-BM22) questionnaire.,,CL1953106
+C219739,EORTC QLQ-BR42 Questionnaire Question,42,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Breast Cancer 42 Items (EORTC QLQ-BR42) questionnaire.,,CL1953105
+C161628,EORTC QLQ-C15-PAL Version 1 Questionnaire Question,15,,A question associated with the EORTC QLQ-C15-PAL Version 1 questionnaire.,,CL970328
+C161629,EORTC QLQ-C30 Version 3 Questionnaire Question,45,,A question associated with the EORTC QLQ-C30 Version 3 questionnaire.,,CL970327
+C219740,EORTC QLQ-CLL17 Questionnaire Question,17,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Chronic lymphocytic leukemia 17 Items (EORTC QLQ-CLL17) questionnaire.,,CL1953104
+C170531,EORTC QLQ-CR29 Version 2.1 Questionnaire Question,35,,A question associated with the EORTC QLQ-CR29 Version 2.1 questionnaire.,,CL1382953
+C219741,EORTC QLQ-H and N43 Phase IV Module Version Questionnaire Question,43,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Head and Neck Cancer Phase IV Module Version 43 Items ((EORTC QLQ-H and N43 Phase IV Module Version)) questionnaire.,,CL1953088
+C219742,EORTC QLQ-INFO25 Questionnaire Question,27,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Information 25 Items (EORTC QLQ-INFO25) questionnaire.,,CL1953087
+C172401,EORTC QLQ-LC13 Questionnaire Question,15,,A question associated with the EORTC QLQ-LC13 questionnaire.,,CL1406354
+C219743,EORTC QLQ-LMC21 Questionnaire Question,21,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Colorectal Liver Metastases 21 Items (EOC21) questionnaire.,,CL1953086
+C219744,EORTC QLQ-MY20 Questionnaire Question,20,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Multiple Myeloma 20 Items (EORTC QLQ-MY20) questionnaire.,,CL1953085
+C219745,EORTC QLQ-NMIBC24 Questionnaire Question,24,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Non-Muscle-Invasive Bladder Cancer 24 Items (EORTC QLQ-NMIBC24) questionnaire.,,CL1953084
+C219746,EORTC QLQ-OES18 Questionnaire Question,18,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Esophageal Cancer 18 Items (EORTC QLQ-EOS18) questionnaire.,,CL1953083
+C219747,EORTC QLQ-OG25 Questionnaire Question,25,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Esophago-Gastric Cancer Phase IV Module Version 25 Items (EORTC QLQ-OG25) questionnaire.,,CL1953082
+C132528,EPDS Questionnaire Question,10,,A question associated with the EPDS questionnaire.,,CL521178
+C127361,EPIC-26 Questionnaire Question,26,,A question associated with the EPIC-26 questionnaire.,,CL508708
+C127362,EPIC-CP Questionnaire Question,22,,A question associated with the EPIC-CP questionnaire.,,CL508731
+C100114,EQ-5D-3L Questionnaire Question,6,,A question associated with the EQ-5D-3L questionnaire.,C3639104,
+C101875,EQ-5D-5L Questionnaire Question,6,,A question associated with the EQ-5D-5L questionnaire.,C3640281,
+C150795,ERT Functional Test Question,68,,A question associated with the ERT functional test.,,CL552654
+C117994,ESRS-A Clinical Classification Question,28,,A question associated with the ESRS-A Clinical Classification.,C3899283,
+C103492,ESS Questionnaire Question,9,,A question associated with the ESS questionnaire.,C3641307,
+C123656,EXACT Questionnaire Question,22,,A question associated with the EXACT questionnaire.,C4055088,
+C125752,Expanded DRS-PI Caregiver Version Questionnaire Question,30,,A question associated with the Expanded DRS-PI Caregiver Version questionnaire.,,CL504407
+C125753,Expanded DRS-PI Survivor Version Questionnaire Question,26,,A question associated with the Expanded DRS-PI Survivor Version questionnaire.,,CL504408
+C179956,FAACT Version 4 Questionnaire Question,47,,A question associated with the FAACT Version 4 questionnaire.,,CL1662618
+C147553,FACIT-Dyspnea 10 Item Short Form Questionnaire Question,30,,A question associated with the FACIT-Dyspnea 10 Item Short Form questionnaire.,,CL545403
+C154460,FACIT-Dyspnea Scale 33 Item Bank Version Questionnaire Question,99,,A question associated with the FACIT-Dyspnea Scale 33 Item Bank Version questionnaire.,,CL555385
+C129099,FACIT-F Version 4 Questionnaire Question,48,,A question associated with the FACIT-F Version 4 questionnaire.,,CL512441
+C147554,FACIT-Fatigue 13-Item Version 4 Questionnaire Question,14,,A question associated with the FACIT-Fatigue 13-Item Version 4 questionnaire.,,CL545404
+C183554,FACIT-Searchable Item Library Adult Version Questionnaire Question,674,,A question associated with the FACIT-Searchable Item Library Adult Version questionnaire.,,CL1771914
+C129102,FACT-B Version 4 Questionnaire Question,45,,A question associated with the FACT-B Version 4 questionnaire.,,CL512479
+C154461,FACT-BL Version 4 Questionnaire Question,48,,A question associated with the FACT-BL Version 4 questionnaire.,,CL555386
+C147552,FACT-BMT Version 4 Questionnaire Question,50,,A question associated with the FACT-BMT Version 4 questionnaire.,,CL545402
+C179957,FACT-BP Version 4 Questionnaire Question,21,,A question associated with the FACT-BP Version 4 questionnaire.,,CL1662621
+C150799,FACT-BRM Version 4 Questionnaire Question,40,,A question associated with the FACT-BRM Version 4 questionnaire.,,CL552658
+C150797,FACT-C Version 4 Questionnaire Question,45,,A question associated with the FACT-C Version 4 questionnaire.,,CL552656
+C166191,FACT-COG Version 3 Questionnaire Question,41,,A question associated with the FACT-COG Version 3 questionnaire.,,CL971453
+C127363,FACT-G Version 4 Questionnaire Question,32,,A question associated with the FACT-G Version 4 questionnaire.,,CL508788
+C130290,FACT-HEP Version 4 Questionnaire Question,53,,A question associated with the FACT-HEP Version 4 questionnaire.,,CL514050
+C225079,FACT-ICM Version 4 Questionnaire Question,52,,A question associated with the Functional Assessment of Cancer Therapy-Immune Checkpoint Modulator Version 4 - 52 Item (FACT-ICM V4) questionnaire.,,
+C150801,FACT-L Version 4 Questionnaire Question,37,,A question associated with the FACT-L Version 4 questionnaire.,,CL552660
+C130289,FACT-LEU Version 4 Questionnaire Question,44,,A question associated with the FACT-LEU Version 4 questionnaire.,,CL514051
+C130291,FACT-LYM Version 4 Questionnaire Question,42,,A question associated with the FACT-LYM Version 4 questionnaire.,,CL514052
+C127365,FACT-P Version 4 Questionnaire Question,39,,A question associated with the FACT-P Version 4 questionnaire.,,CL508828
+C150798,FACT-Taxane Version 4 Questionnaire Question,43,,A question associated with the FACT-Taxane Version 4 questionnaire.,,CL552657
+C150800,FACT/GOG-NTX Version 4 Questionnaire Question,38,,A question associated with the FACT/GOG-NTX Version 4 questionnaire.,,CL552659
+C112459,FAMS Questionnaire Question,58,,A question associated with the FAMS questionnaire.,C3827390,
+C111355,FAQ Questionnaire Question,11,,A question associated with the FAQ questionnaire.,C3830186,
+C111356,FAQ-NACC UDS Version 2.0 Clinical Classification Question,10,,A question associated with the FAQ-NACC UDS Version 2.0 clinical classification.,C3830194,
+C170530,FAS-NACC UDS Version 3.0 Clinical Classification Question,10,,A question associated with the FAS-NACC UDS Version 3.0 clinical classification.,,CL1382952
+C138266,FBRSI Questionnaire Question,15,,A question associated with the FBRSI questionnaire.,,CL525761
+C124693,FHS CVD 10-Year Risk Score Clinical Classification Question,1,,A question associated with the FHS CVD 10-Year Risk Score clinical classification.,C4086296,
+C103493,FIQR Questionnaire Question,25,,A question associated with the FIQR questionnaire.,C3641308,
+C138267,FKSI-15 Questionnaire Question,15,,A question associated with the FKSI-15 questionnaire.,,CL525760
+C150802,FKSI-DRS Version 4 Questionnaire Question,9,,A question associated with the FKSI-DRS Version 4 questionnaire.,,CL552661
+C138268,FLSI Questionnaire Question,6,,A question associated with the FLSI questionnaire.,,CL525767
+C129103,FOSI Questionnaire Question,8,,A question associated with the FOSI questionnaire.,,CL512488
+C100115,FPSR Questionnaire Question,1,,A question associated with the FPSR questionnaire.,C3639105,
+C113865,FSS Questionnaire Question,9,,A question associated with the FSS questionnaire.,C3830066,
+C208398,Fagerstrom Test for Cigarette Dependence Questionnaire Question,8,,A question associated with the Fagerstrom Test for Cigarette Dependence questionnaire.,,CL1935179
+C193280,Falls Efficacy Scale Questionnaire Question,11,,A question associated with the Falls Efficacy Scale questionnaire.,,CL1913239
+C208397,Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 Questionnaire Question,11,,A question associated with the Functional Assessment of Cancer Therapy/Gynecologic Oncology Group-Neurotoxicity Subscale Version 4 questionnaire.,,CL1935178
+C199504,Functional Assessment of Chronic Illness Therapy-Item GP5 Version 4 Questionnaire Question,1,,A question associated with the Functional Assessment of Chronic Illness Therapy-Item GP5 Version 4 questionnaire.,,CL1906869
+C200916,Functional Assessment of Chronic Illness Therapy-Searchable Item Library Pediatric Version Questionnaire Question,131,,A question associated with the Functional Assessment of Chronic Illness Therapy-Searchable Item Library Pediatric Version questionnaire.,,CL1915173
+C103494,GAD-7 Questionnaire Question,9,,A question associated with the GAD-7 questionnaire.,C3641309,
+C163400,GAD-7 Version 2 Questionnaire Question,9,,A question associated with the GAD-7 Version 2 questionnaire.,,CL976670
+C105145,GCGI Questionnaire Question,5,,A question associated with the GCGI version 1 questionnaire.,C3641941,
+C124696,GCS NINDS Version 1.0 Clinical Classification Question,12,,A question associated with the GCS NINDS Version 1.0 clinical classification.,C4086349,
+C106678,GDS Questionnaire Question,31,,A question associated with the GDS questionnaire.,C3827306,
+C163401,GMSS Version Type 1 Diabetes Questionnaire Question,20,,A question associated with the GMSS Version Type 1 Diabetes questionnaire.,,CL976669
+C115417,GOSE Questionnaire Question,23,,A question associated with the GOSE questionnaire.,C3899048,
+C106679,Geriatric Depression Scale Short Form Questionnaire Question,17,GDS-SF Questionnaire Question,A question associated with the Geriatric Depression Scale Short Form questionnaire.,C3830004,
+C103495,HADS Questionnaire Question,16,,A question associated with the HADS questionnaire.,C3641310,
+C115410,HAI Functional Test Question,1,,A question associated with the HAI functional test.,C3899002,
+C130284,HAM-D6 Clinician Version Clinical Classification Question,7,,A question associated with the HAM-D6 Clinician Version clinical classification.,,CL513131
+C130292,HAM-D6 Self-Report Version Questionnaire Question,6,,A question associated with the HAM-D6 Self-Report Version questionnaire.,,CL513138
+C101876,HAMA Questionnaire Question,15,,A question associated with the HAMA questionnaire.,C3640282,
+C101877,HAMD 21 Questionnaire Question,24,,A question associated with the HAMD 21 questionnaire.,C3642477,
+C130285,HAMD 24 Clinical Classification Question,25,,A question associated with the HAMD 24 clinical classification.,,CL513164
+C100127,HAMD-17 Questionnaire Question,20,,A question associated with the HAMD-17 questionnaire.,C3639116,
+C106680,HAQ-DI Questionnaire Question,46,,A question associated with the HAQ-DI questionnaire.,C3829852,
+C132529,HAQ-DI Without VAS Questionnaire Question,45,,A question associated with the HAQ-DI without VAS questionnaire.,,CL519902
+C138262,HAS-BLED Clinical Classification Question,7,,A question associated with the HAS-BLED clinical classification.,,CL525757
+C163402,HCS Questionnaire Question,10,,A question associated with the HCS questionnaire.,,CL976668
+C166193,HD-CAB Functional Test Question,7,,A question associated with the HD-CAB functional test.,,CL971455
+C190943,Harvey-Bradshaw Index Clinical Classification Question,13,,A question associated with the Harvey-Bradshaw Index clinical classification.,,CL1799546
+C174053,IBDQ Questionnaire Question,32,,A question associated with the IBDQ questionnaire.,,CL1407949
+C130286,IDS-C Clinical Classification Question,33,,A question associated with the IDS-C clinical classification.,,CL514169
+C130293,IDS-SR Questionnaire Question,33,,A question associated with the IDS-SR questionnaire.,,CL514170
+C103496,IIEF Questionnaire Question,15,,A question associated with the IIEF questionnaire.,C3641311,
+C141681,IPAQ Long Last 7 Days Self-Administered Format Version Questionnaire Question,53,,A question associated with the IPAQ Long Last 7 Days Self-Administered Format Version questionnaire.,,CL539777
+C141682,IPAQ Long Last 7 Days Telephone Format Version Questionnaire Question,69,,A question associated with the IPAQ Long Last 7 Days Telephone Format Version questionnaire.,,CL539776
+C141680,IPAQ Short Last 7 Days Self-administered Format Version Questionnaire Question,18,,A question associated with the IPAQ Short Last 7 Days Self-administered Format Version questionnaire.,,CL539778
+C141683,IPAQ Short Last 7 Days Telephone Format Version Questionnaire Question,19,,A question associated with the IPAQ Short Last 7 Days Telephone Format Version questionnaire.,,CL539775
+C183552,IPSS Questionnaire Question,9,,A question associated with the IPSS questionnaire.,,CL1771916
+C113868,IVIS Questionnaire Question,5,,A question associated with the IVIS questionnaire.,C3827294,
+C170533,KDIGO-AKI Clinical Classification Question,1,,A question associated with the KDIGO-AKI clinical classification.,,CL1382959
+C130288,KDPI Clinical Classification Question,1,,A question associated with the KDPI clinical classification.,,CL513962
+C112460,KFSS Questionnaire Question,11,,A question associated with the KFSS questionnaire.,C3829392,
+C100116,KPS Scale Questionnaire Question,1,,A question associated with the KPS Scale questionnaire.,C3639106,
+C193279,Kidney Disease and Quality of Life-36 Version 1 Questionnaire Question,37,,A question associated with the Kidney Disease and Quality of Life-36 Version 1 questionnaire.,,CL1913238
+C135707,LEC-5 Standard Version Questionnaire Question,102,,A question associated with the LEC-5 Standard Version questionnaire.,,CL523026
+C138263,LPSS Clinical Classification Question,1,,A question associated with the LPSS clinical classification.,,CL525756
+C100117,MDS-UPDRS Questionnaire Question,72,,A question associated with the MDS-UPDRS questionnaire.,C3639107,
+C120997,MELD Clinical Classification Question,1,,A question associated with the MELD clinical classification.,C4053749,
+C113869,MFIS Questionnaire Question,21,,A question associated with the MFIS questionnaire.,C3829089,
+C112461,MHIS-NACC Questionnaire Question,9,,A question associated with the MHIS-NACC questionnaire.,C3829081,
+C106681,MMRC Questionnaire Question,1,,A question associated with the MMRC questionnaire.,C3828999,
+C100118,MMSE Functional Test Question,46,,A question associated with the MMSE functional test.,C3639108,
+C150794,MMSE-2 Standard Version Functional Test Question,33,,A question associated with the MMSE-2 functional test.,,CL552653
+C100119,MNSI Questionnaire Question,37,,A question associated with the MNSI questionnaire.,C3639109,
+C115418,MPAI-4 Questionnaire Question,44,,A question associated with the MPAI-4 questionnaire.,C3898503,
+C111357,MRS Clinical Classification Question,1,,A question associated with the MRS clinical classification.,C3828943,
+C113870,MSQOL-54 Questionnaire Question,55,,A question associated with the MSQOL-54 questionnaire.,C3828894,
+C202151,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification Question,16,,A question associated with the Minnesota Tobacco Withdrawal Scale-Revised clinical classification.,,CL1921194
+C190945,Modified Van Assche Index Clinical Classification Question,6,,A question associated with the Modified Van Assche Index clinical classification.,,CL1799548
+C190944,Montreal Classification for Crohn's Disease Clinical Classification Question,3,,A question associated with the Montreal Classification for Crohn's Disease clinical classification.,,CL1799547
+C129101,NCCN-FACT FBLSI-18 Version 2 Questionnaire Question,18,,A question associated with the NCCN-FACT FBLSI-18 Version 2 questionnaire.,,CL512184
+C150803,NCCN-FACT FBRSI-24 Version 2 Questionnaire Question,24,,A question associated with the NCCN-FACT FBRSI-24 Version 2 questionnaire.,,CL552662
+C150804,NCCN-FACT FHNSI-22 Version 2 Questionnaire Question,22,,A question associated with the NCCN-FACT FHNSI-22 Version 2 questionnaire.,,CL552663
+C129100,NCCN-FACT FKSI-19 Version 2 Questionnaire Question,19,,A question associated with the NCCN-FACT FKSI-19 Version 2 questionnaire.,,CL512204
+C129104,NCCN-FACT FOSI-18 Version 2 Questionnaire Question,18,,A question associated with the NCCN-FACT FOSI-18 Version 2 questionnaire.,,CL512223
+C127364,NCCN-FACT-FPSI 17 Version 2 Questionnaire Question,17,,A question associated with the NCCN-FACT-FPSI 17 Version 2 questionnaire.,,CL509499
+C171356,NEWS2 Clinical Classification Question,12,,A question associated with the NEWS2 clinical classification.,,CL1405480
+C225078,NFBSI-16 Version 2 Questionnaire Question,16,,A question associated with the Network/Functional Assessment of Cancer Therapy-Breast Cancer Symptom Index-16 Version 2 (NFBSI-16 V2) questionnaire.,,
+C119089,NHLBI CAD Grade Clinical Classification Question,1,,A question associated with the NHLBI CAD Grade clinical classification.,C3898203,
+C115411,NHPT Functional Test Question,2,,A question associated with the NHPT functional test.,C3898194,
+C100120,NPI Questionnaire Question,153,,A question associated with the NPI questionnaire.,C3639110,
+C103497,NPS Questionnaire Question,15,,A question associated with the NPS questionnaire.,C3642468,
+C120998,NSA-16 Clinical Classification Question,19,,A question associated with the NSA-16 clinical classification.,C4054427,
+C132526,NSAA Clinical Classification Question,20,,A question associated with the NSAA clinical classification.,,CL520112
+C154462,NSCLC-SAQ Version 1.0 Questionnaire Question,13,,A question associated with the NSCLC-SAQ Version 1.0 questionnaire.,,CL555390
+C193281,National Early Warning Score 2 Clinical Classification Question,2,,A question associated with the National Early Warning Score 2 clinical classification.,,CL1913236
+C208402,National Youth Tobacco Survey 2022 Version Questionnaire Question,671,,A question associated with the National Youth Tobacco Survey 2022 Version questionnaire.,,CL1935183
+C103498,OAB-q Questionnaire Question,33,,A question associated with the OAB-q questionnaire.,C3641312,
+C103499,OAB-q Short Form Questionnaire Question,19,,A question associated with the OAB-q Short Form questionnaire.,C3641313,
+C103500,ODI v2.1a Questionnaire Question,11,,A question associated with the ODI v2.1a questionnaire.,C3641314,
+C199505,Observer Global Impression Generic Modification Version Questionnaire Question,3,,A question associated with the Observer Global Impression Generic Modification Version questionnaire.,,CL1906868
+C124698,PANSS Clinical Classification Question,30,,A question associated with the PANSS clinical classification.,C4086712,
+C163403,PARENT-DDS Questionnaire Question,35,,A question associated with the PARENT-DDS questionnaire.,,CL976667
+C163404,PARTNER-DDS Questionnaire Question,36,,A question associated with the PARTNER-DDS questionnaire.,,CL976666
+C115412,PASAT Functional Test Question,7,,A question associated with the PASAT functional test.,C3898053,
+C135701,PASI Clinical Classification Question,29,,A question associated with the PASI clinical classification.,,CL523020
+C179958,PASI Feldman Version Clinical Classification Question,29,,A question associated with the PASI Feldman Version clinical classification.,,CL1662620
+C135708,PCL-5 Questionnaire Question,22,,A question associated with the PCL-5 questionnaire.,,CL523027
+C112462,PDDS Questionnaire Question,1,,A question associated with the PDDS questionnaire.,C3828629,
+C100121,PDQUALIF Questionnaire Question,33,,A question associated with the PDQUALIF questionnaire.,C3639111,
+C135706,PGI Generic Modification Version Questionnaire Question,4,,A question associated with the PGI Generic Modification Version questionnaire.,,CL523025
+C125754,PHQ Screener Version Questionnaire Question,59,,A question associated with the PHQ Screener Version questionnaire.,,CL504409
+C103502,PHQ-15 Questionnaire Question,16,,A question associated with the PHQ-15 questionnaire.,C3641316,
+C157728,PHQ-2 Questionnaire Question,2,,A question associated with the PHQ-2 questionnaire.,,CL937327
+C103501,PHQ-9 Questionnaire Question,11,,A question associated with the PHQ-9 questionnaire.,C3641315,
+C105143,PI Questionnaire Question,6,,A question associated with the PI version 1 questionnaire.,C3641939,
+C135710,PODCI Adolescent Parent-Reported Version Questionnaire Question,92,,A question associated with the PODCI Adolescent Parent-Reported Version questionnaire.,,CL523029
+C135711,PODCI Adolescent Self-Reported Version Questionnaire Question,89,,A question associated with the PODCI Adolescent Self-Reported Version questionnaire.,,CL523030
+C135709,PODCI Pediatric Parent-Reported Version Questionnaire Question,92,,A question associated with the PODCI Pediatric Parent-Reported Version questionnaire.,,CL523028
+C105144,PR Questionnaire Question,11,,A question associated with the PR version 1 questionnaire.,C3641940,
+C179955,PRO-CTCAE V1.0 Questionnaire Question,145,,A question associated with the PRO-CTCAE V1.0 Version Date 4/26/2020 questionnaire.,,CL1662619
+C202150,PROMIS Item Bank Version 1.0 Fatigue Short Form 7a Questionnaire Question,7,,A question associated with the PROMIS Item Bank Version 1.0 Fatigue Short Form 7a questionnaire.,,CL1921197
+C202149,PROMIS Item Bank Version 2.0 Cognitive Function Short Form 6a Questionnaire Question,6,,A question associated with the PROMIS Item Bank Version 2.0 Cognitive Function Short Form 6a questionnaire.,,CL1921196
+C208400,PROMIS Item Bank v1.0 - Sleep Disturbance - Short Form 4a Questionnaire Question,4,,A question associated with the PROMIS Item Bank v1.0 - Sleep Disturbance - Short Form 4a questionnaire.,,CL1935181
+C208399,PROMIS Item Bank v2.0 - Cognitive Function - Abilities Subset - Short Form 6a Questionnaire Question,6,,A question associated with the PROMIS Item Bank v2.0 - Cognitive Function - Abilities Subset - Short Form 6a questionnaire.,,CL1935180
+C208401,PROMIS-29 Profile Version 2.1 Questionnaire Question,29,,A question associated with the PROMIS-29 Profile Version 2.1 questionnaire.,,CL1935182
+C127366,PROSQOLI Questionnaire Question,10,,A question associated with the PROSQOLI questionnaire.,,CL508941
+C138264,PUL 1.2 Functional Test Question,32,,A question associated with the PUL 1.2 functional test.,,CL525763
+C138265,PUL 2.0 Functional Test Question,32,,A question associated with the PUL 2.0 functional test.,,CL525762
+C150796,Paced Tapping Functional Test Question,46,,A question associated with the Paced Tapping functional test.,,CL552655
+C147555,Peds-FACIT-F Questionnaire Question,13,,A question associated with the Peds-FACIT-F questionnaire.,,CL545405
+C138269,PedsQL Neuromuscular Module Acute Version 3.0 Child Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Child Report questionnaire.,,CL525766
+C138271,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Child Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Child questionnaire.,,CL525764
+C138272,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Teen Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Teen questionnaire.,,CL525771
+C138273,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Adults Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Adults questionnaire.,,CL525770
+C138274,PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Child Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent Report for Young Child questionnaire.,,CL525769
+C138270,PedsQL Neuromuscular Module Acute Version 3.0 Parent of Toddler Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Parent of Toddler questionnaire.,,CL525765
+C138275,PedsQL Neuromuscular Module Acute Version 3.0 Teen Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Teen Report questionnaire.,,CL525768
+C138276,PedsQL Neuromuscular Module Acute Version 3.0 Young Adult Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Young Adult Report questionnaire.,,CL525743
+C138277,PedsQL Neuromuscular Module Acute Version 3.0 Young Child Report Questionnaire Question,17,,A question associated with the PedsQL Neuromuscular Module Acute Version 3.0 Young Child Report questionnaire.,,CL525742
+C138278,PedsQL Neuromuscular Module Version 3.0 Child Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Child Report questionnaire.,,CL525741
+C138280,PedsQL Neuromuscular Module Version 3.0 Parent Report for Child Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Child questionnaire.,,CL525747
+C138281,PedsQL Neuromuscular Module Version 3.0 Parent Report for Teen Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Teen questionnaire.,,CL525746
+C138282,PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Adults Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Adults Report questionnaire.,,CL525745
+C138283,PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Child Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent Report for Young Child questionnaire.,,CL525744
+C138279,PedsQL Neuromuscular Module Version 3.0 Parent of Toddler Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Parent of Toddler questionnaire.,,CL525740
+C138284,PedsQL Neuromuscular Module Version 3.0 Teen Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Teen Report questionnaire.,,CL525751
+C138285,PedsQL Neuromuscular Module Version 3.0 Young Adult Report Questionnaire Question,25,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Young Adult Report questionnaire.,,CL525750
+C138286,PedsQL Neuromuscular Module Version 3.0 Young Child Report Questionnaire Question,17,,A question associated with the PedsQL Neuromuscular Module Version 3.0 Young Child Report questionnaire.,,CL525749
+C204238,Penn State Electronic Cigarette Dependence Index Questionnaire Question,11,,A question associated with the Penn State Electronic Cigarette Dependence Index questionnaire.,,CL1926770
+C204237,Perianal Crohn's Disease Activity Index Questionnaire Question,6,,A question associated with the Perianal Crohn's Disease Activity Index questionnaire.,,CL1926771
+C190949,Psoriasis Area and Severity Index Bozek Version Clinical Classification Question,29,,A question associated with the Psoriasis Area and Severity Index Bozek Version clinical classification.,,CL1799544
+C190948,Psoriasis Area and Severity Index European Medical Agency Version Clinical Classification Question,29,,A question associated with the Psoriasis Area and Severity Index European Medical Agency Version clinical classification.,,CL1799543
+C190947,Psoriasis Area and Severity Index Fredriksson Version Clinical Classification Question,29,,A question associated with the Psoriasis Area and Severity Index Fredriksson Version clinical classification.,,CL1799542
+C130295,Q-LES-Q Questionnaire Question,101,,A question associated with the Q-LES-Q questionnaire.,,CL513291
+C130296,Q-LES-Q-SF Questionnaire Question,16,,A question associated with the Q-LES-Q-SF questionnaire.,,CL513308
+C130287,QIDS-C Clinical Classification Question,20,,A question associated with the QIDS-C clinical classification.,,CL513329
+C130294,QIDS-SR Questionnaire Question,20,,A question associated with the QIDS-SR questionnaire.,,CL513350
+C135712,RAND Social Support Survey Questionnaire Question,19,,A question associated with the RAND Social Support Survey questionnaire.,,CL523031
+C113871,RAND-36 Questionnaire Question,36,,A question associated with the RAND-36 questionnaire.,C3828378,
+C171414,RASS Clinical Classification Question,1,,A question associated with the RASS clinical classification.,,CL1405509
+C100123,RDQ Questionnaire Question,25,,A question associated with the RDQ questionnaire.,C3639112,
+C166194,RFWT Version 1 Functional Test Question,1,,A question associated with the RFWT Version 1 functional test.,,CL971454
+C119087,RPQ Questionnaire Question,20,,A question associated with the RPQ questionnaire.,C3897783,
+C124694,Reynolds CVD 10-Year Risk Score Clinical Classification Question,1,,A question associated with the Reynolds CVD 10-Year Risk Score clinical classification.,C4086831,
+C141677,Rising From Floor Functional Test Question,4,,A question associated with the Rising From Floor functional test.,,CL539765
+C190946,Rutgeerts Score Clinical Classification Question,1,,A question associated with the Rutgeerts Score clinical classification.,,CL1799541
+C171415,SAS Clinical Classification Question,1,,A question associated with the SAS clinical classification.,,CL1405508
+C115413,SDMT Functional Test Question,1,,A question associated with the SDMT functional test.,C3897114,
+C111358,SDS Questionnaire Question,6,,A question associated with the SDS questionnaire.,C3828207,
+C176054,SES-CD Version 1 Clinical Classification Question,31,,A question associated with the SES-CD Version 1 clinical classification.,,CL1413458
+C177699,SF10 v1.0 Children Acute Questionnaire Question,10,,A question associated with the SF10 v1.0 Children Acute questionnaire.,,CL1643363
+C177700,SF10 v1.0 Children Standard Questionnaire Question,10,,A question associated with the SF10 v1.0 Children Standard questionnaire.,,CL1643362
+C177701,SF12 v1.0 Acute Questionnaire Question,15,,A question associated with the SF12 v1.0 Acute questionnaire.,,CL1643365
+C177702,SF12 v1.0 Standard Questionnaire Question,15,,A question associated with the SF12 v1.0 Standard questionnaire.,,CL1643364
+C177703,SF12 v2.0 Acute Questionnaire Question,31,,A question associated with the SF12 v2.0 Acute questionnaire.,,CL1643367
+C177704,SF12 v2.0 Standard Questionnaire Question,31,,A question associated with the SF12 v2.0 Standard questionnaire.,,CL1643366
+C101878,SF36 v1 0 Acute Questionnaire Question,57,,A question associated with the SF36 v1.0 Acute questionnaire.,C3640283,
+C100171,SF36 v1.0 Standard Questionnaire Question,57,,A question associated with the SF36 v1.0 questionnaire.,C3639158,
+C101880,SF36 v2 0 Acute Questionnaire Question,62,,A question associated with the SF36 v2.0 Acute questionnaire.,C3640285,
+C101879,SF36 v2 0 Standard Questionnaire Question,62,,A question associated with the SF36 v2.0 Standard questionnaire.,C3640284,
+C185743,SF6D Version 2.0 Acute Questionnaire Question,10,,A question associated with the SF6D Version 2.0 Acute questionnaire.,,CL1778337
+C185744,SF6D Version 2.0 Standard Questionnaire Question,10,,A question associated with the SF6D Version 2.0 Standard questionnaire.,,CL1778338
+C177697,SF8 v1.0 Acute Questionnaire Question,18,,A question associated with the SF8 v1.0 Acute questionnaire.,,CL1643361
+C177698,SF8 v1.0 Standard Questionnaire Question,18,,A question associated with the SF8 v1.0 Standard questionnaire.,,CL1643360
+C106682,SGRQ-C Questionnaire Question,41,,A question associated with the SGRQ-C questionnaire.,C3828155,
+C150805,SIQ Questionnaire Question,43,,A question associated with the SIQ questionnaire.,,CL552664
+C150806,SIQ-JR Questionnaire Question,26,,A question associated with the SIQ-JR questionnaire.,,CL552665
+C103503,SIQR Questionnaire Question,21,,A question associated with the SIQR questionnaire.,C3641317,
+C154463,SMDDS Version 1.0 Questionnaire Question,26,,A question associated with the SMDDS Version 1.0 questionnaire.,,CL555391
+C100125,SOAPP-R Questionnaire Question,26,,A question associated with the SOAPP-R questionnaire.,C3639114,
+C103504,SOWS Short Questionnaire Question,10,,A question associated with the SOWS Short questionnaire.,C3641318,
+C101881,SOWS Subjective Questionnaire Question,16,,A question associated with the SOWS questionnaire.,C3640286,
+C170532,SPPB Version 1.2 Functional Test Question,35,,A question associated with the SPPB Version 1.2 functional test.,,CL1382958
+C115419,SWLS Questionnaire Question,5,,A question associated with the SWLS questionnaire.,C3897662,
+C204239,Sepsis-related Organ Failure Assessment 27th March 2024 Version Clinical Classification Question,7,,A question associated with the Sepsis-related Organ Failure Assessment 27th March 2024 Version clinical classification.,,CL1926769
+C100124,Short-Form MPQ-2 Questionnaire Question,22,,A question associated with the Short-Form MPQ-2 questionnaire.,C3639113,
+C112463,St George's Respiratory Questionnaire Past 3 Months Version Questionnaire Question,51,,A question associated with the SGRQ Past 3 Months Version questionnaire.,C3827934,
+C112464,St George's Respiratory Questionnaire Past 4 Weeks Version Questionnaire Question,51,,A question associated with the SGRQ Past 4 Weeks Version questionnaire.,C3827933,
+C187460,Stanford Sleepiness Scale Questionnaire Question,1,,A question associated with the Stanford Sleepiness Scale questionnaire.,,CL1792137
+C161630,T1-DDS Questionnaire Question,36,,A question associated with the T1-DDS questionnaire.,,CL970326
+C115414,T25FW Functional Test Question,4,,A question associated with the T25FW functional test.,C3897395,
+C106675,TDI Clinical Classification Question,4,,A question associated with the TDI questionnaire.,C3827850,
+C119088,TIMI Thrombus Grade Clinical Classification Question,1,,A question associated with the TIMI Thrombus Grade clinical classification.,C3897386,
+C124702,TMT Functional Test Question,2,,A question associated with the TMT functional test.,C4087090,
+C147556,TSCC Questionnaire Question,54,,A question associated with the TSCC questionnaire.,,CL545406
+C147557,TSCYC Questionnaire Question,90,,A question associated with the TSCYC questionnaire.,,CL545407
+C132530,TSQM Version 1.4 Questionnaire Question,14,,A question associated with the TSQM Version 1.4 questionnaire.,,CL521014
+C115415,TUG Functional Test Question,1,,A question associated with the TUG functional test.,C3897374,
+C124689,Tanner Scale-Boy Clinical Classification Question,2,,A question associated with the Tanner Scale-Boy clinical classification.,C4086892,
+C124690,Tanner Scale-Girl Clinical Classification Question,2,,A question associated with the Tanner Scale-Girl clinical classification.,C4087091,
+C190950,The Patient Health Questionnaire - 8 Item Questionnaire Question,9,,A question associated with the the Patient Health Questionnaire - 8 Item.,,CL1799553
+C154459,UHDRS 1999 Version Clinical Classification Question,112,,A question associated with the UHDRS 1999 Version clinical classification.,,CL555388
+C100126,UPDRS Clinical Classification Question,76,,A question associated with the UPDRS clinical classification.,C3639115,
+C103505,UPS Questionnaire Question,1,,A question associated with the UPS questionnaire.,C3642469,
+C141674,VALG Clinical Classification Question,1,,A question associated with the VALG clinical classification.,,CL539768
+C112465,VFQ25-Interviewer Administered Format Questionnaire Question,42,,A question associated with the VFQ25-Interviewer Administered Format questionnaire.,C3827609,
+C112466,VFQ25-Self Administered Format Questionnaire Question,42,,A question associated with the VFQ25-Self Administered Format questionnaire.,C3827567,
+C130283,VLERS Clinical Classification Question,1,,A question associated with the VLERS clinical classification.,,CL514184
+C190951,Voice Handicap Index Questionnaire Question,34,,A question associated with the the Voice Handicap Index questionnaire.,,CL1799554
+C124699,WHO Clinical Staging of HIV/AIDS for Adults and Adolescents Clinical Classification Question,1,,A question associated with the WHO Clinical Staging of HIV/AIDS for Adults and Adolescents clinical classification.,C4086957,
+C124700,WHO Clinical Staging of HIV/AIDS for Children Clinical Classification Question,1,,A question associated with the WHO Clinical Staging of HIV/AIDS for Children clinical classification.,C4086958,
+C130303,WHODAS 2.0 12 24-item Version Interviewer-administered Questionnaire Question,49,,A question associated with the WHODAS 2.0 12+24-item Version Interviewer-administered questionnaire.,,CL514186
+C130300,WHODAS 2.0 12-item Version Interviewer-administered Questionnaire Question,21,,A question associated with the WHODAS 2.0 12-item Version Interviewer-administered questionnaire.,,CL514187
+C130301,WHODAS 2.0 12-item Version Proxy-administered Questionnaire Question,16,,A question associated with the WHODAS 2.0 12-item Version Proxy-administered questionnaire.,,CL514188
+C130302,WHODAS 2.0 12-item Version Self-administered Questionnaire Question,15,,A question associated with the WHODAS 2.0 12-item Version Self-administered questionnaire.,,CL514189
+C130297,WHODAS 2.0 36-item Version Interviewer-administered Questionnaire Question,49,,A question associated with the WHODAS 2.0 36-item Version Interviewer-administered questionnaire.,,CL514190
+C130298,WHODAS 2.0 36-item Version Proxy-administered Questionnaire Question,40,,A question associated with the WHODAS 2.0 36-item Version Proxy-administered questionnaire.,,CL514191
+C130299,WHODAS 2.0 36-item Version Self-administered Questionnaire Question,39,,A question associated with the WHODAS 2.0 36-item Version Self-administered questionnaire.,,CL514192
+C166192,WPAI-GH Version 2 Questionnaire Question,10,,A question associated with the WPAI-GH Version 2 questionnaire.,,CL971452
+C100172,WPAI:SHP v2.0 Questionnaire Question,10,,A question associated with version 2.0 of the WPAI:SHP questionnaire.,C3639159,
+C124695,West Haven Criteria Clinical Classification Question,0,,A question associated with the West Haven Criteria clinical classification.,C4086962,
+C101882,YMRS Questionnaire Question,11,,A question associated with the YMRS questionnaire.,C3640287,
