@@ -95,9 +95,9 @@ When a DSS pins a variable to a specific value (e.g. VSTESTCD = "ABI" in the ABI
 
 ### 4.3 `CodeList` and `SubsetCodeList` — NCIt-anchored codelist identity
 
-`CodeList` has `conceptId` (NCIt C-code for the codelist), `href` (canonical NCIt URI), and `submissionValue` (the CDISC codelist name). `SubsetCodeList` carries a parent codelist reference plus a subset definition and the list of subsetted terms.
+`CodeList` has `conceptId` (NCIt C-code for the codelist), `href` (canonical NCIt URI), and `submissionValue` (the CDISC codelist name). `SubsetCodeList` narrows a parent codelist to a specific subset of terms — in the LinkML schema it has slots for the parent and the subset definition, and in the xlsx projection it is serialised as a string with `range: string`.
 
-This means every variable's codelist binding is already anchored to NCIt at source. The "closed-world question: does this DSS allow X-RAY as a method value" is answerable by reading `subsetCodelist` — no CT re-lookup needed.
+This means every variable's codelist binding is already anchored to NCIt at source. The "closed-world question: does this DSS allow X-RAY as a method value" is answerable by reading `subsetCodelist` — no CT re-lookup needed. `codelist` is populated on ~54% of variable rows (99.9% of DSSs); `subsetCodelist` is the less common case, populated on 2.2% of rows (16% of DSSs) per the 2026-Q1 audit.
 
 ## 5. Walk-through: `sdtm_abi.yaml`
 
@@ -188,13 +188,54 @@ The xlsx is a projection of a graph onto a fixed column set. It works for specim
 
 CDISC publishes COSMoS in three forms. All three derive from the LinkML schema.
 
-**Graph-native YAML in GitHub (`yaml/<packageDate>/{bc,sdtm}/`, plus `crf/` in draft packages).** One file per object, LinkML-conformant, no information loss. Version-pinned by package date. No authentication. Stable URL pattern at `github.com/cdisc-org/COSMoS/tree/main/yaml/...`. This is the shape the `sdtm_abi.yaml` walk-through uses. Practical properties: a full package is a few thousand small YAML files; consumption is a `git clone` plus a walk of three folders.
+**Graph-native YAML in GitHub (`yaml/<packageDate>/{bc,sdtm}/`, plus `crf/` in draft packages).** One file per object, LinkML-conformant, no information loss. Version-pinned by package date. No authentication. Stable URL pattern at `github.com/cdisc-org/COSMoS/tree/main/yaml/...`. This is the shape the `sdtm_abi.yaml` walk-through uses. Practical properties: a full package is a few thousand small YAML files; consumption is a `git clone` plus a walk of three folders. **Caveat: the 2026-Q1 release publishes YAML for 5 of the 32 domains present in the package (RE, VS, DS, LB, GF — 227 of 1,326 DSSs). The YAML folder is a partial publication at this release. Audit: `cosmos-bc-dss/notebooks/02_xlsx_source_audit.ipynb`, 2026-04-22.**
 
 **CDISC Library API (`library.cdisc.org`).** REST endpoints documented by the OpenAPI specs in the `openapi/` folder. Requires an API key. Same object shape as the YAML — the API is a dynamic serve-layer over the same LinkML-conformant data. Practical properties: supports "give me the latest", supports per-object fetch, has request rate limits, requires credential management. The OpenAPI file list was not enumerated in preparing this document (GitHub tree pages exceed the fetch token limit); the exact endpoint layout for `/api/cosmos/v2/sdtm/...` should be confirmed against the live CDISC Library documentation before implementation.
 
-**Flat Excel exports.** The current pipeline input. Lossiest of the three. Useful when human review of a tabular projection is the end goal — not useful when graph traversal or narrative generation is.
+**Flat Excel exports (`cdisc_sdtm_dataset_specializations_latest.xlsx`, `cdisc_biomedical_concepts_latest.xlsx`).** A full tabular serialisation of the authored graph at VLM-row grain. The SDTM DSS export is 12,677 rows × 32 columns for the 2026-Q1 package (1,326 DSSs across 32 domains). Every column maps 1:1 to a LinkML slot — 0 unmapped columns, column-to-slot rename table in Section 7.1. ABI xlsx rows and `sdtm_abi.yaml` agree fact-for-fact at variable level. Reification quad (`subject/linking_phrase/predicate_term/object`) is populated on 97.5% of rows / 99.7% of DSSs; `assigned_term` / `codelist` / `mandatory_*` / `comparator` / `origin_type/source` are populated where expected. The xlsx is therefore graph-equivalent to the YAML at VLM-row grain, not a lossy projection. Useful both for human review and as the pipeline input.
 
-Implication for the cosmos-bc-dss pipeline: the download step currently pulls the Excel exports. Switching to the graph-native YAML is a mechanical substitution of the download source; the authoring source is unchanged, and the YAML files are what the LinkML schema was designed to serialise into. The API is an alternative for the same graph-native data.
+Implication for the cosmos-bc-dss pipeline: the loss in the current pipeline is introduced by the *flattener* (`interim/COSMoS_BC_DSS.xlsx` collapses 12,677 VLM rows into 1,326 one-row-per-DSS records against a hand-picked column list), not by the CDISC export. Options for Step 2 — in preference order — are (1) keep the existing Excel export as input and rewrite the flattener as a schema-driven walk over the VLM-row grain; (2) switch to the GitHub YAML folder when it becomes complete across all 32 domains; (3) switch to the CDISC Library API. Option 1 is available today with no unknowns; option 2 is blocked on upstream YAML coverage; option 3 is blocked on API endpoint verification and credential management.
+
+### 7.1 xlsx column → LinkML slot mapping
+
+The SDTM Dataset Specializations xlsx uses snake_case column names; the LinkML schema uses camelCase slot names; some are renamed further when a slot sits on an inlined class. All 32 xlsx columns map to LinkML slots with zero unmapped (audit: notebook 02, 2026-04-22). The table below is the canonical mapping.
+
+| xlsx column | LinkML slot | notes |
+|---|---|---|
+| `package_date` | `packageDate` (SDTMGroup) | |
+| `bc_id` | `biomedicalConceptId` (SDTMGroup) | FK to BC graph |
+| `sdtmig_start_version` | `sdtmigStartVersion` (SDTMGroup) | |
+| `sdtmig_end_version` | `sdtmigEndVersion` (SDTMGroup) | |
+| `domain` | `domain` | direct |
+| `vlm_source` | `source` (SDTMGroup) | `<domain>.<variable>` pinning |
+| `vlm_group_id` | `datasetSpecializationId` (SDTMGroup) | the DS_Code mnemonic |
+| `short_name` | `shortName` (SDTMGroup) | |
+| `sdtm_variable` | `name` (SDTMVariable) | |
+| `dec_id` | `dataElementConceptId` (SDTMVariable) | FK to BC's DEC list |
+| `nsv_flag` | `isNonStandard` (SDTMVariable) | |
+| `codelist` | `codelist.conceptId` (CodeList) | NCIt C-code |
+| `codelist_submission_value` | `codelist.submissionValue` (CodeList) | CDISC codelist name |
+| `subset_codelist` | `subsetCodelist` | direct, range=string |
+| `value_list` | `valueList` | direct |
+| `assigned_term` | `assignedTerm.conceptId` (AssignedTerm) | NCIt C-code of pinned value |
+| `assigned_value` | `assignedTerm.value` (AssignedTerm) | submission value of pinned value |
+| `role` | `role` | direct |
+| `subject` | `relationship.subject` (RelationShip) | reification quad |
+| `linking_phrase` | `relationship.linkingPhrase` (RelationShip) | reification quad |
+| `predicate_term` | `relationship.predicateTerm` (RelationShip) | reification quad |
+| `object` | `relationship.object` (RelationShip) | reification quad |
+| `data_type` | `dataType` | direct |
+| `length` | `length` | direct |
+| `format` | `format` | direct |
+| `significant_digits` | `significantDigits` | direct |
+| `mandatory_variable` | `mandatoryVariable` | direct |
+| `mandatory_value` | `mandatoryValue` | direct |
+| `origin_type` | `originType` | direct |
+| `origin_source` | `originSource` | direct |
+| `comparator` | `comparator` | direct |
+| `vlm_target` | `vlmTarget` | direct |
+
+Renames come in three forms: (i) snake_case → camelCase (`sdtmig_start_version` → `sdtmigStartVersion`); (ii) xlsx flattens an inlined child object onto the parent row (`codelist` + `codelist_submission_value` → `codelist.conceptId` + `codelist.submissionValue` on the inlined `CodeList` class); (iii) xlsx uses a shortened external name for a slot whose LinkML name reflects the model (`vlm_group_id` → `datasetSpecializationId`, `vlm_source` → `source`). A schema-driven flattener reads the rename pairs from this table (or regenerates them via SchemaView at build time).
 
 ## 8. Implications for Steps 2 and 3
 
@@ -226,12 +267,19 @@ The NCIt enrichment step is therefore less about "enrich with information the gr
 
 ## 9. What this means concretely for next work
 
-The pipeline change is architecturally small. The download step switches from the Excel exports to the graph-native YAML folder (`yaml/20260331_r16/{bc,sdtm}/` for the 2026-Q1 package). The parse step replaces the `openpyxl` Excel reader with a LinkML-aware YAML reader (either `linkml-runtime`'s class-aware loader, or plain `pyyaml` plus the schema for validation). The flatten step replaces the hand-written column list with a schema-driven walk. The `interim/COSMoS_BC_DSS.xlsx` output either stays as a backwards-compatible projection (same columns) or gets replaced by a richer set of sheets (identity, variables long-format, relationships long-format, codelists) — the consumer tracks determine the shape.
+The pipeline change is architecturally smaller than initially assumed. The download step stays on the CDISC Excel exports (the YAML folder is a partial publication; the API is an unverified alternative). The parse step stays on `openpyxl`, reading the full 12,677-row VLM-grain sheet rather than collapsing to one-row-per-DSS. The flatten step replaces the hand-written column list with a schema-driven walk over the LinkML slots — using the column-to-slot rename table in §7.1 to bridge between the xlsx's snake_case surface and the LinkML schema. The `interim/COSMoS_BC_DSS.xlsx` output either stays as a backwards-compatible projection (same columns) or gets replaced by a richer set of sheets (identity, variables long-format, relationships long-format, codelists) — the consumer tracks determine the shape.
 
-The three open verifications before Step 2 starts:
+### Verification status (2026-04-22)
 
-1. **YAML folder structure.** Verified 2026-04-22 against `api.github.com`: `yaml/20260331_r16/` contains `bc/` (249 yaml) and `sdtm/` (227 yaml) only. CRF instances exist solely under `yaml/20251231_draft/crf/` (303 yaml); the flattener's initial scope is therefore `{bc, sdtm}` at r16, with CRF consumption deferred until a released package includes it.
-2. **LinkML runtime compatibility.** Confirm `linkml-runtime` parses the published YAML against the published schema without errors. The schemas use `identifier: true`, `inlined_as_list: true` and tree_root patterns standard for LinkML — expected to work, not verified.
-3. **CDISC Library API endpoint shape.** If the API is the preferred source rather than the GitHub YAML folder, confirm the endpoint returns the same LinkML-conformant shape. The OpenAPI specs in `openapi/` are the definitive source; live API testing against Kerstin's credential is the fastest way to verify.
+1. **YAML folder structure.** Resolved. `yaml/20260331_r16/` contains `bc/` (249 yaml) and `sdtm/` (227 yaml) only. CRF instances exist solely under `yaml/20251231_draft/crf/` (303 yaml). The sdtm folder covers only 5 of the 32 domains present in the xlsx (RE, VS, DS, LB, GF). YAML consumption is therefore **blocked on upstream coverage** for the full-domain flattener; the xlsx covers all 32.
+2. **LinkML runtime compatibility.** Resolved. `linkml-runtime.SchemaView` parses `cosmos_sdtm_model.yaml` and `cosmos_bc_model.yaml`; `linkml.validator.validate` returns zero errors on `sdtm_abi.yaml`. Ran in `cosmos-bc-dss/notebooks/01_verify_graph_walk.ipynb`.
+3. **xlsx ↔ LinkML equivalence.** New, resolved. All 32 xlsx columns map to LinkML slots (0 unmapped). Reification quad populated on 97.5% of rows / 99.7% of DSSs. ABI xlsx rows and `sdtm_abi.yaml` agree fact-for-fact on all 6 variables (`VSTESTCD`, `VSTEST`, `VSORRES`, `VSSTRESC`, `VSSTRESN`, `VSDTC`). Ran in `cosmos-bc-dss/notebooks/02_xlsx_source_audit.ipynb`. Implication: the xlsx is graph-equivalent to YAML at VLM-row grain; schema-driven flattening is tractable against the xlsx today.
+4. **CDISC Library API endpoint shape.** Open, not blocking. If API consumption becomes preferred over the xlsx (e.g. to eliminate the download step or fetch on-demand), the OpenAPI specs in `openapi/` are the definitive source; live API testing against Kerstin's credential is the fastest way to verify.
 
-None of these require the Step 2 flattener work to start, and all three can be answered from the same verification notebook that opens one real `sdtm/*.yaml` file and walks it.
+### Anomalies to track (xlsx audit, 2026-Q1)
+
+- `vlm_source` has 37 distinct values including `MB-MBTESTCD` (7 rows) alongside `MB.MBTESTCD` (3 rows) — a dot-vs-hyphen inconsistency at source. The flattener should normalise or flag.
+- 313 rows (~2.5%) have no reification quad populated; 4 DSSs have no relationship edge at all. Characterise during Step 2.
+- `subsetCodelist` is populated on only 16% of DSSs — the subset-codelist handling in Step 2 should not assume it is the dominant case.
+
+None of these block Step 2 starting.
