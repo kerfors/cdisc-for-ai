@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chest X-Ray — The Patient-Burden Gap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f7f5; color: #333; padding: 32px; max-width: 1200px; margin: 0 auto; }
+
+  h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e0ddd8; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Tree */
+  .tree { position: relative; }
+  .layer-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 6px; margin-top: 20px; }
+  .layer-label:first-child { margin-top: 0; }
+
+  .node { position: relative; margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 4px solid; transition: box-shadow 0.15s; }
+  .node:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .node .code { font-weight: 600; font-size: 0.85rem; }
+  .node .code a { color: inherit; text-decoration: none; border-bottom: 1px dotted #999; }
+  .node .code a:hover { color: #1a5276; border-bottom-color: #1a5276; }
+  .node .name { font-size: 0.82rem; margin-top: 2px; color: #555; }
+  .node .meta { font-size: 0.72rem; color: #777; margin-top: 3px; }
+  .node .tag { display: inline-block; font-size: 0.68rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+
+  /* SDTM CT codelist (green) — identity layer */
+  .sdtm-ct { background: #f3f7f0; border-color: #548235; }
+  .sdtm-ct .tag { background: #548235; color: #fff; }
+  .sw-sdtm-ct { background: #548235; }
+
+  /* COSMoS DSS (gold/blue) — parent template */
+  .cosmos-dss-iv { background: #f1f6fc; border-color: #2e6fb5; padding: 14px 16px; }
+  .cosmos-dss-iv .code { font-size: 0.95rem; }
+  .cosmos-dss-iv .tag { background: #2e6fb5; color: #fff; }
+  .sw-cosmos-dss-iv { background: #2e6fb5; }
+
+  /* Case specialization — authored on top of DSS at study design time */
+  .case-spec { background: #f1ecf8; border-color: #6b4c93; }
+  .case-spec .tag { background: #6b4c93; color: #fff; }
+  .sw-case-spec { background: #6b4c93; }
+
+  /* Outside-DSS binding / external reference */
+  .ext-ref { background: #fff7ed; border-color: #b56424; }
+  .ext-ref .tag { background: #b56424; color: #fff; }
+  .sw-ext-ref { background: #b56424; }
+
+  /* Option cards (for architectural options panel) */
+  .option-card { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 12px 14px; }
+  .option-card .opt-num { display: inline-block; font-size: 0.66rem; font-weight: 700; color: #666; background: #f0ece2; padding: 2px 7px; border-radius: 10px; letter-spacing: 0.04em; }
+  .option-card .opt-title { font-size: 0.85rem; font-weight: 600; color: #333; margin: 6px 0 3px; }
+  .option-card .opt-desc { font-size: 0.76rem; color: #555; line-height: 1.5; }
+  .option-card .opt-trade { font-size: 0.72rem; color: #7a4d1d; margin-top: 6px; padding-top: 6px; border-top: 1px dashed #eadfc8; }
+  .option-card .opt-trade strong { color: #5d3a12; }
+  .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 12px; }
+
+  /* Connectors */
+  .connector { position: relative; margin-left: 36px; }
+  .connector::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+  .connector-deep { margin-left: 72px; }
+  .connector-deep::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+
+  /* Attribute grid */
+  .attr-grid { display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; font-size: 0.78rem; margin-top: 6px; }
+  .attr-grid .attr-label { color: #999; font-weight: 500; white-space: nowrap; }
+  .attr-grid .attr-val { color: #444; }
+  .attr-grid .attr-val strong { font-weight: 600; color: #333; }
+  .attr-grid .attr-val code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #4a3f24; }
+
+  /* Pin/bind grid inside case-spec nodes */
+  .pin-bind { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .pin-bind .box { padding: 10px 12px; border-radius: 5px; background: #fff; }
+  .pin-bind .box-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #6b4c93; margin-bottom: 6px; }
+  .pin-bind .box.bind .box-label { color: #b56424; }
+  .pin-bind .row { font-size: 0.76rem; margin: 3px 0; line-height: 1.5; }
+  .pin-bind .row code { font-family: 'SF Mono', 'Consolas', monospace; background: #f4f1ec; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #333; }
+  .pin-bind .row strong { color: #333; }
+  .pin-bind .box.empty { background: #faf8f5; color: #999; font-size: 0.76rem; font-style: italic; display: flex; align-items: center; justify-content: center; padding: 14px 12px; }
+
+  /* Part headers */
+  .part-header { margin: 28px 0 12px 0; padding: 10px 16px; border-radius: 6px; background: #fff; border: 1px solid #ddd; }
+  .part-header .part-num { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+  .part-header .part-title { font-size: 1.0rem; font-weight: 600; color: #333; margin-top: 2px; }
+  .part-header .part-desc { font-size: 0.8rem; color: #666; margin-top: 4px; line-height: 1.5; }
+  .part-header:first-of-type { margin-top: 12px; }
+
+  /* Gap box */
+  .gap-box { margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 3px solid #b94a48; background: #fdf3f3; font-size: 0.8rem; line-height: 1.5; color: #5a2828; }
+  .gap-box .gap-label { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #b94a48; display: block; margin-bottom: 4px; }
+  .gap-box .gap-grid { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin-top: 6px; font-size: 0.76rem; }
+  .gap-box .gap-grid .dim { font-weight: 600; color: #5a2828; }
+  .gap-box .gap-grid .where { color: #7a3838; }
+  .gap-box code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #5a2828; }
+
+  /* Prose box */
+  .prose-box { margin: 12px 0 6px 0; padding: 12px 16px; font-size: 0.82rem; color: #444; line-height: 1.6; background: #fff; border-radius: 6px; border: 1px solid #e0ddd8; }
+  .prose-box strong { color: #333; }
+  .prose-box code { font-family: 'SF Mono', 'Consolas', monospace; background: #f4f1ec; padding: 0 4px; border-radius: 3px; font-size: 0.74rem; color: #333; }
+
+  /* Codelist values chip-row */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .chip-row .chip { font-size: 0.72rem; padding: 3px 10px; border-radius: 12px; background: #edf2e8; color: #3a5a22; border: 1px solid #c8d9b4; font-family: 'SF Mono', 'Consolas', monospace; }
+  .chip-row .chip.highlight { background: #fde8b4; color: #7d5410; border-color: #e8c97e; font-weight: 600; }
+
+  /* Registry band */
+  .registry-band { margin: 36px 0 0 0; padding: 20px 24px; border-radius: 8px; background: #2c2e33; color: #e5e0d6; font-size: 0.84rem; line-height: 1.6; border-left: 6px solid #b8956a; }
+  .registry-band .reg-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b8956a; font-weight: 600; display: block; margin-bottom: 6px; }
+  .registry-band .reg-title { font-size: 1.0rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .registry-band code { background: rgba(255,255,255,0.08); padding: 1px 5px; border-radius: 3px; color: #f2e5c9; font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.78rem; }
+  .registry-band em { color: #dbc79a; font-style: normal; font-weight: 500; }
+
+  /* Footer */
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; line-height: 1.6; }
+
+  @media print {
+    body { background: #fff; padding: 16px; }
+    .node:hover { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chest X-Ray — The Patient-Burden Gap</h1>
+<p class="subtitle">Why XRAYCHEST as a DSS is not a distinct enough anchor for SoA patient-burden calculation — and where the discriminating qualifier lives instead</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss-iv"></div> COSMoS DSS — parent recording template (XRAYCHEST)</div>
+  <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT codelist — identity layer</div>
+  <div class="legend-item"><div class="legend-swatch sw-case-spec"></div> Case specialisation — authored at SoA design time</div>
+  <div class="legend-item"><div class="legend-swatch sw-ext-ref"></div> Outside-DSS binding — reference to SoA / burden-model object</div>
+</div>
+
+<div class="tree">
+
+  <!-- PART 1 -->
+  <div class="part-header">
+    <div class="part-num">Part 1</div>
+    <div class="part-title">The mismatch — what an SoA burden calculator needs vs what XRAYCHEST resolves to</div>
+    <div class="part-desc">
+      <p>A Schedule of Activities binds each study activity to a standardised concept (ideally a COSMoS DSS). A burden calculator then reads burden-relevant attributes off that concept — duration, discomfort, preparation, patient effort, logistics — and sums across the timeline.</p>
+      <p style="margin-top: 0.6rem;">For chest X-ray, <strong>XRAYCHEST</strong> is the DSS. But the burden profile of a chest X-ray varies materially with acquisition conditions the DSS does not model. The clearest case: patient position.</p>
+    </div>
+  </div>
+
+  <div class="prose-box">
+    <p><strong>Standing PA chest X-ray vs supine portable chest X-ray</strong> — same XRAYCHEST DSS, different real-world activity:</p>
+    <ul style="margin-top: 8px; margin-left: 22px; font-size: 0.8rem; line-height: 1.7;">
+      <li><strong>Standing PA:</strong> ambulatory patient walks to imaging suite, ~5–10 min door-to-door, single PA + lateral view, minimal staff assist, patient actively positions.</li>
+      <li><strong>Supine portable:</strong> bedside acquisition, longer setup, single AP view, higher staff effort, lower patient effort but typically a sicker patient with additional disruption to rest.</li>
+    </ul>
+    <p style="margin-top: 10px;">A burden calculator that treats both as "XRAYCHEST" hides the distinction. For a study recruiting hospitalised patients where supine imaging is protocolised, this is not a marginal error.</p>
+  </div>
+
+  <div class="gap-box">
+    <span class="gap-label">Dimensions relevant to burden — and where each lives today</span>
+    <div class="gap-grid">
+      <span class="dim">Procedure identity</span>      <span class="where">Pinned in DSS: <code>PRDECOD = X-RAY</code> via PROCEDUR codelist</span>
+      <span class="dim">Anatomical target</span>       <span class="where">Pinned in DSS: <code>PRLOC = CHEST</code> via LOC codelist</span>
+      <span class="dim">Patient position</span>        <span class="where"><strong>Not in XRAYCHEST VLM.</strong> POSITION codelist (C71148) exists in SDTM CT with 17 governed terms. <code>--POS</code> IS modelled in other DSSs (EGPOS in 31 EG DSS rows with codelist attached; VSPOS in 9 VS DSS rows with restricted value_lists) — but not in any PR or MK imaging DSS.</span>
+      <span class="dim">View / projection</span>      <span class="where">Not in DSS. No CDISC CT codelist for PA/AP/lateral view. Sponsor-defined at best.</span>
+      <span class="dim">Contrast use</span>           <span class="where">Not in XRAYCHEST DSS. Present in OTHER DSSs as a distinct PRDECOD term (e.g., "CONTRAST ENHANCED ECG GATED MRI" is its own PROCEDUR term, C174358).</span>
+      <span class="dim">Planned duration</span>      <span class="where">Not in DSS. Authored per protocol in study-design tools.</span>
+      <span class="dim">Setting (inpatient/outpatient)</span>  <span class="where">Not in DSS. Implicit in study design / visit metadata.</span>
+      <span class="dim">Fasting / preparation</span>  <span class="where">Not applicable to chest X-ray, but pattern-equivalent: <code>LBFAST</code> exists as DSS slot in lab tests, no analogue for imaging prep.</span>
+    </div>
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part-header" style="margin-top: 32px;">
+    <div class="part-num">Part 2</div>
+    <div class="part-title">The DSS slot inventory — what is modelled, what is not</div>
+    <div class="part-desc">
+      <p>The flattened DSS schema (as carried in the cdisc-for-ai interim file) models five qualifier-like slots at the DSS level: <code>Specimen</code>, <code>Method</code>, <code>location</code>, <code>laterality</code>, <code>evaluator</code>, plus unit and decimal-place metadata. There is no <code>position</code> column in the flattened schema.</p>
+      <p style="margin-top: 0.6rem;">At VLM-row level (the un-flattened DSS source) <code>--POS</code> DOES appear — in 40 rows total: 31 EGPOS rows across EG DSSs (all with codelist C71148, no value_list restriction), 9 VSPOS rows across VS DSSs (with codelist C71148 and typically a restricted value_list like <code>PRONE;SEMI-RECUMBENT;SITTING;STANDING;SUPINE</code> for DIABP/HR/PULSE). Zero rows in any PR, MK, TR, TU DSS.</p>
+      <p style="margin-top: 0.6rem;">So the gap is not DSS-wide — it is <strong>imaging-specific</strong>. Position has been curated for blood-pressure and ECG measurements, where it was identified as clinically discriminating. It has not been curated for imaging procedures or imaging-derived measurements, where it is equally discriminating for burden and data interpretation.</p>
+    </div>
+  </div>
+
+  <!-- Parent DSS -->
+  <div class="layer-label">Parent DSS — XRAYCHEST (from COSMoS)</div>
+  <div class="node cosmos-dss-iv">
+    <div class="code">XRAYCHEST — Chest X-Ray <span class="tag">DSS — VLM group</span></div>
+    <div class="attr-grid">
+      <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>XRAYCHEST</strong></span>
+      <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>PR.PRTRT</strong></span>
+      <span class="attr-label">Pinned by DSS</span> <span class="attr-val"><code>PRDECOD = X-RAY</code>, <code>PRLOC = CHEST</code>; <code>PRPRESP</code> restricted to <code>Y</code> via value_list</span>
+      <span class="attr-label">Open slots</span>    <span class="attr-val"><code>PRTRT</code> (verbatim), <code>PRCAT</code>, <code>PRSCAT</code>, <code>PROCCUR</code> (N;Y), <code>PRSTDTC</code>, <code>PRENDTC</code></span>
+      <span class="attr-label">Slots absent</span> <span class="attr-val" style="color: #b94a48;"><strong>No PRPOS row, no view row, no contrast-flag row</strong></span>
+    </div>
+  </div>
+
+  <!-- SDTM CT POSITION codelist -->
+  <div class="layer-label">SDTM CT identity layer — the POSITION codelist (all 17 terms)</div>
+  <div class="node sdtm-ct">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C71148" target="evs">C71148</a> — POSITION (Body Position) <span class="tag">CDISC CT, Extensible</span></div>
+    <div class="meta">Codelist header: "Terminology codelist used with Body Position within CDISC." Used with <code>--POS</code> qualifier variables; referenced in EG and VS DSSs (40 rows total); not referenced by any XRAYCHEST or MK Sharp/Genant DSS.</div>
+    <div class="chip-row">
+      <span class="chip highlight">STANDING</span>
+      <span class="chip highlight">SUPINE</span>
+      <span class="chip">SITTING</span>
+      <span class="chip">SITTING, LEGS DEPENDENT</span>
+      <span class="chip">SEMI-RECUMBENT</span>
+      <span class="chip">PRONE</span>
+      <span class="chip">FOWLERS</span>
+      <span class="chip">SEMI-FOWLERS</span>
+      <span class="chip">LATERAL DECUBITUS</span>
+      <span class="chip">LEFT LATERAL DECUBITUS</span>
+      <span class="chip">RIGHT LATERAL DECUBITUS</span>
+      <span class="chip">TRENDELENBURG</span>
+      <span class="chip">REVERSE TRENDELENBURG</span>
+      <span class="chip">STANDING, BENT FORWARD</span>
+      <span class="chip">SLING</span>
+      <span class="chip">DECUBITUS</span>
+      <span class="chip">UNCONSTRAINED</span>
+    </div>
+  </div>
+
+  <div class="gap-box">
+    <span class="gap-label">Identity layer rich, measurement-spec layer uneven</span>
+    <p>This is a layered asymmetry with domain-specific coverage. The identity layer (SDTM CT + NCIt) publishes a structured POSITION vocabulary with 17 governed terms, each with its own NCIt concept code. The measurement-spec layer (COSMoS DSS) binds POSITION in EG and VS — but not in any PR, MK, TR, or TU DSS, where clinical relevance for imaging is equally strong.</p>
+    <p style="margin-top: 6px;">A downstream tool wanting to use "standing chest X-ray" as an anchor can name that concept (governed terms exist for both pieces), but cannot resolve it to a single DSS identifier the way it can for, say, "sitting blood pressure" (covered by a VS DSS with VSPOS as a slot).</p>
+  </div>
+
+  <!-- PART 3 -->
+  <div class="part-header" style="margin-top: 32px;">
+    <div class="part-num">Part 3</div>
+    <div class="part-title">Case specialisations — what SoA design authors on top of XRAYCHEST</div>
+    <div class="part-desc">
+      <p>The same pattern the <a href="Glucose_StudyIntent_Story.html">Glucose Study-Intent Story</a> describes for lab tests applies here: a study designer does not author XRAYCHEST; they author cases that specialise it. For burden-aware SoA design, the specialisations pin position and optionally view.</p>
+      <p style="margin-top: 0.6rem;">The <code>case_id</code> values (<code>ID101</code>, <code>ID102</code>, <code>ID103</code>) are syntactic placeholders — the architectural point is that such IDs would need to be governed by a layer that does not yet exist for imaging cases.</p>
+    </div>
+  </div>
+
+  <!-- Specialization: Standing PA Chest X-Ray -->
+  <div class="layer-label">Specialisations authored at SoA design time</div>
+  <div class="connector">
+    <div class="node case-spec">
+      <div class="code">ID101 — Standing PA Chest X-Ray <span class="tag">case specialisation</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">parent_dss</span>  <span class="attr-val"><strong>XRAYCHEST</strong></span>
+        <span class="attr-label">case_type</span>   <span class="attr-val">recording-child + SoA-activity</span>
+      </div>
+      <div class="pin-bind">
+        <div class="box">
+          <div class="box-label">Inside-DSS pinning</div>
+          <div class="row">Inherits all XRAYCHEST pins (<code>PRDECOD = X-RAY</code>, <code>PRLOC = CHEST</code>)</div>
+          <div class="row">No additional inside-DSS pinning possible — the DSS has no position slot to pin to.</div>
+        </div>
+        <div class="box bind">
+          <div class="box-label">Outside-DSS binding</div>
+          <div class="row"><strong>Position:</strong> <code>STANDING</code> (POSITION C71148, NCIt C62166) — carried in the associated Findings record via <code>--POS</code>, OR in SUPPPR as a sponsor-defined qualifier, OR as sponsor metadata on the SoA Activity object</div>
+          <div class="row"><strong>View:</strong> <code>PA</code> — sponsor-local vocabulary, no CDISC CT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specialization: Supine Portable -->
+  <div class="connector">
+    <div class="node case-spec">
+      <div class="code">ID102 — Supine Portable Chest X-Ray <span class="tag">case specialisation</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">parent_dss</span>  <span class="attr-val"><strong>XRAYCHEST</strong></span>
+        <span class="attr-label">case_type</span>   <span class="attr-val">recording-child + SoA-activity</span>
+      </div>
+      <div class="pin-bind">
+        <div class="box">
+          <div class="box-label">Inside-DSS pinning</div>
+          <div class="row">Inherits all XRAYCHEST pins</div>
+          <div class="row">No additional inside-DSS pinning possible.</div>
+        </div>
+        <div class="box bind">
+          <div class="box-label">Outside-DSS binding</div>
+          <div class="row"><strong>Position:</strong> <code>SUPINE</code> (POSITION C71148, NCIt C62167)</div>
+          <div class="row"><strong>View:</strong> <code>AP</code> — sponsor-local</div>
+          <div class="row"><strong>Setting:</strong> bedside / portable — sponsor-local, not governed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specialization: Semi-recumbent follow-up -->
+  <div class="connector">
+    <div class="node case-spec">
+      <div class="code">ID103 — Semi-Recumbent Chest X-Ray (Post-Op Follow-Up) <span class="tag">case specialisation</span></div>
+      <div class="attr-grid">
+        <span class="attr-label">parent_dss</span>     <span class="attr-val"><strong>XRAYCHEST</strong></span>
+        <span class="attr-label">case_type</span>      <span class="attr-val">recording-child + SoA-activity</span>
+        <span class="attr-label">composes_with</span>  <span class="attr-val">Post-operative assessment event <em>(SoA-scheduling parent, study-design object)</em></span>
+      </div>
+      <div class="pin-bind">
+        <div class="box">
+          <div class="box-label">Inside-DSS pinning</div>
+          <div class="row">Inherits XRAYCHEST pins</div>
+        </div>
+        <div class="box bind">
+          <div class="box-label">Outside-DSS binding</div>
+          <div class="row"><strong>Position:</strong> <code>SEMI-RECUMBENT</code> (POSITION C71148, NCIt C111310)</div>
+          <div class="row"><strong>Timing reference:</strong> bound to post-op assessment event in trial design (<code>TI</code>/<code>TS</code>/<code>TA</code>)</div>
+          <div class="row">Burden profile differs from ID101/ID102 due to post-op pain/mobility constraints — SoA-level fact, not in DSS.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External references -->
+  <div class="connector-deep">
+    <div class="node ext-ref">
+      <div class="code">POSITION value — governed SDTM CT term <span class="tag">identity-layer reference</span></div>
+      <div class="meta">Each case's position value IS a governed CDISC CT term with its own NCIt concept code. The gap is not in the vocabulary — it's in the absence of a DSS slot to receive the binding.</div>
+    </div>
+  </div>
+
+  <div class="connector-deep">
+    <div class="node ext-ref">
+      <div class="code">SoA Activity object <span class="tag">study-design object</span></div>
+      <div class="meta">Authored in USDM per protocol. Today has no standard slot for patient position; burden metadata (duration, complexity) is typically sponsor-local.</div>
+    </div>
+  </div>
+
+  <!-- PART 4 — Architectural options -->
+  <div class="part-header" style="margin-top: 32px;">
+    <div class="part-num">Part 4</div>
+    <div class="part-title">Four architectural options for closing the gap</div>
+    <div class="part-desc">
+      <p>If a burden-aware SoA model needs to discriminate standing vs supine chest X-ray, four structural options exist. Each has clear trade-offs.</p>
+    </div>
+  </div>
+
+  <div class="option-grid">
+
+    <div class="option-card">
+      <span class="opt-num">Option 1</span>
+      <div class="opt-title">Proliferate DSSs</div>
+      <div class="opt-desc">Publish XRAYCHEST_STANDING, XRAYCHEST_SUPINE, XRAYCHEST_SEMIRECUMBENT, … as separate COSMoS DSSs. Each has its own <code>vlm_group_id</code>.</div>
+      <div class="opt-trade"><strong>Trade:</strong> Violates the COSMoS principle that DSSs model recording templates, not medical ontology. Scales poorly — every position-sensitive procedure multiplies. Cross-study interoperability at coarser grain (all chest X-rays) gets harder.</div>
+    </div>
+
+    <div class="option-card">
+      <span class="opt-num">Option 2</span>
+      <div class="opt-title">Composite key at SoA / USDM level</div>
+      <div class="opt-desc">Activity = tuple (<code>dss_ref</code>, <code>position</code>, <code>view</code>, …). USDM's Activity extended with burden-relevant qualifier attributes referencing governed SDTM CT codelists.</div>
+      <div class="opt-trade"><strong>Trade:</strong> Clean architecturally — identity layer stays published, DSS stays single, burden lives where activities are. Requires a USDM extension (or sponsor layer over USDM). Cross-sponsor vocabulary only if the extension is standardised.</div>
+    </div>
+
+    <div class="option-card">
+      <span class="opt-num">Option 3</span>
+      <div class="opt-title">Sponsor-defined qualifier on the Activity</div>
+      <div class="opt-desc">Each sponsor adds a position attribute to their internal Activity model, referencing CDISC CT POSITION values but authored in sponsor-local catalogues.</div>
+      <div class="opt-trade"><strong>Trade:</strong> Pragmatic today — usable without standards changes. Opaque to tools across sponsors. Burden profiles cannot be compared at the case level without translating sponsor catalogues.</div>
+    </div>
+
+    <div class="option-card">
+      <span class="opt-num">Option 4</span>
+      <div class="opt-title">Add <code>position</code> as a DSS schema slot</div>
+      <div class="opt-desc">COSMoS adds <code>position</code> alongside <code>location</code>, <code>laterality</code>, <code>evaluator</code> as a first-class DSS qualifier slot, bound to POSITION codelist (C71148). Imaging DSSs populate it as a value_list or assigned term where relevant.</div>
+      <div class="opt-trade"><strong>Trade:</strong> Correct long-term fix, structurally symmetric with laterality. Multi-quarter effort at CDISC COSMoS / DDF. Does not solve view/contrast/preparation — each additional qualifier is its own extension.</div>
+    </div>
+
+  </div>
+
+  <div class="prose-box" style="margin-top: 16px;">
+    <p><strong>Near-term pragmatic path</strong> (while Option 4 is pursued as the long game): Option 3 with an eye on convergence to Option 2. A sponsor defines burden-aware case specialisations that pin <code>(dss_ref, position, view)</code>, using CDISC CT terms for the qualifier values. When USDM or COSMoS grows a standard slot, the sponsor mappings migrate cleanly because the <em>values</em> are already governed identifiers — only the <em>attribute-to-slot</em> binding changes.</p>
+  </div>
+
+  <!-- Summary insight -->
+  <div class="part-header" style="margin-top: 28px;">
+    <div class="part-num">Summary</div>
+    <div class="part-title">Why this case matters for the cdisc-for-ai three-layer model</div>
+    <div class="part-desc"></div>
+  </div>
+
+  <div class="prose-box">
+    <p>This is a concrete example of a recurring architectural asymmetry: <strong>the identity layer outreaches the measurement-spec layer</strong>.</p>
+    <p style="margin-top: 8px;">SDTM CT publishes a governed POSITION codelist with 17 terms. <code>--POS</code> is populated in some DSSs (EG, VS — 40 rows total). The vocabulary, the variable, and even DSS-level bindings exist. But the COSMoS DSSs that downstream tools (SoA designers, burden calculators, CRF libraries) would want to bind to for imaging — XRAYCHEST, CTSCANCHEST, MK Sharp/Genant — have no such binding.</p>
+    <p style="margin-top: 8px;">The same pattern applies to other qualifier dimensions that vary clinically but are not in the DSS schema: acquisition view (PA/AP/lateral), fasting state for imaging, timing relative to challenge events, inpatient-vs-outpatient setting. Each is a case where a well-governed identity fact is unreachable from the measurement-spec layer.</p>
+    <p style="margin-top: 8px;">For the project's three-layer analytical model, this argues for explicit <em>qualifier-dimension tracking</em> — not just test-code identity — as a first-class artefact. The traversable graph should be able to answer: "for this DSS, which SDTM-CT-governed qualifier codelists are attachable, and which are pinned, and which are silent?" Today that question is answered by reading the DSS XLSX row by row, as this analysis had to do.</p>
+  </div>
+
+  <div class="registry-band">
+    <span class="reg-eyebrow">Registry need</span>
+    <div class="reg-title">A burden-aware case-specialisation registry over DSS</div>
+    <p>Chest X-Ray Standing, Chest X-Ray Supine, Chest X-Ray Semi-Recumbent — three distinct SoA activities with three distinct burden profiles, but one DSS (XRAYCHEST) and one BC. The pieces a registry would need to compose are already governed:</p>
+    <p style="margin-top: 0.6rem;">
+      &mdash; Procedure identity: <code>XRAYCHEST</code> (COSMoS DSS <code>vlm_group_id</code>), <code>X-RAY</code> from PROCEDUR (C101858), anchor NCIt <code>C38101</code>.<br>
+      &mdash; Position value: governed CDISC CT POSITION (C71148) terms — STANDING (C62166), SUPINE, SEMI-RECUMBENT (C111310), each with an NCIt code.<br>
+      &mdash; SoA activity reference: USDM Activity object (identifier exists per protocol, not cross-sponsor).
+    </p>
+    <p style="margin-top: 0.6rem;">What is missing is the governed <em>composition</em> — a registry entry that says "case <code>ID101</code> = XRAYCHEST + STANDING, burden-profile standard-outpatient, evidence-link <em>&lt;ref&gt;</em>". The syntactic IDs above mark where such governed identifiers would go.</p>
+    <p style="margin-top: 0.6rem;">This is the same architectural slot the Glucose Study-Intent Story identifies for OGTT/FPG cases. The imaging case shows the pattern generalises beyond specimen-based Findings.</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) &bull; SDTM CT 2026-03-27 &bull; SDTMIG v3.4.<br>
+  XRAYCHEST VLM detail (9 rows) and SGBESCR VLM detail (9 rows) extracted from source. POSITION codelist (C71148) content extracted from SDTM CT file — 17 governed terms verified. Cross-DSS scan of all VLM rows confirms <code>--POS</code> variables appear in 40 rows total: 31 EGPOS rows in EG DSSs, 9 VSPOS rows in VS DSSs, zero rows in any PR, MK, TR, or TU DSS. Flattened interim BC_DSS file has no <code>position</code> column.<br>
+  Case specialisation IDs (<code>ID101</code>, <code>ID102</code>, <code>ID103</code>) are architectural illustrations — syntactic placeholders marking the registry slot, not references to any sponsor catalogue.<br>
+  Companion doc: <a href="XRay_COSMoS_Story.html">XRay_COSMoS_Story.html</a> — the recording view of the same case, across PR and MK.<br>
+  Generated 2026-04-21.
+</div>
+
+</body>
+</html>

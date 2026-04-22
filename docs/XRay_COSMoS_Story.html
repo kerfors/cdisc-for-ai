@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chest X-Ray — The COSMoS Story</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f7f5; color: #333; padding: 32px; max-width: 1200px; margin: 0 auto; }
+
+  h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; padding: 12px 16px; background: #fff; border-radius: 8px; border: 1px solid #e0ddd8; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Tree */
+  .tree { position: relative; }
+  .layer-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 6px; margin-top: 20px; }
+  .layer-label:first-child { margin-top: 0; }
+
+  .node { position: relative; margin: 6px 0; padding: 10px 14px; border-radius: 6px; border-left: 4px solid; transition: box-shadow 0.15s; }
+  .node:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .node .code { font-weight: 600; font-size: 0.85rem; }
+  .node .code a { color: inherit; text-decoration: none; border-bottom: 1px dotted #999; }
+  .node .code a:hover { color: #1a5276; border-bottom-color: #1a5276; }
+  .node .name { font-size: 0.82rem; margin-top: 2px; color: #555; }
+  .node .meta { font-size: 0.72rem; color: #777; margin-top: 3px; }
+  .node .tag { display: inline-block; font-size: 0.68rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+
+  /* SDTM CT codelist (green) */
+  .sdtm-ct { background: #f3f7f0; border-color: #548235; }
+  .sdtm-ct .tag { background: #548235; color: #fff; }
+  .sw-sdtm-ct { background: #548235; }
+
+  /* COSMoS BC root (deeper gold) */
+  .cosmos-bc { background: #fdf6dc; border-color: #a8880f; padding: 14px 16px; }
+  .cosmos-bc .code { font-size: 0.95rem; }
+  .cosmos-bc .tag { background: #a8880f; color: #fff; }
+  .sw-cosmos-bc { background: #a8880f; }
+
+  /* COSMoS DSS (gold) */
+  .cosmos-dss { background: #fffcf0; border-color: #C8A415; }
+  .cosmos-dss .tag { background: #C8A415; color: #fff; }
+  .sw-cosmos-dss { background: #C8A415; }
+
+  /* Interventions-class DSS — slight blue tint to distinguish from Findings DSS */
+  .cosmos-dss-iv { background: #f1f6fc; border-color: #2e6fb5; }
+  .cosmos-dss-iv .tag { background: #2e6fb5; color: #fff; }
+  .sw-cosmos-dss-iv { background: #2e6fb5; }
+
+  /* Connector lines */
+  .connector { position: relative; margin-left: 36px; }
+  .connector::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+  .connector-deep { margin-left: 72px; }
+  .connector-deep::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: -6px;
+    width: 16px; height: calc(50% + 6px);
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0 0 0 6px;
+  }
+
+  /* Attribute grid inside nodes */
+  .attr-grid { display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; font-size: 0.78rem; margin-top: 6px; }
+  .attr-grid .attr-label { color: #999; font-weight: 500; white-space: nowrap; }
+  .attr-grid .attr-val { color: #444; }
+  .attr-grid .attr-val strong { font-weight: 600; color: #333; }
+  .attr-grid .attr-val code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #4a3f24; }
+
+  /* DSS group container */
+  .dss-group { margin: 12px 0 18px 0; }
+
+  /* Narrative part headers */
+  .part-header { margin: 28px 0 12px 0; padding: 10px 16px; border-radius: 6px; background: #fff; border: 1px solid #ddd; }
+  .part-header .part-num { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+  .part-header .part-title { font-size: 1.0rem; font-weight: 600; color: #333; margin-top: 2px; }
+  .part-header .part-desc { font-size: 0.8rem; color: #666; margin-top: 4px; line-height: 1.5; }
+  .part-header:first-of-type { margin-top: 12px; }
+
+  /* SDTM variable table */
+  .var-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin-top: 6px; }
+  .var-table th { text-align: left; padding: 3px 8px; background: #f5f0e0; color: #7d6608; font-weight: 600; border-bottom: 2px solid #e8d88e; }
+  .var-table.iv th { background: #e9f0f8; color: #1e4d82; border-bottom-color: #b8cde3; }
+  .var-table td { padding: 3px 8px; border-bottom: 1px solid #f0ebe0; }
+  .var-table tr:hover td { background: #fef9e7; }
+  .var-table.iv tr:hover td { background: #eaf2fa; }
+  .var-table .var-name { font-weight: 600; font-family: 'SF Mono', 'Consolas', monospace; color: #333; }
+  .var-table .var-role-topic { color: #548235; font-weight: 600; }
+  .var-table .var-role-qualifier { color: #7d6608; }
+  .var-table .iv .var-role-qualifier, .var-table.iv .var-role-qualifier { color: #1e4d82; }
+  .var-table .var-role-timing { color: #666; }
+  .var-table .empty { color: #bbb; font-style: italic; }
+  .var-table .slot { color: #b8960e; font-style: italic; }
+  .var-table.iv .slot { color: #1e6fb5; }
+
+  /* Summary-card grid for sibling DSSs */
+  .sibling-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px; margin-top: 8px; }
+  .sibling-grid .node { margin: 0; }
+
+  /* Gap/insight box */
+  .insight-box { margin: 14px 0; padding: 12px 16px; border-radius: 6px; border-left: 4px solid #2e6fb5; background: #f1f6fc; font-size: 0.8rem; line-height: 1.55; color: #1e4d82; }
+  .insight-box .insight-label { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: #2e6fb5; display: block; margin-bottom: 4px; }
+  .insight-box code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.74rem; color: #1e4d82; }
+
+  /* Flattened row */
+  .flattened-row { background: #f6f3ea; border-color: #7f6e4a; padding: 14px 16px; }
+  .flattened-row .tag { background: #7f6e4a; color: #fff; }
+  .sw-flat { background: #7f6e4a; }
+  .flat-note { font-size: 0.78rem; color: #5d4f30; margin: 8px 0 10px; line-height: 1.5; }
+  .flat-note code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.72rem; color: #4a3f24; }
+  .flat-grid { display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; font-size: 0.74rem; margin-top: 6px; }
+  .flat-grid .flat-label { color: #888; font-weight: 500; font-family: 'SF Mono', 'Consolas', monospace; white-space: nowrap; }
+  .flat-grid .flat-val { color: #333; }
+  .flat-grid .flat-val.empty { color: #bbb; font-style: italic; }
+
+  /* Footer */
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.72rem; color: #aaa; line-height: 1.6; }
+
+  @media print {
+    body { background: #fff; padding: 16px; }
+    .node:hover { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chest X-Ray — The COSMoS Story</h1>
+<p class="subtitle">How one imaging concept participates in two domain classes — as a procedure-as-intervention in PR, and as a qualifier of measurement-as-findings in MK — and what COSMoS DSS records of each</p>
+
+<div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
+  <p><strong>Why this story splits across two domain classes.</strong> A chest X-ray has two SDTM footprints. The procedure itself — the act of acquiring the image — is an Interventions-class record in PR. The measurements read off the image (joint erosion score, cardiothoracic ratio, lesion size) are Findings-class records in body-system domains (MK, CV, TR, …). COSMoS publishes DSSs for both sides, with very different internal logic.</p>
+  <p style="margin-top: 0.7rem;">On the PR side the DSS pins identity: PRDECOD is assigned to a specific CDISC CT term from the PROCEDUR codelist. On the Findings side the DSS pins the test but leaves the acquisition modality open as a <code style="background:#fff; padding:0 4px; border-radius:3px;">--METHOD</code> value_list, so the same test can be acquired by X-ray or MRI without multiplying DSSs.</p>
+  <p style="margin-top: 0.7rem;">Companion doc: <a href="XRay_PatientBurden_Story.html">Chest X-Ray — The Patient-Burden Gap</a> — what neither side of the DSS model captures, and why SoA burden calculation needs more.</p>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-bc"></div> COSMoS BC (root concept)</div>
+  <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT codelist / term</div>
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss-iv"></div> COSMoS DSS — PR (Interventions)</div>
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS DSS — MK (Findings)</div>
+  <div class="legend-item"><div class="legend-swatch sw-flat"></div> cdisc-for-ai interim (flattened BC_DSS)</div>
+</div>
+
+<div class="tree">
+
+  <!-- PART 1 -->
+  <div class="part-header">
+    <div class="part-num">Part 1</div>
+    <div class="part-title">The procedure side — XRAYCHEST DSS in PR (Interventions)</div>
+    <div class="part-desc">
+      <p>COSMoS ships eight procedure-level DSSs in PR (XRAY, XRAYCHEST, CTSCAN, CTSCANCHEST, MRI, MRIBRAIN, RADIATIONCANCER, RADTHERAPHYBREASTCANCER). Each is a VLM group on <code>PR.PRTRT</code> — a bundle of rows that jointly constrain how that procedure is recorded as an Interventions-class event.</p>
+      <p style="margin-top: 0.6rem;">XRAYCHEST is shown fully below; the sibling DSSs follow as case-defining summary cards.</p>
+    </div>
+  </div>
+
+  <!-- BC root for XRAYCHEST -->
+  <div class="layer-label">COSMoS BC — X-Ray root concept</div>
+  <div class="node cosmos-bc">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a> — X-Ray Imaging <span class="tag">BC</span></div>
+    <div class="meta">Definition: A radiographic procedure using the emission of x-rays, a type of penetrating energy wave. &nbsp;|&nbsp; Domains_with_DS: PR</div>
+  </div>
+
+  <!-- CDISC CT anchor for PRDECOD assignment -->
+  <div class="layer-label">CDISC CT — codelist that the DSS pins PRDECOD to</div>
+  <div class="node sdtm-ct">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C101858" target="evs">C101858</a> — PROCEDUR (Procedure) <span class="tag">CDISC CT codelist, Extensible</span></div>
+    <div class="meta">Includes X-RAY (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a>), CT SCAN (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C17204" target="evs">C17204</a>), MRI (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C16809" target="evs">C16809</a>), MAMMOGRAPHY, BIOPSY, ABLATION, … — the recognised-procedure vocabulary</div>
+  </div>
+
+  <!-- XRAYCHEST DSS fully expanded -->
+  <div class="dss-group">
+    <div class="layer-label">COSMoS DSS — XRAYCHEST (Chest X-Ray)</div>
+    <div class="connector">
+      <div class="node cosmos-dss-iv">
+        <div class="code">XRAYCHEST — Chest X-Ray <span class="tag">DSS — VLM group (Interventions)</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>XRAYCHEST</strong></span>
+          <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>PR.PRTRT</strong></span>
+          <span class="attr-label">Domain</span>        <span class="attr-val"><strong>PR</strong> (Procedures — Interventions class)</span>
+          <span class="attr-label">bc_id</span>         <span class="attr-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a> (X-Ray Imaging)</span>
+          <span class="attr-label">Schema slots populated</span> <span class="attr-val">PRDECOD pinned to X-RAY; PRLOC pinned to CHEST</span>
+        </div>
+        <div style="font-size:0.74rem; color:#1e4d82; margin: 8px 0 4px;">VLM group XRAYCHEST — 9 rows on <code style="background:#fff; padding:0 4px; border-radius:3px;">PR.PRTRT</code>, jointly specifying the Chest X-Ray recording case:</div>
+        <table class="var-table iv">
+          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Value List</th><th>Data Type</th><th>Origin</th><th>Mand. Var</th><th>Mand. Val</th></tr>
+          <tr><td class="var-name">PRTRT</td><td class="var-role-topic">Topic</td><td class="empty">— (collected)</td><td></td><td></td><td>text</td><td>Collected / Investigator</td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">PRDECOD</td><td class="var-role-qualifier">Qualifier</td><td><strong>X-RAY</strong></td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C101858" target="evs">C101858</a> PROCEDUR</td><td></td><td>text</td><td>Assigned / Sponsor</td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">PRCAT</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Assigned / Sponsor</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">PRSCAT</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Assigned / Sponsor</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">PRPRESP</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C66742" target="evs">C66742</a> NY</td><td>Y</td><td>text</td><td>Assigned / Sponsor</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">PROCCUR</td><td class="var-role-qualifier">Qualifier</td><td class="empty">—</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C66742" target="evs">C66742</a> NY</td><td>N;Y</td><td>text</td><td>Collected / Investigator</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">PRLOC</td><td class="var-role-qualifier">Qualifier</td><td><strong>CHEST</strong></td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C74456" target="evs">C74456</a> LOC</td><td></td><td>text</td><td>Collected / Investigator</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">PRSTDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td>datetime</td><td>Collected / Investigator</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">PRENDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td>datetime</td><td>Collected / Investigator</td><td>N</td><td>N</td></tr>
+        </table>
+        <div class="insight-box" style="margin-top: 10px;">
+          <span class="insight-label">What XRAYCHEST pins vs leaves open</span>
+          <p><strong>Pinned by the DSS:</strong> PRDECOD = <code>X-RAY</code> (from CDISC CT PROCEDUR), PRLOC = <code>CHEST</code> (from CDISC CT LOC). PRPRESP is restricted to <code>Y</code> via the value_list — this DSS applies to pre-specified procedures, not ad-hoc ones.</p>
+          <p style="margin-top: 6px;"><strong>Left open:</strong> PRTRT (verbatim site-reported name), PRCAT/PRSCAT (optional sponsor categorisation), PRSTDTC/PRENDTC (timing), PROCCUR (did it occur, N;Y).</p>
+          <p style="margin-top: 6px;"><strong>Not in the template:</strong> patient position (no PRPOSITION / PRPOS variable row, no reference to POSITION codelist C71148 in any PR DSS). Acquisition view (PA, AP, lateral) also absent — no view-specific codelist in CDISC CT.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sibling DSSs in PR -->
+  <div class="layer-label">Sibling DSSs in PR — summary</div>
+  <div class="connector">
+    <div class="sibling-grid">
+
+      <div class="node cosmos-dss-iv">
+        <div class="code">XRAY — X-Ray <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>  <span class="attr-val">PR.PRTRT</span>
+          <span class="attr-label">PRDECOD pinned</span>  <span class="attr-val"><strong>X-RAY</strong> (PROCEDUR)</span>
+          <span class="attr-label">PRLOC pinned</span>    <span class="attr-val">— (unconstrained)</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss-iv">
+        <div class="code">CTSCAN — CT Scan <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>  <span class="attr-val">PR.PRTRT</span>
+          <span class="attr-label">PRDECOD pinned</span>  <span class="attr-val"><strong>CT SCAN</strong> (PROCEDUR)</span>
+          <span class="attr-label">PRLOC pinned</span>    <span class="attr-val">—</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss-iv">
+        <div class="code">CTSCANCHEST — Chest CT Scan <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>  <span class="attr-val">PR.PRTRT</span>
+          <span class="attr-label">PRDECOD pinned</span>  <span class="attr-val"><strong>CT SCAN</strong></span>
+          <span class="attr-label">PRLOC pinned</span>    <span class="attr-val"><strong>CHEST</strong></span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss-iv">
+        <div class="code">MRI — MRI <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>  <span class="attr-val">PR.PRTRT</span>
+          <span class="attr-label">PRDECOD pinned</span>  <span class="attr-val"><strong>MRI</strong> (PROCEDUR)</span>
+          <span class="attr-label">PRLOC pinned</span>    <span class="attr-val">—</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss-iv">
+        <div class="code">MRIBRAIN — MRI Brain <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>  <span class="attr-val">PR.PRTRT</span>
+          <span class="attr-label">PRDECOD pinned</span>  <span class="attr-val"><strong>MRI</strong></span>
+          <span class="attr-label">PRLOC pinned</span>    <span class="attr-val">BRAIN (LOC)</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss-iv">
+        <div class="code">RADIATIONCANCER &nbsp;·&nbsp; RADTHERAPHYBREASTCANCER <span class="tag">2 DSSs, 14 rows each</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>  <span class="attr-val">PR.PRTRT</span>
+          <span class="attr-label">PRDECOD</span>    <span class="attr-val">slot (PROCEDUR codelist) — not pinned by the DSS</span>
+          <span class="attr-label">PRCAT pinned</span>  <span class="attr-val">RADIATION THERAPY / RADIATION THERAPHY [sic]</span>
+          <span class="attr-label">Extra VLM rows</span> <span class="attr-val">PRINDC, PRDOSE, PRDOSU, PRTRTSTT (C124308), PRTRTINT (C124307)</span>
+          <span class="attr-label">Note</span>           <span class="attr-val">Therapy-type procedures, not imaging — shown for completeness of PR DSS set</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <span class="insight-label">Architectural pattern on the PR side</span>
+    <p>Each PR DSS is a <em>procedure identity pin</em>: PRDECOD is assigned to a single CDISC CT PROCEDUR term, optionally combined with a PRLOC anatomical pin. The DSS discriminates procedures by <code>(modality, anatomical target)</code>. Modality lives as a <strong>value</strong> of PRDECOD, not as a variable in its own right.</p>
+    <p style="margin-top: 6px;">This means: if two DSSs differ only in modality (<code>XRAYCHEST</code> vs <code>CTSCANCHEST</code>), they are two separate DSSs with distinct <code>vlm_group_id</code>s and distinct PRDECOD assignments. Modality does not parameterise a single DSS on the PR side.</p>
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part-header">
+    <div class="part-num">Part 2</div>
+    <div class="part-title">The measurement side — SGBESCR DSS in MK (Findings)</div>
+    <div class="part-desc">
+      <p>When a chest X-ray is read for measurements — joint erosion scores in RA, bone density, cardiothoracic ratio — the measurement records are Findings-class rows in body-system domains. MK holds musculoskeletal measurements; TR holds tumour measurements; CV holds cardiac measurements.</p>
+      <p style="margin-top: 0.6rem;">Below: Sharp/Genant Bone Erosion Score (SGBESCR) — an X-ray-derived measurement DSS — fully expanded, with sibling Sharp/Genant and Sharp/Van der Heijde DSSs summarised. All five share the same modality pattern: <code>--METHOD</code> is a value_list of <code>X-RAY;MRI</code> — the DSS accepts both acquisition routes.</p>
+    </div>
+  </div>
+
+  <!-- BC root for SGBESCR -->
+  <div class="layer-label">COSMoS BC — Sharp/Genant bone erosion concept</div>
+  <div class="node cosmos-bc">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a> — Sharp/Genant Bone Erosion Score <span class="tag">BC</span></div>
+    <div class="meta">Ordinal radiographic damage score for rheumatoid arthritis joints &nbsp;|&nbsp; Domains_with_DS: MK</div>
+  </div>
+
+  <!-- SGBESCR DSS fully expanded -->
+  <div class="dss-group">
+    <div class="layer-label">COSMoS DSS — SGBESCR (Sharp/Genant Bone Erosion Score)</div>
+    <div class="connector">
+      <div class="node cosmos-dss">
+        <div class="code">SGBESCR — Sharp/Genant Bone Erosion Score <span class="tag">DSS — VLM group (Findings)</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>SGBESCR</strong></span>
+          <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>MK.MKTESTCD</strong></span>
+          <span class="attr-label">Domain</span>        <span class="attr-val"><strong>MK</strong> (Musculoskeletal System Findings)</span>
+          <span class="attr-label">bc_id</span>         <span class="attr-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a></span>
+          <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>Quantitative (ordinal)</strong></span>
+        </div>
+        <div style="font-size:0.74rem; color:#7d6608; margin: 8px 0 4px;">VLM group SGBESCR — 9 rows on <code style="background:#fff; padding:0 4px; border-radius:3px;">MK.MKTESTCD</code>:</div>
+        <table class="var-table">
+          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Value List</th><th>Data Type</th><th>Mand. Var</th><th>Mand. Val</th></tr>
+          <tr><td class="var-name">MKTESTCD</td><td class="var-role-topic">Topic</td><td><strong>SGBESCR</strong></td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C127269" target="evs">C127269</a> MUSCTSCD</td><td></td><td>text</td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">MKTEST</td><td class="var-role-qualifier">Qualifier</td><td><strong>Sharp/Genant Bone Erosion Score</strong></td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C127270" target="evs">C127270</a> MUSCTS</td><td></td><td>text</td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">MKORRES</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (ordinal scale 0…3.5)</td><td></td><td>0 Normal; 0.5; 1.0 mild; 1.5; 2.0 moderate; 2.5; 3.0 severe; 3.5 very severe</td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">MKSTRESC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td></td><td>0;0.5;1.0;2.0;2.5;3.0;3.5</td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">MKSTRESN</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td></td><td>0;0.5;1.0;2.0;2.5;3.0;3.5</td><td>float</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">MKLOC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (joint-level)</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C74456" target="evs">C74456</a> LOC</td><td></td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">MKLAT</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C99073" target="evs">C99073</a> LAT</td><td>RIGHT;LEFT</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">MKMETHOD</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot — modality chosen per row</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C85492" target="evs">C85492</a> METHOD</td><td><strong>X-RAY;MRI</strong></td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">MKDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td>datetime</td><td>Y</td><td>N</td></tr>
+        </table>
+        <div class="insight-box" style="margin-top: 10px; border-left-color: #C8A415; background: #fef9e7; color: #7d6608;">
+          <span class="insight-label" style="color: #b8960e;">What SGBESCR pins vs leaves open</span>
+          <p><strong>Pinned by the DSS:</strong> MKTESTCD = <code>SGBESCR</code>, MKTEST = <code>Sharp/Genant Bone Erosion Score</code>. That is the test-identity pin.</p>
+          <p style="margin-top: 6px;"><strong>Left open as slot, with codelist constraint:</strong> MKMETHOD accepts <code>X-RAY</code> or <code>MRI</code>; MKLAT accepts <code>RIGHT</code> or <code>LEFT</code>; MKORRES/MKSTRESC/MKSTRESN accept the ordinal scale values. The DSS defines the <em>permitted set</em>, the record picks one.</p>
+          <p style="margin-top: 6px;"><strong>Not in the template:</strong> patient position — no MKPOS row in any of the MK Sharp-scoring DSSs. Note that POSITION (C71148) IS referenced in other domains' DSSs (EGPOS in 31 EG DSS rows; VSPOS in 9 VS DSS rows with restricted value_lists for DIABP/HR/PULSE). The gap is imaging-specific, not DSS-wide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sibling MK Sharp-scoring DSSs -->
+  <div class="layer-label">Sibling MK DSSs — Sharp/Genant and Sharp/Van der Heijde scoring</div>
+  <div class="connector">
+    <div class="sibling-grid">
+
+      <div class="node cosmos-dss">
+        <div class="code">SGJSNSCRFJ — Sharp/Genant JSN Foot Joints <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">MK.MKTESTCD</span>
+          <span class="attr-label">MKMETHOD</span>     <span class="attr-val"><strong>X-RAY;MRI</strong></span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Joint Space Narrowing, foot joints</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">SGJSNSCRHW — Sharp/Genant JSN Hand/Wrist <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">MK.MKTESTCD</span>
+          <span class="attr-label">MKMETHOD</span>     <span class="attr-val"><strong>X-RAY;MRI</strong></span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Joint Space Narrowing, hand/wrist joints</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">SVBESCR — Sharp/Van der Heijde Bone Erosion <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">MK.MKTESTCD</span>
+          <span class="attr-label">MKMETHOD</span>     <span class="attr-val"><strong>X-RAY;MRI</strong></span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Alternative RA scoring method, erosion component</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">SVJSNSCR — Sharp/Van der Heijde JSN <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">MK.MKTESTCD</span>
+          <span class="attr-label">MKMETHOD</span>     <span class="attr-val"><strong>X-RAY;MRI</strong></span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">JSN component of the alternative scoring</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <span class="insight-label">Architectural pattern on the Findings side</span>
+    <p>Each MK Sharp-scoring DSS is a <em>test identity pin</em>: MKTESTCD is assigned, and the acquisition modality is a <code>--METHOD</code> slot with a value_list (X-RAY or MRI). One DSS covers two modalities.</p>
+    <p style="margin-top: 6px;">This is the inverse of the PR pattern. On the Findings side, modality parameterises the same DSS; on the PR side, modality IS the DSS identity. The asymmetry is structural: PR models the procedure-as-event where "what procedure was it" is the identity question, while Findings models the measurement-as-data where "what was measured" is identity and "how it was acquired" is a qualifier.</p>
+    <p style="margin-top: 6px;">The same dataset reference (Dataset Specialization section of the SDTMIG) does not produce uniform logic across domain classes. <code>--METHOD</code> value_list breadth varies too: the TR/TU RECIST DSSs accept <strong>15 imaging methods</strong> in a single DSS (CT SCAN; CALIPER MEASUREMENT METHOD; ENDOSCOPY; LYMPHANGIOGRAPHY; MAMMOGRAPHY; MRI; NUCLEAR RADIOLOGY; PET SCAN; PET/CT SCAN; PET/MRI SCAN; PHOTOGRAPHY; SCINTIGRAPHY; TOTAL BODY RADIOGRAPHY; ULTRASOUND; X-RAY); MK accepts 2 (X-RAY;MRI); some domains have no MKMETHOD slot at all.</p>
+  </div>
+
+  <!-- PART 3 — Flattened row -->
+  <div class="part-header">
+    <div class="part-num">Part 3</div>
+    <div class="part-title">Flattened projection — cdisc-for-ai interim aggregation</div>
+    <div class="part-desc">
+      <p>The <code>cosmos-bc-dss/</code> track aggregates each BC + DSS + VLM rows into a single row in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>. What survives is the case-defining attributes; what is lost is the per-variable VLM detail (roles, mandatory flags, value_lists, slot-vs-assigned status).</p>
+      <p style="margin-top: 0.6rem;">Below: the XRAYCHEST and SGBESCR rows as the interim file carries them.</p>
+    </div>
+  </div>
+
+  <!-- Flattened XRAYCHEST -->
+  <div class="connector">
+    <div class="node flattened-row">
+      <div class="code">XRAYCHEST — flattened row <span class="tag">interim aggregation</span></div>
+      <div class="flat-grid">
+        <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a></span>
+        <span class="flat-label">NCIt_Code</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a></span>
+        <span class="flat-label">BC_Name</span>            <span class="flat-val">X-Ray Imaging</span>
+        <span class="flat-label">Row_Type</span>           <span class="flat-val">DSS</span>
+        <span class="flat-label">Domains_with_DS</span>    <span class="flat-val">PR</span>
+        <span class="flat-label">DS_Code / vlm_group_id</span>  <span class="flat-val">XRAYCHEST</span>
+        <span class="flat-label">DS_Name</span>            <span class="flat-val">Chest X-Ray</span>
+        <span class="flat-label">Domain</span>             <span class="flat-val">PR</span>
+        <span class="flat-label">Domain_Class</span>       <span class="flat-val">Interventions</span>
+        <span class="flat-label">TESTCD / TEST</span>      <span class="flat-val empty">— (Interventions — no TESTCD)</span>
+        <span class="flat-label">Specimen / Method</span>  <span class="flat-val empty">— (not applicable to PR)</span>
+        <span class="flat-label">location</span>           <span class="flat-val empty">— (PRLOC is inside VLM, not DSS-level slot)</span>
+        <span class="flat-label">laterality / evaluator</span>  <span class="flat-val empty">—</span>
+        <span class="flat-label">Allowed / Standard Unit</span>  <span class="flat-val empty">—</span>
+      </div>
+      <div class="flat-note" style="margin-top: 10px;">
+        <p>The flattened row carries the DSS identity and domain-class membership. The PRDECOD=X-RAY pin and the PRLOC=CHEST pin are NOT visible at the flattened level — both are VLM-row facts that get collapsed. A consumer that needs "this DSS is chest X-ray, not MRI" has to go back to the source DSS xlsx.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flattened SGBESCR -->
+  <div class="connector">
+    <div class="node flattened-row">
+      <div class="code">SGBESCR — flattened row <span class="tag">interim aggregation</span></div>
+      <div class="flat-grid">
+        <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a></span>
+        <span class="flat-label">NCIt_Code</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a></span>
+        <span class="flat-label">BC_Name</span>            <span class="flat-val">Sharp/Genant Bone Erosion Score</span>
+        <span class="flat-label">Row_Type</span>           <span class="flat-val">DSS</span>
+        <span class="flat-label">Domains_with_DS</span>    <span class="flat-val">MK</span>
+        <span class="flat-label">DS_Code / vlm_group_id</span>  <span class="flat-val">SGBESCR</span>
+        <span class="flat-label">DS_Name</span>            <span class="flat-val">Sharp/Genant Bone Erosion Score</span>
+        <span class="flat-label">Domain</span>             <span class="flat-val">MK</span>
+        <span class="flat-label">Domain_Class</span>       <span class="flat-val">Findings</span>
+        <span class="flat-label">TESTCD / TEST</span>      <span class="flat-val">SGBESCR / Sharp/Genant Bone Erosion Score</span>
+        <span class="flat-label">Method</span>             <span class="flat-val"><strong>X-RAY; MRI</strong></span>
+        <span class="flat-label">Result_Scale</span>       <span class="flat-val">Quantitative</span>
+        <span class="flat-label">Specimen</span>           <span class="flat-val empty">— (imaging, no specimen)</span>
+        <span class="flat-label">location / laterality</span>  <span class="flat-val empty">— (per-row)</span>
+        <span class="flat-label">Standard Unit</span>      <span class="flat-val empty">—</span>
+      </div>
+      <div class="flat-note" style="margin-top: 10px;">
+        <p>Here Method survives at the flattened level as the value_list <code>X-RAY;MRI</code> — because MKMETHOD is a DSS-level qualifier with an allowed set. This is visible to any consumer reading the interim file. The positional qualifier is still absent — not because it's hidden at the flattened level, but because it's not in the DSS at all.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <span class="insight-label">Summary — the two domain-class stories about the same concept</span>
+    <p><strong>PR side:</strong> X-ray is a <em>procedure identity</em>. One PROCEDUR codelist term (X-RAY, C38101) pins PRDECOD in multiple DSSs, each anatomically specialised via PRLOC. Modality differences drive DSS proliferation — XRAYCHEST, CTSCANCHEST, MRIBRAIN are separate rows in the DSS package.</p>
+    <p style="margin-top: 6px;"><strong>MK side:</strong> X-ray is a <em>method qualifier</em>. The same DSS (SGBESCR) covers X-ray and MRI via a value_list on MKMETHOD. Test identity is the driver; modality is subordinate.</p>
+    <p style="margin-top: 6px;">The PR record and the Findings record both exist in a real data set when a chest X-ray is measured for Sharp/Genant scoring. They are related via timing (same MKDTC ≈ PRSTDTC), by subject (USUBJID), and optionally by RELREC. That link is <strong>not modelled in COSMoS</strong> — it lives in the SDTM record layer and in sponsor metadata.</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) &bull; SDTM CT 2026-03-27 (<code>sdtm-test-codes/downloads/SDTM_Terminology.txt</code>) &bull; NCIt Thesaurus 2026-03.<br>
+  XRAYCHEST and SGBESCR VLM detail extracted directly from the COSMoS source spreadsheet, 9 rows each. Sibling PR DSSs' PRDECOD and PRLOC pins verified row by row. PROCEDUR codelist (C101858) and POSITION codelist (C71148, 17 terms) verified in SDTM CT. TR/TU RECIST DSSs confirmed to carry 15 imaging methods each in MKMETHOD value_list.<br>
+  Companion doc: <a href="XRay_PatientBurden_Story.html">XRay_PatientBurden_Story.html</a> — what neither DSS captures, and why SoA burden calculation needs more.<br>
+  Generated 2026-04-21.
+</div>
+
+</body>
+</html>
