@@ -4,6 +4,13 @@
 
 *cdisc-for-ai, April 2026*
 
+> **Status (2026-04-22).** Build complete. Two planned items changed during
+> implementation and are explicit in §2, §3, §5, §7 below: the `Identity`
+> back-compat sheet was abandoned in favour of consumer-track rewiring, and
+> three additional notebooks (20, 30, 50) were added beyond the original
+> deliverable list. See [reports/flattener_rewrite_audit.md](../reports/flattener_rewrite_audit.md)
+> for the full close-out, sheet shapes, and validation triage.
+
 ---
 
 ## 1. Decision
@@ -14,49 +21,85 @@ The input stays on `downloads/cdisc_sdtm_dataset_specializations_latest.xlsx` (p
 
 ## 2. Sheet inventory
 
+**Planned (one file, 5 sheets including `Identity`).** Revised during build: output split across two files and the `Identity` back-compat sheet dropped (see §3). What was built, as of the 2026-04-22 run:
+
+`interim/COSMoS_Graph.xlsx`
+
 | Sheet | Grain | Rows (2026-Q1) | Purpose |
 |---|---|---|---|
-| `ReadMe` | — | ~20 | Provenance, audit date, column dictionary links |
-| `Identity` | one per DSS | 1,326 | Back-compat projection. Column set = today's 36 columns on `interim/COSMoS_BC_DSS.xlsx/BC_DSS`. Consumer tracks read this and nothing else. |
-| `Variables` | one per SDTMVariable | 12,677 | VLM-row grain. Columns = LinkML slots on `SDTMVariable` (name, role, dataType, length, significantDigits, assignedTerm, codelist, subsetCodelist, valueList, mandatoryVariable, mandatoryValue, comparator, originType, originSource, vlmTarget, dataElementConceptId, isNonStandard). One row per variable-within-DSS. |
-| `Relationships` | one per reified edge | ~12,364 | Long-format. Columns: `dss_id`, `variable_name`, `subject`, `linking_phrase`, `predicate_term`, `object`. Rows where the xlsx has no quad are omitted (313 rows in the 2026-Q1 audit). |
-| `Codelists` | one per unique binding | TBD | Deduped list of (`codelist_concept_id`, `codelist_submission_value`) pairs actually referenced by any variable. NCIt-anchored codelist identity surfaced once, joined by ID from `Variables`. |
+| `ReadMe` | — | 22 | Provenance, column dictionary links. |
+| `DSS` | one per DSS | 1,326 | DSS-level identity. 8 columns — `ds_id`, `bc_id`, `domain`, `source`, `ds_short_name`, `sdtmig_start_version`, `sdtmig_end_version`, `package_date`. Not a back-compat projection of `BC_DSS` — see §3. |
+| `Variables` | one per SDTMVariable | 12,677 | VLM-row grain. 26 columns — the LinkML slots on `SDTMVariable` plus the inlined reification quad (subject, linking_phrase, predicate_term, object). |
+| `Relationships` | one per reified edge | 12,364 | Long-format. 6 columns — `ds_id`, `variable_name`, `subject`, `linking_phrase`, `predicate_term`, `object`. Rows where the source has no quad are omitted (313 rows in the 2026-Q1 build). |
+| `Codelists` | one per binding | 291 | Deduped `(codelist_concept_id, codelist_submission_value)` pairs referenced by any variable, with `variable_uses_count`. |
+| `BC` | one per BC | 1,345 | BC-level identity, classification, and hierarchy. Added during build — BC identity needs to ride with the graph for the cookbook and consumer tracks, not re-join from `downloads/` on every query. |
 
-`Identity` is derived from `Variables`: one row per `datasetSpecializationId`, picking the canonical per-DSS facts (domain, bc_id, source, short_name, sdtmig_start_version, sdtmig_end_version) and the specimen/method projection columns the consumer tracks depend on. No parallel authoring — `Identity` is a view, not a second source.
+`interim/COSMoS_Graph_CT.xlsx` (added during build — NCI CT enrichment lifted out of the flattener so `COSMoS_Graph.xlsx` stays lossless-over-source):
 
-## 3. Back-compat guarantee
+| Sheet | Grain | Rows (2026-Q1) | Purpose |
+|---|---|---|---|
+| `ReadMe` | — | 32 | Provenance, CT package version. |
+| `Codelists` | one per bound codelist | 291 | Enriched with `codelist_name`, `codelist_extensible`, NCI preferred term. |
+| `CodelistTerms` | one per (codelist, term) pair | 17,523 | Permissible values expanded from SDTM CT. |
+| `AssignedTerms` | one per unique assigned-term concept | 1,170 | NCI definition + preferred term for each pinned concept. |
+| `Unresolved` | — | 6 | Concept IDs not found in SDTM CT 2026-03-27. |
+| `Anomalies` | — | 1 | Pinned-term-not-in-bound-codelist cases. |
 
-The `Identity` sheet's column set and semantics match today's `BC_DSS` sheet exactly. Downstream tracks (`sdtm-findings/`, `sdtm-domain-reference/`) continue to read the same columns and see the same values. Diff CSVs between the old and new `Identity` sheet should be zero-row for the 1,326 DSSs currently in `interim/COSMoS_BC_DSS.xlsx` (modulo any bugs fixed along the way, which get flagged explicitly in the release notes).
+## 3. Back-compat — decision revised during build
 
-Consumer tracks requiring VLM-row-grain data (future Step 3 narrative work, cross-domain-class queries) read `Variables` / `Relationships` / `Codelists`.
+**Planned.** An `Identity` sheet mirroring the 36 columns of today's
+`BC_DSS` sheet, so consumer tracks could switch files with no code change.
+
+**Built.** No `Identity` sheet. Consumer tracks will be rewired to read
+the new multi-sheet graph instead.
+
+Reason. The legacy `BC_DSS` sheet conflates three grains (BC, DSS, and
+flattened-collection rows, distinguished by `Row_Type`) into one table
+shape. The rewrite already separates those grains into `BC`, `DSS`, and
+`Variables`. Reproducing the conflated shape on top of the separated
+grains means re-collapsing them, which defeats the purpose. Consumer
+tracks that filter on `Row_Type` today can instead pick the right sheet.
+
+Consequence. Consumer tracks are not back-compatible across this branch
+without rewiring. Tracked as a follow-up task outside this branch. The
+legacy `interim/COSMoS_BC_DSS.xlsx` is left in place until the rewiring
+lands, so consumer tracks can continue to read it in the interim.
 
 ## 4. Architecture
 
 The driver is `linkml_runtime.SchemaView` over `cosmos_sdtm_model.yaml` (and `cosmos_bc_model.yaml` for the BC side). The schema defines:
 
 - The slot list on `SDTMVariable` — becomes the `Variables` column list.
-- The slot list on `SDTMGroup` (ex-variables) — becomes the DSS-level columns on `Identity`.
+- The slot list on `SDTMGroup` (ex-variables) — becomes the DSS-level columns on `DSS`.
 - The `RelationShip` class — becomes the `Relationships` sheet's column schema.
 - The NCIt-anchored enumerations (`OriginTypeEnum`, `OriginSourceEnum`, `RoleEnum`, `ComparatorEnum`) — used to validate values on the fly and surface their `meaning:` NCIT anchors in the `ReadMe`.
 
 The xlsx-to-slot bridge is the rename table in `COSMoS_Graph_As_Authored.md §7.1`. Either hardcoded in the flattener module, or regenerated at build time from SchemaView by matching slot `name` against normalised column names. The rename table is small (32 entries) and stable across releases — hardcoding is fine.
 
-The flatten step reads the VLM-sheet into a pandas DataFrame, applies the rename bridge to get LinkML slot names as column headers, then projects to the three sheets using SchemaView's class/slot metadata. No hand-written column list anywhere.
+The flatten step reads the VLM-sheet into a pandas DataFrame, applies the rename bridge to get LinkML slot names as column headers, then projects to the five data sheets (`DSS`, `Variables`, `Relationships`, `Codelists`, `BC`) using SchemaView's class/slot metadata. No hand-written column list anywhere.
 
-## 5. Open decisions
+## 5. Open decisions — resolved during build
 
-Three questions need answers before the flattener is written. None block starting the design work; all three block finalising the sheet schemas.
+**DEC materialisation.** Resolved to **Option (a)** as recommended, with
+a caveat: `dec_id` rides on `Variables` as a scalar, but the DEC label
+and NCIt code are deferred to Step 3 (not looked up by the flattener).
+No separate `DECs` sheet.
 
-**DEC materialisation.** The BC export has `dataElementConcepts` per BC; the SDTM export carries `dec_id` (FK) on each variable. Option (a): materialise the DEC join as columns on `Variables` (`dec_id`, `dec_label`, `dec_ncit_code`). Option (b): leave `Variables.dec_id` as FK only, provide a separate `DECs` sheet. Recommendation: (a) — consumers need DEC labels more often than DEC-level metadata, and the join is cheap.
+**subsetCodelist serialisation.** Resolved to **Option (a)**:
+pass-through as string, via `Variables.subset_codelist`. Structured
+parsing deferred until a case study needs it.
 
-**subsetCodelist serialisation.** The xlsx stores it as a string. Option (a): pass through as string. Option (b): parse to a structured representation (parent codelist + subset definition + term list) at flatten time. Recommendation: (a) for now — only 16% of DSSs use it, the string form is what the authoring working group produces, and structured parsing can be added later without breaking columns. Revisit if the case-study work needs the structure.
+**Anomaly policy.** Resolved: flag, don't silently fix. The approach is
+slightly revised from the original plan — anomalies land in three places
+rather than one consolidated `data_issues` sheet:
 
-**Anomaly policy.** Three known data issues from the audit:
-1. `vlm_source` has `MB-MBTESTCD` (7 rows) alongside `MB.MBTESTCD` (3 rows) — dot-vs-hyphen split.
-2. 313 rows (~2.5%) have no reification quad.
-3. 4 DSSs have no relationship edge at all.
+- `COSMoS_Graph_CT.xlsx/Unresolved` — CT concept IDs not in the package.
+- `COSMoS_Graph_CT.xlsx/Anomalies` — pinned-term-not-in-bound-codelist cases.
+- `reports/graph_validation_report.md` + `.json` — full enumeration of
+  the eight validation checks, with per-check counts and details.
 
-Recommendation: flag but don't silently fix. Add a `data_issues` sheet (one row per anomaly, with `dss_id` / `row_index` / `issue_type` / `details`) and surface counts in `ReadMe`. Fix-in-place is out of scope — the flattener should be lossless over the source.
+Triage of the FAIL items is in
+[reports/flattener_rewrite_audit.md §5](../reports/flattener_rewrite_audit.md#5-validation-triage).
 
 ## 6. Non-goals for Step 2
 
@@ -65,10 +108,29 @@ Recommendation: flag but don't silently fix. Add a `data_issues` sheet (one row 
 - Narrative generation. The reification-as-legibility pattern (linking phrase + predicate term) is surfaced in the `Relationships` sheet. Rendering it into DataBook prose is Step 3.
 - Sheet-level diffs against the previous release. Release-note generation stays on the existing workflow; this note does not change it.
 
-## 7. Deliverables
+## 7. Deliverables — as built
 
-- `cosmos-bc-dss/notebooks/10_flatten_schema_driven.ipynb` — the new flattener. Replaces the hand-column-list flatten step. Inputs from `downloads/`, outputs to `interim/COSMoS_BC_DSS.xlsx` (same path, new sheet schema).
-- `cosmos-bc-dss/notebooks/11_backcompat_diff.ipynb` — generates the zero-row diff between the new `Identity` sheet and the pre-rewrite `BC_DSS` sheet.
-- `cosmos-bc-dss/reports/flattener_rewrite_audit.md` — short QA narrative: sheet shapes, row counts, anomalies, back-compat diff result.
+Revised from the original two-notebook plan. Output path also changed:
+new file `interim/COSMoS_Graph.xlsx` alongside the legacy
+`interim/COSMoS_BC_DSS.xlsx`, not in place of it.
 
-Consumer track changes (sdtm-findings reads updating from `BC_DSS` to `Identity`) are a follow-up and sit outside this branch's scope — `Identity` preserves column names, so consumer notebooks need only a sheet-name change at most.
+- `cosmos-bc-dss/notebooks/10_flatten_schema_driven.ipynb` — flattener.
+  Inputs from `downloads/`, outputs `interim/COSMoS_Graph.xlsx`.
+- `cosmos-bc-dss/notebooks/20_resolve_ct.ipynb` — **added.** Joins
+  codelist and assigned-term concept IDs against NCI EVS SDTM CT
+  2026-03-27. Outputs `interim/COSMoS_Graph_CT.xlsx`.
+- `cosmos-bc-dss/notebooks/30_validate_graph.ipynb` — **added.**
+  Enumeration, referential integrity, schema column coverage,
+  CT-resolution FAILs, and anomaly counts. Outputs
+  `reports/graph_validation_report.md` / `.json`.
+- `cosmos-bc-dss/notebooks/50_query_examples.ipynb` — **added.** Query
+  cookbook, eight queries pinned to the story-pair DSSs (GLUCPL,
+  SIXMW101, SGBESCR). Proves the graph shape answers the narrative
+  questions. No sheet output.
+- `cosmos-bc-dss/reports/flattener_rewrite_audit.md` — close-out
+  narrative: sheet shapes, build counts, back-compat decision,
+  validation triage.
+
+The planned `11_backcompat_diff.ipynb` was not created — no `Identity`
+sheet to diff against. Consumer-track rewiring is follow-up work,
+outside this branch's scope.
