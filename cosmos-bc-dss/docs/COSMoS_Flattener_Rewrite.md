@@ -1,6 +1,6 @@
 # COSMoS Flattener Rewrite — Step 2 Design
 
-*Step 2 of the cosmos-bc-dss rework. Decision record, not a full specification. Inputs: [COSMoS_Graph_As_Authored.md](COSMoS_Graph_As_Authored.md), [COSMoS_Flattener_Enhancement_Brief.md](COSMoS_Flattener_Enhancement_Brief.md).*
+*Step 2 of the cosmos-bc-dss rework. Decision record, not a full specification. Inputs: [COSMoS_Graph_As_Authored.md](COSMoS_Graph_As_Authored.md), [COSMoS_Step2_Scoping_Brief.md](COSMoS_Step2_Scoping_Brief.md).*
 
 *cdisc-for-ai, April 2026*
 
