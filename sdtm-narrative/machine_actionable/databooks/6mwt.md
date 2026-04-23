@@ -21,7 +21,28 @@ The `bc_type = full_no_ds` flag means this BC has no DSS rows published. The tem
 
 ## Instrument composition ancestry
 
-*No matching instrument-identity row located for C115789 in the current `SDTM_Instrument_Identity.xlsx`. The 6MWT container-codelist anchor discussed in `docs/6MWT_NCIt_Story.html` is a reference-layer projection that this notebook does not currently join to.*
+*From `SDTM_Instrument_Identity.xlsx`:*
+
+| Field | Value |
+|---|---|
+| Codelist_TESTCD | SIXMW1TC |
+| Codelist_NCIt_Code | C115388 |
+| Instrument_Label | 6 Minute Walk Functional Test |
+| Domain | FT |
+| Question_Count | 6 |
+| Instrument_NCIt_Code | C115789 |
+| Instrument_NCIt_Preferred_Term | 6 Minute Walk Functional Test 2008 Version |
+| Instrument_NCIt_Synonyms | 6 Minute Walk Functional Test | 6MWT | SIX MINUTE WALK | SIXMW1 | Six Minute Walk 2008 |
+| Instrument_NCIt_Definition | A standardized rating scale developed by Bruno Blake in 1963, which is a performance-based evaluation of functional exercise capacity in subjects with chronic respiratory disease and heart failure, as well as other populations such as healthy older adults and people suffering from fibromyalgia and scleroderma. This functional test contains 6 items and measures the distance an individual is able to walk over a total of six minutes on a hard, flat surface. |
+| Instrument_UMLS_CUI | C3900196 |
+| Instrument_NCIm_CUI | nan |
+| Instrument_Match_Method | exact |
+| Container_NCIt_Code | C115409 |
+| Container_NCIt_Preferred_Term | 6MWT Functional Test Question |
+| Container_NCIt_Synonyms | nan |
+| Container_NCIt_Definition | A question associated with the 6MWT functional test. |
+| Container_UMLS_CUI | C3900189 |
+| Container_NCIm_CUI | nan |
 
 > ### Registry gap — instrument composition
 >

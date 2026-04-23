@@ -29,7 +29,28 @@ em { color: #666; }
 <h2>Data-integrity note</h2>
 <p>The <code>bc_type = full_no_ds</code> flag means this BC has no DSS rows published. The template-02 per-item rendering (DSS-grain paragraphs for DISTWLK1M and other 6MWT items) cannot be produced from the current graph. What follows is BC-level scaffolding plus the registry-need band that Template 02 publishes for instrument BCs.</p>
 <h2>Instrument composition ancestry</h2>
-<p><em>No matching instrument-identity row located for C115789 in the current <code>SDTM_Instrument_Identity.xlsx</code>. The 6MWT container-codelist anchor discussed in <code>docs/6MWT_NCIt_Story.html</code> is a reference-layer projection that this notebook does not currently join to.</em></p>
+<p><em>From <code>SDTM_Instrument_Identity.xlsx</code>:</em></p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Codelist_TESTCD</td><td>SIXMW1TC</td></tr>
+<tr><td>Codelist_NCIt_Code</td><td>C115388</td></tr>
+<tr><td>Instrument_Label</td><td>6 Minute Walk Functional Test</td></tr>
+<tr><td>Domain</td><td>FT</td></tr>
+<tr><td>Question_Count</td><td>6</td></tr>
+<tr><td>Instrument_NCIt_Code</td><td>C115789</td></tr>
+<tr><td>Instrument_NCIt_Preferred_Term</td><td>6 Minute Walk Functional Test 2008 Version</td></tr>
+<tr><td>Instrument_NCIt_Synonyms</td><td>6 Minute Walk Functional Test</td><td>6MWT</td><td>SIX MINUTE WALK</td><td>SIXMW1</td><td>Six Minute Walk 2008</td></tr>
+<tr><td>Instrument_NCIt_Definition</td><td>A standardized rating scale developed by Bruno Blake in 1963, which is a performance-based evaluation of functional exercise capacity in subjects with chronic respiratory disease and heart failure, as well as other populations such as healthy older adults and people suffering from fibromyalgia and scleroderma. This functional test contains 6 items and measures the distance an individual is able to walk over a total of six minutes on a hard, flat surface.</td></tr>
+<tr><td>Instrument_UMLS_CUI</td><td>C3900196</td></tr>
+<tr><td>Instrument_NCIm_CUI</td><td>nan</td></tr>
+<tr><td>Instrument_Match_Method</td><td>exact</td></tr>
+<tr><td>Container_NCIt_Code</td><td>C115409</td></tr>
+<tr><td>Container_NCIt_Preferred_Term</td><td>6MWT Functional Test Question</td></tr>
+<tr><td>Container_NCIt_Synonyms</td><td>nan</td></tr>
+<tr><td>Container_NCIt_Definition</td><td>A question associated with the 6MWT functional test.</td></tr>
+<tr><td>Container_UMLS_CUI</td><td>C3900189</td></tr>
+<tr><td>Container_NCIm_CUI</td><td>nan</td></tr>
+</table>
 <blockquote>
 <h3>Registry gap — instrument composition</h3>
 <p>The <strong>6 Minute Walk Functional Test</strong> BC carries the instrument identity at BC level</p>
