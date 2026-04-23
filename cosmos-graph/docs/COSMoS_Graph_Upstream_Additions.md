@@ -26,7 +26,7 @@ Paired reading: [sdtm-narrative/docs/COSMoS_Narrative_Layer.md](../../sdtm-narra
 
 ### 2.1 DSS attributes are a projection, not source content
 
-The template catalogue for specimen-based Findings (`sdtm-narrative/reference/templates/01_specimen_based_findings.md`) reads "DSS attributes" — Specimen, Method, Result_Scale, Standard_Unit, Allowed_Units, LOINC_Code, Decimal_Places — as if they were columns on the `DSS` sheet. They are not. Confirmed against raw YAML source (`downloads/cosmos_yaml/20260331_r16/sdtm/LBGLUC.yaml` and peers), the top-level DSS keys in the source are:
+The template catalogue for specimen-based Findings (`sdtm-narrative/reference/templates/01_specimen_based_findings.md`) reads "DSS attributes" — Specimen, Method, Result_Scale, Standard_Unit, Allowed_Units, LOINC_Code, Decimal_Places — as if they were columns on the `DSS` sheet. They are not. Confirmed against raw YAML source (`cosmos-bc-dss/downloads/cosmos_yaml/20260331_r16/sdtm/LBGLUC.yaml` and peers), the top-level DSS keys in the source are:
 
 ```
 packageDate, packageType, datasetSpecializationId, domain,
@@ -222,7 +222,7 @@ See §4 for the architectural frame.
 
 A new pattern in the graph layer.
 
-**Core (`COSMoS_Graph.xlsx`).** Lossless projection of CDISC-authored content. Input: `downloads/cdisc_*.xlsx` + CDISC YAML. Every row provenance-traceable to a CDISC artefact. No interpretation, no extrapolation, no sponsor content.
+**Core (`COSMoS_Graph.xlsx`).** Lossless projection of CDISC-authored content. Input: `cosmos-bc-dss/downloads/cdisc_*.xlsx` + CDISC YAML. Every row provenance-traceable to a CDISC artefact. No interpretation, no extrapolation, no sponsor content.
 
 **Overlay (`COSMoS_Graph_Overlay.xlsx`).** Content authored in this repo (track-authored extrapolations like the 6MWT items) or by a sponsor deployment (sponsor-scope cases). Schema-identical to core. Provenance-labelled at row level.
 
@@ -234,11 +234,11 @@ A new pattern in the graph layer.
 
 **Why parallel files, not one file with a scope column.** Read-time filter works either way. But a single-file design makes it easier to accidentally ingest overlay content as if it were CDISC-authored, and harder to diff what changed in overlay-only vs. core-only. Parallel-file design makes the boundary enforceable by file path.
 
-**Alignment with existing practice.** The cosmos-bc-dss track already follows this pattern with `COSMoS_Graph.xlsx` (core) vs. `COSMoS_Graph_CT.xlsx` (NCI EVS enrichment layered on top, separate file). Overlay is a third file following the same split logic.
+**Alignment with existing practice.** The cosmos-graph track already follows this pattern with `COSMoS_Graph.xlsx` (core) vs. `COSMoS_Graph_CT.xlsx` (NCI EVS enrichment layered on top, separate file). Overlay is a third file following the same split logic.
 
 ## 5. Non-goals for this wave
 
-- No change to the flattener's source-side contract. Inputs stay on the `downloads/cdisc_*.xlsx` files.
+- No change to the flattener's source-side contract. Inputs stay on the `cosmos-bc-dss/downloads/cdisc_*.xlsx` files.
 - No change to the LinkML schema. The new sheets (`DSS_Attributes`, `Instrument_Composition`, `Case_Specialisations`) are derivations over existing classes, not new classes in the schema.
 - No back-compat requirement with legacy `interim/COSMoS_BC_DSS.xlsx`. That file stays as-is until consumer tracks fully migrate to `COSMoS_Graph.xlsx`.
 - No SDRG integration, no sponsor-onboarding tooling. The overlay file exists; mechanisms for sponsors to contribute overlay content are out of scope.

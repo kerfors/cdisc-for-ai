@@ -151,7 +151,7 @@ Emit one row per field. Empty values render as a muted "—". The
 
 ```
 Row_Type = {{Row_Type}} — flattened from
-`cosmos-bc-dss/interim/COSMoS_Graph_Flat.xlsx`. Round-trip to graph:
+`cosmos-graph/interim/COSMoS_Graph_Flat.xlsx`. Round-trip to graph:
 `BC.BC_ID = {{COSMoS_BC_ID}}` ∧ `DSS.DS_Code = {{DS_Code}}`.
 ```
 

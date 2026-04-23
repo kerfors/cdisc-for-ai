@@ -20,28 +20,37 @@ Repository: https://github.com/kerfors/cdisc-for-ai
 
 ## Architecture — how tracks relate
 
-The repo has three track types. The domain code is the join key across all tracks.
+The repo has four track types. The domain code is the join key across all tracks.
 
 **Source tracks** extract and enrich from upstream standards:
 - `sdtm-test-codes/` — "What is measured?" Extracts TESTCD/TEST from NCI EVS, enriches with NCIt identity (definitions, synonyms, C-codes, UMLS/LOINC mappings). Outputs: `SDTM_Test_Identity.xlsx` (domain-level test codes), `SDTM_Instrument_Test_Identity.xlsx` (test codes within an instrument codelist), `SDTM_Instrument_Identity.xlsx` (one row per instrument codelist, dual NCIt anchors from C20993 + C211913).
-- `cosmos-bc-dss/` — "How is it measured?" Flattens COSMoS BC and DSS JSON exports into a single interim file. Also produces behavioural analysis docs. Output: `COSMoS_BC_DSS.xlsx` (interim).
+- `cosmos-bc-dss/` — "How is it measured? (extraction)" Owns the COSMoS source-ingest and legacy single-sheet flatten. Output: `COSMoS_BC_DSS.xlsx` (interim). Also carries the early behavioural/content analyses.
+
+**Graph track** provides the traversable COSMoS projection:
+- `cosmos-graph/` — SchemaView-driven multi-sheet graph over the CDISC COSMoS export, plus NCI EVS SDTM CT enrichment. Outputs: `interim/COSMoS_Graph.xlsx` (core, lossless-over-source), `interim/COSMoS_Graph_CT.xlsx` (CT enrichment). Reads source material from `cosmos-bc-dss/downloads/`. LinkML schemas live here at `reference/cosmos_linkml/`.
 
 **Reference track** provides shared domain metadata:
-- `sdtm-domain-reference/` — Domain-level classification: structural types, COSMoS coverage flags, specimen/instrument classification. Output: `SDTM_Domain_Metadata.xlsx`. This is a pipeline input to consumer tracks.
+- `sdtm-domain-reference/` — Domain-level classification: structural types, COSMoS coverage flags, specimen/instrument classification. Output: `SDTM_Domain_Metadata.xlsx`. Pipeline input to consumer tracks.
 
-**Consumer tracks** join source data into structural-type-specific outputs:
-- `sdtm-findings/` — Three sub-types: Specimen-based (LB, MB, MI, CP, BS, MS, PC, PP), Measurement (VS, MK, CV), Instrument (QS, FT, RS). Each output is a two-sheet workbook: Test_Identity (one row per TESTCD) + Measurement_Specs (one row per DSS). Join key between sheets: TESTCD.
+**Consumer tracks** join source/graph data into structural-type-specific outputs:
+- `sdtm-findings/` — Three sub-types: Specimen-based (LB, MB, MI, CP, BS, MS, PC, PP), Measurement (VS, MK, CV), Instrument (QS, FT, RS). Each output is a two-sheet workbook: Test_Identity (one row per TESTCD) + Measurement_Specs (one row per DSS). Join key between sheets: TESTCD. Still reads the legacy `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx` as of 2026-04; rewire to `cosmos-graph/` is pending.
+- `sdtm-narrative/` — Tier 2b (per-DSS paragraph) and Tier 3 (DataBook) narrative projections of the graph, assembled from a template catalogue over `cosmos-graph/interim/COSMoS_Graph*.xlsx`.
 
 See `SDTM_Domain_Overview.md` (repo root) for the full three-layer analytical model. See `docs/Changes_2026-03.md` for what changed in the latest release.
 
 ## Data flow and joins
 
 ```
-NCI EVS SDTM CT ──→ SDTM_Test_Identity.xlsx ──→ Consumer files (Test_Identity sheet)
-                                                     ↑
-SDTM_Domain_Metadata.xlsx ──────────────────────────┘
-                                                     ↑
-COSMoS exports ──→ COSMoS_BC_DSS.xlsx (interim) ───┘ → Consumer files (Measurement_Specs sheet)
+NCI EVS SDTM CT ─────→ SDTM_Test_Identity.xlsx ────→ sdtm-findings (Test_Identity sheet)
+                                                          ↑
+SDTM_Domain_Metadata.xlsx ────────────────────────────────┤
+                                                          ↑
+CDISC COSMoS export ──→ cosmos-bc-dss/downloads/ ──→ cosmos-graph/interim/COSMoS_Graph.xlsx
+                                       │                  │
+                                       ▼                  ├──→ COSMoS_Graph_CT.xlsx (+ NCI EVS CT)
+                     COSMoS_BC_DSS.xlsx (legacy) ─────────┤
+                                                          ├──→ sdtm-findings (Measurement_Specs sheet)
+                                                          └──→ sdtm-narrative (paragraphs, DataBooks)
 ```
 
 ## Folder conventions

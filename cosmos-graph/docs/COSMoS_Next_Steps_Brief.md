@@ -16,11 +16,11 @@ pipeline is left in place until consumer tracks are rewired.
 
 Two interim workbooks, one per concern:
 
-- `cosmos-bc-dss/interim/COSMoS_Graph.xlsx` — lossless-over-source graph
+- `cosmos-graph/interim/COSMoS_Graph.xlsx` — lossless-over-source graph
   projection of COSMoS. Sheets: `BC`, `DSS`, `Variables` (VLM-row grain,
   carries the reification quad inline), `Relationships` (reified edges,
   long format), `Codelists`.
-- `cosmos-bc-dss/interim/COSMoS_Graph_CT.xlsx` — NCI EVS SDTM CT
+- `cosmos-graph/interim/COSMoS_Graph_CT.xlsx` — NCI EVS SDTM CT
   enrichment of the bindings and pinned terms. Sheets: `Codelists`,
   `CodelistTerms`, `AssignedTerms`, `Unresolved`, `Anomalies`.
 
@@ -152,16 +152,16 @@ This is paperwork, not code. Lightest of the three branches.
 ## Reference artefacts
 
 Primary:
-- `cosmos-bc-dss/interim/COSMoS_Graph.xlsx`
-- `cosmos-bc-dss/interim/COSMoS_Graph_CT.xlsx`
-- `cosmos-bc-dss/docs/COSMoS_Graph_As_Authored.md`
-- `cosmos-bc-dss/docs/COSMoS_Flattener_Rewrite.md`
-- `cosmos-bc-dss/reports/flattener_rewrite_audit.md`
-- `cosmos-bc-dss/reports/graph_validation_report.{md,json}`
-- `cosmos-bc-dss/notebooks/{10,20,30,50}_*.ipynb`
+- `cosmos-graph/interim/COSMoS_Graph.xlsx`
+- `cosmos-graph/interim/COSMoS_Graph_CT.xlsx`
+- `cosmos-graph/docs/COSMoS_Graph_As_Authored.md`
+- `cosmos-graph/docs/COSMoS_Flattener_Rewrite.md`
+- `cosmos-graph/reports/flattener_rewrite_audit.md`
+- `cosmos-graph/reports/graph_validation_report.{md,json}`
+- `cosmos-graph/notebooks/{10,20,30,50}_*.ipynb`
 
 Scoping / history:
-- `cosmos-bc-dss/docs/COSMoS_Step2_Scoping_Brief.md` — original brief
+- `cosmos-graph/docs/COSMoS_Step2_Scoping_Brief.md` — original brief
   that motivated the rework, frozen pre-build.
 - `cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`
 - `cosmos-bc-dss/docs/COSMoS_Collection_vs_Ontology.md`

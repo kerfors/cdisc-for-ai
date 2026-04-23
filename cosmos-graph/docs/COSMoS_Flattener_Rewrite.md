@@ -17,7 +17,7 @@
 
 The flattener becomes SchemaView-driven over the existing CDISC Excel export and produces a multi-sheet interim. One pipeline, one artifact, multiple grains. This is "Option B" from the Step 1 close-out.
 
-The input stays on `downloads/cdisc_sdtm_dataset_specializations_latest.xlsx` (plus `cdisc_biomedical_concepts_latest.xlsx` for BC identity). The xlsx is graph-equivalent to the YAML at VLM-row grain (Step 1 audit, 2026-04-22). Switching to the GitHub YAML folder is blocked on upstream coverage (5 of 32 domains published at 2026-Q1); switching to the CDISC Library API is blocked on endpoint verification. Neither blocker matters if the xlsx is the input.
+The input stays on `cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx` (plus `cdisc_biomedical_concepts_latest.xlsx` for BC identity). The xlsx is graph-equivalent to the YAML at VLM-row grain (Step 1 audit, 2026-04-22). Switching to the GitHub YAML folder is blocked on upstream coverage (5 of 32 domains published at 2026-Q1); switching to the CDISC Library API is blocked on endpoint verification. Neither blocker matters if the xlsx is the input.
 
 ## 2. Sheet inventory
 
@@ -32,7 +32,7 @@ The input stays on `downloads/cdisc_sdtm_dataset_specializations_latest.xlsx` (p
 | `Variables` | one per SDTMVariable | 12,677 | VLM-row grain. 26 columns — the LinkML slots on `SDTMVariable` plus the inlined reification quad (subject, linking_phrase, predicate_term, object). |
 | `Relationships` | one per reified edge | 12,364 | Long-format. 6 columns — `ds_id`, `variable_name`, `subject`, `linking_phrase`, `predicate_term`, `object`. Rows where the source has no quad are omitted (313 rows in the 2026-Q1 build). |
 | `Codelists` | one per binding | 291 | Deduped `(codelist_concept_id, codelist_submission_value)` pairs referenced by any variable, with `variable_uses_count`. |
-| `BC` | one per BC | 1,345 | BC-level identity, classification, and hierarchy. Added during build — BC identity needs to ride with the graph for the cookbook and consumer tracks, not re-join from `downloads/` on every query. |
+| `BC` | one per BC | 1,345 | BC-level identity, classification, and hierarchy. Added during build — BC identity needs to ride with the graph for the cookbook and consumer tracks, not re-join from `cosmos-bc-dss/downloads/` on every query. |
 
 `interim/COSMoS_Graph_CT.xlsx` (added during build — NCI CT enrichment lifted out of the flattener so `COSMoS_Graph.xlsx` stays lossless-over-source):
 
@@ -114,20 +114,20 @@ Revised from the original two-notebook plan. Output path also changed:
 new file `interim/COSMoS_Graph.xlsx` alongside the legacy
 `interim/COSMoS_BC_DSS.xlsx`, not in place of it.
 
-- `cosmos-bc-dss/notebooks/10_flatten_schema_driven.ipynb` — flattener.
-  Inputs from `downloads/`, outputs `interim/COSMoS_Graph.xlsx`.
-- `cosmos-bc-dss/notebooks/20_resolve_ct.ipynb` — **added.** Joins
+- `cosmos-graph/notebooks/10_flatten_schema_driven.ipynb` — flattener.
+  Inputs from `cosmos-bc-dss/downloads/`, outputs `cosmos-graph/interim/COSMoS_Graph.xlsx`.
+- `cosmos-graph/notebooks/20_resolve_ct.ipynb` — **added.** Joins
   codelist and assigned-term concept IDs against NCI EVS SDTM CT
   2026-03-27. Outputs `interim/COSMoS_Graph_CT.xlsx`.
-- `cosmos-bc-dss/notebooks/30_validate_graph.ipynb` — **added.**
+- `cosmos-graph/notebooks/30_validate_graph.ipynb` — **added.**
   Enumeration, referential integrity, schema column coverage,
   CT-resolution FAILs, and anomaly counts. Outputs
   `reports/graph_validation_report.md` / `.json`.
-- `cosmos-bc-dss/notebooks/50_query_examples.ipynb` — **added.** Query
+- `cosmos-graph/notebooks/50_query_examples.ipynb` — **added.** Query
   cookbook, eight queries pinned to the story-pair DSSs (GLUCPL,
   SIXMW101, SGBESCR). Proves the graph shape answers the narrative
   questions. No sheet output.
-- `cosmos-bc-dss/reports/flattener_rewrite_audit.md` — close-out
+- `cosmos-graph/reports/flattener_rewrite_audit.md` — close-out
   narrative: sheet shapes, build counts, back-compat decision,
   validation triage.
 

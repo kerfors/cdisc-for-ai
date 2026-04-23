@@ -43,11 +43,11 @@ optional on top.
 ## Context — what this step exists for
 
 The Step 2 close-out carried three open branches into a new conversation
-(see [`../../cosmos-bc-dss/docs/COSMoS_Next_Steps_Brief.md`](../../cosmos-bc-dss/docs/COSMoS_Next_Steps_Brief.md)).
+(see [`../../cosmos-graph/docs/COSMoS_Next_Steps_Brief.md`](../../cosmos-graph/docs/COSMoS_Next_Steps_Brief.md)).
 This plan commits to **Branch A** — the narrative layer. Branches B
 (consumer rewiring) and C (upstream flags) stay parked.
 
-The Step 2 scoping brief ([`../../cosmos-bc-dss/docs/COSMoS_Step2_Scoping_Brief.md`](../../cosmos-bc-dss/docs/COSMoS_Step2_Scoping_Brief.md))
+The Step 2 scoping brief ([`../../cosmos-graph/docs/COSMoS_Step2_Scoping_Brief.md`](../../cosmos-graph/docs/COSMoS_Step2_Scoping_Brief.md))
 argued for reification-as-legibility and named a three-tier serialisation
 architecture. Step 2 built Tier 1 (the canonical graph in
 `COSMoS_Graph*.xlsx`). Tier 2b (per-DSS prose) and Tier 3 (DataBook
@@ -91,7 +91,7 @@ Expected shape (to confirm on build):
 - Columns: `variable`, `nci_code`, `natural_name`, `definition`,
   `subset` (which NCIt subset sourced the row), `applicable_domains`
   (where it appears in COSMoS VLM rows — join against
-  `cosmos-bc-dss/interim/COSMoS_Graph.xlsx/Variables`).
+  `cosmos-graph/interim/COSMoS_Graph.xlsx/Variables`).
 - README sheet per repo convention.
 
 This file is reusable by every downstream consumer and is the single
@@ -128,8 +128,8 @@ role pattern, each with:
 Notebook: `sdtm-narrative/notebooks/40_assemble_narrative.ipynb`.
 
 Inputs:
-- `cosmos-bc-dss/interim/COSMoS_Graph.xlsx`
-- `cosmos-bc-dss/interim/COSMoS_Graph_CT.xlsx`
+- `cosmos-graph/interim/COSMoS_Graph.xlsx`
+- `cosmos-graph/interim/COSMoS_Graph_CT.xlsx`
 - `sdtm-narrative/reference/SDTM_Variable_Identity.xlsx`
 - `sdtm-test-codes/downloads/Thesaurus.txt` (for NCIt definitions where
   not already in `AssignedTerms`).
@@ -178,7 +178,7 @@ Output: `sdtm-narrative/reports/narrative_validation_report.{md,json}`.
 
 At step close:
 - Design record: `sdtm-narrative/docs/COSMoS_Narrative_Layer.md`
-  (analogous to `cosmos-bc-dss/docs/COSMoS_Flattener_Rewrite.md`).
+  (analogous to `cosmos-graph/docs/COSMoS_Flattener_Rewrite.md`).
 - Audit: `sdtm-narrative/reports/narrative_layer_audit.md`.
 - Promotion decisions (Open Decision §5): whether
   `SDTM_Variable_Identity.xlsx` moves to `sdtm-test-codes/`, whether
@@ -230,7 +230,7 @@ At step close:
 Step 3 closes when:
 - `SDTM_Variable_Identity.xlsx` exists, with a README sheet, covering
   every SDTM variable that appears in any
-  `cosmos-bc-dss/interim/COSMoS_Graph.xlsx/Variables` row.
+  `cosmos-graph/interim/COSMoS_Graph.xlsx/Variables` row.
 - Every DSS has a `VLM_Narrative` paragraph, deterministically
   assembled, QC-round-trippable.
 - The three case pairs (Glucose, 6MWT, X-Ray) have DataBooks of the
@@ -244,9 +244,9 @@ Step 3 closes when:
 ## Reference artefacts
 
 Graph and CT (read-only inputs):
-- `cosmos-bc-dss/interim/COSMoS_Graph.xlsx`
-- `cosmos-bc-dss/interim/COSMoS_Graph_CT.xlsx`
-- `cosmos-bc-dss/reports/graph_validation_report.{md,json}`
+- `cosmos-graph/interim/COSMoS_Graph.xlsx`
+- `cosmos-graph/interim/COSMoS_Graph_CT.xlsx`
+- `cosmos-graph/reports/graph_validation_report.{md,json}`
 
 Identity sources (read-only inputs):
 - `sdtm-test-codes/downloads/SDTM_Terminology.txt` (SDTM CT 2026-03-27)
@@ -262,14 +262,14 @@ Case-pair ground truth (the HTML stories to reverse-engineer from):
 - `outputs/XRay_PatientBurden_Story.html`
 
 Design context (read-only inputs):
-- `cosmos-bc-dss/docs/COSMoS_Next_Steps_Brief.md` — the three-branch
+- `cosmos-graph/docs/COSMoS_Next_Steps_Brief.md` — the three-branch
   hand-off this step implements Branch A of.
-- `cosmos-bc-dss/docs/COSMoS_Graph_As_Authored.md` — Step 1 graph
+- `cosmos-graph/docs/COSMoS_Graph_As_Authored.md` — Step 1 graph
   model.
-- `cosmos-bc-dss/docs/COSMoS_Flattener_Rewrite.md` — Step 2 design.
-- `cosmos-bc-dss/reports/flattener_rewrite_audit.md` — Step 2
+- `cosmos-graph/docs/COSMoS_Flattener_Rewrite.md` — Step 2 design.
+- `cosmos-graph/reports/flattener_rewrite_audit.md` — Step 2
   close-out.
-- `cosmos-bc-dss/docs/COSMoS_Step2_Scoping_Brief.md` — frozen pre-build
+- `cosmos-graph/docs/COSMoS_Step2_Scoping_Brief.md` — frozen pre-build
   brief; Moves 2c (variable identity) and 2b (VLM_Narrative) are what
   Step 3 lifts into the plan.
 

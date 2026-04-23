@@ -1,6 +1,6 @@
 # COSMoS As A Graph — What CDISC Actually Authors
 
-*Step 1 of a three-step rework of the cosmos-bc-dss track: make the inherent graph model explicit before changing the flattener. A companion to [COSMoS_Specification_Focus.md](COSMoS_Specification_Focus.md), [COSMoS_Behavioural_Analysis.md](COSMoS_Behavioural_Analysis.md), [COSMoS_Collection_vs_Ontology.md](COSMoS_Collection_vs_Ontology.md) and [COSMoS_Instrument_Layer.md](COSMoS_Instrument_Layer.md).*
+*Step 1 of a three-step rework of the cosmos-bc-dss track: make the inherent graph model explicit before changing the flattener. A companion to [COSMoS_Specification_Focus.md](../../cosmos-bc-dss/docs/COSMoS_Specification_Focus.md), [COSMoS_Behavioural_Analysis.md](../../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [COSMoS_Collection_vs_Ontology.md](../../cosmos-bc-dss/docs/COSMoS_Collection_vs_Ontology.md) and [COSMoS_Instrument_Layer.md](../../cosmos-bc-dss/docs/COSMoS_Instrument_Layer.md).*
 
 *cdisc-for-ai, April 2026*
 
@@ -34,7 +34,7 @@ The LinkML schema is the authoritative source. Everything else is generated from
 
 Root class `BiomedicalConcept` (tree_root), with inlined `Coding` and `DataElementConcept` children.
 
-A BC carries its NCIt anchor explicitly — `conceptId` (the COSMoS primary key, always equal to the NCIt C-code when the concept exists in NCIt), `ncitCode`, `href` (a canonical NCIt URI), `parentConceptId` (the NCIt hierarchical parent), `shortName` (the NCIt preferred term), `synonyms`, `definition`, `resultScales` (from the enumeration `Ordinal | Narrative | Nominal | Quantitative | Temporal`), and `categories` (the multi-value grouping field discussed in [COSMoS_Instrument_Layer.md](COSMoS_Instrument_Layer.md)).
+A BC carries its NCIt anchor explicitly — `conceptId` (the COSMoS primary key, always equal to the NCIt C-code when the concept exists in NCIt), `ncitCode`, `href` (a canonical NCIt URI), `parentConceptId` (the NCIt hierarchical parent), `shortName` (the NCIt preferred term), `synonyms`, `definition`, `resultScales` (from the enumeration `Ordinal | Narrative | Nominal | Quantitative | Temporal`), and `categories` (the multi-value grouping field discussed in [COSMoS_Instrument_Layer.md](../../cosmos-bc-dss/docs/COSMoS_Instrument_Layer.md)).
 
 A BC also carries `coding` (a list of `Coding` objects, one per external code system it maps to — LOINC, SNOMED CT, etc., with `code`, `system`, `systemName`) and `dataElementConcepts` (a list of `DataElementConcept` objects, each with its own `conceptId`, `ncitCode`, `href`, `shortName`, `dataType` from the enumeration `boolean | date | datetime | decimal | duration | float | integer | string | uri`, and an `exampleSet`).
 
@@ -66,11 +66,11 @@ Four enumerations carry NCIt-anchored semantic content that the xlsx currently d
 
 Root class `CRFGroup` (tree_root), with inlined `CRFItem` children, each CRFItem carrying inlined `CodeList`, `ListValue`, `PrepopulatedValue`, and `SDTMTarget` objects.
 
-A `CRFGroup` is one CRF specialisation, identified by `crfSpecializationId`, linked to a BC via `biomedicalConceptId` and to a DSS via `sdtmDatasetSpecializationId` (the cross-reference slot noted in [COSMoS_Specification_Focus.md](COSMoS_Specification_Focus.md)). It carries an `implementationOption` (`Normalized | Denormalized`), a `scenario`, `categories`, and `items`.
+A `CRFGroup` is one CRF specialisation, identified by `crfSpecializationId`, linked to a BC via `biomedicalConceptId` and to a DSS via `sdtmDatasetSpecializationId` (the cross-reference slot noted in [COSMoS_Specification_Focus.md](../../cosmos-bc-dss/docs/COSMoS_Specification_Focus.md)). It carries an `implementationOption` (`Normalized | Denormalized`), a `scenario`, `categories`, and `items`.
 
 Each `CRFItem` carries the collection-moment facts the DSS does not: `questionText`, `prompt`, `completionInstructions`, `selectionType` (`Multiple | Single`), `prepopulatedValue`, and `sdtmTarget` (the `SDTMTarget` object with `sdtmAnnotation`, `sdtmVariables`, `sdtmTargetMapping` — i.e. the SDTM annotation on the CRF plus the list of target variables plus the mapping rule).
 
-CRF Specializations are in the flattener's scope for later work (see [COSMoS_Specification_Focus.md](COSMoS_Specification_Focus.md) on their draft status) but not in the current xlsx.
+CRF Specializations are in the flattener's scope for later work (see [COSMoS_Specification_Focus.md](../../cosmos-bc-dss/docs/COSMoS_Specification_Focus.md) on their draft status) but not in the current xlsx.
 
 ## 4. Reification at source
 
@@ -152,7 +152,7 @@ Every fact the xlsx carries is here — domain, TESTCD, decimal precision. Three
 2. Each variable carries `role` (Topic / Qualifier / Timing / Identifier), `relationship` (the typed edge with both the NCIt predicate and the English linking phrase), `mandatoryVariable`, `mandatoryValue`, `originType`, `originSource`, and `comparator`. On VSTESTCD specifically, `mandatoryValue: true` plus `comparator: EQ` plus `assignedTerm: {conceptId: C87304, value: "ABI"}` is the formal definition of "this DSS pins VSTESTCD = ABI" — i.e. identity pinning. On VSORRES, `mandatoryValue: false` plus no comparator is the formal "this is a qualifier slot, result value is not pinned".
 3. `assignedTerm.conceptId: C87304` on VSTESTCD is the NCIt anchor for the pinned value (Ankle-Brachial Index). This is the join key for cross-DSS concept traversal.
 
-The identity-pin-vs-qualifier-slot distinction that had to be inferred from narrative prose in [COSMoS_Behavioural_Analysis.md](COSMoS_Behavioural_Analysis.md) is a structural fact here, readable directly from `mandatoryValue` and `comparator`.
+The identity-pin-vs-qualifier-slot distinction that had to be inferred from narrative prose in [COSMoS_Behavioural_Analysis.md](../../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md) is a structural fact here, readable directly from `mandatoryValue` and `comparator`.
 
 ## 6. What the current xlsx preserves and drops
 

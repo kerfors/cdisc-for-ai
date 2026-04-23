@@ -175,7 +175,7 @@ carried under §5 of the design record (see
 
 - `sdtm-narrative/reference/case_specialisations.xlsx` — exploratory
   home in this track.
-- `cosmos-bc-dss/interim/COSMoS_Graph.xlsx` new sheet
+- `cosmos-graph/interim/COSMoS_Graph.xlsx` new sheet
   `Case_Specialisations` — promotion target if the case registry
   earns first-class graph status.
 - Sponsor-local: the registry may be sponsor-scoped rather than

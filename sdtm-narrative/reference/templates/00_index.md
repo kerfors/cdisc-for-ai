@@ -98,9 +98,9 @@ identities.
 
 ## Read-only inputs (every template)
 
-- `cosmos-bc-dss/interim/COSMoS_Graph.xlsx` — sheets `BC`, `DSS`,
+- `cosmos-graph/interim/COSMoS_Graph.xlsx` — sheets `BC`, `DSS`,
   `Variables`, `AssignedTerms`, `Categories`, `Codelists`.
-- `cosmos-bc-dss/interim/COSMoS_Graph_Flat.xlsx` — flattened rows
+- `cosmos-graph/interim/COSMoS_Graph_Flat.xlsx` — flattened rows
   for band 4 (Tier 3 only).
 - `sdtm-narrative/reference/SDTM_Variable_Identity.xlsx` —
   variable-to-natural-name substitution table.

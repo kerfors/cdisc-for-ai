@@ -44,7 +44,7 @@ result; they are absent on rating-scale items.
 - **TESTCD identity** (as Template 01), for the NCIt anchor of the
   item code.
 - **Instrument codelist ancestry** (from
-  `cosmos-bc-dss/interim/COSMoS_Graph_CT.xlsx`, sheet `Codelists`,
+  `cosmos-graph/interim/COSMoS_Graph_CT.xlsx`, sheet `Codelists`,
   and from `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx`):
   - The instrument codelist `C-code` (NCIt `cosmos-container`).
   - Its parent NCIt class (`cosmos-instr`, e.g. C164366

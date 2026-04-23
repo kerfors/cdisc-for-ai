@@ -3,7 +3,7 @@
 *Decision record for Step 3 of the cosmos-bc-dss rework. Captures the
 3b open decisions resolved on 2026-04-23 and will grow into the Step 3
 design record at close-out (analogous to
-`cosmos-bc-dss/docs/COSMoS_Flattener_Rewrite.md`).*
+`cosmos-graph/docs/COSMoS_Flattener_Rewrite.md`).*
 
 *cdisc-for-ai, 2026-04-23*
 

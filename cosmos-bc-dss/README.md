@@ -2,6 +2,8 @@
 
 The yellow layer. Every COSMoS measurement specification flattened into a single row: what biomedical concept it belongs to, what specimen/method/scale it requires, and how it maps to SDTM variables. Covers all SDTM domains, not just Laboratory.
 
+> **Scope note (2026-04-23).** This track now owns the COSMoS source-extraction concern: ingest, legacy BC/DSS flatten, early BC/DSS analyses. The graph-layer work (schema-driven flatten, CT resolution, validation, query cookbook) has moved to [`../cosmos-graph/`](../cosmos-graph/). The legacy `interim/COSMoS_BC_DSS.xlsx` pipeline documented below stays in place until consumer tracks rewire onto the graph.
+
 **Current output:** [`interim/COSMoS_BC_DSS.xlsx`](interim/COSMoS_BC_DSS.xlsx) — structurally complete, validated. Column naming follows COSMoS vocabulary with minor clarifications for machine consumption.
 
 Two companion documents cover what the notebooks produce and what the analysis reveals:
