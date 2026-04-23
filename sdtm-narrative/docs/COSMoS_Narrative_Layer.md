@@ -1,22 +1,10 @@
-# COSMoS Narrative Layer — Design Record
+# COSMoS Narrative Layer — track reference
 
-*Decision record for Step 3 of the cosmos-bc-dss rework. Captures the
-3b open decisions resolved on 2026-04-23 and will grow into the Step 3
-design record at close-out (analogous to
-`cosmos-graph/docs/COSMoS_Flattener_Rewrite.md`).*
+*Design record for the sdtm-narrative track: the settled decisions, the §3a identity-build findings, and the §3b template catalogue shape. Supersedes the Step 3 pre-build plan (retained under [`archive/`](archive/)). Forward-looking items live in [`COSMoS_Open_Work.md`](COSMoS_Open_Work.md).*
 
-*cdisc-for-ai, 2026-04-23*
+*cdisc-for-ai, package 2026-Q1.*
 
 ---
-
-## Status
-
-Step 3 in flight. Folder skeleton under `sdtm-narrative/` created per
-the plan. 3b template-design decisions settled (this document); 3a
-variable-identity build and 3b template-catalogue authoring are the
-next moves.
-
-Plan: [`COSMoS_Narrative_Layer_Plan.md`](COSMoS_Narrative_Layer_Plan.md).
 
 ## Decisions settled (3b)
 
@@ -70,23 +58,6 @@ the existing story look and feel, but is not the source of truth.
 templating is verbose and couples prose to CSS. Keeping markdown
 canonical lets the DataBooks sit alongside the graph xlsx as
 first-class reference files. The HTML render is a cheap downstream.
-
-## Deferred
-
-### §5 — Exploratory-vs-promoted paths
-
-Deferred to Step 3 close-out, as the plan specifies. Three sub-
-questions (variable-identity location, Narratives-sheet placement,
-folder-track identity) all wait for Tier 2b templates to be validated
-before commitment.
-
-### §6 — NCIt enrichment scope
-
-Provisionally: minimal for first cut. `AssignedTerms` already carries
-NCI CT definitions for 1,170 concept IDs; that is the starting budget.
-Extended enrichment (synonyms, UMLS, LOINC) lifted only if a specific
-template needs it and the need survives a read of the HTML story
-reverse-engineering.
 
 ## Implications for the build
 
@@ -201,13 +172,3 @@ first three are framed in bands 5 of Templates 01-03; the fourth
 (xlsx under `sdtm-narrative/reference/` vs. promoted sheet in
 `COSMoS_Graph.xlsx` vs. sponsor-local) stays deferred under §5.
 
-## Open items for the next working session
-
-- Start 3d: notebook `60_assemble_databooks.ipynb`. First DataBook
-  targets are the three cases the catalogue was reverse-engineered
-  from (Glucose, 6MWT, X-Ray). Build order: Glucose (exercises
-  Templates 01 + 04), 6MWT (exercises Template 02 including the
-  NCIt ancestry band), X-Ray (exercises Template 03 + 04 together).
-- Template validation happens as part of 3d — each DataBook
-  regenerated from the graph via the catalogue must match the
-  reference HTML story's factual content.

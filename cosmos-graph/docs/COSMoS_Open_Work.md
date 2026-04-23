@@ -39,16 +39,7 @@ Five asks. Each is an authoring or subset issue outside this repo.
 
 Paperwork, not code. Drafts live outside this branch.
 
-## 3. Narrative-layer follow-ups
-
-Two fixes surfaced during the 2026-04-23 triage of the upstream-additions proposals. Both are outside cosmos-graph and belong on separate branches off main in `sdtm-narrative/`.
-
-- **`var_nn` two-char strip fix.** Most of the narrative assembler's unresolved codes collapse when the fallback strips the two-character domain prefix directly instead of prepending `--`. Patch in `sdtm-narrative/notebooks/40_assemble_narrative.ipynb` cell 4 and `60_assemble_databooks.ipynb` cell 4.
-- **`Instrument_NCIt_Code` typo.** The 6MWT DataBook's instrument-ancestry read fails because `60_assemble_databooks.ipynb` cell 16 queries column `NCIt_Instrument_Code` but the authored column is `Instrument_NCIt_Code` in `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx`. Rewire needed, not net-new content.
-
-Tracked here because they emerged from the cosmos-graph triage. Execution is sdtm-narrative work.
-
-## 4. Deferred architectural work
+## 3. Deferred architectural work
 
 Three items from the 2026-04-23 triage are documented but not built. Each waits on a trigger.
 
@@ -56,10 +47,11 @@ Three items from the 2026-04-23 triage are documented but not built. Each waits 
 - **`BC` cross-domain flags.** An `is_cross_domain_class` flag on the `BC` sheet. Zero BCs are cross-Observation_Class at 2026-Q1 — the flag would be uniformly `False`. **Trigger:** overlay content introduces a cross-class pairing (see below).
 - **`COSMoS_Graph_Overlay.xlsx` file.** Parallel file for schema-identical but not-CDISC-authored content (track-authored extrapolations, sponsor-scope case specialisations). Pattern documented in [`COSMoS_Graph.md`](COSMoS_Graph.md) §4. **Trigger:** a first overlay row is authored. Current candidates are the X-Ray MK-side DSSs (genuine cross-domain-class extrapolation, absent from source) and DSS rows under the 6MWT BC (which has `bc_type = full_no_ds`). Both candidates stay out of scope until authored.
 
-## 5. What's closed
+## 4. What's closed
 
 For context, so the items above read as what remains.
 
 - **Branch A — Step 3 NCIt narrative layer.** Delivered in `sdtm-narrative/` (Tier 2b per-DSS paragraphs + Tier 3 per-case DataBooks).
+- **Narrative-layer follow-ups.** `var_nn` compositional-fallback strip and `Instrument_NCIt_Code` column-name fix delivered in sdtm-narrative (commit `0ba8791`).
 - **Root-subset fallback diagnostic** (archive/`COSMoS_Graph_Upstream_Additions.md` §3.5). Closed 2026-04-23. Output in [`../reports/root_subset_fallback_diagnostic.{md,csv}`](../reports/root_subset_fallback_diagnostic.md).
 - **Step 2 flattener rewrite.** Delivered and merged. Close-out in [`archive/flattener_rewrite_audit.md`](archive/flattener_rewrite_audit.md).
