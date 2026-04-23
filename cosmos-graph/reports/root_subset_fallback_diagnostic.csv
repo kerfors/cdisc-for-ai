@@ -1,0 +1,104 @@
+variable_code,domain_prefix,remainder,direct_hit,root_hit_corrected,bucket,suggested_root_ncit,suggested_root_name,dss_count,row_count,roles,domains
+ISBDAGNT,IS,BDAGNT,False,False,evs-root-gap,,,290,290,Qualifier,IS
+RSSTRESN,RS,STRESN,False,False,evs-root-gap,,,104,104,Qualifier,RS
+MKSTRESN,MK,STRESN,False,False,evs-root-gap,,,47,47,Qualifier,MK
+GFSYM,GF,SYM,False,False,evs-root-gap,,,33,33,Qualifier,GF
+GFSYMTYP,GF,SYMTYP,False,False,evs-root-gap,,,33,33,Qualifier,GF
+GFCHROM,GF,CHROM,False,False,evs-root-gap,,,28,28,Qualifier,GF
+GFGENLOC,GF,GENLOC,False,False,evs-root-gap,,,28,28,Qualifier,GF
+GFGENREF,GF,GENREF,False,False,evs-root-gap,,,28,28,Qualifier,GF
+GFGENSR,GF,GENSR,False,False,evs-root-gap,,,28,28,Qualifier,GF
+GFSEQID,GF,SEQID,False,False,evs-root-gap,,,26,26,Qualifier,GF
+FTSTRESN,FT,STRESN,False,False,evs-root-gap,,,23,23,Qualifier,FT
+SPDEVID,SP,DEVID,False,False,evs-root-gap,,,19,19,Identifier,"GF,LB"
+GFINHERT,GF,INHERT,False,False,evs-root-gap,,,18,18,Qualifier,GF
+GFPRVID,GF,PRVID,False,False,evs-root-gap,,,18,18,Qualifier,GF
+FTREASND,FT,REASND,False,False,evs-root-gap,,,17,17,Qualifier,FT
+GFSTRESN,GF,STRESN,False,False,evs-root-gap,,,16,16,Qualifier,GF
+BEDECOD,BE,DECOD,False,False,evs-root-gap,,,7,7,Qualifier,BE
+FTASTDEV,FT,ASTDEV,False,False,evs-root-gap,,,6,6,Qualifier,FT
+GFCOPYID,GF,COPYID,False,False,evs-root-gap,,,5,5,Qualifier,GF
+URSTRESN,UR,STRESN,False,False,evs-root-gap,,,5,5,Qualifier,UR
+TRREASNE,TR,REASNE,False,False,evs-root-gap,,,4,4,Qualifier,TR
+TULOCDTL,TU,LOCDTL,False,False,evs-root-gap,,,3,3,Qualifier,TU
+CMRSDISC,CM,RSDISC,False,False,evs-root-gap,,,2,2,Qualifier,CM
+CMTRTINT,CM,TRTINT,False,False,evs-root-gap,,,2,2,Qualifier,CM
+CMTRTSTT,CM,TRTSTT,False,False,evs-root-gap,,,2,2,Qualifier,CM
+PRTRTINT,PR,TRTINT,False,False,evs-root-gap,,,2,2,Qualifier,PR
+PRTRTSTT,PR,TRTSTT,False,False,evs-root-gap,,,2,2,Qualifier,PR
+DDSTRESN,DD,STRESN,False,False,evs-root-gap,,,1,1,Qualifier,DD
+ETHNIC,ET,HNIC,False,False,evs-root-gap,,,1,1,Qualifier,DM
+PRVIR,PR,VIR,False,False,evs-root-gap,,,1,1,Qualifier,TU
+PRVIRP,PR,VIRP,False,False,evs-root-gap,,,1,1,Qualifier,TU
+QSANTXHI,QS,ANTXHI,False,False,evs-root-gap,,,1,1,Qualifier,QS
+QSANTXLO,QS,ANTXLO,False,False,evs-root-gap,,,1,1,Qualifier,QS
+QSANVLHI,QS,ANVLHI,False,False,evs-root-gap,,,1,1,Qualifier,QS
+QSANVLLO,QS,ANVLLO,False,False,evs-root-gap,,,1,1,Qualifier,QS
+TUPRVIR,TU,PRVIR,False,False,evs-root-gap,,,1,1,Qualifier,TU
+TUPRVIRP,TU,PRVIRP,False,False,evs-root-gap,,,1,1,Qualifier,TU
+ISTSTDTL,IS,TSTDTL,False,True,narrative-layer-bug,C117062,"Measurement, Test or Examination Detail",73,73,Qualifier,IS
+MKORRES,MK,ORRES,False,True,narrative-layer-bug,C117221,Original Result or Finding,50,50,Qualifier,MK
+MKSTRESC,MK,STRESC,False,True,narrative-layer-bug,C117222,Character Result or Finding in Standard Format,50,50,Qualifier,MK
+MKTEST,MK,TEST,False,True,narrative-layer-bug,C82541,Test Name,50,50,Qualifier,MK
+MKTESTCD,MK,TESTCD,False,True,narrative-layer-bug,C82503,Test Code,50,50,Topic,MK
+MKDTC,MK,DTC,False,True,narrative-layer-bug,C82515,Collection Date Time,49,49,Timing,MK
+MKLOC,MK,LOC,False,True,narrative-layer-bug,C13717,Anatomic Site,49,49,Qualifier,MK
+MKLAT,MK,LAT,False,True,narrative-layer-bug,C25185,Laterality,48,48,Qualifier,MK
+GFCAT,GF,CAT,False,True,narrative-layer-bug,C25372,Category,38,38,Qualifier,GF
+GFDTC,GF,DTC,False,True,narrative-layer-bug,C82515,Collection Date Time,38,38,Timing,GF
+GFMETHOD,GF,METHOD,False,True,narrative-layer-bug,C82535,Test Method,38,38,Qualifier,GF
+GFORRES,GF,ORRES,False,True,narrative-layer-bug,C117221,Original Result or Finding,38,38,Qualifier,GF
+GFSPEC,GF,SPEC,False,True,narrative-layer-bug,C70713,Biospecimen Type,38,38,Qualifier,GF
+GFSTRESC,GF,STRESC,False,True,narrative-layer-bug,C117222,Character Result or Finding in Standard Format,38,38,Qualifier,GF
+GFTEST,GF,TEST,False,True,narrative-layer-bug,C82541,Test Name,38,38,Qualifier,GF
+GFTESTCD,GF,TESTCD,False,True,narrative-layer-bug,C82503,Test Code,38,38,Topic,GF
+GFTSTDTL,GF,TSTDTL,False,True,narrative-layer-bug,C117062,"Measurement, Test or Examination Detail",38,38,Qualifier,GF
+MKMETHOD,MK,METHOD,False,True,narrative-layer-bug,C82535,Test Method,31,31,Qualifier,MK
+FTCAT,FT,CAT,False,True,narrative-layer-bug,C25372,Category,23,23,Qualifier,FT
+FTDTC,FT,DTC,False,True,narrative-layer-bug,C82515,Collection Date Time,23,23,Timing,FT
+FTSTRESC,FT,STRESC,False,True,narrative-layer-bug,C117222,Character Result or Finding in Standard Format,23,23,Qualifier,FT
+FTTEST,FT,TEST,False,True,narrative-layer-bug,C82541,Test Name,23,23,Qualifier,FT
+FTTESTCD,FT,TESTCD,False,True,narrative-layer-bug,C82503,Test Code,23,23,Topic,FT
+MKORRESU,MK,ORRESU,False,True,narrative-layer-bug,C82586,Original Result Unit,21,21,Qualifier,MK
+MKSTRESU,MK,STRESU,False,True,narrative-layer-bug,C82587,Standard Result Unit,21,21,Qualifier,MK
+RSORRESU,RS,ORRESU,False,True,narrative-layer-bug,C82586,Original Result Unit,19,19,Qualifier,RS
+FTSCAT,FT,SCAT,False,True,narrative-layer-bug,C25692,Subcategory,17,17,Qualifier,FT
+GFANMETH,GF,ANMETH,False,True,narrative-layer-bug,C117039,Analysis Method,15,15,Qualifier,GF
+RPLAT,RP,LAT,False,True,narrative-layer-bug,C25185,Laterality,13,13,Qualifier,RP
+RPLOC,RP,LOC,False,True,narrative-layer-bug,C13717,Anatomic Site,13,13,Qualifier,RP
+FALNKID,FA,LNKID,False,True,narrative-layer-bug,C117050,Record Link Identifier,12,12,Identifier,FA
+RSEVLINT,RS,EVLINT,False,True,narrative-layer-bug,C82534,Evaluation Interval,12,12,Timing,RS
+RSSCAT,RS,SCAT,False,True,narrative-layer-bug,C25692,Subcategory,12,12,Qualifier,RS
+URCAT,UR,CAT,False,True,narrative-layer-bug,C25372,Category,10,10,Qualifier,UR
+URDTC,UR,DTC,False,True,narrative-layer-bug,C82515,Collection Date Time,10,10,Timing,UR
+URORRES,UR,ORRES,False,True,narrative-layer-bug,C117221,Original Result or Finding,10,10,Qualifier,UR
+URSTRESC,UR,STRESC,False,True,narrative-layer-bug,C117222,Character Result or Finding in Standard Format,10,10,Qualifier,UR
+URTEST,UR,TEST,False,True,narrative-layer-bug,C82541,Test Name,10,10,Qualifier,UR
+URTESTCD,UR,TESTCD,False,True,narrative-layer-bug,C82503,Test Code,10,10,Topic,UR
+BECAT,BE,CAT,False,True,narrative-layer-bug,C25372,Category,7,7,Qualifier,BE
+BEPARTY,BE,PARTY,False,True,narrative-layer-bug,C117052,Accountable Party,7,7,Topic,BE
+BESPEC,BE,SPEC,False,True,narrative-layer-bug,C70713,Biospecimen Type,7,7,Topic,BE
+BETERM,BE,TERM,False,True,narrative-layer-bug,C82571,Reported Event Term,7,7,Topic,BE
+FTORRESU,FT,ORRESU,False,True,narrative-layer-bug,C82586,Original Result Unit,7,7,Qualifier,FT
+FTSTRESU,FT,STRESU,False,True,narrative-layer-bug,C82587,Standard Result Unit,7,7,Qualifier,FT
+RSEVINTX,RS,EVINTX,False,True,narrative-layer-bug,C117044,Evaluation Interval Text,7,7,Timing,RS
+URLAT,UR,LAT,False,True,narrative-layer-bug,C25185,Laterality,7,7,Qualifier,UR
+URLOC,UR,LOC,False,True,narrative-layer-bug,C13717,Anatomic Site,7,7,Qualifier,UR
+MHLLT,MH,LLT,False,True,narrative-layer-bug,C71886,MedDRA Lowest Level Term,6,6,Qualifier,MH
+MHLLTCD,MH,LLTCD,False,True,narrative-layer-bug,C117048,MedDRA Low Level Term Code,6,6,Qualifier,MH
+MHPTCD,MH,PTCD,False,True,narrative-layer-bug,C117056,MedDRA Preferred Term Code,6,6,Qualifier,MH
+QSEVINTX,QS,EVINTX,False,True,narrative-layer-bug,C117044,Evaluation Interval Text,6,6,Timing,QS
+URMETHOD,UR,METHOD,False,True,narrative-layer-bug,C82535,Test Method,6,6,Qualifier,UR
+GFORRESU,GF,ORRESU,False,True,narrative-layer-bug,C82586,Original Result Unit,5,5,Qualifier,GF
+GFSTRESU,GF,STRESU,False,True,narrative-layer-bug,C82587,Standard Result Unit,5,5,Qualifier,GF
+MKEVAL,MK,EVAL,False,True,narrative-layer-bug,C51824,Evaluator,3,3,Qualifier,MK
+URORRESU,UR,ORRESU,False,True,narrative-layer-bug,C82586,Original Result Unit,3,3,Qualifier,UR
+URSTRESU,UR,STRESU,False,True,narrative-layer-bug,C82587,Standard Result Unit,3,3,Qualifier,UR
+FAMETHOD,FA,METHOD,False,True,narrative-layer-bug,C82535,Test Method,2,2,Qualifier,FA
+MKEVALID,MK,EVALID,False,True,narrative-layer-bug,C117043,Evaluator Identifier,2,2,Qualifier,MK
+URDIR,UR,DIR,False,True,narrative-layer-bug,C54215,Directionality,2,2,Qualifier,UR
+DDORRESU,DD,ORRESU,False,True,narrative-layer-bug,C82586,Original Result Unit,1,1,Qualifier,DD
+DDSTRESU,DD,STRESU,False,True,narrative-layer-bug,C82587,Standard Result Unit,1,1,Qualifier,DD
+QSMETHOD,QS,METHOD,False,True,narrative-layer-bug,C82535,Test Method,1,1,Qualifier,QS
+RSLOC,RS,LOC,False,True,narrative-layer-bug,C13717,Anatomic Site,1,1,Qualifier,RS
+VSMETHOD,VS,METHOD,False,True,narrative-layer-bug,C82535,Test Method,1,1,Qualifier,VS

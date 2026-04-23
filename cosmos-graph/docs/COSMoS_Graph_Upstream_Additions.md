@@ -4,11 +4,12 @@
 
 *cdisc-for-ai, 2026-04-23*
 
-> **Status (2026-04-23).** Scoping — no code written. The findings below
-> emerged from sdtm-narrative 3b (template catalogue authoring) and 3d
-> (DataBook assembly). Each finding identifies something the narrative
-> assembler derives or fabricates at read time that should be in the
-> graph. Execution scheduled for a separate working session.
+> **Status (2026-04-23).** Scoping closed. The findings below emerged
+> from sdtm-narrative 3b (template catalogue authoring) and 3d (DataBook
+> assembly) and motivated the original §3 proposals. A read-only triage
+> pass (§6) has since tested each proposal against actual upstream and
+> downstream state and re-classified them. Execution for this branch
+> follows the revised plan in §6.3, not the original sequencing in §7.
 
 ---
 
@@ -54,7 +55,7 @@ The projection itself is non-trivial: it reads multiple variable rows, filters b
 The natural-English substitution rule (per `templates/00_index.md`) is two-tier: direct hit against `SDTM_Variable_Identity.xlsx`, compositional fallback for domain-instantiated forms (strip the two-character prefix, look up the `--REMAINDER` in the Root subset of NCI EVS Variable Terminology). Coverage in theory: 100%. Coverage in practice against the 2026-Q1 graph (from Tier 2b assembly, 1,326 DSSs):
 
 - 575 DSSs carry `has_unresolved = True`.
-- 103 distinct variable codes do not resolve, including codes that should (`RSSTRESN`, `MKTESTCD`, `MKTEST`, `MKORRES`, `MKSTRESC`) against canonical roots (`--STRESN`, `--TESTCD`, `--TEST`, `--ORRES`, `--STRESC`).
+- 103 distinct variable codes do not resolve, including codes that should (`RSSTRESN`, `MKTESTCD`, `MKTEST`, `MKORRES`, `MKSTRESC`) against canonical roots (`--STRESN`, `--TESTCD`, `--TEST`, `--ORRES`, `--STRESC`). *Triage outcome (see §6.1 §3.5): the four `MK*` codes are narrative-layer bug, not upstream; `RSSTRESN` is a genuine Root-subset gap.*
 
 Two possible causes, pointing different directions:
 
@@ -69,7 +70,7 @@ A diagnostic pass before execution starts is the entry point. One resolved case 
 
 Two of the six HTML reference stories describe BCs that the graph does not fully support at 2026-Q1:
 
-- **6MWT.** BC exists with `bc_type = full_no_ds`. Zero DSS rows. The reference story (`sdtm-narrative/docs/6MWT_COSMoS_Story.html`) describes the questionnaire at QS-domain item grain, extrapolated from SDTMIG first principles.
+- **6MWT.** BC exists with `bc_type = full_no_ds`. Zero DSS rows. The reference story (`sdtm-narrative/docs/6MWT_COSMoS_Story.html`) describes the questionnaire at QS-domain item grain. *Triage outcome (see §6.1 §3.2): the C-code ancestry for the instrument and its items is already materialised in `sdtm-test-codes/machine_actionable/`; what is genuinely missing is DSS rows under the BC.*
 - **X-Ray.** BC exists; two PR-domain DSSs present; zero MK-domain DSSs. The reference story (`sdtm-narrative/docs/XRay_COSMoS_Story.html`) describes both the procedure (PR) and the morphology reading (MK) side. The MK side is extrapolation.
 
 The extrapolations are authored content, grounded in SDTMIG modelling, not fabrication. But they are not CDISC-standards-level content. The architectural question is: where does authored-but-not-standards content live?
@@ -105,7 +106,7 @@ The narrative catalogue surfaces four registry-need arguments across Templates 0
 Reframed against the graph:
 
 - **(1) Specimen-test qualification** is *not* a new registry. It is an enrichment of existing `DSS` rows (a flag or derivation identifying clinically-meaningful test × specimen × method × scale combinations). Most of this content already exists in the `Variables` sheet as pinned qualifier rows; the missing element is a first-class boolean or a named-pattern column. Covered by §3.1 (DSS_Attributes), possibly with an additional qualifying column.
-- **(2) Instrument composition** *is* a new content sheet. Today the 6MWT story hand-assembles instrument → sub-instrument → item ancestry from NCIt parent relations. This should be materialised once. See §3.2.
+- **(2) Instrument composition** was proposed as a new content sheet. *Triage outcome (see §6.1 §3.2): already materialised in `sdtm-test-codes/machine_actionable/`. The reason it felt missing to the narrative assembler is a consumer-side column-name typo, not an upstream gap.*
 - **(3) Cross-domain composition** is *not* a registry — it is a derived view. `GROUP BY bc_id, HAVING COUNT(DISTINCT domain_class) > 1`. No new content; a flag column or a view. See §3.3.
 - **(4) Case specialisations** — two sheets per §2.4 and §3.4.
 
@@ -241,12 +242,52 @@ A new pattern in the graph layer.
 - No change to the flattener's source-side contract. Inputs stay on the `cosmos-bc-dss/downloads/cdisc_*.xlsx` files.
 - No change to the LinkML schema. The new sheets (`DSS_Attributes`, `Instrument_Composition`, `Case_Specialisations`) are derivations over existing classes, not new classes in the schema.
 - No back-compat requirement with legacy `interim/COSMoS_BC_DSS.xlsx`. That file stays as-is until consumer tracks fully migrate to `COSMoS_Graph.xlsx`.
-- No SDRG integration, no sponsor-onboarding tooling. The overlay file exists; mechanisms for sponsors to contribute overlay content are out of scope.
+- No SDRG integration, no sponsor-onboarding tooling. If the overlay file is produced (see §6.3), mechanisms for sponsors to contribute overlay content are out of scope.
 - No case-specialisation narrative format. Template 04 stays in sdtm-narrative. This document adds the data layer it reads.
 
-## 6. Sequencing
+## 6. Triage outcome (2026-04-23)
 
-Suggested order for the execution session. Each item is independently valuable — stop after any step if scope forces a cut.
+Executed as a read-only pass after §3.5 landed. For each §3 item, the triage asks two questions: (a) does the finding hold up against actual upstream and downstream state, and (b) if it does, is the proposed cosmos-graph addition the right response, or is the work better located in a consumer track or in upstream CDISC. The evidence is captured per-item; the revised execution plan for this branch is in §6.3.
+
+### 6.1 Per-item verdict
+
+**§3.1 `DSS_Attributes` — deferred (pre-investment).** The `dss_attributes()` helper in `sdtm-narrative/notebooks/60_assemble_databooks.ipynb` cell 8 is a 20-line loop over a fixed suffix list (`SPEC, METHOD, CAT, SCAT, ORRESU, STRESU, LOINC, FAST, POS, LOC, DECOD`). No structural-type branching in the actual code — the "structural_type_context column" in §3.1 is a forward-looking hedge, not reflected in current consumer logic. One consumer uses the projection today. Materialising a new long-format sheet adds storage and a new schema surface for a projection that fits in twenty lines. Revisit when a second consumer appears.
+
+**§3.2 `Instrument_Composition` — not needed in cosmos-graph (consumer-side fix).** The payload §3.2 describes — instrument → item ancestry with NCIt C-codes — is already materialised in `sdtm-test-codes/machine_actionable/`. `SDTM_Instrument_Identity.xlsx` carries SIXMW1TC with `Instrument_NCIt_Code = C115789`; `SDTM_Instrument_Test_Identity.xlsx` carries its six SIXMW101–106 items with C-codes C115800–C115805. The 10,311 rows across 359 instrument codelists cover the full scope §3.2 estimated. The reason this did not feel available to the narrative layer is a column-name typo in `60_assemble_databooks.ipynb` cell 16 (`NCIt_Instrument_Code` vs actual `Instrument_NCIt_Code`). Fix belongs in sdtm-narrative on a separate branch, not here.
+
+**§3.3 BC cross-domain flags — contingent on §3.6.** Of the 903 BCs with at least one DSS row in `cosmos-graph/interim/COSMoS_Graph.xlsx` (1,345 total; 442 have `bc_type = full_no_ds` and are structurally incapable of cross-class), zero are cross-Observation_Class at 2026-Q1. The proposed `is_cross_domain_class` column would be uniformly `False`. Template 03 in the narrative catalogue has no standards-scope data to render against. The flag becomes meaningful only if authored content (e.g. an X-Ray MK-side DSS via §3.6 overlay) introduces a cross-class pairing. Defer until §3.6 decides.
+
+**§3.4 `Case_Specialisations` — downstream concern, not upstream.** Six cases hard-coded in `60_assemble_databooks.ipynb` cell 10 with HTML-story provenance. They belong in a proper registry — but the registry is narrative-layer authored interpretation, not CDISC COSMoS source content. Putting them in the core graph would stretch §4's lossless-over-source contract. Registry upgrade stays in sdtm-narrative on a separate branch. Cosmos-graph owns no §3.4 work.
+
+**§3.5 Root-subset fallback diagnostic — closed.** Output at `cosmos-graph/reports/root_subset_fallback_diagnostic.{md,csv}` and diagnostic script at `cosmos-graph/scripts/root_subset_fallback_diagnostic.py`. Result: 66 of 103 unresolved codes (1,245 DSS-rows) collapse into a one-line `var_nn` fix in `sdtm-narrative` (strip the two-char prefix; do not prepend `--`); 37 codes (806 DSS-rows) are genuine EVS Root-subset gaps, dominated by GF* family, `STRESN` across domains, and `ISBDAGNT`. No cosmos-graph action. Narrative-layer fix and CDISC/EVS content ask both tracked outside this branch.
+
+**§3.6 Overlay file — decision-pending, payload smaller than §3.6 implied.** The overlay's claimed payload was (a) 6MWT questionnaire items, (b) X-Ray MK-side DSSs, (c) sponsor-scope cases. Breakdown:
+
+- *6MWT items.* The C-code ancestry (parent instrument C115789 + six items) is already in `sdtm-test-codes/` — not overlay-shaped content, it is upstream content the consumer is not reading. What is overlay-shaped is authoring DSS rows under the 6MWT BC, which has `bc_type = full_no_ds` in `COSMoS_Graph.xlsx`. That is a separate, much smaller payload than "the 6MWT track-authored items" implies.
+- *X-Ray MK-side.* Confirmed absent: `COSMoS_Graph.xlsx` BC sheet has bc_id `C38101` ("X-Ray Imaging") with two DSSs — `XRAY` and `XRAYCHEST`, both PR-domain. No MK-domain coverage. If authored, these are the cleanest candidates for overlay — genuinely net-new and unambiguously track-authored extrapolation.
+- *Sponsor-scope cases.* Tied to §3.4 outcome (X-Ray pinning vocabularies).
+
+The overlay *architecture* (§4 pattern) is sound and is the right place for (b) and (c) if authored. But building the file as a skeleton in this branch is only worth doing if at least one row is authored. Otherwise the skeleton sits empty and the architectural decision stays on paper. Recommendation: with §3.4 moved downstream, the overlay file has no payload in this session. Overlay stays as a documented architectural pattern for the two remaining candidates (6MWT DSSs under `full_no_ds`, X-Ray MK-side DSSs), both of which are out of scope for this branch.
+
+### 6.2 Cross-cutting observation
+
+Three of the six original items (§3.1, §3.2, §3.3) are not content the graph is missing — they are projections or fixes that belong in a consumer track or in a follow-up after overlay content exists. The triage narrows the upstream work for this branch to the items where cosmos-graph genuinely owns the content: §3.4 and §3.6.
+
+### 6.3 Revised execution plan (this branch)
+
+1. **§3.5.** Closed. No further work.
+2. **§3.4, §3.6.** Reclassified as out of scope for cosmos-graph. Case specialisations are narrative-layer authored interpretation, not COSMoS source projection — they stay in sdtm-narrative. With §3.4 moved downstream, §3.6 overlay has no payload in this session and stays a documented pattern.
+3. **§3.1, §3.2, §3.3.** Not executed in this branch. §3.2 migrates to a sdtm-narrative-side column-name fix. §3.3 waits on §3.6 outcome. §3.1 waits on a second consumer.
+4. **Net deliverable for this branch:** §3.5 diagnostic + triage documentation. That is all.
+
+Narrative-track follow-ups (separate branches off main, not this one):
+
+- `var_nn` two-char strip fix in `sdtm-narrative/notebooks/40_assemble_narrative.ipynb` cell 4 and `60_assemble_databooks.ipynb` cell 4.
+- `Instrument_NCIt_Code` typo fix in `60_assemble_databooks.ipynb` cell 16, with rewire to read `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx` + `SDTM_Instrument_Test_Identity.xlsx`.
+
+## 7. Original sequencing (pre-triage)
+
+Superseded by §6.3. Kept for the record.
 
 1. **§3.5 diagnostic first.** Cheap. Collapses or confirms §3.5 and possibly narrows §2.2 before anything else runs.
 2. **§3.3 BC enrichment.** Smallest change. Pure addition to an existing sheet. Unblocks Template 03 reads.
@@ -255,9 +296,7 @@ Suggested order for the execution session. Each item is independently valuable �
 5. **§3.6 overlay file skeleton.** Before §3.4 proper if X-Ray cases classify as sponsor-scope, otherwise after. Carries the 6MWT track-authored items.
 6. **§3.2 `Instrument_Composition`.** Largest content sourcing (NCIt traversal). Arguably belongs in `COSMoS_Graph_CT.xlsx` — deferred to execution.
 
-After this wave lands, the narrative track simplifies: `dss_attributes()` helper in notebook 60 disappears (replaced by direct `DSS_Attributes` reads), case-spec inline registry disappears (replaced by `Case_Specialisations` reads), and the 6MWT / X-Ray DataBooks either render from overlay content or continue to publish gap-arguments — a downstream choice, not an upstream one.
-
-## 7. Cross-references
+## 8. Cross-references
 
 - [COSMoS_Flattener_Rewrite.md](COSMoS_Flattener_Rewrite.md) — Step 2 design record. This document is the natural successor.
 - [COSMoS_Graph_As_Authored.md](COSMoS_Graph_As_Authored.md) — source-side schema reference.
