@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Glucose DataBook</title>
+<style>
+body { font: 15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+       max-width: 960px; margin: 2em auto; padding: 0 1em; color: #222; }
+h1 { border-bottom: 2px solid #1F4E79; padding-bottom: 0.2em; }
+h2 { color: #1F4E79; margin-top: 1.6em; border-bottom: 1px solid #ddd; padding-bottom: 0.1em; }
+h3 { color: #444; margin-top: 1.4em; }
+h4 { color: #666; }
+code { background: #f5f5f5; padding: 0.1em 0.35em; border-radius: 3px;
+       font: 13px/1.4 'SF Mono',Menlo,monospace; }
+table { border-collapse: collapse; margin: 0.6em 0 1em 0; }
+th, td { border: 1px solid #e0e0e0; padding: 0.35em 0.7em; text-align: left; vertical-align: top; }
+th { background: #f6f8fa; }
+blockquote { border-left: 4px solid #d0a84a; background: #fdf6e3; margin: 1em 0; padding: 0.6em 1em; }
+blockquote h3 { margin-top: 0; color: #8a6d3b; }
+em { color: #666; }
+</style>
+</head>
+<body><h1>Glucose — COSMoS DataBook</h1>
+<p><em>BC <code>C105585</code> — Glucose Measurement.</em></p>
+<p><em>Generated from <code>COSMoS_Graph.xlsx</code> via the template catalogue under <code>sdtm-narrative/reference/templates/</code>.</em></p>
+<hr>
+<h2>BC opener</h2>
+<p><strong>Glucose Measurement</strong> (C105585) is a <em>full</em> biomedical concept in the Laboratory Tests;Chemistry Tests category. It realises 8 dataset specialisations, all in domain <code>LB</code> — a specimen-based-findings pattern.</p>
+<p><em>Definition.</em> The determination of the amount of glucose present in a sample.</p>
+<p><em>Result scales available.</em> Quantitative;Ordinal</p>
+<hr>
+<h2>DSS `GLUCBLD` — Glucose Concentration in Blood</h2>
+<p>The <strong>Glucose Concentration in Blood</strong> specialisation (<code>GLUCBLD</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>CHEMISTRY</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBORRESU</code></td><td>Laboratory Test Original Result Unit</td><td>Qualifier</td><td></td><td>UNIT</td><td>mg/dL;mmol/L</td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESN</code></td><td>Laboratory Test Numeric Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESU</code></td><td>Laboratory Test Result Standard Unit</td><td>Qualifier</td><td>mmol/L</td><td>UNIT</td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td></td><td></td><td>2339-0;15074-8</td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>BLOOD</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBMETHOD</code></td><td>Laboratory Test Method</td><td>Qualifier</td><td></td><td>METHOD</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>BLOOD</strong> <em>(pinned)</em></td></tr>
+<tr><td>Method</td><td>open, codelist <code>METHOD</code></td></tr>
+<tr><td>Category</td><td><strong>CHEMISTRY</strong> <em>(pinned)</em></td></tr>
+<tr><td>Orig Unit</td><td>open, constrained to <code>mg/dL;mmol/L</code></td></tr>
+<tr><td>Std Unit</td><td><strong>mmol/L</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td>open, constrained to <code>2339-0;15074-8</code></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCBLD</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Concentration in Blood</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCPE` — Plasma Equivalent Glucose</h2>
+<p>The <strong>Plasma Equivalent Glucose</strong> specialisation (<code>GLUCPE</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUCPE</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUCPE</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Plasma Equivalent Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>CHEMISTRY</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBORRESU</code></td><td>Laboratory Test Original Result Unit</td><td>Qualifier</td><td></td><td>UNIT</td><td>mg/dL;g/L;mmol/L</td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESN</code></td><td>Laboratory Test Numeric Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESU</code></td><td>Laboratory Test Result Standard Unit</td><td>Qualifier</td><td>mmol/L</td><td>UNIT</td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td></td><td></td><td>99504-3;105272-9</td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>INTERSTITIAL FLUID</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBMETHOD</code></td><td>Laboratory Test Method</td><td>Qualifier</td><td></td><td>METHOD</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>INTERSTITIAL FLUID</strong> <em>(pinned)</em></td></tr>
+<tr><td>Method</td><td>open, codelist <code>METHOD</code></td></tr>
+<tr><td>Category</td><td><strong>CHEMISTRY</strong> <em>(pinned)</em></td></tr>
+<tr><td>Orig Unit</td><td>open, constrained to <code>mg/dL;g/L;mmol/L</code></td></tr>
+<tr><td>Std Unit</td><td><strong>mmol/L</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td>open, constrained to <code>99504-3;105272-9</code></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCPE</td></tr>
+<tr><td>DS_short_name</td><td>Plasma Equivalent Glucose</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCPL` — Glucose Concentration in Plasma</h2>
+<p>The <strong>Glucose Concentration in Plasma</strong> specialisation (<code>GLUCPL</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>CHEMISTRY</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBORRESU</code></td><td>Laboratory Test Original Result Unit</td><td>Qualifier</td><td></td><td>UNIT</td><td>mg/dL;g/L;mmol/L</td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESN</code></td><td>Laboratory Test Numeric Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESU</code></td><td>Laboratory Test Result Standard Unit</td><td>Qualifier</td><td>mmol/L</td><td>UNIT</td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>PLASMA</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>PLASMA</strong> <em>(pinned)</em></td></tr>
+<tr><td>Category</td><td><strong>CHEMISTRY</strong> <em>(pinned)</em></td></tr>
+<tr><td>Orig Unit</td><td>open, constrained to <code>mg/dL;g/L;mmol/L</code></td></tr>
+<tr><td>Std Unit</td><td><strong>mmol/L</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td>open</td></tr>
+</table>
+<h3>Case specialisations refining this DSS (Template 04)</h3>
+<h4>Case specialisation — ID001: Fasting Plasma Glucose (FPG)</h4>
+<p>Parent DSS: <code>GLUCPL</code></p>
+<p>Case type: recording-child</p>
+<p><strong>Inside-DSS pinning (overlay on parent):</strong></p>
+<ul><li><code>LBFAST</code> = <strong>Y</strong> — pinned on a slot the DSS already reserves</li>
+</ul><p>Rationale: Fasting sample carries the clinical diagnostic intent</p>
+<p><em>Source: <code>docs/Glucose_StudyIntent_Story.html</code></em></p>
+<h4>Case specialisation — ID002: OGTT 2-Hour Plasma Glucose</h4>
+<p>Parent DSS: <code>GLUCPL</code></p>
+<p>Case type: recording-child</p>
+<p>Composes with: OGTT 75g oral challenge (SoA-scheduling parent, study-design object)</p>
+<p><strong>Inside-DSS pinning (overlay on parent):</strong></p>
+<ul><li><code>LBFAST</code> = <strong>N</strong> — post-challenge sample</li>
+</ul><p>Rationale: Post-challenge sample under OGTT 75g protocol</p>
+<p><em>Source: <code>docs/Glucose_StudyIntent_Story.html</code></em></p>
+<h4>Case specialisation — ID003: OGTT Fasting (Pre-Challenge) Plasma Glucose</h4>
+<p>Parent DSS: <code>GLUCPL</code></p>
+<p>Case type: recording-child</p>
+<p>Composes with: OGTT 75g oral challenge (same SoA-scheduling parent as ID002)</p>
+<p><strong>Inside-DSS pinning (overlay on parent):</strong></p>
+<ul><li><code>LBFAST</code> = <strong>Y</strong> — pre-challenge baseline</li>
+</ul><p>Rationale: Pre-challenge baseline under OGTT 75g protocol</p>
+<p><em>Source: <code>docs/Glucose_StudyIntent_Story.html</code></em></p>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCPL</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Concentration in Plasma</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCSER` — Glucose Concentration in Serum</h2>
+<p>The <strong>Glucose Concentration in Serum</strong> specialisation (<code>GLUCSER</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>CHEMISTRY</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBORRESU</code></td><td>Laboratory Test Original Result Unit</td><td>Qualifier</td><td></td><td>UNIT</td><td>mg/dL;g/L;mmol/L</td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESN</code></td><td>Laboratory Test Numeric Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESU</code></td><td>Laboratory Test Result Standard Unit</td><td>Qualifier</td><td>mmol/L</td><td>UNIT</td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>SERUM</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>SERUM</strong> <em>(pinned)</em></td></tr>
+<tr><td>Category</td><td><strong>CHEMISTRY</strong> <em>(pinned)</em></td></tr>
+<tr><td>Orig Unit</td><td>open, constrained to <code>mg/dL;g/L;mmol/L</code></td></tr>
+<tr><td>Std Unit</td><td><strong>mmol/L</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td>open</td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCSER</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Concentration in Serum</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCSERPL` — Glucose Concentration in Serum or Plasma</h2>
+<p>The <strong>Glucose Concentration in Serum or Plasma</strong> specialisation (<code>GLUCSERPL</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>CHEMISTRY</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBORRESU</code></td><td>Laboratory Test Original Result Unit</td><td>Qualifier</td><td></td><td>UNIT</td><td>mg/dL;g/L;mmol/L</td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESN</code></td><td>Laboratory Test Numeric Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESU</code></td><td>Laboratory Test Result Standard Unit</td><td>Qualifier</td><td>mmol/L</td><td>UNIT</td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td></td><td></td><td>14749-6;2345-7</td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>SERUM</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>SERUM</strong> <em>(pinned)</em></td></tr>
+<tr><td>Category</td><td><strong>CHEMISTRY</strong> <em>(pinned)</em></td></tr>
+<tr><td>Orig Unit</td><td>open, constrained to <code>mg/dL;g/L;mmol/L</code></td></tr>
+<tr><td>Std Unit</td><td><strong>mmol/L</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td>open, constrained to <code>14749-6;2345-7</code></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCSERPL</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Concentration in Serum or Plasma</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCUA` — Glucose Presence in Urine by Test Strip</h2>
+<p>The <strong>Glucose Presence in Urine by Test Strip</strong> specialisation (<code>GLUCUA</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>URINALYSIS</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td>25428-4</td><td></td><td></td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>URINE</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBMETHOD</code></td><td>Laboratory Test Method</td><td>Qualifier</td><td>TEST STRIP</td><td>METHOD</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>URINE</strong> <em>(pinned)</em></td></tr>
+<tr><td>Method</td><td><strong>TEST STRIP</strong> <em>(pinned)</em></td></tr>
+<tr><td>Category</td><td><strong>URINALYSIS</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td><strong>25428-4</strong> <em>(pinned)</em></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCUA</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Presence in Urine by Test Strip</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCURIN` — Glucose Concentration in Urine</h2>
+<p>The <strong>Glucose Concentration in Urine</strong> specialisation (<code>GLUCURIN</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>CHEMISTRY</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBORRESU</code></td><td>Laboratory Test Original Result Unit</td><td>Qualifier</td><td></td><td>UNIT</td><td>mg/dL;mmol/L;umol/L</td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESN</code></td><td>Laboratory Test Numeric Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESU</code></td><td>Laboratory Test Result Standard Unit</td><td>Qualifier</td><td>mmol/L</td><td>UNIT</td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td></td><td></td><td>15076-3;2350-7</td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>URINE</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>URINE</strong> <em>(pinned)</em></td></tr>
+<tr><td>Category</td><td><strong>CHEMISTRY</strong> <em>(pinned)</em></td></tr>
+<tr><td>Orig Unit</td><td>open, constrained to <code>mg/dL;mmol/L;umol/L</code></td></tr>
+<tr><td>Std Unit</td><td><strong>mmol/L</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td>open, constrained to <code>15076-3;2350-7</code></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCURIN</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Concentration in Urine</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<h2>DSS `GLUCURINPRES` — Glucose Presence in Urine</h2>
+<p>The <strong>Glucose Presence in Urine</strong> specialisation (<code>GLUCURINPRES</code>) realises the <strong>Glucose Measurement</strong> biomedical concept as a LB-domain row template. It pins <code>LBTESTCD = GLUC</code>. Added to SDTMIG in 3-2.</p>
+<h3>Variables (Template 01 band 3a)</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>LBTESTCD</code></td><td>Laboratory Test Code</td><td>Topic</td><td>GLUC</td><td>LBTESTCD</td><td></td></tr>
+<tr><td><code>LBTEST</code></td><td>Laboratory Test Name</td><td>Qualifier</td><td>Glucose</td><td>LBTEST</td><td></td></tr>
+<tr><td><code>LBCAT</code></td><td>Laboratory Test Category</td><td>Qualifier</td><td>URINALYSIS</td><td></td><td></td></tr>
+<tr><td><code>LBORRES</code></td><td>Laboratory Test Original Result</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBSTRESC</code></td><td>Laboratory Test Character Result in Standard Unit</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>LBLOINC</code></td><td>Laboratory Test LOINC Code</td><td>Qualifier</td><td>2349-9</td><td></td><td></td></tr>
+<tr><td><code>LBSPEC</code></td><td>Laboratory Specimen Type</td><td>Qualifier</td><td>URINE</td><td>SPECTYPE</td><td></td></tr>
+<tr><td><code>LBFAST</code></td><td>Laboratory Test Fasting Status</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>LBDTC</code></td><td>Laboratory Test Collection Date Time</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Measurement-spec attributes (band 3a)</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Specimen</td><td><strong>URINE</strong> <em>(pinned)</em></td></tr>
+<tr><td>Category</td><td><strong>URINALYSIS</strong> <em>(pinned)</em></td></tr>
+<tr><td>Fast</td><td>open, constrained to <code>N;Y</code></td></tr>
+<tr><td>Loinc</td><td><strong>2349-9</strong> <em>(pinned)</em></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C105585</td></tr>
+<tr><td>BC_short_name</td><td>Glucose Measurement</td></tr>
+<tr><td>BC_definition</td><td>The determination of the amount of glucose present in a sample.</td></tr>
+<tr><td>BC_categories</td><td>Laboratory Tests;Chemistry Tests</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Quantitative;Ordinal</td></tr>
+<tr><td>DS_Code</td><td>GLUCURINPRES</td></tr>
+<tr><td>DS_short_name</td><td>Glucose Presence in Urine</td></tr>
+<tr><td>Domain</td><td>LB</td></tr>
+<tr><td>sdtmig_since</td><td>3-2</td></tr>
+</table>
+<hr>
+<h2>BC-scope sibling summary</h2>
+<p><strong>Sibling DSSs under the same BC:</strong></p>
+<ul><li><code>GLUCBLD</code> — Glucose Concentration in Blood (domain LB)</li>
+<li><code>GLUCPE</code> — Plasma Equivalent Glucose (domain LB)</li>
+<li><code>GLUCPL</code> — Glucose Concentration in Plasma (domain LB)</li>
+<li><code>GLUCSER</code> — Glucose Concentration in Serum (domain LB)</li>
+<li><code>GLUCSERPL</code> — Glucose Concentration in Serum or Plasma (domain LB)</li>
+<li><code>GLUCUA</code> — Glucose Presence in Urine by Test Strip (domain LB)</li>
+<li><code>GLUCURIN</code> — Glucose Concentration in Urine (domain LB)</li>
+<li><code>GLUCURINPRES</code> — Glucose Presence in Urine (domain LB)</li>
+</ul><blockquote>
+<h3>Registry gap — specimen-test qualification</h3>
+<p>The COSMoS graph models <strong>Glucose Measurement</strong> at the BC level and its</p>
+<p>8 specialisations at the DSS level, but does not</p>
+<p>carry a first-class registry of *which test–specimen–method</p>
+<p>combinations are clinically meaningful*. The sibling DSSs are</p>
+<p>the practical evidence such combinations exist; the graph</p>
+<p>represents them only as separate DSS rows, not as a qualified</p>
+<p>proposition.</p>
+<p>A registry of shape *(BC, TESTCD, specimen, method, result_scale,</p>
+<p>qualified_by)* would make specimen–test qualification machine-</p>
+<p>actionable.</p>
+</blockquote>
+<blockquote>
+<h3>Registry gap — case specialisations</h3>
+<p>The cases above are encoded inline in this notebook from the</p>
+<p>reference HTML stories. A registry of shape</p>
+<p>*(case_spec_id, parent_dss, case_type, composes_with, rationale,</p>
+<p>ext_ref)* would lift these from story prose into machine-</p>
+<p>actionable first-class content.</p>
+</blockquote></body></html>

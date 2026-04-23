@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Chest X-Ray DataBook</title>
+<style>
+body { font: 15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+       max-width: 960px; margin: 2em auto; padding: 0 1em; color: #222; }
+h1 { border-bottom: 2px solid #1F4E79; padding-bottom: 0.2em; }
+h2 { color: #1F4E79; margin-top: 1.6em; border-bottom: 1px solid #ddd; padding-bottom: 0.1em; }
+h3 { color: #444; margin-top: 1.4em; }
+h4 { color: #666; }
+code { background: #f5f5f5; padding: 0.1em 0.35em; border-radius: 3px;
+       font: 13px/1.4 'SF Mono',Menlo,monospace; }
+table { border-collapse: collapse; margin: 0.6em 0 1em 0; }
+th, td { border: 1px solid #e0e0e0; padding: 0.35em 0.7em; text-align: left; vertical-align: top; }
+th { background: #f6f8fa; }
+blockquote { border-left: 4px solid #d0a84a; background: #fdf6e3; margin: 1em 0; padding: 0.6em 1em; }
+blockquote h3 { margin-top: 0; color: #8a6d3b; }
+em { color: #666; }
+</style>
+</head>
+<body><h1>Chest X-Ray — COSMoS DataBook</h1>
+<p><em>BC <code>C38101</code> — X-Ray Imaging.</em></p>
+<p><em>Generated from <code>COSMoS_Graph.xlsx</code> via the template catalogue.</em></p>
+<hr>
+<h2>BC opener</h2>
+<p><strong>X-Ray Imaging</strong> (C38101) binds 2 DSSs in the current graph, all in domain <code>PR</code>.</p>
+<p><em>Definition.</em> A radiographic procedure using the emission of x-rays to form an image of the structure penetrated by the radiation.</p>
+<p><em>Categories.</em> Diagnostic Imaging;Medical Imaging</p>
+<hr>
+<h2>Data-integrity note</h2>
+<p><code>docs/XRay_COSMoS_Story.html</code> argues a cross-Domain_Class composition where the same BC binds both a PR DSS (procedure performed) and an MK DSS (finding read from the image). The current graph carries only PR-domain DSSs for <code>C38101</code>. Template 03's cross-class band (Band 3c and Band 5 cross-domain registry-need) is therefore published here as a <em>gap argument</em>, not as a rendered binding.</p>
+<h2>DSS `XRAY` — X-Ray</h2>
+<p>The <strong>X-Ray</strong> specialisation (<code>XRAY</code>) realises the <strong>X-Ray Imaging</strong> biomedical concept as a PR-domain row template. It pins <code>PRTESTCD = —</code>. Added to SDTMIG in 3-4.</p>
+<h3>Variables</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>PRTRT</code></td><td>Reported Name of Procedure</td><td>Topic</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRDECOD</code></td><td>Standardized Name of Procedure</td><td>Qualifier</td><td>X-RAY</td><td>PROCEDUR</td><td></td></tr>
+<tr><td><code>PRCAT</code></td><td>Procedure Category</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRSCAT</code></td><td>Procedure Subcategory</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRPRESP</code></td><td>Procedure Pre-specified</td><td>Qualifier</td><td></td><td>NY</td><td>Y</td></tr>
+<tr><td><code>PROCCUR</code></td><td>Procedure Occurrence</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>PRLOC</code></td><td>Procedure Location</td><td>Qualifier</td><td></td><td>LOC</td><td>CHEST, HEAD, ABDOMINAL REGION, CERVICAL SPINE, THORACIC SPINE, LUMBAR SPINE</td></tr>
+<tr><td><code>PRSTDTC</code></td><td>Start Date and Time of Procedure</td><td>Timing</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRENDTC</code></td><td>End Date and Time of Procedure</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Attributes</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Category</td><td>open</td></tr>
+<tr><td>Sub Category</td><td>open</td></tr>
+<tr><td>Location</td><td>open, constrained to <code>CHEST, HEAD, ABDOMINAL REGION, CERVICAL SPINE, THORACIC SPINE, LUMBAR SPINE</code></td></tr>
+<tr><td>Decod</td><td><strong>X-RAY</strong> <em>(pinned)</em></td></tr>
+</table>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C38101</td></tr>
+<tr><td>BC_short_name</td><td>X-Ray Imaging</td></tr>
+<tr><td>BC_definition</td><td>A radiographic procedure using the emission of x-rays to form an image of the structure penetrated by the radiation.</td></tr>
+<tr><td>BC_categories</td><td>Diagnostic Imaging;Medical Imaging</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Nominal</td></tr>
+<tr><td>DS_Code</td><td>XRAY</td></tr>
+<tr><td>DS_short_name</td><td>X-Ray</td></tr>
+<tr><td>Domain</td><td>PR</td></tr>
+<tr><td>sdtmig_since</td><td>3-4</td></tr>
+</table>
+<h2>DSS `XRAYCHEST` — Chest X-Ray</h2>
+<p>The <strong>Chest X-Ray</strong> specialisation (<code>XRAYCHEST</code>) realises the <strong>X-Ray Imaging</strong> biomedical concept as a PR-domain row template. It pins <code>PRTESTCD = —</code>. Added to SDTMIG in 3-4.</p>
+<h3>Variables</h3>
+<table>
+<tr><th>Variable</th><th>Natural name</th><th>Role</th><th>Pinned value</th><th>Codelist</th><th>Value list</th></tr>
+<tr><td><code>PRTRT</code></td><td>Reported Name of Procedure</td><td>Topic</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRDECOD</code></td><td>Standardized Name of Procedure</td><td>Qualifier</td><td>X-RAY</td><td>PROCEDUR</td><td></td></tr>
+<tr><td><code>PRCAT</code></td><td>Procedure Category</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRSCAT</code></td><td>Procedure Subcategory</td><td>Qualifier</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRPRESP</code></td><td>Procedure Pre-specified</td><td>Qualifier</td><td></td><td>NY</td><td>Y</td></tr>
+<tr><td><code>PROCCUR</code></td><td>Procedure Occurrence</td><td>Qualifier</td><td></td><td>NY</td><td>N;Y</td></tr>
+<tr><td><code>PRLOC</code></td><td>Procedure Location</td><td>Qualifier</td><td>CHEST</td><td>LOC</td><td></td></tr>
+<tr><td><code>PRSTDTC</code></td><td>Start Date and Time of Procedure</td><td>Timing</td><td></td><td></td><td></td></tr>
+<tr><td><code>PRENDTC</code></td><td>End Date and Time of Procedure</td><td>Timing</td><td></td><td></td><td></td></tr>
+</table>
+<h3>Attributes</h3>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Category</td><td>open</td></tr>
+<tr><td>Sub Category</td><td>open</td></tr>
+<tr><td>Location</td><td><strong>CHEST</strong> <em>(pinned)</em></td></tr>
+<tr><td>Decod</td><td><strong>X-RAY</strong> <em>(pinned)</em></td></tr>
+</table>
+<h3>Case specialisations refining this DSS (Template 04)</h3>
+<h4>Case specialisation — ID101: Standing PA Chest X-Ray</h4>
+<p>Parent DSS: <code>XRAYCHEST</code></p>
+<p>Case type: recording-child + SoA-activity</p>
+<p><em>No additional inside-DSS pinning — case inherits parent pins only.</em></p>
+<p>Rationale: Standard diagnostic standing PA; inherits XRAYCHEST pins (PRDECOD=X-RAY, PRLOC=CHEST).</p>
+<p><em>Source: <code>docs/XRay_PatientBurden_Story.html</code></em></p>
+<h4>Case specialisation — ID102: Supine Portable Chest X-Ray</h4>
+<p>Parent DSS: <code>XRAYCHEST</code></p>
+<p>Case type: recording-child + SoA-activity</p>
+<p><em>No additional inside-DSS pinning — case inherits parent pins only.</em></p>
+<p>Rationale: Portable supine; inherits XRAYCHEST pins; no additional slot available.</p>
+<p><em>Source: <code>docs/XRay_PatientBurden_Story.html</code></em></p>
+<h4>Case specialisation — ID103: Semi-Recumbent Chest X-Ray (Post-Op Follow-Up)</h4>
+<p>Parent DSS: <code>XRAYCHEST</code></p>
+<p>Case type: recording-child + SoA-activity</p>
+<p>Composes with: Post-operative assessment event (SoA-scheduling parent, study-design object)</p>
+<p><em>No additional inside-DSS pinning — case inherits parent pins only.</em></p>
+<p>Rationale: Post-operative follow-up positioning; inherits XRAYCHEST pins.</p>
+<p><em>Source: <code>docs/XRay_PatientBurden_Story.html</code></em></p>
+<h3>Flattened row (band 4 stub)</h3>
+<p>*Flattened row (band 4) — stub rendering from graph; the</p>
+<p><code>COSMoS_Graph_Flat.xlsx</code> round-trip file is not yet produced.*</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>BC_ID</td><td>C38101</td></tr>
+<tr><td>BC_short_name</td><td>X-Ray Imaging</td></tr>
+<tr><td>BC_definition</td><td>A radiographic procedure using the emission of x-rays to form an image of the structure penetrated by the radiation.</td></tr>
+<tr><td>BC_categories</td><td>Diagnostic Imaging;Medical Imaging</td></tr>
+<tr><td>BC_type</td><td>full</td></tr>
+<tr><td>result_scales</td><td>Nominal</td></tr>
+<tr><td>DS_Code</td><td>XRAYCHEST</td></tr>
+<tr><td>DS_short_name</td><td>Chest X-Ray</td></tr>
+<tr><td>Domain</td><td>PR</td></tr>
+<tr><td>sdtmig_since</td><td>3-4</td></tr>
+</table>
+<hr>
+<h2>Cross-Domain_Class framing</h2>
+<p>The reference story posits an MK-domain partner DSS (morphological finding). In the current graph both DSSs are PR-domain. The cross-class proposition the BC should realise is:</p>
+<blockquote>
+<p><em>A chest X-ray, as a clinical event, is simultaneously a procedure executed (PR-domain) and a morphological observation read from the resulting image (MK-domain). Both rows belong together under this BC.</em></p>
+</blockquote>
+<blockquote>
+<h3>Registry gap — cross-domain composition</h3>
+<p>The <strong>X-Ray Imaging</strong> BC binds DSSs in the PR domain (<code>XRAY</code>,</p>
+<p><code>XRAYCHEST</code>). The MK-domain framing argued for in</p>
+<p><code>docs/XRay_COSMoS_Story.html</code> (the finding read from the image)</p>
+<p>is prospective — it is not present in the current graph. A</p>
+<p>cross-domain-class registry would name which Domain_Class</p>
+<p>bindings are expected for which clinical events.</p>
+</blockquote>
+<blockquote>
+<h3>Registry gap — case specialisations</h3>
+<p>The cases above are encoded inline in this notebook from the</p>
+<p>reference HTML stories. A registry of shape</p>
+<p>*(case_spec_id, parent_dss, case_type, composes_with, rationale,</p>
+<p>ext_ref)* would lift these from story prose into machine-</p>
+<p>actionable first-class content.</p>
+</blockquote></body></html>
