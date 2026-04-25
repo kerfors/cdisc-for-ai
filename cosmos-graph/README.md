@@ -18,7 +18,7 @@ The graph layer. Turns the CDISC COSMoS export into a multi-sheet graph projecti
 | [`20_resolve_ct.ipynb`](notebooks/20_resolve_ct.ipynb) | CT resolve | `interim/COSMoS_Graph_CT.xlsx` |
 | [`30_validate_graph.ipynb`](notebooks/30_validate_graph.ipynb) | Validate | `reports/graph_validation_report.{md,json}` |
 
-**Flatten** is a SchemaView walk over the CDISC xlsx export (`cosmos-bc-dss/downloads/`), using the LinkML schemas under [`reference/cosmos_linkml/`](reference/cosmos_linkml/) as the class/slot bridge. Produces six sheets: `BC`, `DSS`, `Variables` (VLM-row grain with the reification quad inlined), `Relationships` (reified edges, long format), `Codelists`, plus `ReadMe`.
+**Flatten** is a SchemaView walk over the CDISC xlsx export (`cosmos-bc-dss/downloads/`), using the LinkML schemas under [`reference/cosmos_linkml/`](reference/cosmos_linkml/) as the class/slot bridge. Produces eleven sheets: `ReadMe`; BC-side group `BC`, `BC_Parents`, `BC_Categories`, `Categories`, `Coding`, `DataElementConcepts`; SDTM-side group `DSS`, `Variables` (VLM-row grain with the reification quad inlined), `Relationships` (reified edges, long format), `Codelists`. The two sides receive symmetric treatment — inlined child classes and authored edges each get their own sheet.
 
 **CT resolve** joins the core graph's codelist and assigned-term concept IDs against the NCI EVS SDTM CT package. Produces `Codelists`, `CodelistTerms`, `AssignedTerms`, `Unresolved`, `Anomalies` sheets. Kept as a separate file so the core stays lossless-over-source.
 

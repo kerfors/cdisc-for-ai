@@ -14,7 +14,7 @@ flowchart TD
     n20[[20_resolve_ct]]
     n30[[30_validate_graph]]
 
-    out1["COSMoS_Graph.xlsx<br/>─────<br/>BC · DSS · Variables<br/>Relationships · Codelists"]
+    out1["COSMoS_Graph.xlsx<br/>─────<br/>BC · BC_Parents · BC_Categories · Categories<br/>Coding · DataElementConcepts<br/>DSS · Variables · Relationships · Codelists"]
     out2["COSMoS_Graph_CT.xlsx<br/>─────<br/>Codelists · CodelistTerms · AssignedTerms<br/>Unresolved · Anomalies"]
     out3[graph_validation_report.md / .json]
 
@@ -92,7 +92,12 @@ Two interim workbooks, both regenerable from CDISC source + LinkML schemas + SDT
 | Sheet | Grain | Purpose |
 |---|---|---|
 | `ReadMe` | — | Provenance, column dictionary links. |
-| `BC` | one per BC | BC-level identity, classification, hierarchy. |
+| `BC` | one per BC | BC-level identity: `bc_id`, `ncit_code`, `bc_short_name`, `bc_definition`, `bc_synonyms`, `bc_categories` (joined string), `bc_hierarchy_path` (joined string), `bc_parent_label`, `bc_type`, `result_scales`. Multi-value and inlined-child content is broken out into the BC-side edge and inline sheets below. |
+| `BC_Parents` | one per edge | BC-to-BC parent relation as edge list. 3 columns: `bc_id`, `parent_bc_id`, `parent_bc_short_name`. Makes the BC hierarchy traversable without parsing `bc_hierarchy_path`. |
+| `BC_Categories` | one per edge | BC-to-Category edges. 2 columns: `bc_id`, `category`. Normalised form of the semicolon-delimited `bc_categories` string on the BC sheet. |
+| `Categories` | one per token | Controlled vocabulary of category tokens. Source: the xlsx `Categories` sheet. Every category used on a `BC_Categories` edge resolves to this vocabulary. |
+| `Coding` | one per `(BC × external code)` | Projects the inlined `Coding` list from the LinkML `BiomedicalConcept` schema. 4 columns: `bc_id`, `system`, `system_name`, `code`. |
+| `DataElementConcepts` | one per `(BC × DEC)` | Projects the inlined `DataElementConcept` list from the LinkML `BiomedicalConcept` schema. 6 columns: `bc_id`, `dec_id`, `ncit_dec_code`, `dec_label`, `data_type`, `example_set`. |
 | `DSS` | one per DSS | DSS-level identity. 8 columns: `ds_id`, `bc_id`, `domain`, `source`, `ds_short_name`, `sdtmig_start_version`, `sdtmig_end_version`, `package_date`. |
 | `Variables` | one per SDTMVariable | VLM-row grain. 26 columns — the LinkML slots on `SDTMVariable` plus the inlined reification quad. |
 | `Relationships` | one per reified edge | Long-format. 6 columns: `ds_id`, `variable_name`, `subject`, `linking_phrase`, `predicate_term`, `object`. Rows without a quad in source are omitted. |
@@ -119,11 +124,17 @@ Per-sheet row counts from the 2026-04-22 Step 2 build are captured in [`archive/
 
 **Two files, one split.** Core graph (`COSMoS_Graph.xlsx`) stays lossless-over-source: every row provenance-traceable to a CDISC artefact, no enrichment. CT resolution (`COSMoS_Graph_CT.xlsx`) is layered on in a separate notebook and separate file, so the core never depends on the CT package version.
 
+**Symmetric treatment of inlined children and authored edges.** The SDTM side breaks out the `SDTMVariable` reification quad into a `Relationships` edge list and the codelist binding into a `Codelists` sheet, so graph traversal does not require parsing flattened columns. The BC side follows the same pattern: the two inlined child classes on `BiomedicalConcept` (`Coding`, `DataElementConcept`) each get their own sheet, and the two authored BC-side relations (BC-to-BC parent, BC-to-Category) are surfaced as edge-list sheets alongside the flat string columns retained on the `BC` sheet for locality. The `Categories` vocabulary is projected as its own sheet and closes under `BC_Categories`.
+
 **Core vs. overlay — architectural pattern (documented, not yet built).** Content that is schema-identical to core but not CDISC-authored — track-authored extrapolations, sponsor-scope case specialisations — would live in a parallel `COSMoS_Graph_Overlay.xlsx`. Provenance separated at the file level. Consumers declare which slice they read: core-only, core+overlay, or overlay-only. Same principle as the core/CT split. The pattern is recorded here and the trigger conditions are in [`COSMoS_Open_Work.md`](COSMoS_Open_Work.md) §4; no overlay content has been authored as of package 2026-Q1.
 
-## 5. xlsx ↔ LinkML rename table
+## 5. xlsx ↔ LinkML rename tables
 
-The CDISC SDTM Dataset Specializations xlsx uses snake_case column names; LinkML uses camelCase slot names; some slots sit on inlined child classes. All 32 xlsx columns map to LinkML slots with zero unmapped.
+The CDISC xlsx exports use snake_case column names; LinkML uses camelCase slot names; some slots sit on inlined child classes. Two source xlsx files map differently.
+
+### 5.1 SDTM Dataset Specializations xlsx
+
+All 32 xlsx columns map to LinkML slots with zero unmapped.
 
 | xlsx column | LinkML slot | notes |
 |---|---|---|
@@ -161,6 +172,52 @@ The CDISC SDTM Dataset Specializations xlsx uses snake_case column names; LinkML
 | `vlm_target` | `vlmTarget` | direct |
 
 Renames come in three forms: (i) snake_case → camelCase; (ii) xlsx flattens an inlined child object onto the parent row (`codelist` + `codelist_submission_value` → slots on `CodeList`); (iii) xlsx uses a shortened external name for a slot (`vlm_group_id` → `datasetSpecializationId`, `vlm_source` → `source`). The table is small and stable across releases — hardcoded in the flattener, regenerable from SchemaView at build time.
+
+### 5.2 Biomedical Concepts xlsx
+
+The BC xlsx has three sheets (`Biomedical Concepts`, `BC Hierarchy`, `Categories`) and is not fully covered by the LinkML schema. Five xlsx columns and one entire sheet have no LinkML home; the flattener still projects them because they carry authored CDISC content.
+
+**`Biomedical Concepts` sheet (17 columns).** One row per `(BC × Coding × DEC × example_set)` cross-join of the BC's inlined child objects.
+
+| xlsx column | LinkML slot | notes |
+|---|---|---|
+| `package_date` | `packageDate` (BiomedicalConcept) | |
+| `short_name` | `shortName` (BiomedicalConcept) | |
+| `bc_id` | `conceptId` (BiomedicalConcept) | identifier |
+| `ncit_code` | `ncitCode` (BiomedicalConcept) | |
+| `parent_bc_id` | — | **No LinkML slot.** BC-to-BC parent relation authored in xlsx only. Surfaced as the `BC_Parents` edge-list sheet. LinkML `parentConceptId` is a different relation (NCIt parent) and is not populated in the xlsx. |
+| `bc_categories` | `categories` (BiomedicalConcept) | multivalued, semicolon-delimited in xlsx; split into `BC_Categories` edge list |
+| `synonyms` | `synonyms` (BiomedicalConcept) | multivalued |
+| `result_scales` | `resultScales` (BiomedicalConcept) | multivalued |
+| `definition` | `definition` (BiomedicalConcept) | |
+| `system` | `coding.system` (Coding) | inlined child → `Coding` sheet |
+| `system_name` | `coding.systemName` (Coding) | inlined child → `Coding` sheet |
+| `code` | `coding.code` (Coding) | inlined child → `Coding` sheet |
+| `dec_id` | `dataElementConcepts.conceptId` (DataElementConcept) | inlined child → `DataElementConcepts` sheet |
+| `ncit_dec_code` | `dataElementConcepts.ncitCode` (DataElementConcept) | inlined child → `DataElementConcepts` sheet |
+| `dec_label` | `dataElementConcepts.shortName` (DataElementConcept) | inlined child → `DataElementConcepts` sheet |
+| `data_type` | `dataElementConcepts.dataType` (DataElementConcept) | inlined child → `DataElementConcepts` sheet |
+| `example_set` | `dataElementConcepts.exampleSet` (DataElementConcept) | inlined child → `DataElementConcepts` sheet |
+
+**`BC Hierarchy` sheet (11 columns).** One row per BC. Convenience view over the BC hierarchy.
+
+| xlsx column | LinkML slot | notes |
+|---|---|---|
+| `short_name` | `shortName` (BiomedicalConcept) | |
+| `bc_id` | `conceptId` (BiomedicalConcept) | |
+| `bc_shortname_id` | — | **No LinkML slot.** xlsx-only surrogate identifier; not projected. |
+| `parent_bc_id` | — | **No LinkML slot.** Surfaced as `BC_Parents` edge list. |
+| `bc_categories` | `categories` (BiomedicalConcept) | multivalued; authoritative copy used to build `BC_Categories` edges |
+| `synonyms` | `synonyms` (BiomedicalConcept) | |
+| `result_scales` | `resultScales` (BiomedicalConcept) | |
+| `definition` | `definition` (BiomedicalConcept) | |
+| `bc_hierarchy_level` | — | **No LinkML slot.** Derived depth integer; not projected. |
+| `bc_hierarchy_full` | — | **No LinkML slot.** Derived path string; retained on the `BC` sheet as `bc_hierarchy_path` for locality. |
+| `dec_n` | — | **No LinkML slot.** Derived DEC count; not projected (recoverable as `COUNT(*)` over `DataElementConcepts`). |
+
+**`Categories` sheet (1 column).** Controlled vocabulary of category tokens referenced by `BiomedicalConcept.categories`. No LinkML class — the category tokens are strings, not a modelled entity. Projected unchanged as the `Categories` sheet so the vocabulary is first-class and the `BC_Categories` edge list closes.
+
+**Summary.** The SDTM xlsx maps 1:1 to LinkML. The BC xlsx has upstream schema gaps (BC-to-BC parent, `Categories` sheet as an entity, three derived convenience columns). The flatten surfaces every authored source column in some sheet; derived convenience columns (`bc_shortname_id`, `bc_hierarchy_level`, `dec_n`) are dropped because they are redundant with the projected base data.
 
 ## 6. Provenance and validation
 
