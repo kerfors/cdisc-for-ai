@@ -118,6 +118,19 @@ CT is a separate file so the core stays lossless-over-source and does not depend
 
 Per-sheet row counts from the 2026-04-22 Step 2 build are captured in [`archive/flattener_rewrite_audit.md`](archive/flattener_rewrite_audit.md) §2.2; current counts regenerate with each run of `30_validate_graph.ipynb`, surfacing in [`../reports/graph_validation_report.md`](../reports/graph_validation_report.md).
 
+### Source data observations
+
+The flatten preserves source content without normalising authoring inconsistencies. Observations surfaced when consumer-bases queried the projected sheets.
+
+**LOINC `system` URI inconsistency on the `Coding` sheet.** The CDISC-published Biomedical Concepts xlsx authors LOINC under two `system` URIs — `http://loinc.org/` (with trailing slash) and `https://loinc.org` (no trailing slash, https). The flattener preserves both verbatim; the `Coding` sheet carries rows under each variant. Downstream views projecting Coding by `system` see two LOINC columns. Authoring inconsistency in source — candidate for an upstream flag to the COSMoS authoring working group; see [`COSMoS_Open_Work.md`](COSMoS_Open_Work.md) §2.
+
+**LOINC at two grains: BC-level and DSS-level.** A LOINC code may appear at two grains in the projected graph:
+
+- BC-level — `Coding` sheet, one row per (BC × external code), applies to every DSS under the BC.
+- DSS-level — a `Variables` row whose `variable_name` ends in `LOINC`, with the LOINC code authored as `assigned_term_value` on that variable. Applies to the single DSS only.
+
+Both grains can be authored against the same BC, and the codes can differ — the BC-level LOINC is the canonical mapping for the concept; the DSS-level pin refines it for a specific specimen/method/scale variant. Architectural pattern, not an anomaly. Consumers need to decide which grain to surface or whether to surface both.
+
 ## 4. Architecture
 
 **SchemaView-driven flatten.** The flattener reads the CDISC xlsx export and uses `linkml_runtime.SchemaView` over `cosmos_sdtm_model.yaml` and `cosmos_bc_model.yaml` to project into sheets. Class and slot metadata come from the schema — no hand-written column list. When the COSMoS working group adds a slot to `SDTMVariable`, the flattener picks it up automatically.

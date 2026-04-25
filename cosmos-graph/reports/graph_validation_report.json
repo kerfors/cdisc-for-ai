@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-23",
+  "generated": "2026-04-25",
   "inputs": [
     "COSMoS_Graph.xlsx",
     "COSMoS_Graph_CT.xlsx",
@@ -15,6 +15,42 @@
     },
     {
       "check": "referential_integrity",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "bc_parents_bc_id_referential_integrity",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "bc_parents_parent_bc_id_referential_integrity",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "bc_categories_bc_id_referential_integrity",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "bc_categories_vocabulary_closure",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "coding_bc_id_referential_integrity",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "data_element_concepts_bc_id_referential_integrity",
       "status": "PASS",
       "count": 0,
       "detail": []

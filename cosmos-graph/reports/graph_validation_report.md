@@ -1,6 +1,6 @@
 # COSMoS Graph Validation Report
 
-_Generated: 2026-04-23_
+_Generated: 2026-04-25_
 
 Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 
@@ -11,6 +11,12 @@ Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 | --- | --- | --- |
 | enumeration_validation | PASS | 0 |
 | referential_integrity | PASS | 0 |
+| bc_parents_bc_id_referential_integrity | PASS | 0 |
+| bc_parents_parent_bc_id_referential_integrity | PASS | 0 |
+| bc_categories_bc_id_referential_integrity | PASS | 0 |
+| bc_categories_vocabulary_closure | PASS | 0 |
+| coding_bc_id_referential_integrity | PASS | 0 |
+| data_element_concepts_bc_id_referential_integrity | PASS | 0 |
 | schema_column_coverage | FAIL | 13 |
 | vlm_source_hyphen_detail | INFO | 4 |
 | empty_reification_quad_rows | INFO | 313 |
@@ -27,6 +33,36 @@ _no details_
 
 
 ### referential_integrity — PASS (0)
+
+_no details_
+
+
+### bc_parents_bc_id_referential_integrity — PASS (0)
+
+_no details_
+
+
+### bc_parents_parent_bc_id_referential_integrity — PASS (0)
+
+_no details_
+
+
+### bc_categories_bc_id_referential_integrity — PASS (0)
+
+_no details_
+
+
+### bc_categories_vocabulary_closure — PASS (0)
+
+_no details_
+
+
+### coding_bc_id_referential_integrity — PASS (0)
+
+_no details_
+
+
+### data_element_concepts_bc_id_referential_integrity — PASS (0)
 
 _no details_
 
