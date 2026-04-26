@@ -83,22 +83,24 @@
 
 <h2>Reference files</h2>
 
+<p>Built on a layered approach: <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/cosmos-graph"><code>cosmos-graph</code></a> projects COSMoS into a multi-sheet traversable graph (BC, DSS, Variables, Codelists, BC_Parents, BC_Categories); <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/consumer-bases"><code>consumer-bases</code></a> joins the graph into per-DSS views; <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/sdtm-findings-graph"><code>sdtm-findings-graph</code></a> produces sub-typed Findings consumer outputs.</p>
+
 <ul class="files">
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx"><code>SDTM_Test_Identity.xlsx</code></a>
         <span class="desc">domain-level TESTCDs with NCIt identity</span>
     </li>
     <li>
-        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx"><code>COSMoS_BC_DSS.xlsx</code></a>
-        <span class="desc">flattened COSMoS Biomedical Concepts and Dataset Specializations</span>
-    </li>
-    <li>
-        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings/machine_actionable/Specimen_Findings.xlsx"><code>Specimen_Findings.xlsx</code></a>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx"><code>Specimen_Findings.xlsx</code></a>
         <span class="desc">specimen-based Findings consumer view (LB, MB, MI, CP, BS, MS, PC, PP)</span>
     </li>
     <li>
-        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings/machine_actionable/Measurement_Findings.xlsx"><code>Measurement_Findings.xlsx</code></a>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx"><code>Measurement_Findings.xlsx</code></a>
         <span class="desc">measurement-based Findings consumer view (VS, MK, CV)</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx"><code>Instrument_Findings.xlsx</code></a>
+        <span class="desc">instrument-based Findings consumer view (QS, FT, RS); four-sheet design (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) adding C20993 + C211913 anchors per row, BC categories search-tag sheet, and parent-chain traversal sheet — makes instrument grouping addressable directly</span>
     </li>
 </ul>
 
@@ -111,7 +113,7 @@
 <ul class="files">
     <li>
         <a href="Glucose_COSMoS_Story.html"><strong>Glucose Measurement — The COSMoS Story</strong></a>
-        <span class="desc">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-bc-dss</code> track flattens and joins it with enriched TESTCD identity into the Specimen_Findings consumer file</span>
+        <span class="desc">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-graph</code> projection and <code>consumer-bases</code> joined views shape it into the Specimen_Findings consumer file</span>
     </li>
     <li>
         <a href="Glucose_StudyIntent_Story.html"><strong>Glucose Measurement — The Study-Intent Story</strong></a>
@@ -129,6 +131,25 @@
     <li>
         <a href="6MWT_COSMoS_Story.html"><strong>6-Minute Walk Test (6MWT) — The COSMoS Story</strong></a>
         <span class="desc">What COSMoS provides for recording and what it had to invent for composition and classification</span>
+    </li>
+</ul>
+
+<h2 style="color:#888;">Legacy files (backward compatibility)</h2>
+
+<p style="color:#666; font-size:0.95em;">Earlier-generation files retained for users who depend on them. Superseded by the graph-fed reference files above; will retire once parity is fully validated downstream.</p>
+
+<ul class="files">
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx"><code>COSMoS_BC_DSS.xlsx</code></a>
+        <span class="desc">flattened COSMoS Biomedical Concepts and Dataset Specializations — single-sheet interim, predecessor to the multi-sheet <code>cosmos-graph</code> projection</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings/machine_actionable/Specimen_Findings.xlsx"><code>Specimen_Findings.xlsx</code> (legacy)</a>
+        <span class="desc">specimen-based Findings consumer view, pre-graph build (reads <code>cosmos-bc-dss</code> flatten)</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings/machine_actionable/Measurement_Findings.xlsx"><code>Measurement_Findings.xlsx</code> (legacy)</a>
+        <span class="desc">measurement-based Findings consumer view, pre-graph build</span>
     </li>
 </ul>
 

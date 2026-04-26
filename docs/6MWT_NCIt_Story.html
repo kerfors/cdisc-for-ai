@@ -280,12 +280,14 @@
     <p style="margin-top: 0.7rem;">Nearly half of the 2,208 instrument concepts (988) exist for classification only, with no mapping to an SDTM codelist.</p>
     <p style="margin-top: 0.7rem;">The gap is not in any single standard: NCIt classifies but does not compose; CT names TESTCDs but does not describe instrument families, subscales, or version lineage.</p>
     <p style="margin-top: 0.7rem;">An instrument composition registry would carry stable identifiers for instruments, their subscales, their item membership, and their version relationships — linking classification to composition with explicit <em>is composed of</em> edges rather than the weak <em>is related to</em> associations NCIt currently offers.</p>
+    <p style="margin-top: 0.7rem;">A four-sheet operationalisation of this gap is now in <code>sdtm-findings-graph/Instrument_Findings.xlsx</code>: <code>Test_Identity</code> + <code>Measurement_Specs</code> (chocolate C20993 and copper C211913 anchors per row) + <code>BC_Categories</code> (search-tag mechanism connecting the disjoint trees) + <code>BC_Parents</code> (parallel-chain traversal). A partial step toward the full registry shape described above — addressable today by NCIt code, and surfacing the 28% C20993 gap per row instead of hiding it.</p>
   </div>
 
 </div>
 
 <div class="footer">
   Data sources: NCI EVS SDTM CT 2026-03-27 &bull; COSMoS 2026-Q1 &bull; CoA Instrument Mapping Probe &bull; cdisc-for-ai repo<br>
+  Operationalised in: <code>sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx</code><br>
   Generated 2026-04-13 &bull; See also: <a href="6MWT_COSMoS_Story.html" style="color:#999;">The COSMoS Story</a>
 </div>
 

@@ -148,7 +148,7 @@
 <body>
 
 <h1>Glucose Measurement — The COSMoS Story</h1>
-<p class="subtitle">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-bc-dss</code> track flattens and joins it with enriched TESTCD identity into the Specimen_Findings consumer file</p>
+<p class="subtitle">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-graph</code> projection and <code>consumer-bases</code> joined views shape it into the Specimen_Findings consumer file</p>
 
 <div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
   <p><strong>Why this story spotlights the recording spec.</strong> Glucose Measurement is a specimen-based Finding (LB). Its classification is thin — one BC sitting under <em>Chemistry Test &gt; Laboratory Tests</em> — but it expands into multiple DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit.</p>
@@ -160,7 +160,7 @@
   <div class="legend-item"><div class="legend-swatch sw-cosmos-bc"></div> COSMoS BC (root concept)</div>
   <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT TESTCD</div>
   <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS DSS — VLM group on LB.LBTESTCD</div>
-  <div class="legend-item"><div class="legend-swatch sw-flat"></div> cdisc-for-ai interim (flattened BC_DSS)</div>
+  <div class="legend-item"><div class="legend-swatch sw-flat"></div> consumer-bases joined view (DSS_View — per-DSS row)</div>
   <div class="legend-item"><div class="legend-swatch sw-test-identity"></div> Specimen_Findings — Test_Identity row</div>
   <div class="legend-item"><div class="legend-swatch sw-measurement-specs"></div> Specimen_Findings — Measurement_Specs row</div>
   <div class="legend-item"><div class="legend-swatch sw-retired"></div> Retired BC</div>
@@ -176,7 +176,7 @@
       <p>NCIt carries two concepts — <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement and <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> Plasma Equivalent Glucose — and SDTM CT reflects both as distinct TESTCDs: GLUC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>) and GLUCPE (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a>). COSMoS has curated them together under a single BC (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a> Glucose Measurement). GLUCPE's <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C163446" target="evs">C163446</a> remains visible at the TESTCD level and is flagged as a legacy cross-reference in the COSMoS QC (TESTCD_NCIt ≠ BC NCIt, QC-14).</p>
       <p style="margin-top: 0.6rem;">Under that one BC, COSMoS expands into eight DSSs because clinically meaningful glucose recording IS the combination of TESTCD × specimen × method × scale × LOINC × unit. Each DSS is a value-level metadata (VLM) group anchored on <code>LB.LBTESTCD</code> — a bundle of rows that jointly constrain the recording when LBTESTCD takes the relevant value under the relevant conditions. The DS_Code is the <code>vlm_group_id</code> that addresses the bundle.</p>
       <p style="margin-top: 0.6rem;">One DSS (GLUCPL) is shown expanded with its full 12-variable spec; the others are summarised by their case-defining attributes. A further DSS (GLUCSERPL) exists in source but is omitted from this view pending QC review.</p>
-      <p style="margin-top: 0.6rem;">Below each DSS view, the cdisc-for-ai <code>cosmos-bc-dss</code> track then aggregates the BC header, TESTCD header, and VLM rows into one row per DSS — the interim shape the repo carries forward.</p>
+      <p style="margin-top: 0.6rem;">The cdisc-for-ai <code>cosmos-graph</code> track preserves COSMoS as a multi-sheet graph (BC, DSS, Variables, Codelists, BC_Parents, BC_Categories) — the source projection. The <code>consumer-bases</code> track then joins these sheets into one row per DSS in <code>DSS_View.xlsx</code> — the joined view that consumer tracks read.</p>
     </div>
   </div>
 
@@ -234,51 +234,47 @@
       </div>
     </div>
 
-    <!-- Flattened one-row projection of GLUCPL — as the cdisc-for-ai cosmos-bc-dss track aggregates it -->
-    <div class="layer-label" style="margin-left: 72px;">Same GLUCPL — flattened to one row (cdisc-for-ai interim aggregation)</div>
+    <!-- Joined one-row projection of GLUCPL — as consumer-bases DSS_View materialises it from the cosmos-graph projection -->
+    <div class="layer-label" style="margin-left: 72px;">Same GLUCPL — joined into one row (consumer-bases DSS_View, over the cosmos-graph projection)</div>
     <div class="connector-deep" style="margin-top: 6px;">
       <div class="node flattened-row">
-        <div class="code">GLUCPL — flattened row <span class="tag">interim aggregation</span></div>
+        <div class="code">GLUCPL — joined-view row <span class="tag">consumer-bases DSS_View</span></div>
         <div class="flat-note">
-          <p>The cdisc-for-ai <code>cosmos-bc-dss/</code> track aggregates the BC header, TESTCD header, and the 12 VLM rows into a single row per DSS in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>.</p>
-          <p style="margin-top: 0.6rem;">What survives is the case-defining attributes in a shape suitable for joining across SDTM CT, NCIt, and COSMoS. What is lost is the per-variable VLM detail — role, mandatory flags, codelists, slot-vs-assigned status.</p>
-          <p style="margin-top: 0.6rem;">Below: the GLUCPL row, all 34 columns, exactly as the interim file contains them.</p>
+          <p>The cdisc-for-ai <code>cosmos-graph/</code> track keeps BC, DSS, and Variables in separate sheets — the multi-sheet graph projection. The <code>consumer-bases/DSS_View.xlsx</code> joins them into one row per DSS for consumer tracks to read.</p>
+          <p style="margin-top: 0.6rem;">The DSS_View row carries the case-defining attributes per DSS, plus the BC identity flattened down for join convenience and a pin pivot for the per-variable assigned values. Per-variable detail beyond what the pin pivot captures (role, mandatory flags, slot-vs-assigned status) stays in <code>cosmos-graph/Variables</code> for traversal — joined view rather than lossy flatten.</p>
+          <p style="margin-top: 0.6rem;">Below: the GLUCPL row in DSS_View, curated to the recording-relevant columns.</p>
         </div>
         <div class="flat-grid">
-          <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
-          <span class="flat-label">NCIt_Code</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
-          <span class="flat-label">BC_Name / short_name</span>            <span class="flat-val">Glucose Measurement</span>
-          <span class="flat-label">BC_Definition</span>      <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
-          <span class="flat-label">BC_Synonyms</span>        <span class="flat-val">Glucose</span>
-          <span class="flat-label">BC_Type</span>            <span class="flat-val">full</span>
-          <span class="flat-label">BC_Scope</span>           <span class="flat-val">Subject</span>
-          <span class="flat-label">TESTCD</span>             <span class="flat-val">GLUC</span>
-          <span class="flat-label">TEST</span>               <span class="flat-val">Glucose</span>
-          <span class="flat-label">TESTCD_NCIt</span>        <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
-          <span class="flat-label">Categories</span>         <span class="flat-val">Chemistry Tests; Laboratory Tests</span>
-          <span class="flat-label">Hierarchy_Path</span>     <span class="flat-val">Chemistry Test</span>
-          <span class="flat-label">Parent_Label</span>       <span class="flat-val">Chemistry Test</span>
-          <span class="flat-label">Row_Type</span>           <span class="flat-val">DSS</span>
-          <span class="flat-label">Domains_with_DS</span>    <span class="flat-val">LB</span>
-          <span class="flat-label">DS_Code / vlm_group_id</span>            <span class="flat-val">GLUCPL</span>
-          <span class="flat-label">DS_Name / short_name</span>            <span class="flat-val">Glucose Concentration in Plasma</span>
-          <span class="flat-label">Domain</span>             <span class="flat-val">LB</span>
-          <span class="flat-label">Domain_Class</span>       <span class="flat-val">Findings</span>
-          <span class="flat-label">Result_Scale</span>       <span class="flat-val">Quantitative</span>
-          <span class="flat-label">Specimen</span>           <span class="flat-val">PLASMA</span>
-          <span class="flat-label">Specimen_NCIt</span>      <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a></span>
-          <span class="flat-label">Method</span>             <span class="flat-val empty">—</span>
-          <span class="flat-label">Method_NCIt</span>        <span class="flat-val empty">—</span>
-          <span class="flat-label">LOINC_Code_Count</span>   <span class="flat-val">0</span>
-          <span class="flat-label">LOINC_Code</span>         <span class="flat-val empty">—</span>
-          <span class="flat-label">Allowed_Units</span>      <span class="flat-val">mg/dL; g/L; mmol/L</span>
-          <span class="flat-label">Standard_Unit</span>      <span class="flat-val">mmol/L</span>
-          <span class="flat-label">COSMoS_Category</span>    <span class="flat-val">CHEMISTRY</span>
-          <span class="flat-label">COSMoS_Subcategory</span> <span class="flat-val empty">—</span>
-          <span class="flat-label">Decimal_Places</span>     <span class="flat-val">7</span>
-          <span class="flat-label">location</span>           <span class="flat-val empty">—</span>
-          <span class="flat-label">laterality</span>         <span class="flat-val empty">—</span>
-          <span class="flat-label">evaluator</span>          <span class="flat-val empty">—</span>
+          <span class="flat-label">ds_id</span>             <span class="flat-val">GLUCPL</span>
+          <span class="flat-label">bc_id</span>             <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+          <span class="flat-label">domain</span>            <span class="flat-val">LB</span>
+          <span class="flat-label">source</span>            <span class="flat-val">LB.LBTESTCD</span>
+          <span class="flat-label">ds_short_name</span>     <span class="flat-val">Glucose Concentration in Plasma</span>
+          <span class="flat-label">sdtmig_start_version</span> <span class="flat-val">3-2</span>
+          <span class="flat-label">package_date</span>      <span class="flat-val">2025-12-16</span>
+          <span class="flat-label">bc_ncit_code</span>      <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+          <span class="flat-label">bc_short_name</span>     <span class="flat-val">Glucose Measurement</span>
+          <span class="flat-label">bc_definition</span>     <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
+          <span class="flat-label">bc_categories</span>     <span class="flat-val">Laboratory Tests;Chemistry Tests</span>
+          <span class="flat-label">bc_hierarchy_path</span> <span class="flat-val">Chemistry Test (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C49237" target="evs">C49237</a>); Glucose Measurement (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>)</span>
+          <span class="flat-label">bc_parent_label</span>  <span class="flat-val">Chemistry Test</span>
+          <span class="flat-label">bc_type</span>           <span class="flat-val">full</span>
+          <span class="flat-label">result_scales</span>     <span class="flat-val">Quantitative;Ordinal</span>
+          <span class="flat-label">TESTCD_value</span>      <span class="flat-val">GLUC</span>
+          <span class="flat-label">TEST_value</span>        <span class="flat-val">Glucose</span>
+          <span class="flat-label">TESTCD_ncit</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+          <span class="flat-label">TESTCD_codelist</span>   <span class="flat-val">LBTESTCD</span>
+          <span class="flat-label">SPEC_value</span>        <span class="flat-val">PLASMA</span>
+          <span class="flat-label">SPEC_ncit</span>         <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a></span>
+          <span class="flat-label">SPEC_codelist</span>     <span class="flat-val">SPECTYPE</span>
+          <span class="flat-label">METHOD_value</span>      <span class="flat-val empty">—</span>
+          <span class="flat-label">CAT_value</span>         <span class="flat-val">CHEMISTRY</span>
+          <span class="flat-label">ORRESU_value</span>      <span class="flat-val empty">—</span>
+          <span class="flat-label">STRESU_value</span>      <span class="flat-val">mmol/L</span>
+          <span class="flat-label">STRESU_ncit</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C64387" target="evs">C64387</a></span>
+          <span class="flat-label">STRESU_codelist</span>   <span class="flat-val">UNIT</span>
+          <span class="flat-label">LOINC_value</span>       <span class="flat-val empty">—</span>
+          <span class="flat-label">Coding_http://loinc.org/</span> <span class="flat-val empty">—</span>
         </div>
       </div>
     </div>
@@ -303,7 +299,7 @@
   <div style="margin: 28px 0 0 0; padding: 12px 16px; font-size: 0.78rem; color: #555; line-height: 1.6; background: #fff8ea; border-radius: 6px; border-left: 4px solid #C8A415;">
     <p><strong>A note on names.</strong> From Part 1 onward, column labels carry both names: <code>DS_Code / vlm_group_id</code>, <code>DS_Name / short_name</code>, <code>BC_Name / short_name</code>. The first is the cdisc-for-ai consumer-facing name; the second is the COSMoS source field.</p>
     <p style="margin-top: 0.7rem;">The rebrand is for readability — <code>vlm_group_id</code> is implementation-oriented and <code>short_name</code> is reused at both BC and DSS levels in source.</p>
-    <p style="margin-top: 0.7rem;">Pairing preserves source traceability; the mapping is documented in <code>cosmos-bc-dss/notebooks/COSMoS_BC_DSS_Flatten.ipynb</code>.</p>
+    <p style="margin-top: 0.7rem;">Pairing preserves source traceability; the cosmos-graph LinkML schemas in <code>cosmos-graph/reference/cosmos_linkml/</code> document the COSMoS source field names, and the consumer-facing names are applied in <code>consumer-bases/</code> and the <code>sdtm-findings-graph/</code> consumer notebooks.</p>
   </div>
 
   <!-- PART 2 -->
@@ -311,7 +307,7 @@
     <div class="part-num">Part 2</div>
     <div class="part-title">What cdisc-for-ai delivers — GLUCPL in the Specimen_Findings consumer</div>
     <div class="part-desc">
-      <p>The <code>sdtm-findings/</code> consumer track joins the flattened COSMoS DSS rows with NCIt-enriched TESTCD identity (from the <code>sdtm-test-codes/</code> source track) into a two-sheet workbook: <code>sdtm-findings/machine_actionable/Specimen_Findings.xlsx</code>.</p>
+      <p>The <code>sdtm-findings-graph/</code> consumer track joins the consumer-bases <code>DSS_View.xlsx</code> (above) with NCIt-enriched TESTCD identity (from the <code>sdtm-test-codes/</code> source track) into a two-sheet workbook: <code>sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx</code>.</p>
       <p style="margin-top: 0.6rem;">Sheet <strong>Test_Identity</strong> carries one row per TESTCD with NCIt identity fields (preferred term, synonyms, definition, UMLS/NCIm CUIs) plus COSMoS coverage flags. Sheet <strong>Measurement_Specs</strong> carries one row per DSS with the recording-specification attributes. The two sheets join on <code>TESTCD</code>.</p>
       <p style="margin-top: 0.6rem;">Below: the GLUC and GLUCPL rows exactly as delivered.</p>
     </div>
@@ -321,25 +317,26 @@
   <div class="node test-identity-row">
     <div class="code">GLUC — Glucose <span class="tag">Test_Identity row</span></div>
     <div class="flat-note">
-      TESTCD-level identity. NCIt fields come from the <code>sdtm-test-codes/</code> source track (NCI EVS SDTM CT package 2026-03-27). COSMoS coverage flags summarise across all DSSs under this TESTCD — here COSMoS_Category aggregates CHEMISTRY and URINALYSIS because GLUC has DSSs in both.
+      TESTCD-level identity. NCIt fields come from the <code>sdtm-test-codes/</code> source track (NCI EVS SDTM CT package 2026-03-27). <code>Has_DSS</code> flags whether COSMoS pins this TESTCD with a DSS; the count and aggregation columns summarise across the in-scope DSSs. <code>NCIt_Code_Conflict</code> and <code>NCIt_Reference_Disagree</code> surface graph/reference disagreement for downstream validation — they are flags, not validation themselves.
     </div>
     <div class="flat-grid">
-      <span class="flat-label">NCIt_Code</span>           <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
-      <span class="flat-label">TESTCD</span>              <span class="flat-val">GLUC</span>
-      <span class="flat-label">TEST</span>                <span class="flat-val">Glucose</span>
-      <span class="flat-label">SDTM_Domains</span>        <span class="flat-val">LB</span>
-      <span class="flat-label">NCIt_Preferred_Term</span> <span class="flat-val">Glucose Measurement</span>
-      <span class="flat-label">NCIt_Synonyms</span>       <span class="flat-val">GLUC; Glucose</span>
-      <span class="flat-label">NCIt_Definition</span>     <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
-      <span class="flat-label">UMLS_CUI</span>            <span class="flat-val">C0337438</span>
-      <span class="flat-label">NCIm_CUI</span>            <span class="flat-val empty">—</span>
-      <span class="flat-label">Has_COSMoS</span>          <span class="flat-val">Yes</span>
-      <span class="flat-label">COSMoS_DSS_Count</span>    <span class="flat-val">7</span>
-      <span class="flat-label">COSMoS_BC_Name / short_name</span>      <span class="flat-val">Glucose Measurement</span>
-      <span class="flat-label">COSMoS_Category</span>     <span class="flat-val">CHEMISTRY; URINALYSIS</span>
-      <span class="flat-label">COSMoS_Categories</span>   <span class="flat-val">Chemistry Tests; Laboratory Tests</span>
-      <span class="flat-label">COSMoS_Hierarchy</span>    <span class="flat-val">Chemistry Test</span>
-      <span class="flat-label">COSMoS_Domains</span>      <span class="flat-val">LB</span>
+      <span class="flat-label">TESTCD</span>                  <span class="flat-val">GLUC</span>
+      <span class="flat-label">NCIt_Code</span>               <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+      <span class="flat-label">In_Scope_Domains</span>        <span class="flat-val">LB</span>
+      <span class="flat-label">SDTM_Domains</span>            <span class="flat-val">LB</span>
+      <span class="flat-label">TEST</span>                    <span class="flat-val">Glucose</span>
+      <span class="flat-label">NCIt_Preferred_Term</span>     <span class="flat-val">Glucose Measurement</span>
+      <span class="flat-label">NCIt_Synonyms</span>           <span class="flat-val">GLUC; Glucose</span>
+      <span class="flat-label">NCIt_Definition</span>         <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
+      <span class="flat-label">UMLS_CUI</span>                <span class="flat-val">C0337438</span>
+      <span class="flat-label">NCIm_CUI</span>                <span class="flat-val empty">—</span>
+      <span class="flat-label">Has_DSS</span>                 <span class="flat-val">Yes</span>
+      <span class="flat-label">DSS_Count</span>               <span class="flat-val">7</span>
+      <span class="flat-label">BC_Count</span>                <span class="flat-val">1</span>
+      <span class="flat-label">DS_Codes</span>                <span class="flat-val">GLUCBLD; GLUCPL; GLUCSER; GLUCSERPL; GLUCUA; GLUCURIN; GLUCURINPRES</span>
+      <span class="flat-label">BC_IDs</span>                  <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+      <span class="flat-label">NCIt_Code_Conflict</span>      <span class="flat-val">No</span>
+      <span class="flat-label">NCIt_Reference_Disagree</span> <span class="flat-val">No</span>
     </div>
   </div>
 
@@ -347,33 +344,36 @@
   <div class="node measurement-specs-row">
     <div class="code">GLUCPL — Glucose Concentration in Plasma <span class="tag">Measurement_Specs row</span></div>
     <div class="flat-note">
-      <p>DSS-level recording specification, scoped to the attributes a downstream consumer needs. Joins back to Test_Identity above on <code>TESTCD</code>.</p>
-      <p style="margin-top: 0.6rem;">Compared to the flattened interim row this sheet drops the BC-level fields already carried in Test_Identity (BC_Definition, BC_Synonyms, BC_Scope, TESTCD_NCIt, Categories, Hierarchy_Path, Parent_Label, Row_Type, Domains_with_DS, Decimal_Places, COSMoS_Subcategory) — the consumer gets recording-focused attributes without duplication.</p>
+      <p>DSS-level recording specification, joined to <code>Observation_Class</code> per row. Pin pivot exposes the SDTM variable assignments (<code>SPEC_value</code>, <code>STRESU_value</code>, etc.) with their NCIt code and codelist of origin. LOINC kept at both grains as separate columns. Joins back to Test_Identity above on <code>TESTCD</code>.</p>
+      <p style="margin-top: 0.6rem;">Compared to the joined-view DSS_View row above, this sheet drops some BC-level redundancy (Test_Identity carries TESTCD-level NCIt; this row carries the BC-side identity that varies per DSS) and applies the consumer renames (TESTCD_value → TESTCD, etc.). <code>Allowed_Units</code> is empty for GLUCPL because the source codelist <code>UNIT</code> exceeds the per-row expansion threshold (50 terms).</p>
     </div>
     <div class="flat-grid">
-      <span class="flat-label">TESTCD</span>           <span class="flat-val">GLUC</span>
-      <span class="flat-label">TEST</span>             <span class="flat-val">Glucose</span>
-      <span class="flat-label">NCIt_Code</span>        <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
-      <span class="flat-label">COSMoS_BC_ID</span>     <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
-      <span class="flat-label">BC_Name / short_name</span>          <span class="flat-val">Glucose Measurement</span>
-      <span class="flat-label">BC_Type</span>          <span class="flat-val">full</span>
-      <span class="flat-label">DS_Code / vlm_group_id</span>          <span class="flat-val">GLUCPL</span>
-      <span class="flat-label">DS_Name / short_name</span>          <span class="flat-val">Glucose Concentration in Plasma</span>
-      <span class="flat-label">COSMoS_Category</span>  <span class="flat-val">CHEMISTRY</span>
-      <span class="flat-label">Domain</span>           <span class="flat-val">LB</span>
-      <span class="flat-label">Domain_Class</span>     <span class="flat-val">Findings</span>
-      <span class="flat-label">Result_Scale</span>     <span class="flat-val">Quantitative</span>
-      <span class="flat-label">Specimen</span>         <span class="flat-val">PLASMA</span>
-      <span class="flat-label">Specimen_NCIt</span>    <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a></span>
-      <span class="flat-label">Method</span>           <span class="flat-val empty">—</span>
-      <span class="flat-label">Method_NCIt</span>      <span class="flat-val empty">—</span>
-      <span class="flat-label">LOINC_Code_Count</span> <span class="flat-val">0</span>
-      <span class="flat-label">LOINC_Code</span>       <span class="flat-val empty">—</span>
-      <span class="flat-label">Allowed_Units</span>    <span class="flat-val">mg/dL; g/L; mmol/L</span>
-      <span class="flat-label">Standard_Unit</span>    <span class="flat-val">mmol/L</span>
-      <span class="flat-label">location</span>         <span class="flat-val empty">—</span>
-      <span class="flat-label">laterality</span>       <span class="flat-val empty">—</span>
-      <span class="flat-label">evaluator</span>        <span class="flat-val empty">—</span>
+      <span class="flat-label">domain</span>             <span class="flat-val">LB</span>
+      <span class="flat-label">Observation_Class</span>  <span class="flat-val">Findings</span>
+      <span class="flat-label">ds_id</span>              <span class="flat-val">GLUCPL</span>
+      <span class="flat-label">bc_id</span>              <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+      <span class="flat-label">TESTCD</span>             <span class="flat-val">GLUC</span>
+      <span class="flat-label">TEST</span>               <span class="flat-val">Glucose</span>
+      <span class="flat-label">TESTCD_NCIt</span>        <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a></span>
+      <span class="flat-label">bc_short_name</span>      <span class="flat-val">Glucose Measurement</span>
+      <span class="flat-label">bc_definition</span>      <span class="flat-val">The determination of the amount of glucose present in a sample.</span>
+      <span class="flat-label">bc_categories</span>      <span class="flat-val">Laboratory Tests;Chemistry Tests</span>
+      <span class="flat-label">bc_parent_label</span>    <span class="flat-val">Chemistry Test</span>
+      <span class="flat-label">bc_hierarchy_path</span>  <span class="flat-val">Chemistry Test (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C49237" target="evs">C49237</a>); Glucose Measurement (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C105585" target="evs">C105585</a>)</span>
+      <span class="flat-label">bc_type</span>            <span class="flat-val">full</span>
+      <span class="flat-label">result_scales</span>      <span class="flat-val">Quantitative;Ordinal</span>
+      <span class="flat-label">ds_short_name</span>      <span class="flat-val">Glucose Concentration in Plasma</span>
+      <span class="flat-label">SPEC_value</span>         <span class="flat-val">PLASMA</span>
+      <span class="flat-label">SPEC_ncit</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C13356" target="evs">C13356</a></span>
+      <span class="flat-label">SPEC_codelist</span>      <span class="flat-val">SPECTYPE</span>
+      <span class="flat-label">METHOD_value</span>       <span class="flat-val empty">—</span>
+      <span class="flat-label">CAT_value</span>          <span class="flat-val">CHEMISTRY</span>
+      <span class="flat-label">STRESU_value</span>       <span class="flat-val">mmol/L</span>
+      <span class="flat-label">STRESU_ncit</span>        <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C64387" target="evs">C64387</a></span>
+      <span class="flat-label">STRESU_codelist</span>   <span class="flat-val">UNIT</span>
+      <span class="flat-label">LOINC_DSS</span>          <span class="flat-val empty">—</span>
+      <span class="flat-label">LOINC_BC</span>           <span class="flat-val empty">—</span>
+      <span class="flat-label">Allowed_Units</span>      <span class="flat-val empty">—</span>
     </div>
   </div>
 
@@ -401,8 +401,8 @@
 
 <div class="footer">
   Data sources: COSMoS BC + DSS package 2026-Q1 (cdisc_sdtm_dataset_specializations_latest.xlsx, package_date 2025-12-16) &bull; SDTM CT 2026-03-27 &bull; cdisc-for-ai repo<br>
-  All values shown are extracted from <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code> and <code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>. No example data is fabricated.<br>
-  Generated 2026-04-13.
+  All values shown are extracted from <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code>, <code>consumer-bases/interim/DSS_View.xlsx</code>, <code>sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx</code>, and <code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>. No example data is fabricated.<br>
+  Generated 2026-04-13. Reframed for graph-fed architecture 2026-04-26.
 </div>
 
 <script>
