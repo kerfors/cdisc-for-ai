@@ -25,8 +25,8 @@ consumer-bases/interim/DSS_View.xlsx ─────────────┘ 
                                                                        │
                               sdtm-findings-graph/machine_actionable/
                                   ├── Specimen_Findings.xlsx
-                                  ├── Measurement_Findings.xlsx (planned)
-                                  └── Instrument_Findings.xlsx (planned)
+                                  ├── Measurement_Findings.xlsx
+                                  └── Instrument_Findings.xlsx
 ```
 
 ## Scope discipline
@@ -52,8 +52,8 @@ and `consumer-bases/DSS_View.xlsx`.
 | Notebook | Sub-type | Scope | Output |
 |---|---|---|---|
 | `Specimen_Findings.ipynb` | Specimen | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded) | `machine_actionable/Specimen_Findings.xlsx` |
-| `Measurement_Findings.ipynb` *(planned)* | Measurement | VS, MK, CV (EG excluded) | `machine_actionable/Measurement_Findings.xlsx` |
-| `Instrument_Findings.ipynb` *(planned)* | Instrument | QS, FT, RS | `machine_actionable/Instrument_Findings.xlsx` |
+| `Measurement_Findings.ipynb` | Measurement | VS, MK, CV (EG excluded) | `machine_actionable/Measurement_Findings.xlsx` |
+| `Instrument_Findings.ipynb` | Instrument | QS, FT, RS | `machine_actionable/Instrument_Findings.xlsx` |
 
 ## Inputs (shared)
 
@@ -73,7 +73,7 @@ For the instrument sub-type, when added:
 
 ## File structure
 
-Each output is a two-sheet workbook:
+Specimen and measurement outputs are two-sheet workbooks:
 
 - **`Test_Identity`** — one row per TESTCD. Concept-level identity.
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
@@ -82,6 +82,18 @@ Each output is a two-sheet workbook:
 Link key between sheets: TESTCD (and NCIt code for precision). The two-step
 structure matches the mapping workflow: first resolve a term to a concept,
 then select the specific measurement variant.
+
+Instrument output is a four-sheet workbook — adds `BC_Categories` and
+`BC_Parents` to the two-sheet base. The two extra sheets carry COSMoS's
+search-tag mechanism and the BC parent-child traversal explicitly. They
+are needed because instrument grouping operates outside the BC parent
+chain — the instrument-level BC and the wrapper concepts (e.g., `6 Minute
+Walk Functional Test` C115789 vs. `6MWT Functional Test Question` C115409)
+sit in disjoint NCIt trees connected only through shared category tags.
+The two-sheet skeleton would force consumers to derive these joins; the
+four-sheet shape makes them addressable directly. See
+[`docs/6MWT_COSMoS_Story.html`](../docs/6MWT_COSMoS_Story.html) and
+[`docs/6MWT_NCIt_Story.html`](../docs/6MWT_NCIt_Story.html).
 
 Column shape inside each sheet is designed fresh per sub-type, leveraging
 DSS_View's native columns (snake_case, `bc_*` prefixes for BC identity,
