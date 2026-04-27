@@ -24,7 +24,7 @@ The future is publishing CDISC standards as a graph that tools and AI can traver
 
 ## Tracks
 
-The repository is organized into source tracks, a reference track, and consumer tracks. Source tracks extract and enrich from upstream standards. The reference track provides shared domain metadata. Consumer tracks join source data into structural-type-specific outputs for study design and mapping workflows.
+The repository is organized into source tracks, a graph track, a reference track, a view track, and consumer tracks. Source tracks extract and enrich from upstream standards. The graph track projects COSMoS into a multi-sheet traversable graph. The reference track provides shared domain metadata. The view track joins the graph into per-DSS views. Consumer tracks add structural-type-specific final shaping for study design and mapping workflows.
 
 Each reference file is self-describing, with a README sheet documenting columns, provenance, and design decisions.
 
@@ -35,8 +35,15 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | [`SDTM_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) -- domain-level test codes | NCI EVS, NCIt, UMLS |
 | | | [`SDTM_Instrument_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Test_Identity.xlsx) -- test codes bound to an instrument codelist | |
 | | What instruments? | [`SDTM_Instrument_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) -- one row per instrument codelist, dual NCIt anchors (C20993 + C211913) | |
-| [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? | [`COSMoS_BC_DSS.xlsx`](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) -- flattened BC/DSS interim file | COSMoS BC/DSS exports |
+| [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? (extraction) | [`COSMoS_BC_DSS.xlsx`](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) -- legacy flattened BC/DSS interim, retained while consumers transition | COSMoS BC/DSS exports |
 | | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) | |
+
+### Graph track
+
+| Track | Question | Output | Source |
+|---|---|---|---|
+| [`cosmos-graph/`](cosmos-graph/) | How is it measured? (multi-sheet graph) | [`COSMoS_Graph.xlsx`](cosmos-graph/interim/COSMoS_Graph.xlsx) -- BC, BC_Parents, BC_Categories, DSS, Variables, Codelists, Relationships, ... | LinkML schemas + COSMoS source |
+| | Resolved against SDTM CT | [`COSMoS_Graph_CT.xlsx`](cosmos-graph/interim/COSMoS_Graph_CT.xlsx) -- CT enrichment | NCI EVS SDTM CT |
 
 ### Reference track
 
@@ -44,15 +51,22 @@ Each reference file is self-describing, with a README sheet documenting columns,
 |---|---|---|
 | [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: structural types, COSMoS coverage flags, specimen/instrument classification | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
 
+### View track
+
+| Track | Purpose | Output |
+|---|---|---|
+| [`consumer-bases/`](consumer-bases/) | Joined views over the graph for consumer tracks (scope-agnostic) | [`DSS_View.xlsx`](consumer-bases/interim/DSS_View.xlsx) -- Test_Identity + Measurement_Specs at TESTCD/DSS grain |
+
 ### Consumer tracks
 
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
-| [`sdtm-findings/`](sdtm-findings/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings/machine_actionable/Specimen_Findings.xlsx) |
-| | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings/machine_actionable/Measurement_Findings.xlsx) |
-| | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings/machine_actionable/Instrument_Findings.xlsx) |
+| [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
+| | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
+| | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- four-sheet (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) |
+| [`sdtm-findings/`](sdtm-findings/) | Legacy parallel track | Same scope as above | Pre-graph build, retained for backward compatibility while consumers transition |
 
-Consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The link between sheets is TESTCD. This two-step structure matches the mapping workflow: first resolve a term to a concept, then select the specific measurement variant.
+Specimen and Measurement consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The Instrument consumer is four-sheet — adds **BC_Categories** (search-tag mechanism) and **BC_Parents** (parent-chain traversal) because instrument grouping operates outside the BC parent chain (item BCs roll up via wrapper concepts, not via the instrument-level BC). Link between sheets: TESTCD.
 
 ## Skills
 
@@ -78,38 +92,52 @@ graph TD
     end
 
     subgraph cosmos-bc-dss
-        BCD["COSMoS_BC_DSS.xlsx"]
+        BCD["COSMoS_BC_DSS.xlsx<br/>(legacy interim)"]
         BA["Behavioural_Analysis.md"]
         DPI["Domain_Pattern_Inventory.xlsx"]
+    end
+
+    subgraph cosmos-graph
+        CG["COSMoS_Graph.xlsx"]
+        CGC["COSMoS_Graph_CT.xlsx"]
     end
 
     subgraph sdtm-domain-reference
         DM["SDTM_Domain_Metadata.xlsx"]
     end
 
-    subgraph sdtm-findings
+    subgraph consumer-bases
+        DV["DSS_View.xlsx"]
+    end
+
+    subgraph sdtm-findings-graph
         SF["Specimen_Findings.xlsx"]
         MF["Measurement_Findings.xlsx"]
-        IF["Instrument_Findings.xlsx"]
+        IF["Instrument_Findings.xlsx<br/>(four-sheet)"]
     end
 
     EVS --> TI
     EVS --> ITI
     EVS --> II
-    ITI --> IF
-    II --> IF
+    EVS --> DM
+    EVS --> CGC
     COS --> BCD
+    COS --> CG
     BCD --> BA
     BCD --> DPI
-    EVS --> DM
 
-    TI --> SF
+    CG --> DV
+    CGC --> DV
+    TI --> DV
+
+    DV --> SF
+    DV --> MF
+    DV --> IF
     DM --> SF
-    BCD --> SF
-
-    TI --> MF
     DM --> MF
-    BCD --> MF
+    DM --> IF
+    II --> IF
+    ITI --> IF
 
     DO["SDTM_Domain_Overview.md<br/>repo root"]
 ```
@@ -134,7 +162,7 @@ The analytical work produced insights beyond the reference files themselves. Ful
 
 **DS_Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are designed for human readability (GLUCSER = Glucose in Serum), not as persistent machine identifiers. They are not unique across domains. Several approaches could make DSSs machine-addressable: URIs from domain + DS_Code, NCIt C-codes at the DSS level, or other mechanisms. The right approach is an open question for the community.
 
-**The standardized identity layer is complete; the measurement specification layer is not.** The specimen-based consumer file carries 4,183 TESTCDs with full NCIt identity across 8 domains, but only 104 have COSMoS measurement specifications. For laboratory tests specifically, sponsors who maintain internal lab test catalogues or registries already have much of the missing operational detail (specimen types, methods, units, LOINC codes). The Test_Identity sheet provides the standardized anchor (TESTCD, NCIt_Code) for mapping that internal content to the CDISC identity layer. Where COSMoS has published DSSs, use them. Where it has not, the identity layer is still there. See the [consumer track README](sdtm-findings/) for detail.
+**The standardized identity layer is complete; the measurement specification layer is not.** The specimen-based consumer file carries 4,183 TESTCDs with full NCIt identity across 8 domains, but only 104 have COSMoS measurement specifications. For laboratory tests specifically, sponsors who maintain internal lab test catalogues or registries already have much of the missing operational detail (specimen types, methods, units, LOINC codes). The Test_Identity sheet provides the standardized anchor (TESTCD, NCIt_Code) for mapping that internal content to the CDISC identity layer. Where COSMoS has published DSSs, use them. Where it has not, the identity layer is still there. See the [graph-fed consumer track README](sdtm-findings-graph/) for detail.
 
 **Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? Is the collection-template framing useful for understanding where DSS-level identifiers add value? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback on any of these is welcome.
 

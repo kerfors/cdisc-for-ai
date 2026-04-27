@@ -43,10 +43,10 @@ graph TD
     CT -->|informs| DR
     DR -->|enriched by| BA
 
-    subgraph CF["Consumer files"]
+    subgraph CF["Consumer files (sdtm-findings-graph/)"]
         CF1["Specimen_Findings.xlsx"]
         CF2["Measurement_Findings.xlsx"]
-        CF3["Instrument_Findings.xlsx"]
+        CF3["Instrument_Findings.xlsx<br/>(four-sheet)"]
     end
 
     BA -->|drives| CF
@@ -115,7 +115,7 @@ Full detail in [COSMoS_Behavioural_Analysis.md](cosmos-bc-dss/docs/COSMoS_Behavi
 | Immunogenicity Findings | IS | Antibody class × target × scale | Own structure needed |
 | Genomics Findings | GF | Assessment × scale × method | Two-sheet possible, different axis |
 | Measurement Findings | VS, EG, MK, CV | Subject-level measurement | Two sheets (VS, MK, CV). EG deferred. |
-| Instrument Findings | QS, FT, RS | Question within instrument | Single sheet + hierarchy |
+| Instrument Findings | QS, FT, RS | Question within instrument | Four sheets: Test_Identity + Measurement_Specs + BC_Categories + BC_Parents |
 | Domain-specific Findings | DD, RP, SC, SR, UR | Domain-specific assessment | Single sheet |
 | Clinical Assessment | FA, TR, TU, IE | Finding about event/intervention | Single sheet + RELREC |
 | Events | AE, DS, MH, BE | Event type or prespecified variant | Single sheet |

@@ -3,7 +3,7 @@
 `consumer-bases/` carries joined, denormalised projections over `cosmos-graph/` and
 repo reference metadata, shaped for consumer use but not yet the final consumer
 shape. Final shaping — sub-typing, behavioural classification, narrative framing —
-stays in consumer tracks (`sdtm-findings/`, `sdtm-narrative/`, future tracks).
+stays in consumer tracks (`sdtm-findings-graph/`, `sdtm-narrative/`, future tracks).
 
 ## Scope discipline
 
@@ -25,7 +25,7 @@ consumers; each consumer applies its own editorial pass.
 ```
 cosmos-graph/ ─────────┐
                        │
-sdtm-test-codes/ ──────┼──→ consumer-bases/ ──→ sdtm-findings/
+sdtm-test-codes/ ──────┼──→ consumer-bases/ ──→ sdtm-findings-graph/
 sdtm-domain-reference/ ┘                    └─→ (future consumers)
 ```
 
@@ -43,7 +43,8 @@ Consumer tracks add the final shaping.
 `DSS_View.xlsx` is graph-wide — every COSMoS DSS across all 32 domains (not
 only Findings). Observation-class scoping (Findings vs Events vs Interventions
 vs Special-Purpose) is applied by each consumer track. The first consumer is
-`sdtm-findings/`, which filters on `SDTM_Domain_Metadata.Observation_Class`.
+`sdtm-findings-graph/`, which filters on `SDTM_Domain_Metadata.Observation_Class`
+and produces sub-typed Findings outputs (specimen, measurement, instrument).
 
 ## Folder conventions
 
@@ -66,7 +67,7 @@ Folders not present:
 - `cosmos-graph/docs/COSMoS_Open_Work.md` — open work, including the deferred
   `DSS_Attributes` long-format sheet (§3) which would live here when its trigger
   fires.
-- `sdtm-findings/` — first consumer of `DSS_View.xlsx` (rewire is separate
-  work; legacy `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx` still feeds it as of
-  2026-04).
+- `sdtm-findings-graph/` — first consumer of `DSS_View.xlsx`. All three
+  Findings sub-types (specimen, measurement, instrument) built from this view.
+  Legacy `sdtm-findings/` runs in parallel until parity is fully validated.
 - Repo-root `CLAUDE.md` — repo conventions.

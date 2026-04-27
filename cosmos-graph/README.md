@@ -54,5 +54,7 @@ cosmos-graph/
 
 ## Downstream
 
+- [`consumer-bases/`](../consumer-bases/) — joined views over the graph (`DSS_View.xlsx`), shaped for consumer-track consumption. Scope-agnostic.
+- [`sdtm-findings-graph/`](../sdtm-findings-graph/) — graph-fed Findings consumer. All three sub-types (specimen, measurement, instrument) built from `consumer-bases/DSS_View.xlsx`. Canonical Findings output going forward.
 - [`sdtm-narrative/`](../sdtm-narrative/) — Tier 2b paragraphs and Tier 3 DataBooks, assembled from the graph via a template catalogue.
-- [`sdtm-findings/`](../sdtm-findings/) — still reads the legacy `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx` as of 2026-04; rewire to the graph is Branch B in the Step 2 hand-off brief.
+- [`sdtm-findings/`](../sdtm-findings/) — legacy parallel Findings consumer, still reading `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`. Retires once parity is fully validated downstream.

@@ -52,7 +52,9 @@ All source files are downloaded automatically and cached in [`downloads/`](downl
 
 ## Downstream
 
-The interim file feeds the [`sdtm-findings`](../sdtm-findings/) consumption track, which joins green (SDTM Test Identity) and yellow (COSMoS BC/DSS) into domain-specific consumer files: [`Specimen_Findings.xlsx`](../sdtm-findings/machine_actionable/Specimen_Findings.xlsx) and [`Measurement_Findings.xlsx`](../sdtm-findings/machine_actionable/Measurement_Findings.xlsx). These are the reference files consumed by the [`specimen-findings-ct-mapping`](../skills/specimen-findings-ct-mapping/) skill.
+The legacy interim file feeds the [`sdtm-findings`](../sdtm-findings/) consumer track (legacy parallel). The canonical successor is [`sdtm-findings-graph`](../sdtm-findings-graph/), which reads from the multi-sheet `cosmos-graph/` projection via `consumer-bases/DSS_View.xlsx` instead of the single-sheet flatten here. The two consumer tracks run in parallel until the legacy retires.
+
+The COSMoS source ingest in this track also serves [`cosmos-graph/`](../cosmos-graph/), which projects the same source into a multi-sheet traversable graph driven by the LinkML schema.
 
 ## Dependencies
 

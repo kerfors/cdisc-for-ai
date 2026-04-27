@@ -1,6 +1,8 @@
-# SDTM Findings — Consumer Track
+# SDTM Findings — Consumer Track (legacy)
 
 Consumer-facing reference files that join SDTM test identity with COSMoS measurement specifications, organized by structural type.
+
+> **Status — legacy parallel track.** This track now runs in parallel with the graph-fed [`sdtm-findings-graph/`](../sdtm-findings-graph/), which is the canonical successor. The two coexist while consumers transition; this track retires once parity is fully validated downstream. New work goes in `sdtm-findings-graph/`; this README is preserved as the legacy reference.
 
 > **Reference versions** — built on SDTM CT 2026-03-27 and COSMoS BC/DSS 2026-Q1. See [`../docs/Changes_2026-03.md`](../docs/Changes_2026-03.md) for what changed since the previous release.
 
@@ -42,9 +44,13 @@ The link between sheets is TESTCD (and NCIt_Code for precision). This two-step s
 
 ## Current state
 
-[`Specimen_Findings.xlsx`](machine_actionable/Specimen_Findings.xlsx) and [`Measurement_Findings.xlsx`](machine_actionable/Measurement_Findings.xlsx) are complete and running. Coverage reflects COSMoS publication status -- domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
+All three legacy outputs are present and running. Coverage reflects COSMoS publication status -- domains where COSMoS has not yet published dataset specializations show zero DSS rows. This is a source coverage gap, not a pipeline issue.
 
-[`Instrument_Findings.xlsx`](machine_actionable/Instrument_Findings.xlsx) now covers QS/FT/RS, with dual NCIt anchors (instrument + container) attached per row via the codelist-grain join.
+For the graph-fed equivalents (the canonical files going forward), see [`../sdtm-findings-graph/`](../sdtm-findings-graph/). The new track:
+
+- Reads `consumer-bases/DSS_View.xlsx` (a joined view over the multi-sheet `cosmos-graph/` projection) instead of `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`.
+- Carries fresh column shape (snake_case, BC identity from graph traversal).
+- For instrument, adds two more sheets — `BC_Categories` (search-tag mechanism) and `BC_Parents` (parent-chain traversal) — making instrument grouping addressable directly via NCIt code (chocolate C20993, copper C211913 anchors per row).
 
 ## Coverage gap and sponsor content
 
