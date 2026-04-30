@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-25",
+  "generated": "2026-04-30",
   "inputs": [
     "COSMoS_Graph.xlsx",
     "COSMoS_Graph_CT.xlsx",
@@ -54,6 +54,204 @@
       "status": "PASS",
       "count": 0,
       "detail": []
+    },
+    {
+      "check": "value_list_codelist_binding_integrity",
+      "status": "PASS",
+      "count": 0,
+      "detail": []
+    },
+    {
+      "check": "value_list_resolution_summary",
+      "status": "INFO",
+      "count": 2528,
+      "detail": [
+        {
+          "metric": "total_value_list_rows",
+          "count": 2528
+        },
+        {
+          "metric": "all_resolved",
+          "count": 1820
+        },
+        {
+          "metric": "partial",
+          "count": 199
+        },
+        {
+          "metric": "none_resolved",
+          "count": 5
+        },
+        {
+          "metric": "no_codelist",
+          "count": 502
+        },
+        {
+          "metric": "codelist_not_in_ct",
+          "count": 2
+        },
+        {
+          "metric": "unique_unresolvable_pairs",
+          "count": 30
+        }
+      ]
+    },
+    {
+      "check": "value_list_unresolved_members",
+      "status": "INFO",
+      "count": 30,
+      "detail": [
+        {
+          "codelist": "UNIT",
+          "member": "mg/mL",
+          "row_count": 121
+        },
+        {
+          "codelist": "UNIT",
+          "member": "ng/mL",
+          "row_count": 46
+        },
+        {
+          "codelist": "LOC",
+          "member": "PERIPHERAL ARTERY",
+          "row_count": 8
+        },
+        {
+          "codelist": "EVAL",
+          "member": "INDEPENDENT ASSESSOR, RADIOLOGIST",
+          "row_count": 5
+        },
+        {
+          "codelist": "UNIT",
+          "member": "Kg",
+          "row_count": 5
+        },
+        {
+          "codelist": "MEDEVAL",
+          "member": "ONCOLOGIST",
+          "row_count": 2
+        },
+        {
+          "codelist": "NY",
+          "member": "NA",
+          "row_count": 2
+        },
+        {
+          "codelist": "POSITION",
+          "member": "BENT FORWARD",
+          "row_count": 2
+        },
+        {
+          "codelist": "POSITION",
+          "member": "LEGS DEPENDENT",
+          "row_count": 2
+        },
+        {
+          "codelist": "UNIT",
+          "member": "C29848",
+          "row_count": 2
+        },
+        {
+          "codelist": "UNIT",
+          "member": "ml/min",
+          "row_count": 2
+        },
+        {
+          "codelist": "LOC",
+          "member": "BRAIN, HEART, SPINAL CORD,CERVICAL SPINE, THORACIC SPINE, LUMBAR SPINE",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "CARPOMETACARPAL JOINTS 3-5",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "CHEST, HEAD, ABDOMINAL REGION, CERVICAL SPINE, THORACIC SPINE, LUMBAR SPINE",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "CHEST, HEAD, ABDOMINAL REGION, PELVIS",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "METACARPOPHALANGEAL JOINT 4 METACARPOPHALANGEAL JOINT 3",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "PROXIMAL INTERPHALANGEAL",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "PROXIMAL INTERPHALANGEAL JOINT 5 OF THE HAND JOINT 4 OF THE HAND",
+          "row_count": 1
+        },
+        {
+          "codelist": "LOC",
+          "member": "RADIOCARPAL JOINT",
+          "row_count": 1
+        },
+        {
+          "codelist": "METHOD",
+          "member": "AUTOPSY",
+          "row_count": 1
+        },
+        {
+          "codelist": "METHOD",
+          "member": "PINCH DYNAMOMETRY",
+          "row_count": 1
+        },
+        {
+          "codelist": "NCOMPLT",
+          "member": "LOGISTICS PROBLEM",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "INTENSITY MODULATED RADIATION THERAPY",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "INTERSTITIAL BRACHYTHERAPY",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "INTRACAVITY BRACHYTHERAPY",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "RADIOSURGERY",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "STEREOTACTIC BODY RADIATION THERAPY",
+          "row_count": 1
+        },
+        {
+          "codelist": "UNIT",
+          "member": "mcg/mL",
+          "row_count": 1
+        },
+        {
+          "codelist": "UNIT",
+          "member": "ug/mL",
+          "row_count": 1
+        },
+        {
+          "codelist": "VSRESU",
+          "member": "fraction of 1",
+          "row_count": 1
+        }
+      ]
     },
     {
       "check": "schema_column_coverage",
