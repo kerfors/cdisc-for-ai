@@ -21,21 +21,24 @@ The two-sheet consumer output shape (`Test_Identity` + `Measurement_Specs`) shou
 
 ## 2. Upstream flags — paperwork to CDISC and NCI EVS
 
-Five asks. Each is an authoring or subset issue outside this repo.
+Eight asks. Each is an authoring or subset issue outside this repo.
 
 **To the COSMoS authoring working group.**
 
 1. **TU TUMERGE / TUSPLIT.** `assigned_term_concept_id` points at finding-state concepts (C94525, C96642). Correct TESTCD anchors already exist in SDTM CT: C225437 "Confluent Tumor Masses Assessment" and C225438 "Tumor Fragmentation Assessment".
 2. **DM ETHNIC / RACE.** `codelist_concept_id` points at legacy codes (C66790, C74457). Superseded by C128690 ETHNICC and C128689 RACEC.
+3. **TUMIDENT carries PRVIR / PRVIRP without TU prefix.** Empirically observed in `cdisc_sdtm_dataset_specializations_latest.xlsx`. Sibling `TUMIDENT_RECIST1_1` correctly carries `TUPRVIR` / `TUPRVIRP`. Both rows have `dec_id = NaN`, `codelist = C66742`. Should align with sibling: `PRVIR` → `TUPRVIR`, `PRVIRP` → `TUPRVIRP`.
 
 **To the CDISC SDTM CT team.**
 
-3. **MBTESTCD / MBTEST subset.** Does not carry C132388 "Treponema pallidum Antibody Measurement" or C171439 "SARS-CoV-2 Antibody Measurement". Both are valid NCIt Laboratory Procedures and are referenced by MB TPLAB and MB SAR2ABDET.
-4. **VSRESU (C66770) codelist.** Does not carry C105484 "fraction of 1", needed for OXYSAT.VSSTRESU.
+4. **MBTESTCD / MBTEST subset.** Does not carry C132388 "Treponema pallidum Antibody Measurement" or C171439 "SARS-CoV-2 Antibody Measurement". Both are valid NCIt Laboratory Procedures and are referenced by MB TPLAB and MB SAR2ABDET.
+5. **VSRESU (C66770) codelist.** Does not carry C105484 "fraction of 1", needed for OXYSAT.VSSTRESU.
+6. **AUTOPSY in `--METHOD` value_lists.** Appears in some `--METHOD` value_lists in the CDISC source xlsx; not present in METHOD codelist (C85492). Confirmed by Linda Lander (CDISC); will be removed in next package release.
+7. **PINCH DYNAMOMETRY in `--METHOD` value_lists.** Same pattern as AUTOPSY. Confirmed by Linda Lander (CDISC); will be removed in next package release.
 
 **To the NCI EVS Variable Terminology team.**
 
-5. **Root-subset gaps.** Thirty-seven variable codes resolve to compositional forms that have no `--<remainder>` representation in the NCI EVS Variable Terminology Root subset at 2026-03-27. Dominated by the GF* (Genomic Findings) family, `STRESN` across domains, and `ISBDAGNT`. Full list in [`../reports/root_subset_fallback_diagnostic.md`](../reports/root_subset_fallback_diagnostic.md).
+8. **Root-subset gaps.** Thirty-seven variable codes resolve to compositional forms that have no `--<remainder>` representation in the NCI EVS Variable Terminology Root subset at 2026-03-27. Dominated by the GF* (Genomic Findings) family, `STRESN` across domains, and `ISBDAGNT`. Full list in [`../reports/root_subset_fallback_diagnostic.md`](../reports/root_subset_fallback_diagnostic.md).
 
 Paperwork, not code. Drafts live outside this branch.
 
@@ -56,3 +59,4 @@ For context, so the items above read as what remains.
 - **Root-subset fallback diagnostic** (archive/`COSMoS_Graph_Upstream_Additions.md` §3.5). Closed 2026-04-23. Output in [`../reports/root_subset_fallback_diagnostic.{md,csv}`](../reports/root_subset_fallback_diagnostic.md).
 - **Step 2 flattener rewrite.** Delivered and merged. Close-out in [`archive/flattener_rewrite_audit.md`](archive/flattener_rewrite_audit.md).
 - **BC-side validation in `30_validate_graph.ipynb`.** Six hard referential-integrity checks promoted from inline prints in notebook 10 — `BC_Parents.bc_id` and `.parent_bc_id` close against `BC`; `BC_Categories.bc_id` closes against `BC` and `.category` against the `Categories` vocabulary; `Coding.bc_id` and `DataElementConcepts.bc_id` close against `BC`. Trigger: `consumer-bases/` consumes `Coding` directly. All checks PASS at the current package.
+- **METHOD codelist false-positive review.** Earlier QC pass flagged `C179788` as missing from METHOD codelist (C85492). Linda Lander (CDISC) confirmed C179788 is correctly assigned to QRSMTHOD codelist; the dataset specialization assigns it correctly. No action.
