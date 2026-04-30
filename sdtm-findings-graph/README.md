@@ -59,7 +59,7 @@ and `consumer-bases/DSS_View.xlsx`.
 
 | File | Track | Content |
 |---|---|---|
-| [`DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx) | consumer-bases | Joined view: `Test_Identity` (COSMoS-pinned TESTCDs), `Measurement_Specs` (DSS-grain, BC + Coding + Variables pivot) |
+| [`DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx) | consumer-bases | Joined view: `Test_Identity` (COSMoS-pinned TESTCDs), `Measurement_Specs` (DSS-grain, BC + Coding + Variables slot pivot — pin and value_list) |
 | [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | sdtm-test-codes | Domain-level test codes with NCIt identity. Used to widen `Test_Identity` beyond DSS_View's COSMoS-pinned subset. |
 | [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata. `Observation_Class` joined per row. |
 | [`COSMoS_Graph_CT.xlsx`](../cosmos-graph/interim/COSMoS_Graph_CT.xlsx) | cosmos-graph | `CodelistTerms` sheet — drives the `Allowed_Units` permissible-value expansion (`ORRESU_codelist` → terms). |
@@ -130,7 +130,7 @@ sub-types where they fire:
 
 - **LOINC grain.** DSS_View carries LOINC at BC grain (`Coding_http://loinc.org/`,
   `Coding_https://loinc.org`) and at DSS grain (`LOINC_value` from the
-  Variables pivot, when a domain pins a `<DOM>LOINC` variable). The consumer
+  Variables slot pivot, when a domain pins a `<DOM>LOINC` variable). The consumer
   chooses BC-only, DSS-only, or coalesce. Decision documented in each
   sub-type notebook header.
 - **NCIt graph/reference disagreement.** DSS_View flags TESTCDs where the

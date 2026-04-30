@@ -21,9 +21,9 @@ multi-sheet flatten — when CDISC adds a slot, we pick it up automatically.
 Output is two workbooks:
 
 - **`COSMoS_Graph.xlsx`** (11 sheets) — lossless over source. Every BC, every
-  DSS, every SDTMVariable pin, every reified relationship edge, every
-  BC-to-Category and BC-to-BC-parent edge. Same content as source, restructured
-  so it can be queried as tables instead of parsed as YAML.
+  DSS, every SDTMVariable row (pin or value_list), every reified relationship
+  edge, every BC-to-Category and BC-to-BC-parent edge. Same content as source,
+  restructured so it can be queried as tables instead of parsed as YAML.
 - **`COSMoS_Graph_CT.xlsx`** (5 sheets) — joins each codelist binding and each
   pinned NCIt concept with NCI EVS SDTM CT, so each resolves to a definition
   and preferred term.
@@ -49,9 +49,10 @@ First output: **`DSS_View.xlsx`** with two sheets:
   domain membership). Conflicts between the two are flagged, not resolved.
 - **`Measurement_Specs`** — one row per DSS. DSS identity + BC identity joined
   in; external codings (LOINC, …) pivoted from the BC `Coding` sheet; every
-  `Variables` pin (specimen, method, units, location, laterality, …) pivoted
-  with the leading domain code stripped, so `_SPEC_value` carries the LB
-  specimen for LB DSSs and the MB specimen for MB DSSs.
+  `Variables` slot (pin or value_list — specimen, method, units, location,
+  laterality, …) pivoted with the leading domain code stripped, so
+  `_SPEC_value` carries the LB specimen for LB DSSs and the MB specimen for
+  MB DSSs. Pin and value_list are mutually exclusive per row in COSMoS source.
 
 Same scope discipline as Layer 1: no sub-typing, no behavioural classification,
 no narrative framing. Those belong to the consumer track.
@@ -62,8 +63,8 @@ no narrative framing. Those belong to the consumer track.
 |---|---|---|
 | In | CDISC COSMoS Excel export, LinkML schemas, NCI EVS SDTM CT | `COSMoS_Graph*.xlsx`, repo reference tracks |
 | Out | `COSMoS_Graph.xlsx` + `COSMoS_Graph_CT.xlsx` | `DSS_View.xlsx` |
-| Operation | Restructure: YAML/Excel → queryable tables | Join + pivot: long form → wide; pinned attributes assembled |
-| Adds | NCIt resolution from EVS CT (in CT workbook) | Cross-track NCIt enrichment; BC/DSS join; Variables pin pivot |
+| Operation | Restructure: YAML/Excel → queryable tables | Join + pivot: long form → wide; slot attributes assembled (pin and value_list) |
+| Adds | NCIt resolution from EVS CT (in CT workbook) | Cross-track NCIt enrichment; BC/DSS join; Variables slot pivot (pin and value_list) |
 | What stays out | Editorial content of any kind | Sub-typing, behavioural classification, narrative framing |
 
 **Layer 1 turns authored content into queryable form. Layer 2 turns queryable
