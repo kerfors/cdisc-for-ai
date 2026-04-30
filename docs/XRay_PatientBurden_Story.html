@@ -192,9 +192,9 @@
     <div class="part-num">Part 2</div>
     <div class="part-title">The DSS slot inventory — what is modelled, what is not</div>
     <div class="part-desc">
-      <p>The flattened DSS schema (as carried in the cdisc-for-ai interim file) models five qualifier-like slots at the DSS level: <code>Specimen</code>, <code>Method</code>, <code>location</code>, <code>laterality</code>, <code>evaluator</code>, plus unit and decimal-place metadata. There is no <code>position</code> column in the flattened schema.</p>
-      <p style="margin-top: 0.6rem;">At VLM-row level (the un-flattened DSS source) <code>--POS</code> DOES appear — in 40 rows total: 31 EGPOS rows across EG DSSs (all with codelist C71148, no value_list restriction), 9 VSPOS rows across VS DSSs (with codelist C71148 and typically a restricted value_list like <code>PRONE;SEMI-RECUMBENT;SITTING;STANDING;SUPINE</code> for DIABP/HR/PULSE). Zero rows in any PR, MK, TR, TU DSS.</p>
-      <p style="margin-top: 0.6rem;">So the gap is not DSS-wide — it is <strong>imaging-specific</strong>. Position has been curated for blood-pressure and ECG measurements, where it was identified as clinically discriminating. It has not been curated for imaging procedures or imaging-derived measurements, where it is equally discriminating for burden and data interpretation.</p>
+      <p>The graph-fed joined view (<code>consumer-bases/interim/DSS_View.xlsx</code>, sheet <code>Measurement_Specs</code>) projects each DSS as one row with per-slot triplets <code>&lt;SLOT&gt;_value</code> / <code>_ncit</code> / <code>_codelist</code>. The DSSs in the imaging-relevant Findings domains — MK Sharp scoring (5 DSSs), TR RECIST measurement (9 DSSs), TU RECIST identification (6 DSSs) — collectively populate a rich qualifier vocabulary across these slots: spatial (<code>LOC</code>, <code>LAT</code>, <code>DIR</code>), procedural (<code>METHOD</code>, <code>EVAL</code>, <code>EVALID</code>), result-coding (<code>ORRES</code>, <code>STRESC</code>, <code>STRESN</code>), units (<code>ORRESU</code>, <code>STRESU</code>), timing (<code>DTC</code>), link identifiers (<code>REFID</code>, <code>LNKID</code>, <code>GRPID</code>).</p>
+      <p style="margin-top: 0.6rem;">Conspicuously absent from this rich qualifier inventory: <strong><code>POS</code></strong>. At VLM-row level (<code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> Variables sheet) <code>--POS</code> DOES appear — in 40 rows total: 31 EGPOS rows across EG DSSs (all with codelist C71148, no value_list restriction), 9 VSPOS rows across VS DSSs (with codelist C71148 and typically a restricted value_list like <code>PRONE;SEMI-RECUMBENT;SITTING;STANDING;SUPINE</code> for DIABP/HR/PULSE). Zero rows in any PR, MK, TR, TU DSS.</p>
+      <p style="margin-top: 0.6rem;">So the gap is not "imaging DSSs model nothing" — they model a great deal. The gap is specifically <strong>patient body position</strong>: a clinical discriminator that COSMoS curated for blood-pressure and ECG measurements, where it was identified as relevant, but has not curated for imaging procedures or imaging-derived measurements, where it is equally relevant for burden and data interpretation.</p>
     </div>
   </div>
 
@@ -376,7 +376,7 @@
       <span class="opt-num">Option 4</span>
       <div class="opt-title">Add <code>position</code> as a DSS schema slot</div>
       <div class="opt-desc">COSMoS adds <code>position</code> alongside <code>location</code>, <code>laterality</code>, <code>evaluator</code> as a first-class DSS qualifier slot, bound to POSITION codelist (C71148). Imaging DSSs populate it as a value_list or assigned term where relevant.</div>
-      <div class="opt-trade"><strong>Trade:</strong> Correct long-term fix, structurally symmetric with laterality. Multi-quarter effort at CDISC COSMoS / DDF. Does not solve view/contrast/preparation — each additional qualifier is its own extension.</div>
+      <div class="opt-trade"><strong>Trade:</strong> Correct long-term fix on the PR side — structurally symmetric with laterality. Multi-quarter effort at CDISC COSMoS / DDF. Does not solve view/contrast/preparation — each additional qualifier is its own extension. <strong>Complication on the TR/TU side</strong>: those BCs are method-agnostic (15-method <code>--METHOD</code> value_list including X-Ray, CT, MRI <em>and</em> caliper measurement, photography, endoscopy). Position is positively relevant for some of these methods, irrelevant for others. A flat <code>--POS</code> slot would over-promise. Method-conditional value_lists are not a current COSMoS pattern — so for TR/TU the burden-discriminator position naturally lands at the SoA / USDM Activity level (Option 2), where the modality-position interaction can be expressed at activity granularity.</div>
     </div>
 
   </div>
@@ -397,6 +397,7 @@
     <p style="margin-top: 8px;">SDTM CT publishes a governed POSITION codelist with 17 terms. <code>--POS</code> is populated in some DSSs (EG, VS — 40 rows total). The vocabulary, the variable, and even DSS-level bindings exist. But the COSMoS DSSs that downstream tools (SoA designers, burden calculators, CRF libraries) would want to bind to for imaging — XRAYCHEST, CTSCANCHEST, MK Sharp/Genant — have no such binding.</p>
     <p style="margin-top: 8px;">The same pattern applies to other qualifier dimensions that vary clinically but are not in the DSS schema: acquisition view (PA/AP/lateral), fasting state for imaging, timing relative to challenge events, inpatient-vs-outpatient setting. Each is a case where a well-governed identity fact is unreachable from the measurement-spec layer.</p>
     <p style="margin-top: 8px;">For the project's three-layer analytical model, this argues for explicit <em>qualifier-dimension tracking</em> — not just test-code identity — as a first-class artefact. The traversable graph should be able to answer: "for this DSS, which SDTM-CT-governed qualifier codelists are attachable, and which are pinned, and which are silent?" Today that question is answered by reading the DSS XLSX row by row, as this analysis had to do.</p>
+    <p style="margin-top: 8px;"><strong>Cross-domain confirmation.</strong> The companion <a href="XRay_COSMoS_Story.html">COSMoS Story Part 2B</a> extends the analysis across all three Findings domains where X-Ray reaches the measurement-spec layer (MK 5 DSSs, TR 9 DSSs, TU 6 DSSs — 20 DSSs in total). The position gap holds uniformly: every imaging-accepting Findings DSS in those 20 models <code>--METHOD</code>, <code>--LOC</code>, <code>--LAT</code> richly, but none of them models <code>--POS</code>. The chest-X-ray/position case is one instance of a wider, structurally consistent pattern.</p>
   </div>
 
   <div class="registry-band">
@@ -415,11 +416,11 @@
 </div>
 
 <div class="footer">
-  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) &bull; SDTM CT 2026-03-27 &bull; SDTMIG v3.4.<br>
-  XRAYCHEST VLM detail (9 rows) and SGBESCR VLM detail (9 rows) extracted from source. POSITION codelist (C71148) content extracted from SDTM CT file — 17 governed terms verified. Cross-DSS scan of all VLM rows confirms <code>--POS</code> variables appear in 40 rows total: 31 EGPOS rows in EG DSSs, 9 VSPOS rows in VS DSSs, zero rows in any PR, MK, TR, or TU DSS. Flattened interim BC_DSS file has no <code>position</code> column.<br>
+  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-graph/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) projected through <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> and joined in <code>consumer-bases/interim/DSS_View.xlsx</code> &bull; SDTM CT 2026-03-27 &bull; SDTMIG v3.4.<br>
+  XRAYCHEST VLM detail (9 rows) and SGBESCR VLM detail (9 rows) extracted from <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> Variables sheet. POSITION codelist (C71148) content extracted from SDTM CT file — 17 governed terms verified. Cross-DSS scan of all VLM rows confirms <code>--POS</code> variables appear in 40 rows total: 31 EGPOS rows in EG DSSs, 9 VSPOS rows in VS DSSs, zero rows in any PR, MK, TR, or TU DSS. <code>DSS_View.xlsx</code> Measurement_Specs sheet has no <code>POS_value</code> column.<br>
   Case specialisation IDs (<code>ID101</code>, <code>ID102</code>, <code>ID103</code>) are architectural illustrations — syntactic placeholders marking the registry slot, not references to any sponsor catalogue.<br>
-  Companion doc: <a href="XRay_COSMoS_Story.html">XRay_COSMoS_Story.html</a> — the recording view of the same case, across PR and MK.<br>
-  Generated 2026-04-21.
+  Companion doc: <a href="XRay_COSMoS_Story.html">XRay_COSMoS_Story.html</a> — the recording view of the same case, across PR and the three Findings domains (MK / TR / TU).<br>
+  Generated 2026-04-21; updated 2026-04-30 (realigned to graph-fed architecture; cross-linked to COSMoS Story Part 2B; refined Option 4 trade-off for method-agnostic BCs).
 </div>
 
 </body>

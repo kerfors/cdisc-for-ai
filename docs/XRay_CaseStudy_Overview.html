@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chest X-Ray Case Study — Overview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f8f7f5; color: #333; padding: 32px; max-width: 1100px; margin: 0 auto; line-height: 1.55; }
+
+  h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 8px; }
+  .audience-line { color: #888; font-size: 0.78rem; margin-bottom: 28px; font-style: italic; }
+
+  h2 { font-size: 1.05rem; font-weight: 600; color: #333; margin-top: 28px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #e0ddd8; }
+  h3 { font-size: 0.92rem; font-weight: 600; color: #444; margin-top: 14px; margin-bottom: 6px; }
+
+  p { font-size: 0.88rem; margin-bottom: 10px; }
+  p code, li code { font-family: 'SF Mono', 'Consolas', monospace; background: #fff; padding: 0 4px; border-radius: 3px; font-size: 0.78rem; color: #4a3f24; border: 1px solid #ece4d0; }
+
+  ul { font-size: 0.88rem; margin-left: 22px; margin-bottom: 12px; }
+  ul li { margin-bottom: 6px; }
+
+  /* Document-pair cards */
+  .doc-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 6px 0; }
+  .doc-card { padding: 14px 16px; border-radius: 6px; border-left: 4px solid; background: #fff; }
+  .doc-card.cosmos { border-color: #2e6fb5; background: #f1f6fc; }
+  .doc-card.burden { border-color: #C8A415; background: #fffcf0; }
+  .doc-card .doc-eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #999; }
+  .doc-card .doc-title { font-size: 0.95rem; font-weight: 600; margin: 2px 0 6px 0; }
+  .doc-card .doc-title a { color: inherit; text-decoration: none; border-bottom: 1px dotted #999; }
+  .doc-card .doc-desc { font-size: 0.82rem; color: #555; margin-bottom: 8px; }
+  .doc-card .doc-meta { font-size: 0.74rem; color: #888; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .doc-card .doc-meta strong { color: #555; }
+
+  /* Findings rows */
+  .finding { padding: 10px 14px; margin: 8px 0; border-radius: 6px; background: #fff; border-left: 3px solid #888; }
+  .finding .find-title { font-size: 0.88rem; font-weight: 600; color: #333; margin-bottom: 4px; }
+  .finding .find-title .ref { font-size: 0.7rem; font-weight: 500; color: #888; padding: 2px 6px; border-radius: 3px; background: #f0ede8; margin-left: 8px; }
+  .finding .find-body { font-size: 0.82rem; color: #555; }
+  .finding.architectural { border-left-color: #2e6fb5; }
+  .finding.empirical { border-left-color: #548235; }
+  .finding.gap { border-left-color: #C8A415; }
+  .finding.deferred { border-left-color: #999; background: #fafaf8; }
+
+  /* Reading guide table */
+  .reading-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.84rem; }
+  .reading-table th { text-align: left; padding: 8px 10px; background: #f0ede8; font-weight: 600; color: #555; font-size: 0.78rem; border-bottom: 1px solid #ddd; }
+  .reading-table td { padding: 8px 10px; border-bottom: 1px solid #ece9e3; vertical-align: top; }
+  .reading-table tr:last-child td { border-bottom: none; }
+  .reading-table td:first-child { width: 28%; font-weight: 500; color: #333; }
+
+  /* Sponsor callout */
+  .sponsor-box { background: #fdf6dc; border-left: 4px solid #a8880f; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .sponsor-box .sponsor-eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #a8880f; font-weight: 600; }
+  .sponsor-box .sponsor-title { font-size: 0.95rem; font-weight: 600; color: #5d4d11; margin: 2px 0 8px 0; }
+  .sponsor-box p { font-size: 0.86rem; color: #5d4d11; margin-bottom: 8px; }
+  .sponsor-box p:last-child { margin-bottom: 0; }
+
+  /* Footer */
+  .footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e0ddd8; font-size: 0.74rem; color: #999; line-height: 1.6; }
+  .footer code { font-family: 'SF Mono', 'Consolas', monospace; background: #f5f3ee; padding: 0 4px; border-radius: 3px; font-size: 0.7rem; color: #777; }
+
+  @media print {
+    body { background: #fff; padding: 16px; }
+  }
+
+  @media (max-width: 720px) {
+    .doc-pair { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chest X-Ray Case Study — Overview</h1>
+<p class="subtitle">How X-Ray surfaces in CDISC standards, and what the two companion documents cover</p>
+<p class="audience-line">Reading note: assumes working familiarity with CDISC SDTM, SDTM Controlled Terminology, and the COSMoS BC/DSS package. Concepts not covered here are explained in the companion documents.</p>
+
+<h2>What this case study is</h2>
+<p>Chest X-Ray is a single clinical concept with <strong>two distinct CDISC footprints</strong>. The procedure itself — the act of acquiring an image — is recorded as an Interventions-class event in the PR domain. Measurements read off the image (joint erosion scores, cardiothoracic ratio, lesion size) are recorded as Findings-class data in body-system domains (MK, TR, TU, CV, …). COSMoS publishes Dataset Specializations (DSSs) for both sides, with very different internal logic.</p>
+<p>The case study uses Chest X-Ray to make three architectural questions concrete: how the same clinical concept is modelled differently across observation classes; what cross-class linkage is computable from COSMoS alone vs. requires authoring; and where the standards stop and sponsor / SoA / protocol-level work begins.</p>
+
+<h2>The two companion documents</h2>
+<p>The case study is written across two HTMLs that complement each other. Both can be read independently, but they share underlying analysis and reference each other.</p>
+
+<div class="doc-pair">
+  <div class="doc-card cosmos">
+    <div class="doc-eyebrow">Document 1 · Recording view</div>
+    <div class="doc-title"><a href="XRay_COSMoS_Story.html">Chest X-Ray — The COSMoS Story</a></div>
+    <div class="doc-desc">How CDISC SDTM and COSMoS DSSs record X-Ray, on both the PR procedure side and the Findings measurement side (MK Sharp scoring; TR and TU RECIST oncology). What each layer pins, what is left as slot, what survives the joined-view projection.</div>
+    <div class="doc-meta">
+      <strong>Structure:</strong> Part 1 (PR side, XRAYCHEST) · Part 2A (MK side, SGBESCR) · Part 2B (TR + TU side, LDIAM and TUMIDENT) · Part 3 (DSS_View joined-view projection).
+    </div>
+  </div>
+
+  <div class="doc-card burden">
+    <div class="doc-eyebrow">Document 2 · Schedule-of-Activities &amp; burden view</div>
+    <div class="doc-title"><a href="XRay_PatientBurden_Story.html">Chest X-Ray — The Patient-Burden Gap</a></div>
+    <div class="doc-desc">Why the COSMoS DSS for chest X-Ray (XRAYCHEST) is not a distinct enough anchor for SoA-level patient-burden calculation, where the discriminating qualifier (patient body position) lives in CDISC CT but not in any imaging DSS, and four architectural options for closing the gap.</div>
+    <div class="doc-meta">
+      <strong>Structure:</strong> Part 1 (the mismatch — burden dimensions vs DSS coverage) · Part 2 (DSS slot inventory; what is and isn't modelled) · Part 3 (case specialisations — speculative) · Part 4 (four options) · Summary (architectural framing).
+    </div>
+  </div>
+</div>
+
+<h2>Key analytical findings</h2>
+
+<div class="finding architectural">
+  <div class="find-title">PR and Findings model imaging modality inversely <span class="ref">COSMoS Story · Parts 1, 2A, 2B</span></div>
+  <div class="find-body">On the PR side, modality IS the DSS identity — XRAYCHEST, CTSCANCHEST, MRIBRAIN are separate DSSs differentiated by their PRDECOD pin. On the Findings side, the same DSS accepts multiple modalities via a <code>--METHOD</code> value_list — modality parameterises a single DSS rather than multiplying it.</div>
+</div>
+
+<div class="finding empirical">
+  <div class="find-title">Cross-class join is computable from cosmos-graph alone — 40 PR↔Findings DSS pairs reachable from X-Ray <span class="ref">COSMoS Story · Part 2B</span></div>
+  <div class="find-body">The shared NCIt code C38101 (X-Ray Imaging) appears as the BC anchor of 2 PR DSSs (XRAY, XRAYCHEST) and as a <code>--METHOD</code> value_list member in 20 Findings DSSs (5 MK Sharp + 9 TR RECIST + 6 TU RECIST). That gives 2 × 20 = 40 (PR DSS, Findings DSS) pairs the X-Ray modality can produce — a single SQL-equivalent operation over <code>cosmos-graph/COSMoS_Graph.xlsx</code>, no editorial authoring required.</div>
+</div>
+
+<div class="finding architectural">
+  <div class="find-title">BC nature drives value_list breadth on the Findings side <span class="ref">COSMoS Story · Part 2B</span></div>
+  <div class="find-body">MK Sharp BCs (Sharp/Genant, Sharp/Van der Heijde) are <em>named scoring instruments</em>; their <code>--METHOD</code> value_list is narrow (X-RAY;MRI) because the scoring methodology was developed for those modalities. TR/TU BCs (Longest Diameter, Tumor Identification) are <em>method-agnostic measurement and identification concepts</em>; their value_list is the full 15-method imaging panel because the geometry or state can be resolved by any of them.</div>
+</div>
+
+<div class="finding architectural">
+  <div class="find-title">Modality compatibility ≠ clinical pairing <span class="ref">COSMoS Story · Part 2B summary</span></div>
+  <div class="find-body">The 40 cross-class pairs express what the standards <em>permit</em> — "X-Ray can produce a record matching this Findings DSS schema". They do not assert clinical typicality: XRAYCHEST + MK Sharp Hand/Wrist is a permitted modality match, but Sharp scores hand and foot joints, not chest. Anatomical co-occurrence is sponsor- and protocol-level, not COSMoS-level.</div>
+</div>
+
+<div class="finding gap">
+  <div class="find-title">Patient body position is absent from every imaging DSS <span class="ref">PatientBurden Story · Part 2 + Summary</span></div>
+  <div class="find-body">SDTM CT publishes a governed POSITION codelist (C71148) with 17 terms (STANDING, SUPINE, SEMI-RECUMBENT, …). COSMoS curated <code>--POS</code> as a slot in EG (31 rows) and VS (9 rows) DSSs — but in zero rows of any PR, MK, TR, or TU DSS. This holds across all 20 X-Ray-accepting Findings DSSs uniformly. Position has been curated where it was identified as clinically relevant for blood-pressure and ECG; it has not been curated for imaging.</div>
+</div>
+
+<div class="finding gap">
+  <div class="find-title">Joined-view projection carries pins, not slot value_lists <span class="ref">COSMoS Story · Part 3</span></div>
+  <div class="find-body">The repo's joined-view layer (<code>consumer-bases/interim/DSS_View.xlsx</code>, sheet <code>Measurement_Specs</code>) projects each DSS as one row with per-slot triplets <code>&lt;SLOT&gt;_value</code> / <code>_ncit</code> / <code>_codelist</code> — but only for assigned (pinned) values. Slot value_lists (the <code>X-RAY;MRI</code> on MKMETHOD, the 15-method panel on TRMETHOD/TUMETHOD, the <code>Y</code> on PRPRESP) do NOT survive the projection — recovering them requires reading the COSMoS Variables sheet directly.</div>
+</div>
+
+<div class="finding deferred">
+  <div class="find-title">Record-to-record link (RELREC) is named, not modelled <span class="ref">COSMoS Story · Part 2B summary; PatientBurden Story · throughout</span></div>
+  <div class="find-body">When a chest X-ray is taken and the resulting image is read for Sharp/Genant scoring, the actual data set has a PR record (the procedure) and an MK record (the measurement) related by timing (MKDTC ≈ PRSTDTC), subject (USUBJID), and optionally RELREC. That record-level link lives in the SDTM data layer and in sponsor metadata, NOT in COSMoS.</div>
+</div>
+
+<div class="sponsor-box">
+  <span class="sponsor-eyebrow">For the sponsor</span>
+  <div class="sponsor-title">What this case study can support, and what it cannot</div>
+  <p><strong>Supports:</strong> Architectural decisions about how to structure SDTM submissions involving X-Ray procedures and downstream Findings; reasoning about which qualifier dimensions the standards do and do not capture; identification of the COSMoS coverage gap on patient body position for imaging; framing of the SoA-to-SDTM bridge for protocol design.</p>
+  <p><strong>Does not support (out of scope here):</strong> Actual study data submission decisions; sponsor-specific data dictionaries; controlled-vocabulary extension proposals beyond what is documented in the four options. The case-specialisation IDs (ID101 / ID102 / ID103) in the PatientBurden Story are syntactic placeholders, not references to any sponsor catalogue.</p>
+</div>
+
+<div class="footer">
+  Source data: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-graph/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) projected through <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> and joined in <code>consumer-bases/interim/DSS_View.xlsx</code> · SDTM CT 2026-03-27 · NCIt Thesaurus 2026-03 · SDTMIG v3.4.<br>
+  This overview document is intentionally excluded from the public <code>docs/index.html</code>. It is meant to be shared as a briefing alongside the two companion HTMLs (<a href="XRay_COSMoS_Story.html">XRay_COSMoS_Story.html</a>, <a href="XRay_PatientBurden_Story.html">XRay_PatientBurden_Story.html</a>) when discussing the case study with sponsors or external collaborators.<br>
+  Generated 2026-04-30.
+</div>
+
+</body>
+</html>

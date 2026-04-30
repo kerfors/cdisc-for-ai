@@ -138,7 +138,7 @@
 <body>
 
 <h1>Chest X-Ray — The COSMoS Story</h1>
-<p class="subtitle">How one imaging concept participates in two domain classes — as a procedure-as-intervention in PR, and as a qualifier of measurement-as-findings in MK — and what COSMoS DSS records of each</p>
+<p class="subtitle">How one imaging concept participates in two domain classes — as a procedure-as-intervention in PR, and as a qualifier of measurement-as-findings in MK / TR / TU — and what COSMoS DSS records of each</p>
 
 <div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
   <p><strong>Why this story splits across two domain classes.</strong> A chest X-ray has two SDTM footprints. The procedure itself — the act of acquiring the image — is an Interventions-class record in PR. The measurements read off the image (joint erosion score, cardiothoracic ratio, lesion size) are Findings-class records in body-system domains (MK, CV, TR, …). COSMoS publishes DSSs for both sides, with very different internal logic.</p>
@@ -150,8 +150,8 @@
   <div class="legend-item"><div class="legend-swatch sw-cosmos-bc"></div> COSMoS BC (root concept)</div>
   <div class="legend-item"><div class="legend-swatch sw-sdtm-ct"></div> SDTM CT codelist / term</div>
   <div class="legend-item"><div class="legend-swatch sw-cosmos-dss-iv"></div> COSMoS DSS — PR (Interventions)</div>
-  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS DSS — MK (Findings)</div>
-  <div class="legend-item"><div class="legend-swatch sw-flat"></div> cdisc-for-ai interim (flattened BC_DSS)</div>
+  <div class="legend-item"><div class="legend-swatch sw-cosmos-dss"></div> COSMoS DSS — Findings (MK / TR / TU)</div>
+  <div class="legend-item"><div class="legend-swatch sw-flat"></div> consumer-bases interim (DSS_View — joined projection)</div>
 </div>
 
 <div class="tree">
@@ -288,7 +288,7 @@
 
   <!-- PART 2 -->
   <div class="part-header">
-    <div class="part-num">Part 2</div>
+    <div class="part-num">Part 2A</div>
     <div class="part-title">The measurement side — SGBESCR DSS in MK (Findings)</div>
     <div class="part-desc">
       <p>When a chest X-ray is read for measurements — joint erosion scores in RA, bone density, cardiothoracic ratio — the measurement records are Findings-class rows in body-system domains. MK holds musculoskeletal measurements; TR holds tumour measurements; CV holds cardiac measurements.</p>
@@ -387,68 +387,311 @@
     <span class="insight-label">Architectural pattern on the Findings side</span>
     <p>Each MK Sharp-scoring DSS is a <em>test identity pin</em>: MKTESTCD is assigned, and the acquisition modality is a <code>--METHOD</code> slot with a value_list (X-RAY or MRI). One DSS covers two modalities.</p>
     <p style="margin-top: 6px;">This is the inverse of the PR pattern. On the Findings side, modality parameterises the same DSS; on the PR side, modality IS the DSS identity. The asymmetry is structural: PR models the procedure-as-event where "what procedure was it" is the identity question, while Findings models the measurement-as-data where "what was measured" is identity and "how it was acquired" is a qualifier.</p>
-    <p style="margin-top: 6px;">The same dataset reference (Dataset Specialization section of the SDTMIG) does not produce uniform logic across domain classes. <code>--METHOD</code> value_list breadth varies too: the TR/TU RECIST DSSs accept <strong>15 imaging methods</strong> in a single DSS (CT SCAN; CALIPER MEASUREMENT METHOD; ENDOSCOPY; LYMPHANGIOGRAPHY; MAMMOGRAPHY; MRI; NUCLEAR RADIOLOGY; PET SCAN; PET/CT SCAN; PET/MRI SCAN; PHOTOGRAPHY; SCINTIGRAPHY; TOTAL BODY RADIOGRAPHY; ULTRASOUND; X-RAY); MK accepts 2 (X-RAY;MRI); some domains have no MKMETHOD slot at all.</p>
+    <p style="margin-top: 6px;">The same dataset reference (Dataset Specialization section of the SDTMIG) does not produce uniform logic across domain classes. <code>--METHOD</code> value_list breadth varies too: the TR/TU RECIST DSSs accept <strong>15 imaging methods</strong> in a single DSS (CT SCAN; CALIPER MEASUREMENT METHOD; ENDOSCOPY; LYMPHANGIOGRAPHY; MAMMOGRAPHY; MRI; NUCLEAR RADIOLOGY; PET SCAN; PET/CT SCAN; PET/MRI SCAN; PHOTOGRAPHY; SCINTIGRAPHY; TOTAL BODY RADIOGRAPHY; ULTRASOUND; X-RAY); MK accepts 2 (X-RAY;MRI); some domains have no MKMETHOD slot at all. Part 2B expands TR and TU.</p>
   </div>
 
-  <!-- PART 3 — Flattened row -->
+  <!-- PART 2b -->
+  <div class="part-header">
+    <div class="part-num">Part 2B</div>
+    <div class="part-title">The same pattern in oncology — TR and TU (Findings)</div>
+    <div class="part-desc">
+      <p>MK is one of three Findings domains whose <code>--METHOD</code> value_list accepts X-Ray. The other two are <strong>TR</strong> (Tumor/Lesion Results, 9 DSSs) and <strong>TU</strong> (Tumor/Lesion Identification, 6 DSSs). Both adopt the same modality-as-qualifier pattern as MK Sharp scoring, but with substantially different breadth — a 15-method imaging panel rather than 2 — and with BC anchors that are <em>method-agnostic measurement concepts</em> rather than <em>named scoring instruments</em>.</p>
+      <p style="margin-top: 0.6rem;">Below: LDIAM (Longest Diameter, the canonical RECIST measurement) fully expanded as the TR exemplar; TUMIDENT (Tumor Identification) fully expanded as the TU exemplar. Sibling DSSs follow as case-defining summary cards.</p>
+    </div>
+  </div>
+
+  <!-- BC root for LDIAM (TR) -->
+  <div class="layer-label">COSMoS BC — Longest Diameter root concept</div>
+  <div class="node cosmos-bc">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C96684" target="evs">C96684</a> — Longest Diameter <span class="tag">BC</span></div>
+    <div class="meta">Definition: The longest possible length of a straight line passing through the center of a circular or spheroid object that connects two points on the circumference. &nbsp;|&nbsp; Hierarchy: Diameter (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C25285" target="evs">C25285</a>) → Longest Diameter (C96684) &nbsp;|&nbsp; Domains_with_DS: TR</div>
+  </div>
+
+  <!-- LDIAM DSS fully expanded -->
+  <div class="dss-group">
+    <div class="layer-label">COSMoS DSS — LDIAM (Longest Diameter)</div>
+    <div class="connector">
+      <div class="node cosmos-dss">
+        <div class="code">LDIAM — Longest Diameter <span class="tag">DSS — VLM group (Findings)</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>LDIAM</strong></span>
+          <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>TR.TRTESTCD</strong></span>
+          <span class="attr-label">Domain</span>        <span class="attr-val"><strong>TR</strong> (Tumor/Lesion Results — Findings class)</span>
+          <span class="attr-label">bc_id</span>         <span class="attr-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C96684" target="evs">C96684</a></span>
+          <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>Quantitative (continuous, mm)</strong></span>
+        </div>
+        <div style="font-size:0.74rem; color:#7d6608; margin: 8px 0 4px;">VLM group LDIAM — 15 rows on <code style="background:#fff; padding:0 4px; border-radius:3px;">TR.TRTESTCD</code>:</div>
+        <table class="var-table">
+          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Value List</th><th>Data Type</th><th>Mand. Var</th><th>Mand. Val</th></tr>
+          <tr><td class="var-name">TRTESTCD</td><td class="var-role-topic">Topic</td><td><strong>LDIAM</strong></td><td>TRTESTCD</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRTEST</td><td class="var-role-qualifier">Qualifier</td><td><strong>Longest Diameter</strong></td><td>TRTEST</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRORRES</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (collected numeric)</td><td></td><td></td><td>text</td><td>Y</td><td>Y</td></tr>
+          <tr><td class="var-name">TRORRESU</td><td class="var-role-qualifier">Qualifier</td><td><strong>mm</strong></td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C71620" target="evs">C71620</a> UNIT</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRSTRESC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (derived)</td><td></td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRSTRESN</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (derived)</td><td></td><td></td><td>integer</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRSTRESU</td><td class="var-role-qualifier">Qualifier</td><td><strong>mm</strong></td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C71620" target="evs">C71620</a> UNIT</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRMETHOD</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot — modality chosen per row</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C85492" target="evs">C85492</a> METHOD</td><td><strong>15-method imaging panel</strong> (CT SCAN; CALIPER; ENDOSCOPY; LYMPHANGIOGRAPHY; MAMMOGRAPHY; MRI; NUCLEAR RADIOLOGY; PET; PET/CT; PET/MRI; PHOTOGRAPHY; SCINTIGRAPHY; TOTAL BODY RADIOGRAPHY; ULTRASOUND; <strong>X-RAY</strong>)</td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TREVAL</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>EVAL</td><td>INVESTIGATOR;INDEPENDENT ASSESSOR</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TREVALID</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>MEDEVAL</td><td>RADIOLOGIST 1;RADIOLOGIST 2;RADIOLOGIST 3</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TRGRPID</td><td class="var-role-qualifier">Identifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TRREFID</td><td class="var-role-qualifier">Identifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRLNKID</td><td class="var-role-qualifier">Identifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRLNKGRP</td><td class="var-role-qualifier">Identifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TRDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td>datetime</td><td>Y</td><td>N</td></tr>
+        </table>
+        <div class="insight-box" style="margin-top: 10px; border-left-color: #C8A415; background: #fef9e7; color: #7d6608;">
+          <span class="insight-label" style="color: #b8960e;">What LDIAM pins vs leaves open</span>
+          <p><strong>Pinned by the DSS:</strong> TRTESTCD = <code>LDIAM</code>, TRTEST = <code>Longest Diameter</code>, plus a unit pin TRORRESU = TRSTRESU = <code>mm</code>. The unit pin is unusual — it's a measurement-spec assertion that this BC always reports millimetres.</p>
+          <p style="margin-top: 6px;"><strong>Left open as slot, with codelist constraint:</strong> TRMETHOD accepts the full 15-method imaging panel; TREVAL discriminates investigator from independent assessor; TREVALID names up to three radiologists. Identifiers (REFID, LNKID, LNKGRP) link tumour records across visits and between TR and TU.</p>
+          <p style="margin-top: 6px;"><strong>Architectural contrast with MK Sharp.</strong> The Sharp BCs are scoring-instrument concepts (NCIt anchor IS the named instrument). LDIAM's BC is a generic geometric measurement (Diameter → Longest Diameter) — modality-agnostic by NCIt design. The <em>same C96684 concept</em> applies whether the longest diameter is read off an X-ray, a CT, an MRI, or callipers. That's why TR's value_list is so wide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sibling TR DSSs -->
+  <div class="layer-label">Sibling TR DSSs — RECIST measurement variants</div>
+  <div class="connector">
+    <div class="sibling-grid">
+
+      <div class="node cosmos-dss">
+        <div class="code">LDIAM_RECIST1_1 — Longest Diameter (RECIST 1.1) <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C96684</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Difference vs LDIAM</span>  <span class="attr-val">Adds RECIST 1.1 evaluation framing on top of the same measurement</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">LPERP — Longest Perpendicular <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C96685</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Perpendicular-to-longest-diameter measurement</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">LPERP_RECIST1_1 — Longest Perpendicular (RECIST 1.1) <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C96685</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">LNSTATE — Lymph Node State <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C124448</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Categorical state (TARGET, NON-TARGET, NEW), not a continuous measurement</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">LNSTATE_RECIST1_1 — Lymph Node State (RECIST 1.1) <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C124448</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">TUMSTATE — Tumor Status <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C96643</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Tumour overall response/state assessment</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">NEW_TUMSTATE_RECIST1_1 &nbsp;·&nbsp; NONNODAL_TUMSTATE_RECIST1_1 <span class="tag">2 DSSs</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TR.TRTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C96643 (both)</span>
+          <span class="attr-label">TRMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">RECIST 1.1 sub-classifications of tumour state — newly identified vs non-nodal target</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BC root for TUMIDENT (TU) -->
+  <div class="layer-label">COSMoS BC — Tumor Identification root concept</div>
+  <div class="node cosmos-bc">
+    <div class="code"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C94523" target="evs">C94523</a> — Tumor Identification <span class="tag">BC</span></div>
+    <div class="meta">Definition: A diagnostic procedure to localize and characterize a tumor. &nbsp;|&nbsp; Hierarchy: Lesion Identification (<a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C94189" target="evs">C94189</a>) → Tumor Identification (C94523) &nbsp;|&nbsp; Domains_with_DS: TU</div>
+  </div>
+
+  <!-- TUMIDENT DSS fully expanded -->
+  <div class="dss-group">
+    <div class="layer-label">COSMoS DSS — TUMIDENT (Tumor Identification)</div>
+    <div class="connector">
+      <div class="node cosmos-dss">
+        <div class="code">TUMIDENT — Tumor Identification <span class="tag">DSS — VLM group (Findings)</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">DS_Code / vlm_group_id</span>  <span class="attr-val"><strong>TUMIDENT</strong></span>
+          <span class="attr-label">vlm_source</span>    <span class="attr-val"><strong>TU.TUTESTCD</strong></span>
+          <span class="attr-label">Domain</span>        <span class="attr-val"><strong>TU</strong> (Tumor/Lesion Identification — Findings class)</span>
+          <span class="attr-label">bc_id</span>         <span class="attr-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C94523" target="evs">C94523</a></span>
+          <span class="attr-label">Result Scale</span>  <span class="attr-val"><strong>Categorical (TARGET / NON-TARGET / NEW)</strong></span>
+        </div>
+        <div style="font-size:0.74rem; color:#7d6608; margin: 8px 0 4px;">VLM group TUMIDENT — 15 rows on <code style="background:#fff; padding:0 4px; border-radius:3px;">TU.TUTESTCD</code>:</div>
+        <table class="var-table">
+          <tr><th>SDTM Variable</th><th>Role</th><th>Assigned Value</th><th>Codelist</th><th>Value List</th><th>Data Type</th><th>Mand. Var</th><th>Mand. Val</th></tr>
+          <tr><td class="var-name">TUTESTCD</td><td class="var-role-topic">Topic</td><td><strong>TUMIDENT</strong></td><td>TUTESTCD</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TUTEST</td><td class="var-role-qualifier">Qualifier</td><td><strong>Tumor Identification</strong></td><td>TUTEST</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TUORRES</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot — RECIST classification</td><td>TUIDRS</td><td><strong>TARGET;NON-TARGET;NEW</strong></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TUSTRESC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot (derived)</td><td>TUIDRS</td><td>TARGET;NON-TARGET;NEW</td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TULOC</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot — anatomical location</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C74456" target="evs">C74456</a> LOC</td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TULAT</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C99073" target="evs">C99073</a> LAT</td><td></td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TUDIR</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>DIR</td><td></td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TUMETHOD</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot — modality chosen per row</td><td><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C85492" target="evs">C85492</a> METHOD</td><td><strong>15-method imaging panel</strong> (incl. <strong>X-RAY</strong>)</td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TUEVAL</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>EVAL</td><td>INVESTIGATOR;INDEPENDENT ASSESSOR</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TUEVALID</td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>MEDEVAL</td><td>RADIOLOGIST 1;RADIOLOGIST 2;RADIOLOGIST 3</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TUREFID</td><td class="var-role-qualifier">Identifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr><td class="var-name">TULNKID</td><td class="var-role-qualifier">Identifier</td><td class="empty">—</td><td></td><td></td><td>text</td><td>Y</td><td>N</td></tr>
+          <tr style="background:#fff5e6;"><td class="var-name">PRVIR &nbsp;<sup style="color:#cc6600;">⚠︎</sup></td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>NY</td><td>N;Y</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr style="background:#fff5e6;"><td class="var-name">PRVIRP &nbsp;<sup style="color:#cc6600;">⚠︎</sup></td><td class="var-role-qualifier">Qualifier</td><td class="slot">slot</td><td>NY</td><td>N;Y</td><td>text</td><td>N</td><td>N</td></tr>
+          <tr><td class="var-name">TUDTC</td><td class="var-role-timing">Timing</td><td class="empty">—</td><td></td><td></td><td>datetime</td><td>Y</td><td>N</td></tr>
+        </table>
+        <div class="insight-box" style="margin-top: 10px; border-left-color: #C8A415; background: #fef9e7; color: #7d6608;">
+          <span class="insight-label" style="color: #b8960e;">What TUMIDENT pins vs leaves open</span>
+          <p><strong>Pinned by the DSS:</strong> TUTESTCD = <code>TUMIDENT</code>, TUTEST = <code>Tumor Identification</code>. Identity-only — no unit pin (TU is identification, not measurement).</p>
+          <p style="margin-top: 6px;"><strong>Left open as slot, with codelist constraint:</strong> TUMETHOD on the same 15-method imaging panel as TR; TUORRES/TUSTRESC restricted to the RECIST <code>TARGET;NON-TARGET;NEW</code> classification; TULOC and TULAT and TUDIR open the full anatomical-location, laterality, and direction codelists; TUEVAL/TUEVALID parallel TR.</p>
+          <p style="margin-top: 6px;"><sup style="color:#cc6600;">⚠︎</sup> <strong>Data hygiene observation.</strong> Two variables in this DSS (PRVIR, PRVIRP) carry a non-domain-prefixed name. The sibling DSS TUMIDENT_RECIST1_1 has them correctly as TUPRVIR/TUPRVIRP. Both are flagged <code>is_nonstandard=False</code> in COSMoS — i.e. the source treats them as standard, but the naming differs from the SDTM convention. Likely a minor source-data inconsistency, not an architectural difference.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sibling TU DSSs -->
+  <div class="layer-label">Sibling TU DSSs — Tumor Identification variants</div>
+  <div class="connector">
+    <div class="sibling-grid">
+
+      <div class="node cosmos-dss">
+        <div class="code">TUMIDENT_RECIST1_1 — Tumor Identification (RECIST 1.1) <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TU.TUTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C94523</span>
+          <span class="attr-label">TUMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Difference vs TUMIDENT</span>  <span class="attr-val">Adds TULOCDTL; uses TUPRVIR/TUPRVIRP (correctly TU-prefixed)</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">TUMERGE — Tumor Merged <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TU.TUTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C94525</span>
+          <span class="attr-label">TUMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">Two previously separate tumours identified as a merged single lesion</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">TUMERGE_RECIST1_1 — Tumor Merged (RECIST 1.1) <span class="tag">DSS</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TU.TUTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C94525</span>
+          <span class="attr-label">TUMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+        </div>
+      </div>
+
+      <div class="node cosmos-dss">
+        <div class="code">TUSPLIT &nbsp;·&nbsp; TUSPLIT_RECIST1_1 <span class="tag">2 DSSs</span></div>
+        <div class="attr-grid">
+          <span class="attr-label">vlm_source</span>   <span class="attr-val">TU.TUTESTCD</span>
+          <span class="attr-label">bc_id</span>        <span class="attr-val">C96642 (both)</span>
+          <span class="attr-label">TUMETHOD</span>     <span class="attr-val">15-method imaging panel</span>
+          <span class="attr-label">Scope</span>        <span class="attr-val">A previously single tumour is now identified as two separate lesions</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cross-domain Findings pattern insight box -->
+  <div class="insight-box">
+    <span class="insight-label">Cross-domain pattern — modality as qualifier across MK / TR / TU</span>
+    <p><strong>Structural consistency.</strong> All three Findings domains use the same shape: BC anchors a measurement-or-identification concept; <code>--METHOD</code> is a qualifier slot bound to the METHOD codelist (C85492); a value_list restricts the modality acceptance set. Test identity (TESTCD) is the driver; modality is subordinate. None of the three uses imaging modality as a BC anchor.</p>
+    <p style="margin-top: 6px;"><strong>Where they differ.</strong> Value_list breadth and BC nature:</p>
+    <p style="margin-top: 4px; padding-left: 12px;">— <strong>MK Sharp BCs</strong> are named scoring instruments (Sharp/Genant, Sharp/Van der Heijde) anchored to specific NCIt concepts. The <code>X-RAY;MRI</code> value_list is narrow because the scoring methodology was developed for these two modalities specifically.</p>
+    <p style="margin-top: 4px; padding-left: 12px;">— <strong>TR / TU BCs</strong> are method-agnostic measurement and identification concepts (Longest Diameter, Longest Perpendicular, Lymph Node State, Tumor Identification, Tumor Merged, Tumor Split). NCIt models these as geometry / state / counting concepts, independent of how the image was acquired. The 15-method imaging panel reflects that — any imaging route that resolves the geometry is permitted.</p>
+    <p style="margin-top: 6px;"><strong>Cross-class join via NCIt code C38101 (X-Ray Imaging).</strong> The shared NCIt anchor reaches:</p>
+    <p style="margin-top: 4px; padding-left: 12px;">— <strong>PR side</strong> as the BC anchor of 2 DSSs: XRAY, XRAYCHEST.</p>
+    <p style="margin-top: 4px; padding-left: 12px;">— <strong>Findings side</strong> as a value_list member of <code>--METHOD</code> in <strong>20 DSSs</strong>: 5 MK Sharp + 9 TR + 6 TU.</p>
+    <p style="margin-top: 4px; padding-left: 12px;">That gives 2 × 20 = <strong>40 (PR DSS, Findings DSS) pairs</strong> reachable from the X-Ray modality alone, without authoring. The join is computable from <code>cosmos-graph/COSMoS_Graph.xlsx</code> Variables sheet against the BC sheet.</p>
+    <p style="margin-top: 6px;"><strong>Modality compatibility ≠ clinical pairing.</strong> The 40 pairs express what the standards <em>permit</em> — that is, "X-Ray can produce a record matching this Findings DSS schema". They do not assert clinical typicality: XRAYCHEST + Sharp Hand/Wrist is a permitted modality pairing, but Sharp scores hand and foot joints, not chest. Anatomical co-occurrence (PRLOC vs MKLOC / TULOC) is a sponsor- and protocol-level decision, not a COSMoS-level fact.</p>
+  </div>
+
+  <!-- PART 3 — Joined view -->
   <div class="part-header">
     <div class="part-num">Part 3</div>
-    <div class="part-title">Flattened projection — cdisc-for-ai interim aggregation</div>
+    <div class="part-title">Joined-view projection — consumer-bases DSS_View</div>
     <div class="part-desc">
-      <p>The <code>cosmos-bc-dss/</code> track aggregates each BC + DSS + VLM rows into a single row in <code>cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx</code>. What survives is the case-defining attributes; what is lost is the per-variable VLM detail (roles, mandatory flags, value_lists, slot-vs-assigned status).</p>
-      <p style="margin-top: 0.6rem;">Below: the XRAYCHEST and SGBESCR rows as the interim file carries them.</p>
+      <p>The <code>consumer-bases/</code> track joins the COSMoS graph (BC + DSS + Variables + AssignedTerms + Coding) with repo-side reference metadata (SDTM domain class, test-code identity) into a single denormalised row per DSS. The output is <code>consumer-bases/interim/DSS_View.xlsx</code>, sheet <code>Measurement_Specs</code>.</p>
+      <p style="margin-top: 0.6rem;">The pivot is deliberately disciplined: it carries <strong>pinned</strong> Variables values (assigned terms, with their NCIt and bound codelist), not slot value_lists. Recovering the value_list breadth — the <code>X-RAY;MRI</code> on MKMETHOD, the <code>Y</code> on PRPRESP, the 15-method TR/TU panel — requires going back to <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> sheet <code>Variables</code>.</p>
+      <p style="margin-top: 0.6rem;">Below: the XRAYCHEST and SGBESCR rows as the joined view actually carries them.</p>
     </div>
   </div>
 
-  <!-- Flattened XRAYCHEST -->
+  <!-- Joined-view XRAYCHEST -->
   <div class="connector">
     <div class="node flattened-row">
-      <div class="code">XRAYCHEST — flattened row <span class="tag">interim aggregation</span></div>
+      <div class="code">XRAYCHEST — DSS_View row <span class="tag">consumer-bases joined view</span></div>
       <div class="flat-grid">
-        <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a></span>
-        <span class="flat-label">NCIt_Code</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a></span>
-        <span class="flat-label">BC_Name</span>            <span class="flat-val">X-Ray Imaging</span>
-        <span class="flat-label">Row_Type</span>           <span class="flat-val">DSS</span>
-        <span class="flat-label">Domains_with_DS</span>    <span class="flat-val">PR</span>
-        <span class="flat-label">DS_Code / vlm_group_id</span>  <span class="flat-val">XRAYCHEST</span>
-        <span class="flat-label">DS_Name</span>            <span class="flat-val">Chest X-Ray</span>
-        <span class="flat-label">Domain</span>             <span class="flat-val">PR</span>
-        <span class="flat-label">Domain_Class</span>       <span class="flat-val">Interventions</span>
-        <span class="flat-label">TESTCD / TEST</span>      <span class="flat-val empty">— (Interventions — no TESTCD)</span>
-        <span class="flat-label">Specimen / Method</span>  <span class="flat-val empty">— (not applicable to PR)</span>
-        <span class="flat-label">location</span>           <span class="flat-val empty">— (PRLOC is inside VLM, not DSS-level slot)</span>
-        <span class="flat-label">laterality / evaluator</span>  <span class="flat-val empty">—</span>
-        <span class="flat-label">Allowed / Standard Unit</span>  <span class="flat-val empty">—</span>
+        <span class="flat-label">ds_id</span>                <span class="flat-val">XRAYCHEST</span>
+        <span class="flat-label">bc_id</span>                <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a></span>
+        <span class="flat-label">bc_short_name</span>        <span class="flat-val">X-Ray Imaging</span>
+        <span class="flat-label">bc_categories</span>        <span class="flat-val">Diagnostic Imaging; Medical Imaging</span>
+        <span class="flat-label">bc_hierarchy_path</span>    <span class="flat-val">Diagnostic Imaging Testing (C16502) → X-Ray Imaging (C38101)</span>
+        <span class="flat-label">domain</span>               <span class="flat-val">PR</span>
+        <span class="flat-label">source</span>               <span class="flat-val">PR.PRTRT</span>
+        <span class="flat-label">sdtmig_start_version</span> <span class="flat-val">3-4</span>
+        <span class="flat-label">DECOD_value / _ncit / _codelist</span>  <span class="flat-val"><strong>X-RAY</strong> / <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C38101" target="evs">C38101</a> / PROCEDUR</span>
+        <span class="flat-label">LOC_value / _ncit / _codelist</span>    <span class="flat-val"><strong>CHEST</strong> / <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C25389" target="evs">C25389</a> / LOC</span>
+        <span class="flat-label">METHOD_*</span>             <span class="flat-val empty">— (PR DSS — no Findings METHOD slot)</span>
+        <span class="flat-label">PRPRESP value_list</span>   <span class="flat-val empty">— (slot value_list, not pinned — not in DSS_View)</span>
+        <span class="flat-label">result_scales</span>        <span class="flat-val">Nominal</span>
       </div>
       <div class="flat-note" style="margin-top: 10px;">
-        <p>The flattened row carries the DSS identity and domain-class membership. The PRDECOD=X-RAY pin and the PRLOC=CHEST pin are NOT visible at the flattened level — both are VLM-row facts that get collapsed. A consumer that needs "this DSS is chest X-ray, not MRI" has to go back to the source DSS xlsx.</p>
+        <p>The PRDECOD=X-RAY pin and the PRLOC=CHEST pin DO survive in the joined view — both are assigned values, projected as <code>DECOD_value</code> / <code>LOC_value</code> with their NCIt and bound codelist. What does NOT survive: the PRPRESP=Y value_list and the PROCCUR=N;Y value_list (slot restrictions, not pins), and the per-variable role / mandatory-variable / mandatory-value annotations. A consumer needing the value_list breadth has to read the COSMoS Variables sheet directly.</p>
       </div>
     </div>
   </div>
 
-  <!-- Flattened SGBESCR -->
+  <!-- Joined-view SGBESCR -->
   <div class="connector">
     <div class="node flattened-row">
-      <div class="code">SGBESCR — flattened row <span class="tag">interim aggregation</span></div>
+      <div class="code">SGBESCR — DSS_View row <span class="tag">consumer-bases joined view</span></div>
       <div class="flat-grid">
-        <span class="flat-label">COSMoS_BC_ID</span>       <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a></span>
-        <span class="flat-label">NCIt_Code</span>          <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a></span>
-        <span class="flat-label">BC_Name</span>            <span class="flat-val">Sharp/Genant Bone Erosion Score</span>
-        <span class="flat-label">Row_Type</span>           <span class="flat-val">DSS</span>
-        <span class="flat-label">Domains_with_DS</span>    <span class="flat-val">MK</span>
-        <span class="flat-label">DS_Code / vlm_group_id</span>  <span class="flat-val">SGBESCR</span>
-        <span class="flat-label">DS_Name</span>            <span class="flat-val">Sharp/Genant Bone Erosion Score</span>
-        <span class="flat-label">Domain</span>             <span class="flat-val">MK</span>
-        <span class="flat-label">Domain_Class</span>       <span class="flat-val">Findings</span>
-        <span class="flat-label">TESTCD / TEST</span>      <span class="flat-val">SGBESCR / Sharp/Genant Bone Erosion Score</span>
-        <span class="flat-label">Method</span>             <span class="flat-val"><strong>X-RAY; MRI</strong></span>
-        <span class="flat-label">Result_Scale</span>       <span class="flat-val">Quantitative</span>
-        <span class="flat-label">Specimen</span>           <span class="flat-val empty">— (imaging, no specimen)</span>
-        <span class="flat-label">location / laterality</span>  <span class="flat-val empty">— (per-row)</span>
-        <span class="flat-label">Standard Unit</span>      <span class="flat-val empty">—</span>
+        <span class="flat-label">ds_id</span>                <span class="flat-val">SGBESCR</span>
+        <span class="flat-label">bc_id</span>                <span class="flat-val"><a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a></span>
+        <span class="flat-label">bc_short_name</span>        <span class="flat-val">Sharp/Genant Bone Erosion Score</span>
+        <span class="flat-label">bc_categories</span>        <span class="flat-val">Musculoskeletal Finding; Score</span>
+        <span class="flat-label">bc_hierarchy_path</span>    <span class="flat-val">Score (C25338) → Sharp/Genant Bone Erosion Score (C128986)</span>
+        <span class="flat-label">domain</span>               <span class="flat-val">MK</span>
+        <span class="flat-label">source</span>               <span class="flat-val">MK.MKTESTCD</span>
+        <span class="flat-label">sdtmig_start_version</span> <span class="flat-val">3-3</span>
+        <span class="flat-label">TESTCD_value / _ncit / _codelist</span>  <span class="flat-val"><strong>SGBESCR</strong> / <a href="https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C128986" target="evs">C128986</a> / MUSCTSCD</span>
+        <span class="flat-label">TEST_value / _ncit / _codelist</span>    <span class="flat-val"><strong>Sharp/Genant Bone Erosion Score</strong> / C128986 / MUSCTS</span>
+        <span class="flat-label">METHOD_value / _ncit / _codelist</span>  <span class="flat-val empty">— (slot with value_list X-RAY;MRI, not pinned — not in DSS_View)</span>
+        <span class="flat-label">LOC, LAT, ORRES, STRESC, STRESN</span>   <span class="flat-val empty">— (all slots, not in DSS_View)</span>
+        <span class="flat-label">result_scales</span>        <span class="flat-val">Ordinal</span>
       </div>
       <div class="flat-note" style="margin-top: 10px;">
-        <p>Here Method survives at the flattened level as the value_list <code>X-RAY;MRI</code> — because MKMETHOD is a DSS-level qualifier with an allowed set. This is visible to any consumer reading the interim file. The positional qualifier is still absent — not because it's hidden at the flattened level, but because it's not in the DSS at all.</p>
+        <p>What survives: the test-identity pins (TESTCD=SGBESCR, TEST=Sharp/Genant Bone Erosion Score) and the BC metadata. <strong>What does NOT survive: the MKMETHOD value_list <code>X-RAY;MRI</code></strong> — because MKMETHOD is a slot, not an assigned value. To recover the modality breadth (the fact that this DSS accepts X-ray OR MRI) the consumer has to go back to <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> Variables sheet. Same for MKLOC, MKLAT, the ordinal result scale, and the per-row anatomical detail. The joined view carries less than the legacy <code>cosmos-bc-dss</code> flattening did — by design. It pins identity, not breadth.</p>
       </div>
     </div>
   </div>
@@ -457,16 +700,17 @@
     <span class="insight-label">Summary — the two domain-class stories about the same concept</span>
     <p><strong>PR side:</strong> X-ray is a <em>procedure identity</em>. One PROCEDUR codelist term (X-RAY, C38101) pins PRDECOD in multiple DSSs, each anatomically specialised via PRLOC. Modality differences drive DSS proliferation — XRAYCHEST, CTSCANCHEST, MRIBRAIN are separate rows in the DSS package.</p>
     <p style="margin-top: 6px;"><strong>MK side:</strong> X-ray is a <em>method qualifier</em>. The same DSS (SGBESCR) covers X-ray and MRI via a value_list on MKMETHOD. Test identity is the driver; modality is subordinate.</p>
+    <p style="margin-top: 6px;"><strong>What the graph-fed projection makes queryable.</strong> The shared NCIt anchor is in the data: BC <code>bc_id=C38101</code> on the PR side ≡ NCIt code referenced by the MKMETHOD value_list on the Findings side. The cross-class join — "imaging procedures with BC anchor X reach measurement DSSs that accept X as method" — is computable from <code>cosmos-graph</code> alone, without authoring. It expresses <em>modality compatibility</em>, not clinical pairing: XRAYCHEST shares C38101 with all five MK Sharp-scoring DSSs by modality, but anatomical co-occurrence (PRLOC=CHEST vs MK joints of hand/wrist/foot) is sponsor- and protocol-level, not COSMoS-level.</p>
     <p style="margin-top: 6px;">The PR record and the Findings record both exist in a real data set when a chest X-ray is measured for Sharp/Genant scoring. They are related via timing (same MKDTC ≈ PRSTDTC), by subject (USUBJID), and optionally by RELREC. That link is <strong>not modelled in COSMoS</strong> — it lives in the SDTM record layer and in sponsor metadata.</p>
   </div>
 
 </div>
 
 <div class="footer">
-  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-bc-dss/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) &bull; SDTM CT 2026-03-27 (<code>sdtm-test-codes/downloads/SDTM_Terminology.txt</code>) &bull; NCIt Thesaurus 2026-03.<br>
-  XRAYCHEST and SGBESCR VLM detail extracted directly from the COSMoS source spreadsheet, 9 rows each. Sibling PR DSSs' PRDECOD and PRLOC pins verified row by row. PROCEDUR codelist (C101858) and POSITION codelist (C71148, 17 terms) verified in SDTM CT. TR/TU RECIST DSSs confirmed to carry 15 imaging methods each in MKMETHOD value_list.<br>
+  Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-graph/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) projected through <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> and joined in <code>consumer-bases/interim/DSS_View.xlsx</code> &bull; SDTM CT 2026-03-27 (<code>sdtm-test-codes/downloads/SDTM_Terminology.txt</code>) &bull; NCIt Thesaurus 2026-03.<br>
+  XRAYCHEST and SGBESCR VLM detail extracted directly from <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> Variables sheet, 9 rows each. DSS_View row content verified in <code>consumer-bases/interim/DSS_View.xlsx</code> sheet <code>Measurement_Specs</code>. Sibling PR DSSs' PRDECOD and PRLOC pins verified row by row. PROCEDUR codelist (C101858) and POSITION codelist (C71148, 17 terms) verified in SDTM CT. TR/TU RECIST DSSs confirmed to carry 15 imaging methods each in MKMETHOD value_list.<br>
   Companion doc: <a href="XRay_PatientBurden_Story.html">XRay_PatientBurden_Story.html</a> — what neither DSS captures, and why SoA burden calculation needs more.<br>
-  Generated 2026-04-21.
+  Generated 2026-04-21; updated 2026-04-30 (Part 3 realigned to graph-fed architecture; Part 2B added — TR/TU sibling sections).
 </div>
 
 </body>
