@@ -39,7 +39,7 @@ self-join (the coverage-gap framing). Final column shape per sub-type is
 designed fresh — not ported from the legacy track.
 
 **Out of scope.** Joins already done by `consumer-bases/`: BC ↔ DSS, the
-Variables pin pivot, AssignedTerms enrichment. Source extraction belongs
+Variables slot pivot (pin and value_list), AssignedTerms enrichment. Source extraction belongs
 to `cosmos-graph/`.
 
 **Guardrail — do not read.** This track does **not** read
@@ -98,7 +98,7 @@ four-sheet shape makes them addressable directly. See
 Column shape inside each sheet is designed fresh per sub-type, leveraging
 DSS_View's native columns (snake_case, `bc_*` prefixes for BC identity,
 `Coding_<system>` for external codings, `<remainder>_value` /
-`<remainder>_ncit` / `<remainder>_codelist` for Variable pin pivots).
+`<remainder>_ncit` / `<remainder>_codelist` / `<remainder>_value_list` / `<remainder>_value_list_ncit` for Variable slot pivots).
 Legacy column names are not preserved.
 
 Header colour convention (per repo standard): green = TESTCD / SDTM-CT-side,
