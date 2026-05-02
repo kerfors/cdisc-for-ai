@@ -21,7 +21,7 @@ The two-sheet consumer output shape (`Test_Identity` + `Measurement_Specs`) shou
 
 ## 2. Upstream flags — paperwork to CDISC and NCI EVS
 
-Eight asks. Each is an authoring or subset issue outside this repo.
+Nine asks. Each is an authoring or subset issue outside this repo.
 
 **To the COSMoS authoring working group.**
 
@@ -35,10 +35,11 @@ Eight asks. Each is an authoring or subset issue outside this repo.
 5. **VSRESU (C66770) codelist.** Does not carry C105484 "fraction of 1", needed for OXYSAT.VSSTRESU.
 6. **AUTOPSY in `--METHOD` value_lists.** Appears in some `--METHOD` value_lists in the CDISC source xlsx; not present in METHOD codelist (C85492). Confirmed by Linda Lander (CDISC); will be removed in next package release.
 7. **PINCH DYNAMOMETRY in `--METHOD` value_lists.** Same pattern as AUTOPSY. Confirmed by Linda Lander (CDISC); will be removed in next package release.
+8. **PR PRDECOD value_list carries 5 ungoverned RT modalities.** `RADTHERAPHYBREASTCANCER` PRDECOD value_list contains `INTENSITY MODULATED RADIATION THERAPY`, `RADIOSURGERY`, `STEREOTACTIC BODY RADIATION THERAPY`, `INTRACAVITY BRACHYTHERAPY`, `INTERSTITIAL BRACHYTHERAPY`. None is governed in the PROCEDUR codelist (C101858) at 2026-03-27. Only `3D CONFORMAL RADIATION THERAPY` from the same value_list is governed. All five are valid NCIt concepts. Resolution direction differs from items 6/7 — these are candidates for ADDITION to PROCEDUR rather than removal from the value_list (or, alternatively, for the COSMoS author to remove them from the value_list pending PROCEDUR extension). Surfaced by `consumer-bases/interim/PR_DSS_Reachability.xlsx` (notebook `30_pr_dss_reachability.ipynb`) 2026-05.
 
 **To the NCI EVS Variable Terminology team.**
 
-8. **Root-subset gaps.** Thirty-seven variable codes resolve to compositional forms that have no `--<remainder>` representation in the NCI EVS Variable Terminology Root subset at 2026-03-27. Dominated by the GF* (Genomic Findings) family, `STRESN` across domains, and `ISBDAGNT`. Full list in [`../reports/root_subset_fallback_diagnostic.md`](../reports/root_subset_fallback_diagnostic.md).
+9. **Root-subset gaps.** Thirty-seven variable codes resolve to compositional forms that have no `--<remainder>` representation in the NCI EVS Variable Terminology Root subset at 2026-03-27. Dominated by the GF* (Genomic Findings) family, `STRESN` across domains, and `ISBDAGNT`. Full list in [`../reports/root_subset_fallback_diagnostic.md`](../reports/root_subset_fallback_diagnostic.md).
 
 Paperwork, not code. Drafts live outside this branch.
 
@@ -46,9 +47,12 @@ Paperwork, not code. Drafts live outside this branch.
 
 Three items from the 2026-04-23 triage are documented but not built. Each waits on a trigger.
 
-- **`DSS_Attributes` derived sheet.** Long-format projection over `Variables` (specimen, method, units, LOINC, decimal_places). Projection fits in ~20 lines of consumer code; single consumer today. **Trigger:** a second consumer appears and the projection becomes worth materialising.
-- **`BC` cross-domain flags.** An `is_cross_domain_class` flag on the `BC` sheet. Zero BCs are cross-Observation_Class at 2026-Q1 — the flag would be uniformly `False`. **Trigger:** overlay content introduces a cross-class pairing (see below).
-- **`COSMoS_Graph_Overlay.xlsx` file.** Parallel file for schema-identical but not-CDISC-authored content (track-authored extrapolations, sponsor-scope case specialisations). Pattern documented in [`COSMoS_Graph.md`](COSMoS_Graph.md) §4. **Trigger:** a first overlay row is authored. Current candidates are the X-Ray MK-side DSSs (genuine cross-domain-class extrapolation, absent from source) and DSS rows under the 6MWT BC (which has `bc_type = full_no_ds`). Both candidates stay out of scope until authored.
+A May 2026 upstream-improvements proposal (separate document, sourced from the family-map / inventory / integration consumer thread) references all three items. Per-item status notes follow.
+
+- **`DSS_Attributes` derived sheet.** Long-format projection over `Variables` (specimen, method, units, LOINC, decimal_places). Projection fits in ~20 lines of consumer code; single consumer today. **Trigger:** a second consumer appears and the projection becomes worth materialising. **Status (2026-05): superseded.** Trigger fired (three consumers — family-map prompt, Procedure-Options Inventory, integration prompt) and resolved by `consumer-bases/interim/DSS_Variables_View.xlsx` (notebook `20_dss_variables_view.ipynb`), which projects every Variables row at the consumer-bases layer with AssignedTerms enrichment, observation_class, and the four binding modes (pinned / value_list / bare / no codelist). Any consumer that wanted `DSS_Attributes` can derive it by filtering this view on the relevant variable suffixes. No further upstream action.
+- **`BC` cross-domain flags.** An `is_cross_domain_class` flag on the `BC` sheet. Zero BCs are cross-Observation_Class at 2026-Q1 — the flag would be uniformly `False`. **Trigger:** overlay content introduces a cross-class pairing (see below). **Status (2026-05):** Still contingent. The May 2026 proposal does not introduce overlay content; the flag would remain uniformly `False`.
+- **`COSMoS_Graph_Overlay.xlsx` file.** Parallel file for schema-identical but not-CDISC-authored content (track-authored extrapolations, sponsor-scope case specialisations). Pattern documented in [`COSMoS_Graph.md`](COSMoS_Graph.md) §4. **Trigger:** a first overlay row is authored. Current candidates are the X-Ray MK-side DSSs (genuine cross-domain-class extrapolation, absent from source) and DSS rows under the 6MWT BC (which has `bc_type = full_no_ds`). Both candidates stay out of scope until authored. **Status (2026-05):** Pattern unchanged. The May 2026 proposal does not author overlay content; the file remains a documented architectural pattern.
+- **`ds_id` → `ds_code` rename (track-wide).** The values in `ds_id` are CDISC mnemonics, not identifiers — empirically unique at 2026-Q1, but cross-domain uniqueness is incidental, not guaranteed (per `CLAUDE.md` "DS_Codes are mnemonics, not identifiers"). The cosmos-graph stack currently standardises on `ds_id` (DSS sheet, Variables sheet, `DSS_View.Measurement_Specs`, `DSS_Variables_View.Variables`). **Trigger:** dedicated rename branch with coordinated diffs across `cosmos-graph/notebooks/10_flatten_schema_driven.ipynb`, `consumer-bases/notebooks/10_dss_view.ipynb`, `consumer-bases/notebooks/20_dss_variables_view.ipynb`, and any docs/READMEs that name the column. Held off the May 2026 upstream-improvements branch to keep that work consistency-preserving.
 
 ## 4. What's closed
 
