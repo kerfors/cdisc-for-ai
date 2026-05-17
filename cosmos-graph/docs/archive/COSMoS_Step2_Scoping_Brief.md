@@ -54,8 +54,6 @@ Files: `docs/Glucose_COSMoS_Story.html`, `docs/Glucose_StudyIntent_Story.html`
 
 **What was lost:** the 12-row VLM detail on LB.LBTESTCD — roles (Topic/Qualifier/Timing), mandatory flags, assigned vs slot status, codelist subsets (`LBFAST` is a slot with NY_NY subset). The interim file carries only aggregate metadata, not the per-variable spec.
 
-**What was out of scope entirely:** the case-specialisation layer (FPG, OGTT 2-hour, OGTT fasting) — the layer where study-design intent composes DSS with external trial-design objects.
-
 ### Pair 2 — 6MWT (FT, instrument-based Findings)
 Files: `docs/6MWT_COSMoS_Story.html`, `docs/6MWT_NCIt_Story.html`
 
@@ -66,7 +64,7 @@ Files: `docs/6MWT_COSMoS_Story.html`, `docs/6MWT_NCIt_Story.html`
 **The asymmetry vs Glucose:** Glucose has uniform classification but rich recording-spec variation (8 DSSs per BC). 6MWT has uniform recording spec but rich classification structure. Flattener is tuned for one pattern, awkward for the other.
 
 ### Pair 3 — Chest X-Ray (PR procedures + MK findings)
-Files: `outputs/XRay_COSMoS_Story.html`, `outputs/XRay_PatientBurden_Story.html`
+Files: `outputs/XRay_COSMoS_Story.html`
 
 **What the flattener handled:** DSS identity, Method value_list for MK (X-RAY;MRI), Domain_Class distinction (Interventions vs Findings).
 
@@ -221,7 +219,6 @@ Preserve relations as materialised-in-row values. Each cross-reference column co
 | `Sibling_DSSs_Same_BC` | `Sibling_DSSs_Same_BC_Narrative` | `XRAY; CTSCAN; CTSCANCHEST; MRI; MRIBRAIN; RADIATIONCANCER; RADTHERAPHYBREASTCANCER` / *"The X-Ray Imaging BC (NCIt C38101) is instantiated as eight PR DSSs: XRAY (unconstrained location), XRAYCHEST (location pinned to CHEST), CTSCAN, CTSCANCHEST, MRI, MRIBRAIN (location pinned to BRAIN), plus two radiation-therapy DSSs that share PRTRT as vlm_source."* |
 | `Same_Concept_Other_Domains` | `Same_Concept_Other_Domains_Narrative` | `SGBESCR(MK); LDIAM(TR)` / *"The X-Ray concept also appears as a permitted MKMETHOD value in MK Sharp/Genant and Sharp/Van der Heijde scoring DSSs (one of two allowed methods, alongside MRI) and as one of 15 permitted TRMETHOD values in TR RECIST 1.1 measurement DSSs. In MK and TR the concept is a qualifier on the measurement; in PR it is the measurement identity itself."* |
 | `Sibling_Tests_In_Instrument` | `Parent_Instrument_Narrative` | `TENMW101; TENMW102; TENMW103; …` / *"This test code belongs to the 10-Meter Walk/Run Functional Test instrument codelist (C141657), alongside TENMW101 through TENMWnnn — tests that share the instrument framing and its administration protocol but differ in the specific measurement."* |
-| `Case_Specializations` | `Case_Specializations_Narrative` | `ID001=FPG; ID002=OGTT-2H; ID003=OGTT-FASTING` / *"Three protocol-specific case specialisations are authored over this DSS: Fasting Plasma Glucose (ID001, pins LBFAST=Y); OGTT 2-Hour Plasma Glucose (ID002, pins LBFAST=N and binds LBTPTREF to a protocol-defined challenge event); OGTT Fasting Baseline (ID003, pins LBFAST=Y and binds LBTPTREF to the same challenge event)."* (populated when a case-spec registry exists) |
 
 **Why the reified narrative matters.** Compact lists (`SGBESCR(MK); LDIAM(TR)`) are filter-friendly but epistemically flat — the reader doesn't know whether X-Ray plays the same role in MK and TR as it does in the current DSS. The narrative form embeds the role: *qualifier on the measurement in MK, qualifier in TR, measurement identity in PR*. That embedding is a proposition about a proposition — the exact shape the LLM's learned language patterns navigate best.
 
@@ -294,7 +291,7 @@ The enhancement is part of a broader serialisation architecture that should be e
 - Shape: one row per DSS, rich columns including `VLM_Summary` (compact grammar) and `VLM_Narrative` (prose), mode/pinned/allowed triples, coverage-status flags, reified cross-reference columns
 
 **Tier 3 — DataBook / high reification.**
-- `docs/*.html` case stories (Glucose_COSMoS_Story, Glucose_StudyIntent_Story, 6MWT_COSMoS_Story, 6MWT_NCIt_Story, XRay_COSMoS_Story, XRay_PatientBurden_Story, future additions)
+- `docs/*.html` case stories (Glucose_COSMoS_Story, Glucose_StudyIntent_Story, 6MWT_COSMoS_Story, 6MWT_NCIt_Story, XRay_COSMoS_Story, future additions)
 - Consumer: LLM-facing architectural analysis, human documentation, design reviews, curator onboarding
 - Shape: prose narrative with embedded structured fact blocks (VLM tables, codelist chip-rows, NCIt-hyperlinked concept codes) — the paradigmatic "DataBook" shape described in the Inference Engineer article
 
@@ -316,11 +313,10 @@ The enhancement is part of a broader serialisation architecture that should be e
 - `cosmos-bc-dss/downloads/cdisc_biomedical_concepts_latest.xlsx` — BC source
 - `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx` — current flattened interim (to be enhanced)
 - `docs/Glucose_COSMoS_Story.html` — Pair 1 reference
-- `docs/Glucose_StudyIntent_Story.html` — Pair 1 reference, case-specialisation layer
+- `docs/Glucose_StudyIntent_Story.html` — Pair 1 reference
 - `docs/6MWT_COSMoS_Story.html` — Pair 2 reference
 - `docs/6MWT_NCIt_Story.html` — Pair 2 reference
-- `outputs/XRay_COSMoS_Story.html` — Pair 3 reference (not yet in repo due to branch sync)
-- `outputs/XRay_PatientBurden_Story.html` — Pair 3 reference, SoA burden gap
+- `docs/XRay_COSMoS_Story.html` — Pair 3 reference
 
 ---
 

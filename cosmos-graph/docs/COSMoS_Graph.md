@@ -139,7 +139,7 @@ Both grains can be authored against the same BC, and the codes can differ — th
 
 **Symmetric treatment of inlined children and authored edges.** The SDTM side breaks out the `SDTMVariable` reification quad into a `Relationships` edge list and the codelist binding into a `Codelists` sheet, so graph traversal does not require parsing flattened columns. The BC side follows the same pattern: the two inlined child classes on `BiomedicalConcept` (`Coding`, `DataElementConcept`) each get their own sheet, and the two authored BC-side relations (BC-to-BC parent, BC-to-Category) are surfaced as edge-list sheets alongside the flat string columns retained on the `BC` sheet for locality. The `Categories` vocabulary is projected as its own sheet and closes under `BC_Categories`.
 
-**Core vs. overlay — architectural pattern (documented, not yet built).** Content that is schema-identical to core but not CDISC-authored — track-authored extrapolations, sponsor-scope case specialisations — would live in a parallel `COSMoS_Graph_Overlay.xlsx`. Provenance separated at the file level. Consumers declare which slice they read: core-only, core+overlay, or overlay-only. Same principle as the core/CT split. The pattern is recorded here and the trigger conditions are in [`COSMoS_Open_Work.md`](COSMoS_Open_Work.md) §4; no overlay content has been authored as of package 2026-Q1.
+**Core vs. overlay — architectural pattern (documented, not yet built).** Content that is schema-identical to core but not CDISC-authored — for example track-authored extrapolations such as DSS rows for a BC that has `bc_type = full_no_ds` in source, or genuine cross-domain-class additions absent from source — would live in a parallel `COSMoS_Graph_Overlay.xlsx`. Provenance separated at the file level. Consumers declare which slice they read: core-only, core+overlay, or overlay-only. Same principle as the core/CT split. The pattern is recorded here and the trigger conditions are in [`COSMoS_Open_Work.md`](COSMoS_Open_Work.md) §4; no overlay content has been authored as of package 2026-Q1.
 
 ## 5. xlsx ↔ LinkML rename tables
 
@@ -236,7 +236,6 @@ The BC xlsx has three sheets (`Biomedical Concepts`, `BC Hierarchy`, `Categories
 
 - [`archive/flattener_rewrite_audit.md`](archive/flattener_rewrite_audit.md) — frozen close-out of the 2026-04 Step 2 build: sheet shapes, counts, back-compat decision, validation triage.
 - [`../reports/graph_validation_report.md`](../reports/graph_validation_report.md) (+ `.json`) — eight-check validation pass: referential integrity, schema column coverage, CT resolution fails, enumerated-value integrity, anomaly counts.
-- [`../reports/root_subset_fallback_diagnostic.md`](../reports/root_subset_fallback_diagnostic.md) — 2026-04-23 diagnostic separating narrative-layer unresolved codes from genuine NCI EVS Root-subset gaps.
 - [`../reports/evs_root_gap_coverage.md`](../reports/evs_root_gap_coverage.md) — per-domain coverage of the Root-subset gaps.
 
 ## 7. Cross-references
@@ -245,5 +244,4 @@ The BC xlsx has three sheets (`Biomedical Concepts`, `BC Hierarchy`, `Categories
 - [`../reference/cosmos_linkml/`](../reference/cosmos_linkml/) — the LinkML schemas consumed by the SchemaView-driven flattener.
 - [`COSMoS_Open_Work.md`](COSMoS_Open_Work.md) — what's still open (consumer rewire, upstream flags, deferred architectural work).
 - [`archive/`](archive/) — frozen predecessor docs (Step 1 close, Step 2 scoping, Step 2 as-built, 2026-04-23 triage).
-- [`../../sdtm-narrative/`](../../sdtm-narrative/) — downstream narrative assembly track.
 - [`../../cosmos-bc-dss/`](../../cosmos-bc-dss/) — upstream source-ingest track (downloads/ and legacy flattener).

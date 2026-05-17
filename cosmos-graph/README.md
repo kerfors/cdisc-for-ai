@@ -48,7 +48,7 @@ cosmos-graph/
 ├── interim/                COSMoS_Graph.xlsx, COSMoS_Graph_CT.xlsx
 ├── notebooks/              10_flatten, 20_resolve_ct, 30_validate
 ├── reference/cosmos_linkml/    LinkML schemas (BC, SDTM, CRF)
-├── reports/                graph_validation_report.{md,json}, root_subset_fallback_diagnostic.{md,csv}, evs_root_gap_coverage.{md,csv}
+├── reports/                graph_validation_report.{md,json}, evs_root_gap_coverage.{md,csv}
 └── README.md               this file
 ```
 
@@ -56,5 +56,4 @@ cosmos-graph/
 
 - [`consumer-bases/`](../consumer-bases/) — joined views over the graph (`DSS_View.xlsx`), shaped for consumer-track consumption. Scope-agnostic.
 - [`sdtm-findings-graph/`](../sdtm-findings-graph/) — graph-fed Findings consumer. All three sub-types (specimen, measurement, instrument) built from `consumer-bases/DSS_View.xlsx`. Canonical Findings output going forward.
-- [`sdtm-narrative/`](../sdtm-narrative/) — Tier 2b paragraphs and Tier 3 DataBooks, assembled from the graph via a template catalogue.
 - [`sdtm-findings/`](../sdtm-findings/) — legacy parallel Findings consumer, still reading `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`. Retires once parity is fully validated downstream.

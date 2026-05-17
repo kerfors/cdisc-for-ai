@@ -3,7 +3,7 @@
 `consumer-bases/` carries joined, denormalised projections over `cosmos-graph/` and
 repo reference metadata, shaped for consumer use but not yet the final consumer
 shape. Final shaping — sub-typing, behavioural classification, narrative framing —
-stays in consumer tracks (`sdtm-findings-graph/`, `sdtm-narrative/`, future tracks).
+stays in consumer tracks (`sdtm-findings-graph/`, future tracks).
 
 ## Scope discipline
 

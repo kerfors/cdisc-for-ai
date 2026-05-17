@@ -143,7 +143,6 @@
 <div style="margin: 12px 0 16px 0; padding: 10px 14px; font-size: 0.78rem; color: #555; line-height: 1.55; background: #fef9e7; border-radius: 5px; border-left: 3px solid #C8A415;">
   <p><strong>Why this story splits across two domain classes.</strong> A chest X-ray has two SDTM footprints. The procedure itself — the act of acquiring the image — is an Interventions-class record in PR. The measurements read off the image (joint erosion score, cardiothoracic ratio, lesion size) are Findings-class records in body-system domains (MK, CV, TR, …). COSMoS publishes DSSs for both sides, with very different internal logic.</p>
   <p style="margin-top: 0.7rem;">On the PR side the DSS pins identity: PRDECOD is assigned to a specific CDISC CT term from the PROCEDUR codelist. On the Findings side the DSS pins the test but leaves the acquisition modality open as a <code style="background:#fff; padding:0 4px; border-radius:3px;">--METHOD</code> value_list, so the same test can be acquired by X-ray or MRI without multiplying DSSs.</p>
-  <p style="margin-top: 0.7rem;">Companion doc: <a href="XRay_PatientBurden_Story.html">Chest X-Ray — The Patient-Burden Gap</a> — what neither side of the DSS model captures, and why SoA burden calculation needs more.</p>
 </div>
 
 <div class="legend">
@@ -709,7 +708,6 @@
 <div class="footer">
   Data sources: COSMoS BC + DSS package 2026-Q1 (<code>cosmos-graph/downloads/cdisc_sdtm_dataset_specializations_latest.xlsx</code>) projected through <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> and joined in <code>consumer-bases/interim/DSS_View.xlsx</code> &bull; SDTM CT 2026-03-27 (<code>sdtm-test-codes/downloads/SDTM_Terminology.txt</code>) &bull; NCIt Thesaurus 2026-03.<br>
   XRAYCHEST and SGBESCR VLM detail extracted directly from <code>cosmos-graph/interim/COSMoS_Graph.xlsx</code> Variables sheet, 9 rows each. DSS_View row content verified in <code>consumer-bases/interim/DSS_View.xlsx</code> sheet <code>Measurement_Specs</code>. Sibling PR DSSs' PRDECOD and PRLOC pins verified row by row. PROCEDUR codelist (C101858) and POSITION codelist (C71148, 17 terms) verified in SDTM CT. TR/TU RECIST DSSs confirmed to carry 15 imaging methods each in MKMETHOD value_list.<br>
-  Companion doc: <a href="XRay_PatientBurden_Story.html">XRay_PatientBurden_Story.html</a> — what neither DSS captures, and why SoA burden calculation needs more.<br>
   Generated 2026-04-21; updated 2026-04-30 (Part 3 realigned to graph-fed architecture; Part 2B added — TR/TU sibling sections).
 </div>
 

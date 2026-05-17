@@ -12,7 +12,7 @@ The current `cosmos-bc-dss` pipeline downloads the published Excel exports and f
 
 Before changing the flattener the model itself needs to be written down. CDISC publishes COSMoS as a LinkML schema plus LinkML-conformant instance YAML. The xlsx is a derived projection. This document describes what the authored graph contains, what the projection preserves, and what it drops. It is the input to the next two steps: making the flattener graph-walk-driven rather than column-list-driven (Step 2), and carrying NCIt semantics through to the narrative layer (Step 3).
 
-Scope is the authored graph. Consumer design, the three-tier serialisation idea from the enhancement brief, and case-specialisation layering stay out of scope here.
+Scope is the authored graph. Consumer design and the three-tier serialisation idea from the enhancement brief stay out of scope here.
 
 ## 2. What CDISC publishes
 

@@ -16,47 +16,23 @@ The guiding architectural principle: **One Graph, Many Views.** Flat reference f
 
 **Findings-shaped consumer artefacts (`sdtm-findings-graph` track).** Domain-shaped joined views (`Specimen_Findings`, `Measurement_Findings`, `Instrument_Findings`) that pre-join the implicit relationships at behavioural-pattern grain.
 
-## Investigational thread (this work)
+## Case-study walkthroughs
 
-A fifth thread: sponsor-agnostic clinical-knowledge reference maps, applied to one modality family at a time, that surface the gap between clinical truth and standards coverage.
+Three case pairs in [`docs/`](docs/) trace single clinical cases through the SDTM CT + NCIt + COSMoS stack:
 
-Three families completed (MRI of liver disease, DXA for osteoporosis, hand and foot X-ray for RA structural progression) plus a repo-level Procedure-Options Inventory across them. Four reusable prompts (family-map, inventory, integration, plus the X-ray case study HTMLs as the architectural worked example) govern the work.
+- **Glucose** (Findings; LB) — `Glucose_COSMoS_Story.html` (recording view) and `Glucose_StudyIntent_Story.html` (what study-design assembly adds on top of GLUCPL).
+- **6MWT** (COA; QS / FT / RS) — `6MWT_NCIt_Story.html` (NCIt identity layer) and `6MWT_COSMoS_Story.html` (what COSMoS records and what it leaves to composition and classification).
+- **Chest X-Ray** (PR + MK / TR / TU) — `XRay_COSMoS_Story.html` traces a single clinical concept through two SDTM domain classes (procedure on the PR side, measurements off the image on the Findings side) and shows what COSMoS records of each.
 
-Cite-checking against PubMed, FDA, ACR, AASLD, EASL, QIBA, and ESGAR/SAR primary sources is a hard gate at every stage. No sponsor inputs.
+Each pair shows what the standards already carry and where the gap to clinical use sits.
 
-## What we have learned
+## Behavioural analysis
 
-**The two-layer separation generalises.** Clinical truth (Sheet 1) vs COSMoS coverage (Sheet 2) holds across families authored independently. The "Architectural observation flag" tier — DSS exists but with a modelling decision worth surfacing — is the most informative output and where the productive COSMoS authoring conversation lives.
-
-**Three structural patterns recur in every family.**
-
-1. **PR-side modality × anatomy authoring is uneven and limited to chest/brain.** Three right-grain PR DSSs exist at 2026-Q1: `CTSCANCHEST`, `MRIBRAIN`, `XRAYCHEST`. None of the 21 procedures across the three families targets chest or brain, which is why the inventory's universal finding ("none has a PR DSS at right grain") holds.
-2. **METHOD value_list pattern over-promises substitutability.** MK Sharp DSSs accept X-RAY;MRI; TR/TU accept 15 imaging methods. Modality difference is reduced to a per-record qualifier choice when it is sometimes a clinically meaningful identity difference.
-3. **Composite-score modelling is unsolved.** mTSS, FRAX, LI-RADS Category have no current COSMoS pattern, despite being the actual reported endpoints in registration submissions.
-
-**The PROCEDUR/METHOD codelist split is a structural finding.** Modern imaging sub-modes — `DXA SCAN`, `ULTRASOUND`, `MAMMOGRAPHY`, `MAGNETIC RESONANCE ELASTOGRAPHY` (MRE), `DIFFUSION WEIGHTED MRI` (DWI), `MAGNETIC RESONANCE CHOLANGIOPANCREATOGRAPHY` (MRCP) — have governed METHOD terms but are absent from PROCEDUR. PR-side DSS authoring is blocked behind CDISC CT governance work that is itself out of consumer-bases scope. The canonical abbreviation-to-submission-value mapping is in `Codelist_Cross_References.xlsx Term_Diff`.
-
-**The COSMoS template is reusable; population is editorial work.** The DSS pattern (VLM group, pinned values, value-list-restricted slots, bound codelists) generalises. Adding cases is editorial work, not architectural work — but two structural extensions are still needed before the template covers procedure → findings → burden end-to-end: a burden-qualifier slot pattern on the procedure side, and a composite-indicator pattern.
-
-**Procedure-forward and codelist-forward traversal are now first-class.** The investigational thread surfaced gaps in the consumer-bases architecture (measurement-forward traversal was well-supported; the other two directions were reconstructed manually). The May-2026 upstream-improvements work added five additive projections — `Codelist_Coverage`, `DSS_Variables_View`, `PR_DSS_Reachability`, `Codelist_Cross_References`, plus the `observation_class` column on `DSS_View` — closing the asymmetry. The next inventory and integration runs read deterministically against these projections rather than reconstructing each time.
-
-## Where we are heading
-
-A single named entity — call it Activity Specification — that ties together procedure identity, reachable findings DSSs, and burden-relevant qualifier values. Given an identifier, the same entity is referenced by USDM Activity in protocol design, drives burden roll-up at SoA level, and decomposes deterministically into PR records plus Findings records at SDTM-population time.
-
-Today this integration is sponsor logic. The endpoint is for the standards layer to be the integrator instead.
-
-The three structural pieces that remain:
-
-- A **burden-qualifier slot pattern** on the procedure side (POSITION binding to PR DSSs; view, contrast, preparation, setting modelled as governed slots). Closes the gap the X-ray case study identified for one procedure and the inventory generalised across 21.
-- A **composite-indicator DSS pattern** between procedure and findings sides. Covers mTSS, FRAX, LI-RADS Category, and similar derived indices that are the actual reported endpoints in registration trials.
-- A **record-to-record link pattern** (PR record matched to Findings records by timing, subject, RELREC) named in SDTM but not modelled in COSMoS today.
-
-All three are tractable. All three benefit every future case rather than the case being authored. None requires inventing new standards work — they extend the COSMoS template along axes the consumer-side work has now made visible.
+A repo-level analysis of how the BC-to-DSS relationship behaves across SDTM domains. Ten behavioural groups cluster into five identity patterns; the analysis explains why a Dataset Specialization means different things in different domains. See [`docs/Identity_Needs_by_Behavioural_Group.md`](docs/Identity_Needs_by_Behavioural_Group.md) and the full analysis in [`cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md).
 
 ## Public artefact set
 
-Three family maps, the inventory, the four prompts, the X-ray case study HTMLs. Together a complete public reference for the COSMoS authoring conversation. Each artefact stands on its own; they cite each other where the cross-references are useful.
+The machine-actionable xlsx outputs of the four tracks, the three case-study pairs above, and the behavioural-analysis notes. Together a public reference set; each artefact stands on its own; they cite each other where the cross-references are useful.
 
 The cdisc-for-ai work is sponsor-agnostic. Indications are recorded as documented in the clinical literature, not filtered by any portfolio. Every claim traces to a publicly verifiable reference.
 

@@ -170,7 +170,7 @@ Scoping / history:
 Case pair references (still the working examples):
 - `docs/Glucose_COSMoS_Story.html`, `docs/Glucose_StudyIntent_Story.html`
 - `docs/6MWT_COSMoS_Story.html`, `docs/6MWT_NCIt_Story.html`
-- `outputs/XRay_COSMoS_Story.html`, `outputs/XRay_PatientBurden_Story.html`
+- `docs/XRay_COSMoS_Story.html`
 
 ---
 
