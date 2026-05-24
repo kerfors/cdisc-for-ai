@@ -24,7 +24,7 @@ The repo has five track types. The domain code is the join key across all tracks
 
 **Source tracks** extract and enrich from upstream standards:
 - `sdtm-test-codes/` — "What is measured?" Extracts TESTCD/TEST from NCI EVS, enriches with NCIt identity (definitions, synonyms, C-codes, UMLS/LOINC mappings). Outputs: `SDTM_Test_Identity.xlsx` (domain-level test codes), `SDTM_Instrument_Test_Identity.xlsx` (test codes within an instrument codelist), `SDTM_Instrument_Identity.xlsx` (one row per instrument codelist, dual NCIt anchors from C20993 + C211913).
-- `cosmos-bc-dss/` — "How is it measured? (extraction)" Owns the COSMoS source-ingest and legacy single-sheet flatten. Output: `COSMoS_BC_DSS.xlsx` (interim). Also carries the early behavioural/content analyses.
+- `cosmos-bc-dss/` — COSMoS source-ingest landing zone (`downloads/`, read by `cosmos-graph/`), behavioural-analysis docs, and NCIt-comparison analyses. No longer carries a flatten output — the multi-sheet projection lives in `cosmos-graph/`.
 
 **Graph track** provides the traversable COSMoS projection:
 - `cosmos-graph/` — SchemaView-driven multi-sheet graph over the CDISC COSMoS export, plus NCI EVS SDTM CT enrichment. Outputs: `interim/COSMoS_Graph.xlsx` (core, lossless-over-source), `interim/COSMoS_Graph_CT.xlsx` (CT enrichment). Reads source material from `cosmos-bc-dss/downloads/`. LinkML schemas live here at `reference/cosmos_linkml/`.
@@ -36,8 +36,7 @@ The repo has five track types. The domain code is the join key across all tracks
 - `sdtm-domain-reference/` — Domain-level classification: structural types, COSMoS coverage flags, specimen/instrument classification. Output: `SDTM_Domain_Metadata.xlsx`. Pipeline input to consumer tracks.
 
 **Consumer tracks** join source/graph data into structural-type-specific outputs:
-- `sdtm-findings/` — Three sub-types: Specimen-based (LB, MB, MI, CP, BS, MS, PC, PP), Measurement (VS, MK, CV), Instrument (QS, FT, RS). Each output is a two-sheet workbook: Test_Identity (one row per TESTCD) + Measurement_Specs (one row per DSS). Join key between sheets: TESTCD. Still reads the legacy `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`; superseded by `sdtm-findings-graph/` (parallel during transition, retirement deferred to the next COSMoS release).
-- `sdtm-findings-graph/` — Graph-fed successor to `sdtm-findings/`. All three sub-types built. Specimen and measurement use the two-sheet pattern (Test_Identity + Measurement_Specs); instrument adds two more sheets (BC_Categories + BC_Parents) to handle the parallel BC chains and the search-tag mechanism. Fresh column shape designed against `consumer-bases/DSS_View.xlsx`. Runs parallel to the legacy until retirement.
+- `sdtm-findings-graph/` — Three sub-types: Specimen-based (LB, MB, MI, CP, BS, MS, PC, PP), Measurement (VS, MK, CV), Instrument (QS, FT, RS). Specimen and measurement use a two-sheet pattern (Test_Identity + Measurement_Specs); instrument adds two more sheets (BC_Categories + BC_Parents) to handle the parallel BC chains and the search-tag mechanism. Reads `consumer-bases/DSS_View.xlsx`. Replaced the legacy `sdtm-findings/` track, retired May 2026.
 
 See `SDTM_Domain_Overview.md` (repo root) for the full three-layer analytical model. See `docs/Changes_2026-05.md` (and prior `Changes_2026-04.md`, `Changes_2026-03.md`) for what changed in each release.
 
@@ -53,10 +52,6 @@ cosmos-graph/interim/COSMoS_Graph*.xlsx ─────────┤
                                                          │
                                                          └──→ sdtm-findings-graph
 ```
-
-The legacy `sdtm-findings/` consumer reads `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`
-instead of the graph projection; it runs in parallel with `sdtm-findings-graph/`
-until the latter has all three sub-types.
 
 ## Folder conventions
 

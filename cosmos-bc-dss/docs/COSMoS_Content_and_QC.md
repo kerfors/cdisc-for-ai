@@ -1,12 +1,12 @@
-# COSMoS Flattened: Content and Quality Checks
+# COSMoS Content and Quality Checks
 
-*Exploratory quality analysis of COSMoS BC and DSS content — starting from Laboratory and expanding across all 31 published domains. Part of the [cdisc-for-ai](https://github.com/kerfors/cdisc-for-ai) project.*
+*Exploratory quality analysis of COSMoS BC and DSS content — starting from Laboratory and expanding across all 32 published domains. Part of the [cdisc-for-ai](https://github.com/kerfors/cdisc-for-ai) project.*
 
-## What the file is
+## What this analyses
 
-The [Flatten notebook](../notebooks/COSMoS_BC_DSS_Flatten.ipynb) combines the two COSMoS levels — Biomedical Concepts (BCs) and Dataset Specializations (DSSs) — into a single flat Excel file: one row per DSS, BC identity columns carried along. The [Validate notebook](../notebooks/COSMoS_BC_DSS_Validate.ipynb) runs structural QC checks. The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates definitions and synonyms against the authoritative NCIt source.
+The two COSMoS levels — Biomedical Concepts (BCs) and Dataset Specializations (DSSs) — projected into a multi-sheet traversable graph by [`cosmos-graph/`](../../cosmos-graph/) (output [`interim/COSMoS_Graph.xlsx`](../../cosmos-graph/interim/COSMoS_Graph.xlsx)). The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates definitions and synonyms against the authoritative NCIt source.
 
-Output: [`interim/COSMoS_BC_DSS.xlsx`](../interim/COSMoS_BC_DSS.xlsx) — 1,345 BCs across 32 domains, 1,326 DSSs *(2026-03 package)*.
+Scope at the 2026-03 package: 1,345 BCs across 32 domains, 1,326 DSSs.
 
 ## Glucose — the LB decomposition pattern
 

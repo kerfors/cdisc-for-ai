@@ -65,9 +65,9 @@ Folders not present:
 
 - `cosmos-graph/docs/COSMoS_Graph.md` — graph reference.
 - `cosmos-graph/docs/COSMoS_Open_Work.md` — open work, including the deferred
-  `DSS_Attributes` long-format sheet (§3) which would live here when its trigger
+  `DSS_Attributes` long-format sheet (§2) which would live here when its trigger
   fires.
 - `sdtm-findings-graph/` — first consumer of `DSS_View.xlsx`. All three
   Findings sub-types (specimen, measurement, instrument) built from this view.
-  Legacy `sdtm-findings/` runs in parallel until parity is fully validated.
+  Replaced the legacy `sdtm-findings/` track, retired May 2026.
 - Repo-root `CLAUDE.md` — repo conventions.

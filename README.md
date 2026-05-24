@@ -35,8 +35,7 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | [`SDTM_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) -- domain-level test codes | NCI EVS, NCIt, UMLS |
 | | | [`SDTM_Instrument_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Test_Identity.xlsx) -- test codes bound to an instrument codelist | |
 | | What instruments? | [`SDTM_Instrument_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) -- one row per instrument codelist, dual NCIt anchors (C20993 + C211913) | |
-| [`cosmos-bc-dss/`](cosmos-bc-dss/) | How is it measured? (extraction) | [`COSMoS_BC_DSS.xlsx`](cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx) -- legacy flattened BC/DSS interim, retained while consumers transition | COSMoS BC/DSS exports |
-| | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) | |
+| [`cosmos-bc-dss/`](cosmos-bc-dss/) | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) -- behavioural analysis docs and NCIt-comparison reports; also the COSMoS source-ingest landing zone read by `cosmos-graph/` | COSMoS BC/DSS exports |
 
 ### Graph track
 
@@ -66,7 +65,6 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
 | | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- four-sheet (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) |
-| [`sdtm-findings/`](sdtm-findings/) | Legacy parallel track | Same scope as above | Pre-graph build, retained for backward compatibility while consumers transition |
 
 Specimen and Measurement consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The Instrument consumer is four-sheet — adds **BC_Categories** (search-tag mechanism) and **BC_Parents** (parent-chain traversal) because instrument grouping operates outside the BC parent chain (item BCs roll up via wrapper concepts, not via the instrument-level BC). Link between sheets: TESTCD.
 
@@ -94,7 +92,6 @@ graph TD
     end
 
     subgraph cosmos-bc-dss
-        BCD["COSMoS_BC_DSS.xlsx<br/>(legacy interim)"]
         BA["Behavioural_Analysis.md"]
         DPI["Domain_Pattern_Inventory.xlsx"]
     end
@@ -123,10 +120,9 @@ graph TD
     EVS --> II
     EVS --> DM
     EVS --> CGC
-    COS --> BCD
     COS --> CG
-    BCD --> BA
-    BCD --> DPI
+    COS --> BA
+    COS --> DPI
 
     CG --> DV
     CGC --> DV

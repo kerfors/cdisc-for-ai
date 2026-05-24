@@ -1,61 +1,63 @@
-# cosmos-bc-dss — How is it measured?
+# cosmos-bc-dss — COSMoS source-ingest, behavioural analysis, NCIt comparison
 
-The yellow layer. Every COSMoS measurement specification flattened into a single row: what biomedical concept it belongs to, what specimen/method/scale it requires, and how it maps to SDTM variables. Covers all SDTM domains, not just Laboratory.
+The yellow layer. Originally the home of the legacy COSMoS BC/DSS single-sheet flatten; that role moved to [`../cosmos-graph/`](../cosmos-graph/) (schema-driven multi-sheet projection) and the flatten was retired in May 2026.
 
-> **Scope note (2026-04-23).** This track now owns the COSMoS source-extraction concern: ingest, legacy BC/DSS flatten, early BC/DSS analyses. The graph-layer work (schema-driven flatten, CT resolution, validation, query cookbook) has moved to [`../cosmos-graph/`](../cosmos-graph/). The legacy `interim/COSMoS_BC_DSS.xlsx` pipeline documented below stays in place until consumer tracks rewire onto the graph.
+What stays here:
 
-**Current output:** [`interim/COSMoS_BC_DSS.xlsx`](interim/COSMoS_BC_DSS.xlsx) — structurally complete, validated. Column naming follows COSMoS vocabulary with minor clarifications for machine consumption.
+- **The COSMoS source-ingest landing zone.** [`downloads/`](downloads/) holds the COSMoS BC and DSS exports; both `cosmos-graph/` and the remaining notebooks below read from here.
+- **Behavioural-analysis documentation.** Cross-domain analyses of how BC→DSS patterns vary by domain. The graph projection makes the data traversable; these docs explain how it behaves.
+- **NCIt-comparison thread.** Notebooks and reports comparing COSMoS BC content against the authoritative NCIt source.
 
-Two companion documents cover what the notebooks produce and what the analysis reveals:
+## Documents
 
-- [`docs/COSMoS_Content_and_QC.md`](docs/COSMoS_Content_and_QC.md) — what the interim file contains, domain distribution, the Glucose example showing one BC producing eight DSSs, and a summary of all QC findings.
 - [`docs/COSMoS_Behavioural_Analysis.md`](docs/COSMoS_Behavioural_Analysis.md) — how BC→DSS patterns differ across domains, ten behavioural groups, six decomposition axes.
+- [`docs/COSMoS_Content_and_QC.md`](docs/COSMoS_Content_and_QC.md) — what COSMoS publishes, domain distribution, the Glucose example showing one BC producing eight DSSs, summary of QC findings.
+- [`docs/COSMoS_Collection_vs_Ontology.md`](docs/COSMoS_Collection_vs_Ontology.md) — why DSSs model collection templates, not medical ontology.
+- [`docs/COSMoS_Specification_Focus.md`](docs/COSMoS_Specification_Focus.md) — where COSMoS specification value concentrates (DSS vs CRF).
+- [`docs/COSMoS_Domain_Pattern_Inventory.xlsx`](docs/COSMoS_Domain_Pattern_Inventory.xlsx) — domain-by-domain behavioural-group classification.
 
 ## Notebooks
 
 | Notebook | Role | Output |
 |---|---|---|
-| [`COSMoS_BC_DSS_Flatten`](notebooks/COSMoS_BC_DSS_Flatten.ipynb) | Flatten | [`interim/COSMoS_BC_DSS.xlsx`](interim/COSMoS_BC_DSS.xlsx) |
-| [`COSMoS_BC_DSS_Validate`](notebooks/COSMoS_BC_DSS_Validate.ipynb) | Validate | [`reports/COSMoS_BC_DSS_QC.xlsx`](reports/COSMoS_BC_DSS_QC.xlsx) |
-| [`COSMoS_BC_NCIt_Compare`](notebooks/COSMoS_BC_NCIt_Compare.ipynb) | Compare | [`reports/COSMoS_BC_NCIt_Compare.xlsx`](reports/COSMoS_BC_NCIt_Compare.xlsx) |
+| [`COSMoS_BC_NCIt_Compare`](notebooks/COSMoS_BC_NCIt_Compare.ipynb) | Compare COSMoS BC definitions and synonyms against authoritative NCIt | [`reports/COSMoS_BC_NCIt_Compare.xlsx`](reports/COSMoS_BC_NCIt_Compare.xlsx) |
+| [`COSMoS_BC_NCIt_Source_Probe`](notebooks/COSMoS_BC_NCIt_Source_Probe.ipynb) | Probe NCIt source endpoints used by Compare | [`reports/COSMoS_BC_NCIt_Source_Probe.xlsx`](reports/COSMoS_BC_NCIt_Source_Probe.xlsx) |
+| [`COSMoS_BC_Parent_Resolution`](notebooks/COSMoS_BC_Parent_Resolution.ipynb) | Resolve BC parent chains in the source | [`reports/COSMoS_BC_Parent_Resolution.xlsx`](reports/COSMoS_BC_Parent_Resolution.xlsx) |
 
-**Flatten** downloads COSMoS BC and DSS exports, resolves SDTM CT submission values for specimen/method/unit, classifies BCs by type, and builds hierarchy paths. Extracts DSS dimensions generically by variable role — no hardcoded domain logic.
+**Compare** scoped to subject-level Findings BCs. Reads COSMoS exports from [`downloads/`](downloads/) and the green-track [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) for NCIt anchors.
 
-**Validate** runs 17 quality checks (QC-01 to QC-15) on the interim file — structural integrity plus validation against the [BC Curation Principles and Completion Guidelines](https://cdisc-org.github.io/COSMoS/bc_starter_package/doc/BC%20Curation%20Principles%20and%20Completion%20GLs.xlsx). Reads only from the interim file — no source re-download needed.
+**Source_Probe** caches NCIt source-endpoint responses to [`cache/ncit_source_probe.json`](cache/ncit_source_probe.json) so Compare can run repeatedly without re-querying NCIt.
 
-**Compare** validates COSMoS BC definitions and synonyms against the authoritative NCIt source (via [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx)). Scoped to subject-level Findings BCs. Reads from both the interim file and the green track output.
-
-Each notebook documents its own logic, sources, and design decisions in detail.
+**Parent_Resolution** traces parent-of relationships in BC content.
 
 ## Data flow
 
 ```mermaid
 graph TD
-    A[COSMoS BC + DSS exports] --> F[Flatten]
-    B[SDTM CT codelists · NCI EVS] --> F
-    F --> I[interim/COSMoS_BC_DSS.xlsx]
-    I --> V[Validate]
-    V --> QC[reports/COSMoS_BC_DSS_QC.xlsx]
-    I --> C[Compare]
-    G[sdtm-test-codes/.../SDTM_Test_Identity.xlsx] --> C
-    C --> CR[reports/COSMoS_BC_NCIt_Compare.xlsx]
+    A[COSMoS BC + DSS exports<br/>downloads/] --> CG[../cosmos-graph/]
+    A --> BA[Behavioural_Analysis.md]
+    A --> DPI[Domain_Pattern_Inventory.xlsx]
+    A --> CMP[Compare]
+    G[sdtm-test-codes/.../SDTM_Test_Identity.xlsx] --> CMP
+    CMP --> CR[reports/COSMoS_BC_NCIt_Compare.xlsx]
+    A --> PR[Parent_Resolution]
+    PR --> PRR[reports/COSMoS_BC_Parent_Resolution.xlsx]
 
     style A fill:#FFD700,stroke:#333,color:#000
-    style B fill:#548235,stroke:#333,color:#fff
     style G fill:#548235,stroke:#333,color:#fff
-    style I fill:#FFFCE8,stroke:#333,color:#000
-    style QC fill:#f2f2f2,stroke:#333,color:#000
+    style CG fill:#FFFCE8,stroke:#333,color:#000
+    style BA fill:#FFFCE8,stroke:#333,color:#000
+    style DPI fill:#FFFCE8,stroke:#333,color:#000
     style CR fill:#f2f2f2,stroke:#333,color:#000
+    style PRR fill:#f2f2f2,stroke:#333,color:#000
 ```
 
 All source files are downloaded automatically and cached in [`downloads/`](downloads/).
 
 ## Downstream
 
-The legacy interim file feeds the [`sdtm-findings`](../sdtm-findings/) consumer track (legacy parallel). The canonical successor is [`sdtm-findings-graph`](../sdtm-findings-graph/), which reads from the multi-sheet `cosmos-graph/` projection via `consumer-bases/DSS_View.xlsx` instead of the single-sheet flatten here. The two consumer tracks run in parallel until the legacy retires.
+The COSMoS source ingest serves [`cosmos-graph/`](../cosmos-graph/), which projects the same source into a multi-sheet traversable graph driven by the LinkML schema. Consumer tracks (`consumer-bases/`, `sdtm-findings-graph/`) read from the graph, not from this track.
 
-The COSMoS source ingest in this track also serves [`cosmos-graph/`](../cosmos-graph/), which projects the same source into a multi-sheet traversable graph driven by the LinkML schema.
+## Historical note
 
-## Dependencies
-
-Flatten reads SDTM CT codelists from NCI EVS for submission value resolution. Validate reads only from the interim file. Compare reads the interim file and [`sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) — the cross-track dependency.
+Earlier releases produced a single-sheet flatten at `interim/COSMoS_BC_DSS.xlsx` and a `Validate` QC notebook. Both retired May 2026 — see [`../docs/Changes_2026-05.md`](../docs/Changes_2026-05.md). Earlier versions remain in git history.

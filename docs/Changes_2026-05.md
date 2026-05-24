@@ -22,13 +22,19 @@ Two new files make codelist-side reachability explicit, complementing the existi
 
 `DSS_Variables_View.xlsx` is the long-format complement at one-row-per-VLM-row grain. Where `DSS_View.xlsx` is wide and DSS-centric, this view is long and variable-centric — convenient for any consumer that wants to iterate over variables rather than aggregate over DSSs.
 
-`PR_DSS_Reachability.xlsx` is a procedure-forward projection: starts from PR PRDECOD/PRTRT value_lists and traces reachability into Findings DSSs. The five ungoverned RT modalities in PRDECOD (see `cosmos-graph/docs/COSMoS_Open_Work.md` §2 item 8) were surfaced by this view.
+`PR_DSS_Reachability.xlsx` is a procedure-forward projection: starts from PR PRDECOD/PRTRT value_lists and traces reachability into Findings DSSs. The five ungoverned RT modalities in PRDECOD (see `cosmos-graph/docs/COSMoS_Open_Work.md` §1 item 8) were surfaced by this view.
 
 `DSS_View.xlsx` now joins `observation_class` from `SDTM_Domain_Metadata.xlsx`, so observation-class scoping is available on every row without a separate lookup.
 
 ## Public-repo positioning
 
 The cdisc-for-ai work is sponsor-agnostic, and the May pass strips out remnants of sponsor-specific direction-setting that had accumulated in the public repo. The family-map thread, the `sdtm-narrative/` track, and the `XRay_PatientBurden` and `CaseStudy_Overview` artefacts have been removed; the X-Ray cross-class case study (Procedures plus Findings off the image) remains, and the Glucose case-study pair is kept. The `Top_Level_Summary.md` makes the sponsor-agnostic position explicit.
+
+## Legacy retirement
+
+The pre-graph `sdtm-findings/` consumer track and the single-sheet `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx` flatten that fed it have been retired. The `sdtm-findings-graph/` track has carried all three sub-types since April 2026, and the value_list integration described above closes the last functional gap; parity has been validated downstream. The retirement removes the parallel pipeline.
+
+`cosmos-bc-dss/` narrows from "source-ingest + flatten + analyses" to "source-ingest landing zone + behavioural-analysis docs + NCIt-comparison thread". The `downloads/` folder (read by `cosmos-graph/`) and the behavioural-analysis documentation remain unchanged. The `Flatten`, `Flatten_Diff`, and `Validate` notebooks and their outputs are removed; the `NCIt_Compare`, `NCIt_Source_Probe`, and `Parent_Resolution` notebooks remain. Earlier versions of all removed artefacts remain in git history.
 
 ## Housekeeping
 
@@ -41,5 +47,5 @@ File-level current state lives in the README sheet of each machine-actionable xl
 ## References
 
 - Behavioural rationale for value_list as identity carrier: [`cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`](../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md)
-- COSMoS-side upstream flags raised by the new projections: [`cosmos-graph/docs/COSMoS_Open_Work.md`](../cosmos-graph/docs/COSMoS_Open_Work.md) §2
+- COSMoS-side upstream flags raised by the new projections: [`cosmos-graph/docs/COSMoS_Open_Work.md`](../cosmos-graph/docs/COSMoS_Open_Work.md) §1
 - Previous release: [`Changes_2026-04.md`](Changes_2026-04.md)

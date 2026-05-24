@@ -6,13 +6,11 @@ measurement, instrument. Each sub-type produces a two-sheet workbook
 (`Test_Identity` + `Measurement_Specs`) designed for study design,
 SoA-to-CDISC mapping, and USDM integration.
 
-This track is the graph-fed successor to [`sdtm-findings/`](../sdtm-findings/),
-which still reads from `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`. The two
-tracks run in parallel until all three sub-types are built here; the legacy
-retires after that.
+This track is the graph-fed canonical Findings consumer, having replaced
+the legacy `sdtm-findings/` track retired May 2026.
 
 > **Reference versions** — built on SDTM CT 2026-03-27 and COSMoS BC/DSS
-> 2026-Q1. See [`../docs/Changes_2026-03.md`](../docs/Changes_2026-03.md) for
+> 2026-Q1. See [`../docs/Changes_2026-05.md`](../docs/Changes_2026-05.md) for
 > what changed in the latest release.
 
 ## Pipeline position
@@ -42,10 +40,10 @@ designed fresh — not ported from the legacy track.
 Variables slot pivot (pin and value_list), AssignedTerms enrichment. Source extraction belongs
 to `cosmos-graph/`.
 
-**Guardrail — do not read.** This track does **not** read
-`cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`. That file feeds the legacy
-`sdtm-findings/`. The graph-fed consumer reads only the graph projection
-and `consumer-bases/DSS_View.xlsx`.
+**Read sources.** The consumer reads the graph projection and
+`consumer-bases/DSS_View.xlsx`. No other COSMoS source — the historical
+`cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx` flatten was retired May 2026
+along with its legacy consumer.
 
 ## Notebooks and outputs
 
@@ -181,9 +179,6 @@ Folders not present:
 
 ## Cross-references
 
-- [`sdtm-findings/`](../sdtm-findings/) — legacy parallel track. Reads
-  `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`. Retires once all three
-  sub-types are built here.
 - [`consumer-bases/`](../consumer-bases/) — upstream view track. Owns the
   join layer this consumer reads.
 - [`cosmos-graph/`](../cosmos-graph/) — upstream graph track. Owns source

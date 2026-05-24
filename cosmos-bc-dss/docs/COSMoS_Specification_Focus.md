@@ -22,7 +22,7 @@ Carries: domain, TESTCD, result scale, units, standard unit, decimal precision, 
 
 Answers: "how is this value structured when it lands in the SDTM dataset?"
 
-Status: published, in use, part of the current COSMoS package. Example: 6MWT Distance at 1 Minute carries `Result_Scale = Quantitative`, `Allowed_Units = m`, `Decimal_Places = 5` in the flattened DSS view (`COSMoS_BC_DSS.xlsx`).
+Status: published, in use, part of the current COSMoS package. Example: 6MWT Distance at 1 Minute carries `Result_Scale = Quantitative`, `Allowed_Units = m`, `Decimal_Places = 5` in the graph projection (`cosmos-graph/interim/COSMoS_Graph.xlsx`).
 
 ### CRF Specialisation
 

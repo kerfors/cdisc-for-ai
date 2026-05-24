@@ -2,24 +2,11 @@
 
 *Forward-looking brief. Supersedes `COSMoS_Next_Steps_Brief.md` and the §3 proposals in `COSMoS_Graph_Upstream_Additions.md` (both retained under [`archive/`](archive/)). State as of the 2026-04-23 triage.*
 
-*cdisc-for-ai, 2026-04.*
+*cdisc-for-ai, 2026-05.*
 
 ---
 
-## 1. Branch B — consumer-track rewiring
-
-Still open. Rewire `sdtm-findings/` (and, downstream of it, `sdtm-domain-reference/` where it depends on COSMoS coverage) to read `COSMoS_Graph*.xlsx` instead of the legacy `cosmos-bc-dss/interim/COSMoS_BC_DSS.xlsx`.
-
-**Starting state.** The legacy flattener still builds and still feeds the existing consumers — nothing is broken. The `Identity` back-compat sheet was not built (see [`archive/COSMoS_Flattener_Rewrite.md`](archive/COSMoS_Flattener_Rewrite.md) §3); consumer tracks cannot switch files with a column-rename.
-
-**Decisions to make up front.**
-
-- Rewire one structural-type consumer first (specimen-based, measurement, or instrument) vs. all three in one pass. Specimen-based has the richest coverage; instrument has the cleanest joins.
-- Retire the legacy pipeline at the end of the rewire, or leave both in place. If retiring, the `cosmos-bc-dss/notebooks/COSMoS_BC_DSS_Flatten*.ipynb` notebooks also go.
-
-The two-sheet consumer output shape (`Test_Identity` + `Measurement_Specs`) should be preserved — downstream readers rely on it.
-
-## 2. Upstream flags — paperwork to CDISC and NCI EVS
+## 1. Upstream flags — paperwork to CDISC and NCI EVS
 
 Nine asks. Each is an authoring or subset issue outside this repo.
 
@@ -43,7 +30,7 @@ Nine asks. Each is an authoring or subset issue outside this repo.
 
 Paperwork, not code. Drafts live outside this branch.
 
-## 3. Deferred architectural work
+## 2. Deferred architectural work
 
 Three items from the 2026-04-23 triage are documented but not built. Each waits on a trigger.
 
@@ -54,10 +41,11 @@ Per-item status notes follow.
 - **`COSMoS_Graph_Overlay.xlsx` file.** Parallel file for schema-identical but not-CDISC-authored content (track-authored extrapolations). Pattern documented in [`COSMoS_Graph.md`](COSMoS_Graph.md) §4. **Trigger:** a first overlay row is authored. Current candidates are the X-Ray MK-side DSSs (genuine cross-domain-class extrapolation, absent from source) and DSS rows under the 6MWT BC (which has `bc_type = full_no_ds`). Both candidates stay out of scope until authored. **Status (2026-05):** Pattern unchanged. No overlay content has been authored; the file remains a documented architectural pattern.
 - **`ds_id` → `ds_code` rename (track-wide).** The values in `ds_id` are CDISC mnemonics, not identifiers — empirically unique at 2026-Q1, but cross-domain uniqueness is incidental, not guaranteed (per `CLAUDE.md` "DS_Codes are mnemonics, not identifiers"). The cosmos-graph stack currently standardises on `ds_id` (DSS sheet, Variables sheet, `DSS_View.Measurement_Specs`, `DSS_Variables_View.Variables`). **Trigger:** dedicated rename branch with coordinated diffs across `cosmos-graph/notebooks/10_flatten_schema_driven.ipynb`, `consumer-bases/notebooks/10_dss_view.ipynb`, `consumer-bases/notebooks/20_dss_variables_view.ipynb`, and any docs/READMEs that name the column. Held off the May 2026 upstream-improvements branch to keep that work consistency-preserving.
 
-## 4. What's closed
+## 3. What's closed
 
 For context, so the items above read as what remains.
 
+- **Branch B — consumer-track rewiring + legacy retirement.** All three `sdtm-findings-graph/` sub-types (specimen, measurement, instrument) built against `consumer-bases/DSS_View.xlsx` with value_list integration. Legacy `sdtm-findings/` track and the `cosmos-bc-dss/` flatten / validate / interim artefacts retired May 2026. See [`../../docs/Changes_2026-05.md`](../../docs/Changes_2026-05.md).
 - **Root-subset fallback diagnostic** (archive/`COSMoS_Graph_Upstream_Additions.md` §3.5). Closed 2026-04-23.
 - **Step 2 flattener rewrite.** Delivered and merged. Close-out in [`archive/flattener_rewrite_audit.md`](archive/flattener_rewrite_audit.md).
 - **BC-side validation in `30_validate_graph.ipynb`.** Six hard referential-integrity checks promoted from inline prints in notebook 10 — `BC_Parents.bc_id` and `.parent_bc_id` close against `BC`; `BC_Categories.bc_id` closes against `BC` and `.category` against the `Categories` vocabulary; `Coding.bc_id` and `DataElementConcepts.bc_id` close against `BC`. Trigger: `consumer-bases/` consumes `Coding` directly. All checks PASS at the current package.
