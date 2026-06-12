@@ -1,6 +1,6 @@
 # COSMoS Graph Validation Report
 
-_Generated: 2026-04-30_
+_Generated: 2026-06-12_
 
 Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 
@@ -18,14 +18,14 @@ Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 | coding_bc_id_referential_integrity | PASS | 0 |
 | data_element_concepts_bc_id_referential_integrity | PASS | 0 |
 | value_list_codelist_binding_integrity | PASS | 0 |
-| value_list_resolution_summary | INFO | 2528 |
-| value_list_unresolved_members | INFO | 30 |
+| value_list_resolution_summary | INFO | 2713 |
+| value_list_unresolved_members | INFO | 4 |
 | schema_column_coverage | FAIL | 13 |
 | vlm_source_hyphen_detail | INFO | 4 |
-| empty_reification_quad_rows | INFO | 313 |
+| empty_reification_quad_rows | INFO | 315 |
 | dss_without_any_edge | INFO | 4 |
-| ct_unresolved_concept_ids | FAIL | 6 |
-| pinned_term_not_in_bound_codelist | FAIL | 1 |
+| ct_unresolved_concept_ids | FAIL | 4 |
+| pinned_term_not_in_bound_codelist | INFO | 0 |
 
 
 ## Details
@@ -75,50 +75,27 @@ _no details_
 _no details_
 
 
-### value_list_resolution_summary — INFO (2528)
+### value_list_resolution_summary — INFO (2713)
 
 | metric | count |
 | --- | --- |
-| total_value_list_rows | 2528 |
-| all_resolved | 1820 |
-| partial | 199 |
-| none_resolved | 5 |
+| total_value_list_rows | 2713 |
+| all_resolved | 2205 |
+| partial | 4 |
+| none_resolved | 0 |
 | no_codelist | 502 |
 | codelist_not_in_ct | 2 |
-| unique_unresolvable_pairs | 30 |
+| unique_unresolvable_pairs | 4 |
 
 
-### value_list_unresolved_members — INFO (30)
+### value_list_unresolved_members — INFO (4)
 
 | codelist | member | row_count |
 | --- | --- | --- |
-| UNIT | mg/mL | 121 |
-| UNIT | ng/mL | 46 |
-| LOC | PERIPHERAL ARTERY | 8 |
-| EVAL | INDEPENDENT ASSESSOR, RADIOLOGIST | 5 |
-| UNIT | Kg | 5 |
-| MEDEVAL | ONCOLOGIST | 2 |
 | NY | NA | 2 |
-| POSITION | BENT FORWARD | 2 |
-| POSITION | LEGS DEPENDENT | 2 |
-| UNIT | C29848 | 2 |
-| UNIT | ml/min | 2 |
-| LOC | BRAIN, HEART, SPINAL CORD,CERVICAL SPINE, THORACIC SPINE, LUMBAR SPINE | 1 |
-| LOC | CARPOMETACARPAL JOINTS 3-5 | 1 |
-| LOC | CHEST, HEAD, ABDOMINAL REGION, CERVICAL SPINE, THORACIC SPINE, LUMBAR SPINE | 1 |
-| LOC | CHEST, HEAD, ABDOMINAL REGION, PELVIS | 1 |
-| LOC | METACARPOPHALANGEAL JOINT 4 METACARPOPHALANGEAL JOINT 3 | 1 |
-| LOC | PROXIMAL INTERPHALANGEAL | 1 |
-| LOC | PROXIMAL INTERPHALANGEAL JOINT 5 OF THE HAND JOINT 4 OF THE HAND | 1 |
-| LOC | RADIOCARPAL JOINT | 1 |
 | METHOD | AUTOPSY | 1 |
-| METHOD | PINCH DYNAMOMETRY | 1 |
-| NCOMPLT | LOGISTICS PROBLEM | 1 |
-| PROCEDUR | INTENSITY MODULATED RADIATION THERAPY | 1 |
-| PROCEDUR | INTERSTITIAL BRACHYTHERAPY | 1 |
-| PROCEDUR | INTRACAVITY BRACHYTHERAPY | 1 |
-
-_showing first 25 of 30 — full list in JSON sidecar_
+| PROCEDUR | RADIOSURGERY | 1 |
+| PROCEDUR | STEREOTACTIC BODY RADIATION THERAPY | 1 |
 
 
 ### schema_column_coverage — FAIL (13)
@@ -150,7 +127,7 @@ _showing first 25 of 30 — full list in JSON sidecar_
 | SARSCOV2DET | MB | MB-MBTESTCD | SARS-CoV-2 Detection |
 
 
-### empty_reification_quad_rows — INFO (313)
+### empty_reification_quad_rows — INFO (315)
 
 | note |
 | --- |
@@ -167,7 +144,7 @@ _showing first 25 of 30 — full list in JSON sidecar_
 | SEX |
 
 
-### ct_unresolved_concept_ids — FAIL (6)
+### ct_unresolved_concept_ids — FAIL (4)
 
 | source | concept_id | context | variable_uses_count |
 | --- | --- | --- | --- |
@@ -175,13 +152,9 @@ _showing first 25 of 30 — full list in JSON sidecar_
 | Codelists | C74457 | codelist_concept_id | 1 |
 | Variables | C132388 | assigned_term_concept_id | 2 |
 | Variables | C171439 | assigned_term_concept_id | 2 |
-| Variables | C94525 | assigned_term_concept_id | 4 |
-| Variables | C96642 | assigned_term_concept_id | 4 |
 
 
-### pinned_term_not_in_bound_codelist — FAIL (1)
+### pinned_term_not_in_bound_codelist — INFO (0)
 
-| issue_type | ds_id | variable_name | codelist_concept_id | codelist_submission_value | assigned_term_concept_id | assigned_term_value |
-| --- | --- | --- | --- | --- | --- | --- |
-| pinned_term_not_in_bound_codelist | OXYSAT | VSSTRESU | C66770 | VSRESU | C105484 | fraction of 1 |
+_no details_
 

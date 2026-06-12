@@ -118,3 +118,53 @@ Numbers reflect the data current at time of analysis.
 | Tokens that are also `bc_short_name` values (have ID) | 40 |
 | Pure-label tokens (no identifier) | 59 |
 | Instrument DSS rows using ≥1 pure-label category | 175 of 175 |
+
+---
+
+## 8. CDISC categories guidance and the 2026-05-26 grouping tier
+
+Two developments around the 2026-05-26 COSMoS package bear on the section 5 asymmetry. Both
+are upstream and appear to be in progress; recorded here as a watch item, not a closed
+finding.
+
+**CDISC published guidance confirming categories as the QRS search mechanism.** The Knowledge
+Base article *Searching CDISC Biomedical Concepts*
+([cdisc.org](https://www.cdisc.org/kb/articles/cdisc-published/searching-cdisc-biomedical-concepts))
+states that the NCIt hierarchy is not sufficient for locating all BCs of a QRS instrument —
+because NCIt groups an instrument's questions under a single container concept and does not
+link the instrument to them — and that the `categories` attribute is the intended retrieval
+path: search by the instrument name or any alternate term (its worked example is 6MWT, with
+categories QRS; Functional Assessment; 6 Minute Walk Functional Test; SIX MINUTE WALK;
+SIXMW1; 6MWT). The article also states explicitly that `synonyms` aids locating alternate
+terms during search but does **not** function as a way to gather or group related BCs —
+i.e. grouping is `categories`; `synonyms` is a search aid. This is the authoritative
+statement of the mechanism section 5 analyses, and aligns with the resolver
+(`notebooks/50_instrument_category_resolution.ipynb`), whose synonym pass recovers a single
+BC *identity* for a category label rather than grouping.
+
+**A new intermediate grouping tier, currently unwired.** The 2026-05-26 package added two
+`full_no_ds` BCs — C222259 "Cognitive Assessment Tool" and C222260 "Clinical or Research
+Functional Assessment Tool" (both categories `QRS;Functional Assessment`) — and reparented
+two instrument family containers under them: 6MWT (C115789) and ADAS-Cog (C100762) moved from
+`parent_bc_id = C81250` (Functional Assessment) to C222260 and C222259 respectively. The new
+parents have no `parent_bc_id` of their own, so the chain up to C81250 is currently broken;
+a parent-walk from 6MWT now terminates at C222260. This reads as an incomplete hierarchy
+build-out.
+
+**Worked-example drift.** The KB article's table shows C115789 as `short_name`
+"6 Minute Walk Functional Test" with `parent_bc_id` C81250 — the pre-2026-05-26 identity. In
+the 2026-05-26 package C115789 is renamed "6 Minute Walk Functional Test 2008 Version" and
+reparented to C222260, and the new tier is undocumented in the article. A concrete instance
+of the section 5 fragility: the category token "6 Minute Walk Functional Test" still works as
+a search label, but it no longer matches the BC's `short_name`, so the label-to-identity link
+breaks while the categories-based retrieval the article recommends is unaffected.
+
+**Watch, next package.** Whether C222260/C222259 acquire a `parent_bc_id` (reconnecting to
+C81250), whether more instrument families gain the tier, and whether the 6MWT rename
+propagates into the category tokens. Two companion notebooks make this a one-run check:
+`notebooks/50_instrument_category_resolution.ipynb` covers the category side (token →
+identity, with a status-transition diff), and `notebooks/51_instrument_parent_chain.ipynb`
+covers the hierarchy side (instrument-scope parent chains, with a diff that flags
+reparented BCs, new parents, and terminal-status flips — i.e. whether the new tier gets
+wired up). Instrument-scope there is defined as having a DSS in QS/FT/RS or carrying the
+`QRS` search category, so it includes the `full_no_ds` family-container tier.
