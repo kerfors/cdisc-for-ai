@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glucose siblings — specify on the BC, not the DSS</title>
+<style>
+  :root{
+    --ink:#23211c; --soft:#5d574a; --faint:#8d8472;
+    --paper:#f7f3e8; --field:#f2ecde; --line:#d9d1bd;
+    --teal:#1c5b50; --teal-deep:#164a41; --teal-soft:#dcebe6; --teal-pale:#9ec7bd;
+    --clay:#a8472a; --clay-soft:#f0dccf; --clay-line:#d1856a;
+    --amber:#b07b32; --amber-soft:#f3e6cf; --amber-line:#dcc191;
+    --draft:#b5642e; --grey:#8d8472;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;padding:38px 24px 70px;}
+  .wrap{max-width:960px;margin:0 auto;}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:2.05rem;margin:.1rem 0 .3rem;line-height:1.2;}
+  h2{font-family:Georgia,serif;font-weight:600;font-size:1.4rem;margin:2.4rem 0 .5rem;
+     padding-top:1.2rem;border-top:1px solid var(--line);}
+  h2 .n{color:var(--clay);font-size:1rem;font-family:'IBM Plex Mono',ui-monospace,monospace;margin-right:.5rem;}
+  h3{font-family:Georgia,serif;font-weight:600;font-size:1.08rem;margin:1.4rem 0 .3rem;color:var(--teal-deep);}
+  p{margin:.55rem 0;}
+  .eyebrow{font-family:ui-monospace,monospace;font-size:.7rem;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--teal);margin-bottom:6px;}
+  .lede{color:var(--soft);font-size:1.02rem;max-width:760px;}
+  .meta{font-size:.8rem;color:var(--faint);font-family:ui-monospace,monospace;margin-top:14px;
+    border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:#fff;}
+  code,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.86em;
+    background:var(--field);padding:1px 5px;border-radius:4px;}
+  pre{background:#1f2420;color:#e7e2d5;border-radius:10px;padding:16px 18px;overflow-x:auto;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.8rem;line-height:1.55;}
+  pre .c{color:#9ab0a6;} pre .k{color:#e0a969;} pre .s{color:#cfe0db;}
+  table{border-collapse:collapse;width:100%;margin:.9rem 0;font-size:.85rem;}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--field);font-weight:600;font-size:.72rem;letter-spacing:.4px;text-transform:uppercase;color:var(--soft);}
+  td .mono{background:none;padding:0;}
+  .callout{border-radius:10px;padding:.9rem 1.2rem;margin:1rem 0;font-size:.9rem;}
+  .c-teal{background:var(--teal-soft);border-left:4px solid var(--teal);}
+  .c-clay{background:var(--clay-soft);border-left:4px solid var(--clay);}
+  .c-draft{background:#f6e7d8;border-left:4px solid var(--draft);}
+  .two{display:flex;gap:16px;flex-wrap:wrap;margin:1rem 0;}
+  .col{flex:1;min-width:280px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;}
+  .col.free{border-top:3px solid var(--teal);}
+  .col.tail{border-top:3px solid var(--draft);}
+  .col h4{margin:.1rem 0 .5rem;font-family:Georgia,serif;font-size:1.02rem;}
+  .col.free h4{color:var(--teal-deep);} .col.tail h4{color:var(--draft);}
+  ul{margin:.4rem 0 .4rem 0;padding-left:1.15rem;} li{margin:.28rem 0;font-size:.9rem;}
+  .tag{display:inline-block;font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:1px;
+    text-transform:uppercase;border-radius:4px;padding:2px 7px;margin-left:6px;vertical-align:middle;}
+  .tag-parked{color:#7a2d10;background:var(--clay-soft);border:1px solid var(--clay-line);}
+  .tag-real{color:var(--teal-deep);background:var(--teal-soft);border:1px solid var(--teal-pale);}
+  .tree{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.82rem;background:#fff;
+    border:1px solid var(--line);border-radius:10px;padding:14px 18px;white-space:pre;overflow-x:auto;color:var(--soft);}
+  .fig{margin:1.2rem 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;}
+  .fig figcaption{font-size:.8rem;color:var(--soft);font-style:italic;margin-top:6px;padding:0 6px;}
+  svg{display:block;width:100%;height:auto;}
+  .foot{margin-top:2.4rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--faint);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Draft for discussion · CDISC COSMoS · BC / DSS boundary</div>
+  <h1>Glucose siblings: specify on the BC, not the DSS</h1>
+  <p class="lede">A worked design for lifting the qualified-measurement distinctions out of the Dataset Specialization layer and into referable Biomedical Concepts — the identifier question (#1), the value-type &amp; reference-range question (#2), and the most feasible way to build a first proof.</p>
+  <div class="meta">
+    Grounded in COSMoS package <strong>2026-05-26</strong> · SDTM CT (NCI EVS) 2026-03-27 · every C-code below is real, pulled from the package.<br>
+    Status: draft for discussion / analysis artifact — a proposed direction, not a standards deliverable.
+  </div>
+
+  <!-- ================= 1. THE PROBLEM ================= -->
+  <h2>The problem in one line</h2>
+  <p>Langendorf's rule: <em>the moment a specialization has to add the clinical distinction, the BC above it was underspecified</em> — a single-source-of-truth problem, not a storage one. Glucose is the clean case. It isn't one concept quietly fanning out into storage variants; it is <strong>several observations wearing one name</strong>. A plasma glucose is a quantity; a urine dipstick is a category. Those aren't storage aisles, they're different animals — the result type is the heart of the observation, not a filing detail.</p>
+  <p>Applied here: the distinctions belong <strong>up</strong> in sibling BCs, inherited once — not curated <strong>downstream</strong> across CDASH, SDTM and ADaM.</p>
+
+  <!-- ================= WHAT THE PACKAGE SHOWS ================= -->
+  <h2>What the package actually shows</h2>
+  <p>Today there is exactly <strong>one</strong> glucose-measurement BC, <span class="mono">C105585</span>, with <strong>eight</strong> DSS siblings hanging off it. Every distinguishing attribute — specimen, result scale, method — is pinned inside the DSS as an assigned term. The BC's <span class="mono">result_scales</span> is the union <span class="mono">Quantitative;Ordinal</span>, so a composite pointing at the parent cannot tell which sibling is which. Reference range is modelled <strong>nowhere</strong> — not on the BC, not in the DSS template.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 900 470" role="img" aria-label="Before and after: one BC over eight flat DSS siblings, versus four sibling BCs over thin DSS recordings.">
+      <style>
+        .h{font:700 14px Georgia,serif;fill:var(--ink);}
+        .sub{font:11px -apple-system,sans-serif;fill:var(--soft);}
+        .mn{font-family:'IBM Plex Mono',monospace;}
+        .cap{font:italic 10.5px -apple-system,sans-serif;fill:var(--soft);}
+        .tiny{font:9px 'IBM Plex Mono',monospace;fill:var(--faint);}
+      </style>
+      <text class="h" x="12" y="22">As authored — 1 BC, 8 flat siblings</text>
+      <rect x="340" y="34" width="230" height="40" rx="8" fill="var(--teal-soft)" stroke="var(--teal-pale)"/>
+      <text class="mn" x="455" y="52" font-size="10.5" font-weight="700" fill="var(--teal-deep)" text-anchor="middle">BC C105585 · Glucose Measurement</text>
+      <text class="tiny" x="455" y="66" text-anchor="middle">result_scales: Quantitative;Ordinal</text>
+      <line x1="455" y1="74" x2="455" y2="86" stroke="var(--line)"/>
+      <line x1="60" y1="86" x2="850" y2="86" stroke="var(--line)"/>
+      <g class="mn" font-size="8.5" font-weight="700" fill="var(--amber)" text-anchor="middle">
+        <g>
+          <rect x="20" y="92" width="96" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="68" y="110">GLUCPL</text>
+          <rect x="124" y="92" width="96" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="172" y="110">GLUCSER</text>
+          <rect x="228" y="92" width="96" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="276" y="110">GLUCSERPL</text>
+          <rect x="332" y="92" width="96" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="380" y="110">GLUCBLD</text>
+          <rect x="436" y="92" width="96" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="484" y="110">GLUCPE</text>
+          <rect x="540" y="92" width="96" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="588" y="110">GLUCURIN</text>
+          <rect x="644" y="92" width="112" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="700" y="110">GLUCURINPRES</text>
+          <rect x="764" y="92" width="86" height="46" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="807" y="110">GLUCUA</text>
+        </g>
+      </g>
+      <g class="tiny" text-anchor="middle">
+        <text x="68" y="126">PLASMA·float</text><text x="172" y="126">SERUM·float</text><text x="276" y="126">SER/PLAS·float</text>
+        <text x="380" y="126">BLOOD·float</text><text x="484" y="126">INTERST·GLUCPE</text><text x="588" y="126">URINE·num</text>
+        <text x="700" y="126">URINE·text</text><text x="807" y="126">strip·text</text>
+      </g>
+      <text class="cap" x="12" y="156">Specimen, result scale and method live only as DSS assigned-terms — the concept can't tell the animals apart.</text>
+
+      <line x1="12" y1="176" x2="888" y2="176" stroke="var(--line)" stroke-dasharray="3 3"/>
+
+      <text class="h" x="12" y="202">Re-boundary — 4 sibling BCs, thin recordings</text>
+      <g>
+        <rect x="12" y="214" width="210" height="46" rx="8" fill="var(--teal)"/>
+        <text x="117" y="233" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="11">Glucose — blood-derived</text>
+        <text x="117" y="249" text-anchor="middle" font-size="9" fill="var(--teal-soft)">Quantitative · glycemia</text>
+        <rect x="230" y="214" width="210" height="46" rx="8" fill="var(--teal)"/>
+        <text x="335" y="233" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="11">Plasma-Equivalent</text>
+        <text x="335" y="249" text-anchor="middle" font-size="9" fill="var(--teal-soft)">interstitial · C163446</text>
+        <rect x="448" y="214" width="210" height="46" rx="8" fill="var(--teal)"/>
+        <text x="553" y="233" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="11">Urine — quantitative</text>
+        <text x="553" y="249" text-anchor="middle" font-size="9" fill="var(--teal-soft)">glucosuria</text>
+        <rect x="666" y="214" width="222" height="46" rx="8" fill="var(--teal)"/>
+        <text x="777" y="233" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="11">Urine — categorical</text>
+        <text x="777" y="249" text-anchor="middle" font-size="9" fill="var(--teal-soft)">Ordinal · dipstick</text>
+      </g>
+      <g stroke="var(--teal-pale)"><line x1="117" y1="260" x2="117" y2="272"/><line x1="335" y1="260" x2="335" y2="272"/><line x1="553" y1="260" x2="553" y2="272"/><line x1="777" y1="260" x2="777" y2="272"/></g>
+      <g class="mn" font-size="9">
+        <rect x="12" y="274" width="210" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="20" y="289" font-weight="700" fill="var(--amber)">GLUCPL</text><text x="120" y="289" class="tiny">PLASMA C13356</text>
+        <rect x="12" y="299" width="210" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="20" y="314" font-weight="700" fill="var(--amber)">GLUCSER</text><text x="120" y="314" class="tiny">SERUM C13325</text>
+        <rect x="12" y="324" width="210" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="20" y="339" font-weight="700" fill="var(--amber)">GLUCSERPL</text><text x="120" y="339" class="tiny">SER/PLASMA</text>
+        <rect x="12" y="349" width="210" height="22" rx="5" fill="#fff" stroke="var(--draft)" stroke-dasharray="4 3"/><text x="20" y="364" font-weight="700" fill="var(--draft)">GLUCBLD ⚑</text><text x="120" y="364" class="tiny">parked</text>
+
+        <rect x="230" y="274" width="210" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="238" y="289" font-weight="700" fill="var(--amber)">GLUCPE</text><text x="330" y="289" class="tiny">INTERST C120839</text>
+
+        <rect x="448" y="274" width="210" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="456" y="289" font-weight="700" fill="var(--amber)">GLUCURIN</text><text x="556" y="289" class="tiny">URINE C13283</text>
+
+        <rect x="666" y="274" width="222" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="674" y="289" font-weight="700" fill="var(--amber)">GLUCURINPRES</text><text x="800" y="289" class="tiny">URINE</text>
+        <rect x="666" y="299" width="222" height="22" rx="5" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="674" y="314" font-weight="700" fill="var(--amber)">GLUCUA</text><text x="800" y="314" class="tiny">+TEST STRIP</text>
+      </g>
+      <g transform="translate(12,392)">
+        <rect x="0" y="0" width="13" height="11" rx="2" fill="var(--teal)"/><text x="18" y="10" class="sub">BC — concept identity (observation-shape)</text>
+        <rect x="330" y="0" width="13" height="11" rx="2" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="348" y="10" class="sub">DSS — true recording (specimen / unit / method)</text>
+        <rect x="700" y="0" width="13" height="11" rx="2" fill="#fff" stroke="var(--draft)" stroke-dasharray="3 2"/><text x="718" y="10" class="sub">⚑ parked</text>
+      </g>
+      <text class="cap" x="12" y="430">8 flat DSS → 4 sibling BCs. Result scale + phenomenon + mechanism rise to concept identity; specimen, unit and method stay recording.</text>
+      <text class="cap" x="12" y="450">Whole blood (GLUCBLD) is held open — it needs the reference-range decision (#2) before it can be filed as sibling or recording.</text>
+    </svg>
+    <figcaption>The re-boundary experiment, run against the real 2026-05-26 package.</figcaption>
+  </figure>
+
+  <!-- ================= GUIDANCE ================= -->
+  <h2>What CDISC's own guidance says</h2>
+  <p>Two authoring files from the COSMoS starter package bear on this, and they rank differently. The <strong>BC Curation Principles &amp; Completion Guidelines</strong> is normative prose ("must" / "should", governance-reviewed) — high credibility. The <strong>BC DEC Templates</strong> is a working scaffold of default DEC sets, with duplicated rows and defaults the live package overrides — treat as illustration only.</p>
+  <div class="callout c-teal"><strong>The granularity rule (high-credibility) is a storage criterion.</strong> The Principles set how finely to split a Dataset Specialization by <em>aggregability in a regulatory submission</em>: "split … based on the biomedical specimen and/or method <em>when it is motivated by analysis and reporting</em>. Tests that can be integrated during analysis and reporting, e.g., serum, plasma, or blood … would not be split, while … urine glucose and blood glucose" are separate. So CDISC's own rule sets granularity by how data pools for reporting — precisely the storage-driven basis that "specify on the BC, not the DSS" contests. It lands near our glucose split (urine separate), but for a different reason: poolability, not observation identity.</div>
+  <div class="callout c-draft"><strong>The two files collide on glucose.</strong> Poolability (Principles) would keep <span class="mono">GLUC</span> together; result value-type (fixed per template in the DEC scaffold — Lab = <span class="mono">decimal</span>) cannot hold quantitative plasma and categorical dipstick in one group. Glucose sits exactly on that fault line — which is why categorical urine glucose is awkward today, and why a result-scale sibling resolves a seam the guidance itself leaves open. The DEC-template <span class="mono">decimal</span> is only a weak echo — the live glucose DEC is typed <span class="mono">string</span> — so the weight rests on the poolability rule, not the template.</div>
+  <p style="font-size:.9rem;">Naming, for the record: the Principles <em>do</em> give a <span class="mono">vlm_group_id</span> convention — uppercase + underscores, TESTCD + specimen (<span class="mono">GLUCBLD</span>, <span class="mono">GLUCPL</span>, <span class="mono">SODIUMSERPL</span>) — but explicitly as a "user-friendly identifier / primary key," i.e. a mnemonic, not a resolvable or cross-domain-unique identity. That is the gap #1 fills: the guidance governs completion, not identity.</p>
+
+  <!-- ================= #1 IDENTIFIER ================= -->
+  <h2><span class="n">#1</span>The identifier: a name a composite can point at</h2>
+  <p>If the distinction lives on the BC, the sibling needs a <strong>governed, cross-referenceable identifier</strong> — because a composite must point at the <em>specific</em> sibling, not the parent analyte. Two familiar composites make the point, and both are <strong>Activity Specifications</strong> — collection compositions that sit one layer above the BC:</p>
+  <ul>
+    <li>an <strong>Oral Glucose Tolerance Test (OGTT)</strong> — bundles a glucose load with glucose readings taken across time (fasting, 60 min, 120 min); it must reference the <em>plasma-quantitative</em> sibling, not "glucose";</li>
+    <li>a lab <strong>panel</strong> — e.g. a <em>Basic Metabolic Panel</em> bundling glucose with sodium, potassium, chloride, BUN and creatinine on one draw; it must reference each member at the qualified grain (plasma glucose, serum sodium…), not the bare analytes.</li>
+  </ul>
+  <p>NCIt has <span class="mono">C105585</span> (the analyte); it does <strong>not</strong> enumerate "glucose, plasma, quantitative." So the sibling identity — which today exists only implicitly as the DSS mnemonic <span class="mono">GLUCPL</span> — has to become something explicit that both an OGTT and a panel can point at.</p>
+
+  <table>
+    <tr><th>Option</th><th>What it is</th><th>Cost / verdict</th></tr>
+    <tr><td><strong>1 · Don't lift</strong></td><td>Keep siblings at the DSS; sharpen the <span class="mono">GLUCPL</span> mnemonic as a documented key.</td><td>Cheapest, but declines the rule — distinction stays curated downstream, key isn't unique across domains. Baseline.</td></tr>
+    <tr><td><strong>2 · Opaque package id</strong></td><td>Promote to a sibling BC with an opaque placeholder key (the schema's placeholder mechanism, used 6× today).</td><td>Referable, but a package-local string with no resolution; lifecycle now CDISC's.</td></tr>
+    <tr><td><strong>3 · Constructed id</strong></td><td>Encode coordinates in the string (analyte × specimen × scale).</td><td>Derivable, but brittle — the string can't keep its promise under split/merge. Rejected.</td></tr>
+    <tr><td><strong>4 · Resolvable IRI</strong> <span class="tag tag-real">recommended</span></td><td>usdm-rdf treatment: readable, non-parsed IRI; coordinates + anchors in the resolved RDF body; versioned.</td><td>Pointing <em>and</em> self-description, no brittleness. Cost is the real one — owning the concept &amp; its lifecycle.</td></tr>
+  </table>
+
+  <div class="callout c-clay"><strong>Not GUIDs.</strong> A GUID is right for the <em>instance</em> layer (this Activity in this study — where d4k uses them) but wrong for a <em>concept</em>. A concept id is a read-many, cited, shared name; a GUID advertises nothing and no one can recognise or check it — the mnemonic problem made worse. usdm-rdf already answered this: <span class="mono">/Activity</span>, readable but not parsed, semantics in the body. The sibling follows the same precedent.</div>
+
+  <p><strong>Where it lands:</strong> the identity <em>is</em> the readable resolvable IRI (<span class="mono">…/bc/GlucoseBloodQuantitative</span>) — always exactly one, CDISC-owned. It carries no opaque placeholder token. Instead it anchors outward: <span class="mono">skos:broader</span> to the NCIt analyte <span class="mono">C105585</span>, and — crucially — to <strong>LOINC</strong>, which already codes this specimen×scale grain. The plasma-equivalent sibling also has a real NCIt code, <span class="mono">C163446</span>, added as <span class="mono">exactMatch</span>. GUIDs stay at the instance layer.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 900 300" role="img" aria-label="Identity stack: analyte concept over sibling BC over DSS recordings, and the sibling IRI resolving to a human page and a machine turtle representation.">
+      <style>.t{font:12px -apple-system,sans-serif;fill:var(--ink);} .m{font-family:'IBM Plex Mono',monospace;font-size:10px;}</style>
+      <rect x="300" y="18" width="300" height="40" rx="8" fill="#fff" stroke="var(--teal-pale)"/>
+      <text class="m" x="450" y="36" text-anchor="middle" fill="var(--teal-deep)" font-weight="700">NCIt C105585 · Glucose Measurement</text>
+      <text x="450" y="50" text-anchor="middle" font-size="9" fill="var(--faint)">the analyte — NCIt stops here</text>
+      <line x1="450" y1="58" x2="450" y2="74" stroke="var(--line)"/>
+      <text class="m" x="462" y="70" fill="var(--faint)" font-size="8">skos:broader</text>
+      <rect x="280" y="74" width="340" height="52" rx="9" fill="var(--teal)"/>
+      <text x="450" y="94" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="12">Sibling BC — Glucose, blood-derived, quantitative</text>
+      <text class="m" x="450" y="112" text-anchor="middle" fill="var(--teal-soft)" font-size="9">identity = the IRI · result_scales Quantitative (single)</text>
+      <g stroke="var(--teal-pale)"><line x1="360" y1="126" x2="360" y2="150"/><line x1="450" y1="126" x2="450" y2="150"/><line x1="540" y1="126" x2="540" y2="150"/></g>
+      <g class="m" font-size="9" fill="var(--amber)">
+        <rect x="300" y="150" width="120" height="34" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="360" y="165" text-anchor="middle" font-weight="700">GLUCPL</text><text x="360" y="177" text-anchor="middle" fill="var(--faint)" font-size="8">PLASMA C13356</text>
+        <rect x="430" y="150" width="120" height="34" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="490" y="165" text-anchor="middle" font-weight="700">GLUCSER</text><text x="490" y="177" text-anchor="middle" fill="var(--faint)" font-size="8">SERUM C13325</text>
+        <rect x="560" y="150" width="120" height="34" rx="6" fill="var(--amber-soft)" stroke="var(--amber-line)"/><text x="620" y="165" text-anchor="middle" font-weight="700">GLUCSERPL</text><text x="620" y="177" text-anchor="middle" fill="var(--faint)" font-size="8">value-type inherited</text>
+      </g>
+      <rect x="40" y="212" width="820" height="70" rx="10" fill="var(--field)" stroke="var(--line)"/>
+      <text class="m" x="60" y="236" fill="var(--teal-deep)" font-weight="700">https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative</text>
+      <text x="60" y="252" class="t" font-size="10.5" fill="var(--soft)">one identifier, content-negotiated →</text>
+      <rect x="360" y="228" width="230" height="40" rx="7" fill="#fff" stroke="var(--teal-pale)"/>
+      <text x="475" y="244" text-anchor="middle" font-size="10" fill="var(--ink)">Accept: text/html</text>
+      <text x="475" y="259" text-anchor="middle" font-size="9" fill="var(--faint)">human definition page</text>
+      <rect x="610" y="228" width="230" height="40" rx="7" fill="#1f2420"/>
+      <text x="725" y="244" text-anchor="middle" font-size="10" fill="#e0a969" font-family="monospace">Accept: text/turtle</text>
+      <text x="725" y="259" text-anchor="middle" font-size="9" fill="#9ab0a6" font-family="monospace">machine RDF model</text>
+    </svg>
+    <figcaption>Identity stack + resolution. The IRI is the name; the coordinates and anchors live in the resolved body.</figcaption>
+  </figure>
+
+  <pre><span class="c"># the sibling, resolved as turtle — the IRI is the identity</span>
+bc:GlucoseBloodQuantitative <span class="k">a</span> cosmos:BiomedicalConcept ;
+    skos:prefLabel     <span class="s">"Glucose, blood-derived, quantitative"</span> ;
+    skos:broader       ncit:C105585 ;                 <span class="c"># analyte (NCIt stops here)</span>
+    skos:narrowMatch   loinc:2345-7, loinc:14749-6 ;  <span class="c"># unit-specific LOINC leaves (mass / molar)</span>
+    cosmos:resultScales <span class="s">"Quantitative"</span> ;             <span class="c"># single &amp; authoritative</span>
+    cosmos:resultDEC   ncit:C70856 ;                  <span class="c"># dataType inherited by every recording</span>
+    cosmos:specimenDEC ncit:C70713 ;
+    cosmos:unitExampleSet <span class="s">"mg/dL","g/L","mmol/L"</span> .</pre>
+
+  <h3>Using LOINC when the count is 0, 1, or more than 1</h3>
+  <p>LOINC is a <strong>mapping target, not the key</strong>. The identifier stays the CDISC-owned IRI (always exactly one); LOINC attaches as a <em>typed, multivalued</em> <span class="mono">skos</span> mapping — which is exactly what SKOS mapping properties are for, so the irregular count is handled natively:</p>
+  <ul>
+    <li><strong>exactly 1</strong> → <span class="mono">skos:exactMatch</span> — sibling and LOINC term denote the same observable (the dipstick cases, <span class="mono">25428-4</span>, <span class="mono">2349-9</span>).</li>
+    <li><strong>more than 1</strong> → the sibling abstracts over a finer LOINC split — characteristically the <em>unit</em> axis (mass vs molar; the sibling's own <span class="mono">mg/dL;g/L;mmol/L</span> recording variants) or method. Model each as <span class="mono">skos:narrowMatch</span>: the sibling sits <em>above</em> the LOINC leaves — one concept over several unit-specific realisations. Not a defect; the sibling correctly being unit-neutral.</li>
+    <li><strong>0</strong> → identity is unaffected — the IRI and <span class="mono">skos:broader C105585</span> still hold. Either the specific LOINC exists but wasn't pinned in this package (the <span class="mono">GLUCPL</span> / <span class="mono">GLUCSER</span> case — plasma- and serum-specific glucose codes do exist) and you add it, or you leave the mapping empty.</li>
+  </ul>
+  <div class="callout c-teal"><strong>Cardinality becomes a QC lens.</strong> Because identity never depended on LOINC, 0/1/&gt;1 stops being a problem and starts being a signal: two <span class="mono">exactMatch</span> codes on one sibling is a smell — either retype them to <span class="mono">narrowMatch</span> (unit variants) or the sibling is still too coarse and should split; zero is a coverage gap to chase. The count tells you whether your grain is right.</div>
+  <p style="font-size:.84rem;color:var(--soft);">Caveat: the exact meaning of each paired code (mass vs molar, method) needs a LOINC lookup to confirm — the package carries the codes, not their long names.</p>
+
+  <!-- ================= #2 VALUE-TYPE / REF-RANGE ================= -->
+  <h2><span class="n">#2</span>Value-type &amp; reference-range: where they live</h2>
+
+  <h3>Value-type — today it lives on the DSS variable; inherit-once is the proposal</h3>
+  <p>Per the high-credibility Curation Principles, value-type is populated <strong>on the DSS result variable</strong> — "only the result variable will require population of data type, length, and format." The parent's <span class="mono">result_scales</span> is the union <span class="mono">Quantitative;Ordinal</span>, and the authoritative <span class="mono">float</span>-vs-<span class="mono">text</span> difference lands on <span class="mono">LBORRES</span> — curated downstream, the exact pattern the rule critiques. The BC's own DEC <span class="mono">dataType</span> is only loosely populated today (the live <span class="mono">C105585</span> result DEC says <span class="mono">string</span> while the DSS says <span class="mono">float</span>/<span class="mono">text</span>), so it can't be relied on as-is.</p>
+  <p><strong>The proposal</strong> — not an existing mechanism: split the siblings so each carries one scale, make the sibling's result DEC <span class="mono">dataType</span> authoritative, and let the recording <em>inherit</em> it through the FK that exists (<span class="mono">SDTMVariable.dataElementConceptId → DataElementConcept.dataType</span>) instead of re-declaring it per DSS. No new slot — but it does require making the DEC <span class="mono">dataType</span> the single source of truth, which today it is not.</p>
+
+  <h3>Reference-range — modelled nowhere; separate <em>regime</em> from <em>values</em></h3>
+  <p>No normal-range variable appears in any glucose DSS, and there is no reference-range slot on the BC. The tractable move is to split the claim:</p>
+  <ul>
+    <li>the <strong>fact that a distinct regime applies</strong> (plasma ≠ whole-blood ≠ urine) is conceptual → a coded <em>pointer</em> on the sibling BC;</li>
+    <li>the <strong>actual limits</strong> (numbers, age/sex-partitioned, lab-specific) are data → stay per-record.</li>
+  </ul>
+  <p>So "reference range inherited once" means inheriting the regime <em>pointer</em>, never the numbers. That single pointer is also what finally adjudicates whole blood: same regime as plasma → <span class="mono">GLUCBLD</span> is a recording; different regime → it's a sibling.</p>
+  <div class="callout c-draft"><strong>Parked <span class="tag tag-parked">deferred</span></strong> — the reference-range regime pointer is the one genuinely new BC slot, and the whole-blood call waits on it. Everything else needs no schema change.</div>
+
+  <!-- ================= COMBINED ================= -->
+  <h2>The combined solution: split by what needs CDISC</h2>
+  <p>#1 and #2 are the same object — the sibling BC — seen from identity and from content. The most feasible path does everything that needs <strong>no</strong> schema change and <strong>no</strong> CDISC decision first, as an overlay + projection, and reduces the governance ask to a short list.</p>
+
+  <div class="two">
+    <div class="col free">
+      <h4>Stage 0 — build it yourself (free)</h4>
+      <ul>
+        <li>Author ~4 sibling BCs in an <strong>overlay</strong> (schema-identical; identity = readable IRI, anchored to NCIt + LOINC)</li>
+        <li><strong>Value-type</strong> inherited via the DEC FK (make the DEC dataType authoritative)</li>
+        <li><strong>Resolvable IRIs</strong> projected to RDF + HTML, usdm-rdf style, over w3id</li>
+        <li>Composites — an OGTT, a panel — can point at siblings immediately</li>
+        <li>Core untouched · no CDISC dependency · an existence proof</li>
+      </ul>
+    </div>
+    <div class="col tail">
+      <h4>Stage 1 — the CDISC ask (the tail)</h4>
+      <ul>
+        <li>Adopt the siblings &amp; own the id <strong>lifecycle</strong> (split / merge / deprecate)</li>
+        <li>Own the resolvable <strong>namespace</strong> (the USDM Governance Group ask, one grain deeper)</li>
+        <li>Add <strong>one</strong> BC slot — the reference-range regime pointer</li>
+      </ul>
+      <p style="font-size:.82rem;color:var(--soft);margin-top:.6rem;">GUIDs would make id allocation free, but not the lifecycle. <em>Svansen sitter kvar.</em></p>
+    </div>
+  </div>
+
+  <!-- ================= BUILD OUTLINE ================= -->
+  <h2>Stage 0 build outline (glucose only)</h2>
+  <p>The smallest end-to-end slice that proves the chain. Isolated folder, so it reads as a proposal, not standards:</p>
+
+  <div class="tree">cosmos-bc-siblings/
+  overlay/              Glucose_Siblings_Overlay.xlsx   &larr; the only hand-authored artifact
+  notebooks/            10_project_siblings_rdf.ipynb   &larr; generated logic
+  machine_actionable/   *.ttl + *.html pairs, index.html &larr; generated outputs
+  docs/                 README / provenance / parked items</div>
+
+  <h3>A · overlay workbook (authored)</h3>
+  <table>
+    <tr><th>BC_overlay · IRI local name (identity)</th><th>short_name</th><th>scale</th><th>broader (NCIt)</th><th>LOINC anchor (typed)</th></tr>
+    <tr><td><span class="mono">GlucoseBloodQuantitative</span></td><td>Glucose, blood-derived, quantitative</td><td>Quantitative</td><td><span class="mono">C105585</span></td><td><span class="mono">2345-7, 14749-6</span> narrowMatch</td></tr>
+    <tr><td><span class="mono">GlucosePlasmaEquivalent</span></td><td>Glucose, plasma-equivalent (interstitial)</td><td>Quantitative</td><td><span class="mono">C105585</span></td><td><span class="mono">99504-3, 105272-9</span>; + NCIt <span class="mono">C163446</span> <span class="tag tag-real">exactMatch</span></td></tr>
+    <tr><td><span class="mono">GlucoseUrineQuantitative</span></td><td>Glucose, urine, quantitative</td><td>Quantitative</td><td><span class="mono">C105585</span></td><td><span class="mono">15076-3, 2350-7</span> narrowMatch</td></tr>
+    <tr><td><span class="mono">GlucoseUrineCategorical</span></td><td>Glucose, urine, categorical</td><td>Ordinal</td><td><span class="mono">C105585</span></td><td><span class="mono">2349-9, 25428-4</span> narrowMatch</td></tr>
+  </table>
+  <p style="font-size:.82rem;color:var(--soft);">Identity is the IRI local name. NCIt is the analyte anchor; LOINC is the specimen×scale anchor set (typed, may be 0/1/&gt;1). A minted CDISC token appears only if a sibling has neither — and even then a governed CDISC concept id, not a provisional placeholder.</p>
+
+  <h3>B · the DSS recordings, re-pointed</h3>
+  <table>
+    <tr><th>DSS_overlay · ds_id</th><th>→ sibling</th><th>specimen (real code)</th><th>LOINC (pinned)</th><th>value-type</th></tr>
+    <tr><td><span class="mono">GLUCPL</span></td><td><span class="mono">GlucoseBloodQuantitative</span></td><td>PLASMA <span class="mono">C13356</span></td><td><em>none pinned</em></td><td>inherited from DEC C70856</td></tr>
+    <tr><td><span class="mono">GLUCSER</span></td><td><span class="mono">GlucoseBloodQuantitative</span></td><td>SERUM <span class="mono">C13325</span></td><td><em>none pinned</em></td><td>inherited</td></tr>
+    <tr><td><span class="mono">GLUCSERPL</span></td><td><span class="mono">GlucoseBloodQuantitative</span></td><td>SERUM / PLASMA</td><td><span class="mono">14749-6, 2345-7</span></td><td>inherited</td></tr>
+    <tr><td><span class="mono">GLUCPE</span></td><td><span class="mono">GlucosePlasmaEquivalent</span></td><td>INTERSTITIAL <span class="mono">C120839</span></td><td><span class="mono">99504-3, 105272-9</span></td><td>inherited</td></tr>
+    <tr><td><span class="mono">GLUCURIN</span></td><td><span class="mono">GlucoseUrineQuantitative</span></td><td>URINE <span class="mono">C13283</span></td><td><span class="mono">15076-3, 2350-7</span></td><td>inherited</td></tr>
+    <tr><td><span class="mono">GLUCURINPRES</span></td><td><span class="mono">GlucoseUrineCategorical</span></td><td>URINE <span class="mono">C13283</span></td><td><span class="mono">2349-9</span></td><td>inherited</td></tr>
+    <tr><td><span class="mono">GLUCUA</span></td><td><span class="mono">GlucoseUrineCategorical</span></td><td>URINE <span class="mono">C13283</span> + METHOD TEST STRIP</td><td><span class="mono">25428-4</span></td><td>inherited</td></tr>
+    <tr><td><span class="mono">GLUCBLD</span> ⚑</td><td colspan="4"><em>held open — pending the reference-range regime slot · LOINC <span class="mono">2339-0, 15074-8</span></em></td></tr>
+  </table>
+
+  <h3>C · projection notebook — cells</h3>
+  <ul>
+    <li>markdown: purpose, provenance, guardrails</li>
+    <li>load overlay xlsx; load core BC sheet read-only for cross-check</li>
+    <li>build RDF (<span class="mono">rdflib</span>): one concept node per sibling, readable IRI, <span class="mono">skos:broader</span>/<span class="mono">exactMatch</span>/<span class="mono">narrowMatch</span>, single <span class="mono">resultScales</span>, result-DEC dataType inherited, specimen/scale triples</li>
+    <li>serialise turtle (all siblings + per-sibling files)</li>
+    <li>render one static resolvable HTML page per sibling (human view; content-negotiation faked with two files, usdm-rdf draft style)</li>
+    <li>validation cell</li>
+  </ul>
+
+  <h3>D · verification (in the notebook)</h3>
+  <ul>
+    <li>each sibling has exactly one <span class="mono">result_scales</span></li>
+    <li>every <span class="mono">broader</span> resolves to a real core BC</li>
+    <li>every <span class="mono">DSS_overlay</span> row points at an overlay sibling (no orphans)</li>
+    <li>the re-pointed DSS set equals the 8 real glucose DSS <strong>minus</strong> <span class="mono">GLUCBLD</span></li>
+    <li>overlay <span class="mono">bc_id</span>s / IRIs don't collide with any core <span class="mono">bc_id</span></li>
+  </ul>
+
+  <h3>Parked — stated in the README, not silently dropped</h3>
+  <p>Reference-range regime slot · whole-blood adjudication (<span class="mono">GLUCBLD</span>) · CDISC adoption / namespace ownership.</p>
+
+  <div class="foot">
+    Draft thinking artifact · proposed direction, not a standards deliverable · COSMoS 2026-05-26, SDTM CT 2026-03-27.<br>
+    All C-codes verified against the package: analyte C105585 · plasma-equivalent C163446 · result DEC C70856 · specimen DEC C70713 · SPECTYPE codelist C78734 · PLASMA C13356 · SERUM C13325 · BLOOD C12434 · URINE C13283 · INTERSTITIAL FLUID C120839.<br>
+    LOINC codes as pinned on the DSS (LBLOINC): blood 2339-0 / 15074-8 · interstitial 99504-3 / 105272-9 · serum-or-plasma 14749-6 / 2345-7 · urine-quant 15076-3 / 2350-7 · urine-presence 2349-9 · urine-strip 25428-4 · plasma-only &amp; serum-only: none pinned. Their long names (mass vs molar etc.) are not in the package and are unverified here.<br>
+    Composites named: OGTT = Oral Glucose Tolerance Test; panel example = Basic Metabolic Panel — both Activity Specifications (collection compositions above the BC layer).
+  </div>
+
+</div>
+</body>
+</html>
