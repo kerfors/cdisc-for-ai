@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-12",
+  "generated": "2026-08-23",
   "inputs": [
     "COSMoS_Graph.xlsx",
     "COSMoS_Graph_CT.xlsx",
@@ -64,19 +64,19 @@
     {
       "check": "value_list_resolution_summary",
       "status": "INFO",
-      "count": 2713,
+      "count": 3000,
       "detail": [
         {
           "metric": "total_value_list_rows",
-          "count": 2713
+          "count": 3000
         },
         {
           "metric": "all_resolved",
-          "count": 2205
+          "count": 2302
         },
         {
           "metric": "partial",
-          "count": 4
+          "count": 6
         },
         {
           "metric": "none_resolved",
@@ -84,7 +84,7 @@
         },
         {
           "metric": "no_codelist",
-          "count": 502
+          "count": 690
         },
         {
           "metric": "codelist_not_in_ct",
@@ -92,18 +92,28 @@
         },
         {
           "metric": "unique_unresolvable_pairs",
-          "count": 4
+          "count": 11
         }
       ]
     },
     {
       "check": "value_list_unresolved_members",
       "status": "INFO",
-      "count": 4,
+      "count": 11,
       "detail": [
         {
           "codelist": "NY",
           "member": "NA",
+          "row_count": 2
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "RADIOSURGERY",
+          "row_count": 2
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "STEREOTACTIC BODY RADIATION THERAPY",
           "row_count": 2
         },
         {
@@ -113,12 +123,37 @@
         },
         {
           "codelist": "PROCEDUR",
-          "member": "RADIOSURGERY",
+          "member": "INTERSTITIAL BRACHYTHERAPY",
           "row_count": 1
         },
         {
           "codelist": "PROCEDUR",
-          "member": "STEREOTACTIC BODY RADIATION THERAPY",
+          "member": "INTRACAVITY BRACHYTHERAPY",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "LYMPH NODE DISSECTION",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "RADIOEMBOLIZATION",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "SIMPLE MASTECTOMY",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "TOTAL BODY IRRADIATION",
+          "row_count": 1
+        },
+        {
+          "codelist": "PROCEDUR",
+          "member": "TOTAL MASTECTOMY",
           "row_count": 1
         }
       ]
@@ -216,7 +251,7 @@
     {
       "check": "empty_reification_quad_rows",
       "status": "INFO",
-      "count": 315,
+      "count": 337,
       "detail": [
         {
           "note": "Variables rows without a reification quad; not counted in Relationships sheet"

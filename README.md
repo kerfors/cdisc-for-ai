@@ -2,7 +2,7 @@
 
 Machine-actionable reference files for CDISC clinical data standards -- designed for both human review and AI consumption.
 
-> **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-05-26, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md) (COSMoS 2026-05-26 refresh + instrument tooling). Previous: [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
+> **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md) (COSMoS 2026-07-14 refresh). Previous: [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
 ## Why
 

@@ -1,6 +1,6 @@
 # COSMoS Graph Validation Report
 
-_Generated: 2026-06-12_
+_Generated: 2026-08-23_
 
 Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 
@@ -18,11 +18,11 @@ Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 | coding_bc_id_referential_integrity | PASS | 0 |
 | data_element_concepts_bc_id_referential_integrity | PASS | 0 |
 | value_list_codelist_binding_integrity | PASS | 0 |
-| value_list_resolution_summary | INFO | 2713 |
-| value_list_unresolved_members | INFO | 4 |
+| value_list_resolution_summary | INFO | 3000 |
+| value_list_unresolved_members | INFO | 11 |
 | schema_column_coverage | FAIL | 13 |
 | vlm_source_hyphen_detail | INFO | 4 |
-| empty_reification_quad_rows | INFO | 315 |
+| empty_reification_quad_rows | INFO | 337 |
 | dss_without_any_edge | INFO | 4 |
 | ct_unresolved_concept_ids | FAIL | 4 |
 | pinned_term_not_in_bound_codelist | INFO | 0 |
@@ -75,27 +75,34 @@ _no details_
 _no details_
 
 
-### value_list_resolution_summary — INFO (2713)
+### value_list_resolution_summary — INFO (3000)
 
 | metric | count |
 | --- | --- |
-| total_value_list_rows | 2713 |
-| all_resolved | 2205 |
-| partial | 4 |
+| total_value_list_rows | 3000 |
+| all_resolved | 2302 |
+| partial | 6 |
 | none_resolved | 0 |
-| no_codelist | 502 |
+| no_codelist | 690 |
 | codelist_not_in_ct | 2 |
-| unique_unresolvable_pairs | 4 |
+| unique_unresolvable_pairs | 11 |
 
 
-### value_list_unresolved_members — INFO (4)
+### value_list_unresolved_members — INFO (11)
 
 | codelist | member | row_count |
 | --- | --- | --- |
 | NY | NA | 2 |
+| PROCEDUR | RADIOSURGERY | 2 |
+| PROCEDUR | STEREOTACTIC BODY RADIATION THERAPY | 2 |
 | METHOD | AUTOPSY | 1 |
-| PROCEDUR | RADIOSURGERY | 1 |
-| PROCEDUR | STEREOTACTIC BODY RADIATION THERAPY | 1 |
+| PROCEDUR | INTERSTITIAL BRACHYTHERAPY | 1 |
+| PROCEDUR | INTRACAVITY BRACHYTHERAPY | 1 |
+| PROCEDUR | LYMPH NODE DISSECTION | 1 |
+| PROCEDUR | RADIOEMBOLIZATION | 1 |
+| PROCEDUR | SIMPLE MASTECTOMY | 1 |
+| PROCEDUR | TOTAL BODY IRRADIATION | 1 |
+| PROCEDUR | TOTAL MASTECTOMY | 1 |
 
 
 ### schema_column_coverage — FAIL (13)
@@ -127,7 +134,7 @@ _no details_
 | SARSCOV2DET | MB | MB-MBTESTCD | SARS-CoV-2 Detection |
 
 
-### empty_reification_quad_rows — INFO (315)
+### empty_reification_quad_rows — INFO (337)
 
 | note |
 | --- |

@@ -168,3 +168,15 @@ covers the hierarchy side (instrument-scope parent chains, with a diff that flag
 reparented BCs, new parents, and terminal-status flips — i.e. whether the new tier gets
 wired up). Instrument-scope there is defined as having a DSS in QS/FT/RS or carrying the
 `QRS` search category, so it includes the `full_no_ds` family-container tier.
+
+**Outcome, 2026-07-14 package: carried, not closed.** The one-run check was run on the
+July package. None of the three watched changes arrived: C222259/C222260 are still
+terminal (no `parent_bc_id`, so the chain to C81250 remains broken), each still carries
+exactly its single instrument child (no further families gained the tier), and the 6MWT
+category token still holds the pre-rename text (unresolved against the renamed
+`short_name`, with no status transitions on any existing token). The package's new QRS
+material — the PASI Fredriksson question set and the AJCC v7 staging chain — arrives in
+the Clinical or Research Assessment Classification family and does not use the tier; its
+long-form classification labels join the unresolved token set, extending the section 5
+label-vs-identifier gap to the classification side. The watch item stays open for the
+next package.
