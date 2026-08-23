@@ -23,12 +23,15 @@ What stays here:
 | [`COSMoS_BC_NCIt_Compare`](notebooks/COSMoS_BC_NCIt_Compare.ipynb) | Compare COSMoS BC definitions and synonyms against authoritative NCIt | [`reports/COSMoS_BC_NCIt_Compare.xlsx`](reports/COSMoS_BC_NCIt_Compare.xlsx) |
 | [`COSMoS_BC_NCIt_Source_Probe`](notebooks/COSMoS_BC_NCIt_Source_Probe.ipynb) | Probe NCIt source endpoints used by Compare | [`reports/COSMoS_BC_NCIt_Source_Probe.xlsx`](reports/COSMoS_BC_NCIt_Source_Probe.xlsx) |
 | [`COSMoS_BC_Parent_Resolution`](notebooks/COSMoS_BC_Parent_Resolution.ipynb) | Resolve BC parent chains in the source | [`reports/COSMoS_BC_Parent_Resolution.xlsx`](reports/COSMoS_BC_Parent_Resolution.xlsx) |
+| [`COSMoS_Observable_Derivation`](notebooks/COSMoS_Observable_Derivation.ipynb) | Derive observables (component × system × scale × method) from the graph; how many each BC hides, DSS grain vs observable grain | [`reports/COSMoS_Observable_Derivation.xlsx`](reports/COSMoS_Observable_Derivation.xlsx) |
 
 **Compare** scoped to subject-level Findings BCs. Reads COSMoS exports from [`downloads/`](downloads/) and the green-track [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) for NCIt anchors.
 
 **Source_Probe** caches NCIt source-endpoint responses to [`cache/ncit_source_probe.json`](cache/ncit_source_probe.json) so Compare can run repeatedly without re-querying NCIt.
 
 **Parent_Resolution** traces parent-of relationships in BC content.
+
+**Observable_Derivation** reads the graph projection ([`../cosmos-graph/interim/COSMoS_Graph.xlsx`](../cosmos-graph/interim/COSMoS_Graph.xlsx)), not the downloads. Companion to [`docs/Glucose_Siblings_BC_DSS_Proposal.html`](docs/Glucose_Siblings_BC_DSS_Proposal.html); uses only LOINC codes pinned in the package, no external lookup.
 
 ## Data flow
 
