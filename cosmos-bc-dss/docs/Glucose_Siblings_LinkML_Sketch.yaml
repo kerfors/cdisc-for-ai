@@ -1,0 +1,407 @@
+# =====================================================================
+# Glucose Siblings — LinkML sketch (draft for discussion)
+#
+# Companion to docs/Glucose_Siblings_BC_DSS_Proposal.html.
+# Status: analysis artifact, NOT a standards deliverable. 2026-08-24.
+#
+# What this file is: ONE yaml with two parts —
+#   PART 1  schema deltas relative to the published COSMoS LinkML
+#           (cosmos_bc_model.yaml / cosmos_sdtm_model.yaml, v1.0),
+#           written as a small extension schema, reusing everything
+#           not mentioned here unchanged;
+#   PART 2  instance data for three glucose siblings and their
+#           recordings, using only values verified against the
+#           2026-07-14 package and the LOINC 2.82 service cache.
+#
+# Design rules carried in from the proposal + the two checks:
+#   - sibling identity = resolvable IRI, not a C-code and not NEW_;
+#     NCIt attaches as skos:broader, LOINC as typed skos mappings
+#   - resultScale is SINGLE-valued on a sibling (the union lives only
+#     on the legacy parent)
+#   - value type is authoritative on the sibling's result DEC and
+#     inherited by every recording (inherit-once: verified to hold)
+#   - the interpretation regime is a coded POINTER keyed on
+#     sibling x state DEC — never the numbers
+#   - the recording (thinned SDTMGroup) keeps only what is genuinely
+#     SDTM-specific: domain, variable names, CT bindings, origin;
+#     it may refine but never contradict the sibling
+# =====================================================================
+
+# ---------------------------------------------------------------------
+# PART 1 — schema extension (LinkML)
+# ---------------------------------------------------------------------
+schema:
+  id: https://w3id.org/cdisc/cosmos/sibling_bc_sketch_v0.1
+  name: COSMoS-Sibling-BC-Sketch
+  description: >-
+    Draft extension of the COSMoS v1.0 LinkML schemas: a qualified
+    (sibling) Biomedical Concept with resolvable-IRI identity, typed
+    external mappings, single result scale, authoritative result value
+    type, semantic value set, and a state-keyed interpretation-regime
+    pointer — plus a thinned recording class in which the SDTM dataset
+    details keep only the mapping-side content.
+  imports:
+    - linkml:types
+    - cosmos_bc      # published COSMoS BC schema, unchanged
+    - cosmos_sdtm    # published COSMoS SDTM schema, unchanged
+  prefixes:
+    linkml: https://w3id.org/linkml/
+    sbc: https://w3id.org/cdisc/cosmos/sibling_bc_sketch_v0.1/
+    NCIT: http://purl.obolibrary.org/obo/NCIT_
+    loinc: https://loinc.org/
+    skos: http://www.w3.org/2004/02/skos/core#
+  default_prefix: sbc
+  default_range: string
+
+  classes:
+
+    QualifiedBiomedicalConcept:
+      description: >-
+        A sibling BC: one observation shape under a broader analyte
+        concept. Identity is the IRI itself (read-many, citable,
+        content-negotiated per the usdm-rdf pattern). Deliberately NOT
+        a subclass of cosmos_bc:BiomedicalConcept, because that class
+        fixes the identifier to a C-code/NEW_ pattern; the sibling
+        keeps the analyte link as skos:broader instead.
+      slots:
+        - iri
+        - shortName
+        - definition
+        - broaderConceptId          # the NCIt analyte (skos:broader)
+        - externalMappings          # typed: exactMatch / narrowMatch
+        - resultScale               # SINGLE-valued
+        - resultDataElementConcept  # authoritative dataType lives here
+        - qualifierDataElementConcepts
+        - semanticValueSet          # Coded scales: admissible concepts
+        - admissibleSpecimens       # concept-level; recording picks one
+        - interpretationRegimes     # the one genuinely new construct
+      slot_usage:
+        iri:
+          identifier: true
+
+    ExternalMapping:
+      description: >-
+        Typed mapping to an external code system. Replaces the flat
+        cosmos_bc:Coding for siblings: cardinality 0/1/>1 is handled by
+        the mapping relation, not by the key (exactMatch = same
+        observable; narrowMatch = finer external leaf, typically the
+        unit dimension).
+      attributes:
+        relation:
+          range: MappingRelationEnum
+          required: true
+        code:
+          required: true
+        system:
+          description: Code system URI (e.g. https://loinc.org/, NCIt)
+          required: true
+        comment:
+          description: e.g. which axis the narrowMatch refines
+
+    SemanticValueSetTerm:
+      description: >-
+        Concept-level admissible result value (what the observation can
+        say), distinct from any per-standard codelist binding (how a
+        given standard writes it). ncitCode absent when no concept
+        exists yet.
+      attributes:
+        value:
+          required: true
+        ncitCode:
+          pattern: "^(C[0-9]+)$"
+        sourceAnchor:
+          description: >-
+            Where this value is asserted (package, guidance, LOINC
+            answer list); "[VERIFY]" when no source could be named.
+
+    InterpretationRegimeAssertion:
+      description: >-
+        Asserts that a distinct interpretation regime applies to this
+        sibling under a given subject state. Carries a coded pointer,
+        NEVER the reference-range numbers (those are data,
+        per-record/per-lab). Keyed on an existing state DEC — for
+        glucose, Fasting Status Indicator C93566 — so fasting and
+        post-load glucose share one sibling while carrying different
+        regimes.
+      attributes:
+        stateDataElementConceptId:
+          description: The state DEC this regime keys on (e.g. C93566)
+          pattern: "^(C[0-9]+)$"
+          required: true
+        stateValue:
+          description: >-
+            Value of the state under which this regime applies (from
+            the state DEC's value domain, e.g. Y / N).
+          required: true
+        regime:
+          description: >-
+            Coded pointer to the regime (a URI or code in a regime
+            vocabulary that does not exist yet — this is the one
+            genuinely new governance ask).
+          range: uriorcurie
+          required: true
+
+    Recording:
+      description: >-
+        Thinned SDTM dataset specialization: everything the sibling
+        already states is inherited, not re-declared. Kept here:
+        domain placement, topic/test code, the ONE specimen this
+        recording uses (must be in the sibling's admissibleSpecimens),
+        per-standard codelist bindings (incl. unit subset), origin, and
+        an optional LOINC pin at recording grain. Dropped relative to
+        cosmos_sdtm:SDTMGroup's variables: result dataType/length/
+        format/significantDigits (inherited via the sibling's result
+        DEC — verified to introduce no contradiction), and the
+        duplicated scale information.
+      slots:
+        - recordingId               # today's ds_id, now explicitly a mnemonic
+        - siblingIri                # points at the sibling, not the analyte
+        - domain
+        - testCode                  # assigned --TESTCD value
+        - specimen                  # AssignedTerm; subset of sibling's admissible set
+        - loincPins                 # recording-grain LOINC codes (unit variants)
+        - unitCodelistBinding       # per-standard CT binding, e.g. UNIT subset
+        - resultCodelistBinding     # per-standard CT binding for Coded scales
+        - variableOverrides         # anything genuinely SDTM-shaped that remains
+
+  slots:
+    iri:
+      range: uri
+    broaderConceptId:
+      description: NCIt C-code of the analyte concept (skos:broader)
+      pattern: "^(C[0-9]+)$"
+      required: true
+    externalMappings:
+      range: ExternalMapping
+      multivalued: true
+      inlined_as_list: true
+    resultScale:
+      description: Single scale of measurement — the sibling split axis
+      range: cosmos_bc:BiomedicalConceptResultScaleEnum
+      required: true
+    resultDataElementConcept:
+      description: >-
+        The result DEC with AUTHORITATIVE dataType; recordings inherit
+        it (SDTMVariable.dataElementConceptId -> DEC.dataType), they do
+        not re-declare it.
+      range: cosmos_bc:DataElementConcept
+      required: true
+    qualifierDataElementConcepts:
+      range: cosmos_bc:DataElementConcept
+      multivalued: true
+      inlined_as_list: true
+    semanticValueSet:
+      range: SemanticValueSetTerm
+      multivalued: true
+      inlined_as_list: true
+    admissibleSpecimens:
+      description: Concept-level admissible specimen set (NCIt-coded)
+      range: cosmos_sdtm:AssignedTerm
+      multivalued: true
+      inlined_as_list: true
+    interpretationRegimes:
+      range: InterpretationRegimeAssertion
+      multivalued: true
+      inlined_as_list: true
+    recordingId:
+      identifier: true
+      pattern: "^[A-Z][A-Z0-9_]*$"
+    siblingIri:
+      range: uri
+      required: true
+    testCode:
+      required: true
+    specimen:
+      range: cosmos_sdtm:AssignedTerm
+      required: false
+    loincPins:
+      multivalued: true
+      inlined_as_list: true
+    unitCodelistBinding:
+      description: Per-standard unit binding (codelist / subset ref)
+    resultCodelistBinding:
+      description: Per-standard result binding for Coded scales
+    variableOverrides:
+      description: Residual SDTM-specific variable content
+      multivalued: true
+      inlined_as_list: true
+    domain: {}
+
+  enums:
+    MappingRelationEnum:
+      permissible_values:
+        exactMatch:
+        narrowMatch:
+        broadMatch:
+
+# ---------------------------------------------------------------------
+# PART 2 — instances (three siblings + recordings), values verified
+#          against COSMoS 2026-07-14 and LOINC 2.82 (service cache)
+# ---------------------------------------------------------------------
+data:
+
+  siblings:
+
+    - iri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+      shortName: Glucose, blood-derived, quantitative
+      definition: >-
+        Quantitative determination of glucose concentration in a
+        blood-derived specimen (plasma, serum, or serum/plasma).
+      broaderConceptId: C105585            # Glucose Measurement (analyte)
+      resultScale: Quantitative
+      resultDataElementConcept:
+        conceptId: C70856
+        shortName: Observation Result
+        dataType: float                    # AUTHORITATIVE (today: string)
+        exampleSet: []
+      qualifierDataElementConcepts:
+        - conceptId: C70713
+          shortName: Biospecimen Type
+          dataType: string
+          exampleSet: [Plasma, Serum]
+        - conceptId: C48207
+          shortName: Unit of Concentration
+          dataType: string
+          exampleSet: [mg/dL, g/L, mmol/L]
+        - conceptId: C93566
+          shortName: Fasting Status Indicator
+          dataType: boolean
+          exampleSet: []
+      admissibleSpecimens:
+        - {conceptId: C13356, value: PLASMA}
+        - {conceptId: C13325, value: SERUM}
+      externalMappings:
+        - {relation: narrowMatch, code: "2345-7",  system: "https://loinc.org/", comment: mass concentration, Ser/Plas (unit axis)}
+        - {relation: narrowMatch, code: "14749-6", system: "https://loinc.org/", comment: substance (molar) concentration, Ser/Plas (unit axis)}
+      interpretationRegimes:
+        - stateDataElementConceptId: C93566   # Fasting Status Indicator
+          stateValue: "Y"
+          regime: sbc:regime/GlucoseFastingAdult
+        - stateDataElementConceptId: C93566
+          stateValue: "N"
+          regime: sbc:regime/GlucoseNonFastingAdult
+      # Whole blood (GLUCBLD) stays PARKED: float on the type axis puts
+      # it here, but its regime membership per state is the open call.
+
+    - iri: https://w3id.org/cdisc/cosmos/bc/GlucosePlasmaEquivalent
+      shortName: Glucose, plasma-equivalent (interstitial), quantitative
+      definition: >-
+        Quantitative plasma-equivalent glucose derived from
+        interstitial fluid (continuous or flash glucose monitoring).
+      broaderConceptId: C105585
+      resultScale: Quantitative
+      resultDataElementConcept:
+        conceptId: C70856
+        shortName: Observation Result
+        dataType: float
+        exampleSet: []
+      admissibleSpecimens:
+        - {conceptId: C120839, value: INTERSTITIAL FLUID}
+      externalMappings:
+        - {relation: exactMatch,  code: "C163446",  system: "http://purl.obolibrary.org/obo/NCIT_", comment: NCIt has this concept at sibling grain}
+        - {relation: narrowMatch, code: "99504-3",  system: "https://loinc.org/", comment: mass concentration (unit axis)}
+        - {relation: narrowMatch, code: "105272-9", system: "https://loinc.org/", comment: substance (molar) concentration (unit axis)}
+      interpretationRegimes:
+        - stateDataElementConceptId: C93566
+          stateValue: "Y"
+          regime: sbc:regime/GlucoseFastingAdult
+        - stateDataElementConceptId: C93566
+          stateValue: "N"
+          regime: sbc:regime/GlucoseNonFastingAdult
+
+    - iri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineCategorical
+      shortName: Glucose, urine, categorical (presence)
+      definition: >-
+        Categorical (ordinal) determination of glucose presence in
+        urine, with or without test strip.
+      broaderConceptId: C105585
+      resultScale: Ordinal                 # LOINC scale part: Ord (2349-9, 25428-4)
+      resultDataElementConcept:
+        conceptId: C70856
+        shortName: Observation Result
+        dataType: string
+        exampleSet: []
+      admissibleSpecimens:
+        - {conceptId: C13283, value: URINE}
+      semanticValueSet:
+        # No value set exists in the package or on the pinned LOINC
+        # codes' parts; the admissible ordinal set must be curated.
+        - {value: "[VERIFY]", sourceAnchor: "no authoritative source in package; LOINC answer list not consulted"}
+      externalMappings:
+        - {relation: exactMatch, code: "2349-9",  system: "https://loinc.org/", comment: presence, method-neutral}
+        - {relation: exactMatch, code: "25428-4", system: "https://loinc.org/", comment: presence by test strip — method-refined; see recordings}
+      interpretationRegimes:
+        - stateDataElementConceptId: C93566
+          stateValue: "*"
+          regime: sbc:regime/GlucosuriaPresence
+
+  recordings:
+
+    # --- under GlucoseBloodQuantitative --------------------------------
+    - recordingId: GLUCPL
+      siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+      domain: LB
+      testCode: GLUC
+      specimen: {conceptId: C13356, value: PLASMA}
+      loincPins: []                        # none pinned in package today
+      unitCodelistBinding: "UNIT (C71620) subset: mg/dL;g/L;mmol/L"
+      # result dataType NOT declared here — inherited: float
+
+    - recordingId: GLUCSER
+      siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+      domain: LB
+      testCode: GLUC
+      specimen: {conceptId: C13325, value: SERUM}
+      loincPins: []
+      unitCodelistBinding: "UNIT (C71620) subset: mg/dL;g/L;mmol/L"
+
+    - recordingId: GLUCSERPL
+      siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+      domain: LB
+      testCode: GLUC
+      specimen: {conceptId: C13325, value: SERUM}   # as pinned in package (name says Serum or Plasma)
+      loincPins: ["14749-6", "2345-7"]
+      unitCodelistBinding: "UNIT (C71620) subset: mg/dL;g/L;mmol/L; standard unit pinned mmol/L (C64387)"
+      # NOTE: by coordinates identical to GLUCSER — kept as a separate
+      # recording only because the package distinguishes them; a
+      # candidate for merge at recording grain.
+
+    # --- under GlucoseUrineCategorical ---------------------------------
+    - recordingId: GLUCURINPRES
+      siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineCategorical
+      domain: LB
+      testCode: GLUC
+      specimen: {conceptId: C13283, value: URINE}
+      loincPins: ["2349-9"]
+      resultCodelistBinding: "none bound in package — inherits the sibling's semantic value set once curated"
+
+    - recordingId: GLUCUA
+      siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineCategorical
+      domain: LB
+      testCode: GLUC
+      specimen: {conceptId: C13283, value: URINE}
+      loincPins: ["25428-4"]
+      variableOverrides:
+        - "LBMETHOD assigned: TEST STRIP"   # method at recording grain; LOINC agrees it identifies
+      resultCodelistBinding: "none bound in package — inherits the sibling's semantic value set once curated"
+
+# ---------------------------------------------------------------------
+# What deliberately did NOT move up to the sibling
+#   - TESTCD / TEST decode, domain placement, variable names, roles,
+#     origin, mandatory flags: SDTM-shaped, stay on the recording
+#   - codelist BINDINGS (C-codes of codelists, submission values,
+#     subsets): per implementation standard, stay on the recording;
+#     the sibling carries the SEMANTIC value set only
+#   - the specific unit and the standard-unit choice: recording
+#     (the unit DIMENSION is implied by the quantitative scale +
+#     example set; LOINC's property axis carries it externally)
+#   - reference-range NUMBERS: data, per record / per lab — only the
+#     regime pointer is conceptual
+# Open issues carried from the proposal
+#   - GLUCBLD (whole blood): parked pending the regime decision
+#   - GLUCURIN (urine quantitative): a fourth sibling
+#     (GlucoseUrineQuantitative) — omitted here for brevity, shape
+#     identical to blood-derived with URINE specimen
+#   - the regime vocabulary (sbc:regime/...) does not exist; it is the
+#     one genuinely new governance ask (Stage 1)
+# ---------------------------------------------------------------------
