@@ -1,0 +1,2805 @@
+{
+ "provenance": {
+  "service": "http://www.xml4pharmaserver.com:8080/LOINCService/rest/",
+  "loinc_version": "2.82",
+  "fetched": "2026-08-24",
+  "fetched_via": "browser (service is plain HTTP); LOINCCount at fetch time: 109325",
+  "note": "LOINCCoreProperties responses reduced to axis fields; LOINCSimilarTest stored as the deduplicated union over the 10 glucose codes pinned in COSMoS (98 similar + self per code -> 99 unique)."
+ },
+ "LOINCCoreProperties": {
+  "1006-6": {
+   "Component": "Direct antiglobulin test.IgG specific reagent",
+   "Property": "Imp",
+   "TimeAspect": "Pt",
+   "System": "RBC",
+   "ScaleType": "Nom",
+   "Method": null,
+   "Class": "BLDBK",
+   "ExampleUCUMUnits": null
+  },
+  "10366-3": {
+   "Component": "Cotinine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "104754-7": {
+   "Component": "Polychromasia",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
+  },
+  "104761-2": {
+   "Component": "Poikilocytosis",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
+  },
+  "105090-5": {
+   "Component": "Erythrocytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine sed",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "105105-1": {
+   "Component": "Leukocytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine sed",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "105272-9": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Interstitial fluid",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "105906-2": {
+   "Component": "Blood",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "10839-9": {
+   "Component": "Troponin I.cardiac",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "11130-2": {
+   "Component": "Lymphocytes B",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CELLMARK",
+   "ExampleUCUMUnits": "/uL"
+  },
+  "11131-0": {
+   "Component": "Erythroblasts early/100 cells",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Bone mar",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "11556-8": {
+   "Component": "Oxygen",
+   "Property": "PPres",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mm[Hg]"
+  },
+  "11557-6": {
+   "Component": "Carbon dioxide",
+   "Property": "PPres",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mm[Hg]"
+  },
+  "11558-4": {
+   "Component": "pH",
+   "Property": "LsCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "SemiQn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "[pH]"
+  },
+  "1250-0": {
+   "Component": "Major crossmatch",
+   "Property": "Imp",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Nom",
+   "Method": null,
+   "Class": "BLDBK",
+   "ExampleUCUMUnits": null
+  },
+  "12841-3": {
+   "Component": "Prostate specific Ag.free/Prostate specific Ag.total",
+   "Property": "MFr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "%"
+  },
+  "13658-0": {
+   "Component": "Urobilinogen",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "13955-0": {
+   "Component": "Hepatitis C virus Ab",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Ord",
+   "Method": "IA",
+   "Class": "MICRO",
+   "ExampleUCUMUnits": null
+  },
+  "13992-3": {
+   "Component": "Albumin/Protein.total",
+   "Property": "MFr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": "Electrophoresis",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "%"
+  },
+  "14338-8": {
+   "Component": "Prealbumin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL;g/dL"
+  },
+  "14629-0": {
+   "Component": "Bilirubin.glucuronidated+Bilirubin.albumin bound",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "14631-6": {
+   "Component": "Bilirubin",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "14646-4": {
+   "Component": "Cholesterol.in HDL",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14647-2": {
+   "Component": "Cholesterol",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14682-9": {
+   "Component": "Creatinine",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "14683-7": {
+   "Component": "Creatinine",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14685-2": {
+   "Component": "Cobalamins",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pmol/L"
+  },
+  "14723-1": {
+   "Component": "Ferritin",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pmol/L"
+  },
+  "14732-2": {
+   "Component": "Folate",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "14749-6": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14771-0": {
+   "Component": "Glucose^post CFst",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHAL",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14804-9": {
+   "Component": "Lactate dehydrogenase",
+   "Property": "CCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Reaction: lactate to pyruvate",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "U/L"
+  },
+  "14879-1": {
+   "Component": "Phosphate",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14920-3": {
+   "Component": "Thyroxine.free",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pmol/L"
+  },
+  "14927-8": {
+   "Component": "Triglyceride",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14930-2": {
+   "Component": "Triiodothyronine",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "14933-6": {
+   "Component": "Urate",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "14937-7": {
+   "Component": "Urea nitrogen",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "14957-5": {
+   "Component": "Albumin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": "Detection limit <= 20 mg/L",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ug/mL;mg/dL"
+  },
+  "14959-1": {
+   "Component": "Albumin/Creatinine",
+   "Property": "MRto",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": "Detection limit <= 20 mg/L",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/g{creat}"
+  },
+  "14979-9": {
+   "Component": "Coagulation",
+   "Property": "Time",
+   "TimeAspect": "Pt",
+   "System": "PPP",
+   "ScaleType": "Qn",
+   "Method": "Coag.surface induced",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "s"
+  },
+  "15074-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "15076-3": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "16695-9": {
+   "Component": "Cobalamins",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pg/mL"
+  },
+  "1742-6": {
+   "Component": "Alanine aminotransferase",
+   "Property": "CCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "U/L"
+  },
+  "17849-1": {
+   "Component": "Reticulocytes/Erythrocytes",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": "Automated count",
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "17856-6": {
+   "Component": "Hemoglobin A1c/Hemoglobin.total",
+   "Property": "MFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": "HPLC",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "%"
+  },
+  "17861-6": {
+   "Component": "Calcium",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "18262-6": {
+   "Component": "Cholesterol.in LDL",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Direct assay",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "18422-6": {
+   "Component": "Microcytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": "Microscopy.light",
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
+  },
+  "19080-1": {
+   "Component": "Choriogonadotropin",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "m[IU]/mL"
+  },
+  "19123-9": {
+   "Component": "Magnesium",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "1920-8": {
+   "Component": "Aspartate aminotransferase",
+   "Property": "CCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "U/L"
+  },
+  "1959-6": {
+   "Component": "Bicarbonate",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "1975-2": {
+   "Component": "Bilirubin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "1977-8": {
+   "Component": "Bilirubin",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "1978-6": {
+   "Component": "Bilirubin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "1988-5": {
+   "Component": "C reactive protein",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/L"
+  },
+  "1990-1": {
+   "Component": "Cholecalciferol",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "1995-0": {
+   "Component": "Calcium.ionized",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "1996-8": {
+   "Component": "Calcium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2000-8": {
+   "Component": "Calcium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2019-8": {
+   "Component": "Carbon dioxide",
+   "Property": "PPres",
+   "TimeAspect": "Pt",
+   "System": "BldA",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mm[Hg]"
+  },
+  "2028-9": {
+   "Component": "Carbon dioxide",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "20408-1": {
+   "Component": "Leukocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip",
+   "Class": "UA",
+   "ExampleUCUMUnits": "/uL"
+  },
+  "20409-9": {
+   "Component": "Erythrocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip",
+   "Class": "UA",
+   "ExampleUCUMUnits": "/uL"
+  },
+  "2039-6": {
+   "Component": "Carcinoembryonic Ag",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "20415-6": {
+   "Component": "Choriogonadotropin.beta subunit",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "EIA.3rd IS",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "m[IU]/mL"
+  },
+  "20563-3": {
+   "Component": "Carboxyhemoglobin/Hemoglobin.total",
+   "Property": "MFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "%"
+  },
+  "20565-8": {
+   "Component": "Carbon dioxide",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "20570-8": {
+   "Component": "Erythrocyte/Blood",
+   "Property": "VFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": "Calculated",
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "2064-4": {
+   "Component": "Ceruloplasmin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2069-3": {
+   "Component": "Chloride",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2075-0": {
+   "Component": "Chloride",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2078-4": {
+   "Component": "Chloride",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2085-9": {
+   "Component": "Cholesterol.in HDL",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2089-1": {
+   "Component": "Cholesterol.in LDL",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2091-7": {
+   "Component": "Cholesterol.in VLDL",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2093-3": {
+   "Component": "Cholesterol",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2106-3": {
+   "Component": "Choriogonadotropin",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "2118-8": {
+   "Component": "Choriogonadotropin",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "2119-6": {
+   "Component": "Choriogonadotropin",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2132-9": {
+   "Component": "Cobalamins",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pg/mL"
+  },
+  "2157-6": {
+   "Component": "Creatine kinase",
+   "Property": "CCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "U/L"
+  },
+  "2160-0": {
+   "Component": "Creatinine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2161-8": {
+   "Component": "Creatinine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "22587-0": {
+   "Component": "Treponema pallidum Ab",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Ser",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "MICRO",
+   "ExampleUCUMUnits": null
+  },
+  "22748-8": {
+   "Component": "Cholesterol.in LDL",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2276-4": {
+   "Component": "Ferritin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "2282-2": {
+   "Component": "Folate",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "2284-8": {
+   "Component": "Folate",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "2324-2": {
+   "Component": "Gamma glutamyl transferase",
+   "Property": "CCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "U/L"
+  },
+  "2335-8": {
+   "Component": "Hemoglobin",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Stool^Patient.gastrointestinal",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "2339-0": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2345-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2349-9": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "2350-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "25371-6": {
+   "Component": "Cholesterol.in VLDL",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "25415-1": {
+   "Component": "Folate",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "25428-4": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": "Test strip",
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "2571-8": {
+   "Component": "Triglyceride",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2601-3": {
+   "Component": "Magnesium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "26444-0": {
+   "Component": "Basophils",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26449-9": {
+   "Component": "Eosinophils",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26453-1": {
+   "Component": "Erythrocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*6/uL"
+  },
+  "26464-8": {
+   "Component": "Leukocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26474-7": {
+   "Component": "Lymphocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26484-6": {
+   "Component": "Monocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26499-4": {
+   "Component": "Neutrophils",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26505-8": {
+   "Component": "Neutrophils.segmented/Leukocytes",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "26507-4": {
+   "Component": "Neutrophils.band form",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "26508-2": {
+   "Component": "Neutrophils.band form/Leukocytes",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "26511-6": {
+   "Component": "Neutrophils/Leukocytes",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "26515-7": {
+   "Component": "Platelets",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "2657-5": {
+   "Component": "Nitrite",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/mL"
+  },
+  "26881-3": {
+   "Component": "Interleukin 6",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pg/mL"
+  },
+  "2703-7": {
+   "Component": "Oxygen",
+   "Property": "PPres",
+   "TimeAspect": "Pt",
+   "System": "BldA",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mm[Hg]"
+  },
+  "27298-9": {
+   "Component": "Protein",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": "[arb'U]/mL"
+  },
+  "2756-5": {
+   "Component": "pH",
+   "Property": "LsCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "[pH]"
+  },
+  "2777-1": {
+   "Component": "Phosphate",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "2823-3": {
+   "Component": "Potassium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2828-2": {
+   "Component": "Potassium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "28540-3": {
+   "Component": "Hemoglobin",
+   "Property": "EntMCnc",
+   "TimeAspect": "Pt",
+   "System": "RBC",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "2885-2": {
+   "Component": "Protein",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "2887-8": {
+   "Component": "Protein",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "2888-6": {
+   "Component": "Protein",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "2890-2": {
+   "Component": "Protein/Creatinine",
+   "Property": "MRto",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/g{creat}"
+  },
+  "29310-0": {
+   "Component": "Treponema pallidum",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "XXX",
+   "ScaleType": "Ord",
+   "Method": "IF",
+   "Class": "MICRO",
+   "ExampleUCUMUnits": null
+  },
+  "2947-0": {
+   "Component": "Sodium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2951-2": {
+   "Component": "Sodium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2955-3": {
+   "Component": "Sodium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "2965-2": {
+   "Component": "Observation",
+   "Property": "SpGrav",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "3015-5": {
+   "Component": "Thyrotropin",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "m[IU]/L"
+  },
+  "3016-3": {
+   "Component": "Thyrotropin",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "m[IU]/L"
+  },
+  "3024-7": {
+   "Component": "Thyroxine.free",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/dL"
+  },
+  "30391-7": {
+   "Component": "Erythrocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": "/uL"
+  },
+  "30405-5": {
+   "Component": "Leukocytes",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": "/uL"
+  },
+  "30424-6": {
+   "Component": "Macrocytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
+  },
+  "30428-7": {
+   "Component": "Observation",
+   "Property": "EntMeanVol",
+   "TimeAspect": "Pt",
+   "System": "RBC",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "fL"
+  },
+  "30434-5": {
+   "Component": "Microcytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
+  },
+  "30451-9": {
+   "Component": "Neutrophils.segmented",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "10*3/uL"
+  },
+  "3050-2": {
+   "Component": "Triiodothyronine resin uptake (T3RU)",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "%"
+  },
+  "3053-6": {
+   "Component": "Triiodothyronine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/dL"
+  },
+  "3084-1": {
+   "Component": "Urate",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "3094-0": {
+   "Component": "Urea nitrogen",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "3107-0": {
+   "Component": "Urobilinogen",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "31157-1": {
+   "Component": "Carboxyhemoglobin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "3173-2": {
+   "Component": "Coagulation",
+   "Property": "Time",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": "Coag.surface induced",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "s"
+  },
+  "32215-6": {
+   "Component": "Thyroxine free index",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Calculated",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "{Index_val}"
+  },
+  "32710-6": {
+   "Component": "Nitrite",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "33051-4": {
+   "Component": "Erythrocytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "33052-2": {
+   "Component": "Leukocytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "33796-4": {
+   "Component": "Cotinine",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "33863-2": {
+   "Component": "Cystatin C",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/L"
+  },
+  "33903-6": {
+   "Component": "Ketones",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "33917-6": {
+   "Component": "Nornicotine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "34366-5": {
+   "Component": "Protein/Creatinine",
+   "Property": "Ratio",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "g/mmol{creat}"
+  },
+  "34670-0": {
+   "Component": "Choriogonadotropin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "34714-6": {
+   "Component": "Coagulation",
+   "Property": "RelTime",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": "Coag.tissue factor induced.INR",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "{INR}"
+  },
+  "34927-4": {
+   "Component": "Urobilinogen",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "3853-9": {
+   "Component": "Nicotine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "38892-6": {
+   "Component": "Anisocytosis",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
+  },
+  "42757-5": {
+   "Component": "Troponin I.cardiac",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "4655-7": {
+   "Component": "Interleukin 6",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "[arb'U]/mL"
+  },
+  "47612-7": {
+   "Component": "Cystatin C",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/L"
+  },
+  "48058-2": {
+   "Component": "Fibrin D-dimer",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "PPP",
+   "ScaleType": "Qn",
+   "Method": "IA.DDU",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "ug/L{DDU}"
+  },
+  "48067-3": {
+   "Component": "Fibrin D-dimer",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "PPP",
+   "ScaleType": "Qn",
+   "Method": "IA.FEU",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "ug/mL{FEU}"
+  },
+  "49137-3": {
+   "Component": "Hemoglobin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip",
+   "Class": "UA",
+   "ExampleUCUMUnits": "mg/L"
+  },
+  "49765-1": {
+   "Component": "Calcium",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "49779-2": {
+   "Component": "Ketones",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "UA",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "50756-6": {
+   "Component": "Creatine kinase",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "50984-4": {
+   "Component": "Horowitz index",
+   "Property": "Ratio",
+   "TimeAspect": "Pt",
+   "System": "BldA+Inhl gas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mm[Hg]"
+  },
+  "53963-5": {
+   "Component": "Blood",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": "Visual",
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "53969-2": {
+   "Component": "Microcytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine sed",
+   "ScaleType": "Ord",
+   "Method": "Microscopy.light",
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "53970-0": {
+   "Component": "Macrocytes",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine sed",
+   "ScaleType": "Ord",
+   "Method": "Microscopy.light",
+   "Class": "UA",
+   "ExampleUCUMUnits": null
+  },
+  "54347-0": {
+   "Component": "Albumin",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "55557-3": {
+   "Component": "Nicotine",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "5778-6": {
+   "Component": "Observation",
+   "Property": "Color",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Nom",
+   "Method": null,
+   "Class": "SPEC",
+   "ExampleUCUMUnits": null
+  },
+  "5902-2": {
+   "Component": "Coagulation",
+   "Property": "Time",
+   "TimeAspect": "Pt",
+   "System": "PPP",
+   "ScaleType": "Qn",
+   "Method": "Coag.tissue factor induced",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "s"
+  },
+  "59260-0": {
+   "Component": "Hemoglobin",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "59467-1": {
+   "Component": "Hemoglobin",
+   "Property": "EntSCnc",
+   "TimeAspect": "Pt",
+   "System": "RBC",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "59468-9": {
+   "Component": "Hemoglobin",
+   "Property": "EntSub",
+   "TimeAspect": "Pt",
+   "System": "RBC",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "fmol"
+  },
+  "5959-2": {
+   "Component": "Coagulation",
+   "Property": "Time",
+   "TimeAspect": "Pt",
+   "System": "PPP",
+   "ScaleType": "Qn",
+   "Method": "Coag.tissue factor induced.factor substitution.immediately after addition of normal plasma",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "s"
+  },
+  "5964-2": {
+   "Component": "Coagulation",
+   "Property": "Time",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": "Coag.tissue factor induced",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "s"
+  },
+  "6298-4": {
+   "Component": "Potassium",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "6301-6": {
+   "Component": "Coagulation",
+   "Property": "RelTime",
+   "TimeAspect": "Pt",
+   "System": "PPP",
+   "ScaleType": "Qn",
+   "Method": "Coag.tissue factor induced.INR",
+   "Class": "COAG",
+   "ExampleUCUMUnits": "{INR}"
+  },
+  "6768-6": {
+   "Component": "Alkaline phosphatase",
+   "Property": "CCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "U/L"
+  },
+  "70199-5": {
+   "Component": "Bilirubin",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "umol/L"
+  },
+  "718-7": {
+   "Component": "Hemoglobin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "74761-8": {
+   "Component": "Microcytes/Erythrocytes",
+   "Property": "NFr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": "%"
+  },
+  "75940-7": {
+   "Component": "Potassium",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "76485-2": {
+   "Component": "C reactive protein",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "93045-3": {
+   "Component": "Carbon monoxide",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Air",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "[ppm]"
+  },
+  "94762-2": {
+   "Component": "SARS coronavirus 2 Ab",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Ord",
+   "Method": "IA",
+   "Class": "MICRO",
+   "ExampleUCUMUnits": null
+  },
+  "99387-3": {
+   "Component": "Carbon monoxide",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mmol/L"
+  },
+  "99504-3": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Interstitial fluid",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  },
+  "1751-7": {
+   "Component": "Albumin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "1753-3": {
+   "Component": "Albumin",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": null
+  },
+  "1754-1": {
+   "Component": "Albumin",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "g/dL"
+  },
+  "1968-7": {
+   "Component": "Bilirubin.glucuronidated+Bilirubin.albumin bound",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/dL"
+  }
+ },
+ "LOINCSimilarTest_glucose_family": {
+  "100746-7": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "BldMV",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "104597-0": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldV",
+   "ScaleType": "Qn",
+   "Method": "Glucometer"
+  },
+  "104598-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldA",
+   "ScaleType": "Qn",
+   "Method": "Glucometer"
+  },
+  "104655-6": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldMV",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "105272-9": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Interstitial fluid",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "105273-7": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "RptPeriod^mean",
+   "System": "Interstitial fluid",
+   "ScaleType": "Qn",
+   "Method": "Calculated"
+  },
+  "108027-4": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Urine",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109417-6": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Body fld",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109485-3": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "BldA",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109529-8": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "BldV",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109723-7": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Dial fld",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109729-4": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Dial fld prt",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109834-2": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Interstitial fluid",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "109888-8": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "BldC",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "110283-9": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Ser/Plas",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "110643-4": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Stool",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "110939-6": {
+   "Component": "Glucose",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Bld",
+   "ScaleType": "-",
+   "Method": null
+  },
+  "12628-4": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Dial fld prt",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "12629-2": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "24H",
+   "System": "Dial fld prt",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14386-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Gast fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14743-9": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "BldC",
+   "ScaleType": "Qn",
+   "Method": "Glucometer"
+  },
+  "14744-7": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "CSF",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14745-4": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Body fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14746-2": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Dial fld prt",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14747-0": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Plr fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14748-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Periton fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14749-6": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "14750-4": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Synv fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "15074-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "15075-5": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Dial fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "15076-3": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "15077-1": {
+   "Component": "Glucose",
+   "Property": "SRat",
+   "TimeAspect": "24H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "16903-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Vitr fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "18227-9": {
+   "Component": "Glucose",
+   "Property": "MRat",
+   "TimeAspect": "6H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "20406-5": {
+   "Component": "Glucose",
+   "Property": "MFr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": "Test strip"
+  },
+  "21305-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "24H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "21306-6": {
+   "Component": "Glucose",
+   "Property": "MRat",
+   "TimeAspect": "8H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "21307-4": {
+   "Component": "Glucose",
+   "Property": "MRat",
+   "TimeAspect": "10H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "22705-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip"
+  },
+  "2339-0": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2340-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip.automated"
+  },
+  "2341-6": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip manual"
+  },
+  "2342-4": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "CSF",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2343-2": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Dial fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2344-0": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Body fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2345-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2346-5": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Plr fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2347-3": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Periton fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2348-1": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Synv fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2349-9": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null
+  },
+  "2350-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "2351-5": {
+   "Component": "Glucose",
+   "Property": "MRat",
+   "TimeAspect": "24H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "25428-4": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": "Test strip"
+  },
+  "25916-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "24H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "32016-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldC",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "32174-5": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "24H",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": null
+  },
+  "32318-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "XXX",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "33405-2": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Pericard fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "35211-2": {
+   "Component": "Glucose",
+   "Property": "MSCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "35212-0": {
+   "Component": "Glucose",
+   "Property": "MSCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "35662-6": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "XXX",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "39478-3": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Vitr fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "39479-1": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Pericard fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "39480-9": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "BldV",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "39481-7": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "BldA",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "40366-7": {
+   "Component": "Glucose",
+   "Property": "SRat",
+   "TimeAspect": "24H",
+   "System": "Body fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "41651-1": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldA",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "41652-9": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldV",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "41653-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "BldC",
+   "ScaleType": "Qn",
+   "Method": "Glucometer"
+  },
+  "45297-9": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "24H",
+   "System": "Dial fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "47620-0": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Stool",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "47995-6": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "BldCo",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "48036-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Stool",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "50555-2": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Ord",
+   "Method": "Test strip.automated"
+  },
+  "51595-7": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Stool",
+   "ScaleType": "Ord",
+   "Method": null
+  },
+  "51596-5": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "BldC",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "53050-1": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "TPN",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "53084-0": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Flu.nonbiological",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "53328-1": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip.automated"
+  },
+  "54486-6": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Water",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "54487-4": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Water",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "55860-1": {
+   "Component": "Glucose",
+   "Property": "MRat",
+   "TimeAspect": "24H",
+   "System": "Stool",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "57797-3": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Stool",
+   "ScaleType": "Qn",
+   "Method": "Post hydrolysis"
+  },
+  "5792-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip"
+  },
+  "58997-8": {
+   "Component": "Glucose",
+   "Property": "MRat",
+   "TimeAspect": "18H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "5914-7": {
+   "Component": "Glucose",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": "Test strip"
+  },
+  "59156-0": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip.automated"
+  },
+  "6300-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Amnio fld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "6777-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "72516-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "SemiQn",
+   "Method": "Test strip.automated"
+  },
+  "74351-8": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "XXX",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "74686-7": {
+   "Component": "Glucose",
+   "Property": "SRat",
+   "TimeAspect": "12H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "74687-5": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "12H",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "74774-1": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas/Bld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "77135-2": {
+   "Component": "Glucose",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas/Bld",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "93791-2": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Stdy^mean",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "96594-7": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Bld.dot",
+   "ScaleType": "Qn",
+   "Method": null
+  },
+  "97507-8": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "RptPeriod^mean",
+   "System": "Interstitial fluid",
+   "ScaleType": "Qn",
+   "Method": "Calculated"
+  },
+  "99504-3": {
+   "Component": "Glucose",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Interstitial fluid",
+   "ScaleType": "Qn",
+   "Method": null
+  }
+ }
+}
