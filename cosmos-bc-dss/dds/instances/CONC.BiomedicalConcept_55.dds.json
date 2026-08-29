@@ -1,0 +1,104 @@
+{
+  "OID": "CONC.BiomedicalConcept_55",
+  "name": "Glucose Measurement",
+  "label": "Glucose Measurement",
+  "aliases": [
+    "Glucose"
+  ],
+  "href": "/mdr/bc/biomedicalconcepts/C105585",
+  "properties": [
+    {
+      "OID": "CONCPROP.BiomedicalConceptProperty_354",
+      "name": "LBORRES",
+      "label": "LBORRES",
+      "mandatory": false,
+      "coding": [
+        {
+          "code": "C70856",
+          "codeSystem": "http://www.cdisc.org",
+          "codeSystemVersion": "2026-05-26",
+          "decode": "Observation Result"
+        }
+      ]
+    },
+    {
+      "OID": "CONCPROP.BiomedicalConceptProperty_355",
+      "name": "LBORRESU",
+      "label": "LBORRESU",
+      "mandatory": false,
+      "coding": [
+        {
+          "code": "C48207",
+          "codeSystem": "http://www.cdisc.org",
+          "codeSystemVersion": "2026-05-26",
+          "decode": "Unit of Concentration"
+        }
+      ]
+    },
+    {
+      "OID": "CONCPROP.BiomedicalConceptProperty_356",
+      "name": "LBSPEC",
+      "label": "LBSPEC",
+      "mandatory": false,
+      "coding": [
+        {
+          "code": "C70713",
+          "codeSystem": "http://www.cdisc.org",
+          "codeSystemVersion": "2026-05-26",
+          "decode": "Biospecimen Type"
+        }
+      ],
+      "codeList": "CL.af8f8a19"
+    },
+    {
+      "OID": "CONCPROP.BiomedicalConceptProperty_357",
+      "name": "LBMETHOD",
+      "label": "LBMETHOD",
+      "mandatory": false,
+      "coding": [
+        {
+          "code": "C82535",
+          "codeSystem": "http://www.cdisc.org",
+          "codeSystemVersion": "2026-05-26",
+          "decode": "Test Method"
+        }
+      ]
+    },
+    {
+      "OID": "CONCPROP.BiomedicalConceptProperty_358",
+      "name": "LBFAST",
+      "label": "LBFAST",
+      "mandatory": false,
+      "coding": [
+        {
+          "code": "C93566",
+          "codeSystem": "http://www.cdisc.org",
+          "codeSystemVersion": "2026-05-26",
+          "decode": "Fasting Status Indicator"
+        }
+      ]
+    },
+    {
+      "OID": "CONCPROP.BiomedicalConceptProperty_359",
+      "name": "LBDTC",
+      "label": "LBDTC",
+      "mandatory": false,
+      "coding": [
+        {
+          "code": "C82515",
+          "codeSystem": "http://www.cdisc.org",
+          "codeSystemVersion": "2026-05-26",
+          "decode": "Collection Date Time"
+        }
+      ]
+    }
+  ],
+  "coding": [
+    {
+      "code": "C105585",
+      "codeSystem": "http://www.cdisc.org",
+      "codeSystemVersion": "2025-09-23",
+      "decode": "Glucose Measurement"
+    }
+  ]
+}

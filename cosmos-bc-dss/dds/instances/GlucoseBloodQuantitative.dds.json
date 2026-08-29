@@ -1,0 +1,205 @@
+{
+  "concept": {
+    "OID": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative",
+    "href": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative",
+    "name": "GlucoseBloodQuantitative",
+    "label": "Glucose, blood-derived, quantitative",
+    "description": "Quantitative determination of glucose concentration in a blood-derived specimen (plasma, serum, or serum/plasma).",
+    "coding": [
+      {
+        "code": "C105585",
+        "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+        "decode": "Glucose Measurement",
+        "aliasType": "BROAD_SYNONYM"
+      },
+      {
+        "code": "2345-7",
+        "codeSystem": "https://loinc.org/",
+        "codeSystemVersion": "2.82",
+        "decode": "Glucose / MCnc / Pt / Ser/Plas / Qn",
+        "aliasType": "NARROW_SYNONYM"
+      },
+      {
+        "code": "14749-6",
+        "codeSystem": "https://loinc.org/",
+        "codeSystemVersion": "2.82",
+        "decode": "Glucose / SCnc / Pt / Ser/Plas / Qn",
+        "aliasType": "NARROW_SYNONYM"
+      }
+    ],
+    "comments": [],
+    "properties": [
+      {
+        "OID": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#result",
+        "name": "result",
+        "label": "Observation Result",
+        "coding": [
+          {
+            "code": "C70856",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Observation Result",
+            "aliasType": "EXACT_SYNONYM"
+          }
+        ],
+        "minOccurs": 1,
+        "maxOccurs": 1
+      },
+      {
+        "OID": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#specimen",
+        "name": "specimen",
+        "label": "Biospecimen Type",
+        "coding": [
+          {
+            "code": "C70713",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Biospecimen Type",
+            "aliasType": "EXACT_SYNONYM"
+          }
+        ],
+        "minOccurs": 1,
+        "maxOccurs": 1,
+        "codeList": "CL.GlucoseBloodQuantitative.admissibleSpecimens"
+      },
+      {
+        "OID": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#unit",
+        "name": "unit",
+        "label": "Unit of Concentration",
+        "coding": [
+          {
+            "code": "C48207",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Unit of Concentration",
+            "aliasType": "EXACT_SYNONYM"
+          }
+        ],
+        "minOccurs": 1,
+        "maxOccurs": 1
+      },
+      {
+        "OID": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#fastingStatus",
+        "name": "fastingStatus",
+        "label": "Fasting Status Indicator",
+        "coding": [
+          {
+            "code": "C93566",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Fasting Status Indicator",
+            "aliasType": "EXACT_SYNONYM"
+          }
+        ],
+        "minOccurs": 0,
+        "maxOccurs": 1,
+        "codeList": "CL.FastingStatus.NY"
+      }
+    ]
+  },
+  "codeLists": [
+    {
+      "OID": "CL.GlucoseBloodQuantitative.admissibleSpecimens",
+      "name": "admissibleSpecimens",
+      "label": "Admissible specimens for GlucoseBloodQuantitative",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "PLASMA",
+          "coding": {
+            "code": "C13356",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Plasma"
+          }
+        },
+        {
+          "codedValue": "SERUM",
+          "coding": {
+            "code": "C13325",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Serum"
+          }
+        }
+      ]
+    },
+    {
+      "OID": "CL.FastingStatus.NY",
+      "name": "fastingStatusNY",
+      "label": "Fasting Status Indicator value list (as in package: N;Y)",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "N"
+        },
+        {
+          "codedValue": "Y"
+        }
+      ]
+    },
+    {
+      "OID": "CL.GLUCPL.units",
+      "name": "GLUCPL units",
+      "label": "Unit subset for recording GLUCPL (UNIT C71620 subset)",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "mg/dL"
+        },
+        {
+          "codedValue": "g/L"
+        },
+        {
+          "codedValue": "mmol/L"
+        }
+      ]
+    },
+    {
+      "OID": "CL.GLUCPL.specimen",
+      "name": "GLUCPL specimen",
+      "label": "Specimen pinned on recording GLUCPL",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "PLASMA",
+          "coding": {
+            "code": "C13356",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Plasma"
+          }
+        }
+      ]
+    }
+  ],
+  "recording_GLUCPL": {
+    "OID": "IG.LB.GLUCPL",
+    "name": "GLUCPL",
+    "label": "Glucose in plasma (recording under GlucoseBloodQuantitative)",
+    "domain": "LB",
+    "wasDerivedFrom": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative",
+    "items": [
+      {
+        "OID": "IT.LB.GLUCPL.LBORRES",
+        "name": "LBORRES",
+        "dataType": "float",
+        "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#result"
+      },
+      {
+        "OID": "IT.LB.GLUCPL.LBSPEC",
+        "name": "LBSPEC",
+        "dataType": "text",
+        "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#specimen",
+        "codeList": "CL.GLUCPL.specimen"
+      },
+      {
+        "OID": "IT.LB.GLUCPL.LBORRESU",
+        "name": "LBORRESU",
+        "dataType": "text",
+        "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#unit",
+        "codeList": "CL.GLUCPL.units"
+      },
+      {
+        "OID": "IT.LB.GLUCPL.LBFAST",
+        "name": "LBFAST",
+        "dataType": "text",
+        "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative#fastingStatus",
+        "codeList": "CL.FastingStatus.NY"
+      }
+    ]
+  }
+}

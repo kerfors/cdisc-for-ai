@@ -1,0 +1,190 @@
+# =====================================================================
+# DDS Profile - Qualified (Sibling) Biomedical Concept — DIFFERENTIAL
+#
+# Authored per dds_base/PROFILING_SPECIFICATION.md v0.1.0 (pinned at
+# cdisc-org/DataExchange-DDS d2328345, 2026-08-25). Source of truth for
+# the profile; snapshot.yaml is generated, never hand-edited.
+#
+# Use case: represent a qualified (sibling) biomedical concept — one
+# observation shape under a broader analyte — as a DDS ReifiedConcept,
+# so that concept identity, result scale, result value type, semantic
+# value set, analyte link and interpretation-regime pointers travel
+# through DDS-based pipelines (e.g. the 360i data-definition-engine).
+#
+# The ONE change proposed for the base model is ConceptProperty.dataType
+# (optional, range DataType): a property that can carry a codeList but
+# no type is odd for Define-XML generation too, and it is the extension
+# any concept-facing profile will re-declare (ddsqDataType below). Per
+# the spec §5: "a recurring extension across several profiles is a
+# signal that the base DDS model should grow to absorb it."
+#
+# Everything else stays profile-level: scale, semantic value set,
+# broader-concept link, interpretation regimes. MetaDataVersion is
+# deliberately untouched — how a reusable concept library is contained
+# and transported (concepts being OID-reference-only) is a base-model
+# question, not one to solve in a profile.
+#
+# Namespace: w3id.org/cdisc/cosmos — registration pending, to follow
+# the w3id.org/cdisc/usdm/v4 pattern (registered by the author, offered
+# for transfer to CDISC governance; redirect swap moves no minted IRI).
+#
+# Base version pin: the base model carries no `version:` field, so the
+# spec's R1 gate cannot bind; dds.profile.baseVersion carries the
+# pinned commit and the snapshot tool runs with --allow-unversioned-base.
+# =====================================================================
+
+id: https://w3id.org/cdisc/cosmos/dds-profile-qualified-bc
+name: dds-profile-qualified-bc
+title: DDS Profile - Qualified (Sibling) Biomedical Concept
+description: >-
+  Constrains and extends the DDS ReifiedConcept/ConceptProperty layer to
+  carry a qualified (sibling) biomedical concept: resolvable-IRI
+  identity, required semantic codings, single result scale, per-property
+  value type, semantic value set, broader-analyte link, and
+  interpretation-regime pointers.
+version: 0.1.0
+license: MIT
+
+prefixes:
+  dds: https://cdisc.org/dds
+  ddsq: https://w3id.org/cdisc/cosmos/dds-profile-qualified-bc/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: ddsq
+default_range: string
+
+imports:
+  - linkml:types
+  - ../dds_base/dds
+
+annotations:
+  dds.profile.baseModel: https://cdisc.org/dds
+  dds.profile.baseVersion: "d2328345 (base model unversioned; commit pin)"
+  dds.profile.status: draft
+  dds.profile.useCase: >-
+    Qualified (sibling) biomedical concepts as DDS ReifiedConcepts, for
+    concept-aware research data pipeline automation.
+
+classes:
+
+  ReifiedConcept:
+    slot_usage:
+      OID:
+        required: true
+        description: >-
+          For a qualified concept the OID is its resolvable IRI — the
+          concept's identity, not a document-local handle.
+      coding:
+        required: true
+        minimum_cardinality: 1
+        description: >-
+          At least the broader analyte coding (aliasType BROAD_SYNONYM);
+          finer external leaves (e.g. LOINC unit-dimension codes) attach
+          as NARROW_SYNONYM — the base AliasPredicate already carries
+          the skos mapping semantics the sibling design needs.
+    attributes:
+      ddsqResultScale:
+        description: >-
+          Single scale of measurement of the qualified concept — the
+          sibling split axis. Single-valued by design; a multi-scale
+          union belongs to the broader analyte, not to a sibling.
+        slot_uri: ddsq:resultScale
+        range: DdsqResultScale
+        recommended: true    # their tooling forbids required extensions (spec §5, strict reading)
+        annotations:
+          dds.profile.extension: true
+      ddsqBroaderConcept:
+        description: >-
+          IRI or CURIE of the broader analyte concept (skos:broader),
+          e.g. the NCIt code of the unqualified measurement concept.
+        slot_uri: ddsq:broaderConcept
+        range: uriorcurie
+        annotations:
+          dds.profile.extension: true
+      ddsqInterpretationRegimes:
+        description: >-
+          Coded pointers asserting which interpretation regime applies
+          to this concept under a given subject state — never the
+          reference-range numbers themselves.
+        slot_uri: ddsq:interpretationRegimes
+        range: DdsqInterpretationRegime
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        annotations:
+          dds.profile.extension: true
+
+  ConceptProperty:
+    slot_usage:
+      OID:
+        required: true
+    attributes:
+      ddsqDataType:
+        description: >-
+          Value type of this concept property, authoritative for every
+          implementation item that realises it. THE candidate for
+          absorption into the base model as ConceptProperty.dataType:
+          reuses the base DataType enum unchanged, and a property that
+          can carry a codeList but no type is under-specified for any
+          generation use case.
+        slot_uri: ddsq:dataType
+        range: DataType
+        recommended: true    # cannot be required as an extension — the exact reason it belongs in base
+        annotations:
+          dds.profile.extension: true
+      ddsqSemanticValueSet:
+        description: >-
+          Concept-level admissible result values (what the observation
+          can say), as codings; distinct from any per-standard codelist
+          binding (how a given implementation standard writes them),
+          which stays on Item/CodeList.
+        slot_uri: ddsq:semanticValueSet
+        range: Coding
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        annotations:
+          dds.profile.extension: true
+
+  DdsqInterpretationRegime:
+    class_uri: ddsq:InterpretationRegime
+    description: >-
+      Asserts that a distinct interpretation regime applies under a
+      given subject state. Keyed on an existing state property concept
+      (for glucose: Fasting Status Indicator, NCIT C93566). Carries a
+      coded pointer to a regime vocabulary that does not yet exist —
+      that vocabulary is a governance ask, not a profile invention;
+      sourceAnchor marks unverified pointers "[VERIFY]".
+    annotations:
+      dds.profile.extension: true
+    attributes:
+      statePropertyCode:
+        description: Code of the state concept the regime keys on (e.g. NCIT C93566)
+        range: uriorcurie
+        required: true
+      stateValue:
+        description: State value under which the regime applies ("*" = any)
+        required: true
+      regime:
+        description: Coded pointer to the interpretation regime
+        range: uriorcurie
+        required: true
+      sourceAnchor:
+        description: Provenance of the assertion; starts "[VERIFY]" when ungoverned
+
+enums:
+
+  DdsqResultScale:
+    enum_uri: ddsq:ResultScale
+    description: >-
+      Scale of measurement of a qualified concept. Mirrors the COSMoS
+      BiomedicalConceptResultScaleEnum (v1.0) so COSMoS-derived content
+      round-trips without value mapping.
+    annotations:
+      dds.profile.extension: true
+    permissible_values:
+      Quantitative:
+      Ordinal:
+      Nominal:
+      Narrative:
+      Temporal:
