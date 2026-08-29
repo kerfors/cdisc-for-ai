@@ -1,0 +1,193 @@
+{
+ "provenance": {
+  "service": "http://www.xml4pharmaserver.com:8080/LOINCService/rest/",
+  "endpoint": "LOINCSearch/component/Hepatitis C virus RNA/system/Ser/Plas",
+  "fetched": "2026-08-29",
+  "loinc_version": "2.82",
+  "loinc_count_at_fetch": 109325,
+  "note": "Complete Ser/Plas family for component 'Hepatitis C virus RNA' (18 codes). Fields transcribed from the service response."
+ },
+ "LOINCSearch_HCVRNA_SerPlas": {
+  "10676-5": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp",
+   "ExampleUCUMUnits": "IU/mL",
+   "Class": "MICRO"
+  },
+  "11011-4": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar",
+   "ExampleUCUMUnits": "Thous IU/mL; units/mL",
+   "Class": "MICRO"
+  },
+  "29609-5": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.sig",
+   "ExampleUCUMUnits": "IU/mL",
+   "Class": "MICRO"
+  },
+  "104721-6": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Molgen",
+   "ExampleUCUMUnits": "IU/mL",
+   "Class": "MICRO"
+  },
+  "20416-4": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar",
+   "ExampleUCUMUnits": "copies/mL",
+   "Class": "MICRO"
+  },
+  "20571-6": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "NCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.sig",
+   "ExampleUCUMUnits": "10*6 eq/mL",
+   "Class": "MICRO"
+  },
+  "38180-6": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "LaCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar",
+   "ExampleUCUMUnits": "log IU/mL",
+   "Class": "MICRO"
+  },
+  "42617-1": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "LaCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.sig",
+   "ExampleUCUMUnits": "log IU/mL",
+   "Class": "MICRO"
+  },
+  "104714-1": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "LaCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Molgen",
+   "ExampleUCUMUnits": "log IU/mL",
+   "Class": "MICRO"
+  },
+  "47252-2": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "LnCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar",
+   "ExampleUCUMUnits": "log copies/mL",
+   "Class": "MICRO"
+  },
+  "42003-4": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "LnCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.sig",
+   "ExampleUCUMUnits": "log copies/mL",
+   "Class": "MICRO"
+  },
+  "104755-4": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "LnCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Molgen",
+   "ExampleUCUMUnits": "Log cells/mL",
+   "Class": "MICRO"
+  },
+  "34703-9": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar detection limit = 500 IU/mL",
+   "ExampleUCUMUnits": "IU/mL",
+   "Class": "MICRO"
+  },
+  "34704-7": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar detection limit = 50 IU/mL",
+   "ExampleUCUMUnits": "IU/mL",
+   "Class": "MICRO"
+  },
+  "49758-6": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "ACnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": "Probe.amp.tar detection limit = 5 IU/mL",
+   "ExampleUCUMUnits": "IU/mL",
+   "Class": "MICRO"
+  },
+  "104715-8": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Ord",
+   "Method": "Molgen",
+   "ExampleUCUMUnits": "",
+   "Class": "MICRO"
+  },
+  "11259-9": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Ord",
+   "Method": "Probe.amp.tar",
+   "ExampleUCUMUnits": "",
+   "Class": "MICRO"
+  },
+  "111469-3": {
+   "Component": "Hepatitis C virus RNA",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Ser/Plas",
+   "ScaleType": "-",
+   "Method": "",
+   "ExampleUCUMUnits": "",
+   "Class": "LABORDERS.ONTOLOGY",
+   "DefinitionDescription": "This term is intended to collate similar measurements for the LOINC SNOMED CT Collaboration in an ontological view. Additionally, it can be used to communicate a laboratory order... It may NOT be used to report back the measured patient value."
+  }
+ }
+}

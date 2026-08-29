@@ -13,7 +13,11 @@
   load vs qualitative detection, same serum/plasma specimen — a scale
   seam within one specimen, complementary to glucose's specimen x
   scale split), their code lists and both thinned MB recordings; the
-  profiled variant adds the ddsq* slots. HCV RNA is in the engine's
+  profiled variant adds the ddsq* slots. LOINC anchors (fetched
+  2026-08-29, cached at ../../cache/loinc_hcvrna_search_cache.json)
+  ride on the base coding slot with AliasPredicate: NARROW_SYNONYM for
+  the method-pinned leaves, BROAD_SYNONYM for NCIt analyte and LOINC
+  order/collation term. HCV RNA is in the engine's
   example study NCT01797120 (pinned to HCRNASERPL via the USDM
   extension attribute). The detection recording carries MBTSTDTL
   DETECTION as `preSpecifiedValue` — the package's encoding of the

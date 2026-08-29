@@ -12,6 +12,118 @@
           "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
           "decode": "Hepatitis C Virus RNA Measurement",
           "aliasType": "BROAD_SYNONYM"
+        },
+        {
+          "code": "10676-5",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Probe.amp",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "11011-4",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Probe.amp.tar",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "29609-5",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Probe.amp.sig",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "104721-6",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Molgen",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "20416-4",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / NCnc / Pt / Ser/Plas / Qn / Probe.amp.tar",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "20571-6",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / NCnc / Pt / Ser/Plas / Qn / Probe.amp.sig",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "38180-6",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / LaCnc / Pt / Ser/Plas / Qn / Probe.amp.tar",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "42617-1",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / LaCnc / Pt / Ser/Plas / Qn / Probe.amp.sig",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "104714-1",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / LaCnc / Pt / Ser/Plas / Qn / Molgen",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "47252-2",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / LnCnc / Pt / Ser/Plas / Qn / Probe.amp.tar",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "42003-4",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / LnCnc / Pt / Ser/Plas / Qn / Probe.amp.sig",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "104755-4",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / LnCnc / Pt / Ser/Plas / Qn / Molgen",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "34703-9",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Probe.amp.tar detection limit = 500 IU/mL",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "34704-7",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Probe.amp.tar detection limit = 50 IU/mL",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "49758-6",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / ACnc / Pt / Ser/Plas / Qn / Probe.amp.tar detection limit = 5 IU/mL",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "111469-3",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / {Measurement} / Ser/Plas (LABORDERS.ONTOLOGY collation/order term)",
+          "aliasType": "BROAD_SYNONYM"
         }
       ],
       "properties": [
@@ -80,6 +192,27 @@
           "code": "C142330",
           "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
           "decode": "Hepatitis C Virus RNA Measurement",
+          "aliasType": "BROAD_SYNONYM"
+        },
+        {
+          "code": "104715-8",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / PrThr / Pt / Ser/Plas / Ord / Molgen",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "11259-9",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / PrThr / Pt / Ser/Plas / Ord / Probe.amp.tar",
+          "aliasType": "NARROW_SYNONYM"
+        },
+        {
+          "code": "111469-3",
+          "codeSystem": "https://loinc.org/",
+          "codeSystemVersion": "2.82",
+          "decode": "HCV RNA / {Measurement} / Ser/Plas (LABORDERS.ONTOLOGY collation/order term)",
           "aliasType": "BROAD_SYNONYM"
         }
       ],

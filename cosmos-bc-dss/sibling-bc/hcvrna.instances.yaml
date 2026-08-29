@@ -18,9 +18,14 @@
 # Also present in cdisc-org/data-definition-engine's example study
 # NCT01797120, which pins HCRNASERPL via the USDM extension attribute.
 #
-# LOINC anchors are deliberately ABSENT: the package pins no LOINC
-# codes on either DSS, and no code is asserted here that the LOINC
-# service has not verified — to be added from a service fetch. [VERIFY]
+# LOINC anchors: the package pins no LOINC codes on either DSS; the
+# anchors below come from a LOINC service fetch 2026-08-29 (LOINC
+# 2.82, complete Ser/Plas family for the component, 18 codes) cached
+# at ../cache/loinc_hcvrna_search_cache.json. Every quantitative and
+# detection code is METHOD-PINNED in LOINC (no method-neutral leaf
+# exists), so all are narrowMatch — the mapping relation, not the key,
+# carries the cardinality. LOINC's Ord scale on both detection codes
+# corroborates the Ordinal call below.
 # =====================================================================
 
 siblings:
@@ -51,8 +56,29 @@ siblings:
       # stays with the analyte, outside this serum/plasma sibling.
       - {conceptId: C13325, preferredTerm: Serum}
       - {conceptId: C13356, preferredTerm: Plasma}
-    # externalMappings deliberately absent: no LOINC pins in the
-    # package; anchors await a LOINC service fetch. [VERIFY]
+    externalMappings:
+      # 14 Qn leaves, all method-pinned; axes: property (unit
+      # dimension: ACnc IU/mL, NCnc copies/mL, LaCnc log IU/mL,
+      # LnCnc log copies/mL) x method (Probe.amp, Probe.amp.tar,
+      # Probe.amp.sig, Molgen). The three detection-limit codes
+      # pre-coordinate an interpretive threshold into method —
+      # LOINC brushing the regime without carrying it.
+      - {relation: narrowMatch, code: "10676-5",  system: "https://loinc.org/", comment: "ACnc IU/mL, Probe.amp"}
+      - {relation: narrowMatch, code: "11011-4",  system: "https://loinc.org/", comment: "ACnc IU/mL, Probe.amp.tar"}
+      - {relation: narrowMatch, code: "29609-5",  system: "https://loinc.org/", comment: "ACnc IU/mL, Probe.amp.sig"}
+      - {relation: narrowMatch, code: "104721-6", system: "https://loinc.org/", comment: "ACnc IU/mL, Molgen"}
+      - {relation: narrowMatch, code: "20416-4",  system: "https://loinc.org/", comment: "NCnc copies/mL, Probe.amp.tar"}
+      - {relation: narrowMatch, code: "20571-6",  system: "https://loinc.org/", comment: "NCnc eq/mL, Probe.amp.sig"}
+      - {relation: narrowMatch, code: "38180-6",  system: "https://loinc.org/", comment: "LaCnc log IU/mL, Probe.amp.tar"}
+      - {relation: narrowMatch, code: "42617-1",  system: "https://loinc.org/", comment: "LaCnc log IU/mL, Probe.amp.sig"}
+      - {relation: narrowMatch, code: "104714-1", system: "https://loinc.org/", comment: "LaCnc log IU/mL, Molgen"}
+      - {relation: narrowMatch, code: "47252-2",  system: "https://loinc.org/", comment: "LnCnc log copies/mL, Probe.amp.tar"}
+      - {relation: narrowMatch, code: "42003-4",  system: "https://loinc.org/", comment: "LnCnc log copies/mL, Probe.amp.sig"}
+      - {relation: narrowMatch, code: "104755-4", system: "https://loinc.org/", comment: "LnCnc, Molgen"}
+      - {relation: narrowMatch, code: "34703-9",  system: "https://loinc.org/", comment: "ACnc, Probe.amp.tar, detection limit 500 IU/mL in method"}
+      - {relation: narrowMatch, code: "34704-7",  system: "https://loinc.org/", comment: "ACnc, Probe.amp.tar, detection limit 50 IU/mL in method"}
+      - {relation: narrowMatch, code: "49758-6",  system: "https://loinc.org/", comment: "ACnc, Probe.amp.tar, detection limit 5 IU/mL in method"}
+      - {relation: broadMatch,  code: "111469-3", system: "https://loinc.org/", comment: "LABORDERS.ONTOLOGY collation/order term at component x system grain; not a reportable test"}
     # interpretationRegimes deliberately absent: no subject-state DEC
     # on this BC, and detectability/viral-load thresholds are not
     # assertable from the package without guessing.
@@ -66,9 +92,11 @@ siblings:
     resultScale: Ordinal
     # Package basis: BC result_scales = "Quantitative;Ordinal"; the
     # quantitative scale belongs to the viral-load sibling, so Ordinal
-    # is the package's remaining scale for detection. The derived
-    # per-DSS scale is only "Text" because no value set is bound —
-    # the same missing-semantic-value-set finding as urine glucose.
+    # is the package's remaining scale for detection. Corroborated by
+    # LOINC: both detection codes below carry scale part Ord. The
+    # derived per-DSS scale is only "Text" because no value set is
+    # bound — the same missing-semantic-value-set finding as urine
+    # glucose.
     resultDataElementConcept:
       conceptId: C70856
       shortName: Observation Result
@@ -87,7 +115,12 @@ siblings:
       # nothing bound); the admissible set must be curated.
       - value: "[VERIFY]"
         sourceAnchor: "[VERIFY] no authoritative source in package; LOINC answer list not consulted"
-    # externalMappings deliberately absent — see header. [VERIFY]
+    externalMappings:
+      # Both detection leaves are method-pinned; no method-neutral
+      # Ord code exists -> narrowMatch.
+      - {relation: narrowMatch, code: "104715-8", system: "https://loinc.org/", comment: "PrThr Ord, Molgen"}
+      - {relation: narrowMatch, code: "11259-9",  system: "https://loinc.org/", comment: "PrThr Ord, Probe.amp.tar"}
+      - {relation: broadMatch,  code: "111469-3", system: "https://loinc.org/", comment: "LABORDERS.ONTOLOGY collation/order term at component x system grain; not a reportable test"}
 
 recordings:
 

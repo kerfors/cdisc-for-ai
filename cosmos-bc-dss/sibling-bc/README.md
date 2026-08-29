@@ -18,8 +18,11 @@ accident. This folder is the split that tools can run.
 - `hcvrna.instances.yaml` — the second worked case: HCV RNA (C142330),
   two siblings splitting on SCALE ALONE within one specimen
   (quantitative viral load vs qualitative detection, both serum/plasma)
-  — the sibling rule is not specimen-driven. LOINC anchors deliberately
-  absent (no pins in package; nothing asserted unverified).
+  — the sibling rule is not specimen-driven. LOINC anchors fetched from
+  the LOINC service 2026-08-29 (complete Ser/Plas family, 18 codes,
+  cached at ../cache/loinc_hcvrna_search_cache.json): every reportable
+  leaf is method-pinned in LOINC, so all are narrowMatch; LOINC's Ord
+  scale corroborates the detection sibling's Ordinal.
 - `sibling_bc.schema.json` — generated JSON Schema (`gen-json-schema`),
   committed for JSON-side consumers.
 - `cosmos_linkml_v1.0/` — pinned, unmodified copies of the published
