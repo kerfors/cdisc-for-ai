@@ -1,0 +1,292 @@
+# =====================================================================
+# Sibling BC schema — loadable form of the Glucose Siblings sketch
+#
+# Derived from docs/Glucose_Siblings_LinkML_Sketch.yaml (2026-08-24),
+# split into a schema that `gen-json-schema` can open and an instance
+# file that `linkml-validate` can validate (sibling_bc.instances.yaml).
+# Status: analysis artifact, NOT a standards deliverable. 2026-08-29.
+#
+# Boundary rules (shared vocabulary for the whole sketch):
+#   1. Identity of an observable = component x system x scale x
+#      (method where pinned). Unit, TESTCD, domain, codelist binding,
+#      LOINC pin are recording attributes.
+#   2. Value type and scale are owned by the concept's result DEC and
+#      inherited once; a recording may refine, never contradict.
+#   3. Semantic value set (what the observation can say) is
+#      concept-level; codelist binding (how a standard writes it) is
+#      per implementation standard.
+#   4. Interpretation regime is a function of sibling x subject state;
+#      it is a coded pointer, never the numbers.
+#   5. Composition (OGTT, panels) sits above the concept layer; a
+#      regrouping that touches no sibling is packaging, not a BC.
+#   6. What is not derivable from the package is marked, not guessed
+#      (convention: sourceAnchor starting "[VERIFY]").
+#
+# Design decisions carried in (2026-08-29):
+#   - QualifiedBiomedicalConcept is its OWN class, deliberately not
+#     is_a cosmos_bc:BiomedicalConcept. That class's identifier slot
+#     (conceptId) is pattern-locked to C-codes/NEW_, and LinkML allows
+#     one identifier per class: subclassing would force either abusing
+#     that pattern with IRIs or adopting NEW_ — both rejected identity
+#     models. The relationship is stated machine-readably instead:
+#     class-level broad_mappings + instance-level broaderConceptId.
+#     Trade-off: existing COSMoS queries keyed on conceptId do not see
+#     siblings; if CDISC later grants a compatible identity, promotion
+#     to is_a is a mechanical refactor — the reverse is not.
+#   - admissibleSpecimens ranges over a BC-side ConceptTerm (NCIt
+#     concept + preferred term), not cosmos_sdtm:AssignedTerm; the
+#     recording's specimen keeps the SDTM AssignedTerm.
+#   - Namespace note: https://w3id.org/cdisc/... is demonstration
+#     authority, intended to transfer; see the DDS-conversation open
+#     questions. Prefixes are declared once so a swap is one line.
+# =====================================================================
+
+id: https://w3id.org/cdisc/cosmos/sibling_bc_sketch_v0.1
+name: COSMoS-Sibling-BC-Sketch
+description: >-
+  Draft extension of the COSMoS v1.0 LinkML schemas: a qualified
+  (sibling) Biomedical Concept with resolvable-IRI identity, typed
+  external mappings, single result scale, authoritative result value
+  type, semantic value set, and a state-keyed interpretation-regime
+  pointer — plus a thinned recording class in which the SDTM dataset
+  details keep only the mapping-side content.
+
+imports:
+  - linkml:types
+  - cosmos_linkml_v1.0/cosmos_sdtm_model  # published COSMoS SDTM schema, pinned copy, unchanged
+  - cosmos_linkml_v1.0/cosmos_bc_model    # published COSMoS BC schema, pinned copy, unchanged
+  # IMPORT ORDER MATTERS: both published schemas define a `dataType`
+  # slot (BC: DataElementConceptDataTypeEnum incl. string/boolean;
+  # SDTM: text/float/integer/datetime/durationDatetime) and LinkML
+  # merges imports last-wins. cosmos_bc must come last so the DEC
+  # dataType enum governs — this schema instantiates no SDTM element
+  # that uses the sdtm dataType slot (AssignedTerm is attribute-based).
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  sbc: https://w3id.org/cdisc/cosmos/sibling_bc_sketch_v0.1/
+  cosmos_bc: https://www.cdisc.org/cosmos/biomedical_concept_v1.0
+  cosmos_sdtm: https://www.cdisc.org/cosmos/sdtm_v1.0/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  loinc: https://loinc.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+default_prefix: sbc
+default_range: string
+
+classes:
+
+  SiblingBcSketchData:
+    tree_root: true
+    description: >-
+      Container for the instance file: the siblings and their
+      recordings. Exists so linkml-validate has a target class.
+    attributes:
+      siblings:
+        range: QualifiedBiomedicalConcept
+        multivalued: true
+        inlined_as_list: true
+      recordings:
+        range: Recording
+        multivalued: true
+        inlined_as_list: true
+
+  QualifiedBiomedicalConcept:
+    broad_mappings:
+      - cosmos_bc:BiomedicalConcept
+    description: >-
+      A sibling BC: one observation shape under a broader analyte
+      concept. Identity is the IRI itself (read-many, citable,
+      content-negotiated per the usdm-rdf pattern). Deliberately NOT
+      a subclass of cosmos_bc:BiomedicalConcept — see the design
+      decision in the file header; the analyte link is skos:broader
+      via broaderConceptId.
+    slots:
+      - iri
+      - shortName
+      - definition
+      - broaderConceptId          # the NCIt analyte (skos:broader)
+      - externalMappings          # typed: exactMatch / narrowMatch
+      - resultScale               # SINGLE-valued
+      - resultDataElementConcept  # authoritative dataType lives here
+      - qualifierDataElementConcepts
+      - semanticValueSet          # Coded scales: admissible concepts
+      - admissibleSpecimens       # concept-level; recording picks one
+      - interpretationRegimes     # the one genuinely new construct
+    slot_usage:
+      iri:
+        identifier: true
+
+  ConceptTerm:
+    description: >-
+      BC-side coded term: an NCIt concept with its preferred term.
+      Used for the concept-level admissible specimen set; the SDTM
+      submission value for the same concept lives on the recording's
+      AssignedTerm.
+    attributes:
+      conceptId:
+        description: NCIt C-code
+        pattern: "^(C[0-9]+)$"
+      preferredTerm:
+        required: true
+
+  ExternalMapping:
+    description: >-
+      Typed mapping to an external code system. Replaces the flat
+      cosmos_bc:Coding for siblings: cardinality 0/1/>1 is handled by
+      the mapping relation, not by the key (exactMatch = same
+      observable; narrowMatch = finer external leaf, typically the
+      unit dimension).
+    attributes:
+      relation:
+        range: MappingRelationEnum
+        required: true
+      code:
+        required: true
+      system:
+        description: Code system URI (e.g. https://loinc.org/, NCIt)
+        required: true
+      comment:
+        description: e.g. which axis the narrowMatch refines
+
+  SemanticValueSetTerm:
+    description: >-
+      Concept-level admissible result value (what the observation can
+      say), distinct from any per-standard codelist binding (how a
+      given standard writes it). ncitCode absent when no concept
+      exists yet.
+    attributes:
+      value:
+        required: true
+      ncitCode:
+        pattern: "^(C[0-9]+)$"
+      sourceAnchor:
+        description: >-
+          Where this value is asserted (package, guidance, LOINC
+          answer list); starts "[VERIFY]" when no source could be
+          named.
+
+  InterpretationRegimeAssertion:
+    description: >-
+      Asserts that a distinct interpretation regime applies to this
+      sibling under a given subject state. Carries a coded pointer,
+      NEVER the reference-range numbers (those are data,
+      per-record/per-lab). Keyed on an existing state DEC — for
+      glucose, Fasting Status Indicator C93566 — so fasting and
+      post-load glucose share one sibling while carrying different
+      regimes.
+    attributes:
+      stateDataElementConceptId:
+        description: The state DEC this regime keys on (e.g. C93566)
+        pattern: "^(C[0-9]+)$"
+        required: true
+      stateValue:
+        description: >-
+          Value of the state under which this regime applies (from
+          the state DEC's value domain, e.g. Y / N; "*" = any state).
+        required: true
+      regime:
+        description: >-
+          Coded pointer to the regime (a URI or code in a regime
+          vocabulary that does not exist yet — this is the one
+          genuinely new governance ask).
+        range: uriorcurie
+        required: true
+      sourceAnchor:
+        description: >-
+          Same convention as SemanticValueSetTerm: starts "[VERIFY]"
+          while the regime vocabulary does not exist.
+
+  Recording:
+    description: >-
+      Thinned SDTM dataset specialization: everything the sibling
+      already states is inherited, not re-declared. Kept here:
+      domain placement, topic/test code, the ONE specimen this
+      recording uses (must be in the sibling's admissibleSpecimens),
+      per-standard codelist bindings (incl. unit subset), origin, and
+      an optional LOINC pin at recording grain. Dropped relative to
+      cosmos_sdtm:SDTMGroup's variables: result dataType/length/
+      format/significantDigits (inherited via the sibling's result
+      DEC — verified to introduce no contradiction), and the
+      duplicated scale information.
+    slots:
+      - recordingId               # today's ds_id, now explicitly a mnemonic
+      - siblingIri                # points at the sibling, not the analyte
+      - domain
+      - testCode                  # assigned --TESTCD value
+      - specimen                  # AssignedTerm; one of sibling's admissible set
+      - loincPins                 # recording-grain LOINC codes (unit variants)
+      - unitCodelistBinding       # per-standard CT binding, e.g. UNIT subset
+      - resultCodelistBinding     # per-standard CT binding for Coded scales
+      - variableOverrides         # anything genuinely SDTM-shaped that remains
+
+slots:
+  iri:
+    range: uri
+  broaderConceptId:
+    description: NCIt C-code of the analyte concept (skos:broader)
+    pattern: "^(C[0-9]+)$"
+    required: true
+  externalMappings:
+    range: ExternalMapping
+    multivalued: true
+    inlined_as_list: true
+  resultScale:
+    description: Single scale of measurement — the sibling split axis
+    range: BiomedicalConceptResultScaleEnum
+    required: true
+  resultDataElementConcept:
+    description: >-
+      The result DEC with AUTHORITATIVE dataType; recordings inherit
+      it (SDTMVariable.dataElementConceptId -> DEC.dataType), they do
+      not re-declare it.
+    range: DataElementConcept
+    required: true
+    inlined: true
+  qualifierDataElementConcepts:
+    range: DataElementConcept
+    multivalued: true
+    inlined_as_list: true
+  semanticValueSet:
+    range: SemanticValueSetTerm
+    multivalued: true
+    inlined_as_list: true
+  admissibleSpecimens:
+    description: Concept-level admissible specimen set (NCIt-coded)
+    range: ConceptTerm
+    multivalued: true
+    inlined_as_list: true
+  interpretationRegimes:
+    range: InterpretationRegimeAssertion
+    multivalued: true
+    inlined_as_list: true
+  recordingId:
+    identifier: true
+    pattern: "^[A-Z][A-Z0-9_]*$"
+  siblingIri:
+    range: uri
+    required: true
+  testCode:
+    required: true
+  specimen:
+    range: AssignedTerm
+    required: false
+    inlined: true
+  loincPins:
+    multivalued: true
+    inlined_as_list: true
+  unitCodelistBinding:
+    description: Per-standard unit binding (codelist / subset ref)
+  resultCodelistBinding:
+    description: Per-standard result binding for Coded scales
+  variableOverrides:
+    description: Residual SDTM-specific variable content
+    multivalued: true
+    inlined_as_list: true
+
+enums:
+  MappingRelationEnum:
+    permissible_values:
+      exactMatch:
+      narrowMatch:
+      broadMatch:

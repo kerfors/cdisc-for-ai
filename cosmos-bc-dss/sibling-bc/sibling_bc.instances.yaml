@@ -1,0 +1,253 @@
+# =====================================================================
+# Sibling BC instances — four glucose siblings + six recordings
+#
+# Instance data for sibling_bc.schema.yaml (target class
+# SiblingBcSketchData). Values verified against COSMoS 2026-07-14 and
+# the LOINC 2.82 service cache (cache/loinc_service_cache.json);
+# anything not derivable from a source is marked with a sourceAnchor
+# starting "[VERIFY]".
+#
+# The proposal names four siblings; the 2026-08-24 sketch carried
+# three for brevity — GlucoseUrineQuantitative (GLUCURIN) is added
+# here. Whole blood (GLUCBLD) stays PARKED: float on the type axis
+# puts it with the blood-derived sibling, but its regime membership
+# per state is the open call (see proposal).
+# =====================================================================
+
+siblings:
+
+  - iri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+    shortName: "Glucose, blood-derived, quantitative"
+    definition: >-
+      Quantitative determination of glucose concentration in a
+      blood-derived specimen (plasma, serum, or serum/plasma).
+    broaderConceptId: C105585            # Glucose Measurement (analyte)
+    resultScale: Quantitative
+    resultDataElementConcept:
+      conceptId: C70856
+      shortName: Observation Result
+      dataType: float                    # AUTHORITATIVE (today: string)
+      exampleSet: []
+    qualifierDataElementConcepts:
+      - conceptId: C70713
+        shortName: Biospecimen Type
+        dataType: string
+        exampleSet: [Plasma, Serum]
+      - conceptId: C48207
+        shortName: Unit of Concentration
+        dataType: string
+        exampleSet: [mg/dL, g/L, mmol/L]
+      - conceptId: C93566
+        shortName: Fasting Status Indicator
+        dataType: boolean
+        exampleSet: []
+    admissibleSpecimens:
+      - {conceptId: C13356, preferredTerm: Plasma}
+      - {conceptId: C13325, preferredTerm: Serum}
+    externalMappings:
+      - relation: narrowMatch
+        code: "2345-7"
+        system: "https://loinc.org/"
+        comment: "mass concentration (MCnc), Ser/Plas, Qn — unit axis"
+      - relation: narrowMatch
+        code: "14749-6"
+        system: "https://loinc.org/"
+        comment: "substance (molar) concentration (SCnc), Ser/Plas, Qn — unit axis"
+    interpretationRegimes:
+      - stateDataElementConceptId: C93566   # Fasting Status Indicator
+        stateValue: "Y"
+        regime: sbc:regime/GlucoseFastingAdult
+        sourceAnchor: "[VERIFY] regime vocabulary does not exist; URI invented for illustration"
+      - stateDataElementConceptId: C93566
+        stateValue: "N"
+        regime: sbc:regime/GlucoseNonFastingAdult
+        sourceAnchor: "[VERIFY] regime vocabulary does not exist; URI invented for illustration"
+
+  - iri: https://w3id.org/cdisc/cosmos/bc/GlucosePlasmaEquivalent
+    shortName: "Glucose, plasma-equivalent (interstitial), quantitative"
+    definition: >-
+      Quantitative plasma-equivalent glucose derived from
+      interstitial fluid (continuous or flash glucose monitoring).
+    broaderConceptId: C105585
+    resultScale: Quantitative
+    resultDataElementConcept:
+      conceptId: C70856
+      shortName: Observation Result
+      dataType: float
+      exampleSet: []
+    admissibleSpecimens:
+      - {conceptId: C120839, preferredTerm: Interstitial Fluid}
+    externalMappings:
+      - relation: exactMatch
+        code: "C163446"
+        system: "http://purl.obolibrary.org/obo/NCIT_"
+        comment: "NCIt has this concept at sibling grain"
+      - relation: narrowMatch
+        code: "99504-3"
+        system: "https://loinc.org/"
+        comment: "mass concentration (MCnc), Interstitial fluid, Qn — unit axis"
+      - relation: narrowMatch
+        code: "105272-9"
+        system: "https://loinc.org/"
+        comment: "substance (molar) concentration (SCnc), Interstitial fluid, Qn — unit axis"
+    interpretationRegimes:
+      - stateDataElementConceptId: C93566
+        stateValue: "Y"
+        regime: sbc:regime/GlucoseFastingAdult
+        sourceAnchor: "[VERIFY] regime vocabulary does not exist; URI invented for illustration"
+      - stateDataElementConceptId: C93566
+        stateValue: "N"
+        regime: sbc:regime/GlucoseNonFastingAdult
+        sourceAnchor: "[VERIFY] regime vocabulary does not exist; URI invented for illustration"
+
+  - iri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineQuantitative
+    shortName: "Glucose, urine, quantitative"
+    definition: >-
+      Quantitative determination of glucose concentration in urine.
+    broaderConceptId: C105585
+    resultScale: Quantitative
+    resultDataElementConcept:
+      conceptId: C70856
+      shortName: Observation Result
+      dataType: float                    # package: GLUCURIN LBORRES untyped, LBSTRESN float
+      exampleSet: []
+    qualifierDataElementConcepts:
+      - conceptId: C70713
+        shortName: Biospecimen Type
+        dataType: string
+        exampleSet: [Urine]
+      - conceptId: C48207
+        shortName: Unit of Concentration
+        dataType: string
+        exampleSet: [mg/dL, mmol/L, umol/L]
+      - conceptId: C93566
+        shortName: Fasting Status Indicator
+        dataType: boolean
+        exampleSet: []
+    admissibleSpecimens:
+      - {conceptId: C13283, preferredTerm: Urine}
+    externalMappings:
+      - relation: narrowMatch
+        code: "2350-7"
+        system: "https://loinc.org/"
+        comment: "mass concentration (MCnc), Urine, Qn — unit axis"
+      - relation: narrowMatch
+        code: "15076-3"
+        system: "https://loinc.org/"
+        comment: "substance (molar) concentration (SCnc), Urine, Qn — unit axis"
+    # interpretationRegimes deliberately absent: regime membership for
+    # quantitative glucosuria not yet worked — nothing to assert that
+    # would not be guessed.
+
+  - iri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineCategorical
+    shortName: "Glucose, urine, categorical (presence)"
+    definition: >-
+      Categorical (ordinal) determination of glucose presence in
+      urine, with or without test strip.
+    broaderConceptId: C105585
+    resultScale: Ordinal                 # LOINC scale part: Ord (2349-9, 25428-4)
+    resultDataElementConcept:
+      conceptId: C70856
+      shortName: Observation Result
+      dataType: string
+      exampleSet: []
+    admissibleSpecimens:
+      - {conceptId: C13283, preferredTerm: Urine}
+    semanticValueSet:
+      # No value set exists in the package or on the pinned LOINC
+      # codes' parts; the admissible ordinal set must be curated.
+      - value: "[VERIFY]"
+        sourceAnchor: "[VERIFY] no authoritative source in package; LOINC answer list not consulted"
+    externalMappings:
+      - relation: exactMatch
+        code: "2349-9"
+        system: "https://loinc.org/"
+        comment: "presence (PrThr), Urine, Ord — method-neutral"
+      - relation: exactMatch
+        code: "25428-4"
+        system: "https://loinc.org/"
+        comment: "presence (PrThr), Urine, Ord, by test strip — method-refined; see recordings"
+    interpretationRegimes:
+      - stateDataElementConceptId: C93566
+        stateValue: "*"
+        regime: sbc:regime/GlucosuriaPresence
+        sourceAnchor: "[VERIFY] regime vocabulary does not exist; URI invented for illustration"
+
+recordings:
+
+  # --- under GlucoseBloodQuantitative --------------------------------
+  - recordingId: GLUCPL
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+    domain: LB
+    testCode: GLUC
+    specimen: {conceptId: C13356, value: PLASMA}
+    loincPins: []                        # none pinned in package today
+    unitCodelistBinding: "UNIT (C71620) subset: mg/dL;g/L;mmol/L"
+    # result dataType NOT declared here — inherited: float
+
+  - recordingId: GLUCSER
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+    domain: LB
+    testCode: GLUC
+    specimen: {conceptId: C13325, value: SERUM}
+    loincPins: []
+    unitCodelistBinding: "UNIT (C71620) subset: mg/dL;g/L;mmol/L"
+
+  - recordingId: GLUCSERPL
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative
+    domain: LB
+    testCode: GLUC
+    specimen: {conceptId: C13325, value: SERUM}   # as pinned in package (name says Serum or Plasma)
+    loincPins: ["14749-6", "2345-7"]
+    unitCodelistBinding: "UNIT (C71620) subset: mg/dL;g/L;mmol/L; standard unit pinned mmol/L (C64387)"
+    # NOTE: by coordinates identical to GLUCSER — kept as a separate
+    # recording only because the package distinguishes them; a
+    # candidate for merge at recording grain.
+
+  # --- under GlucoseUrineQuantitative --------------------------------
+  - recordingId: GLUCURIN
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineQuantitative
+    domain: LB
+    testCode: GLUC
+    specimen: {conceptId: C13283, value: URINE}
+    loincPins: ["15076-3", "2350-7"]     # offered as LBLOINC value list in package (choice, not assigned)
+    unitCodelistBinding: "UNIT (C71620) subset: mg/dL;mmol/L;umol/L; standard unit pinned mmol/L (C64387)"
+    # package: LBORRES untyped; LBSTRESN float — result type inherited
+    # from the sibling's result DEC (float), not re-declared.
+
+  # --- under GlucoseUrineCategorical ---------------------------------
+  - recordingId: GLUCURINPRES
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineCategorical
+    domain: LB
+    testCode: GLUC
+    specimen: {conceptId: C13283, value: URINE}
+    loincPins: ["2349-9"]
+    resultCodelistBinding: "none bound in package — inherits the sibling's semantic value set once curated"
+
+  - recordingId: GLUCUA
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/GlucoseUrineCategorical
+    domain: LB
+    testCode: GLUC
+    specimen: {conceptId: C13283, value: URINE}
+    loincPins: ["25428-4"]
+    variableOverrides:
+      - "LBMETHOD assigned: TEST STRIP"   # method at recording grain; LOINC agrees it identifies
+    resultCodelistBinding: "none bound in package — inherits the sibling's semantic value set once curated"
+
+# ---------------------------------------------------------------------
+# What deliberately did NOT move up to the sibling
+#   - TESTCD / TEST decode, domain placement, variable names, roles,
+#     origin, mandatory flags: SDTM-shaped, stay on the recording
+#   - codelist BINDINGS (C-codes of codelists, submission values,
+#     subsets): per implementation standard, stay on the recording;
+#     the sibling carries the SEMANTIC value set only
+#   - the specific unit and the standard-unit choice: recording
+#     (the unit DIMENSION is implied by the quantitative scale +
+#     example set; LOINC's property axis carries it externally)
+#   - reference-range NUMBERS: data, per record / per lab — only the
+#     regime pointer is conceptual
+# Open issues carried from the proposal
+#   - GLUCBLD (whole blood): parked pending the regime decision
+#   - the regime vocabulary (sbc:regime/...) does not exist; it is the
+#     one genuinely new governance ask (Stage 1)
+# =====================================================================

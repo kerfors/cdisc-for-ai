@@ -4,6 +4,10 @@
 # Companion to docs/Glucose_Siblings_BC_DSS_Proposal.html.
 # Status: analysis artifact, NOT a standards deliverable. 2026-08-24.
 #
+# 2026-08-29: superseded for tooling by ../sibling-bc/ — the same
+# content split into a loadable schema + validated instances (plus a
+# fourth sibling). This file stays as the discussion-shaped original.
+#
 # What this file is: ONE yaml with two parts —
 #   PART 1  schema deltas relative to the published COSMoS LinkML
 #           (cosmos_bc_model.yaml / cosmos_sdtm_model.yaml, v1.0),

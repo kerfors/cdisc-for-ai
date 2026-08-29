@@ -1,0 +1,1166 @@
+{
+    "$defs": {
+        "AssignedTerm": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "conceptId": {
+                    "description": "C-code for assigned term in NCIt or left blank when CDISC terminology does not apply",
+                    "pattern": "^(C[0-9]+|CNEW)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "Submission value for assigned term in NCIt if it exists, or an assigned value which will be the default value",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "title": "AssignedTerm",
+            "type": "object"
+        },
+        "BiomedicalConcept": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "categories": {
+                    "description": "Biomedical Concept category for the faciliation of API search and extract",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "coding": {
+                    "description": "Coding for the Biomedical Concept",
+                    "items": {
+                        "$ref": "#/$defs/Coding"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "conceptId": {
+                    "description": "A unique identifier for a Biomedical Concept which will be assigned as the NCIt code if it exists or a placeholder identifier if the concept is not yet available in NCIt",
+                    "pattern": "^(C[0-9]+|NEW_[A-Z_]*[0-9]*)$",
+                    "type": "string"
+                },
+                "dataElementConcepts": {
+                    "description": "Data Element Concept",
+                    "items": {
+                        "$ref": "#/$defs/DataElementConcept"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "definition": {
+                    "description": "NCIt definition for the Biomedical Concept; provisional defintion if concept is not available in NCIt",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "URI link to NCIt for the Biomedical Concept; blank if  concept is not available in NCIt",
+                    "format": "uri",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ncitCode": {
+                    "description": "NCIt C-code for the Biomedical Concept",
+                    "pattern": "^(C[0-9]+)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "packageDate": {
+                    "description": "Biomedical Concept package release date indicating when the BC package was published to production",
+                    "format": "date",
+                    "type": "string"
+                },
+                "packageType": {
+                    "$ref": "#/$defs/PackageTypeEnum",
+                    "description": "Package type (bc for Biomedical Concepts)"
+                },
+                "parentConceptId": {
+                    "description": "C-code for the parent concept in the NCIt hiearchy; blank if concept is not available in NCIt",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "resultScales": {
+                    "description": "Scale of measurement for the Biomedical Concept result",
+                    "items": {
+                        "$ref": "#/$defs/BiomedicalConceptResultScaleEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "shortName": {
+                    "description": "NCI Preferred Name for the concept; provisional name will be used if concept is not available in NCIt",
+                    "type": "string"
+                },
+                "synonyms": {
+                    "description": "Biomedical Concept synonym equivalent to BC short name for the facilitation of API search and extraction",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "packageDate",
+                "packageType",
+                "conceptId",
+                "categories",
+                "shortName",
+                "definition"
+            ],
+            "title": "BiomedicalConcept",
+            "type": "object"
+        },
+        "BiomedicalConceptResultScaleEnum": {
+            "description": "",
+            "enum": [
+                "Ordinal",
+                "Narrative",
+                "Nominal",
+                "Quantitative",
+                "Temporal"
+            ],
+            "title": "BiomedicalConceptResultScaleEnum",
+            "type": "string"
+        },
+        "CodeList": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "conceptId": {
+                    "description": "An identifier that uniquely represents an entity",
+                    "pattern": "^(C[0-9]+|NEW_[A-Z_]*[0-9]*)$",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Link to NCIt for the Biomedical Concept",
+                    "format": "uri",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "submissionValue": {
+                    "description": "CDISC submission value for the codelist",
+                    "pattern": "^[A-Z][A-Z0-9_]*$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "conceptId",
+                "submissionValue"
+            ],
+            "title": "CodeList",
+            "type": "object"
+        },
+        "CodeListTerm": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "termId": {
+                    "description": "C-code term in subset codelist",
+                    "pattern": "^(C[0-9]+)$",
+                    "type": "string"
+                },
+                "termValue": {
+                    "description": "Submision value of term in subset codelist",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "termId",
+                "termValue"
+            ],
+            "title": "CodeListTerm",
+            "type": "object"
+        },
+        "Coding": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "code": {
+                    "description": "Synonym concept for the Biomedical Concept as defined in a code system",
+                    "type": "string"
+                },
+                "system": {
+                    "description": "Identifies the code system for the synonym concept. The URL of the code system should be used if it exists",
+                    "type": "string"
+                },
+                "systemName": {
+                    "description": "Human-readable name for the code system",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "code",
+                "system"
+            ],
+            "title": "Coding",
+            "type": "object"
+        },
+        "ComparatorEnum": {
+            "description": "",
+            "enum": [
+                "EQ",
+                "IN"
+            ],
+            "title": "ComparatorEnum",
+            "type": "string"
+        },
+        "ConceptTerm": {
+            "additionalProperties": false,
+            "description": "BC-side coded term: an NCIt concept with its preferred term. Used for the concept-level admissible specimen set; the SDTM submission value for the same concept lives on the recording's AssignedTerm.",
+            "properties": {
+                "conceptId": {
+                    "description": "NCIt C-code",
+                    "pattern": "^(C[0-9]+)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "preferredTerm": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "preferredTerm"
+            ],
+            "title": "ConceptTerm",
+            "type": "object"
+        },
+        "DataElementConcept": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "conceptId": {
+                    "description": "An identifier for a Data Element Concept (DEC) which will be assigned as the NCIt code if it exists or a placeholder identifier if the concept is not yet available in NCIt",
+                    "pattern": "^(C[0-9]+|NEW_[A-Z_]*[0-9]*)$",
+                    "type": "string"
+                },
+                "dataType": {
+                    "$ref": "#/$defs/DataElementConceptDataTypeEnum",
+                    "description": "Data Type for the Data Element Concept"
+                },
+                "exampleSet": {
+                    "description": "Example values for the Data Element Concept",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "href": {
+                    "description": "Link to NCIt for the Data Element Concept",
+                    "format": "uri",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ncitCode": {
+                    "description": "NCI C-code for the BC Data Element Concept",
+                    "pattern": "^(C[0-9]+)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "shortName": {
+                    "description": "NCI Preferred Name for the concept; provisional name will be used if concept is not available in NCIt",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "conceptId",
+                "shortName",
+                "dataType"
+            ],
+            "title": "DataElementConcept",
+            "type": "object"
+        },
+        "DataElementConceptDataTypeEnum": {
+            "description": "",
+            "enum": [
+                "boolean",
+                "date",
+                "datetime",
+                "decimal",
+                "duration",
+                "float",
+                "integer",
+                "string",
+                "uri"
+            ],
+            "title": "DataElementConceptDataTypeEnum",
+            "type": "string"
+        },
+        "ExternalMapping": {
+            "additionalProperties": false,
+            "description": "Typed mapping to an external code system. Replaces the flat cosmos_bc:Coding for siblings: cardinality 0/1/>1 is handled by the mapping relation, not by the key (exactMatch = same observable; narrowMatch = finer external leaf, typically the unit dimension).",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "comment": {
+                    "description": "e.g. which axis the narrowMatch refines",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "relation": {
+                    "$ref": "#/$defs/MappingRelationEnum"
+                },
+                "system": {
+                    "description": "Code system URI (e.g. https://loinc.org/, NCIt)",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "relation",
+                "code",
+                "system"
+            ],
+            "title": "ExternalMapping",
+            "type": "object"
+        },
+        "InterpretationRegimeAssertion": {
+            "additionalProperties": false,
+            "description": "Asserts that a distinct interpretation regime applies to this sibling under a given subject state. Carries a coded pointer, NEVER the reference-range numbers (those are data, per-record/per-lab). Keyed on an existing state DEC \u2014 for glucose, Fasting Status Indicator C93566 \u2014 so fasting and post-load glucose share one sibling while carrying different regimes.",
+            "properties": {
+                "regime": {
+                    "description": "Coded pointer to the regime (a URI or code in a regime vocabulary that does not exist yet \u2014 this is the one genuinely new governance ask).",
+                    "type": "string"
+                },
+                "sourceAnchor": {
+                    "description": "Same convention as SemanticValueSetTerm: starts \"[VERIFY]\" while the regime vocabulary does not exist.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "stateDataElementConceptId": {
+                    "description": "The state DEC this regime keys on (e.g. C93566)",
+                    "pattern": "^(C[0-9]+)$",
+                    "type": "string"
+                },
+                "stateValue": {
+                    "description": "Value of the state under which this regime applies (from the state DEC's value domain, e.g. Y / N; \"*\" = any state).",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "stateDataElementConceptId",
+                "stateValue",
+                "regime"
+            ],
+            "title": "InterpretationRegimeAssertion",
+            "type": "object"
+        },
+        "LinkingPhraseEnum": {
+            "description": "",
+            "enum": [
+                "assesses seriousness of",
+                "assesses the severity of",
+                "associates the tumor identified in",
+                "decodes the value in",
+                "describes actions taken",
+                "describes relationship of",
+                "describes the outcome of",
+                "further describes the test in",
+                "further specifies the anatomical location in",
+                "groups tumor assessments used in overall response identified by",
+                "groups values in",
+                "groups, within an individual subject, values in",
+                "identifies a pattern of",
+                "identifies an observation described by",
+                "identifies overall response supported by tumor assessments identified by",
+                "identifies the image from the procedure in",
+                "identifies the reference used in the genomic test in",
+                "identifies the tumor found by the test in",
+                "indicates heritability of the genetic variant in",
+                "indicates occurrence of the value in",
+                "indicates pre-specification of the value in",
+                "indicates severity of",
+                "indicates the location detail for the tumor identified by",
+                "indicates the previous irradiation status of the tumor identified by",
+                "indicates the progression status of the previous irradiated tumor identified by",
+                "is a dictionary-derived class code for the value in",
+                "is a dictionary-derived class name for the value in",
+                "is a dictionary-derived term for the value in",
+                "is a grouping of values in",
+                "is a reference range value for",
+                "is an identifier for a published reference for the genetic variant in",
+                "is an identifier for the copy, on one of two homologous chromosones, of the genetic variant in",
+                "is an identifier for the evaluator with the role in",
+                "is an identifier for the genetic sequence of the genetic entity represented by",
+                "is decoded by the value in",
+                "is original text for",
+                "is the administered amount of the treatment in",
+                "is the administration anatomical location for the treatment in",
+                "is the aspect of the event used to define the date in",
+                "is the chromosome that is the position of the result in",
+                "is the clinical significance interpretation for",
+                "is the clinical trial or treatment setting for",
+                "is the code for the value in",
+                "is the date of occurrence for",
+                "is the date of occurrence",
+                "is the dictionary code for the test in",
+                "is the dictionary-derived class code for the value in",
+                "is the dictionary-derived class name for the value in",
+                "is the dictionary-derived term for the value in",
+                "is the duration for",
+                "is the end date for",
+                "is the epoch of the performance of the test in",
+                "is the frequency of administration of the amount in",
+                "is the genetic sub-location of the result in",
+                "is the identifier for the device which collected data for the test in",
+                "is the identifier for the source data used in the performance of the test in",
+                "is the intended disease outcome for",
+                "is the material type of the subject of the activity in",
+                "is the medical condition that is the reason for the treatment in",
+                "is the method for the test in",
+                "is the method of secondary analysis of results in",
+                "is the name of the reference terminology for",
+                "is the numeric location, within a chromosone, genetic entity, or genetic sub-region, of the result in",
+                "is the object of the observation in",
+                "is the operational objective of the test in",
+                "is the part of the body through which is administered the treatment in",
+                "is the period of time for the test in",
+                "is the period of time to be considered when answering the question in",
+                "is the physical form of the product in",
+                "is the reason for stopping administration of",
+                "is the reason for the status of the value in",
+                "is the reason the lesion was not evaluable in",
+                "is the result of the test in",
+                "is the role of the assessor who performed the test in",
+                "is the severity of the toxicity in",
+                "is the specimen tested in",
+                "is the start date for",
+                "is the status of the value in",
+                "is the subject position during performance of the test in",
+                "is the subject's fasting status during the performance of the test in",
+                "is the substance bound to the analyte in",
+                "is the symbol for the genomic entity that is the position of the result in",
+                "is the textual description of the intended dose regimen for",
+                "is the type of genomic entity that is the position of the result in",
+                "is the unit for the value in",
+                "is the unit for",
+                "is the value of the property identified by",
+                "is the version of the reference terminology in",
+                "specifies the anatomical location in",
+                "specifies the anatomical location of the performance of the test in",
+                "specifies the anatomical location of the tumor identified by",
+                "specifies the anatomical location of",
+                "specifies the severity of",
+                "values are grouped by",
+                "was the subject position during performance of the test in",
+                "indicates the inclusion of non-resting time periods",
+                "is the analytical method for the test in",
+                "is the date of collection for",
+                "is the device that performed the test in",
+                "is the period of time considered for the test in",
+                "is the value for the parameter in"
+            ],
+            "title": "LinkingPhraseEnum",
+            "type": "string"
+        },
+        "MappingRelationEnum": {
+            "description": "",
+            "enum": [
+                "exactMatch",
+                "narrowMatch",
+                "broadMatch"
+            ],
+            "title": "MappingRelationEnum",
+            "type": "string"
+        },
+        "OriginSourceEnum": {
+            "description": "Terminology relevant to the origin source for datasets in the Define-XML document.",
+            "enum": [
+                "Investigator",
+                "Sponsor",
+                "Subject",
+                "Vendor"
+            ],
+            "title": "OriginSourceEnum",
+            "type": "string"
+        },
+        "OriginTypeEnum": {
+            "description": "Terminology relevant to the origin type for datasets in the Define-XML document.",
+            "enum": [
+                "Assigned",
+                "Collected",
+                "Derived",
+                "Predecessor",
+                "Protocol"
+            ],
+            "title": "OriginTypeEnum",
+            "type": "string"
+        },
+        "PackageTypeEnum": {
+            "description": "",
+            "enum": [
+                "bc"
+            ],
+            "title": "PackageTypeEnum",
+            "type": "string"
+        },
+        "PredicateTermEnum": {
+            "description": "",
+            "enum": [
+                "ASSESSES",
+                "CLASSIFIES",
+                "DECODES",
+                "DESCRIBES",
+                "GROUPS",
+                "GROUPS_BY",
+                "IDENTIFIES",
+                "IDENTIFIES_OBSERVATION",
+                "IDENTIFIES_PRODUCT_IN",
+                "IDENTIFIES_TUMOR_IN",
+                "INDICATES",
+                "IS_ATTRIBUTE_FOR",
+                "IS_DECODED_BY",
+                "IS_DERIVED_FROM",
+                "IS_EPOCH_OF",
+                "IS_GROUPED_BY",
+                "IS_INDICATOR_FOR",
+                "IS_ORIGINAL_TEXT_FOR",
+                "IS_POSITION_FOR",
+                "IS_REASON_FOR",
+                "IS_RESULT_OF",
+                "IS_SPECIMEN_TESTED_IN",
+                "IS_SUBJECT_STATE_FOR",
+                "IS_TIMING_FOR",
+                "IS_UNIT_FOR",
+                "PERFORMED",
+                "PERFORMS",
+                "QUALIFIES",
+                "SPECIFIES",
+                "IS_VALUE_OF",
+                "IS_REFERENCE_TERMINOLOGY_FOR",
+                "IS_REFERENCE_VALUE_FOR",
+                "IS_DEVICE_FOR"
+            ],
+            "title": "PredicateTermEnum",
+            "type": "string"
+        },
+        "QualifiedBiomedicalConcept": {
+            "additionalProperties": false,
+            "description": "A sibling BC: one observation shape under a broader analyte concept. Identity is the IRI itself (read-many, citable, content-negotiated per the usdm-rdf pattern). Deliberately NOT a subclass of cosmos_bc:BiomedicalConcept \u2014 see the design decision in the file header; the analyte link is skos:broader via broaderConceptId.",
+            "properties": {
+                "admissibleSpecimens": {
+                    "description": "Concept-level admissible specimen set (NCIt-coded)",
+                    "items": {
+                        "$ref": "#/$defs/ConceptTerm"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "broaderConceptId": {
+                    "description": "NCIt C-code of the analyte concept (skos:broader)",
+                    "pattern": "^(C[0-9]+)$",
+                    "type": "string"
+                },
+                "definition": {
+                    "description": "NCIt definition for the Biomedical Concept; provisional defintion if concept is not available in NCIt",
+                    "type": "string"
+                },
+                "externalMappings": {
+                    "items": {
+                        "$ref": "#/$defs/ExternalMapping"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "interpretationRegimes": {
+                    "items": {
+                        "$ref": "#/$defs/InterpretationRegimeAssertion"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "iri": {
+                    "format": "uri",
+                    "type": "string"
+                },
+                "qualifierDataElementConcepts": {
+                    "items": {
+                        "$ref": "#/$defs/DataElementConcept"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "resultDataElementConcept": {
+                    "$ref": "#/$defs/DataElementConcept",
+                    "description": "The result DEC with AUTHORITATIVE dataType; recordings inherit it (SDTMVariable.dataElementConceptId -> DEC.dataType), they do not re-declare it."
+                },
+                "resultScale": {
+                    "$ref": "#/$defs/BiomedicalConceptResultScaleEnum",
+                    "description": "Single scale of measurement \u2014 the sibling split axis"
+                },
+                "semanticValueSet": {
+                    "items": {
+                        "$ref": "#/$defs/SemanticValueSetTerm"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "shortName": {
+                    "description": "NCI Preferred Name for the concept; provisional name will be used if concept is not available in NCIt",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iri",
+                "shortName",
+                "definition",
+                "broaderConceptId",
+                "resultScale",
+                "resultDataElementConcept"
+            ],
+            "title": "QualifiedBiomedicalConcept",
+            "type": "object"
+        },
+        "Recording": {
+            "additionalProperties": false,
+            "description": "Thinned SDTM dataset specialization: everything the sibling already states is inherited, not re-declared. Kept here: domain placement, topic/test code, the ONE specimen this recording uses (must be in the sibling's admissibleSpecimens), per-standard codelist bindings (incl. unit subset), origin, and an optional LOINC pin at recording grain. Dropped relative to cosmos_sdtm:SDTMGroup's variables: result dataType/length/ format/significantDigits (inherited via the sibling's result DEC \u2014 verified to introduce no contradiction), and the duplicated scale information.",
+            "properties": {
+                "domain": {
+                    "description": "Domain for the SDTM specialization group",
+                    "type": "string"
+                },
+                "loincPins": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "recordingId": {
+                    "pattern": "^[A-Z][A-Z0-9_]*$",
+                    "type": "string"
+                },
+                "resultCodelistBinding": {
+                    "description": "Per-standard result binding for Coded scales",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "siblingIri": {
+                    "format": "uri",
+                    "type": "string"
+                },
+                "specimen": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AssignedTerm"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "testCode": {
+                    "type": "string"
+                },
+                "unitCodelistBinding": {
+                    "description": "Per-standard unit binding (codelist / subset ref)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "variableOverrides": {
+                    "description": "Residual SDTM-specific variable content",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "recordingId",
+                "siblingIri",
+                "domain",
+                "testCode"
+            ],
+            "title": "Recording",
+            "type": "object"
+        },
+        "RelationShip": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "linkingPhrase": {
+                    "$ref": "#/$defs/LinkingPhraseEnum",
+                    "description": "Variable relationship descriptive linking phrase"
+                },
+                "object": {
+                    "description": "Object in a variable relationship",
+                    "type": "string"
+                },
+                "predicateTerm": {
+                    "$ref": "#/$defs/PredicateTermEnum",
+                    "description": "Short variable relationship linking phrase for programming purposes"
+                },
+                "subject": {
+                    "description": "Subject in a variable relationship",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "subject",
+                "linkingPhrase",
+                "predicateTerm",
+                "object"
+            ],
+            "title": "RelationShip",
+            "type": "object"
+        },
+        "RoleEnum": {
+            "description": "",
+            "enum": [
+                "Identifier",
+                "Qualifier",
+                "Timing",
+                "Topic"
+            ],
+            "title": "RoleEnum",
+            "type": "string"
+        },
+        "SDTMGroup": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomedicalConceptId": {
+                    "description": "Biomedical Concept identifier foreign key",
+                    "pattern": "^(C[0-9]+|NEW_[A-Z_]*[0-9]*)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datasetSpecializationId": {
+                    "description": "Identifier for SDTM Value Level Metadata group",
+                    "pattern": "^[A-Z][A-Z0-9_]*$",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "Domain for the SDTM specialization group",
+                    "type": "string"
+                },
+                "packageDate": {
+                    "description": "Biomedical Concept package release date indicating when the BC package was published to production",
+                    "format": "date",
+                    "type": "string"
+                },
+                "packageType": {
+                    "$ref": "#/$defs/PackageTypeEnum",
+                    "description": "Package type (bc for Biomedical Concepts)"
+                },
+                "sdtmigEndVersion": {
+                    "description": "The last SDTMIG version that is applicable to the BC dataset specialization",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sdtmigStartVersion": {
+                    "description": "The earliest SDTMIG version applicable to the BC dataset specialization",
+                    "type": "string"
+                },
+                "shortName": {
+                    "description": "NCI Preferred Name for the concept; provisional name will be used if concept is not available in NCIt",
+                    "type": "string"
+                },
+                "source": {
+                    "description": "SDTM VLM Source which categorizes VLM groups by topic variable",
+                    "type": "string"
+                },
+                "variables": {
+                    "description": "Variable included in the SDTM dataset specialization",
+                    "items": {
+                        "$ref": "#/$defs/SDTMVariable"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "packageDate",
+                "packageType",
+                "datasetSpecializationId",
+                "domain",
+                "shortName",
+                "source",
+                "sdtmigStartVersion",
+                "variables"
+            ],
+            "title": "SDTMGroup",
+            "type": "object"
+        },
+        "SDTMVariable": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "assignedTerm": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AssignedTerm"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Assigned term"
+                },
+                "codelist": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/CodeList"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Codelist"
+                },
+                "comparator": {
+                    "$ref": "#/$defs/ComparatorEnum",
+                    "description": "Comparison operator for SDTM group variables included in VLM"
+                },
+                "dataElementConceptId": {
+                    "description": "Biomedical Concept Data Element Concept identifier foreign key",
+                    "pattern": "^(C[0-9]+|NEW_[A-Z_]*[0-9]*)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dataType": {
+                    "$ref": "#/$defs/DataElementConceptDataTypeEnum",
+                    "description": "Data Type for the Data Element Concept"
+                },
+                "format": {
+                    "description": "Variable display format",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "isNonStandard": {
+                    "description": "Flag that indicates if the variable is a non-standard variable",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "length": {
+                    "description": "Variable length",
+                    "minimum": 1,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "mandatoryValue": {
+                    "description": "Indicator that variable must be populated within the SDTM group",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "mandatoryVariable": {
+                    "description": "Indicator that variable must be present within the SDTM group",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Variable included in the SDTM dataset specialization",
+                    "pattern": "^[A-Z][A-Z0-9_]*$",
+                    "type": "string"
+                },
+                "originSource": {
+                    "$ref": "#/$defs/OriginSourceEnum",
+                    "description": "Variable origin source (define-XML v21)"
+                },
+                "originType": {
+                    "$ref": "#/$defs/OriginTypeEnum",
+                    "description": "Variable origin type (define-XML v21)"
+                },
+                "relationship": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RelationShip"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Relationship between variables"
+                },
+                "role": {
+                    "$ref": "#/$defs/RoleEnum",
+                    "description": "SDTM variable role"
+                },
+                "significantDigits": {
+                    "description": "Variable significant_digits",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "subsetCodelist": {
+                    "description": "Subset codelist short name",
+                    "pattern": "^[A-Z][A-Z0-9_]*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valueList": {
+                    "description": "List of SDTM submission values used if subset codelist is not applicable",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "vlmTarget": {
+                    "description": "Target variable for VLM",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "dataType"
+            ],
+            "title": "SDTMVariable",
+            "type": "object"
+        },
+        "SDTMVariableDataTypeEnum": {
+            "description": "",
+            "enum": [
+                "datetime",
+                "durationDatetime",
+                "float",
+                "integer",
+                "text"
+            ],
+            "title": "SDTMVariableDataTypeEnum",
+            "type": "string"
+        },
+        "SemanticValueSetTerm": {
+            "additionalProperties": false,
+            "description": "Concept-level admissible result value (what the observation can say), distinct from any per-standard codelist binding (how a given standard writes it). ncitCode absent when no concept exists yet.",
+            "properties": {
+                "ncitCode": {
+                    "pattern": "^(C[0-9]+)$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sourceAnchor": {
+                    "description": "Where this value is asserted (package, guidance, LOINC answer list); starts \"[VERIFY]\" when no source could be named.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "title": "SemanticValueSetTerm",
+            "type": "object"
+        },
+        "SiblingBcSketchData": {
+            "additionalProperties": false,
+            "description": "Container for the instance file: the siblings and their recordings. Exists so linkml-validate has a target class.",
+            "properties": {
+                "recordings": {
+                    "items": {
+                        "$ref": "#/$defs/Recording"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "siblings": {
+                    "items": {
+                        "$ref": "#/$defs/QualifiedBiomedicalConcept"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "SiblingBcSketchData",
+            "type": "object"
+        },
+        "SubsetCodeList": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "codelistTerm": {
+                    "description": "Term in subset codelist",
+                    "items": {
+                        "$ref": "#/$defs/CodeListTerm"
+                    },
+                    "type": "array"
+                },
+                "parentCodelist": {
+                    "description": "Subset codelist parent codelist",
+                    "pattern": "^C[0-9]+$",
+                    "type": "string"
+                },
+                "subsetLabel": {
+                    "description": "Subset codelist label",
+                    "type": "string"
+                },
+                "subsetShortName": {
+                    "description": "Subset codelist short name",
+                    "pattern": "^[A-Z][A-Z0-9_]*$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "parentCodelist",
+                "subsetShortName",
+                "subsetLabel",
+                "codelistTerm"
+            ],
+            "title": "SubsetCodeList",
+            "type": "object"
+        }
+    },
+    "$id": "https://w3id.org/cdisc/cosmos/sibling_bc_sketch_v0.1",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.11.0",
+    "properties": {
+        "biomedicalConceptId": {
+            "description": "Biomedical Concept identifier foreign key",
+            "pattern": "^(C[0-9]+|NEW_[A-Z_]*[0-9]*)$",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "datasetSpecializationId": {
+            "description": "Identifier for SDTM Value Level Metadata group",
+            "pattern": "^[A-Z][A-Z0-9_]*$",
+            "type": "string"
+        },
+        "domain": {
+            "description": "Domain for the SDTM specialization group",
+            "type": "string"
+        },
+        "packageDate": {
+            "description": "Biomedical Concept package release date indicating when the BC package was published to production",
+            "format": "date",
+            "type": "string"
+        },
+        "packageType": {
+            "$ref": "#/$defs/PackageTypeEnum",
+            "description": "Package type (bc for Biomedical Concepts)"
+        },
+        "sdtmigEndVersion": {
+            "description": "The last SDTMIG version that is applicable to the BC dataset specialization",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "sdtmigStartVersion": {
+            "description": "The earliest SDTMIG version applicable to the BC dataset specialization",
+            "type": "string"
+        },
+        "shortName": {
+            "description": "NCI Preferred Name for the concept; provisional name will be used if concept is not available in NCIt",
+            "type": "string"
+        },
+        "source": {
+            "description": "SDTM VLM Source which categorizes VLM groups by topic variable",
+            "type": "string"
+        },
+        "variables": {
+            "description": "Variable included in the SDTM dataset specialization",
+            "items": {
+                "$ref": "#/$defs/SDTMVariable"
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "packageDate",
+        "packageType",
+        "datasetSpecializationId",
+        "domain",
+        "shortName",
+        "source",
+        "sdtmigStartVersion",
+        "variables"
+    ],
+    "title": "COSMoS-Sibling-BC-Sketch",
+    "type": "object",
+    "version": null
+}
+
