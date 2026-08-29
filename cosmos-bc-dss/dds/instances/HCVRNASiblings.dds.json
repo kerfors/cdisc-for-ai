@@ -1,0 +1,233 @@
+{
+  "concepts": [
+    {
+      "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative",
+      "href": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative",
+      "name": "HCVRNASerumPlasmaQuantitative",
+      "label": "Hepatitis C Virus RNA, serum/plasma, quantitative",
+      "description": "Quantitative determination of the amount of hepatitis C virus RNA (viral load) in a serum or plasma specimen.",
+      "coding": [
+        {
+          "code": "C142330",
+          "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+          "decode": "Hepatitis C Virus RNA Measurement",
+          "aliasType": "BROAD_SYNONYM"
+        }
+      ],
+      "properties": [
+        {
+          "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative#result",
+          "name": "result",
+          "label": "Observation Result",
+          "coding": [
+            {
+              "code": "C70856",
+              "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+              "decode": "Observation Result",
+              "aliasType": "EXACT_SYNONYM"
+            }
+          ],
+          "minOccurs": 1,
+          "maxOccurs": 1
+        },
+        {
+          "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative#specimen",
+          "name": "specimen",
+          "label": "Biospecimen Type",
+          "coding": [
+            {
+              "code": "C70713",
+              "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+              "decode": "Biospecimen Type",
+              "aliasType": "EXACT_SYNONYM"
+            }
+          ],
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "codeList": "CL.HCVRNASerumPlasma.admissibleSpecimens"
+        },
+        {
+          "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative#unit",
+          "name": "unit",
+          "label": "Unit of Concentration",
+          "coding": [
+            {
+              "code": "C48207",
+              "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+              "decode": "Unit of Concentration",
+              "aliasType": "EXACT_SYNONYM"
+            }
+          ],
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "codeList": "CL.HCRNASERPL.units"
+        }
+      ]
+    },
+    {
+      "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection",
+      "href": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection",
+      "name": "HCVRNASerumPlasmaDetection",
+      "label": "Hepatitis C Virus RNA, serum/plasma, detection (qualitative)",
+      "description": "Qualitative determination of the presence of hepatitis C virus RNA in a serum or plasma specimen.",
+      "coding": [
+        {
+          "code": "C142330",
+          "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+          "decode": "Hepatitis C Virus RNA Measurement",
+          "aliasType": "BROAD_SYNONYM"
+        }
+      ],
+      "properties": [
+        {
+          "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection#result",
+          "name": "result",
+          "label": "Observation Result",
+          "coding": [
+            {
+              "code": "C70856",
+              "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+              "decode": "Observation Result",
+              "aliasType": "EXACT_SYNONYM"
+            }
+          ],
+          "minOccurs": 1,
+          "maxOccurs": 1
+        },
+        {
+          "OID": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection#specimen",
+          "name": "specimen",
+          "label": "Biospecimen Type",
+          "coding": [
+            {
+              "code": "C70713",
+              "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+              "decode": "Biospecimen Type",
+              "aliasType": "EXACT_SYNONYM"
+            }
+          ],
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "codeList": "CL.HCVRNASerumPlasma.admissibleSpecimens"
+        }
+      ]
+    }
+  ],
+  "codeLists": [
+    {
+      "OID": "CL.HCVRNASerumPlasma.admissibleSpecimens",
+      "name": "admissibleSpecimens",
+      "label": "Admissible specimens for the HCV RNA serum/plasma siblings",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "SERUM",
+          "coding": {
+            "code": "C13325",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Serum"
+          }
+        },
+        {
+          "codedValue": "PLASMA",
+          "coding": {
+            "code": "C13356",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Plasma"
+          }
+        }
+      ]
+    },
+    {
+      "OID": "CL.HCRNASERPL.units",
+      "name": "HCRNASERPL units",
+      "label": "Unit subset for recording HCRNASERPL (UNIT subset; standard unit IU/mL C67377)",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "IU/mL",
+          "coding": {
+            "code": "C67377",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "International Unit per Milliliter"
+          }
+        }
+      ]
+    },
+    {
+      "OID": "CL.HCRNASERPL.specimen",
+      "name": "HCRNASERPL specimen",
+      "label": "Specimen pinned on recordings HCRNASERPL and HCRNASERPLPRES",
+      "dataType": "text",
+      "codeListItems": [
+        {
+          "codedValue": "SERUM OR PLASMA",
+          "coding": {
+            "code": "C105706",
+            "codeSystem": "http://purl.obolibrary.org/obo/NCIT_",
+            "decode": "Serum or Plasma"
+          }
+        }
+      ]
+    }
+  ],
+  "recordings": [
+    {
+      "OID": "IG.MB.HCRNASERPL",
+      "name": "HCRNASERPL",
+      "label": "HCV RNA viral load in serum or plasma (recording under HCVRNASerumPlasmaQuantitative)",
+      "domain": "MB",
+      "wasDerivedFrom": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative",
+      "items": [
+        {
+          "OID": "IT.MB.HCRNASERPL.MBORRES",
+          "name": "MBORRES",
+          "dataType": "float",
+          "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative#result"
+        },
+        {
+          "OID": "IT.MB.HCRNASERPL.MBSPEC",
+          "name": "MBSPEC",
+          "dataType": "text",
+          "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative#specimen",
+          "codeList": "CL.HCRNASERPL.specimen"
+        },
+        {
+          "OID": "IT.MB.HCRNASERPL.MBORRESU",
+          "name": "MBORRESU",
+          "dataType": "text",
+          "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative#unit",
+          "codeList": "CL.HCRNASERPL.units"
+        }
+      ]
+    },
+    {
+      "OID": "IG.MB.HCRNASERPLPRES",
+      "name": "HCRNASERPLPRES",
+      "label": "HCV RNA detection in serum or plasma (recording under HCVRNASerumPlasmaDetection)",
+      "domain": "MB",
+      "wasDerivedFrom": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection",
+      "items": [
+        {
+          "OID": "IT.MB.HCRNASERPLPRES.MBORRES",
+          "name": "MBORRES",
+          "dataType": "text",
+          "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection#result"
+        },
+        {
+          "OID": "IT.MB.HCRNASERPLPRES.MBSPEC",
+          "name": "MBSPEC",
+          "dataType": "text",
+          "conceptProperty": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection#specimen",
+          "codeList": "CL.HCRNASERPL.specimen"
+        },
+        {
+          "OID": "IT.MB.HCRNASERPLPRES.MBTSTDTL",
+          "name": "MBTSTDTL",
+          "dataType": "text",
+          "preSpecifiedValue": "DETECTION"
+        }
+      ]
+    }
+  ]
+}

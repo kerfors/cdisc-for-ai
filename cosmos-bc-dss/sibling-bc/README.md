@@ -15,12 +15,17 @@ accident. This folder is the split that tools can run.
 - `sibling_bc.instances.yaml` — FOUR glucose siblings (the proposal's
   count; GlucoseUrineQuantitative/GLUCURIN added relative to the
   sketch) and six recordings. GLUCBLD stays parked.
+- `hcvrna.instances.yaml` — the second worked case: HCV RNA (C142330),
+  two siblings splitting on SCALE ALONE within one specimen
+  (quantitative viral load vs qualitative detection, both serum/plasma)
+  — the sibling rule is not specimen-driven. LOINC anchors deliberately
+  absent (no pins in package; nothing asserted unverified).
 - `sibling_bc.schema.json` — generated JSON Schema (`gen-json-schema`),
   committed for JSON-side consumers.
 - `cosmos_linkml_v1.0/` — pinned, unmodified copies of the published
   COSMoS v1.0 LinkML schemas the imports resolve against.
-- `validate.sh` — regenerates the JSON Schema and validates the
-  instances (`linkml-validate`, target class SiblingBcSketchData).
+- `validate.sh` — regenerates the JSON Schema and validates both
+  instance files (`linkml-validate`, target class SiblingBcSketchData).
 
 ## Verified against
 

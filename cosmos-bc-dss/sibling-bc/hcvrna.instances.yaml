@@ -1,0 +1,124 @@
+# =====================================================================
+# Sibling BC instances — HCV RNA: the second worked case
+#
+# Instance data for sibling_bc.schema.yaml (target class
+# SiblingBcSketchData). Values verified against COSMoS 2026-07-14
+# (graph projection cosmos-graph/interim/COSMoS_Graph.xlsx).
+#
+# Why this case: glucose splits on specimen x scale; HCV RNA
+# (C142330, 2 DSS) splits on SCALE ALONE within ONE specimen —
+# quantitative viral load (HCRNASERPL, MBORRES float, IU/mL) vs
+# qualitative detection (HCRNASERPLPRES, MBORRES text, no value set).
+# Same rule, different axis: identity = component x system x scale.
+# The package encodes the split as MBTSTDTL "DETECTION" (C174330) —
+# a scale difference pushed into a test-detail variable because DSS
+# identity has no scale axis; in the sibling model the scale carries
+# it and the detail becomes recording residue.
+#
+# Also present in cdisc-org/data-definition-engine's example study
+# NCT01797120, which pins HCRNASERPL via the USDM extension attribute.
+#
+# LOINC anchors are deliberately ABSENT: the package pins no LOINC
+# codes on either DSS, and no code is asserted here that the LOINC
+# service has not verified — to be added from a service fetch. [VERIFY]
+# =====================================================================
+
+siblings:
+
+  - iri: https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative
+    shortName: "Hepatitis C Virus RNA, serum/plasma, quantitative"
+    definition: >-
+      Quantitative determination of the amount of hepatitis C virus RNA
+      (viral load) in a serum or plasma specimen.
+    broaderConceptId: C142330            # Hepatitis C Virus RNA Measurement (analyte BC)
+    resultScale: Quantitative
+    resultDataElementConcept:
+      conceptId: C70856
+      shortName: Observation Result
+      dataType: float                    # AUTHORITATIVE (today: string; package MBORRES/MBSTRESC/MBSTRESN all float)
+      exampleSet: []
+    qualifierDataElementConcepts:
+      - conceptId: C70713
+        shortName: Biospecimen Type
+        dataType: string
+        exampleSet: [Serum, Plasma]
+      - conceptId: C48207
+        shortName: Unit of Concentration
+        dataType: string
+        exampleSet: [IU/mL]
+    admissibleSpecimens:
+      # BC-level example set is Serum;Plasma;Bone Marrow — bone marrow
+      # stays with the analyte, outside this serum/plasma sibling.
+      - {conceptId: C13325, preferredTerm: Serum}
+      - {conceptId: C13356, preferredTerm: Plasma}
+    # externalMappings deliberately absent: no LOINC pins in the
+    # package; anchors await a LOINC service fetch. [VERIFY]
+    # interpretationRegimes deliberately absent: no subject-state DEC
+    # on this BC, and detectability/viral-load thresholds are not
+    # assertable from the package without guessing.
+
+  - iri: https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection
+    shortName: "Hepatitis C Virus RNA, serum/plasma, detection (qualitative)"
+    definition: >-
+      Qualitative determination of the presence of hepatitis C virus
+      RNA in a serum or plasma specimen.
+    broaderConceptId: C142330
+    resultScale: Ordinal
+    # Package basis: BC result_scales = "Quantitative;Ordinal"; the
+    # quantitative scale belongs to the viral-load sibling, so Ordinal
+    # is the package's remaining scale for detection. The derived
+    # per-DSS scale is only "Text" because no value set is bound —
+    # the same missing-semantic-value-set finding as urine glucose.
+    resultDataElementConcept:
+      conceptId: C70856
+      shortName: Observation Result
+      dataType: string
+      exampleSet: []
+    qualifierDataElementConcepts:
+      - conceptId: C70713
+        shortName: Biospecimen Type
+        dataType: string
+        exampleSet: [Serum, Plasma]
+    admissibleSpecimens:
+      - {conceptId: C13325, preferredTerm: Serum}
+      - {conceptId: C13356, preferredTerm: Plasma}
+    semanticValueSet:
+      # No value set exists in the package (MBORRES/MBSTRESC text,
+      # nothing bound); the admissible set must be curated.
+      - value: "[VERIFY]"
+        sourceAnchor: "[VERIFY] no authoritative source in package; LOINC answer list not consulted"
+    # externalMappings deliberately absent — see header. [VERIFY]
+
+recordings:
+
+  # --- under HCVRNASerumPlasmaQuantitative ---------------------------
+  - recordingId: HCRNASERPL
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative
+    domain: MB
+    testCode: HCRNA
+    specimen: {conceptId: C105706, value: SERUM OR PLASMA}
+    loincPins: []                        # none pinned in package
+    unitCodelistBinding: "UNIT subset: IU/mL; standard unit pinned IU/mL (C67377)"
+    # result dataType NOT declared here — inherited: float
+
+  # --- under HCVRNASerumPlasmaDetection ------------------------------
+  - recordingId: HCRNASERPLPRES
+    siblingIri: https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection
+    domain: MB
+    testCode: HCRNA
+    specimen: {conceptId: C105706, value: SERUM OR PLASMA}
+    loincPins: []
+    variableOverrides:
+      - "MBTSTDTL assigned: DETECTION (C174330) — the package's encoding of the scale split; the sibling carries scale, so the detail is recording residue"
+    resultCodelistBinding: "none bound in package — inherits the sibling's semantic value set once curated"
+
+# ---------------------------------------------------------------------
+# What this case adds beyond glucose
+#   - the split axis is scale ALONE (one specimen, one domain): the
+#     sibling rule is not specimen-driven
+#   - the inherit-once catch repeats (result DEC string; float DSS)
+#   - the missing-semantic-value-set finding repeats (detection DSS
+#     binds nothing; categorical nature visible only as data_type text)
+#   - MBTSTDTL DETECTION shows COSMoS pressing a scale distinction
+#     into the component axis for lack of a scale axis
+# =====================================================================

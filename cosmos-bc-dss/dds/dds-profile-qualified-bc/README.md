@@ -32,7 +32,7 @@ Findings against their tooling (2026-08-29, repo pinned at d2328345):
   required — which is itself the argument for absorbing dataType into
   base, where `required` would be legitimate.
 
-Validation: `python3 ../validate_dds.py` — 13 checks: own instance
+Validation: `python3 ../validate_dds.py` — 24 checks (glucose + HCV RNA): own instance
 (base + profiled + stripped), all code lists, the recording, the
 engine's CONC.BiomedicalConcept_55 against base AND profile, and three
 negative controls proving the tightening bites.

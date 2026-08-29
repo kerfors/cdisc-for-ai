@@ -5,4 +5,5 @@ set -euo pipefail
 cd "$(dirname "$0")"
 gen-json-schema sibling_bc.schema.yaml > sibling_bc.schema.json
 linkml-validate --schema sibling_bc.schema.yaml --target-class SiblingBcSketchData sibling_bc.instances.yaml
-echo "OK: schema generates + instances validate"
+linkml-validate --schema sibling_bc.schema.yaml --target-class SiblingBcSketchData hcvrna.instances.yaml
+echo "OK: schema generates + instances validate (glucose + HCV RNA)"

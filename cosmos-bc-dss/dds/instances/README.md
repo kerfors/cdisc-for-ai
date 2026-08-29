@@ -8,6 +8,16 @@
   profile's ddsq* extension slots (result scale, broader concept,
   interpretation regimes, per-property data types). Stripping every
   ddsq* key yields a base-valid instance (checked by ../validate_dds.py).
+- `HCVRNASiblings.dds.json` / `HCVRNASiblings.profiled.dds.json` — the
+  second worked case: the two HCV RNA siblings (quantitative viral
+  load vs qualitative detection, same serum/plasma specimen — a scale
+  seam within one specimen, complementary to glucose's specimen x
+  scale split), their code lists and both thinned MB recordings; the
+  profiled variant adds the ddsq* slots. HCV RNA is in the engine's
+  example study NCT01797120 (pinned to HCRNASERPL via the USDM
+  extension attribute). The detection recording carries MBTSTDTL
+  DETECTION as `preSpecifiedValue` — the package's encoding of the
+  scale split as a test detail.
 - `CONC.BiomedicalConcept_55.dds.json` — the 360i engine's OWN glucose
   concept, extracted verbatim from
   cdisc-org/data-definition-engine data/protocols/NCT01797120/NCT01797120-dds-latest.json

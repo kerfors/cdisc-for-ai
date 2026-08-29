@@ -76,7 +76,25 @@ results.append(check('engine CONC.BiomedicalConcept_55 vs BASE    ReifiedConcept
                      BASE, 'ReifiedConcept', engine))
 results.append(check('engine CONC.BiomedicalConcept_55 vs PROFILE ReifiedConcept',
                      PROF, 'ReifiedConcept', engine))
-# 6. negative controls: the profile must actually tighten
+# 6. second worked case: HCV RNA siblings (scale seam within one specimen)
+hcv = json.load(open('instances/HCVRNASiblings.dds.json'))
+hcvp = json.load(open('instances/HCVRNASiblings.profiled.dds.json'))
+for c in hcv['concepts']:
+    results.append(check(f"HCV concept {c['name'][:34]:<34} vs BASE    ReifiedConcept",
+                         BASE, 'ReifiedConcept', c))
+for cl in hcv['codeLists']:
+    results.append(check(f"HCV codeList {cl['OID'][:38]:<38} vs BASE    CodeList",
+                         BASE, 'CodeList', cl))
+for ig in hcv['recordings']:
+    results.append(check(f"HCV recording {ig['name']:<20}         vs BASE    ItemGroup",
+                         BASE, 'ItemGroup', ig))
+for c in hcvp['concepts']:
+    results.append(check(f"HCV concept {c['name'][:27]} (profiled) vs PROFILE ReifiedConcept",
+                         PROF, 'ReifiedConcept', c))
+    results.append(check(f"HCV {c['name'][:27]} stripped of ddsq*  vs BASE    ReifiedConcept",
+                         BASE, 'ReifiedConcept', strip_extensions(c)))
+
+# 7. negative controls: the profile must actually tighten
 no_oid = copy.deepcopy(prof['concept']); no_oid.pop('OID')
 results.append(check('negative: concept without OID    vs PROFILE (must fail)',
                      PROF, 'ReifiedConcept', no_oid, expect_valid=False))
