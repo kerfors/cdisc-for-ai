@@ -30,7 +30,10 @@
   extensions are optional, so the profile sits on top of what the
   engine already produces.
 
-Note: the recording uses `wasDerivedFrom` for the sibling link; base
-DDS also offers `ItemGroup.implementsConcept` ("specialization of an
-abstract concept topic"), which is arguably the semantically precise
-slot — kept as-is pending discussion.
+Note: the recordings link to their concept with
+`ItemGroup.implementsConcept`. That is the slot the base model intends
+("specialization of an abstract concept topic", and it appears again on
+`Method`) and the one the engine emits: 13 of the 17 itemGroups in
+`NCT01797120-dds-latest.json` carry it, with `Item.conceptProperty` at
+variable level. `Governed.wasDerivedFrom` was used in the first draft
+and has been aligned.

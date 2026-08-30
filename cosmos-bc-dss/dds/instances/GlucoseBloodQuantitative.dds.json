@@ -171,7 +171,7 @@
     "name": "GLUCPL",
     "label": "Glucose in plasma (recording under GlucoseBloodQuantitative)",
     "domain": "LB",
-    "wasDerivedFrom": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative",
+    "implementsConcept": "https://w3id.org/cdisc/cosmos/bc/GlucoseBloodQuantitative",
     "items": [
       {
         "OID": "IT.LB.GLUCPL.LBORRES",

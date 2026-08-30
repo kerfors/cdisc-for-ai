@@ -319,7 +319,7 @@
       "name": "HCRNASERPL",
       "label": "HCV RNA viral load in serum or plasma (recording under HCVRNASerumPlasmaQuantitative)",
       "domain": "MB",
-      "wasDerivedFrom": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative",
+      "implementsConcept": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaQuantitative",
       "items": [
         {
           "OID": "IT.MB.HCRNASERPL.MBORRES",
@@ -348,7 +348,7 @@
       "name": "HCRNASERPLPRES",
       "label": "HCV RNA detection in serum or plasma (recording under HCVRNASerumPlasmaDetection)",
       "domain": "MB",
-      "wasDerivedFrom": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection",
+      "implementsConcept": "https://w3id.org/cdisc/cosmos/bc/HCVRNASerumPlasmaDetection",
       "items": [
         {
           "OID": "IT.MB.HCRNASERPLPRES.MBORRES",
