@@ -4,7 +4,7 @@ This file is read automatically at the start of every Claude session (Cowork or 
 
 ## Project
 
-**cdisc-for-ai** — Machine-actionable reference files for CDISC clinical data standards.
+**cdisc-for-ai** — Explorative work on the CDISC clinical data standards, using linked data principles. The aim is to understand the behaviour of the standards: the underlying patterns that their data structures say nothing about. It produces machine-actionable reference files.
 
 Makes explicit the linkages between SDTM Controlled Terminology, NCIt concepts, COSMoS Biomedical Concepts, and Dataset Specializations. Outputs are flat Excel files designed for both human review and AI/tool consumption. The long-term goal is a traversable graph; flat files are today's delivery format.
 
