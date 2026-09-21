@@ -98,8 +98,9 @@ Run from `link-semantics/notebooks/`. The repo root is resolved two levels up.
 - `notebooks/` — the two notebooks.
 - `interim/` — their workbooks. Named `interim/` because they are evidence for
   the document, not deliverables. Same precedent as `cosmos-graph/interim/`.
-- `docs/` — `Link_Semantics.md`, the durable output of the track: the link
-  kinds, the provenance classes and the evidence for each. In preparation.
+- `docs/` — [`Link_Semantics.md`](docs/Link_Semantics.md), the durable output
+  of the track: the link kinds, the provenance classes and the evidence for
+  each. Narrative first, then a dated snapshot with the counts.
 
 Folders not present: `downloads/` (reads only repo artefacts and `usdm-rdf`),
 `machine_actionable/` (no consumer file is produced).

@@ -1,6 +1,6 @@
 # cdisc-for-ai
 
-Machine-actionable reference files for CDISC clinical data standards -- designed for both human review and AI consumption.
+Explorative work on the CDISC clinical data standards, using linked data principles. The aim is to understand the behaviour of the standards: the underlying patterns that their data structures say nothing about. It produces machine-actionable reference files -- designed for both human review and AI consumption.
 
 > **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md) (COSMoS 2026-07-14 refresh). Previous: [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
@@ -10,7 +10,9 @@ This repository is explorative work. The aim is to make the most of the CDISC st
 
 The method is to uncover behaviour: the implicit patterns in what the published content actually does, as opposed to what the schema and the documentation say it does. The behaviour is measurable from CDISC's own published content, so the evidence does not depend on any theory about how the standards ought to be modelled.
 
-This is the test bed. Ideas are explored here first. What settles can then be represented as Linked Data, with high transparency, in two sibling repositories: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) and [`usdm-rdf`](https://github.com/kerfors/usdm-rdf). The reference files here are deliverables in their own right; the RDF repositories are where settled constructs are published as Linked Data.
+This is the test bed. Ideas are explored here first. The reference files here -- flat Excel files for now -- are deliverables in their own right. What settles can then be represented as Linked Data, with high transparency: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) is the first such deliverable, beside its sibling [`usdm-rdf`](https://github.com/kerfors/usdm-rdf).
+
+A later direction is to publish the reference files themselves as RDF.
 
 ## Why
 
@@ -92,6 +94,10 @@ AI skills for working with CDISC standards. The reference files above are design
 
 ## Data flow
 
+Two views. The first shows how the reference files and consumer outputs are built. The second shows the analysis work, which reads from the same files but feeds nothing back.
+
+### Reference files and consumer outputs
+
 ```mermaid
 graph TD
     subgraph Sources
@@ -103,11 +109,6 @@ graph TD
         TI["SDTM_Test_Identity.xlsx"]
         ITI["SDTM_Instrument_Test_Identity.xlsx"]
         II["SDTM_Instrument_Identity.xlsx"]
-    end
-
-    subgraph cosmos-bc-dss
-        BA["Behavioural_Analysis.md"]
-        DPI["Domain_Pattern_Inventory.xlsx"]
     end
 
     subgraph cosmos-graph
@@ -135,8 +136,6 @@ graph TD
     EVS --> DM
     EVS --> CGC
     COS --> CG
-    COS --> BA
-    COS --> DPI
 
     CG --> DV
     CGC --> DV
@@ -150,9 +149,42 @@ graph TD
     DM --> IF
     II --> IF
     ITI --> IF
-
-    DO["SDTM_Domain_Overview.md<br/>repo root"]
 ```
+
+### Analysis
+
+```mermaid
+graph TD
+    COS["COSMoS exports"]
+    CGX["cosmos-graph<br/>COSMoS_Graph.xlsx, COSMoS_Graph_CT.xlsx"]
+    STC["sdtm-test-codes<br/>Test and Instrument Identity, Codelist_Cross_References"]
+    USDM["usdm-rdf<br/>usdm_v4.ttl"]
+
+    subgraph cosmos-bc-dss
+        BA["Behavioural_Analysis.md"]
+        DPI["Domain_Pattern_Inventory.xlsx"]
+    end
+
+    subgraph link-semantics
+        LKA["Link_Kind_Audit.xlsx"]
+        CCC["Code_Collision_Check.xlsx"]
+        LS["Link_Semantics.md"]
+    end
+
+    COS --> BA
+    COS --> DPI
+
+    CGX --> LKA
+    STC --> LKA
+    CGX --> CCC
+    STC --> CCC
+    USDM --> CCC
+
+    LKA --> LS
+    CCC --> LS
+```
+
+For how the analytical layers fit together, see [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
 
 ## Key findings
 
