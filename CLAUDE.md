@@ -20,7 +20,7 @@ Repository: https://github.com/kerfors/cdisc-for-ai
 
 ## Architecture — how tracks relate
 
-The repo has five track types. The domain code is the join key across all tracks.
+The repo has six track types. The domain code is the join key across all tracks.
 
 **Source tracks** extract and enrich from upstream standards:
 - `sdtm-test-codes/` — "What is measured?" Extracts TESTCD/TEST from NCI EVS, enriches with NCIt identity (definitions, synonyms, C-codes, UMLS/LOINC mappings). Outputs: `SDTM_Test_Identity.xlsx` (domain-level test codes), `SDTM_Instrument_Test_Identity.xlsx` (test codes within an instrument codelist), `SDTM_Instrument_Identity.xlsx` (one row per instrument codelist, dual NCIt anchors from C20993 + C211913).
@@ -37,6 +37,9 @@ The repo has five track types. The domain code is the join key across all tracks
 
 **Consumer tracks** join source/graph data into structural-type-specific outputs:
 - `sdtm-findings-graph/` — Three sub-types: Specimen-based (LB, MB, MI, CP, BS, MS, PC, PP), Measurement (VS, MK, CV), Instrument (QS, FT, RS). Specimen and measurement use a two-sheet pattern (Test_Identity + Measurement_Specs); instrument adds two more sheets (BC_Categories + BC_Parents) to handle the parallel BC chains and the search-tag mechanism. Reads `consumer-bases/DSS_View.xlsx`. Replaced the legacy `sdtm-findings/` track, retired May 2026.
+
+**Analysis track** measures behaviour across the other tracks:
+- `link-semantics/` — "What kind of link is it?" Classifies every NCIt and LOINC link in the reference files by link kind and provenance class (`Link_Kind_Audit.ipynb`), and finds C-codes used in more than one role (`Code_Collision_Check.ipynb`, also reads `usdm_v4.ttl` from a `usdm-rdf` checkout beside this repo). Outputs in `interim/` are evidence, not deliverables; measurement only, no predicate decisions. Nothing reads from this track.
 
 See `SDTM_Domain_Overview.md` (repo root) for the full three-layer analytical model. See `docs/Changes_2026-05.md` (and prior `Changes_2026-04.md`, `Changes_2026-03.md`) for what changed in each release.
 

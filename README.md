@@ -4,6 +4,14 @@ Machine-actionable reference files for CDISC clinical data standards -- designed
 
 > **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md) (COSMoS 2026-07-14 refresh). Previous: [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
+## Purpose
+
+This repository is explorative work. The aim is to make the most of the CDISC standards using linked data principles, and to actually understand what the standards express and which insights they are built on.
+
+The method is to uncover behaviour: the implicit patterns in what the published content actually does, as opposed to what the schema and the documentation say it does. The behaviour is measurable from CDISC's own published content, so the evidence does not depend on any theory about how the standards ought to be modelled.
+
+This is the test bed. Ideas are explored here first. What settles can then be represented as Linked Data, with high transparency, in two sibling repositories: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) and [`usdm-rdf`](https://github.com/kerfors/usdm-rdf). The reference files here are deliverables in their own right; the RDF repositories are where settled constructs are published as Linked Data.
+
 ## Why
 
 Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. In specimen-based domains, each Dataset Specialization adds an identifiable measurement specification: specimen, method, units, LOINC. But these linkages are scattered across disconnected sources. The CT file presents test codes as submission strings. Reaching the measurement specification requires navigating across BC and DSS exports. A human must mentally reconstruct the connections.
@@ -24,7 +32,7 @@ The future is publishing CDISC standards as a graph that tools and AI can traver
 
 ## Tracks
 
-The repository is organized into source tracks, a graph track, a reference track, a view track, and consumer tracks. Source tracks extract and enrich from upstream standards. The graph track projects COSMoS into a multi-sheet traversable graph. The reference track provides shared domain metadata. The view track joins the graph into per-DSS views. Consumer tracks add structural-type-specific final shaping for study design and mapping workflows.
+The repository is organized into source tracks, a graph track, a reference track, a view track, consumer tracks, and an analysis track. Source tracks extract and enrich from upstream standards. The graph track projects COSMoS into a multi-sheet traversable graph. The reference track provides shared domain metadata. The view track joins the graph into per-DSS views. Consumer tracks add structural-type-specific final shaping for study design and mapping workflows. The analysis track measures behaviour across the other tracks; nothing reads from it.
 
 Each reference file is self-describing, with a README sheet documenting columns, provenance, and design decisions.
 
@@ -67,6 +75,12 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- four-sheet (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) |
 
 Specimen and Measurement consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The Instrument consumer is four-sheet — adds **BC_Categories** (search-tag mechanism) and **BC_Parents** (parent-chain traversal) because instrument grouping operates outside the BC parent chain (item BCs roll up via wrapper concepts, not via the instrument-level BC). Link between sheets: TESTCD.
+
+### Analysis track
+
+| Track | Question | Output |
+|---|---|---|
+| [`link-semantics/`](link-semantics/) | What kind of link is it? Link kinds and provenance classes behind every NCIt and LOINC link, and C-codes used in more than one role | [`Link_Kind_Audit.xlsx`](link-semantics/interim/Link_Kind_Audit.xlsx), [`Code_Collision_Check.xlsx`](link-semantics/interim/Code_Collision_Check.xlsx) -- evidence for the RDF repositories when choosing predicates |
 
 ## Skills
 
