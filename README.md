@@ -2,7 +2,7 @@
 
 Explorative work on the CDISC clinical data standards, using linked data principles. The aim is to understand the behaviour of the standards: the underlying patterns that their data structures say nothing about. It produces machine-actionable reference files -- designed for both human review and AI consumption.
 
-> **Reference versions** — SDTM CT 2026-03-27 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md) (COSMoS 2026-07-14 refresh). Previous: [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
+> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh). Previous: [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
 ## Purpose
 

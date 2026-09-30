@@ -1,6 +1,6 @@
 # COSMoS Graph Validation Report
 
-_Generated: 2026-08-23_
+_Generated: 2026-09-30_
 
 Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 
@@ -24,7 +24,7 @@ Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 | vlm_source_hyphen_detail | INFO | 4 |
 | empty_reification_quad_rows | INFO | 337 |
 | dss_without_any_edge | INFO | 4 |
-| ct_unresolved_concept_ids | FAIL | 4 |
+| ct_unresolved_concept_ids | FAIL | 5 |
 | pinned_term_not_in_bound_codelist | INFO | 0 |
 
 
@@ -151,7 +151,7 @@ _no details_
 | SEX |
 
 
-### ct_unresolved_concept_ids — FAIL (4)
+### ct_unresolved_concept_ids — FAIL (5)
 
 | source | concept_id | context | variable_uses_count |
 | --- | --- | --- | --- |
@@ -159,6 +159,7 @@ _no details_
 | Codelists | C74457 | codelist_concept_id | 1 |
 | Variables | C132388 | assigned_term_concept_id | 2 |
 | Variables | C171439 | assigned_term_concept_id | 2 |
+| Variables | C181502 | assigned_term_concept_id | 2 |
 
 
 ### pinned_term_not_in_bound_codelist — INFO (0)

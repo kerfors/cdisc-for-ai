@@ -54,10 +54,12 @@ C64471,BASOLE,Basophils/Leukocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221418,BASOS,Basophils Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221468,BASOSP,Basophils Sub/Basophils,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204602,BATSBATS,BLym Aty Sub/BLym Aty Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228220,BCL2X,BCL2 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204600,BCMSBCMS,BLym Classic MemSub/BLym Classic MemSub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214526,BDN,BLym Dbl Neg,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214525,BDNBLY,BLym Dbl Neg/BLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214651,BDNS,BLym Dbl Neg Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228192,BDNSBDNS,BLym Dbl Neg Sub/BLym Dbl Neg Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214649,BDNSBLY,BLym Dbl Neg Sub/BLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214650,BDNSP,BLym Dbl Neg Sub/BLym Dbl Neg,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214531,BIGG,BLym IgG+,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -101,6 +103,7 @@ C184355,BLYF,BLym Foll,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184407,BLYFS,BLym Foll Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184345,BLYGC,BLym Germ Ctr,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184408,BLYGCS,BLym Germ Ctr Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228207,BLYGHBLY,BLym Gut-Homing/BLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184346,BLYIM,BLym Immat,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221472,BLYLYMO,BLym/Lym+Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184348,BLYM,BLym Mem,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -171,6 +174,7 @@ C187712,BMSWSB,BLym Mem Sw Sub/BLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C187713,BMSWSP,BLym Mem Sw Sub/BLymMSw,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221477,BNSB,BLym Naive Sub/BLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181263,BNSBN,BLym Naive Sub/BLym Naive,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228191,BNSBNS,BLym Naive Sub/BLym Naive Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189300,C189300,Mono/Non-TBNK Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189371,C189371,Mono Classic Sub/Non-TBNK Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189373,C189373,Mono Intermed Sub/Non-TBNK Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -282,6 +286,16 @@ C214633,C214633,Plasma Cells/BLymMSw,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221464,C221464,TLym Conv SC Mem/TLymCv,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221465,C221465,TLym Help Reg Eff Th17/TLym Help Reg,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221466,C221466,"Lym+Mono Sub, Lin-",CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228086,C228086,TLym Help 17.1 Gut-Homing/TLym Help GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228087,C228087,TLym Help 17 Gut-Homing/TLym Help 17,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228088,C228088,TLym Help 1 Gut-Homing/TLym Help 1,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228190,C228190,BLym Mem NSw Sub/BLym Mem NSw Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228196,C228196,MAIT Cytx Gut-Homing/MAIT Gut-Homing,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228198,C228198,MAIT Help Gut-Homing/MAIT Gut-Homing,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228213,C228213,TLym Help 17.1 Gut-Homing/TLym Help 17.1,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228214,C228214,TLym Help 17 Gut-Homing/TLym Help GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228215,C228215,TLym Help 1 Gut-Homing/TLym Help GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228216,C228216,TLym Help 22 Gut-Homing/TLym Help GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199815,CCD223X,cCD223 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C225534,CD107AX,CD107a Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199821,CD117X,CD117 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -441,6 +455,7 @@ C209453,LESP,Leuk Sub/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214601,LEUKVCE,Leukocytes/Viable Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C209522,LEVEL,Leuk Viable/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C209523,LEVLENV,Leuk Viable/Leuk NonViable,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228221,LPAM1X,LPAM1 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C198224,LPC,Lambda+ Plasma Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C51949,LYM,Lymphocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C98751,LYMCE,Lymphocytes/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -455,6 +470,7 @@ C181276,LYSLY,Lym Sub/Lym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C209525,LYSLYS,Lym Sub/Lym Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204605,MAIT,Mucosal-Associated Invariant T-Lym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204604,MAITLE,MAIT/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228195,MAITS,MAIT Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204607,MAITSP,MAIT Sub/MAIT,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204606,MAITTLY,MAIT/TLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C111246,MASTCE,Mast Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -542,15 +558,28 @@ C98872,MONOCE,Monocytes/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C96676,MONOIM,Immature Monocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C64824,MONOLE,Monocytes/Leukocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214619,MONOLES,Mono/Leuk Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228188,MONOLYMO,Monocytes/Lym+Mono,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214621,MONOLYS,Mono/Lym Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214620,MONOMYC,Mono/Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214618,MONOSLE,Mono Sub/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228197,MTCGHSP,MAIT Cytx Gut-Homing Sub/MAIT Cytx GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228201,MTCMT,MAIT Cytx/MAIT,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228204,MTCSP,MAIT Cytx Sub/MAIT Cytx,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228200,MTDNGHSP,MAIT Dbl Neg Gut-Homing Sub/MAIT DN GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228203,MTDNMT,MAIT Dbl Neg/MAIT,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228206,MTDNSP,MAIT Dbl Neg Sub/MAIT DN,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228082,MTGHMT,MAIT Gut-Homing/MAIT,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228083,MTGHSP,MAIT Gut-Homing Sub/MAIT Gut-Homing,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228199,MTHGHSP,MAIT Help Gut-Homing Sub/MAIT Help GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228202,MTHMT,MAIT Help/MAIT,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228205,MTHSP,MAIT Help Sub/MAIT Help,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C221486,MX1X,MX1 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184425,MYC,Myeloid Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C63321,NEUT,Neutrophils,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214600,NGLE,Non-Gran Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C98762,NKCE,Natural Killer Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181257,NKCECE,Natural Killer Cells/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228208,NKGHNK,NK Cells Gut-Homing/NK Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C189308,NKIM,NK Cells Immat,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214626,NKIMI,NK Cells Immat Int,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214624,NKIMILE,NK Cells Immat Int/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -590,6 +619,7 @@ C214630,NKSLYS,NK Cells Sub/Lym Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181259,NKSNK,NK Cells Sub/NK Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204587,NKSNKS,NK Cells Sub/NK Cells Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C184426,NKT,NK TLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228209,NKTGHNKT,NK TLym Gut-Homing/NK TLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C209437,NKTIV,NK TLym Invar,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C209438,NKTIVNKT,NK TLym Invar/NKT,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C209454,NKTIVS,NK TLym Invar Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -637,6 +667,8 @@ C132382,PRCTC,Prostate Circulating Tumor Cells,CP,Cell Phenotyping,CPTESTCD,CPTE
 C51946,RBC,Erythrocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199816,SCD223X,sCD223 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181300,STMIDX,Stimulation Index,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228193,TBDBVDB,TLym_BLym Doublets/Viable Doublets,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228194,TBDUB,TLym_BLym Doublets,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199716,TCCMGH,TLym Cytx Cen Mem GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199719,TCCMGHS,TLym Cytx Cen Mem GH Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199722,TCCMGHSP,TLym Cytx Cen Mem GH Sub/TLymCCMGH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -658,6 +690,8 @@ C214634,TCEPS,TLym Cytx Exh Pre Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214635,TCEPSP,TLym Cytx Exh Pre Sub/TLymCExhPre,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214636,TCEPTLC,TLym Cytx Exh Pre/TLym Cytx,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204608,TCF7X,TCF7 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228211,TCGHSP,TLym Cytx Gut-Homing Sub/TLym Cytx GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228084,TCGHTC,TLym Cytx Gut-Homing/TLym Cytx,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199702,TCMGH,TLym Cytx Mem GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199705,TCMGHS,TLym Cytx Mem GH Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199708,TCMGHSP,TLym Cytx Mem GH Sub/TLymCMGH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -732,6 +766,7 @@ C221511,TDPTLY,TLym Dbl Pos/TLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181295,TGB,Target Bound,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181294,TGBBK,"Target Bound, Background",CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181288,TGBDBBK,"Target Bound, Delta Bound Background",CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228210,TGDGHTGD,TLym GD Gut-Homing/TLym GD,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181296,TGF,Target Free,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181292,TGFBK,"Target Free, Background",CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C181289,TGFDFBK,"Target Free, Delta Free Background",CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -778,8 +813,13 @@ C199793,THEMSH,TLym Help Eff Mem SH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199796,THEMSHS,TLym Help Eff Mem SH Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199799,THEMSHSP,TLym Help Eff Mem SH Sub/TLymHEMSH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199794,THEMSHTH,TLym Help Eff Mem SH/TLymH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228217,THFGHSP,TLym Help Foll Gut-Homing Sub/TLymHF GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228089,THFGHTHF,TLym Help Foll Gut-Homing/TLymHF,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214563,THFSTHS,TLym Help Foll Sub/TLym Help Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214564,THFSTMS,TLym Help Foll Sub/TLym Mem Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228212,THGHSP,TLym Help Gut-Homing Sub/TLym Help GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228219,THGHSTHS,TLym Help Gut-Homing Sub/TLym Help Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228085,THGHTH,TLym Help Gut-Homing/TLym Help,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199758,THMGH,TLym Help Mem GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199761,THMGHS,TLym Help Mem GH Sub,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199764,THMGHSP,TLym Help Mem GH Sub/TLymHMGH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -792,6 +832,9 @@ C199771,THMSHSP,TLym Help Mem SH Sub/TLymHMSH,CP,Cell Phenotyping,CPTESTCD,CPTES
 C199769,THMSHSTH,TLym Help Mem SH Sub/TLymH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199766,THMSHTH,TLym Help Mem SH/TLymH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C199767,THMSHTHM,TLym Help Mem SH/TLymHM,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228189,THNNKT,TLym Help/Non-NKT TLym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228218,THPGHSP,TLym Help Peripheral GH Sub/TLymHP GH,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228163,THPGHTHP,TLym Help Peripheral Gut-Homing/TLymHP,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214569,THRESP,TLym Help Reg Eff Sub/TLymHRE,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214524,THRLE,TLym Help Reg/Leuk,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C191240,THRNSTHR,TLym Help Reg Naive Sub/TLymHR,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -974,6 +1017,7 @@ C184352,TLYSLY,TLym Sub/Lym,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C204609,TOX1_2X,TOX1+TOX2 Expression,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C130166,VBCE,Viable Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214603,VCECE,Viable Cells/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
+C228162,VDUB,Viable Doublets,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C214602,VLEUKCE,Viable Leukocytes/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C51948,WBC,Leukocytes,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
 C135451,WBCCE,Leukocytes/Total Cells,CP,Cell Phenotyping,CPTESTCD,CPTEST,NCI_EVS
@@ -993,6 +1037,7 @@ C139045,ANNSVEL,Annular S' Velocity,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139036,APOSCSEV,Aortic Postductal Coarctation Severity,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139034,APRECSEV,Aortic Preductal Coarctation Severity,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139042,APSE,Annular Plane Systolic Excursion,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C25244,AREA,Area,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127537,AREAEVD,"Area, End Ventricular Diastole",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127538,AREAEVS,"Area, End Ventricular Systole",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127539,ARGJWLVD,Aortic Regur Jet Width LVOT Diam Rt,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1008,9 +1053,11 @@ C221520,CADSYMPT,Coronary Artery Disease Symptoms,CV,Cardiovascular,CVTESTCD,CVT
 C119331,CANRFIND,Coronary Artery No Reflow Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C119245,CARDIDX,Cardiac Index,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C119246,CARDOUT,Cardiac Output,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228222,CAVALIND,Calcified Valve Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C209439,CFSTRAIN,Circumferential Strain,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139063,CMHYIND,Cardiac Muscle Hypertrophy Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C100086,COARTDOM,Coronary Artery Dominance,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228223,CPXAPIND,Complex Aortic Plaque Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C221523,CRDPRCIN,Indication for Cardiac Procedure,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C221521,CRYDFMNF,Cardiac Rhythm Device Fail Manifestation,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139032,CSDIA,Cross-sectional Diameter,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1039,10 +1086,10 @@ C139055,CVRGIND,Cardiac Valvular Regurgitation Indicator,CV,Cardiovascular,CVTES
 C127563,CVRGJDR,Cardiac Valve Regur Jet Direction,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139056,CVRGLE,Cardiac Valvular Regur Likely Etiology,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127564,CWMTYP,Cardiac Wall Motion Type,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
-C139041,DEBAKADC,DeBakey AoD Classification,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C25333,DEPTH,Depth,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C147148,DIMSSNDX,Dimensionless Index,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139039,DISECIND,Dissection Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228224,DYSFIND,Dysfunction Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C135372,EDV,End Diastolic Volume,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127565,EFFRGOA,Effective Regurgitant Orifice Area,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C122088,EJWAMP,Ejection Wave Amplitude,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1057,6 +1104,7 @@ C209530,GCS_C,"Global Circumferential Strain, Cal",CV,Cardiovascular,CVTESTCD,CV
 C209456,GLS,Global Longitudinal Strain,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C209531,GLS_C,"Global Longitudinal Strain, Cal",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139062,HCENLIND,Heart Chamber Enlargement Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C49677,HR,Heart Rate,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C116148,INRSTIND,In-Stent Restenosis Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C41255,INTP,Interpretation,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C80494,ISHMYOP,Ischemic Myocardium Percentage,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1119,6 +1167,7 @@ C147153,OBMDNLOC,Obs Med Device Type Not In Intended Loc,CV,Cardiovascular,CVTES
 C147154,OBNMFBT,Observed Non-Medical Foreign Body Type,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C135379,PAHTNIND,Pulmonary Arterial Hypertension Ind,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127583,PBFVEL,Peak Blood Flow Velocity,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228227,PCMORPH,Pericardium Morphology,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C116145,PCTDIAST,Percent Diameter Stenosis,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139051,PCVALTYP,Prosthetic Cardiac Valve Type,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139046,PEFFIND,Pericardial Effusion Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1129,6 +1178,8 @@ C127585,PKEVEL,Peak E Velocity,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139044,PPRR,Peak Pressure Rise Rate,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C147156,PRESHT,Pressure Half Time,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127586,PRGJWRVD,Pulmonic Regur Jet Width RVOT Diam Rt,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C49676,PULSE,Pulse Rate,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228229,PULSESTR,Pulse Strength,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127587,PVEINDOM,Pulmonary Vein Dominance,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C119247,PVR,Pulmonary Vascular Resistance,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127588,PVRGF,Pulmonary Valve Regurgitant Fraction,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1146,8 +1197,9 @@ C135381,RVEF_E,"Right Ventricular Ejection Fraction, Est",CV,Cardiovascular,CVTE
 C127593,SAMIND,Systolic Anterior Motion Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127594,SAMSEV,Systolic Anterior Motion Severity,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C221527,SDSRTYPE,Sudden Death Syndrome Risk Type,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228225,SECHCIND,Spontaneous Echo Contrast Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C209536,SGELGE,Segmental Late Gadolinium Enhancement,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
-C139040,STANFADC,Stanford AoD Classification,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C25681,SIZE,Size,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C94989,STROKVOL,Stroke Volume,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C119248,SVR,Systemic Vascular Resistance,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C139031,SYSPRS_E,"Systolic Pressure, Estimated",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1155,6 +1207,7 @@ C80363,T1,Longitudinal Relaxation Time,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C80364,T2,Transverse Relaxation Time,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127595,THCKEVD,"Cross-sec Thickness, EVD",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127596,THCKEVS,"Cross-sec Thickness, EVS",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228226,THRMBIND,Thrombus Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127597,TRGJARA,Tricus Regur Jet Area R Atrial Area Rt,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127598,TVRGF,Tricuspid Valve Regurgitant Fraction,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127599,TVRGJA,Tricuspid Valve Regurgitant Jet Area,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
@@ -1163,9 +1216,11 @@ C127601,TVVCA,Tricuspid Valve Vena Contracta Area,CV,Cardiovascular,CVTESTCD,CVT
 C127602,TVVCW,Tricuspid Valve Vena Contracta Width,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C147157,VAREANDX,Valve Area Index,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C127603,VELTI,"Velocity Time Integral, Blood Flow",CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C228228,VLMORPH,Valvular Morphology,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C142244,VLSTNIND,Cardiac Valvular Stenosis Indicator,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C142245,VLSTNSLE,Cardiac Valve Stenosis Likely Etiology,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C147158,VLVAREA,Valve Area,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
+C74720,VOLUME,Volume,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C25208,WEIGHT,Weight,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C25345,WIDTH,Width,CV,Cardiovascular,CVTESTCD,CVTEST,NCI_EVS
 C78721,DISPAMT,Dispensed Amount,DA,Drug Accountability,DATESTCD,DATEST,NCI_EVS
@@ -1283,6 +1338,8 @@ C156497,VOXDIMX,X-Axis Voxel Dimension,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C156498,VOXDIMY,Y-Axis Voxel Dimension,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C156499,VOXDIMZ,Z-Axis Voxel Dimension,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
 C156500,VOXORIEN,Voxel Orientation,DU,Device-In-Use,DUTESTCD,DUTEST,NCI_EVS
+C25244,AREA,Area,ED,Endocrine System Findings,EDTESTCD,EDTEST,NCI_EVS
+C74720,VOLUME,Volume,ED,Endocrine System Findings,EDTESTCD,EDTEST,NCI_EVS
 C116140,AMIEGCHG,Acute Myocardial Ischemia ECG Change,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111131,AVCOND,Atrioventricular Conduction,EG,ECG,EGTESTCD,EGTEST,NCI_EVS
 C111131,AVCOND,Atrioventricular Conduction,EG,Holter ECG,HETESTCD,HETEST,NCI_EVS
@@ -1876,13 +1933,22 @@ C112429,WHEALSZ,Wheal Size,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C130186,WHLINT,Wheal Diameter Interpretation,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112427,WHLLDIAM,Wheal Longest Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112428,WHLMDIAM,Wheal Mean Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
+C228260,ASCITIND,Ascites Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228258,BLDIND,Bleeding Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C156503,BWOBIND,Bowel Obstruction Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C156504,BWPFIND,Bowel Perforation Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C25285,DIAMETER,Diameter,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C119332,ELASTIC,Elasticity,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228090,EMSIND,Emesis Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C204621,ESOBIND,Esophageal Obstruction Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C198259,GIEXAM,Gastrointestinal System Examination,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228257,HMEMSIND,Hematemesis Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C41255,INTP,Interpretation,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C156505,LVINVIND,Lymphovascular Invasion Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C154886,MASSIND,Mass Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228256,NAUSIND,Nausea Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228261,ORMEGIND,Organomegaly Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228259,PAININD,Pain Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C176291,PAREAULC,Percent Area Covered By Ulcers,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C189437,PDFF,Proton Density Fat Fraction,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C139184,RTAVDIST,Rectal Tumor to Anal Verge Distance,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
@@ -1891,17 +1957,27 @@ C174274,STRCTNUM,Number of Strictures,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NC
 C181477,STSEXT,Steatosis Extent,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C41145,THICK,Thickness,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C74720,VOLUME,Volume,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228262,CHROMABN,Chromosomal Abnormality,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C209559,CPNUMAMP,Copy Number Amplification,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181330,CPNUMVAR,Copy Number Variation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228263,DELETN,Deletion,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228269,DLINSVAR,Deletion-Insertion Variation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228266,DMCLNTYP,Dominant Clonotype,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228265,DUPLCN,Duplication,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228268,FUSION,Fusion,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228264,GAIN,Gain,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181333,GENESIG,Gene Signature,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181332,MICRISTB,Microsatellite Instability,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228267,MTHYLTN,Methylation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189439,SEQREAR,Sequence Rearrangement,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181334,SHRTVAR,Short Variation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181331,SNV,Single Nucleotide Variation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181335,TMB,Tumor Mutation Burden,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C63326,TRANSLN,Translocation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C17208,TRNSCPTN,Transcription,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189441,VARPROF,Variant Profile,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189440,VNTR,Variable Number Tandem Repeats,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C189437,PDFF,Proton Density Fat Fraction,HM,Hematopoietic System Findings,HMTESTCD,HMTEST,NCI_EVS
 C170575,ABSABSA,Affected BSA/Total BSA,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
 C198262,IGEXAM,Integumentary System Examination,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
 C74580,SKINTYP,Skin Type,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
@@ -2427,7 +2503,7 @@ C130158,CCL7,Chemokine (C-C Motif) Ligand 7,LB,Laboratory,LBTESTCD,LBTEST,NCI_EV
 C165951,CCL8,Chemokine (C-C Motif) Ligand 8,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C122103,CCR5,C-C Chemokine Receptor Type 5,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C225597,CD14S,Myeloid Cell-Specific LEU-Rich Glycoprot,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C202433,CD28TGP,T-Cell Surface Glycoprotein CD28,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C202433,CD8TGP,T-Cell Surface Glycoprotein CD8,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172498,CDCA,Chenodeoxycholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C176239,CDCACM,Chenodeoxycholate Compounds,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199915,CDH1,Cadherin 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2828,6 +2904,7 @@ C170585,ETS,Ethyl Sulfate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C176304,EUDCA,Epimerized Ursodeoxycholate,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184640,EZOGABIN,Ezogabine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C82012,FABP1,Fatty Acid Binding Protein 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228284,FABP2,Fatty Acid Binding Protein 2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C106521,FABP3,Fatty Acid Binding Protein 3,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C199922,FABP4,Fatty Acid Binding Protein 4,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C96626,FACTII,Factor II,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2868,7 +2945,6 @@ C172507,FBNCTCE,"Fibronectin, Cellular",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C92786,FBNCTFT,"Fibronectin, Fetal",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C177951,FBNCTMFT,"Fibronectin, Maternal + Fetal",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172508,FBNCTPL,"Fibronectin, Plasma",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C105443,FBRTST,FibroTest Score,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C103398,FCTVIIAA,Factor VIIa Activity,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C103399,FCTVIIIA,Factor VIII Activity,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C174313,FCTXIIIA,Factor XIII Activity,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -2900,7 +2976,6 @@ C135419,FGF23C,"Fibroblast Growth Factor 23, C-Terminal",LB,Laboratory,LBTESTCD,
 C135420,FGF23I,"Fibroblast Growth Factor 23, Intact",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C130162,FGF9,Fibroblast Growth Factor 9,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C82014,FGFBF,Fibroblast Growth Factor Basic Form,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
-C138330,FIB4IDX,Fibrosis-4 Index,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C209590,FIBERV,Vegetable Fiber,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C189498,FIBMONO,Fibrin Monomer,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C64606,FIBRINO,Fibrinogen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3034,6 +3109,7 @@ C74738,GLOBUL,Globulin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C80183,GLP1,Glucagon-Like Peptide-1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C80164,GLP1AC,"Glucagon-Like Peptide-1, Active Form",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C154768,GLP1IAC,"Glucagon-Like Peptide-1, Inactive Form",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228282,GLTMGLN,Glutamate/Glutamine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C150844,GLTRCE,Glitter Cells,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184571,GLTTHMD,Glutethimide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C132370,GLUBD13,"1,3-Beta-D-Glucan",LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3365,6 +3441,7 @@ C74812,INTLK16,Interleukin 16,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74813,INTLK17,Interleukin 17,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C214675,INTLK17C,Interleukin 17C,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C225613,INTLK17D,Interleukin 17D,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228287,INTLK17F,Interleukin 17F,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74814,INTLK18,Interleukin 18,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74815,INTLK19,Interleukin 19,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C122131,INTLK1A,Interleukin 1 Alpha,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3817,6 +3894,7 @@ C165977,NRP1,Neuropilin-1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186088,NRPROPOX,Norpropoxyphene,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C116205,NSE,Neuron Specific Enolase,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C142286,NSPMTSPM,Normal Sperm/Total Sperm,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228283,NSUFNTNL,Norsufentanil,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C120645,NTELOCRT,N-telopeptide/Creatinine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74743,NTELOP,N-telopeptide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C163475,NTENS,Neurotensin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3866,6 +3944,7 @@ C60832,OXYSAT,Oxygen Saturation,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74869,OXYTOCIN,Oxytocin,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C75375,OXZPM,Oxazepam,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C96625,P1NP,Procollagen 1 N-Terminal Propeptide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228288,P20OXYGN,P20 Oxygen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C128973,P3NP,Procollagen 3 N-Terminal Propeptide,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C102279,P50OXYGN,P50 Oxygen,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C202381,PA2APC,Plasmin Alpha-2 Antiplasmin Complex,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -3902,6 +3981,9 @@ C116208,PDGFAB,Platelet Derived Growth Factor IsoformAB,LB,Laboratory,LBTESTCD,L
 C199893,PDGFBB,Platelet Derived Growth Factor IsoformBB,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172503,PDL1S,Soluble Programmed Death Ligand 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C81962,PDW,Platelet Distribution Width,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228289,PE160181,Phosphatidylethanol 16:0-18:1 Homolog,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228290,PE160182,Phosphatidylethanol 16:0-18:2 Homolog,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228291,PE181,Phosphatidylethanol 18:1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C135472,PECAM1,Platelet Endothelial Adhesion Molecule 1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C74617,PELGERH,Pelger Huet Anomaly,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C184631,PEMOLINE,Pemoline,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4166,6 +4248,8 @@ C154730,S100A8,S100 Calcium Binding Protein A8,LB,Laboratory,LBTESTCD,LBTEST,NCI
 C127635,S100B,S100 Calcium-Binding Protein B,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C165981,S6PHS,Phos-S6 Ribosomal Protein,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C165982,SAA1,Serum Amyloid A1,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228285,SAA2,Serum Amyloid A2,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
+C228286,SAA4,Serum Amyloid A4,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C186093,SAAG,Serum-Ascites Albumin Gradient,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C172516,SAHOMC,S-Adenosylhomocysteine,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
 C147431,SALCYLT,Salicylates,LB,Laboratory,LBTESTCD,LBTEST,NCI_EVS
@@ -4606,6 +4690,7 @@ C150859,CDFTCDAD,Clostridium difficile tcdA DNA,MB,Microbiology,MBTESTCD,MBTEST,
 C150860,CDFTCDBD,Clostridium difficile tcdB DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C150861,CDFTCDCD,Clostridium difficile tcdC DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C103381,CDFTXN,Clostridium difficile Toxin,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
+C228295,CDTCDABD,Clostridium difficile tcdA/tcdB DNA,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C189551,CDU,Candida dubliniensis,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C209637,CFR,Citrobacter freundi,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
 C187844,CGL,Candida glabrata,MB,Microbiology,MBTESTCD,MBTEST,NCI_EVS
@@ -5344,6 +5429,8 @@ C139226,BMMTINV,"Brooke mMRC MMT Score, Inversion",MK,Musculoskeletal System Fin
 C139224,BMMTLR,"Brooke mMRC MMT Score, Lat. Rotat.",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139221,BMMTPF,"Brooke mMRC MMT Score, Plantar Flex",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139218,BODYFATP,Total Body Fat/Total Body Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228309,BONEAEST,Bone Age Estimation,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228304,CMV,Contractile Muscle Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221652,EMCLNPV,EMCL Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221654,EMCLNTW,EMCL Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221653,EMCLNTWV,EMCL Norm for Tissue Water Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
@@ -5353,11 +5440,13 @@ C154909,FOCLOIND,Fontanelle Closure Indicator,MK,Musculoskeletal System Finding,
 C221655,GLYGNPV,Glycogen Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221657,GLYGNTW,Glycogen Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221656,GLYGNTWV,Glycogen Norm for Tissue Water Vol,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
-C181502,GPBAEST,Greulich and Pyle Bone Age Estimation,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139210,GRIPSTR,Grip Strength,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221658,IMCLNPV,IMCL Norm for Phantom Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221660,IMCLNTW,IMCL Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221659,IMCLNTWV,IMCL Norm for Tissue Water Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228305,INTERMFV,Intermuscular Fat Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228307,INTMFVMV,Intramuscular Fat Volume/Muscle Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228306,INTRAMFV,Intramuscular Fat Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C181496,ISOMSABD,"Isometric Muscle Strength, Abduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C181500,ISOMSADD,"Isometric Muscle Strength, Adduction",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C181497,ISOMSDOR,"Isometric Muscle Strength, Dorsiflexion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
@@ -5378,6 +5467,8 @@ C139230,MMTFLX,"MRC MMT Score, Flexion",MK,Musculoskeletal System Finding,MUSCTS
 C139234,MMTINV,"MRC MMT Score, Inversion",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139232,MMTLR,"MRC MMT Score, Lat. Rotat.",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C139229,MMTPF,"MRC MMT Score, Plantar Flex",MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228308,MUSENG,Muscle Engagement,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228164,MV,Muscle Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221661,MYOPNPV,Myoglobin Peak Norm for Phantom Vol,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221663,MYOPNTW,Myoglobin Peak Norm for Tissue Weight,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221662,MYOPNTWV,Myoglobin Peak Norm for Tissue Water Vol,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
@@ -5389,10 +5480,12 @@ C221665,SATV,Subcutaneous Adipose Tissue Volume,MK,Musculoskeletal System Findin
 C128986,SGBESCR,Sharp/Genant Bone Erosion Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C128987,SGJSNSCR,Sharp/Genant JSN Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C178017,SMMASS,Skeletal Muscle Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228310,SMMTBM,Skeletal Muscle Mass/Total Body Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C128988,SVBESCR,Sharp/Van der Heijde Bone Erosion Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C128989,SVJSNSCR,Sharp/Van der Heijde JSN Score,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C127774,SWLLIND,Swollen Indicator,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C127775,TNDRIND,Tenderness Indicator,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
+C228311,TPMTBM,Total Protein Mass/Total Body Mass,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C221664,VATV,Visceral Adipose Tissue Volume,MK,Musculoskeletal System Finding,MUSCTSCD,MUSCTS,NCI_EVS
 C147471,DIAZOINH,Diameter of the Zone of Inhibition,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
 C158255,FLMUTIND,Flagged Mutations Present Indicator,MS,Microbiology Susceptibility,MSTESTCD,MSTEST,NCI_EVS
@@ -5454,6 +5547,7 @@ C81311,MORORFX,Moro Reflex,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C221680,MSCLTONE,Muscle Tone,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C221674,MSCSTR,Muscle Strength,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C187959,MUSCRIG,Muscular Rigidity,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
+C228315,MWILAT,M-Wave Initiation Latency,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C117886,N145LAT,N145 Latency,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C154868,N1SLPDUR,N1 Sleep Duration,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C156555,N1SLPTST,N1 Sleep/Total Sleep Time,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
@@ -5475,6 +5569,7 @@ C117888,P100LAT,P100 Latency,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C156559,PEAKRA,Peak Response Amplitude,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C156560,PEAKRAL,Peak Response Amplitude Latency,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C221681,PHYSCORD,Physical Coordination,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
+C228316,PK2PKAMP,Peak-to-Peak Amplitude,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C81254,PLMGRRFX,Palmar Grasp Reflex,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C110939,PLTGRRFX,Plantar Grasp Reflex,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
 C221673,REFLEX,Reflex,NV,Nervous System Findings,NVTESTCD,NVTEST,NCI_EVS
@@ -5867,6 +5962,7 @@ C201473,LCI2_5,LCI to 2.5% Initial Concentration,RE,Respiratory,RETESTCD,RETEST,
 C201472,LCI5,LCI to 5% Initial Concentration,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C174232,LOBVOL,Lobar Volume,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C174361,LOBVOLPP,Percent Predicted Lobar Volume,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
+C228324,LYMAGIND,Lymphangitis Indicator,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C161312,MALEVDES,Malignancy Evidence Description,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C161423,MALIND,Malignancy Indicator,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C135494,MEP,Maximal Expiratory Pressure,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
@@ -5874,6 +5970,8 @@ C135495,MEPPP,Percent Predicted MEP,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C135496,MIP,Maximal Inspiratory Pressure,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C135497,MIPPP,Percent Predicted MIP,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C120936,MV,Minute Volume,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
+C228320,MVVCO2,Minute Ventilation/VCO2,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
+C228321,O2UEFFS,Oxygen Uptake Efficiency Slope,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C189635,OI,Oxygenation Index,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C123566,OXYPULSE,Oxygen Pulse,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C60832,OXYSAT,Oxygen Saturation,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
@@ -5917,6 +6015,8 @@ C112387,TVPP,Percent Predicted Tidal Volume,RE,Respiratory,RETESTCD,RETEST,NCI_E
 C123570,VO2,Oxygen Consumption,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C178242,VO2MAX,Maximal Oxygen Consumption,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C174363,VO2MAXE,"Maximal Oxygen Consumption, Estimated",RE,Respiratory,RETESTCD,RETEST,NCI_EVS
+C228322,VO2MAXPP,Percent Predicted Maximal O2 Consumption,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
+C228323,VO2RD,VO2 Recovery Delay,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C202446,VT1,Ventilatory Threshold 1,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C204693,VT2,Ventilatory Threshold 2,RE,Respiratory,RETESTCD,RETEST,NCI_EVS
 C106550,ABORTN,Number of Abortions,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
@@ -5962,6 +6062,7 @@ C225742,FLCSTDTC,Follicular Phase Start Date,RP,Reproductive System Findings,RPT
 C198357,FMPSTDTC,First Menstrual Period Start Date,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C201480,FSXIAGE,Age at First Sexual Intercourse,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C201481,FSXOAGE,Age at First Oral Sex,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C228325,FTDSTIND,Fetal Distress Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C122190,FULLTRMN,Number of Full Term Births,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C154876,FUNDHT,Fundal Height,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C73435,GRAVIND,Gravida Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
@@ -6017,6 +6118,7 @@ C154882,PUSTIND,Pustule Indicator,RP,Reproductive System Findings,RPTESTCD,RPTES
 C154878,RASHIND,Rash Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C198359,RPEXAM,Reproductive System Examination,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C189360,SCBFCIND,Subj Currently Breastfeeding a Child Ind,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
+C228326,SCLACIND,Subj Currently Lactating Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C189357,SEXABDUR,Duration of Sexual Abstinence,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C154879,SKGLAIND,Skene's Gland Abnormality Indicator,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
 C120837,SPABORTN,Number of Spontaneous Abortions,RP,Reproductive System Findings,RPTESTCD,RPTEST,NCI_EVS
@@ -6045,8 +6147,8 @@ C132455,BONERESP,Bone Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,N
 C123619,CLINRESP,Clinical Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C202441,CLYMRESP,Circulating Lymphocytes Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C204683,CNSSTAT,CNS Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
-C38469,CONSYMPT,Constitutional Symptoms,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C135478,CPRFSTAT,Clinical Performance Status,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
+C228630,CSYMPIND,Constitutional Symptoms Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C123620,CYTORESP,Cytogenetic Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C123621,DRCRIND,Disease Recurrence Indicator,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
 C204685,EMDRESP,Extramedullary Disease Response,RS,Oncology Response Assessment,ONCRTSCD,ONCRTS,NCI_EVS
@@ -6096,6 +6198,7 @@ C198361,BTHPLRTY,Birth Plurality,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_E
 C19309,CHLDHSHN,Number of Children in Household,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C202576,CINVIND,Contact Investigation Indicator,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C176362,CNTYPAD,County of Permanent Address,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
+C37927,COLOR,Color,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C102631,CTRYDDTC,Entry Date from Ptntl Cntry Disease Exp,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C102612,CTRYDEXP,Country of Potential Disease Exposure,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
 C176365,CTRYPAD,Country of Permanent Address,SC,Subject Characteristic,SCTESTCD,SCTEST,NCI_EVS
@@ -6182,11 +6285,17 @@ C204696,INFOSCSS,Information Source for Survival Status,SS,Subject Status,SSTEST
 C209697,LSCFADTC,Latest Date Subject Confirmed Alive,SS,Subject Status,SSTESTCD,SSTEST,NCI_EVS
 C25717,SURVSTAT,Survival Status,SS,Subject Status,SSTESTCD,SSTEST,NCI_EVS
 C214746,ACBSPPD,Absolute Change Baseline in Sum of PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228332,ACBSVOL,Abs Change Baseline in Sum of Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228331,ACBVOL,Absolute Change Baseline Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C103347,ACHNAD,Absolute Change From Nadir,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228328,ACIPSVOL,Abs Change Immed Preced in Sum of Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228327,ACIPVOL,Absolute Change Immed Preced Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C225755,ACLPNLP,Absolute Change Frm LPERP Nadir to LPERP,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C135506,ACNDOREN,Absolute Change Nadir in Organ Enlarge,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C112218,ACNSD,Absolute Change Nadir in Sum of Diam,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C214747,ACNSPPD,Absolute Change Nadir in Sum of PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228334,ACNSVOL,Abs Change Nadir in Sum of Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228333,ACNVOL,Absolute Change Nadir Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C147488,ACPPDNLD,Absolute Change From PPD Nadir in LDIAM,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C147489,ACPPDNLP,Absolute Change From PPD Nadir in LPERP,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C25244,AREA,Area,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6229,8 +6338,11 @@ C112371,PCBSLD,Percent Change Baseline Sum Longest Diam,TR,Tumor or Lesion Prope
 C135510,PCBSOREN,Percent Change Baseline in Organ Enlarge,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C132264,PCBSPPD,Percent Change Baseline in Sum of PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C112372,PCBSV,Percent Change Baseline in Sum of Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228335,PCBVOL,Percent Change Baseline Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C96621,PCHGBL,Percent Change From Baseline,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C96622,PCHGNAD,Percent Change From Nadir,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228330,PCIPSVOL,Pct Change Immed Preced in Sum of Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
+C228329,PCIPVOL,Percent Change Immed Preced Volume,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C135511,PCNDOREN,Percent Change Nadir in Organ Enlarge,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C135512,PCNPPD,Percent Change Nadir in PPD,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
 C112373,PCNSD,Percent Change Nadir in Sum of Diam,TR,Tumor or Lesion Properties,TRTESTCD,TRTEST,NCI_EVS
@@ -6332,6 +6444,7 @@ C81255,HDCIRC,Head Circumference,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C25347,HEIGHT,Height,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C100947,HIPCIR,Hip Circumference,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C49677,HR,Heart Rate,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
+C228339,HRVA,Heart Rate Variability,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C199998,HRVSDANN,"Heart Rate Variability, SDANN",VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C199682,HRVSDNN,"Heart Rate Variability, SDNN",VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C163568,HTAPCTL,Height-for-Age Percentile,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
@@ -6349,6 +6462,7 @@ C154891,NECKCIR,Neck Circumference,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C60832,OXYSAT,Oxygen Saturation,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C49676,PULSE,Pulse Rate,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C100945,PULSEPR,Pulse Pressure,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
+C228338,PULSEVA,Pulse Rate Variability,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C49678,RESP,Respiratory Rate,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C87054,SAD,Sagittal Abdominal Diameter,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS
 C174311,SAO2FIO2,Oxygen Saturation/Fraction Inspired O2,VS,Vital Signs,VSTESTCD,VSTEST,NCI_EVS

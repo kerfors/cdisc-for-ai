@@ -30,6 +30,7 @@ C119082,AUDIT-C Questionnaire Question,3,,A question associated with the AUDIT-C
 C225077,AUDIT-C Self-Report Version Questionnaire Question,4,,A question associated with the Alcohol Use Disorders Identification Test-Concise Self-Report Version (AUDIT-C Self-Report Version) questionnaire.,,
 C123657,AVLT-REY Functional Test Question,36,,A question associated with the AVLT-REY functional test.,C4055566,
 C161631,AVPU Clinical Classification Question,1,,A question associated with the AVPU clinical classification.,,CL970325
+C213946,Alzheimer's Disease Assessment Scale-Cognitive Date 30th June 2015 Version Functional Test Question,112,,A question associated with the Alzheimer's Disease Assessment Scale-Cognitive Date 30th June 2015 Version functional test.,,CL1944062
 C120999,BACS Functional Test Question,13,,A question associated with the BACS functional test.,C4055404,
 C101871,BARS Clinical Classification Question,4,,A question associated with the BARS questionnaire.,C3640277,
 C106674,BDI Clinical Classification Question,4,,A question associated with the BDI questionnaire.,C3831385,
@@ -66,6 +67,7 @@ C132527,CES Questionnaire Question,7,,A question associated with the CES questio
 C135705,CGI Generic Modification Version Questionnaire Question,3,,A question associated with the CGI Generic Modification Version questionnaire.,,CL523024
 C135704,CGI Original Version Questionnaire Question,3,,A question associated with the CGI Original Version questionnaire.,,CL523023
 C100111,CGI Questionnaire Question,3,,A question associated with the CGI questionnaire.,C3639101,
+C228413,CGI-BP 1997 Clinical Classification Question,9,,A question associated with the Clinical Global Impressions-Bipolar Version 1997 (CGI-BP 1997) questionnaire.,,
 C117992,CHART-SF Interview Version Questionnaire Question,28,,A question associated with the CHART-SF questionnaire.,C3899786,
 C119085,CHART-SF Paper Version Questionnaire Question,28,,A question associated with the CHART-SF Paper Version questionnaire.,C3899765,
 C100112,COMM Questionnaire Question,18,,A question associated with the COMM questionnaire.,C3639102,
@@ -97,8 +99,10 @@ C219738,EORTC QLQ-BM22 Questionnaire Question,22,,A question associated with the
 C219739,EORTC QLQ-BR42 Questionnaire Question,42,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Breast Cancer 42 Items (EORTC QLQ-BR42) questionnaire.,,CL1953105
 C161628,EORTC QLQ-C15-PAL Version 1 Questionnaire Question,15,,A question associated with the EORTC QLQ-C15-PAL Version 1 questionnaire.,,CL970328
 C161629,EORTC QLQ-C30 Version 3 Questionnaire Question,45,,A question associated with the EORTC QLQ-C30 Version 3 questionnaire.,,CL970327
+C228417,EORTC QLQ-CIPN20 Questionnaire Question,20,,A question associated with the Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items (CIPN20 Questionnaire) questionnaire.,,
 C219740,EORTC QLQ-CLL17 Questionnaire Question,17,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Chronic lymphocytic leukemia 17 Items (EORTC QLQ-CLL17) questionnaire.,,CL1953104
 C170531,EORTC QLQ-CR29 Version 2.1 Questionnaire Question,35,,A question associated with the EORTC QLQ-CR29 Version 2.1 questionnaire.,,CL1382953
+C228418,EORTC QLQ-H and N35 Version 1 Questionnaire Question,35,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items (EORTC QLQ-H and N35 Version 1) questionnaire.,,
 C219741,EORTC QLQ-H and N43 Phase IV Module Version Questionnaire Question,43,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Head and Neck Cancer Phase IV Module Version 43 Items ((EORTC QLQ-H and N43 Phase IV Module Version)) questionnaire.,,CL1953088
 C219742,EORTC QLQ-INFO25 Questionnaire Question,27,,A question associated with the European Organization for the Research and Treatment of Cancer Quality of Life - Information 25 Items (EORTC QLQ-INFO25) questionnaire.,,CL1953087
 C172401,EORTC QLQ-LC13 Questionnaire Question,15,,A question associated with the EORTC QLQ-LC13 questionnaire.,,CL1406354
@@ -165,6 +169,7 @@ C124696,GCS NINDS Version 1.0 Clinical Classification Question,12,,A question as
 C106678,GDS Questionnaire Question,31,,A question associated with the GDS questionnaire.,C3827306,
 C163401,GMSS Version Type 1 Diabetes Questionnaire Question,20,,A question associated with the GMSS Version Type 1 Diabetes questionnaire.,,CL976669
 C115417,GOSE Questionnaire Question,23,,A question associated with the GOSE questionnaire.,C3899048,
+C228414,GSE 1995 Questionnaire Question,11,,A question associated with the General Self-Efficacy Scale 1995 (GSE 1995) questionnaire.,,
 C106679,Geriatric Depression Scale Short Form Questionnaire Question,17,GDS-SF Questionnaire Question,A question associated with the Geriatric Depression Scale Short Form questionnaire.,C3830004,
 C103495,HADS Questionnaire Question,16,,A question associated with the HADS questionnaire.,C3641310,
 C115410,HAI Functional Test Question,1,,A question associated with the HAI functional test.,C3899002,
@@ -326,7 +331,7 @@ C103504,SOWS Short Questionnaire Question,10,,A question associated with the SOW
 C101881,SOWS Subjective Questionnaire Question,16,,A question associated with the SOWS questionnaire.,C3640286,
 C170532,SPPB Version 1.2 Functional Test Question,35,,A question associated with the SPPB Version 1.2 functional test.,,CL1382958
 C115419,SWLS Questionnaire Question,5,,A question associated with the SWLS questionnaire.,C3897662,
-C204239,Sepsis-related Organ Failure Assessment 27th March 2024 Version Clinical Classification Question,7,,A question associated with the Sepsis-related Organ Failure Assessment 27th March 2024 Version clinical classification.,,CL1926769
+C204239,Sepsis-related Organ Failure Assessment 1996 Version Clinical Classification Question,7,,A question associated with the Sepsis-related Organ Failure Assessment 1996 Version clinical classification.,,CL1926769
 C100124,Short-Form MPQ-2 Questionnaire Question,22,,A question associated with the Short-Form MPQ-2 questionnaire.,C3639113,
 C112463,St George's Respiratory Questionnaire Past 3 Months Version Questionnaire Question,51,,A question associated with the SGRQ Past 3 Months Version questionnaire.,C3827934,
 C112464,St George's Respiratory Questionnaire Past 4 Weeks Version Questionnaire Question,51,,A question associated with the SGRQ Past 4 Weeks Version questionnaire.,C3827933,
@@ -361,6 +366,6 @@ C130297,WHODAS 2.0 36-item Version Interviewer-administered Questionnaire Questi
 C130298,WHODAS 2.0 36-item Version Proxy-administered Questionnaire Question,40,,A question associated with the WHODAS 2.0 36-item Version Proxy-administered questionnaire.,,CL514191
 C130299,WHODAS 2.0 36-item Version Self-administered Questionnaire Question,39,,A question associated with the WHODAS 2.0 36-item Version Self-administered questionnaire.,,CL514192
 C166192,WPAI-GH Version 2 Questionnaire Question,10,,A question associated with the WPAI-GH Version 2 questionnaire.,,CL971452
-C100172,WPAI:SHP v2.0 Questionnaire Question,10,,A question associated with version 2.0 of the WPAI:SHP questionnaire.,C3639159,
+C100172,WPAI:SHP v2.0 Questionnaire Question,14,,A question associated with version 2.0 of the WPAI:SHP questionnaire.,C3639159,
 C124695,West Haven Criteria Clinical Classification Question,0,,A question associated with the West Haven Criteria clinical classification.,C4086962,
 C101882,YMRS Questionnaire Question,11,,A question associated with the YMRS questionnaire.,C3640287,

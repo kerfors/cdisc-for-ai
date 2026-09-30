@@ -796,7 +796,6 @@ C141701,TENMW104,TENMW1-Test Grade,FT,10-Meter Walk/Run Functional Test,TENMW1TC
 C124780,TMT0101,TMT01-Time to Complete Trails A,FT,Trail Making Test Functional Test,TMT01TC,TMT01TN,C124688,NCI_EVS
 C124781,TMT0102,TMT01-Time to Complete Trails B,FT,Trail Making Test Functional Test,TMT01TC,TMT01TN,C124688,NCI_EVS
 C115819,TUG0101,TUG01-Time to Complete TUG Test,FT,Timed Up and Go Test Functional Test,TUG01TC,TUG01TN,C115400,NCI_EVS
-C103531,ACGC0101,ACGC01-Clinical Impression of Change,QS,Alzheimer's Disease Cooperative Study-Clinical Global Impression of Change Questionnaire,ACGC01TC,ACGC01TN,C103459,NCI_EVS
 C105283,ADL0101,ADL01-Usual Eating Performance,QS,Alzheimer's Disease Cooperative Study-Activities of Daily Living Inventory Questionnaire,ADL01TC,ADL01TN,C105140,NCI_EVS
 C105284,ADL0102,ADL01-Optimal Walking Performance,QS,Alzheimer's Disease Cooperative Study-Activities of Daily Living Inventory Questionnaire,ADL01TC,ADL01TN,C105140,NCI_EVS
 C105285,ADL0103,ADL01-Usual Bowel/Bladder Function,QS,Alzheimer's Disease Cooperative Study-Activities of Daily Living Inventory Questionnaire,ADL01TC,ADL01TN,C105140,NCI_EVS
@@ -1255,9 +1254,6 @@ C132559,CES0104,"CES01-Soldiers in Unit KIA, Wounded, MIA",QS,Combat Exposure Sc
 C132560,CES0105,CES01-How Often Fire Rounds at Enemy,QS,Combat Exposure Scale Questionnaire,CES01TC,CES01TN,C132519,NCI_EVS
 C132561,CES0106,CES01-See Someone Hit by Rounds,QS,Combat Exposure Scale Questionnaire,CES01TC,CES01TN,C132519,NCI_EVS
 C132562,CES0107,CES01-In Danger of Being Injured/Killed,QS,Combat Exposure Scale Questionnaire,CES01TC,CES01TN,C132519,NCI_EVS
-C135814,CGI0201,CGI02-Severity,QS,Clinical Global Impression Generic Modification Version Questionnaire,CGI02TC,CGI02TN,C135686,NCI_EVS
-C135815,CGI0202,CGI02-Change,QS,Clinical Global Impression Generic Modification Version Questionnaire,CGI02TC,CGI02TN,C135686,NCI_EVS
-C135816,CGI0203,CGI02-Improvement,QS,Clinical Global Impression Generic Modification Version Questionnaire,CGI02TC,CGI02TN,C135686,NCI_EVS
 C117998,CHSF101A,CHSF1-Paid Personal Care per Day,QS,Craig Handicap Assessment and Reporting Technique - Short Form Interview Version Questionnaire,CHSF1TC,CHSF1TN,C117987,NCI_EVS
 C117999,CHSF101B,CHSF1-Unpaid Personal Care per Day,QS,Craig Handicap Assessment and Reporting Technique - Short Form Interview Version Questionnaire,CHSF1TC,CHSF1TN,C117987,NCI_EVS
 C118000,CHSF102,CHSF1-Home Cognitive Assistance per Day,QS,Craig Handicap Assessment and Reporting Technique - Short Form Interview Version Questionnaire,CHSF1TC,CHSF1TN,C117987,NCI_EVS
@@ -2479,6 +2475,41 @@ C170688,EOR0656,EOR06-Men: Extent Interested in Sex,QS,European Organisation for
 C170689,EOR0657,EOR06-Men: Difficulty Getting Erection,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Colorectal Cancer Version 2.1 29 Items Questionnaire,EOR06TC,EOR06TN,C170525,NCI_EVS
 C170690,EOR0658,EOR06-Women: Extent Interested in Sex,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Colorectal Cancer Version 2.1 29 Items Questionnaire,EOR06TC,EOR06TN,C170525,NCI_EVS
 C170691,EOR0659,EOR06-Women: Pain/Discomfort Intercourse,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Colorectal Cancer Version 2.1 29 Items Questionnaire,EOR06TC,EOR06TN,C170525,NCI_EVS
+C228475,EOR1131,EOR11-Pain in Mouth,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228476,EOR1132,EOR11-Pain in Jaw,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228477,EOR1133,EOR11-Soreness in Mouth,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228478,EOR1134,EOR11-Painful Throat,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228479,EOR1135,EOR11-Problems Swallowing Liquids,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228480,EOR1136,EOR11-Problems Swallowing Pureed Food,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228481,EOR1137,EOR11-Problems Swallowing Solid Food,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228482,EOR1138,EOR11-Choked When Swallowing,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228483,EOR1139,EOR11-Problems With Teeth,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228484,EOR1140,EOR11-Problems Opening Mouth Wide,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228485,EOR1141,EOR11-Dry Mouth,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228486,EOR1142,EOR11-Sticky Saliva,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228487,EOR1143,EOR11-Problems With Sense of Smell,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228488,EOR1144,EOR11-Problems With Sense of Taste,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228489,EOR1145,EOR11-Coughed,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228490,EOR1146,EOR11-Been Hoarse,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228491,EOR1147,EOR11-Felt Ill,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228492,EOR1148,EOR11-Appearance Bothered,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228493,EOR1149,EOR11-Trouble Eating,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228494,EOR1150,EOR11-Trouble Eating in Front of Family,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228495,EOR1151,EOR11-Trouble Eating in Front of People,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228496,EOR1152,EOR11-Trouble Enjoying Meals,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228497,EOR1153,EOR11-Trouble Talking to Other People,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228498,EOR1154,EOR11-Trouble Talking on Telephone,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228499,EOR1155,EOR11-Trouble Social Contact Family,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228500,EOR1156,EOR11-Trouble Social Contact Friends,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228501,EOR1157,EOR11-Trouble Going Out in Public,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228502,EOR1158,EOR11-Trouble Physical Contact,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228503,EOR1159,EOR11-Less Interest in Sex,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228504,EOR1160,EOR11-Less Sexual Enjoyment,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228505,EOR1161,EOR11-Used Pain-killers,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228506,EOR1162,EOR11-Taken Nutritional Supplements,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228507,EOR1163,EOR11-Used Feeding Tube,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228508,EOR1164,EOR11-Lost Weight,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
+C228509,EOR1165,EOR11-Gained Weight,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Head & Neck Cancer Version 1 35 Items Questionnaire,EOR11TC,EOR11TN,C228411,NCI_EVS
 C220457,EOR1231,EOR12-Trouble Eating,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Colorectal Liver Metastases 21 Items,EOR12TC,EOR12TN,C219727,NCI_EVS
 C220458,EOR1232,EOR12-Felt Full Too Quickly,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Colorectal Liver Metastases 21 Items,EOR12TC,EOR12TN,C219727,NCI_EVS
 C220459,EOR1233,EOR12-Worried About Losing Weight,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Colorectal Liver Metastases 21 Items,EOR12TC,EOR12TN,C219727,NCI_EVS
@@ -2626,6 +2657,26 @@ C220302,EOR2448,EOR24-Worried About Family in Future,QS,European Organization fo
 C220303,EOR2449,EOR24-Extent Troubled With Side-effects,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Cholangiocarcinoma and Gallbladder Cancer 21 Items Questionnaire,EOR24TC,EOR24TN,C219715,NCI_EVS
 C220304,EOR2450,EOR24-Difficulties Drainage Tubes/Bags,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Cholangiocarcinoma and Gallbladder Cancer 21 Items Questionnaire,EOR24TC,EOR24TN,C219715,NCI_EVS
 C220305,EOR2451,EOR24-Worried About Losing Weight,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Cholangiocarcinoma and Gallbladder Cancer 21 Items Questionnaire,EOR24TC,EOR24TN,C219715,NCI_EVS
+C228455,EOR2531,EOR25-Tingling Fingers/Hands,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228456,EOR2532,EOR25-Tingling Toes/Feet,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228457,EOR2533,EOR25-Numbness in Fingers/Hands,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228458,EOR2534,EOR25-Numbness in Toes/Feet,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228459,EOR2535,EOR25-Shoot/Burn Pain in Fingers/Hands,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228460,EOR2536,EOR25-Shoot/Burn Pain in Toes/Feet,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228461,EOR2537,EOR25-Cramps in Hands,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228462,EOR2538,EOR25-Cramps in Feet,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228463,EOR2539,EOR25-Problem Stand Diff Feel Ground,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228464,EOR2540,EOR25-Diff Distinguish Hot/Cold Water,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228465,EOR2541,EOR25-Problem Holding Pen Writing Diff,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228466,EOR2542,EOR25-Diff Manipulating Small Objects,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228467,EOR2543,EOR25-Diff Opening Jar/Bottle B/c Weak,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228468,EOR2544,EOR25-Diff Walking Feet Dropped Downward,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228469,EOR2545,EOR25-Diff Climbing Stairs/Getting Up,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228470,EOR2546,EOR25-Dizzy Standing Up From Sit/Lying,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228471,EOR2547,EOR25-Blurred Vision,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228472,EOR2548,EOR25-Diff Hearing,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228473,EOR2549,EOR25-Drive: Diff Using Pedals,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
+C228474,EOR2550,EOR25-Men: Diff Gain/Maintain Erection,QS,European Organisation for the Research and Treatment of Cancer Quality of Life Questionnaire - Chemotherapy-Induced Peripheral Neuropathy 20 Items Questionnaire,EOR25TC,EOR25TN,C228409,NCI_EVS
 C220498,EOR2831,EOR28-Had to Urinate Freq During Day,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Non-Muscle-Invasive Bladder Cancer 24 Items,EOR28TC,EOR28TN,C219731,NCI_EVS
 C220499,EOR2832,EOR28-Urinate Frequently at Night,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Non-Muscle-Invasive Bladder Cancer 24 Items,EOR28TC,EOR28TN,C219731,NCI_EVS
 C220500,EOR2833,EOR28-Pass Urine Hurry to Get to Toilet,QS,European Organization for the Research and Treatment of Cancer Quality of Life Questionnaire - Non-Muscle-Invasive Bladder Cancer 24 Items,EOR28TC,EOR28TN,C219731,NCI_EVS
@@ -5015,11 +5066,6 @@ C163836,GAD0205,GAD02-Being Restless Hard to Sit Still,QS,Generalized Anxiety Di
 C163837,GAD0206,GAD02-Becoming Easily Annoyed/Irritable,QS,Generalized Anxiety Disorder - 7 Version 2 Questionnaire,GAD02TC,GAD02TN,C163389,NCI_EVS
 C163838,GAD0207,GAD02-Feel Afraid/Something Awful Happen,QS,Generalized Anxiety Disorder - 7 Version 2 Questionnaire,GAD02TC,GAD02TN,C163389,NCI_EVS
 C163839,GAD0208,GAD02-Total Score,QS,Generalized Anxiety Disorder - 7 Version 2 Questionnaire,GAD02TC,GAD02TN,C163389,NCI_EVS
-C105278,GCGI0101,GCGI01-Global Severity of Pain,QS,General Clinical Global Impressions Questionnaire,GCGI01TC,GCGI01TN,C105138,NCI_EVS
-C105279,GCGI0102,GCGI01-Global Improvement of Pain,QS,General Clinical Global Impressions Questionnaire,GCGI01TC,GCGI01TN,C105138,NCI_EVS
-C105280,GCGI0103,GCGI01-Global Disease Status of Pain,QS,General Clinical Global Impressions Questionnaire,GCGI01TC,GCGI01TN,C105138,NCI_EVS
-C105281,GCGI0104,GCGI01-Pain Treatment Preference,QS,General Clinical Global Impressions Questionnaire,GCGI01TC,GCGI01TN,C105138,NCI_EVS
-C105282,GCGI0105,GCGI01-Global Rating of Pain Medication,QS,General Clinical Global Impressions Questionnaire,GCGI01TC,GCGI01TN,C105138,NCI_EVS
 C106764,GDS0101,GDS01-Satisfied With Life,QS,Geriatric Depression Scale Questionnaire,GDS01TC,GDS01TN,C106663,NCI_EVS
 C106765,GDS0102,GDS01-Dropped Activities and Interests,QS,Geriatric Depression Scale Questionnaire,GDS01TC,GDS01TN,C106663,NCI_EVS
 C106766,GDS0103,GDS01-Life Is Empty,QS,Geriatric Depression Scale Questionnaire,GDS01TC,GDS01TN,C106663,NCI_EVS
@@ -5110,6 +5156,17 @@ C115847,GOSE109,GOSE1-Since Injury Any Epileptic Fits,QS,Extended Glasgow Outcom
 C115848,GOSE110,GOSE1-At Risk of Developing Epilepsy,QS,Extended Glasgow Outcome Scale Questionnaire,GOSE1TC,GOSE1TN,C115404,NCI_EVS
 C115849,GOSE111,GOSE1-Most Important Factor in Outcome,QS,Extended Glasgow Outcome Scale Questionnaire,GOSE1TC,GOSE1TN,C115404,NCI_EVS
 C115850,GOSE112,GOSE1-GOSE Overall Score,QS,Extended Glasgow Outcome Scale Questionnaire,GOSE1TC,GOSE1TN,C115404,NCI_EVS
+C228436,GSE0101,GSE01-Manage Solve Difficult Problems,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228437,GSE0102,GSE01-Opposes Me Find Means Get I Want,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228438,GSE0103,GSE01-Stick My Aims & Accomplish Goals,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228439,GSE0104,GSE01-Confident Deal w/Unexpected Events,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228440,GSE0105,GSE01-Know Handle Unforeseen Situations,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228441,GSE0106,GSE01-Solve Problems if Invest Effort,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228442,GSE0107,GSE01-Remain Calm Facing Difficulties,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228443,GSE0108,GSE01-Confronted w/Problem Find Solution,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228444,GSE0109,GSE01-In Trouble Think of Solution,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228445,GSE0110,GSE01-Handle Whatever Comes My Way,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
+C228446,GSE0111,GSE01-Total Score,QS,General Self-Efficacy Scale Questionnaire,GSE01TC,GSE01TN,C228405,NCI_EVS
 C103573,HADS0101,HADS01-I Feel Tense or Wound Up,QS,Hospital Anxiety and Depression Scale Questionnaire,HADS01TC,HADS01TN,C103469,NCI_EVS
 C103574,HADS0102,HADS01-Enjoy the Things I Used to Enjoy,QS,Hospital Anxiety and Depression Scale Questionnaire,HADS01TC,HADS01TN,C103469,NCI_EVS
 C103575,HADS0103,HADS01-Something Awful About to Happen,QS,Hospital Anxiety and Depression Scale Questionnaire,HADS01TC,HADS01TN,C103469,NCI_EVS
@@ -5552,6 +5609,7 @@ C135918,LEC0117C,LEC01-Other Stressful Event: Learned,QS,Life Events Checklist f
 C135919,LEC0117D,LEC01-Other Stressful Event: Job,QS,Life Events Checklist for DSM-5 Standard Version Questionnaire,LEC01TC,LEC01TN,C135690,NCI_EVS
 C135920,LEC0117E,LEC01-Other Stressful Event: Not Sure,QS,Life Events Checklist for DSM-5 Standard Version Questionnaire,LEC01TC,LEC01TN,C135690,NCI_EVS
 C135921,LEC0117F,LEC01-Other Stressful Event: Not Apply,QS,Life Events Checklist for DSM-5 Standard Version Questionnaire,LEC01TC,LEC01TN,C135690,NCI_EVS
+C138364,LPPSS101,LPPSS1-Lansky Play-Performance Status,QS,Lansky Play-Performance Status Scale Questionnaire,LPPSS1TC,LPPSS1TN,C138215,NCI_EVS
 C214310,MCEQ0101,MCEQ01-Was Smoking Satisfying,QS,Modified Cigarette Evaluation Questionnaire,MCEQ01TC,MCEQ01TN,C213934,NCI_EVS
 C214311,MCEQ0102,MCEQ01-Did Cigarettes Taste Good,QS,Modified Cigarette Evaluation Questionnaire,MCEQ01TC,MCEQ01TN,C213934,NCI_EVS
 C214312,MCEQ0103,MCEQ01-Did You Enjoy Sensations Throat,QS,Modified Cigarette Evaluation Questionnaire,MCEQ01TC,MCEQ01TN,C213934,NCI_EVS
@@ -9329,6 +9387,7 @@ C166327,WPAI0207,WPAI02-Absenteeism Score,QS,The Work Productivity and Activity 
 C166328,WPAI0208,WPAI02-Presenteeism Score,QS,The Work Productivity and Activity Impairment - General Health Version 2.0 Questionnaire,WPAI02TC,WPAI02TN,C166186,NCI_EVS
 C166329,WPAI0209,WPAI02-Work Productivity Loss Score,QS,The Work Productivity and Activity Impairment - General Health Version 2.0 Questionnaire,WPAI02TC,WPAI02TN,C166186,NCI_EVS
 C166330,WPAI0210,WPAI02-Activity Impairment Score,QS,The Work Productivity and Activity Impairment - General Health Version 2.0 Questionnaire,WPAI02TC,WPAI02TN,C166186,NCI_EVS
+C103531,ACGC0101,ACGC01-Clinical Impression of Change,RS,Alzheimer's Disease Cooperative Study-Clinical Global Impression of Change Clinical Classification,ACGC01TC,ACGC01TN,C103459,NCI_EVS
 C102034,AIMS0101,AIMS01-Muscles of Facial Expression,RS,Abnormal Involuntary Movement Scale Clinical Classification,AIMS01TC,AIMS01TN,C101805,NCI_EVS
 C102035,AIMS0102,AIMS01-Lips and Perioral Area,RS,Abnormal Involuntary Movement Scale Clinical Classification,AIMS01TC,AIMS01TN,C101805,NCI_EVS
 C102036,AIMS0103,AIMS01-Jaw,RS,Abnormal Involuntary Movement Scale Clinical Classification,AIMS01TC,AIMS01TN,C101805,NCI_EVS
@@ -9596,6 +9655,18 @@ C155366,CDRS121,CDRS1-CDRS-R Raw Summary Score,RS,"Children's Depression Rating 
 C155367,CDRS122,CDRS1-CDRS-R T-Score,RS,"Children's Depression Rating Scale, Revised Clinical Classification",CDRS1TC,CDRS1TN,C154447,NCI_EVS
 C155368,CDRS123,CDRS1-CDRS-R Percentile,RS,"Children's Depression Rating Scale, Revised Clinical Classification",CDRS1TC,CDRS1TN,C154447,NCI_EVS
 C155369,CDRS124,CDRS1-CDRS-R T-Score Range,RS,"Children's Depression Rating Scale, Revised Clinical Classification",CDRS1TC,CDRS1TN,C154447,NCI_EVS
+C228426,CGBP101A,CGBP1-Severity: Mania,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228427,CGBP101B,CGBP1-Severity: Depression,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228428,CGBP101C,CGBP1-Severity: Overall Bipolar Illness,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228429,CGBP102A,CGBP1-Change Preced Phase: Mania,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228430,CGBP102B,CGBP1-Change Preced Phase: Depression,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228431,CGBP102C,CGBP1-Change Preced Phase: Overall Bipol,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228432,CGBP103A,CGBP1-Change Worst Phase: Mania,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228433,CGBP103B,CGBP1-Change Worst Phase: Depression,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C228434,CGBP103C,CGBP1-Change Worst Phase: Overall Bipol,RS,Clinical Global Impressions-Bipolar Version 1997 Clinical Classification,CGBP1TC,CGBP1TN,C228403,NCI_EVS
+C135814,CGI0201,CGI02-Severity,RS,Clinical Global Impression Generic Modification Version Clinical Classification,CGI02TC,CGI02TN,C135686,NCI_EVS
+C135815,CGI0202,CGI02-Change,RS,Clinical Global Impression Generic Modification Version Clinical Classification,CGI02TC,CGI02TN,C135686,NCI_EVS
+C135816,CGI0203,CGI02-Improvement,RS,Clinical Global Impression Generic Modification Version Clinical Classification,CGI02TC,CGI02TN,C135686,NCI_EVS
 C124779,CHIVC101,CHIVC1-CDC HIV Infection Category,RS,CDC Classification System for HIV-Infected Adults and Adolescents Clinical Classification,CHIVC1TC,CHIVC1TN,C124678,NCI_EVS
 C156676,COVI0101,COVI01-Verbal Report,RS,Covi Anxiety Scale Clinical Classification,COVI01TC,COVI01TN,C156673,NCI_EVS
 C156677,COVI0102,COVI01-Behavior,RS,Covi Anxiety Scale Clinical Classification,COVI01TC,COVI01TN,C156673,NCI_EVS
@@ -9674,6 +9745,11 @@ C170654,FASNA108,FASNA1-Paying Attention/Understanding TV,RS,Functional Assessme
 C170655,FASNA109,FASNA1-Remembering Appointments,RS,Functional Assessment Scale-NACC UDS Version 3.0 Clinical Classification,FASNA1TC,FASNA1TN,C170523,NCI_EVS
 C170656,FASNA110,FASNA1-Traveling Out of the Neighborhood,RS,Functional Assessment Scale-NACC UDS Version 3.0 Clinical Classification,FASNA1TC,FASNA1TN,C170523,NCI_EVS
 C124722,FCVD101,FCVD1-Framingham CVD 10-Year Risk Score,RS,Framingham Heart Study Cardiovascular Disease 10-Year Risk Score Clinical Classification,FCVD1TC,FCVD1TN,C124670,NCI_EVS
+C105278,GCGI0101,GCGI01-Global Severity of Pain,RS,General Clinical Global Impressions Clinical Classification,GCGI01TC,GCGI01TN,C105138,NCI_EVS
+C105279,GCGI0102,GCGI01-Global Improvement of Pain,RS,General Clinical Global Impressions Clinical Classification,GCGI01TC,GCGI01TN,C105138,NCI_EVS
+C105280,GCGI0103,GCGI01-Global Disease Status of Pain,RS,General Clinical Global Impressions Clinical Classification,GCGI01TC,GCGI01TN,C105138,NCI_EVS
+C105281,GCGI0104,GCGI01-Pain Treatment Preference,RS,General Clinical Global Impressions Clinical Classification,GCGI01TC,GCGI01TN,C105138,NCI_EVS
+C105282,GCGI0105,GCGI01-Global Rating of Pain Medication,RS,General Clinical Global Impressions Clinical Classification,GCGI01TC,GCGI01TN,C105138,NCI_EVS
 C124724,GCS0101,GCS01-Best Eye Response,RS,Glasgow Coma Scale NINDS Version 1.0 Clinical Classification,GCS01TC,GCS01TN,C124682,NCI_EVS
 C124725,GCS0102,GCS01-Motor Response,RS,Glasgow Coma Scale NINDS Version 1.0 Clinical Classification,GCS01TC,GCS01TN,C124682,NCI_EVS
 C124726,GCS0103,GCS01-Verbal Response,RS,Glasgow Coma Scale NINDS Version 1.0 Clinical Classification,GCS01TC,GCS01TN,C124682,NCI_EVS
@@ -9843,7 +9919,6 @@ C112617,KFSS107,KFSS1-Cerebral or Mental Functions,RS,Kurtzke Functional Systems
 C113884,KFSS108,KFSS1-Other Functions,RS,Kurtzke Functional Systems Scores Clinical Classification,KFSS1TC,KFSS1TN,C112443,NCI_EVS
 C113885,KFSS108A,KFSS1-Other Functions Specify,RS,Kurtzke Functional Systems Scores Clinical Classification,KFSS1TC,KFSS1TN,C112443,NCI_EVS
 C100417,KPSS0101,KPSS01-Karnofsky Performance Status,RS,Karnofsky Performance Status Scale Clinical Classification,KPSS01TC,KPSS01TN,C100170,NCI_EVS
-C138364,LPPSS101,LPPSS1-Lansky Play-Performance Status,RS,Lansky Play-Performance Status Scale Clinical Classification,LPPSS1TC,LPPSS1TN,C138215,NCI_EVS
 C191057,MCHR0101,MCHR01-Age at Diagnosis,RS,Montreal Classification for Crohn's Disease Clinical Classification,MCHR01TC,MCHR01TN,C190928,NCI_EVS
 C191058,MCHR0102,MCHR01-Location,RS,Montreal Classification for Crohn's Disease Clinical Classification,MCHR01TC,MCHR01TN,C190928,NCI_EVS
 C191059,MCHR0103,MCHR01-Behavior,RS,Montreal Classification for Crohn's Disease Clinical Classification,MCHR01TC,MCHR01TN,C190928,NCI_EVS
@@ -10108,13 +10183,13 @@ C176117,SES0128,SES01-Trans Colon Subscore,RS,Simple Endoscopic Score for Crohn'
 C176118,SES0129,SES01-Left Colon Subscore,RS,Simple Endoscopic Score for Crohn's Disease Version 1 Clinical Classification,SES01TC,SES01TN,C176051,NCI_EVS
 C176119,SES0130,SES01-Rectum Subscore,RS,Simple Endoscopic Score for Crohn's Disease Version 1 Clinical Classification,SES01TC,SES01TN,C176051,NCI_EVS
 C176120,SES0131,SES01-Total Score,RS,Simple Endoscopic Score for Crohn's Disease Version 1 Clinical Classification,SES01TC,SES01TN,C176051,NCI_EVS
-C204337,SOFA0101,SOFA01-Respiration: PaO2/FiO2,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
-C204338,SOFA0102,SOFA01-Coagulation: Platelets,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
-C204339,SOFA0103,SOFA01-Liver: Bilirubin,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
-C204340,SOFA0104,SOFA01-Cardiovascular: Hypotension,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
-C204341,SOFA0105,SOFA01-CNS: Glasgow Coma Score,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
-C204342,SOFA0106,SOFA01-Renal: Creatinine or Urine Output,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
-C204343,SOFA0107,SOFA01-Total SOFA Score,RS,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204337,SOFA0101,SOFA01-Respiration: PaO2/FiO2,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204338,SOFA0102,SOFA01-Coagulation: Platelets,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204339,SOFA0103,SOFA01-Liver: Bilirubin,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204340,SOFA0104,SOFA01-Cardiovascular: Hypotension,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204341,SOFA0105,SOFA01-CNS: Glasgow Coma Score,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204342,SOFA0106,SOFA01-Renal: Creatinine or Urine Output,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
+C204343,SOFA0107,SOFA01-Total SOFA Score,RS,Sepsis-related Organ Failure Assessment 1996 Clinical Classification,SOFA01TC,SOFA01TN,C204224,NCI_EVS
 C119198,STCG0101,STCG01-STC ARC Grade,RS,Stent Thrombosis Coronary ARC Grade Clinical Classification,STCG01TC,STCG01TN,C119080,NCI_EVS
 C124718,TANN0101,TANN01-Breast Stages,RS,Tanner Scale Girl Clinical Classification,TANN01TC,TANN01TN,C124664,NCI_EVS
 C124719,TANN0102,TANN01-Pubic Hair Stages,RS,Tanner Scale Girl Clinical Classification,TANN01TC,TANN01TN,C124664,NCI_EVS

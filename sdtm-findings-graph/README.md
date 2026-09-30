@@ -9,8 +9,8 @@ SoA-to-CDISC mapping, and USDM integration.
 This track is the graph-fed canonical Findings consumer, having replaced
 the legacy `sdtm-findings/` track retired May 2026.
 
-> **Reference versions** — built on SDTM CT 2026-03-27 and COSMoS BC/DSS
-> 2026-Q1. See [`../docs/Changes_2026-05.md`](../docs/Changes_2026-05.md) for
+> **Reference versions** — built on SDTM CT 2026-09-25 and COSMoS BC/DSS
+> 2026-07-14. See [`../docs/Changes_2026-09.md`](../docs/Changes_2026-09.md) for
 > what changed in the latest release.
 
 ## Pipeline position

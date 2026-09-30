@@ -14,7 +14,7 @@ Repository: https://github.com/kerfors/cdisc-for-ai
 
 ## Reference versions
 
-- SDTM CT: NCI EVS package **2026-03-27**
+- SDTM CT: NCI EVS package **2026-09-25**
 - COSMoS BC/DSS: package **2026-07-14**
 - SDTMIG: **v3.4** / SDTM v2.0
 
