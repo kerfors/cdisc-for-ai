@@ -6,31 +6,21 @@ Explorative work on the CDISC clinical data standards, using linked data princip
 
 ## Purpose
 
+![From study design to data, linked and queried](docs/images/cdisc_for_ai_design_to_data.png)
+
 This repository is explorative work. The aim is to make the most of the CDISC standards using linked data principles, and to actually understand what the standards express and which insights they are built on.
 
-The method is to uncover behaviour: the implicit patterns in what the published content actually does, as opposed to what the schema and the documentation say it does. The behaviour is measurable from CDISC's own published content, so the evidence does not depend on any theory about how the standards ought to be modelled.
+The method is to uncover behaviour: the implicit patterns in what the published content actually does, as opposed to what the schema and the documentation say it does. The behaviour is measurable from CDISC's own published content, so the evidence does not depend on any theory about how the standards ought to be modelled. A new release is a good moment to see it, because you can watch the standards change their mind.
 
-This is the test bed. Ideas are explored here first. The reference files here -- flat Excel files for now -- are deliverables in their own right. What settles can then be represented as Linked Data, with high transparency: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) is the first such deliverable, beside its sibling [`usdm-rdf`](https://github.com/kerfors/usdm-rdf).
+This is the test bed. Ideas are explored here first. The reference files here -- flat Excel files for now -- are deliverables in their own right. What settles can then be represented as Linked Data, with high transparency, so the standards can be linked and queried, not just read: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) is the first such deliverable, beside its sibling [`usdm-rdf`](https://github.com/kerfors/usdm-rdf). A later direction is to publish the reference files themselves as RDF.
 
-A later direction is to publish the reference files themselves as RDF.
+The next step is upstream: to understand the data standards in relation to study design -- objectives, endpoints, estimands, and the activities and procedures that produce the data. Procedures are the part we often forget, yet they drive much of the patient burden and cost. USDM already links activities to Biomedical Concepts, so the bridge is there to explore.
 
 ## Why
 
-Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. In specimen-based domains, each Dataset Specialization adds an identifiable measurement specification: specimen, method, units, LOINC. But these linkages are scattered across disconnected sources. The CT file presents test codes as submission strings. Reaching the measurement specification requires navigating across BC and DSS exports. A human must mentally reconstruct the connections.
+Behind every TESTCD/TEST pair sits an NCIt concept with its own identity, definition, synonyms, and connections to broader biomedical vocabularies. Dataset Specializations add measurement specifications: specimen, method, units, LOINC. These linkages already exist, but scattered across CT files, COSMoS exports and NCIt, and a human must reconstruct the connections. Structured study definitions (USDM, 360i, OpenStudyBuilder) push this specificity upstream into study design, where it has to be explicit and machine-readable from the start. What is missing is not content but machine-traversable connections between concepts that already exist.
 
-The move toward structured study definitions (USDM, 360i, OpenStudyBuilder) pushes this specificity upstream, into study design, where it needs to be explicit and machine-readable from the start. A study designer building a lab appendix starts from a medical purpose ("monitor liver function") and needs to arrive at specific, selectable measurement specifications. The CDISC standards already contain the building blocks for this. What is missing is not content but infrastructure: machine-traversable connections between concepts that already exist.
-
-This repository makes those linkages explicit. Each reference file puts related data side by side in rows, with clear keys linking across sheets and tracks, reachable from one place for humans, AI systems, and rule engines alike.
-
-For how the analytical layers fit together, see [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
-
-## Flat files are views, not the architecture
-
-The relationships that make CDISC standards useful -- TESTCD to NCIt concept, concept to LOINC, concept to specimen and method variants, BC to DSS -- already exist. They are scattered across disconnected sources and formats: CT files, COSMoS JSON exports, NCIt OWL files, LOINC tables. No single source lets you traverse from a medical term to a selectable measurement specification.
-
-This project makes those relationships explicit by joining them into flat files. That is useful today -- Excel files reach data managers, statisticians, LLMs, and rule engines. But flat files are projections. They lose the graph structure: the same concept appears in multiple rows, relationships become columns, and traversal requires lookup rather than navigation.
-
-The future is publishing CDISC standards as a graph that tools and AI can traverse directly. Flat files, APIs, SPARQL endpoints, LLM tool access -- these are all views of the same underlying graph. *One Graph, Many Views.* This project demonstrates what those views look like and what content they need. The graph itself is the goal.
+The reference files make those connections explicit today, as flat files with clear keys across sheets and tracks. Flat files are views, not the architecture: the relationships are graph-shaped, and the goal is the standards as a graph that tools and AI can traverse directly. *One Graph, Many Views.*
 
 ## Tracks
 
@@ -76,13 +66,13 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- four-sheet (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) |
 
-Specimen and Measurement consumer files are two-sheet Excel workbooks: **Test_Identity** (one row per TESTCD, enriched with COSMoS summary) and **Measurement_Specs** (one row per Dataset Specialization, scoped to the relevant domains). The Instrument consumer is four-sheet — adds **BC_Categories** (search-tag mechanism) and **BC_Parents** (parent-chain traversal) because instrument grouping operates outside the BC parent chain (item BCs roll up via wrapper concepts, not via the instrument-level BC). Link between sheets: TESTCD.
-
 ### Analysis track
 
 | Track | Question | Output |
 |---|---|---|
 | [`link-semantics/`](link-semantics/) | What kind of link is it? Link kinds and provenance classes behind every NCIt and LOINC link, and C-codes used in more than one role | [`Link_Kind_Audit.xlsx`](link-semantics/interim/Link_Kind_Audit.xlsx), [`Code_Collision_Check.xlsx`](link-semantics/interim/Code_Collision_Check.xlsx) -- evidence for the RDF repositories when choosing predicates |
+
+Each consumer file links its sheets on TESTCD. How the files are built from each other: [`docs/Data_Flow.md`](docs/Data_Flow.md). How the analytical layers fit together: [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
 
 ## Skills
 
@@ -92,139 +82,25 @@ AI skills for working with CDISC standards. The reference files above are design
 |---|---|---|
 | [`sdtm-ct-analysis/`](skills/sdtm-ct-analysis/) | Structural analysis of SDTM Controlled Terminology: category discovery and profiling. Part of the analytical foundation behind the reference files. | NCI EVS SDTM CT file |
 
-## Data flow
-
-Two views. The first shows how the reference files and consumer outputs are built. The second shows the analysis work, which reads from the same files but feeds nothing back.
-
-### Reference files and consumer outputs
-
-```mermaid
-graph TD
-    subgraph Sources
-        EVS["NCI EVS SDTM CT"]
-        COS["COSMoS exports"]
-    end
-
-    subgraph sdtm-test-codes
-        TI["SDTM_Test_Identity.xlsx"]
-        ITI["SDTM_Instrument_Test_Identity.xlsx"]
-        II["SDTM_Instrument_Identity.xlsx"]
-    end
-
-    subgraph cosmos-graph
-        CG["COSMoS_Graph.xlsx"]
-        CGC["COSMoS_Graph_CT.xlsx"]
-    end
-
-    subgraph sdtm-domain-reference
-        DM["SDTM_Domain_Metadata.xlsx"]
-    end
-
-    subgraph consumer-bases
-        DV["DSS_View.xlsx"]
-    end
-
-    subgraph sdtm-findings-graph
-        SF["Specimen_Findings.xlsx"]
-        MF["Measurement_Findings.xlsx"]
-        IF["Instrument_Findings.xlsx<br/>(four-sheet)"]
-    end
-
-    EVS --> TI
-    EVS --> ITI
-    EVS --> II
-    EVS --> DM
-    EVS --> CGC
-    COS --> CG
-
-    CG --> DV
-    CGC --> DV
-    TI --> DV
-
-    DV --> SF
-    DV --> MF
-    DV --> IF
-    DM --> SF
-    DM --> MF
-    DM --> IF
-    II --> IF
-    ITI --> IF
-```
-
-### Analysis
-
-```mermaid
-graph TD
-    COS["COSMoS exports"]
-    CGX["cosmos-graph<br/>COSMoS_Graph.xlsx, COSMoS_Graph_CT.xlsx"]
-    STC["sdtm-test-codes<br/>Test and Instrument Identity, Codelist_Cross_References"]
-    USDM["usdm-rdf<br/>usdm_v4.ttl"]
-
-    subgraph cosmos-bc-dss
-        BA["Behavioural_Analysis.md"]
-        DPI["Domain_Pattern_Inventory.xlsx"]
-    end
-
-    subgraph link-semantics
-        LKA["Link_Kind_Audit.xlsx"]
-        CCC["Code_Collision_Check.xlsx"]
-        LS["Link_Semantics.md"]
-    end
-
-    COS --> BA
-    COS --> DPI
-
-    CGX --> LKA
-    STC --> LKA
-    CGX --> CCC
-    STC --> CCC
-    USDM --> CCC
-
-    LKA --> LS
-    CCC --> LS
-```
-
-For how the analytical layers fit together, see [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
-
 ## Key findings
 
-The analytical work produced insights beyond the reference files themselves. Full detail in [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md) and [`Identity_Needs_by_Behavioural_Group.md`](docs/Identity_Needs_by_Behavioural_Group.md).
+**The BC-to-DSS relationship means different things in different domains.** One BC schema and one DSS schema serve all domains, but the relationship clusters into distinct identity patterns: DSS-level identity needed (specimen-based), BC-level sufficient (measurement, instrument), protocol-driven (events, interventions), relational, and not applicable (trial design). See [`Identity_Needs_by_Behavioural_Group.md`](docs/Identity_Needs_by_Behavioural_Group.md) and [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md).
 
-**The BC-to-DSS relationship means different things in different domains.** The COSMoS model is intentionally generic: one BC schema and one DSS schema serve all domains. But the same structural relationship carries fundamentally different meaning depending on where you are. The analysis identified ten behavioural groups that cluster into five identity patterns:
+**DSSs model collection templates, not medical ontology.** A DSS models how a row looks in the dataset: a CRF row template. Medical History and Substance Use decompose by form variant, not by clinical difference. DSS-level identifiers matter where the template also reflects a real clinical difference, as for glucose in serum versus urine. See [`COSMoS_Collection_vs_Ontology.md`](cosmos-bc-dss/docs/COSMoS_Collection_vs_Ontology.md).
 
-| Identity pattern | Groups | What a DSS represents |
-|---|---|---|
-| DSS-level identity needed | Specimen, Immunogenicity, Genomics | A clinically distinct measurement specification |
-| BC-level sufficient | Measurement, Domain-specific, Instrument | No meaningful identity difference below BC |
-| Protocol-driven | Events, Interventions | A CRF template variant, not a measurement |
-| Relational | Clinical Assessment | Meaningful only with RELREC context |
-| Not applicable | Trial Design | Study-level metadata |
+**Method moves out of test identity.** SDTM CT 2026-09-25 retires FibroTest and FIB-4 as lab tests in favour of one Liver Fibrosis Score test with the formula in the analysis method, and retires the Greulich and Pyle bone-age test in favour of a generic Bone Age Estimation with the named method as METHOD. The terminology draws the line between what is observed and how it is observed -- the same line this repo uses between Biomedical Concepts and Dataset Specializations. No schema states it; it shows in the content, release by release.
 
-**DSSs model collection templates, not medical ontology.** COSMoS BCs and DSSs are derived from SDTM, a submission and collection standard. The DSS level models how a row looks in the dataset: a CRF row template. Medical History has 1 BC and 11 DSSs (CRF template variants, not 11 distinct measurements). Substance Use decomposes Alcohol into Beer, Wine, and Spirits (collection form options, not medical taxonomy). The need for DSS-level identifiers arises where the collection template also reflects a real clinical difference, as in specimen-based domains where glucose in serum and glucose in urine are different CRF rows AND different clinical measurements with different LOINC codes. See [`COSMoS_Collection_vs_Ontology.md`](cosmos-bc-dss/docs/COSMoS_Collection_vs_Ontology.md).
+**Specimen-based Findings is not one pattern.** The IG groups these domains under one label, but they decompose by different logics: LB/MB/MI by specimen, IS by target antigen, GF by result scale. UR is behaviourally flat.
 
-**Specimen-based Findings is not one pattern.** The SDTM IG groups 11 domains under this label (Section 6.3.5), but the behavioural analysis shows three distinct decomposition logics: LB/MB/MI by specimen, IS by target antigen (up to 92:1 fan-out), and GF by result scale. UR is behaviourally flat despite its IG classification.
+**Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are built for human readability (GLUCSER = Glucose in Serum) and are not unique across domains. The same holds for test codes: SDTM CT 2026-09-25 adds CMV = Contractile Muscle Volume in MK beside CMV = Cytomegalovirus in MB, and MV = Muscle Volume in MK beside MV = Minute Volume in RE. Domain plus code identifies the test; the NCIt code does on its own. How to make DSSs machine-addressable is an open question for the community.
 
-**DS_Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are designed for human readability (GLUCSER = Glucose in Serum), not as persistent machine identifiers. They are not unique across domains. Several approaches could make DSSs machine-addressable: URIs from domain + DS_Code, NCIt C-codes at the DSS level, or other mechanisms. The right approach is an open question for the community.
+**The identity layer is complete; the measurement specification layer is not.** Every test code has full NCIt identity, but only a small share of specimen-based test codes have COSMoS measurement specifications. Sponsors' internal lab catalogues hold much of the missing detail, and the Test_Identity sheet is the anchor for mapping it. See the [graph-fed consumer track README](sdtm-findings-graph/).
 
-**The standardized identity layer is complete; the measurement specification layer is not.** The specimen-based consumer file carries 4,183 TESTCDs with full NCIt identity across 8 domains, but only 104 have COSMoS measurement specifications. For laboratory tests specifically, sponsors who maintain internal lab test catalogues or registries already have much of the missing operational detail (specimen types, methods, units, LOINC codes). The Test_Identity sheet provides the standardized anchor (TESTCD, NCIt_Code) for mapping that internal content to the CDISC identity layer. Where COSMoS has published DSSs, use them. Where it has not, the identity layer is still there. See the [graph-fed consumer track README](sdtm-findings-graph/) for detail.
-
-**Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? Is the collection-template framing useful for understanding where DSS-level identifiers add value? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback on any of these is welcome.
-
-## Design decisions
-
-**Why flat files?** Excel files with README sheets reach the broadest audience today: data managers, statisticians, LLMs, rule engines. The underlying relationships are graph-shaped, but flat projections are the most accessible delivery format until the standards are published as a traversable graph.
-
-**Why "machine-actionable" not "AI-friendly"?** Applies to any automated system, not just LLMs. Aligns with FAIR data principles.
-
-**Why interim/?** Downloads are external. Interim files are our own pipeline artifacts, visible because they have value as standalone artifacts, even if not the final product.
-
-**Why renamed columns?** COSMoS source field names are implementation-oriented (vlm_group_id, specimenIdentity, resultScale). The consumer files translate these to more transparent names (DS_Code, Specimen, Result_Scale) while documenting the mapping in the Flatten notebook for traceability.
-
-**Why three consumer notebooks?** The three Findings structural types (specimen-based, instrument-based, measurement) have fundamentally different data shapes and join logic. Splitting by structural type keeps each notebook focused and its output consumable.
+**Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback is welcome.
 
 ## Status
 
-Early and exploratory. Not a finished product. Built iteratively with Claude (Anthropic), will evolve through interaction with the CDISC community.
+Early and exploratory. Not a finished product. Built iteratively with Claude (Anthropic), will evolve through interaction with the CDISC community. Design decisions: [`docs/Design_Decisions.md`](docs/Design_Decisions.md).
 
 ## Author
 
