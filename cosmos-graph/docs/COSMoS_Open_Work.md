@@ -8,7 +8,7 @@
 
 ## 1. Upstream flags — paperwork to CDISC and NCI EVS
 
-Nine asks. Each is an authoring or subset issue outside this repo.
+Ten asks. Each is an authoring or subset issue outside this repo.
 
 **To the COSMoS authoring working group.**
 
@@ -21,12 +21,19 @@ Nine asks. Each is an authoring or subset issue outside this repo.
 4. **MBTESTCD / MBTEST subset.** Does not carry C132388 "Treponema pallidum Antibody Measurement" or C171439 "SARS-CoV-2 Antibody Measurement". Both are valid NCIt Laboratory Procedures and are referenced by MB TPLAB and MB SAR2ABDET.
 5. **VSRESU (C66770) codelist.** Does not carry C105484 "fraction of 1", needed for OXYSAT.VSSTRESU.
 6. **AUTOPSY in `--METHOD` value_lists.** Appears in some `--METHOD` value_lists in the CDISC source xlsx; not present in METHOD codelist (C85492). Confirmed by Linda Lander (CDISC); will be removed in next package release.
+   *Status 2026-09-30 (Package 18, CT 2026-09-25):* still present in ACMITYPE FAMETHOD.
 7. **PINCH DYNAMOMETRY in `--METHOD` value_lists.** Same pattern as AUTOPSY. Confirmed by Linda Lander (CDISC); will be removed in next package release.
+   *Status 2026-09-30:* removed in Package 18.
 8. **PR PRDECOD value_list carries 5 ungoverned RT modalities.** `RADTHERAPHYBREASTCANCER` PRDECOD value_list contains `INTENSITY MODULATED RADIATION THERAPY`, `RADIOSURGERY`, `STEREOTACTIC BODY RADIATION THERAPY`, `INTRACAVITY BRACHYTHERAPY`, `INTERSTITIAL BRACHYTHERAPY`. None is governed in the PROCEDUR codelist (C101858) at 2026-03-27. Only `3D CONFORMAL RADIATION THERAPY` from the same value_list is governed. All five are valid NCIt concepts. Resolution direction differs from items 6/7 — these are candidates for ADDITION to PROCEDUR rather than removal from the value_list (or, alternatively, for the COSMoS author to remove them from the value_list pending PROCEDUR extension). Surfaced by `consumer-bases/interim/PR_DSS_Reachability.xlsx` (notebook `30_pr_dss_reachability.ipynb`) 2026-05.
+   *Status 2026-09-30 (Package 18, CT 2026-09-25):* RADTHERAPHYBREASTCANCER now uses the CT spellings for brachytherapy and IMRT; RADIOSURGERY and STEREOTACTIC BODY RADIATION THERAPY still not in PROCEDUR. The new RADIATIONCANCER and SURGBRCAPRESP add further ungoverned members. Draft write-up (on hold until the next COSMoS package): `COSMoS_Package18_vs_SDTM_CT_2026-09-25.md` in the project folder.
 
 **To the NCI EVS Variable Terminology team.**
 
 9. **Root-subset gaps.** Thirty-seven variable codes resolve to compositional forms that have no `--<remainder>` representation in the NCI EVS Variable Terminology Root subset at 2026-03-27. Dominated by the GF* (Genomic Findings) family, `STRESN` across domains, and `ISBDAGNT`. Full list in [`../reports/root_subset_fallback_diagnostic.md`](../reports/root_subset_fallback_diagnostic.md).
+
+**To the COSMoS authoring working group (added 2026-09-30).**
+
+10. **GPBAEST pins a retired TESTCD.** MKTESTCD C181502 was removed in SDTM CT 2026-09-25 (CDISC-7058), replaced by BONEAEST (C228309) with the method in MKMETHOD. Surfaces as the fifth unresolved concept ID in graph validation.
 
 Paperwork, not code. Drafts live outside this branch.
 
