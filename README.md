@@ -18,6 +18,8 @@ This is the test bed. Ideas are explored here first. The reference files here --
 
 Related, early work: `cosmos-rdf` renders COSMoS as RDF, as published. Rendering it as-is is itself a way to reveal how COSMoS behaves.
 
+On the data side, the way forward is set out in [`docs/Observables_Direction.md`](docs/Observables_Direction.md): find out what identifies an observable, make the reference files express it, then move towards RDF/OWL.
+
 The next step is upstream: to understand the data standards in relation to study design -- objectives, endpoints, estimands, and the activities and procedures that produce the data. Procedures are the part we often forget, yet they drive much of the patient burden and cost. USDM already links activities to Biomedical Concepts, so the bridge is there to explore.
 
 ## Why
