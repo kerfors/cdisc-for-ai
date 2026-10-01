@@ -10,7 +10,7 @@ This track is the graph-fed canonical Findings consumer, having replaced
 the legacy `sdtm-findings/` track retired May 2026.
 
 > **Reference versions** — built on SDTM CT 2026-09-25 and COSMoS BC/DSS
-> 2026-07-14. See [`../docs/Changes_2026-09.md`](../docs/Changes_2026-09.md) for
+> 2026-07-14. See [`../docs/Changes_2026-10.md`](../docs/Changes_2026-10.md) for
 > what changed in the latest release.
 
 ## Pipeline position
@@ -31,7 +31,7 @@ consumer-bases/interim/DSS_View.xlsx ─────────────┘ 
 
 **In scope.** Editorial decisions a Findings consumer owns: sub-typing
 (specimen vs measurement vs instrument), behavioural exclusions (IS, GF,
-UR, EG), the LOINC grain decision, the NCIt graph-vs-reference disagreement
+UR), the LOINC grain decision, the NCIt graph-vs-reference disagreement
 surface, the `Allowed_Units` codelist expansion, the wider TESTCD universe
 self-join (the coverage-gap framing). Final column shape per sub-type is
 designed fresh — not ported from the legacy track.
@@ -50,8 +50,15 @@ along with its legacy consumer.
 | Notebook | Sub-type | Scope | Output |
 |---|---|---|---|
 | `Specimen_Findings.ipynb` | Specimen | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded) | `machine_actionable/Specimen_Findings.xlsx` |
-| `Measurement_Findings.ipynb` | Measurement | VS, MK, CV (EG excluded) | `machine_actionable/Measurement_Findings.xlsx` |
+| `Measurement_Findings.ipynb` | Measurement | VS, EG, MK, CV, RE | `machine_actionable/Measurement_Findings.xlsx` |
 | `Instrument_Findings.ipynb` | Instrument | QS, FT, RS | `machine_actionable/Instrument_Findings.xlsx` |
+| `Scope_Check.ipynb` | — | Release check, run before the three above | Fails when a domain with CT test codes or COSMoS DSSs is missing from `SDTM_Domain_Metadata.xlsx` or is not a domain code in the CT SDTM Domain Abbreviation codelist (C66734) |
+
+Scope is not listed in code. Each notebook reads it from `SDTM_Domain_Metadata.xlsx`
+(`Specimen_Based`, `Measurement`, the `Instrument_Domain_Rules` sheet) and removes the
+exclusions it names, with their reasons. A domain classified in the metadata enters
+its consumer when content arrives; the domains above are the scope at SDTM CT 2026-09-25
+and COSMoS 2026-07-14.
 
 ## Inputs (shared)
 
@@ -77,7 +84,9 @@ Specimen and measurement outputs are two-sheet workbooks:
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
   measurement detail (specimen, method, scale, units, coding).
 
-Link key between sheets: TESTCD (and NCIt code for precision). The two-step
+Link key between sheets: TESTCD + NCIt code. TESTCD alone is a mnemonic, reused
+across domains for unrelated tests (MCH in LB and MB, MV in MK and RE); COSMoS
+coverage is joined on both. The two-step
 structure matches the mapping workflow: first resolve a term to a concept,
 then select the specific measurement variant.
 
@@ -105,9 +114,9 @@ container (NCIt C211913), grey = keys.
 
 ## Behavioural exclusions
 
-Sub-typing follows the analysis in
-[`cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`](../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md).
-Summary of exclusions — see the analysis for detail:
+Sub-typing follows the March 2026 analysis, archived in
+[`docs/archive/behavioural-analysis-2026-03/`](../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md).
+The exclusions, with their reasons as they stand now:
 
 - **Specimen sub-type — IS excluded.** Decomposes by target antigen, not
   specimen. Specimen is constant. Target identity is mnemonic-encoded in
@@ -118,8 +127,10 @@ Summary of exclusions — see the analysis for detail:
 - **Specimen sub-type — UR excluded.** Zero decomposition despite the
   `Specimen_Based` metadata flag. Behaviourally identical to
   Domain-specific Findings.
-- **Measurement sub-type — EG excluded.** All BCs marked `Qualitative`
-  with units present on a sizeable share — pending clarification.
+- **Measurement sub-type — no exclusions.** EG was excluded until
+  2026-10-01 (all BCs marked `Qualitative` with units present on a sizeable
+  share). Since the COSMoS 2026-05-26 package its scales are Nominal (no
+  units) or Quantitative (with units), so the reason no longer holds.
 
 ## Consumer-owed design decisions
 
@@ -183,5 +194,5 @@ Folders not present:
   join layer this consumer reads.
 - [`cosmos-graph/`](../cosmos-graph/) — upstream graph track. Owns source
   projection and CT enrichment.
-- [`cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`](../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md) — behavioural rationale for sub-typing and exclusions.
+- [`COSMoS_Behavioural_Analysis.md`](../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md) — behavioural rationale for sub-typing and exclusions (March 2026, archived).
 - Repo-root [`CLAUDE.md`](../CLAUDE.md) — repo conventions.

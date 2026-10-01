@@ -27,7 +27,7 @@ They are not maintained. The archive note lists what no longer holds.
 
 ## Behavioural analysis
 
-A repo-level analysis of how the BC-to-DSS relationship behaves across SDTM domains. Ten behavioural groups cluster into five identity patterns; the analysis explains why a Dataset Specialization means different things in different domains. See [`docs/Identity_Needs_by_Behavioural_Group.md`](docs/Identity_Needs_by_Behavioural_Group.md) and the full analysis in [`cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md).
+A repo-level analysis of how the BC-to-DSS relationship behaves across SDTM domains. Ten behavioural groups cluster into five identity patterns; the analysis explains why a Dataset Specialization means different things in different domains. Written in March 2026 and archived in [`docs/archive/behavioural-analysis-2026-03/`](docs/archive/behavioural-analysis-2026-03/), with a note on what has changed since.
 
 ## Public artefact set
 

@@ -1,20 +1,17 @@
-# cosmos-bc-dss — COSMoS source-ingest, behavioural analysis, NCIt comparison
+# cosmos-bc-dss — COSMoS source-ingest, observables, NCIt comparison
 
 The yellow layer. Originally the home of the legacy COSMoS BC/DSS single-sheet flatten; that role moved to [`../cosmos-graph/`](../cosmos-graph/) (schema-driven multi-sheet projection) and the flatten was retired in May 2026.
 
 What stays here:
 
 - **The COSMoS source-ingest landing zone.** [`downloads/`](downloads/) holds the COSMoS BC and DSS exports; both `cosmos-graph/` and the remaining notebooks below read from here.
-- **Behavioural-analysis documentation.** Cross-domain analyses of how BC→DSS patterns vary by domain. The graph projection makes the data traversable; these docs explain how it behaves.
+- **Behavioural-analysis documentation.** The March 2026 cross-domain analysis of how BC→DSS patterns vary by domain is archived in [`../docs/archive/behavioural-analysis-2026-03/`](../docs/archive/behavioural-analysis-2026-03/). What remains here is later, exploratory work.
 - **NCIt-comparison thread.** Notebooks and reports comparing COSMoS BC content against the authoritative NCIt source.
 
 ## Documents
 
-- [`docs/COSMoS_Behavioural_Analysis.md`](docs/COSMoS_Behavioural_Analysis.md) — how BC→DSS patterns differ across domains, ten behavioural groups, six decomposition axes.
 - [`docs/COSMoS_Content_and_QC.md`](docs/COSMoS_Content_and_QC.md) — what COSMoS publishes, domain distribution, the Glucose example showing one BC producing eight DSSs, summary of QC findings.
-- [`docs/COSMoS_Collection_vs_Ontology.md`](docs/COSMoS_Collection_vs_Ontology.md) — why DSSs model collection templates, not medical ontology.
 - [`docs/COSMoS_Specification_Focus.md`](docs/COSMoS_Specification_Focus.md) — where COSMoS specification value concentrates (DSS vs CRF).
-- [`docs/COSMoS_Domain_Pattern_Inventory.xlsx`](docs/COSMoS_Domain_Pattern_Inventory.xlsx) — domain-by-domain behavioural-group classification.
 
 ## Notebooks
 

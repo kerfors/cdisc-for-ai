@@ -20,7 +20,7 @@ content is rendered as RDF.
 
 None of the link kinds is declared in the CDISC models. They are inferred from
 how each column behaves. This is the same line of work as
-[`COSMoS_Behavioural_Analysis.md`](../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md):
+[`COSMoS_Behavioural_Analysis.md`](../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md) (March 2026, archived):
 behaviour that the published content exhibits but the schema does not state.
 
 ## Link kinds and provenance classes
@@ -107,7 +107,7 @@ Folders not present: `downloads/` (reads only repo artefacts and `usdm-rdf`),
 
 ## Cross-references
 
-- [`cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md`](../cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md) — the behavioural analysis this track continues.
-- [`docs/Identity_Needs_by_Behavioural_Group.md`](../docs/Identity_Needs_by_Behavioural_Group.md) — identity patterns per behavioural group.
+- [`COSMoS_Behavioural_Analysis.md`](../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md) — the behavioural analysis this track continues (March 2026, archived).
+- [`Identity_Needs_by_Behavioural_Group.md`](../docs/archive/behavioural-analysis-2026-03/Identity_Needs_by_Behavioural_Group.md) — identity patterns per behavioural group (March 2026, archived).
 - [`kerfors/cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) and [`kerfors/usdm-rdf`](https://github.com/kerfors/usdm-rdf) — where predicates are chosen.
 - Repo-root `CLAUDE.md` — repo conventions.

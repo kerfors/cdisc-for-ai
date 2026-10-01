@@ -1,4 +1,14 @@
 NCIt_code,TESTCD,TEST,domain,domain_label,codelist_testcd,codelist_test,source
+C37927,COLOR,Color,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C95110,CONSIST,Consistency,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25333,DEPTH,Depth,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25365,DESCR,Description,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25285,DIAMETER,Diameter,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C95109,HAIRCOV,Hair Cover,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25334,LENGTH,Length,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25677,SHAPE,Shape,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25757,ULCER,Ulceration,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
+C25345,WIDTH,Width,,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C184949,ABR,Auditory Brainstem Response,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
 C198231,AIRBNCND,Air to Bone Sound Conduction Comparison,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
 C198232,AIRPRSSR,Air Pressure,AU,Auricular Findings,AUTESTCD,AUTEST,NCI_EVS
@@ -1933,30 +1943,6 @@ C112429,WHEALSZ,Wheal Size,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C130186,WHLINT,Wheal Diameter Interpretation,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112427,WHLLDIAM,Wheal Longest Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
 C112428,WHLMDIAM,Wheal Mean Diameter,FA,Findings About,FATESTCD,FATEST,NCI_EVS
-C228260,ASCITIND,Ascites Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C228258,BLDIND,Bleeding Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C156503,BWOBIND,Bowel Obstruction Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C156504,BWPFIND,Bowel Perforation Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C25285,DIAMETER,Diameter,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C119332,ELASTIC,Elasticity,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C228090,EMSIND,Emesis Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C204621,ESOBIND,Esophageal Obstruction Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C198259,GIEXAM,Gastrointestinal System Examination,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C228257,HMEMSIND,Hematemesis Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C41255,INTP,Interpretation,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C156505,LVINVIND,Lymphovascular Invasion Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C154886,MASSIND,Mass Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C228256,NAUSIND,Nausea Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C228261,ORMEGIND,Organomegaly Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C228259,PAININD,Pain Indicator,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C176291,PAREAULC,Percent Area Covered By Ulcers,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C189437,PDFF,Proton Density Fat Fraction,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C139184,RTAVDIST,Rectal Tumor to Anal Verge Distance,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C225591,STFFNESS,Stiffness,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C174274,STRCTNUM,Number of Strictures,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C181477,STSEXT,Steatosis Extent,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C41145,THICK,Thickness,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
-C74720,VOLUME,Volume,GASTRO,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C228262,CHROMABN,Chromosomal Abnormality,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C209559,CPNUMAMP,Copy Number Amplification,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C181330,CPNUMVAR,Copy Number Variation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
@@ -1977,10 +1963,34 @@ C63326,TRANSLN,Translocation,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C17208,TRNSCPTN,Transcription,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189441,VARPROF,Variant Profile,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
 C189440,VNTR,Variable Number Tandem Repeats,GF,Genomic Findings,GFTESTCD,GFTEST,NCI_EVS
+C228260,ASCITIND,Ascites Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228258,BLDIND,Bleeding Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C156503,BWOBIND,Bowel Obstruction Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C156504,BWPFIND,Bowel Perforation Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C25285,DIAMETER,Diameter,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C119332,ELASTIC,Elasticity,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228090,EMSIND,Emesis Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C204621,ESOBIND,Esophageal Obstruction Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C198259,GIEXAM,Gastrointestinal System Examination,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228257,HMEMSIND,Hematemesis Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C41255,INTP,Interpretation,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C156505,LVINVIND,Lymphovascular Invasion Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C154886,MASSIND,Mass Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228256,NAUSIND,Nausea Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228261,ORMEGIND,Organomegaly Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C228259,PAININD,Pain Indicator,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C176291,PAREAULC,Percent Area Covered By Ulcers,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C189437,PDFF,Proton Density Fat Fraction,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C139184,RTAVDIST,Rectal Tumor to Anal Verge Distance,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C225591,STFFNESS,Stiffness,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C174274,STRCTNUM,Number of Strictures,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C181477,STSEXT,Steatosis Extent,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C41145,THICK,Thickness,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
+C74720,VOLUME,Volume,GI,Gastrointestinal,GASTROCD,GASTRO,NCI_EVS
 C189437,PDFF,Proton Density Fat Fraction,HM,Hematopoietic System Findings,HMTESTCD,HMTEST,NCI_EVS
-C170575,ABSABSA,Affected BSA/Total BSA,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
-C198262,IGEXAM,Integumentary System Examination,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
-C74580,SKINTYP,Skin Type,INTEGU,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
+C170575,ABSABSA,Affected BSA/Total BSA,IG,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
+C198262,IGEXAM,Integumentary System Examination,IG,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
+C74580,SKINTYP,Skin Type,IG,Integumentary System,INTEGUCD,INTEGU,NCI_EVS
 C181399,ABSCCL,Antibody-secreting Cells,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C147272,ADA_BAB,Binding Antidrug Antibody,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
 C147273,ADA_NAB,Neutralizing Binding Antidrug Antibody,IS,Immunogenicity Specimen Assessments,ISTESTCD,ISTEST,NCI_EVS
@@ -5658,16 +5668,6 @@ C120720,THICKMIN,"Thickness, Minimum",OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
 C120721,THICKMN,"Thickness, Mean",OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
 C120722,THICKSD,"Thickness, Standard Deviation",OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
 C147477,VACGRFRQ,Visual Acuity Card Grating Frequency,OE,Ophthalmic Exam,OETESTCD,OETEST,NCI_EVS
-C37927,COLOR,Color,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C95110,CONSIST,Consistency,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25333,DEPTH,Depth,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25365,DESCR,Description,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25285,DIAMETER,Diameter,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C95109,HAIRCOV,Hair Cover,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25334,LENGTH,Length,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25677,SHAPE,Shape,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25757,ULCER,Ulceration,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
-C25345,WIDTH,Width,PHSPRP,Physical Properties,PHSPRPCD,PHSPRP,NCI_EVS
 C210259,AALPHAC,"2-Amino-9H-pyrido[2,3-b]indole",PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C204641,ABP4,4-Aminobiphenyl,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS
 C210260,ACETAMID,Acetamide,PT,Tobacco Product Testing,PTTESTCD,PTTEST,NCI_EVS

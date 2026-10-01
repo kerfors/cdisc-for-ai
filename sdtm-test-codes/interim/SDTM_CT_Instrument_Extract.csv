@@ -1,58 +1,4 @@
 NCIt_code,TESTCD,TEST,domain,instrument_label,codelist_testcd,codelist_test,codelist_ncit_code,source
-C225120,ARCI0101,ARCI01-Speech Is Slurred,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225121,ARCI0102,ARCI01-Not as Active as Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225122,ARCI0103,ARCI01-Feeling of Just Dragging Along,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225123,ARCI0104,ARCI01-Feel Sluggish,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225124,ARCI0105,ARCI01-Head Feels Heavy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225125,ARCI0106,ARCI01-Feel Like Avoiding People,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225126,ARCI0107,ARCI01-Feel Dizzy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225127,ARCI0108,ARCI01-Harder Than Usual to Move Around,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225128,ARCI0109,ARCI01-Moody,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225129,ARCI0110,ARCI01-People Say I Am Dull Today,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225130,ARCI0111,ARCI01-Feel Drowsy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225131,ARCI0112,ARCI01-Full of Energy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225132,ARCI0113,ARCI01-Today I Say Things in Easiest Way,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225133,ARCI0114,ARCI01-Things Around Seem More Pleasing,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225134,ARCI0115,ARCI01-Pleasant Feeling in My Stomach,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225135,ARCI0116,ARCI01-Feel I Will Lose the Contentment,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225136,ARCI0117,ARCI01-Feel in Complete Harmony w/World,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225137,ARCI0118,ARCI01-Appreciate What Others Are Saying,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225138,ARCI0119,ARCI01-Happy if I Felt as I Feel Now,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225139,ARCI0120,ARCI01-Feel Good Other People Can Tell,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225140,ARCI0121,ARCI01-Feel Something Pleasant Happened,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225141,ARCI0122,ARCI01-Happy if I Felt as I Do Now,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225142,ARCI0123,ARCI01-More Clear Headed Than Dreamy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225143,ARCI0124,ARCI01-Would Be More Popular w/People,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225144,ARCI0125,ARCI01-Feel a Very Pleasant Emptiness,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225145,ARCI0126,ARCI01-Thoughts Come More Easily Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225146,ARCI0127,ARCI01-Feel Less Discouraged Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225147,ARCI0128,ARCI01-Mood to Talk About Feelings,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225148,ARCI0129,ARCI01-More Excited Than Dreamy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225149,ARCI0130,ARCI01-Answering Questions Was Very Easy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225150,ARCI0131,ARCI01-Memory Seems Sharper Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225151,ARCI0132,ARCI01-Could Write for Hours,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225152,ARCI0133,ARCI01-Feel Very Patient,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225153,ARCI0134,ARCI01-Parts of My Body Are Tingling,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225154,ARCI0135,ARCI01-Have a Weird Feeling,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225155,ARCI0136,ARCI01-Movements Seem Faster Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225156,ARCI0137,ARCI01-Have Better Control Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225157,ARCI0138,ARCI01-Movements Seem Slower Than Usual,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225158,ARCI0139,ARCI01-Hard to Keep Mind on Task/Job,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225159,ARCI0140,ARCI01-Don't Feel Like Reading Right Now,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225160,ARCI0141,ARCI01-Spending Longer on Each Question,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225161,ARCI0142,ARCI01-Hand Feels Clumsy,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225162,ARCI0143,ARCI01-Hand Shakes When I Write,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225163,ARCI0144,ARCI01-Have Disturbance in My Stomach,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225164,ARCI0145,ARCI01-Awareness of Bodily Sensations,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225165,ARCI0146,ARCI01-Feel Anxious & Upset,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225166,ARCI0147,ARCI01-Unusual Weakness of My Muscles,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225167,ARCI0148,ARCI01-Thrill Gone Through Me,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225168,ARCI0149,ARCI01-Movement Free Relaxed&Pleasurable,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225169,ARCI0150,ARCI01-PCAG Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225170,ARCI0151,ARCI01-MBG Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225171,ARCI0152,ARCI01-LSD Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225172,ARCI0153,ARCI01-BG Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
-C225173,ARCI0154,ARCI01-A Scale,??,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
 C174103,A4STR101,A4STR1-Was 4-Stair Ascend Performed,FT,4-Stair Ascend Functional Test,A4STR1TC,A4STR1TN,C141663,NCI_EVS
 C141706,A4STR102,A4STR1-Time to Do 4-Stair Ascend,FT,4-Stair Ascend Functional Test,A4STR1TC,A4STR1TN,C141663,NCI_EVS
 C147590,A4STR103,A4STR1-Wear Orthoses,FT,4-Stair Ascend Functional Test,A4STR1TC,A4STR1TN,C141663,NCI_EVS
@@ -1061,6 +1007,60 @@ C112545,AQ0117,AQ01-Full Life Limited by Chest Trouble,QS,Airway Questionnaire 2
 C112546,AQ0118,AQ01-Drained After a Cold,QS,Airway Questionnaire 20 Questionnaire,AQ01TC,AQ01TN,C112435,NCI_EVS
 C112547,AQ0119,AQ01-Feeling of Chest Heaviness,QS,Airway Questionnaire 20 Questionnaire,AQ01TC,AQ01TN,C112435,NCI_EVS
 C112548,AQ0120,AQ01-Worry About Chest Trouble,QS,Airway Questionnaire 20 Questionnaire,AQ01TC,AQ01TN,C112435,NCI_EVS
+C225120,ARCI0101,ARCI01-Speech Is Slurred,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225121,ARCI0102,ARCI01-Not as Active as Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225122,ARCI0103,ARCI01-Feeling of Just Dragging Along,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225123,ARCI0104,ARCI01-Feel Sluggish,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225124,ARCI0105,ARCI01-Head Feels Heavy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225125,ARCI0106,ARCI01-Feel Like Avoiding People,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225126,ARCI0107,ARCI01-Feel Dizzy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225127,ARCI0108,ARCI01-Harder Than Usual to Move Around,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225128,ARCI0109,ARCI01-Moody,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225129,ARCI0110,ARCI01-People Say I Am Dull Today,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225130,ARCI0111,ARCI01-Feel Drowsy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225131,ARCI0112,ARCI01-Full of Energy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225132,ARCI0113,ARCI01-Today I Say Things in Easiest Way,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225133,ARCI0114,ARCI01-Things Around Seem More Pleasing,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225134,ARCI0115,ARCI01-Pleasant Feeling in My Stomach,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225135,ARCI0116,ARCI01-Feel I Will Lose the Contentment,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225136,ARCI0117,ARCI01-Feel in Complete Harmony w/World,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225137,ARCI0118,ARCI01-Appreciate What Others Are Saying,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225138,ARCI0119,ARCI01-Happy if I Felt as I Feel Now,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225139,ARCI0120,ARCI01-Feel Good Other People Can Tell,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225140,ARCI0121,ARCI01-Feel Something Pleasant Happened,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225141,ARCI0122,ARCI01-Happy if I Felt as I Do Now,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225142,ARCI0123,ARCI01-More Clear Headed Than Dreamy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225143,ARCI0124,ARCI01-Would Be More Popular w/People,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225144,ARCI0125,ARCI01-Feel a Very Pleasant Emptiness,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225145,ARCI0126,ARCI01-Thoughts Come More Easily Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225146,ARCI0127,ARCI01-Feel Less Discouraged Than Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225147,ARCI0128,ARCI01-Mood to Talk About Feelings,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225148,ARCI0129,ARCI01-More Excited Than Dreamy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225149,ARCI0130,ARCI01-Answering Questions Was Very Easy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225150,ARCI0131,ARCI01-Memory Seems Sharper Than Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225151,ARCI0132,ARCI01-Could Write for Hours,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225152,ARCI0133,ARCI01-Feel Very Patient,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225153,ARCI0134,ARCI01-Parts of My Body Are Tingling,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225154,ARCI0135,ARCI01-Have a Weird Feeling,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225155,ARCI0136,ARCI01-Movements Seem Faster Than Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225156,ARCI0137,ARCI01-Have Better Control Than Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225157,ARCI0138,ARCI01-Movements Seem Slower Than Usual,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225158,ARCI0139,ARCI01-Hard to Keep Mind on Task/Job,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225159,ARCI0140,ARCI01-Don't Feel Like Reading Right Now,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225160,ARCI0141,ARCI01-Spending Longer on Each Question,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225161,ARCI0142,ARCI01-Hand Feels Clumsy,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225162,ARCI0143,ARCI01-Hand Shakes When I Write,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225163,ARCI0144,ARCI01-Have Disturbance in My Stomach,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225164,ARCI0145,ARCI01-Awareness of Bodily Sensations,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225165,ARCI0146,ARCI01-Feel Anxious & Upset,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225166,ARCI0147,ARCI01-Unusual Weakness of My Muscles,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225167,ARCI0148,ARCI01-Thrill Gone Through Me,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225168,ARCI0149,ARCI01-Movement Free Relaxed&Pleasurable,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225169,ARCI0150,ARCI01-PCAG Scale,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225170,ARCI0151,ARCI01-MBG Scale,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225171,ARCI0152,ARCI01-LSD Scale,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225172,ARCI0153,ARCI01-BG Scale,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
+C225173,ARCI0154,ARCI01-A Scale,QS,Addiction Research Center Inventory 49 Check-list,ARCI01TC,ARCI01TN,C225049,NCI_EVS
 C125763,ASEX0101,ASEX01-Sex Drive,QS,Arizona Sexual Experiences Scale - Female Questionnaire,ASEX01TC,ASEX01TN,C125741,NCI_EVS
 C125764,ASEX0102,ASEX01-Sexually Aroused,QS,Arizona Sexual Experiences Scale - Female Questionnaire,ASEX01TC,ASEX01TN,C125741,NCI_EVS
 C125765,ASEX0103,ASEX01-Vagina Become Moist,QS,Arizona Sexual Experiences Scale - Female Questionnaire,ASEX01TC,ASEX01TN,C125741,NCI_EVS
@@ -4169,27 +4169,6 @@ C112605,FAMS0155,FAMS01-I Urinate More Frequently,QS,Functional Assessment of Mu
 C112606,FAMS0156,FAMS01-I Am Bothered by the Chills,QS,Functional Assessment of Multiple Sclerosis Version 4 Questionnaire,FAMS01TC,FAMS01TN,C112441,NCI_EVS
 C112607,FAMS0157,FAMS01-I Am Bothered by Fevers,QS,Functional Assessment of Multiple Sclerosis Version 4 Questionnaire,FAMS01TC,FAMS01TN,C112441,NCI_EVS
 C112608,FAMS0158,FAMS01-I Am Bothered by Muscle Spasms,QS,Functional Assessment of Multiple Sclerosis Version 4 Questionnaire,FAMS01TC,FAMS01TN,C112441,NCI_EVS
-C111499,FAQ0101,FAQ01-Write Checks/Pay Bills/Checkbook,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111500,FAQ0102,FAQ01-Assembling,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111501,FAQ0103,FAQ01-Shopping Alone,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111502,FAQ0104,FAQ01-Playing a Game of Skill,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111503,FAQ0105,FAQ01-Heat Water/Make Coffee/Stove Off,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111504,FAQ0106,FAQ01-Preparing a Balanced Meal,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111505,FAQ0107,FAQ01-Keeping Track of Current Events,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111506,FAQ0108,FAQ01-Paying Attention,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111507,FAQ0109,FAQ01-Remembering,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111508,FAQ0110,FAQ01-Traveling,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111509,FAQ0111,FAQ01-Total Score,QS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
-C111510,FAQNA101,FAQNA1-Write Checks/Pay Bills/Checkbook,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111511,FAQNA102,FAQNA1-Assembling,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111512,FAQNA103,FAQNA1-Shopping Alone,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111513,FAQNA104,FAQNA1-Playing a Game of Skill,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111514,FAQNA105,FAQNA1-Heat Water/Make Coffee/Stove Off,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111515,FAQNA106,FAQNA1-Preparing a Balanced Meal,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111516,FAQNA107,FAQNA1-Keeping Track of Current Events,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111517,FAQNA108,FAQNA1-Paying Attention,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111518,FAQNA109,FAQNA1-Remembering,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
-C111519,FAQNA110,FAQNA1-Traveling,QS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
 C193363,FES0101,FES01-Take a Bath or Shower,QS,Falls Efficacy Scale Questionnaire,FES01TC,FES01TN,C193276,NCI_EVS
 C193364,FES0102,FES01-Reach Into Cabinets or Closets,QS,Falls Efficacy Scale Questionnaire,FES01TC,FES01TN,C193276,NCI_EVS
 C193365,FES0103,FES01-Walk Around the House,QS,Falls Efficacy Scale Questionnaire,FES01TC,FES01TN,C193276,NCI_EVS
@@ -9734,6 +9713,27 @@ C118106,ESRSA128,ESRSA1-CGI-S Akathisia,RS,Extrapyramidal Symptom Rating Scale-A
 C161760,ETRP0101,ETRP01-Medication Total Points,RS,Emory Treatment Resistance Interview for PTSD Clinical Classification,ETRP01TC,ETRP01TN,C161627,NCI_EVS
 C161761,ETRP0102,ETRP01-Psychotherapy Total Points,RS,Emory Treatment Resistance Interview for PTSD Clinical Classification,ETRP01TC,ETRP01TN,C161627,NCI_EVS
 C161762,ETRP0103,ETRP01-Total Points,RS,Emory Treatment Resistance Interview for PTSD Clinical Classification,ETRP01TC,ETRP01TN,C161627,NCI_EVS
+C111499,FAQ0101,FAQ01-Write Checks/Pay Bills/Checkbook,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111500,FAQ0102,FAQ01-Assembling,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111501,FAQ0103,FAQ01-Shopping Alone,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111502,FAQ0104,FAQ01-Playing a Game of Skill,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111503,FAQ0105,FAQ01-Heat Water/Make Coffee/Stove Off,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111504,FAQ0106,FAQ01-Preparing a Balanced Meal,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111505,FAQ0107,FAQ01-Keeping Track of Current Events,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111506,FAQ0108,FAQ01-Paying Attention,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111507,FAQ0109,FAQ01-Remembering,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111508,FAQ0110,FAQ01-Traveling,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111509,FAQ0111,FAQ01-Total Score,RS,Functional Activities Questionnaire Clinical Classification,FAQ01TC,FAQ01TN,C111344,NCI_EVS
+C111510,FAQNA101,FAQNA1-Write Checks/Pay Bills/Checkbook,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111511,FAQNA102,FAQNA1-Assembling,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111512,FAQNA103,FAQNA1-Shopping Alone,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111513,FAQNA104,FAQNA1-Playing a Game of Skill,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111514,FAQNA105,FAQNA1-Heat Water/Make Coffee/Stove Off,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111515,FAQNA106,FAQNA1-Preparing a Balanced Meal,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111516,FAQNA107,FAQNA1-Keeping Track of Current Events,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111517,FAQNA108,FAQNA1-Paying Attention,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111518,FAQNA109,FAQNA1-Remembering,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
+C111519,FAQNA110,FAQNA1-Traveling,RS,Functional Assessment Questionnaire-NACC UDS V2.0 Clinical Classification,FAQNA1TC,FAQNA1TN,C111346,NCI_EVS
 C170647,FASNA101,"FASNA1-Writing Checks, Paying Bills",RS,Functional Assessment Scale-NACC UDS Version 3.0 Clinical Classification,FASNA1TC,FASNA1TN,C170523,NCI_EVS
 C170648,FASNA102,FASNA1-Assembling Tax Records,RS,Functional Assessment Scale-NACC UDS Version 3.0 Clinical Classification,FASNA1TC,FASNA1TN,C170523,NCI_EVS
 C170649,FASNA103,FASNA1-Shopping Alone for Clothes,RS,Functional Assessment Scale-NACC UDS Version 3.0 Clinical Classification,FASNA1TC,FASNA1TN,C170523,NCI_EVS

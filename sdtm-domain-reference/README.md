@@ -4,9 +4,9 @@ A publicly sourced reference for all SDTMIG v3.4 domains, with a structural anal
 
 ## What this is
 
-**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists all 57 SDTMIG v3.4 domains with their observation class, structural type, and pipeline flags (`Specimen_Based`, `Has_Test_Codes`). Sourced from public CDISC documentation. Stable -- changes only when a new SDTMIG version is published. Intended for programmatic use by notebooks in other tracks.
+**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists the 57 SDTMIG v3.4 domains, plus domains that SDTM CT brings test codes for and that are published in the CT SDTM Domain Abbreviation codelist (C66734), with their observation class and pipeline flags (`Has_Test_Codes`, `Specimen_Based`, `Measurement`). Sourced from public CDISC documentation and SDTM CT. Changes when a new SDTMIG version is published, or when CT adds such a domain -- `sdtm-findings-graph/notebooks/Scope_Check.ipynb` fails a refresh until it is classified. A domain added from CT gets its observation class at once; its consumer flag waits until published COSMoS content shows how it behaves. Intended for programmatic use by notebooks in other tracks.
 
-Behavioural group classification (COSMoS-empirical, evolving) lives in [`COSMoS_Domain_Pattern_Inventory.xlsx`](../cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) in the cosmos-bc-dss track.
+The March 2026 structural-type and behavioural-group analysis that motivated these flags is archived in [`docs/archive/behavioural-analysis-2026-03/`](../docs/archive/behavioural-analysis-2026-03/).
 
 ## Files
 
@@ -18,30 +18,13 @@ sdtm-domain-reference/
     README.md                                     <- column descriptions
 ```
 
-## Structural types (our contribution)
-
-SDTM classifies domains by observation class (Findings, Events, Interventions, etc.). We add a Structural Type layer that describes *how the data within each class is architecturally structured*:
-
-| Structural Type | Domains | What distinguishes it |
-|---|---|---|
-| Specimen-based Findings | 11 | BC→DSS decomposition by specimen/method/scale |
-| Instrument Findings | 3 | QRS instruments; BC hierarchy = form→question grouping |
-| Measurement Findings | 5 | Quantitative measurements without specimen |
-| Domain-specific Findings | 6 | Domain-specific observation patterns |
-| Clinical Assessment Findings | 4 | Findings about events/interventions, tumor assessments |
-| Events | 7 | Clinical occurrences |
-| Interventions | 7 | Treatments, procedures, exposures |
-| Special-Purpose | 5 | Demographics and subject-level metadata |
-| Trial Design | 7 | Study-level protocol metadata |
-| Relationship | 2 | Record linkage datasets |
-
 ## Sources
 
 Domain list and observation classes: SDTMIG v3.4 public documentation.
 
-Structural type categorization: our analysis -- see [`SDTM_Domain_Overview.md`](../SDTM_Domain_Overview.md).
+Domains added from CT: the SDTM Domain Abbreviation codelist (C66734) in the NCI EVS SDTM CT file; see the Notes column.
 
-COSMoS coverage: point-in-time snapshot from the [`cosmos-bc-dss`](../cosmos-bc-dss/) interim file.
+COSMoS coverage is not carried here; see [`consumer-bases/interim/DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx).
 
 ## About
 

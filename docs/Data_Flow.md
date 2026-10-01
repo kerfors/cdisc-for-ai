@@ -63,24 +63,15 @@ graph TD
 
 ```mermaid
 graph TD
-    COS["COSMoS exports"]
     CGX["cosmos-graph<br/>COSMoS_Graph.xlsx, COSMoS_Graph_CT.xlsx"]
     STC["sdtm-test-codes<br/>Test and Instrument Identity, Codelist_Cross_References"]
     USDM["usdm-rdf<br/>usdm_v4.ttl"]
-
-    subgraph cosmos-bc-dss
-        BA["Behavioural_Analysis.md"]
-        DPI["Domain_Pattern_Inventory.xlsx"]
-    end
 
     subgraph link-semantics
         LKA["Link_Kind_Audit.xlsx"]
         CCC["Code_Collision_Check.xlsx"]
         LS["Link_Semantics.md"]
     end
-
-    COS --> BA
-    COS --> DPI
 
     CGX --> LKA
     STC --> LKA
@@ -92,4 +83,4 @@ graph TD
     CCC --> LS
 ```
 
-For how the analytical layers fit together, see [`SDTM_Domain_Overview.md`](../SDTM_Domain_Overview.md).
+The March 2026 behavioural analysis and the three-layer overview are archived in [`archive/behavioural-analysis-2026-03/`](archive/behavioural-analysis-2026-03/).

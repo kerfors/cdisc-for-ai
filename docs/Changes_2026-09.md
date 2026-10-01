@@ -1,5 +1,11 @@
 # Changes — September 2026: SDTM CT 2026-09-25 refresh
 
+> **Update 2026-10-01.** Reviewing this refresh, we found that the pipeline itself had
+> made the mistakes this note describes in the standards: it guessed classifications that
+> SDTM CT already publishes, and in one join it used test codes as if they were
+> identifiers. The corrections, and what they say about the method, are in
+> [`Changes_2026-10.md`](Changes_2026-10.md). The text below is unchanged.
+
 **Reference versions:** SDTM CT bumped from the 2026-03-27 package to **2026-09-25** (NCI
 EVS). The NCIt Thesaurus files used for enrichment were refreshed alongside, because most
 concept codes new to this CT release were absent from the earlier copy. COSMoS BC/DSS

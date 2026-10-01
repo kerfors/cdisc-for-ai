@@ -70,8 +70,8 @@ The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSM
 
 ## Related
 
-- [COSMoS_Behavioural_Analysis.md](COSMoS_Behavioural_Analysis.md) — how BC→DSS patterns differ across domains
-- [COSMoS_Domain_Pattern_Inventory.xlsx](COSMoS_Domain_Pattern_Inventory.xlsx) — machine-actionable behavioural reference
+- [COSMoS_Behavioural_Analysis.md](../../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md) — how BC→DSS patterns differ across domains (March 2026, archived)
+- [COSMoS_Domain_Pattern_Inventory.xlsx](../../docs/archive/behavioural-analysis-2026-03/COSMoS_Domain_Pattern_Inventory.xlsx) — behavioural reference (March 2026, archived)
 - [`reports/COSMoS_BC_NCIt_Compare.xlsx`](../reports/COSMoS_BC_NCIt_Compare.xlsx) — definition and synonym comparison detail
 
 ## About

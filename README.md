@@ -4,7 +4,7 @@ Explorative work on the CDISC clinical data standards, using linked data princip
 
 **Landing page:** [kerfors.github.io/cdisc-for-ai](https://kerfors.github.io/cdisc-for-ai/) -- all reference files in one place, at the latest SDTM CT and COSMoS releases.
 
-> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh). Previous: [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
+> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-10.md`](docs/Changes_2026-10.md) (corrections at SDTM CT 2026-09-25). Previous: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh), [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
 ## Purpose
 
@@ -39,7 +39,7 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | [`sdtm-test-codes/`](sdtm-test-codes/) | What is measured? | [`SDTM_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) -- domain-level test codes | NCI EVS, NCIt, UMLS |
 | | | [`SDTM_Instrument_Test_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Test_Identity.xlsx) -- test codes bound to an instrument codelist | |
 | | What instruments? | [`SDTM_Instrument_Identity.xlsx`](sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx) -- one row per instrument codelist, dual NCIt anchors (C20993 + C211913) | |
-| [`cosmos-bc-dss/`](cosmos-bc-dss/) | What are the behavioural patterns? | [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md), [`COSMoS_Domain_Pattern_Inventory.xlsx`](cosmos-bc-dss/docs/COSMoS_Domain_Pattern_Inventory.xlsx) -- behavioural analysis docs and NCIt-comparison reports; also the COSMoS source-ingest landing zone read by `cosmos-graph/` | COSMoS BC/DSS exports |
+| [`cosmos-bc-dss/`](cosmos-bc-dss/) | Where does COSMoS come in, and what do its concepts hide? | The COSMoS source-ingest landing zone read by `cosmos-graph/`; observable derivation and LOINC check; qualified-BC sketches. The March 2026 behavioural analysis is archived in [`docs/archive/behavioural-analysis-2026-03/`](docs/archive/behavioural-analysis-2026-03/) | COSMoS BC/DSS exports |
 
 ### Graph track
 
@@ -52,7 +52,7 @@ Each reference file is self-describing, with a README sheet documenting columns,
 
 | Track | Purpose | Output |
 |---|---|---|
-| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: structural types, COSMoS coverage flags, specimen/instrument classification | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
+| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: observation class and consumer classification (specimen, measurement, instrument) -- the scope source for the Findings consumers | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
 
 ### View track
 
@@ -67,7 +67,7 @@ Each reference file is self-describing, with a README sheet documenting columns,
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
 | [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
-| | Measurement | VS, MK, CV (EG deferred) | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
+| | Measurement | VS, EG, MK, CV, RE | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- four-sheet (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) |
 
 ### Analysis track
@@ -76,7 +76,7 @@ Each reference file is self-describing, with a README sheet documenting columns,
 |---|---|---|
 | [`link-semantics/`](link-semantics/) | What kind of link is it? Link kinds and provenance classes behind every NCIt and LOINC link, and C-codes used in more than one role | [`Link_Kind_Audit.xlsx`](link-semantics/interim/Link_Kind_Audit.xlsx), [`Code_Collision_Check.xlsx`](link-semantics/interim/Code_Collision_Check.xlsx) -- evidence for the RDF repositories when choosing predicates |
 
-Each consumer file links its sheets on TESTCD. How the files are built from each other: [`docs/Data_Flow.md`](docs/Data_Flow.md). How the analytical layers fit together: [`SDTM_Domain_Overview.md`](SDTM_Domain_Overview.md).
+Each consumer file links its sheets on TESTCD. How the files are built from each other: [`docs/Data_Flow.md`](docs/Data_Flow.md).
 
 ## Skills
 
@@ -88,15 +88,15 @@ AI skills for working with CDISC standards. The reference files above are design
 
 ## Key findings
 
-**The BC-to-DSS relationship means different things in different domains.** One BC schema and one DSS schema serve all domains, but the relationship clusters into distinct identity patterns: DSS-level identity needed (specimen-based), BC-level sufficient (measurement, instrument), protocol-driven (events, interventions), relational, and not applicable (trial design). See [`Identity_Needs_by_Behavioural_Group.md`](docs/Identity_Needs_by_Behavioural_Group.md) and [`COSMoS_Behavioural_Analysis.md`](cosmos-bc-dss/docs/COSMoS_Behavioural_Analysis.md).
+**The BC-to-DSS relationship means different things in different domains.** One BC schema and one DSS schema serve all domains, but the relationship clusters into distinct identity patterns: DSS-level identity needed (specimen-based), BC-level sufficient (measurement, instrument), protocol-driven (events, interventions), relational, and not applicable (trial design). See [`Identity_Needs_by_Behavioural_Group.md`](docs/archive/behavioural-analysis-2026-03/Identity_Needs_by_Behavioural_Group.md) and [`COSMoS_Behavioural_Analysis.md`](docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md) (March 2026, archived; the archive note lists what has changed since).
 
-**DSSs model collection templates, not medical ontology.** A DSS models how a row looks in the dataset: a CRF row template. Medical History and Substance Use decompose by form variant, not by clinical difference. DSS-level identifiers matter where the template also reflects a real clinical difference, as for glucose in serum versus urine. See [`COSMoS_Collection_vs_Ontology.md`](cosmos-bc-dss/docs/COSMoS_Collection_vs_Ontology.md).
+**DSSs model collection templates, not medical ontology.** A DSS models how a row looks in the dataset: a CRF row template. Medical History and Substance Use decompose by form variant, not by clinical difference. DSS-level identifiers matter where the template also reflects a real clinical difference, as for glucose in serum versus urine. See [`COSMoS_Collection_vs_Ontology.md`](docs/archive/behavioural-analysis-2026-03/COSMoS_Collection_vs_Ontology.md) (March 2026, archived).
 
 **Method moves out of test identity.** SDTM CT 2026-09-25 retires FibroTest and FIB-4 as lab tests in favour of one Liver Fibrosis Score test with the formula in the analysis method, and retires the Greulich and Pyle bone-age test in favour of a generic Bone Age Estimation with the named method as METHOD. The terminology draws the line between what is observed and how it is observed -- the same line this repo uses between Biomedical Concepts and Dataset Specializations. No schema states it; it shows in the content, release by release.
 
 **Specimen-based Findings is not one pattern.** The IG groups these domains under one label, but they decompose by different logics: LB/MB/MI by specimen, IS by target antigen, GF by result scale. UR is behaviourally flat.
 
-**Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are built for human readability (GLUCSER = Glucose in Serum) and are not unique across domains. The same holds for test codes: SDTM CT 2026-09-25 adds CMV = Contractile Muscle Volume in MK beside CMV = Cytomegalovirus in MB, and MV = Muscle Volume in MK beside MV = Minute Volume in RE. Domain plus code identifies the test; the NCIt code does on its own. How to make DSSs machine-addressable is an open question for the community.
+**Codes are mnemonics, not identifiers.** DS_Codes (COSMoS `vlm_group_id`) are built for human readability (GLUCSER = Glucose in Serum) and are not unique across domains. The same holds for test codes: SDTM CT 2026-09-25 adds CMV = Contractile Muscle Volume in MK beside CMV = Cytomegalovirus in MB, and MV = Muscle Volume in MK beside MV = Minute Volume in RE. Domain plus code identifies the test; the NCIt code does on its own. This repository fell into it too: until October 2026 its Findings consumers joined COSMoS coverage on the test code alone, so Mycobacterium chelonae (MCH in MB) carried the Dataset Specialization of Mean Corpuscular Hemoglobin (MCH in LB) -- see [`Changes_2026-10.md`](docs/Changes_2026-10.md). How to make DSSs machine-addressable is an open question for the community.
 
 **The identity layer is complete; the measurement specification layer is not.** Every test code has full NCIt identity, but only a small share of specimen-based test codes have COSMoS measurement specifications. Sponsors' internal lab catalogues hold much of the missing detail, and the Test_Identity sheet is the anchor for mapping it. See the [graph-fed consumer track README](sdtm-findings-graph/).
 
