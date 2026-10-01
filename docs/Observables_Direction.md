@@ -57,5 +57,6 @@ The long-run aim: publish the reference files as RDF/OWL that expresses the beha
 
 ## See also
 
+- [Who rates?](https://kerfors.github.io/cdisc-for-ai/examples/who-rates.html) — worked example (early, exploratory): the instrument reclassifications in SDTM CT 2026-09-25, today's representation against an explicit graph
 - [Domain behaviour](https://kerfors.github.io/cdisc-for-ai/analyses/domain-behaviour.html) — the analysis page behind the table above, regenerated on each COSMoS release
 - [`Changes_2026-10.md`](Changes_2026-10.md) — the corrections that led here
