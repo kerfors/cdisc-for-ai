@@ -32,12 +32,14 @@ The axes fall into two groups. The test is the line between Biomedical Concept a
 - **Observation-changing:** specimen, binding agent, test detail, method, scale — glucose in serum vs urine, IgE against cockroach vs peanut are different observables. Mostly the specimen-based domains.
 - **Collection-context:** category, evaluator — which conditions a form pre-specifies, who assessed a tumour. Mostly events, interventions and response domains (the March analysis's "protocol-driven" group).
 - **In between:** location — blood pressure at arm vs ankle is arguably a different observable; a location variant of a procedure is not.
+- **Not a variable at all:** who rates. The same kind of assessment can be patient-reported, parent- or observer-reported, or clinician-rated, and that changes the observation. SDTM CT encodes it in the instrument's class — questionnaire or clinical classification — rather than in a variable. The instrument reclassifications in SDTM CT 2026-09-25 follow the rater wherever NCIt states it.
+- **Recorded with the result, not part of the observable:** the subject's state at the time of observation — fasting, time after a challenge, body position. It changes how a result is interpreted, not what is measured. COSMoS records fasting status as an allowed value list on most laboratory specializations, never as a value that tells one specialization from another. Whether LOINC treats such states as part of a test's identity is part of step 1.
 
 Working formulation: an observable = a BC plus its observation-changing axes. A COSMoS DSS bundles those with collection choices, and domains differ in which kind dominates. This supports specifying observables on the BC rather than the DSS, as explored for glucose in [`Glucose_Siblings_BC_DSS_Proposal.html`](../cosmos-bc-dss/docs/Glucose_Siblings_BC_DSS_Proposal.html), but it is a reading of the data, not something the data states.
 
 ## Step 1 — test the observable reading
 
-- Classify each axis as observation-changing or collection-context (location case by case); record the classification as data, not in code.
+- Classify each axis as observation-changing, collection-context, or subject state (location and position case by case), and include who rates, which CT carries in the instrument class; record the classification as data, not in code.
 - Compare the observation-changing axes with LOINC's axes (component, property, system, scale, method) using the observables notebooks in [`cosmos-bc-dss/`](../cosmos-bc-dss/) (`COSMoS_Observable_Derivation`, `COSMoS_Observable_LOINC_Check`) and their LOINC cache.
 - Decide what the comparison supports: a conclusion, or where the reading fails.
 - Related open question: what the specimen-based Findings consumer is for — "specimen is the decomposition axis" (fits LB only) or "observation made on a specimen" (fits LB, MB, MI, IS, GF). MB and MI stay in it for now.
