@@ -18,13 +18,12 @@ The guiding architectural principle: **One Graph, Many Views.** Flat reference f
 
 ## Case-study walkthroughs
 
-Three case pairs in [`docs/`](docs/) trace single clinical cases through the SDTM CT + NCIt + COSMoS stack:
+Two case pairs, written in April 2026 against SDTM CT 2026-03-27 and the COSMoS 2026-Q1 export, are archived as dated snapshots in [`docs/archive/case-studies-2026-04/`](docs/archive/case-studies-2026-04/):
 
 - **Glucose** (Findings; LB) — `Glucose_COSMoS_Story.html` (recording view) and `Glucose_StudyIntent_Story.html` (what study-design assembly adds on top of GLUCPL).
 - **6MWT** (COA; QS / FT / RS) — `6MWT_NCIt_Story.html` (NCIt identity layer) and `6MWT_COSMoS_Story.html` (what COSMoS records and what it leaves to composition and classification).
-- **Chest X-Ray** (PR + MK / TR / TU) — `XRay_COSMoS_Story.html` traces a single clinical concept through two SDTM domain classes (procedure on the PR side, measurements off the image on the Findings side) and shows what COSMoS records of each.
 
-Each pair shows what the standards already carry and where the gap to clinical use sits.
+They are not maintained. The archive note lists what no longer holds.
 
 ## Behavioural analysis
 
@@ -32,7 +31,7 @@ A repo-level analysis of how the BC-to-DSS relationship behaves across SDTM doma
 
 ## Public artefact set
 
-The machine-actionable xlsx outputs of the four tracks, the three case-study pairs above, and the behavioural-analysis notes. Together a public reference set; each artefact stands on its own; they cite each other where the cross-references are useful.
+The machine-actionable xlsx outputs of the four tracks, the archived case-study pairs above, and the behavioural-analysis notes. Together a public reference set; each artefact stands on its own; they cite each other where the cross-references are useful.
 
 The cdisc-for-ai work is sponsor-agnostic. Indications are recorded as documented in the clinical literature, not filtered by any portfolio. Every claim traces to a publicly verifiable reference.
 

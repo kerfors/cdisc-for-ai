@@ -75,20 +75,34 @@
 <body>
 
 <h1>CDISC for AI</h1>
-<p style="color:#555; font-size:1.05rem; margin:-0.25rem 0 1.5rem; line-height:1.4;">Machine-actionable reference files, plus case-study walkthroughs tracing clinical cases through the SDTM CT + NCIt + COSMoS stack.</p>
+<p style="color:#555; font-size:1.05rem; margin:-0.25rem 0 1.5rem; line-height:1.4;">Explorative work on the CDISC clinical data standards, using linked data principles: understanding the behaviour of the standards, the patterns their data structures say nothing about.</p>
 
-<p>Machine-actionable reference files built from CDISC SDTM Controlled Terminology, NCIt, and COSMoS Biomedical Concepts and Dataset Specializations. The purpose is to make existing standards more consumable for AI, rule engines, and humans.</p>
+<p><img src="images/cdisc_for_ai_design_to_data.png" alt="From study design to data, linked and queried" style="width:100%; height:auto; margin:0.5rem 0;"></p>
 
-<p>Source repository: <a href="https://github.com/kerfors/cdisc-for-ai">github.com/kerfors/cdisc-for-ai</a></p>
+<p>Machine-actionable reference files built from CDISC SDTM Controlled Terminology, NCIt, and COSMoS Biomedical Concepts and Dataset Specializations, designed for both human review and AI consumption. The analyses behind them measure how the standards actually behave. The long-run aim is to publish the reference files as RDF/OWL that can express that underlying behaviour, related to established ontologies, so the standards can take part in the picture above: from study design to data, linked and queried.</p>
+
+<p>Related: <a href="https://kerfors.github.io/cosmos-rdf/"><code>cosmos-rdf</code></a> renders COSMoS as RDF, as published (<a href="https://w3id.org/cdisc/cosmos/">w3id.org/cdisc/cosmos/</a>). Rendering it as-is is itself a way to reveal how COSMoS behaves.</p>
+
+<p><strong>Reference versions:</strong> SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-09.md">Changes_2026-09.md</a>.</p>
+
+<p>Source repository: <a href="https://github.com/kerfors/cdisc-for-ai">github.com/kerfors/cdisc-for-ai</a>. Each Excel file is self-describing, with a README sheet documenting columns, provenance, and design decisions. How the files are built from each other: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Data_Flow.md">Data_Flow.md</a>.</p>
 
 <h2>Reference files</h2>
 
-<p>Built on a layered approach: <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/cosmos-graph"><code>cosmos-graph</code></a> projects COSMoS into a multi-sheet traversable graph (BC, DSS, Variables, Codelists, BC_Parents, BC_Categories); <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/consumer-bases"><code>consumer-bases</code></a> joins the graph into per-DSS views; <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/sdtm-findings-graph"><code>sdtm-findings-graph</code></a> produces sub-typed Findings consumer outputs.</p>
+<p>The deliverables: test identity from SDTM CT + NCIt, and the sub-typed Findings consumer files fed from the graph.</p>
 
 <ul class="files">
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx"><code>SDTM_Test_Identity.xlsx</code></a>
         <span class="desc">domain-level TESTCDs with NCIt identity</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-test-codes/machine_actionable/SDTM_Instrument_Test_Identity.xlsx"><code>SDTM_Instrument_Test_Identity.xlsx</code></a>
+        <span class="desc">test codes bound to an instrument codelist</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx"><code>SDTM_Instrument_Identity.xlsx</code></a>
+        <span class="desc">one row per instrument codelist, dual NCIt anchors (C20993 + C211913)</span>
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx"><code>Specimen_Findings.xlsx</code></a>
@@ -100,41 +114,46 @@
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx"><code>Instrument_Findings.xlsx</code></a>
-        <span class="desc">instrument-based Findings consumer view (QS, FT, RS); four-sheet design (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) adding C20993 + C211913 anchors per row, BC categories search-tag sheet, and parent-chain traversal sheet — makes instrument grouping addressable directly</span>
+        <span class="desc">instrument-based Findings consumer view (QS, FT, RS); four sheets: Test_Identity, Measurement_Specs, BC_Categories, BC_Parents</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx"><code>SDTM_Domain_Metadata.xlsx</code></a>
+        <span class="desc">shared domain metadata: structural types, COSMoS coverage flags, specimen/instrument classification</span>
     </li>
 </ul>
 
-<h2>Case-study walkthroughs</h2>
+<h2>Graph and joined views</h2>
 
-<p>Two case pairs, one in Findings / specimen territory and one in COA / instrument territory. Each pair traces a single clinical case through the SDTM CT + NCIt + COSMoS stack and closes with an open question on where a governed cross-sponsor layer could complement today's standards.</p>
-
-<h3 style="font-size:1rem; font-weight:600; margin:1.5rem 0 0.5rem; color:var(--muted);">Glucose — specimen-test qualification and case-specialization case (Findings; LB)</h3>
+<p><a href="https://github.com/kerfors/cdisc-for-ai/tree/main/cosmos-graph"><code>cosmos-graph</code></a> projects COSMoS into a multi-sheet traversable graph; <a href="https://github.com/kerfors/cdisc-for-ai/tree/main/consumer-bases"><code>consumer-bases</code></a> joins the graph into views that the consumer files read.</p>
 
 <ul class="files">
     <li>
-        <a href="Glucose_COSMoS_Story.html"><strong>Glucose Measurement — The COSMoS Story</strong></a>
-        <span class="desc">What COSMoS captures as recording specifications, and how the cdisc-for-ai <code>cosmos-graph</code> projection and <code>consumer-bases</code> joined views shape it into the Specimen_Findings consumer file</span>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/cosmos-graph/interim/COSMoS_Graph.xlsx"><code>COSMoS_Graph.xlsx</code></a>
+        <span class="desc">COSMoS as a graph: BC, BC_Parents, BC_Categories, DSS, Variables, Codelists, Relationships, Coding, DataElementConcepts</span>
     </li>
     <li>
-        <a href="Glucose_StudyIntent_Story.html"><strong>Glucose Measurement — The Study-Intent Story</strong></a>
-        <span class="desc">What study designers author on top of GLUCPL — and why the recording specification is not the whole case</span>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/cosmos-graph/interim/COSMoS_Graph_CT.xlsx"><code>COSMoS_Graph_CT.xlsx</code></a>
+        <span class="desc">the graph resolved against SDTM CT</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/cosmos-graph/interim/Codelist_Coverage.xlsx"><code>Codelist_Coverage.xlsx</code></a>
+        <span class="desc">codelist-forward: which codelists the DSSs use, and in which domains</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/consumer-bases/interim/DSS_View.xlsx"><code>DSS_View.xlsx</code></a>
+        <span class="desc">wide, one row per DSS</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/consumer-bases/interim/DSS_Variables_View.xlsx"><code>DSS_Variables_View.xlsx</code></a>
+        <span class="desc">long, one row per value-level metadata row</span>
+    </li>
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/consumer-bases/interim/PR_DSS_Reachability.xlsx"><code>PR_DSS_Reachability.xlsx</code></a>
+        <span class="desc">procedure-forward: which Findings DSSs a PR procedure reaches (early work)</span>
     </li>
 </ul>
 
-<h3 style="font-size:1rem; font-weight:600; margin:1.5rem 0 0.5rem; color:var(--muted);">6MWT — instrument composition case (COA; QS / FT / RS)</h3>
-
-<ul class="files">
-    <li>
-        <a href="6MWT_NCIt_Story.html"><strong>6-Minute Walk Test (6MWT) — The NCIt Story</strong></a>
-        <span class="desc">What SDTM CT + NCIt provides when it works — and why it only works for specific cases</span>
-    </li>
-    <li>
-        <a href="6MWT_COSMoS_Story.html"><strong>6-Minute Walk Test (6MWT) — The COSMoS Story</strong></a>
-        <span class="desc">What COSMoS provides for recording and what it had to invent for composition and classification</span>
-    </li>
-</ul>
-
-<p style="color:#666; font-size:0.95em; margin-top:2rem;">The pre-graph single-sheet COSMoS flatten and the legacy <code>sdtm-findings/</code> consumer were retired in May 2026; the graph-fed files above are the supported reference set. Earlier versions remain in git history. See <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-05.md">Changes_2026-05.md</a>.</p>
+<p style="color:#666; font-size:0.95em; margin-top:2rem;">Release notes: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-09.md">2026-09</a> (SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-08.md">2026-08</a> (COSMoS 2026-07-14) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-06.md">2026-06</a> (COSMoS 2026-05-26) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-05.md">2026-05</a> (legacy <code>sdtm-findings/</code> consumer and pre-graph COSMoS flatten retired). Earlier versions remain in git history.</p>
 
 <footer>
     Authored by Kerstin Forsberg, with Claude as collaborative partner.

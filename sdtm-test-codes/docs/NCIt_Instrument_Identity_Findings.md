@@ -94,4 +94,4 @@ Notebook: `sdtm-test-codes/notebooks/SDTM_Instrument_Identity_Enrich.ipynb`
 ## See also
 
 Interactive visualisation using 6MWT as worked example:
-[The NCIt Story](../../docs/6MWT_NCIt_Story.html) | [The COSMoS Story](../../docs/6MWT_COSMoS_Story.html)
+[The NCIt Story](../../docs/archive/case-studies-2026-04/6MWT_NCIt_Story.html) | [The COSMoS Story](../../docs/archive/case-studies-2026-04/6MWT_COSMoS_Story.html) (archived April 2026 snapshots)

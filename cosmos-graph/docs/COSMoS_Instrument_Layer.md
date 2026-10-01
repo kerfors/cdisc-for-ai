@@ -91,7 +91,7 @@ The findings above are now operationalised in:
 
 - [`cosmos-graph/`](../../cosmos-graph/) — multi-sheet projection of COSMoS into BC, BC_Parents, BC_Categories, DSS, Variables, Codelists. The structural facts in sections 2–4 are queryable directly against this projection.
 - [`sdtm-findings-graph/Instrument_Findings.xlsx`](../../sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) — instrument-based Findings consumer, four-sheet design (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents). Carries the chocolate C20993 and copper C211913 anchors per row plus the `--SCAT` framework split for the `RSTESTCD` sub-pattern.
-- [`docs/6MWT_NCIt_Story.html`](../../docs/6MWT_NCIt_Story.html) and [`docs/6MWT_COSMoS_Story.html`](../../docs/6MWT_COSMoS_Story.html) — visual case studies.
+- [`6MWT_NCIt_Story.html`](../../docs/archive/case-studies-2026-04/6MWT_NCIt_Story.html) and [`6MWT_COSMoS_Story.html`](../../docs/archive/case-studies-2026-04/6MWT_COSMoS_Story.html) — visual case studies (archived April 2026 snapshots).
 
 The identifier asymmetry described in section 5 remains an open architectural thread.
 

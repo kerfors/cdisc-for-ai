@@ -90,8 +90,8 @@ Walk Functional Test` C115789 vs. `6MWT Functional Test Question` C115409)
 sit in disjoint NCIt trees connected only through shared category tags.
 The two-sheet skeleton would force consumers to derive these joins; the
 four-sheet shape makes them addressable directly. See
-[`docs/6MWT_COSMoS_Story.html`](../docs/6MWT_COSMoS_Story.html) and
-[`docs/6MWT_NCIt_Story.html`](../docs/6MWT_NCIt_Story.html).
+[`6MWT_COSMoS_Story.html`](../docs/archive/case-studies-2026-04/6MWT_COSMoS_Story.html) and
+[`6MWT_NCIt_Story.html`](../docs/archive/case-studies-2026-04/6MWT_NCIt_Story.html) (archived April 2026 snapshots).
 
 Column shape inside each sheet is designed fresh per sub-type, leveraging
 DSS_View's native columns (snake_case, `bc_*` prefixes for BC identity,
