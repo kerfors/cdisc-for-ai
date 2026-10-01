@@ -12,7 +12,9 @@ This repository is explorative work. The aim is to make the most of the CDISC st
 
 The method is to uncover behaviour: the implicit patterns in what the published content actually does, as opposed to what the schema and the documentation say it does. The behaviour is measurable from CDISC's own published content, so the evidence does not depend on any theory about how the standards ought to be modelled. A new release is a good moment to see it, because you can watch the standards change their mind.
 
-This is the test bed. Ideas are explored here first. The reference files here -- flat Excel files for now -- are deliverables in their own right. What settles can then be represented as Linked Data, with high transparency, so the standards can be linked and queried, not just read: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) is the first such deliverable, beside its sibling [`usdm-rdf`](https://github.com/kerfors/usdm-rdf). A later direction is to publish the reference files themselves as RDF.
+This is the test bed. Ideas are explored here first. The reference files here -- flat Excel files for now -- are deliverables in their own right. The long-run aim is to publish them as RDF/OWL that can express that underlying behaviour, related to established ontologies, so the standards can take part in the picture above: from study design to data, linked and queried.
+
+Related: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) renders COSMoS as RDF, as published. Rendering it as-is is itself a way to reveal how COSMoS behaves.
 
 The next step is upstream: to understand the data standards in relation to study design -- objectives, endpoints, estimands, and the activities and procedures that produce the data. Procedures are the part we often forget, yet they drive much of the patient burden and cost. USDM already links activities to Biomedical Concepts, so the bridge is there to explore.
 
