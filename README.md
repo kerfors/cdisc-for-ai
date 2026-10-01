@@ -14,7 +14,7 @@ The method is to uncover behaviour: the implicit patterns in what the published 
 
 This is the test bed. Ideas are explored here first. The reference files here -- flat Excel files for now -- are deliverables in their own right. The long-run aim is to publish them as RDF/OWL that can express that underlying behaviour, related to established ontologies, so the standards can take part in the picture above: from study design to data, linked and queried.
 
-Related: [`cosmos-rdf`](https://github.com/kerfors/cosmos-rdf) renders COSMoS as RDF, as published. Rendering it as-is is itself a way to reveal how COSMoS behaves.
+Related, early work: `cosmos-rdf` renders COSMoS as RDF, as published. Rendering it as-is is itself a way to reveal how COSMoS behaves.
 
 The next step is upstream: to understand the data standards in relation to study design -- objectives, endpoints, estimands, and the activities and procedures that produce the data. Procedures are the part we often forget, yet they drive much of the patient burden and cost. USDM already links activities to Biomedical Concepts, so the bridge is there to explore.
 
