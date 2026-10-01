@@ -4,7 +4,7 @@
 
 ## What this analyses
 
-The two COSMoS levels — Biomedical Concepts (BCs) and Dataset Specializations (DSSs) — projected into a multi-sheet traversable graph by [`cosmos-graph/`](../../cosmos-graph/) (output [`interim/COSMoS_Graph.xlsx`](../../cosmos-graph/interim/COSMoS_Graph.xlsx)). The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates definitions and synonyms against the authoritative NCIt source.
+The two COSMoS levels — Biomedical Concepts (BCs) and Dataset Specializations (DSSs) — projected into a multi-sheet traversable graph by [`cosmos-graph/`](../../cosmos-graph/) (output [`interim/COSMoS_Graph.xlsx`](../../cosmos-graph/interim/COSMoS_Graph.xlsx)). The [Compare notebook](../archive/ncit-comparison-2026-04/notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates definitions and synonyms against the authoritative NCIt source.
 
 Scope at the 2026-03 package: 1,345 BCs across 32 domains, 1,326 DSSs.
 
@@ -56,7 +56,7 @@ This specimen × scale decomposition is the core LB pattern. The behavioural ana
 
 ## Cross-source comparison against NCIt
 
-The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSMoS definitions and synonyms against NCIt (via [`SDTM_Test_Identity.xlsx`](../../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx)). Scoped to subject-level Findings BCs — **566 matched** (up from 372 in the previous package, +52%). The comparable pool grew from 531 to 727 as the 2026-03 SDTM CT package closed coverage gaps. Full report: [`reports/COSMoS_BC_NCIt_Compare.xlsx`](../reports/COSMoS_BC_NCIt_Compare.xlsx).
+The [Compare notebook](../archive/ncit-comparison-2026-04/notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSMoS definitions and synonyms against NCIt (via [`SDTM_Test_Identity.xlsx`](../../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx)). Scoped to subject-level Findings BCs — **566 matched** (up from 372 in the previous package, +52%). The comparable pool grew from 531 to 727 as the 2026-03 SDTM CT package closed coverage gaps. Full report: [`COSMoS_BC_NCIt_Compare.xlsx`](../archive/ncit-comparison-2026-04/reports/COSMoS_BC_NCIt_Compare.xlsx).
 
 **Definitions are nearly identical.** 564 of 566 match (99.6%). Only **one** editorial divergence remains: HBA1CHGB (C111207), where COSMoS uses "glycosylated hemoglobin" and NCIt uses the more precise "glycated hemoglobin A1C". The two earlier divergences are gone — ALBCREAT was harmonized at the source, and TUMERGE was retired entirely as part of the broader SDTM CT consolidation.
 
@@ -72,7 +72,7 @@ The [Compare notebook](../notebooks/COSMoS_BC_NCIt_Compare.ipynb) validates COSM
 
 - [COSMoS_Behavioural_Analysis.md](../../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md) — how BC→DSS patterns differ across domains (March 2026, archived)
 - [COSMoS_Domain_Pattern_Inventory.xlsx](../../docs/archive/behavioural-analysis-2026-03/COSMoS_Domain_Pattern_Inventory.xlsx) — behavioural reference (March 2026, archived)
-- [`reports/COSMoS_BC_NCIt_Compare.xlsx`](../reports/COSMoS_BC_NCIt_Compare.xlsx) — definition and synonym comparison detail
+- [`COSMoS_BC_NCIt_Compare.xlsx`](../archive/ncit-comparison-2026-04/reports/COSMoS_BC_NCIt_Compare.xlsx) — definition and synonym comparison detail (April 2026, archived)
 
 ## About
 

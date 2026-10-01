@@ -116,14 +116,16 @@ container (NCIt C211913), grey = keys.
 
 Sub-typing follows the March 2026 analysis, archived in
 [`docs/archive/behavioural-analysis-2026-03/`](../docs/archive/behavioural-analysis-2026-03/COSMoS_Behavioural_Analysis.md).
-The exclusions, with their reasons as they stand now:
+The exclusions and their reasons are recorded in the `Consumer_Exclusions`
+sheet of `SDTM_Domain_Metadata.xlsx`, each reason stated as testable claims;
+[`domain-behaviour/`](../domain-behaviour/) evaluates them on every COSMoS release.
+As they stand now:
 
-- **Specimen sub-type — IS excluded.** Decomposes by target antigen, not
-  specimen. Specimen is constant. Target identity is mnemonic-encoded in
-  `DS_Code`, not a separate filterable column.
-- **Specimen sub-type — GF excluded.** Decomposes by result scale, not
-  specimen. Specimen is NCIt-encoded by legacy convention rather than as
-  controlled-terminology terms.
+- **Specimen sub-type — IS excluded.** Decomposes by target, not specimen:
+  the DSSs of one BC differ by binding agent (`BDAGNT`). The March 2026
+  analysis found the target only in `DS_Code`.
+- **Specimen sub-type — GF excluded.** Decomposes by test detail (`TSTDTL`),
+  not specimen. The March 2026 analysis recorded it as scale-driven.
 - **Specimen sub-type — UR excluded.** Zero decomposition despite the
   `Specimen_Based` metadata flag. Behaviourally identical to
   Domain-specific Findings.

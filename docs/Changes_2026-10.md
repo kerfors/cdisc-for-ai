@@ -73,6 +73,18 @@ longer the case: ECG concepts are Nominal without units or Quantitative with uni
 term "Qualitative" has gone from COSMoS altogether, in line with CDISC's own curation
 principles. The exclusion reason no longer holds, so ECG is in.
 
+## Exclusion reasons are tested against each release
+
+The reasons for leaving a domain out of a consumer were comments in the notebooks. They
+now live in the domain reference, each stated as a claim the published content must
+support, and a new analysis track evaluates the claims on every COSMoS release. Its
+first run found that two of the March reasons no longer described the content.
+Immunogenicity was excluded because, in the March analysis, the antigen target existed only
+in the DS code; the target is now a variable of its own, the binding agent. Genomics was excluded as
+decomposing by result scale; it decomposes by test detail. Neither decomposes by
+specimen, so both exclusions stand, now with reasons that hold. The March wording is
+kept in the reasons for reference.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already

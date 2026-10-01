@@ -74,7 +74,8 @@ Each reference file is self-describing, with a README sheet documenting columns,
 
 | Track | Question | Output |
 |---|---|---|
-| [`link-semantics/`](link-semantics/) | What kind of link is it? Link kinds and provenance classes behind every NCIt and LOINC link, and C-codes used in more than one role | [`Link_Kind_Audit.xlsx`](link-semantics/interim/Link_Kind_Audit.xlsx), [`Code_Collision_Check.xlsx`](link-semantics/interim/Code_Collision_Check.xlsx) -- evidence for the RDF repositories when choosing predicates |
+| [`link-semantics/`](link-semantics/) | What kind of link is it? Link kinds and provenance classes behind every NCIt and LOINC link, and C-codes used in more than one role | [`Link_Kind_Audit.xlsx`](link-semantics/interim/Link_Kind_Audit.xlsx), [`Code_Collision_Check.xlsx`](link-semantics/interim/Code_Collision_Check.xlsx) -- evidence for choosing predicates when the reference files are rendered as RDF/OWL |
+| [`domain-behaviour/`](domain-behaviour/) | How does each domain behave? Fan-out, decomposition axes and scale/units per domain, re-derived from each COSMoS release; tests the exclusion claims behind the Findings consumers' scope | [`Domain_Behaviour.xlsx`](domain-behaviour/interim/Domain_Behaviour.xlsx) |
 
 Each consumer file links its sheets on TESTCD. How the files are built from each other: [`docs/Data_Flow.md`](docs/Data_Flow.md).
 

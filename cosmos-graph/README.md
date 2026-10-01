@@ -48,7 +48,7 @@ cosmos-graph/
 ├── interim/                COSMoS_Graph.xlsx, COSMoS_Graph_CT.xlsx
 ├── notebooks/              10_flatten, 20_resolve_ct, 30_validate
 ├── reference/cosmos_linkml/    LinkML schemas (BC, SDTM, CRF)
-├── reports/                graph_validation_report.{md,json}, evs_root_gap_coverage.{md,csv}
+├── reports/                graph_validation_report.{md,json}
 └── README.md               this file
 ```
 

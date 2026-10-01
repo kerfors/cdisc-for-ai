@@ -1,4 +1,4 @@
-# cosmos-bc-dss — COSMoS source-ingest, observables, NCIt comparison
+# cosmos-bc-dss — COSMoS source-ingest and observables
 
 The yellow layer. Originally the home of the legacy COSMoS BC/DSS single-sheet flatten; that role moved to [`../cosmos-graph/`](../cosmos-graph/) (schema-driven multi-sheet projection) and the flatten was retired in May 2026.
 
@@ -6,7 +6,9 @@ What stays here:
 
 - **The COSMoS source-ingest landing zone.** [`downloads/`](downloads/) holds the COSMoS BC and DSS exports; both `cosmos-graph/` and the remaining notebooks below read from here.
 - **Behavioural-analysis documentation.** The March 2026 cross-domain analysis of how BC→DSS patterns vary by domain is archived in [`../docs/archive/behavioural-analysis-2026-03/`](../docs/archive/behavioural-analysis-2026-03/). What remains here is later, exploratory work.
-- **NCIt-comparison thread.** Notebooks and reports comparing COSMoS BC content against the authoritative NCIt source.
+- **Observables and qualified-BC sketches.** Notebooks that derive observables from the graph and check them against LOINC; the sibling-BC sketches in [`sibling-bc/`](sibling-bc/) and [`dds/`](dds/).
+
+The April 2026 NCIt-comparison notebooks, which read the retired flatten, are archived in [`archive/ncit-comparison-2026-04/`](archive/ncit-comparison-2026-04/).
 
 ## Documents
 
@@ -17,17 +19,8 @@ What stays here:
 
 | Notebook | Role | Output |
 |---|---|---|
-| [`COSMoS_BC_NCIt_Compare`](notebooks/COSMoS_BC_NCIt_Compare.ipynb) | Compare COSMoS BC definitions and synonyms against authoritative NCIt | [`reports/COSMoS_BC_NCIt_Compare.xlsx`](reports/COSMoS_BC_NCIt_Compare.xlsx) |
-| [`COSMoS_BC_NCIt_Source_Probe`](notebooks/COSMoS_BC_NCIt_Source_Probe.ipynb) | Probe NCIt source endpoints used by Compare | [`reports/COSMoS_BC_NCIt_Source_Probe.xlsx`](reports/COSMoS_BC_NCIt_Source_Probe.xlsx) |
-| [`COSMoS_BC_Parent_Resolution`](notebooks/COSMoS_BC_Parent_Resolution.ipynb) | Resolve BC parent chains in the source | [`reports/COSMoS_BC_Parent_Resolution.xlsx`](reports/COSMoS_BC_Parent_Resolution.xlsx) |
 | [`COSMoS_Observable_Derivation`](notebooks/COSMoS_Observable_Derivation.ipynb) | Derive observables (component × system × scale × method) from the graph; how many each BC hides, DSS grain vs observable grain | [`reports/COSMoS_Observable_Derivation.xlsx`](reports/COSMoS_Observable_Derivation.xlsx) |
 | [`COSMoS_Observable_LOINC_Check`](notebooks/COSMoS_Observable_LOINC_Check.ipynb) | Validate derived observable axes against LOINC's own (XML4Pharma LOINC services); glucose family completeness | [`reports/COSMoS_Observable_LOINC_Check.xlsx`](reports/COSMoS_Observable_LOINC_Check.xlsx) |
-
-**Compare** scoped to subject-level Findings BCs. Reads COSMoS exports from [`downloads/`](downloads/) and the green-track [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) for NCIt anchors.
-
-**Source_Probe** caches NCIt source-endpoint responses to [`cache/ncit_source_probe.json`](cache/ncit_source_probe.json) so Compare can run repeatedly without re-querying NCIt.
-
-**Parent_Resolution** traces parent-of relationships in BC content.
 
 **Observable_Derivation** reads the graph projection ([`../cosmos-graph/interim/COSMoS_Graph.xlsx`](../cosmos-graph/interim/COSMoS_Graph.xlsx)), not the downloads. Companion to [`docs/Glucose_Siblings_BC_DSS_Proposal.html`](docs/Glucose_Siblings_BC_DSS_Proposal.html); uses only LOINC codes pinned in the package, no external lookup.
 
@@ -38,21 +31,17 @@ What stays here:
 ```mermaid
 graph TD
     A[COSMoS BC + DSS exports<br/>downloads/] --> CG[../cosmos-graph/]
-    A --> BA[Behavioural_Analysis.md]
-    A --> DPI[Domain_Pattern_Inventory.xlsx]
-    A --> CMP[Compare]
-    G[sdtm-test-codes/.../SDTM_Test_Identity.xlsx] --> CMP
-    CMP --> CR[reports/COSMoS_BC_NCIt_Compare.xlsx]
-    A --> PR[Parent_Resolution]
-    PR --> PRR[reports/COSMoS_BC_Parent_Resolution.xlsx]
+    CG --> GX[../cosmos-graph/interim/COSMoS_Graph.xlsx]
+    GX --> OD[Observable_Derivation]
+    OD --> ODR[reports/COSMoS_Observable_Derivation.xlsx]
+    ODR --> OL[Observable_LOINC_Check]
+    OL --> OLR[reports/COSMoS_Observable_LOINC_Check.xlsx]
 
     style A fill:#FFD700,stroke:#333,color:#000
-    style G fill:#548235,stroke:#333,color:#fff
     style CG fill:#FFFCE8,stroke:#333,color:#000
-    style BA fill:#FFFCE8,stroke:#333,color:#000
-    style DPI fill:#FFFCE8,stroke:#333,color:#000
-    style CR fill:#f2f2f2,stroke:#333,color:#000
-    style PRR fill:#f2f2f2,stroke:#333,color:#000
+    style GX fill:#FFFCE8,stroke:#333,color:#000
+    style ODR fill:#f2f2f2,stroke:#333,color:#000
+    style OLR fill:#f2f2f2,stroke:#333,color:#000
 ```
 
 All source files are downloaded automatically and cached in [`downloads/`](downloads/).

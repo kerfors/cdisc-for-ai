@@ -236,7 +236,7 @@ The BC xlsx has three sheets (`Biomedical Concepts`, `BC Hierarchy`, `Categories
 
 - [`archive/flattener_rewrite_audit.md`](archive/flattener_rewrite_audit.md) — frozen close-out of the 2026-04 Step 2 build: sheet shapes, counts, back-compat decision, validation triage.
 - [`../reports/graph_validation_report.md`](../reports/graph_validation_report.md) (+ `.json`) — eight-check validation pass: referential integrity, schema column coverage, CT resolution fails, enumerated-value integrity, anomaly counts.
-- [`../reports/evs_root_gap_coverage.md`](../reports/evs_root_gap_coverage.md) — per-domain coverage of the Root-subset gaps.
+- [`archive/evs_root_gap_coverage.md`](archive/evs_root_gap_coverage.md) — per-domain coverage of the Root-subset gaps (April 2026, archived: its inputs are no longer in the repository).
 
 ## 7. Cross-references
 

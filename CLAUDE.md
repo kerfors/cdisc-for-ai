@@ -40,6 +40,7 @@ The repo has six track types. The domain code is the join key across all tracks.
 
 **Analysis track** measures behaviour across the other tracks:
 - `link-semantics/` — "What kind of link is it?" Classifies every NCIt and LOINC link in the reference files by link kind and provenance class (`Link_Kind_Audit.ipynb`), and finds C-codes used in more than one role (`Code_Collision_Check.ipynb`, also reads `usdm_v4.ttl` from a `usdm-rdf` checkout beside this repo). Outputs in `interim/` are evidence, not deliverables; measurement only, no predicate decisions. Nothing reads from this track.
+- `domain-behaviour/` — "How does each domain behave?" Re-derives fan-out, decomposition axes (specimen, method, binding agent, test detail, location, category, evaluator, scale) and scale/units consistency per domain from COSMoS (`Domain_Behaviour.ipynb`), and evaluates the claims in the `Consumer_Exclusions` sheet of `SDTM_Domain_Metadata.xlsx`. Reports only; never changes scope or classification. Nothing reads from this track.
 
 The March 2026 three-layer overview and behavioural analysis are archived in `docs/archive/behavioural-analysis-2026-03/` — not maintained; the archive README lists what changed since. See `docs/Changes_2026-10.md` (and earlier `Changes_*.md` in `docs/`) for what changed in each release.
 
