@@ -33,7 +33,9 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 ## Axes
 
 An axis is a variable whose value can differ between the DSSs of one BC: specimen,
-method, binding agent, test detail, location, category, evaluator. `scale` is read from
+method, binding agent, test detail, location, category, evaluator. An axis is counted
+when the assigned value differs; where only the value list differs, it is reported in
+`Axes_Value_List_Only`. `scale` is read from
 units — some DSSs of the BC carry units, others do not. Units, codelists, LOINC codes
 and result values follow from the axes and are not counted.
 

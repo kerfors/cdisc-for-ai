@@ -20,7 +20,7 @@ Related, early work: `cosmos-rdf` renders COSMoS as RDF, as published. Rendering
 
 On the data side, the way forward is set out in [`docs/Observables_Direction.md`](docs/Observables_Direction.md): find out what identifies an observable, make the reference files express it, then move towards RDF/OWL.
 
-The next step is upstream: to understand the data standards in relation to study design -- objectives, endpoints, estimands, and the activities and procedures that produce the data. Procedures are the part we often forget, yet they drive much of the patient burden and cost. USDM links an activity both to its procedures and to Biomedical Concepts, so the bridge is there to explore. What the standards do not state is which concept is read from which procedure. SDTM has a domain for procedures (PR), and COSMoS has a few Biomedical Concepts for it, but these record the procedure itself, not what is read from it.
+After that, the direction is upstream: to understand the data standards in relation to study design -- objectives, endpoints, estimands, and the activities and procedures that produce the data. Procedures are the part we often forget, yet they drive much of the patient burden and cost. USDM links an activity both to its procedures and to Biomedical Concepts, so the bridge is there to explore. What the standards do not state is which concept is read from which procedure. SDTM has a domain for procedures (PR), and COSMoS has a few Biomedical Concepts for it, but these record the procedure itself, not what is read from it. This is a later and separate step. It depends on observations having an identity first, and it is not part of this repository for now.
 
 ## Why
 
