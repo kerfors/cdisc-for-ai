@@ -71,6 +71,8 @@ Then a key per DSS for LB, MB and MI only, in `Specimen_Findings`: `bc_id | comp
 
 Parked: reading what is published for the identifying variables that never separate sibling DSSs (`MBSPEC`, `MISPEC` and others), so they can get rows with a basis. Needed when the key is extended beyond LB, MB and MI.
 
+Phase 2 closed on 2026-10-08 with this scope; see [Observables, Phase 2](Observables_Phase2.md).
+
 ## Step 3 — towards RDF/OWL
 
 The long-run aim: publish the reference files as RDF/OWL that expresses the behaviour of the standards, related to established ontologies. By then the files would carry the distinctions that need predicates: link kinds from [`link-semantics/`](../link-semantics/), the observable structure from step 1, and identity on NCIt codes.
