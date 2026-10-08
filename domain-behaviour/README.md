@@ -27,7 +27,8 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 | `Domain_Profile` | domain | Size, fan-out, primary axis, scale mix, variable shares; metadata class and consumer status |
 | `Fanout_Axes` | BC with more than one DSS | Which axes distinguish its DSSs |
 | `Key_Compare` | BC with more than one DSS | The fan-out axes against the observable key of `COSMoS_Observable_Derivation` |
-| `Variable_Evidence` | variable × domain | What COSMoS and SDTM CT publish about each variable that differs between the DSSs of one BC |
+| `Variable_Evidence` | variable × domain | What COSMoS, SDTM CT, the SDTM v2.0 Model and SDTMIG v3.4 publish about each variable that differs between the DSSs of one BC |
+| `IG_Assumptions` | numbered SDTMIG v3.4 domain assumption | Assumptions in our Findings domains that name one of our variables, quoted as extracted |
 | `LOINC_Compare` | BC with more than one DSS and a LOINC code | The fan-out axes against the LOINC axes that differ between its DSSs |
 | `LBCAT_LOINC_Class` | LBCAT × LOINC class | LB DSSs with a LOINC code, by assigned category and LOINC class |
 | `Rater_Evidence` | instrument codelist | CT class and the phrases in the NCIt definition that name who completes or rates it |
@@ -56,6 +57,9 @@ and result values follow from the axes and are not counted.
 - `cosmos-bc-dss/reports/COSMoS_Observable_Derivation.xlsx` (`DSS_Coordinates`)
 - `cosmos-bc-dss/reports/COSMoS_Observable_LOINC_Check.xlsx` (`Axis_Compare`; LOINC axes per pinned code)
 - `sdtm-test-codes/downloads/SDTM_Terminology.txt` (codelist names and definitions)
+- `sdtm-domain-reference/downloads/SDTM_v2.0.csv`, `SDTMIG_v3.4.csv` (CDISC variable tables: role, qualified variables, CDISC Notes; gitignored)
+- `sdtm-domain-reference/downloads/Approved-Non-Standard-Variable-Registry_2026-04-03.xlsx` (CDISC NSV registry; gitignored)
+- `sdtm-domain-reference/downloads/SDTMIG v3.4-FINAL_2022-07-21.pdf` (the SDTMIG document, for the domain Assumptions; gitignored; read with pypdf, needs `cryptography`)
 - `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx` (`Instruments`)
 - `sdtm-test-codes/downloads/Thesaurus.txt` (NCIt parents and definitions; gitignored, filled by the CT release run)
 - optional: a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`) for the instrument class moves

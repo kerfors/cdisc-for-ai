@@ -358,10 +358,11 @@ twice per parameter (TSPARMCD and TSPARM).
 | Children | 271 item BCs | — |
 | Parent | 21 under C211913, 1 under C91102 | — |
 
-19 of the 22 have a C20993 instrument anchor from the instrument track
-(C115409 → C115789, exact). **3 have none**: instrument codelists ADCTC,
-AJCC1TC, PASI03TC. For all 19 the instrument concept is itself a BC (C115789 "6
-Minute Walk Functional Test 2008 Version", `full_no_ds`).
+All 22 have a C20993 instrument anchor from the instrument track, since 2026-10-08
+through the SDTM CT class category term (e.g. C115409 → C115789). Before that, name
+matching found none for ADCTC, AJCC1TC and PASI03TC. For all 22 the instrument
+concept is itself a BC (e.g. C115789 "6 Minute Walk Functional Test 2008 Version",
+`full_no_ds`).
 
 ## B6. Category tokens
 

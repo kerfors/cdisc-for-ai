@@ -4,6 +4,13 @@
 **Context:** Exploration of whether NCIt structural classes can provide machine-actionable instrument identity for SDTM CT instrument codelists. The findings below informed the design of `SDTM_Instrument_Identity_Enrich.ipynb` and the resulting `SDTM_Instrument_Identity.xlsx`.  
 **Status:** Findings only. No architectural proposal.
 
+**Update 2026-10-08.** There is a structural link after all, in SDTM CT rather than in NCIt. Each
+instrument has one term in its class category codelist (QSCAT, FTCAT, CCCAT). The term's CDISC
+synonym plus `TC` is the codelist submission value, and its code is the instrument's C20993 concept.
+`SDTM_Instrument_Identity_Enrich` now uses it first; name matching is the fallback, used for one
+codelist. The name-matching findings below are left as written for April 2026. Two of those matches
+were the wrong version (EORTC QLQ-C30 V3.0, FACT-P V4); the structural step corrects them.
+
 ---
 
 ## What we tested

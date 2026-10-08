@@ -13,6 +13,7 @@ The March 2026 structural-type and behavioural-group analysis that motivated the
 ```
 sdtm-domain-reference/
   README.md                                       <- this file
+  downloads/                                      <- gitignored: SDTM_v2.0.csv, SDTMIG_v3.4.csv (CDISC variable tables), Approved-Non-Standard-Variable-Registry_2026-04-03.xlsx (CDISC NSV registry), SDTMIG v3.4-FINAL_2022-07-21.pdf (the IG document); sign-in at cdisc.org
   machine_actionable/
     SDTM_Domain_Metadata.xlsx                     <- reference data (stable)
     README.md                                     <- column descriptions
@@ -25,6 +26,8 @@ Domain list and observation classes: SDTMIG v3.4 public documentation.
 Domains added from CT: the SDTM Domain Abbreviation codelist (C66734) in the NCI EVS SDTM CT file; see the Notes column.
 
 COSMoS coverage is not carried here; see [`consumer-bases/interim/DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx).
+
+Variable-level metadata is not carried in the xlsx either. The CDISC variable tables for SDTM v2.0 and SDTMIG v3.4 are kept as local copies in `downloads/` (gitignored, downloaded with a cdisc.org sign-in) and read by [`domain-behaviour/`](../domain-behaviour/) for role, qualified variables and CDISC Notes. The CDISC Approved Non-Standard Variable Registry sits there too, for variables not in a domain's SDTMIG table.
 
 ## About
 
