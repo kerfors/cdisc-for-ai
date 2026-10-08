@@ -1,9 +1,16 @@
 NCIt_Code,column,old,new
 C100467,NCIt_Synonyms,PEPSNGI; PGI; Pepsinogen I,PEPSNGI; PGA; PGA Measurement; PGI; Pepsinogen A; Pepsinogen A Measurement; Pepsinogen I
 C100468,NCIt_Synonyms,PEPSNGII; PGII; Pepsinogen II,PEPSNGII; PGC; PGC Measurement; PGII; Pepsinogen C; Pepsinogen C Measurement; Pepsinogen II
+C103381,NCIt_Synonyms,CDFTXN; Clostridium difficile Toxin,CDFTXN; Clostridioides difficile Toxin; Clostridium difficile Toxin
+C112278,NCIt_Synonyms,FDADEVCL,FDADEVCL; FDAMDCL; US FDA Medical Device Classification
 C112312,NCIt_Synonyms,ERBB2; HER2; HER2/NEU; Human Epidermal Growth Factor Receptor 2; Receptor Tyrosine-Protein Kinase erbB-2 Measurement,ERBB2; ErbB-2; HER2; HER2/NEU; Human Epidermal Growth Factor Receptor 2; Receptor Tyrosine-Protein Kinase erbB-2 Measurement
+C117864,NCIt_Synonyms,Soluble CD120b; Soluble CD120b Antigen Measurement; Soluble TNF Receptor 1B; Soluble TNF Receptor Type II; Soluble TNF Receptor Type II Measurement; Soluble TNF-R-II Measurement; Soluble TNF-R2 Measurement; Soluble TNF-RII Measurement; Soluble TNFBR Measurement; Soluble TNFR-II Measurement; Soluble TNFR1B; Soluble TNFR1B Measurement; Soluble TNFR2 Measurement; Soluble TNFRSF1B; Soluble TNFRSF1B Measurement; Soluble Tumor Necrosis Factor Receptor 2 Measurement; Soluble Tumor Necrosis Factor Receptor Superfamily Member 1B; Soluble Tumor Necrosis Factor Receptor Superfamily Member 1B Measurement; TNFR1BS; sTNFaRII Measurement; sTNFαRII Measurement,Soluble CD120b; Soluble CD120b Antigen Measurement; Soluble TNF Receptor 1B; Soluble TNF Receptor Type II; Soluble TNF Receptor Type II Measurement; Soluble TNF-R-II Measurement; Soluble TNF-R2 Measurement; Soluble TNF-RII Measurement; Soluble TNFBR Measurement; Soluble TNFR-II Measurement; Soluble TNFR1B; Soluble TNFR1B Measurement; Soluble TNFR2 Measurement; Soluble TNFRSF1B; Soluble TNFRSF1B Measurement; Soluble Tumor Necrosis Factor Receptor 2 Measurement; Soluble Tumor Necrosis Factor Receptor Superfamily Member 1B; Soluble Tumor Necrosis Factor Receptor Superfamily Member 1B Measurement; TNFR1BS; sTNFaRII Measurement
 C117885,NCIt_Synonyms,OUNIMULT; Onset Unifocal or Multifocal,Focus of Onset; OUNIMULT; Onset Unifocal or Multifocal
+C119332,SDTM_Domains,GASTRO,GI
+C124447,NCIt_Synonyms,LMNDPNUM; lymph nodes positive; lymph_nodes_positive,LMNDPNUM; Number of Positive Lymph Nodes; lymph nodes positive; lymph_nodes_positive
+C125940,NCIt_Synonyms,AMYLOIDA; Amyloid A,AMYLOIDA; Amyloid A; Serum Amyloid A
 C132416,NCIt_Preferred_Term,Microoganism Identification,Microorganism Identification
+C139184,SDTM_Domains,GASTRO,GI
 C139218,TEST,Body Fat Percentage,Total Body Fat/Total Body Mass
 C139218,NCIt_Preferred_Term,Body Fat Percentage,Total Body Fat to Total Body Mass Ratio Measurement
 C139218,NCIt_Synonyms,BODYFATP,BODYFATP; Body Fat Percentage; Total Body Fat/Total Body Mass
@@ -11,30 +18,71 @@ C139219,TEST,Lean Body Mass to Total Body Mass Ratio,Lean Body Mass/Total Body M
 C139219,NCIt_Preferred_Term,Lean Body Mass to Total Body Mass Ratio,Lean Body Mass to Total Body Mass Ratio Measurement
 C139219,NCIt_Synonyms,LBMTBMR,LBMTBMR; Lean Body Mass/Total Body Mass
 C147298,NCIt_Synonyms,ANABASN; ANABSN; Anabasine,ANABASN; Anabasine
+C150637,NCIt_Synonyms,CDF; Clostridium difficile,CDF; Clostridioides difficile; Clostridium difficile
+C150639,NCIt_Synonyms,C150639; Clostridium difficile 027/NAP1/BI,C150639; Clostridioides difficile 027/NAP1/BI; Clostridium difficile 027/NAP1/BI
+C150857,NCIt_Synonyms,C. difficile Glutamate Dehydrogenase; CDFGDH; Clostridium difficile Glutamate Dehydrogenase,C. difficile Glutamate Dehydrogenase; CDFGDH; Clostridioides difficile Glutamate Dehydrogenase; Clostridium difficile Glutamate Dehydrogenase
+C150858,NCIt_Synonyms,CDFABTOX; Clostridium difficile A/B Toxin,CDFABTOX; Clostridioides difficile A/B Toxin; Clostridium difficile A/B Toxin
+C150859,NCIt_Synonyms,CDFTCDAD; Clostridium difficile Toxin A DNA Measurement; Clostridium difficile tcdA DNA,CDFTCDAD; Clostridioides difficile tcdA DNA; Clostridium difficile Toxin A DNA Measurement; Clostridium difficile tcdA DNA
+C150860,NCIt_Synonyms,CDFTCDBD; Clostridium difficile Toxin B DNA Measurement; Clostridium difficile tcdB DNA,CDFTCDBD; Clostridioides difficile tcdB DNA; Clostridium difficile Toxin B DNA Measurement; Clostridium difficile tcdB DNA
+C150861,NCIt_Synonyms,CDFTCDCD; Clostridium difficile Regulatory Protein DNA Measurement; Clostridium difficile tcdC DNA,CDFTCDCD; Clostridioides difficile tcdC DNA; Clostridium difficile Regulatory Protein DNA Measurement; Clostridium difficile tcdC DNA
+C150862,NCIt_Synonyms,TOXCDF; Toxigenic Clostridium difficile,TOXCDF; Toxigenic Clostridioides difficile; Toxigenic Clostridium difficile
+C150863,NCIt_Synonyms,CDFATOX; Clostridium difficile A Toxin,CDFATOX; Clostridioides difficile A Toxin; Clostridium difficile A Toxin
+C150864,NCIt_Synonyms,CDFBTOX; Clostridium difficile B Toxin,CDFBTOX; Clostridioides difficile B Toxin; Clostridium difficile B Toxin
+C150865,NCIt_Synonyms,TOXBPCDF; Toxin B-Producing Clostridium difficile,TOXBPCDF; Toxin B-Producing Clostridioides difficile; Toxin B-Producing Clostridium difficile
+C150866,NCIt_Synonyms,CDFCDTD; Clostridium difficile Binary Toxin DNA Measurement; Clostridium difficile cdt DNA,CDFCDTD; Clostridioides difficile cdt DNA; Clostridium difficile Binary Toxin DNA Measurement; Clostridium difficile cdt DNA
 C154757,SDTM_Domains,LB; MI,BS; LB; MI
+C154886,SDTM_Domains,RP,GI; RP
+C156503,SDTM_Domains,GASTRO,GI
+C156504,SDTM_Domains,GASTRO,GI
+C156505,SDTM_Domains,GASTRO,GI
+C156553,NCIt_Definition,A relative measurement (percentage) of the time spent asleep (N1 sleep + N2 sleep + N3 sleep + REM sleep) to the total time spent in bed.,A relative measurement (percentage) of the time spent asleep to the total time spent in bed.
+C170575,SDTM_Domains,INTEGU,IG
 C172574,NCIt_Synonyms,Lacrimation; TEARSCR; Tear Production; Tear Secretion,LACRIMTN; Lacrimation; TEARSCR; Tear Production; Tear Secretion
+C174274,SDTM_Domains,FA; GASTRO,FA; GI
+C176291,SDTM_Domains,GASTRO,GI
 C178048,NCIt_Synonyms,HYPERMIA; Hyperemia,HYPER; HYPERMIA; Hyperemia
-C181477,SDTM_Domains,MI,GASTRO; MI
+C181477,SDTM_Domains,MI,GI; MI
 C184342,SDTM_Domains,LB,LB; MI
 C187802,SDTM_Domains,LB,LB; MI
+C189437,SDTM_Domains,GASTRO; UR,GI; HM; UR
+C198259,SDTM_Domains,GASTRO,GI
+C198262,SDTM_Domains,INTEGU,IG
+C198307,NCIt_Synonyms,CDFDNA; Clostridium difficile DNA,CDFDNA; Clostridioides difficile DNA; Clostridium difficile DNA
 C201372,NCIt_Synonyms,CD134 Expression; CD134X; OX40 Expression; OX40L Receptor Measurement; TAX Transcriptionally-Activated Glycoprotein 1 Receptor Measurement; TNFRSF4 Measurement; Tumor Necrosis Factor Receptor Superfamily Member 4 Measurement,CD134 Expression; CD134X; OX40 Expression; OX40L Receptor Expression Measurement; TAX Transcriptionally-Activated Glycoprotein 1 Receptor Expression Measurement; TNFRSF4 Expression Measurement; Tumor Necrosis Factor Receptor Superfamily Member 4 Expression Measurement
 C201447,TESTCD,ASGMGIND,ASMIND
 C201447,SDTM_Domains,MI,BS; MI
 C201447,NCIt_Synonyms,ASGMGIND; Adequate Surgical Margins Indicator,ASGMGIND; ASMIND; Adequate Surgical Margins Indicator
 C201458,NCIt_Synonyms,CHOCTN; Choline/Creatine,CHOCTN; Cho/CR; Choline/Creatine; Choline/Creatine Ratio
-C202433,TESTCD,CD8TGP,CD28TGP
-C202433,TEST,T-Cell Surface Glycoprotein CD8,T-Cell Surface Glycoprotein CD28
 C202433,SDTM_Domains,MI,LB; MI
-C202433,NCIt_Synonyms,CD8; CD8 Complex; CD8 Complex Measurement; CD8 Measurement; CD8TGP; T-Cell Surface Glycoprotein CD8,CD28TGP; CD8; CD8 Complex; CD8 Complex Measurement; CD8 Measurement; CD8TGP; T-Cell Surface Glycoprotein CD28; T-Cell Surface Glycoprotein CD8
 C202436,NCIt_Synonyms,LACCTN; Lactate/Creatine; Lactic Acid/Creatine,LACCTN; Lac/CR; Lactate/Creatine; Lactate/Creatine Ratio; Lactic Acid/Creatine
+C204621,SDTM_Domains,GASTRO,GI
+C210371,NCIt_Preferred_Term,1-Hydroxypyrene   Measurement,1-Hydroxypyrene Measurement
+C210386,NCIt_Synonyms,PROPN; Propionate; Propionic Acid,PROPN; Propionate; Propionic Acid; Propionic Acid Measurement
 C221559,NCIt_Preferred_Term,MMP 2-Degraded Type IV Collagen Fragment C6M Measurement,MMP 2-Degraded Type VI Collagen Fragment C6M Measurement
 C221560,NCIt_Preferred_Term,MMP 2-Degraded Type IV Collagen Alpha-3 Subunit Fragment C6Ma3 Measurement,MMP 2-Degraded Type VI Collagen Alpha-3 Subunit Fragment C6Ma3 Measurement
 C25206,NCIt_Synonyms,TEMP; Temperatures (Optional); temperature,TEMP; TEMPERATURE; Temperatures (Optional)
+C25244,SDTM_Domains,BS; MI; MK; TR,BS; CV; ED; MI; MK; TR
+C25285,SDTM_Domains,FA; GASTRO; OE; PHSPRP; SR; TR,FA; GI; OE; SR; TR
+C25333,SDTM_Domains,CV; MI; PHSPRP,CV; MI
+C25334,SDTM_Domains,BS; CV; MI; PHSPRP; PT; UR,BS; CV; MI; PT; UR
+C25345,SDTM_Domains,BS; CV; MI; PHSPRP,BS; CV; MI
+C25365,SDTM_Domains,PHSPRP,
+C25677,SDTM_Domains,OE; PHSPRP,OE
+C25681,SDTM_Domains,BS; DO,BS; CV; DO
+C25757,SDTM_Domains,PHSPRP,
+C37927,SDTM_Domains,OE; PHSPRP,OE; SC
+C41145,SDTM_Domains,BS; DO; GASTRO; MI; NV; OE; RP,BS; DO; GI; MI; NV; OE; RP
+C41255,SDTM_Domains,CP; CV; EG; FA; OE; RE; RP; SR; VS,CP; CV; EG; FA; GI; OE; RE; RP; SR; VS
+C49676,SDTM_Domains,VS,CV; VS
+C49677,SDTM_Domains,VS,CV; VS
 C63637,NCIt_Synonyms,RIN; rna integrity number; rna_integrity_number,RIN; Ribonucleic Acid Integrity; rna integrity number; rna_integrity_number
-C74720,SDTM_Domains,AU; BS; FA; LB; NV; TR,AU; BS; FA; GASTRO; LB; NV; TR
+C74580,SDTM_Domains,INTEGU,IG
+C74720,SDTM_Domains,AU; BS; FA; LB; NV; TR,AU; BS; CV; ED; FA; GI; LB; NV; TR
 C74761,NCIt_Preferred_Term,Albumin To Creatinine Protein Ratio Measurement,Albumin to Creatinine Ratio Measurement
 C81996,SDTM_Domains,LB,IS; LB
 C92242,SDTM_Domains,LB,MI
 C92296,SDTM_Domains,LB,LB; MI
 C92297,SDTM_Domains,LB,LB; MI
+C95109,SDTM_Domains,PHSPRP,
+C95110,SDTM_Domains,LB; PHSPRP,LB
 C96688,SDTM_Domains,LB,LB; MI

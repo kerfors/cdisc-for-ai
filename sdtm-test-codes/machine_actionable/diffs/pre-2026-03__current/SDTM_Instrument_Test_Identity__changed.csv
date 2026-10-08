@@ -1,4 +1,45 @@
 NCIt_Code,column,old,new
+C103531,Domain,QS,RS
+C103531,Instrument,Alzheimer's Disease Cooperative Study-Clinical Global Impression of Change Questionnaire,Alzheimer's Disease Cooperative Study-Clinical Global Impression of Change Clinical Classification
+C105278,Domain,QS,RS
+C105278,Instrument,General Clinical Global Impressions Questionnaire,General Clinical Global Impressions Clinical Classification
+C105279,Domain,QS,RS
+C105279,Instrument,General Clinical Global Impressions Questionnaire,General Clinical Global Impressions Clinical Classification
+C105280,Domain,QS,RS
+C105280,Instrument,General Clinical Global Impressions Questionnaire,General Clinical Global Impressions Clinical Classification
+C105281,Domain,QS,RS
+C105281,Instrument,General Clinical Global Impressions Questionnaire,General Clinical Global Impressions Clinical Classification
+C105282,Domain,QS,RS
+C105282,Instrument,General Clinical Global Impressions Questionnaire,General Clinical Global Impressions Clinical Classification
+C111499,Domain,QS,RS
+C111500,Domain,QS,RS
+C111501,Domain,QS,RS
+C111502,Domain,QS,RS
+C111503,Domain,QS,RS
+C111504,Domain,QS,RS
+C111505,Domain,QS,RS
+C111506,Domain,QS,RS
+C111507,Domain,QS,RS
+C111508,Domain,QS,RS
+C111509,Domain,QS,RS
+C111510,Domain,QS,RS
+C111511,Domain,QS,RS
+C111512,Domain,QS,RS
+C111513,Domain,QS,RS
+C111514,Domain,QS,RS
+C111515,Domain,QS,RS
+C111516,Domain,QS,RS
+C111517,Domain,QS,RS
+C111518,Domain,QS,RS
+C111519,Domain,QS,RS
+C135814,Domain,QS,RS
+C135814,Instrument,Clinical Global Impression Generic Modification Version Questionnaire,Clinical Global Impression Generic Modification Version Clinical Classification
+C135815,Domain,QS,RS
+C135815,Instrument,Clinical Global Impression Generic Modification Version Questionnaire,Clinical Global Impression Generic Modification Version Clinical Classification
+C135816,Domain,QS,RS
+C135816,Instrument,Clinical Global Impression Generic Modification Version Questionnaire,Clinical Global Impression Generic Modification Version Clinical Classification
+C138364,Domain,RS,QS
+C138364,Instrument,Lansky Play-Performance Status Scale Clinical Classification,Lansky Play-Performance Status Scale Questionnaire
 C180218,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Erythema/Redness symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Erythema/Redness score.
 C180219,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Thickness/Induration symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Thickness/Induration score.
 C180220,NCIt_Definition,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Desquamation/Scaling symptom score.,Psoriasis Area and Severity Index Feldman Version (PASI Feldman Version) Head: Desquamation/Scaling score.
@@ -159,3 +200,24 @@ C202531,Domain,RS,QS
 C202531,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
 C202532,Domain,RS,QS
 C202532,Instrument,Minnesota Tobacco Withdrawal Scale-Revised Clinical Classification,Minnesota Tobacco Withdrawal Scale-Revised Questionnaire
+C204337,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204337,NCIt_Preferred_Term,SOFA 27th March 2024 Version - Respiration: PaO2/FiO2,SOFA 1996 Version - Respiration: PaO2/FiO2
+C204337,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Respiration: PaO2/FiO2.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA 1996 Version) Respiration: PaO2/FiO2.
+C204338,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204338,NCIt_Preferred_Term,SOFA 27th March 2024 Version - Coagulation: Platelets,SOFA 1996 Version - Coagulation: Platelets
+C204338,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Coagulation: platelets.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA 1996 Version) Coagulation: platelets.
+C204339,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204339,NCIt_Preferred_Term,SOFA 27th March 2024 Version - Liver: Bilirubin,SOFA 1996 Version - Liver: Bilirubin
+C204339,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Liver: bilirubin.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA 1996 Version) Liver: bilirubin.
+C204340,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204340,NCIt_Preferred_Term,SOFA 27th March 2024 Version - Cardiovascular: Hypotension,SOFA 1996 Version - Cardiovascular: Hypotension
+C204340,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Cardiovascular: hypotension.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA 1996 Version) Cardiovascular: hypotension.
+C204341,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204341,NCIt_Preferred_Term,SOFA 27th March 2024 Version - CNS: Glasgow Coma Score,SOFA 1996 Version - CNS: Glasgow Coma Score
+C204341,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Central Nervous System: Glasgow Coma Score.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA 1996 Version) Central Nervous System: Glasgow Coma Score.
+C204342,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204342,NCIt_Preferred_Term,SOFA 27th March 2024 Version - Renal: Creatinine or Urine Output,SOFA 1996 Version - Renal: Creatinine or Urine Output
+C204342,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Renal: creatinine or urine output.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA1996 Version) Renal: creatinine or urine output.
+C204343,Instrument,Sepsis-related Organ Failure Assessment 27MAR2024 Clinical Classification,Sepsis-related Organ Failure Assessment 1996 Clinical Classification
+C204343,NCIt_Preferred_Term,SOFA 27th March 2024 Version - Total SOFA Score,SOFA 1996 Version - Total SOFA Score
+C204343,NCIt_Definition,Sepsis-related Organ Failure Assessment 27th March 2024 Version (SOFA 27th March 2024 Version) Total SOFA score.,Sepsis-related Organ Failure Assessment 1996 Version (SOFA 1996 Version) Total SOFA score.
