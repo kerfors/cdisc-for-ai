@@ -29,6 +29,8 @@ Other findings from the same run:
 
 ## Reading (not yet tested; revised 2026-10-06)
 
+*Reading of 2026-10-06, before Phase 1. The positions now held are in `Variable_Meaning` in [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx), each with its basis; where they differ from this reading, the sheet holds. See [Observables, Phase 1](Observables_Phase1.md).*
+
 The axes do not fall into two clean groups. The test is the line between Biomedical Concept and Dataset Specialization: does the attribute change the observation itself, or only where and how an unchanged observation is filed?
 
 - **Observation-changing:** specimen, binding agent, test detail, method, scale — glucose in serum vs urine, IgE against cockroach vs peanut are different observables. Mostly the specimen-based domains.
