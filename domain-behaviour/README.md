@@ -9,6 +9,7 @@ made reproducible: run it on every COSMoS release and compare with the previous 
 It reports only. Scope and classification stay in
 [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx):
 the `Domains` flags and the `Consumer_Exclusions` sheet, whose claims this notebook tests.
+It also checks the hand-kept `Variable_Meaning` sheet (our position, section 4f): keys and fixed lists only.
 Nothing reads from this track.
 
 The notebook also publishes the result as a page,
@@ -51,7 +52,7 @@ and result values follow from the axes and are not counted.
 - `cosmos-graph/interim/COSMoS_Graph.xlsx` (DSS, BC, Variables, DataElementConcepts)
 - `consumer-bases/interim/DSS_View.xlsx` (`Measurement_Specs`)
 - `sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx`
-  (`Domains`, `Instrument_Domain_Rules`, `Consumer_Exclusions`)
+  (`Domains`, `Instrument_Domain_Rules`, `Consumer_Exclusions`, `Variable_Meaning`)
 - `cosmos-bc-dss/reports/COSMoS_Observable_Derivation.xlsx` (`DSS_Coordinates`)
 - `cosmos-bc-dss/reports/COSMoS_Observable_LOINC_Check.xlsx` (`Axis_Compare`; LOINC axes per pinned code)
 - `sdtm-test-codes/downloads/SDTM_Terminology.txt` (codelist names and definitions)
