@@ -1,6 +1,6 @@
 # Direction: observables, more expressive reference files, RDF/OWL
 
-*Written 2026-10-01. Updated as the steps are done; last update 2026-10-06.*
+*Written 2026-10-01. Updated as the steps are done; last update 2026-10-08.*
 
 Three steps, in order: find out what identifies an observable in the CDISC standards and whether a conclusion can be drawn; then make the Excel reference files express it; later, move towards RDF/OWL.
 
@@ -59,6 +59,17 @@ Once observables have a working definition, state it in the files instead of lea
 - an observable key per DSS;
 - the identifying axes as named columns, not only inside the variable pivots;
 - continue the pattern of the October 2026 corrections: identity keyed on NCIt codes rather than mnemonics (the TESTCD + NCIt join fix), reasons stated as data (`Consumer_Exclusions`), classifications read from what CT publishes (instrument class, C66734 domain codes).
+
+**Done so far (2026-10-08).** Phase 1 settles the core axes at the level of the variable: test code, test detail and binding agent as component, specimen as system, `--METHOD` as method. It does not yet settle a key per DSS:
+- the per-DSS reading of scale is open (units present, or the `--ORRES` data type; neither is right throughout);
+- a key would carry the assignment errors in COSMoS as they are, such as the two found by the LOINC check (nicotine, `HGBBLDDIP`);
+- Phase 1 read the BCs that fan out; for BCs with one DSS the key would come from a rule not tested against them.
+
+So Step 2 started at the variable level. The three Findings consumer files in [`sdtm-findings-graph/`](../sdtm-findings-graph/) now have an `Axis_Meaning` sheet: the rows of `Variable_Meaning` that apply to the file (Position, Basis, Status) and the `Measurement_Specs` columns each row refers to. It says which columns identify the observable, which are open, and on what basis. It is our position, not a published fact; the basis notes stay in `Variable_Meaning`.
+
+Then a key per DSS for LB, MB and MI only, in `Specimen_Findings`: `bc_id | component | system | scale | method`, built from the `Axis_Meaning` rows. Scale is in the key, by the accepted rule, read as units present or absent. That is the reading the file supports; it stays marked as open. Without scale, concentration and presence in urine (glucose, protein and others) would share a key. In MB and MI the key holds test code and test detail only, because `Variable_Meaning` has no rows for their specimen and method (they never separate sibling DSSs, so the grouping is the same either way).
+
+Parked: reading what is published for the identifying variables that never separate sibling DSSs (`MBSPEC`, `MISPEC` and others), so they can get rows with a basis. Needed when the key is extended beyond LB, MB and MI.
 
 ## Step 3 — towards RDF/OWL
 

@@ -28,6 +28,7 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 | `Fanout_Axes` | BC with more than one DSS | Which axes distinguish its DSSs |
 | `Key_Compare` | BC with more than one DSS | The fan-out axes against the observable key of `COSMoS_Observable_Derivation` |
 | `Variable_Evidence` | variable × domain | What COSMoS, SDTM CT, the SDTM v2.0 Model and SDTMIG v3.4 publish about each variable that differs between the DSSs of one BC |
+| `Consumer_Key_Compare` | key group that differs | The observable key of `Specimen_Findings` against the derivation's key, for the same DSSs |
 | `IG_Assumptions` | numbered SDTMIG v3.4 domain assumption | Assumptions in our Findings domains that name one of our variables, quoted as extracted |
 | `LOINC_Compare` | BC with more than one DSS and a LOINC code | The fan-out axes against the LOINC axes that differ between its DSSs |
 | `LBCAT_LOINC_Class` | LBCAT × LOINC class | LB DSSs with a LOINC code, by assigned category and LOINC class |
@@ -55,6 +56,7 @@ and result values follow from the axes and are not counted.
 - `sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx`
   (`Domains`, `Instrument_Domain_Rules`, `Consumer_Exclusions`, `Variable_Meaning`)
 - `cosmos-bc-dss/reports/COSMoS_Observable_Derivation.xlsx` (`DSS_Coordinates`)
+- `sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx` (`Measurement_Specs`: the consumer's observable key, LB, MB, MI)
 - `cosmos-bc-dss/reports/COSMoS_Observable_LOINC_Check.xlsx` (`Axis_Compare`; LOINC axes per pinned code)
 - `sdtm-test-codes/downloads/SDTM_Terminology.txt` (codelist names and definitions)
 - `sdtm-domain-reference/downloads/SDTM_v2.0.csv`, `SDTMIG_v3.4.csv` (CDISC variable tables: role, qualified variables, CDISC Notes; gitignored)

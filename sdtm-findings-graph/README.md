@@ -2,8 +2,8 @@
 
 Consumer-facing reference files for Findings, joined from the COSMoS graph
 projection and SDTM identity tracks. Sub-typed by structural pattern: specimen,
-measurement, instrument. Each sub-type produces a two-sheet workbook
-(`Test_Identity` + `Measurement_Specs`) designed for study design,
+measurement, instrument. Each sub-type produces a workbook
+(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`) designed for study design,
 SoA-to-CDISC mapping, and USDM integration.
 
 This track is the graph-fed canonical Findings consumer, having replaced
@@ -66,7 +66,7 @@ and COSMoS 2026-07-14.
 |---|---|---|
 | [`DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx) | consumer-bases | Joined view: `Test_Identity` (COSMoS-pinned TESTCDs), `Measurement_Specs` (DSS-grain, BC + Coding + Variables slot pivot — pin and value_list) |
 | [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | sdtm-test-codes | Domain-level test codes with NCIt identity. Used to widen `Test_Identity` beyond DSS_View's COSMoS-pinned subset. |
-| [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata. `Observation_Class` joined per row. |
+| [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata. `Observation_Class` joined per row. `Variable_Meaning` rows that apply to the file copied into `Axis_Meaning`. |
 | [`COSMoS_Graph_CT.xlsx`](../cosmos-graph/interim/COSMoS_Graph_CT.xlsx) | cosmos-graph | `CodelistTerms` sheet — drives the `Allowed_Units` permissible-value expansion (`ORRESU_codelist` → terms). |
 
 For the instrument sub-type, when added:
@@ -78,11 +78,20 @@ For the instrument sub-type, when added:
 
 ## File structure
 
-Specimen and measurement outputs are two-sheet workbooks:
+Specimen and measurement outputs are three-sheet workbooks:
 
 - **`Test_Identity`** — one row per TESTCD. Concept-level identity.
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
-  measurement detail (specimen, method, scale, units, coding).
+  measurement detail (specimen, method, scale, units, coding). In
+  `Specimen_Findings` (LB, MB, MI) also an observable key per DSS, built from
+  `Axis_Meaning`: `Observable_Key` (`bc_id | component | system | scale | method`,
+  NCIt codes except scale), `Observable_Key_Label`, `Key_Shared_With`,
+  `Key_Positions`. Scale uses units present or absent; its per-DSS reading is open.
+- **`Axis_Meaning`** — our position on what the axis columns of `Measurement_Specs`
+  mean for the observable: the rows of `Variable_Meaning` in
+  `SDTM_Domain_Metadata.xlsx` that apply to the file (Position, Basis, Status),
+  with the columns each row refers to. Not a published fact; the basis note for
+  each row is in `Variable_Meaning`. A variable without a row: no position taken.
 
 Link key between sheets: TESTCD + NCIt code. TESTCD alone is a mnemonic, reused
 across domains for unrelated tests (MCH in LB and MB, MV in MK and RE); COSMoS
@@ -90,15 +99,15 @@ coverage is joined on both. The two-step
 structure matches the mapping workflow: first resolve a term to a concept,
 then select the specific measurement variant.
 
-Instrument output is a four-sheet workbook — adds `BC_Categories` and
-`BC_Parents` to the two-sheet base. The two extra sheets carry COSMoS's
+Instrument output is a five-sheet workbook — adds `BC_Categories` and
+`BC_Parents` to the three-sheet base. The two extra sheets carry COSMoS's
 search-tag mechanism and the BC parent-child traversal explicitly. They
 are needed because instrument grouping operates outside the BC parent
 chain — the instrument-level BC and the wrapper concepts (e.g., `6 Minute
 Walk Functional Test` C115789 vs. `6MWT Functional Test Question` C115409)
 sit in disjoint NCIt trees connected only through shared category tags.
 The two-sheet skeleton would force consumers to derive these joins; the
-four-sheet shape makes them addressable directly. See
+two extra sheets make them addressable directly. See
 [`6MWT_COSMoS_Story.html`](../docs/archive/case-studies-2026-04/6MWT_COSMoS_Story.html) and
 [`6MWT_NCIt_Story.html`](../docs/archive/case-studies-2026-04/6MWT_NCIt_Story.html) (archived April 2026 snapshots).
 
@@ -110,7 +119,8 @@ Legacy column names are not preserved.
 
 Header colour convention (per repo standard): green = TESTCD / SDTM-CT-side,
 yellow = COSMoS-side, chocolate = instrument (NCIt C20993), copper =
-container (NCIt C211913), grey = keys.
+container (NCIt C211913), grey = keys, blue = our position (`Axis_Meaning`,
+as `Variable_Meaning` in `SDTM_Domain_Metadata.xlsx`).
 
 ## Behavioural exclusions
 
