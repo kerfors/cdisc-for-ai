@@ -4,7 +4,7 @@
 
 Phase 1 of the [observables direction](Observables_Direction.md): read and record what the standards publish about what identifies an observable, and say where they agree, disagree and are silent. The standards have been developed over many years by different groups, so they are read as evidence, not as a specification that is right. Nothing on this page is classified by us; where we would have to decide, it is listed as open. The decisions come after this page (see [What comes next](#what-comes-next)).
 
-Every number on this page comes from a cell in [`Domain_Behaviour.ipynb`](../domain-behaviour/notebooks/Domain_Behaviour.ipynb), sections 4b to 4e, and the sheets of [`Domain_Behaviour.xlsx`](../domain-behaviour/interim/Domain_Behaviour.xlsx).
+Every number on this page comes from a cell in [`Domain_Behaviour.ipynb`](../domain-behaviour/notebooks/Domain_Behaviour.ipynb), sections 4b to 4g, and the sheets of [`Domain_Behaviour.xlsx`](../domain-behaviour/interim/Domain_Behaviour.xlsx).
 
 ## Sources read
 
@@ -13,7 +13,7 @@ Every number on this page comes from a cell in [`Domain_Behaviour.ipynb`](../dom
 | COSMoS (public export) | Which variables separate the Dataset Specializations (DSSs) of one Biomedical Concept (BC); predicate term, linking phrase, data element concept per variable; `--EVAL` values | `Fanout_Axes`, `Variable_Evidence`, `Rater_COSMoS_EVAL` |
 | `COSMoS_Observable_Derivation` | The observable key per DSS: `bc_id \| component \| system \| scale \| method` | `Key_Compare` |
 | SDTM CT | Codelist names and definitions; instrument class (QS, FT, RS); the Evaluator codelist | `Variable_Evidence`, `Rater_Evidence`, `Rater_Class_Moves` |
-| SDTM v2.0 and SDTMIG v3.4 (CDISC variable tables) | Role of each variable and the variable it qualifies (Model); role, Core and CDISC Notes of each domain variable (IG); the CDISC Approved Non-Standard Variable Registry for variables not in the IG | `Variable_Evidence` |
+| SDTM v2.0 and SDTMIG v3.4 (CDISC variable tables and the IG document) | Role of each variable and the variable it qualifies (Model); role, Core and CDISC Notes of each domain variable (IG); the domain Assumptions that name our variables (IG document); the CDISC Approved Non-Standard Variable Registry for variables not in the IG | `Variable_Evidence`, `IG_Assumptions` |
 | LOINC | LOINC's own axes for each code a DSS pins, and state-qualified codes next to state-free ones (via `COSMoS_Observable_LOINC_Check`) | `LOINC_Compare`, `LBCAT_LOINC_Class`; `Subject_State` in the LOINC check |
 | NCIt | Instrument definitions; the clinical outcome assessment types | `Rater_Evidence` |
 
@@ -35,13 +35,13 @@ Method agrees in 8 BCs (one difference, below).
 
 **The SDTM Model places test detail and binding agent with the test.** In SDTM v2.0 and SDTMIG v3.4, `--TSTDTL` and `--BDAGNT` are Variable Qualifiers of `--TESTCD`: they qualify what is tested. That is a second publisher for the component, next to COSMoS. (`MITSTDTL` is the exception, below.)
 
-**LOINC confirms the specimen axis.** For 30 LB BCs that fan out and have DSSs with a LOINC code, COSMoS specimen and LOINC system agree in 26 BCs. The two exceptions are COSMoS pin errors already reported by the LOINC check: both nicotine DSSs pin the same serum/plasma codes, and `HGBBLDDIP` pins a urine code.
+**LOINC confirms the specimen axis.** For 30 LB BCs that fan out and have DSSs with a LOINC code, COSMoS specimen and LOINC system agree in 26 BCs. The two exceptions are COSMoS pin errors already reported by the LOINC check: both nicotine DSSs pin the same serum/plasma codes, and `HGBBLDDIP` pins a urine code. SDTMIG LB Assumption 8 states the link from the other side: `LBSPEC` and `LBMETHOD`, with `LBTEST` and `LBORRESU`, are "the aspects of a test that are associated with a LOINC code".
 
 So the standards together give a component (test code, test detail, binding agent), a system (specimen) and a method. This is close to LOINC's own decomposition.
 
 ## Where the standards disagree
 
-**Method.** One BC: Transcription (C17208). Its DSSs differ in `GFANMETH` (method of secondary analysis), not in `GFMETHOD`; the key reads `--METHOD` only. LOINC adds method differences in 3 BCs where COSMoS has none (Prothrombin Time, Macrocyte Count, Microcyte Count); there, LOINC method follows from which codes are pinned, not from a COSMoS `--METHOD` value.
+**Method.** One BC: Transcription (C17208). Its DSSs differ in `GFANMETH` (method of secondary analysis), not in `GFMETHOD`; the key reads `--METHOD` only. LOINC adds method differences in 3 BCs where COSMoS has none (Prothrombin Time, Macrocyte Count, Microcyte Count); there, LOINC method follows from which codes are pinned, not from a COSMoS `--METHOD` value. SDTMIG GF Assumption 8 keeps `GFMETHOD` to wet lab techniques; the IG note puts `GFANMETH` in the dry lab (secondary processing).
 
 **Scale.** The fan-out and the key read different proxies: units present or absent, against the `--ORRES` data type. They agree in 17 BCs; 3 are fan-out only, 7 key only. COSMoS publishes result scale per BC, not per DSS, so no published value settles which proxy is right. LOINC scale agrees with the fan-out in 8 BCs and adds 1.
 
@@ -51,7 +51,7 @@ So the standards together give a component (test code, test detail, binding agen
 
 **Category and LOINC class are different groupings.** LB DSSs with a LOINC code, by assigned `LBCAT` and LOINC class: CHEMISTRY is mostly CHEM but also DRUG/TOX, COAG and UA; HEMATOLOGY is mostly HEM/BC but also COAG and CHEM; URINALYSIS is mostly UA but also 9 CHEM. LOINC does not settle what `LBCAT` means.
 
-**SDTMIG and the SDTM Model on `MITSTDTL`.** The IG gives it Record Qualifier; the Model, and the other `--TSTDTL` variables, give Variable Qualifier of `--TESTCD`.
+**SDTMIG and the SDTM Model on `MITSTDTL`.** The IG gives it Record Qualifier; the Model, and the other `--TSTDTL` variables, give Variable Qualifier of `--TESTCD`. MI Assumption 2 says "MITSTDTL further qualifies the record", so the IG is consistent with itself.
 
 **What is standard.** `TRREASNE` is in neither SDTM v2.0 nor SDTMIG v3.4. COSMoS flags it non-standard, and the CDISC registry approves `REASNE` as a non-standard variable for RS.
 
@@ -59,13 +59,13 @@ So the standards together give a component (test code, test detail, binding agen
 
 **Whether a distinction changes the observation.** No source says it. The COSMoS predicates say how a variable relates to the result, not whether two DSSs that differ on it are two observables. Only two predicates name a kind of thing: `IS_SPECIMEN_TESTED_IN` and `IS_SUBJECT_STATE_FOR`. `SPECIFIES` covers method, test detail, location, status and reasons alike. The SDTM roles come closest. They separate what qualifies the test (`--TSTDTL`, `--BDAGNT`) from what qualifies the record. But specimen and method are Record Qualifiers just like position, fasting and evaluator, so the roles do not separate identifying qualifiers from subject state.
 
-**Category.** `LBCAT` and `RSCAT` have the same predicate and phrase (`GROUPS`, "groups values in"). Only SDTM CT tells them apart: `RSCAT` has the codelist ONCRSCAT, defined as the named response criteria; `LBCAT` has no codelist and its values carry no NCIt code. 12 BCs fan out by category (8 LB, 4 RS); category is not in the key, so the four RS BCs collapse to one key each. SDTM v2.0 and SDTMIG v3.4 make both Grouping Qualifiers; the IG notes that the RSCAT codelist depends on whether the records are oncology response criteria or another clinical classification.
+**Category.** `LBCAT` and `RSCAT` have the same predicate and phrase (`GROUPS`, "groups values in"). Only SDTM CT tells them apart: `RSCAT` has the codelist ONCRSCAT, defined as the named response criteria; `LBCAT` has no codelist and its values carry no NCIt code. 12 BCs fan out by category (8 LB, 4 RS); category is not in the key, so the four RS BCs collapse to one key each. SDTM v2.0 and SDTMIG v3.4 make both Grouping Qualifiers; the IG notes that the RSCAT codelist depends on whether the records are oncology response criteria or another clinical classification. The RS Assumptions say `RSCAT` "is used to group a set of assessments based on" a disease response criterion or a clinical classification.
 
-**Variables that separate DSSs outside our axes.** `GFSYMTYP`, `GFINHERT` (1 BC each, both with predicate and codelist) and `TRGRPID` (2 BCs, no predicate, no codelist — in TR the only assigned value that separates the DSSs besides the DS code). These are outside the seven axes we chose; the gap is in our analysis, not in the standards. The SDTM Model says what two of them are: `GFINHERT` qualifies the result (`--ORRES`, `--STRESC`, `--STRESN`), and `TRGRPID` is an Identifier that links records within a subject. `GFSYMTYP` qualifies the gene symbol (`--SYM`); what it means for the observable stays unstated.
+**Variables that separate DSSs outside our axes.** `GFSYMTYP`, `GFINHERT` (1 BC each, both with predicate and codelist) and `TRGRPID` (2 BCs, no predicate, no codelist — in TR the only assigned value that separates the DSSs besides the DS code). These are outside the seven axes we chose; the gap is in our analysis, not in the standards. The SDTM Model says what two of them are: `GFINHERT` qualifies the result (`--ORRES`, `--STRESC`, `--STRESN`), and `TRGRPID` is an Identifier that links records within a subject. `GFSYMTYP` qualifies the gene symbol (`--SYM`); what it means for the observable stays unstated. The TR Assumptions add that `--GRPID` "may be used for other purposes, per the SDTM".
 
 **Evaluator in oncology.** In RS, TR and TU only value lists differ (`--EVALID`, `TREVAL`, and in TR `TRSTAT`, `TRREASND`, `TRREASNE`). Where `TUEVAL` = INVESTIGATOR is assigned, it is the same on both siblings.
 
-**Subject state.** COSMoS states that position is subject state (`VSPOS`, `IS_SUBJECT_STATE_FOR`), and only its value list differs. Fasting is a value list on most LB DSSs and never separates sibling DSSs, so it cannot show up as an axis. LOINC has fasting-qualified glucose codes (component `Glucose^post CFst`) and position-qualified blood pressure and heart rate codes next to state-free ones (`Subject_State` in `COSMoS_Observable_LOINC_Check.xlsx`). It offers subject state as a refinement, not as a requirement. SDTM v2.0 and SDTMIG v3.4 make `--POS` and `--FAST` Record Qualifiers, the same role as `--SPEC` and `--METHOD`.
+**Subject state.** COSMoS states that position is subject state (`VSPOS`, `IS_SUBJECT_STATE_FOR`), and only its value list differs. Fasting is a value list on most LB DSSs and never separates sibling DSSs, so it cannot show up as an axis. LOINC has fasting-qualified glucose codes (component `Glucose^post CFst`) and position-qualified blood pressure and heart rate codes next to state-free ones (`Subject_State` in `COSMoS_Observable_LOINC_Check.xlsx`). It offers subject state as a refinement, not as a requirement. SDTM v2.0 and SDTMIG v3.4 make `--POS` and `--FAST` Record Qualifiers, the same role as `--SPEC` and `--METHOD`. SDTMIG LB Assumption 8 lists `LBFAST` and `LBPOS` among "the aspects of a test that are associated with a LOINC code", to be populated "when necessary to provide a semantically meaningful distinction between records with different LBLOINC values". COSMoS, LOINC and the IG thus agree that subject state is an optional refinement; none says when it is part of the observable. The VS Assumptions do not discuss position.
 
 ## Who rates
 
@@ -105,7 +105,7 @@ This page is the input to a decision, not the decision. Our own position, separa
 - **sources disagree, decided by a stated rule** — scale, test code within one BC, `MITSTDTL` (IG role against the Model);
 - **standards silent, open** — category, the analysis method `GFANMETH`, `GFSYMTYP`, rater (`QSEVAL`, `RSEVAL`), subject state (`VSPOS`, `LBFAST`).
 
-The positions were reviewed on 2026-10-08; `TRGRPID` and `MITSTDTL` are still proposed. Fasting never separates sibling DSSs, so its row is keyed on the LOINC check's subject-state sheet.
+The positions were reviewed on 2026-10-08; `MITSTDTL` is still proposed. Fasting never separates sibling DSSs, so its row is keyed on the LOINC check's subject-state sheet.
 
 The silent rows are where the work will have to go beyond what the data standards say. Bridging study design and data standards needs distinctions — who rates, the subject's state, which response criteria — that the standards carry only in places that are not connected, or not at all.
 
