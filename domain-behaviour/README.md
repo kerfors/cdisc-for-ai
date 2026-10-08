@@ -27,6 +27,11 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 | `Fanout_Axes` | BC with more than one DSS | Which axes distinguish its DSSs |
 | `Key_Compare` | BC with more than one DSS | The fan-out axes against the observable key of `COSMoS_Observable_Derivation` |
 | `Variable_Evidence` | variable × domain | What COSMoS and SDTM CT publish about each variable that differs between the DSSs of one BC |
+| `LOINC_Compare` | BC with more than one DSS and a LOINC code | The fan-out axes against the LOINC axes that differ between its DSSs |
+| `LBCAT_LOINC_Class` | LBCAT × LOINC class | LB DSSs with a LOINC code, by assigned category and LOINC class |
+| `Rater_Evidence` | instrument codelist | CT class and the phrases in the NCIt definition that name who completes or rates it |
+| `Rater_COSMoS_EVAL` | `--EVAL` / `--EVALID` × assigned value | DSSs and BCs in QS, FT, RS |
+| `Rater_Class_Moves` | instrument whose class changed | Class in the prior and current SDTM CT, with the rater phrases in its NCIt definition |
 | `Scale_Units` | domain × published result-scale combination | DSSs with and without units; flags |
 | `Exclusion_Claims` | claim in `Consumer_Exclusions` | Holds or not, with the evidence |
 | `Unclassified_Content` | domain | Domains with DSSs but no consumer class |
@@ -48,7 +53,11 @@ and result values follow from the axes and are not counted.
 - `sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx`
   (`Domains`, `Instrument_Domain_Rules`, `Consumer_Exclusions`)
 - `cosmos-bc-dss/reports/COSMoS_Observable_Derivation.xlsx` (`DSS_Coordinates`)
+- `cosmos-bc-dss/reports/COSMoS_Observable_LOINC_Check.xlsx` (`Axis_Compare`; LOINC axes per pinned code)
 - `sdtm-test-codes/downloads/SDTM_Terminology.txt` (codelist names and definitions)
+- `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx` (`Instruments`)
+- `sdtm-test-codes/downloads/Thesaurus.txt` (NCIt parents and definitions; gitignored, filled by the CT release run)
+- optional: a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`) for the instrument class moves
 
 Runs after `consumer-bases/` in a COSMoS refresh; see the release run order in
 [`docs/Data_Flow.md`](../docs/Data_Flow.md).

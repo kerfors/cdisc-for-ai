@@ -37,7 +37,7 @@
 <h1>Who rates?</h1>
 <p class="lead">One terminology change, four places that carry part of its meaning, and no link between them. A worked example of what flat standards leave implicit, and what an explicit graph would state.</p>
 
-<p>In SDTM Controlled Terminology 2026-09-25 four instrument codelists changed class. Three Clinical Global Impression variants moved from Questionnaire to Clinical Classification, and the Lansky Play-Performance Status Scale moved the other way. Where NCIt states who rates the instrument, each move follows the rater. Yet the rater is not recorded anywhere as data.</p>
+<p>Between SDTM Controlled Terminology 2026-03-27 and 2026-09-25 four instrument codelists changed class. Three Clinical Global Impression variants moved from Questionnaire to Clinical Classification, and the Lansky Play-Performance Status Scale moved the other way. Where NCIt states who rates the instrument, each move follows the rater. Yet the rater is not recorded anywhere as data.</p>
 
 <h2>What changed</h2>
 <div class="scroll"><table>
@@ -111,7 +111,7 @@
   <rect class="b2" x="260" y="100" width="170" height="54" rx="5"/>
   <text class="t2" x="270" y="121">Rater: parent</text><text class="s2" x="270" y="139">a role, not a sentence</text>
   <rect class="b2" x="260" y="220" width="170" height="54" rx="5"/>
-  <text class="t2" x="270" y="241">Class: Questionnaire</text><text class="s2" x="270" y="259">since SDTM CT 2026-09-25</text>
+  <text class="t2" x="270" y="241">Class: Questionnaire</text><text class="s2" x="270" y="259">in SDTM CT 2026-09-25</text>
   <rect class="b2" x="10" y="300" width="250" height="62" rx="5"/>
   <text class="t2" x="20" y="321">Domain C228234 Clinical Classification</text><text class="s2" x="20" y="339">requires rater: healthcare professional</text>
   <text class="s2" x="20" y="354">→ a parent-rated instrument cannot be CC</text>
@@ -144,7 +144,7 @@
 
 ncit:C138215  ex:codelistOf     ncit:C38144 .            # LPPSS1TC → Lansky Play-Performance Status
 ncit:C38144   ex:ratedBy        ex:Parent ;
-              ex:classifiedAs   ex:Questionnaire .         # since SDTM CT 2026-09-25
+              ex:classifiedAs   ex:Questionnaire .         # in SDTM CT 2026-09-25
 ncit:C228234  ex:requiresRater  ex:HealthcareProfessional . # Clinical Classification domain
 ncit:C138263  ex:containerFor   ncit:C138215 .           # still labelled "Clinical Classification Question"</pre>
 <p>With statements like these, two questions become queries: <em>which instruments are clinician-rated?</em> and <em>does any instrument's class contradict its rater, or its container?</em> A change note can then say what a reclassification means — the rater did not fit the class — and not only which labels changed.</p>

@@ -85,7 +85,9 @@ graph TD
     DV["consumer-bases<br/>DSS_View.xlsx"]
     DM["sdtm-domain-reference<br/>SDTM_Domain_Metadata.xlsx"]
     OD["cosmos-bc-dss<br/>COSMoS_Observable_Derivation.xlsx"]
+    OL["cosmos-bc-dss<br/>COSMoS_Observable_LOINC_Check.xlsx"]
     EVSX["NCI EVS SDTM CT<br/>SDTM_Terminology.txt"]
+    SI["sdtm-test-codes<br/>SDTM_Instrument_Identity.xlsx"]
 
     subgraph domain-behaviour
         DB["Domain_Behaviour.xlsx"]
@@ -96,7 +98,10 @@ graph TD
     DM --> DB
     CGX --> OD
     OD --> DB
+    OD --> OL
+    OL --> DB
     EVSX --> DB
+    SI --> DB
 ```
 
 The March 2026 behavioural analysis and the three-layer overview are archived in [`archive/behavioural-analysis-2026-03/`](archive/behavioural-analysis-2026-03/).
@@ -116,6 +121,6 @@ Run each notebook from its own folder. A step reads only files written by earlie
 | 7 | `sdtm-findings-graph/` | `Scope_Check` → `Specimen_Findings` → `Measurement_Findings` → `Instrument_Findings` | yes | yes |
 | 8 | `link-semantics/` | `Link_Kind_Audit` → `Code_Collision_Check` (needs a `usdm-rdf` checkout beside this repo) | yes | yes |
 | 9 | `cosmos-bc-dss/` | `COSMoS_Observable_Derivation` → `COSMoS_Observable_LOINC_Check` | — | yes |
-| 10 | `domain-behaviour/` | `Domain_Behaviour` (reads `COSMoS_Observable_Derivation.xlsx` from step 9 and stops if it is from another COSMoS package; also reads `SDTM_Terminology.txt` downloaded in step 1; set `PRIOR_FILE` to the previous output for the release diff; also rewrites `docs/analyses/domain-behaviour.html`) | — | yes |
+| 10 | `domain-behaviour/` | `Domain_Behaviour` (reads `COSMoS_Observable_Derivation.xlsx` from step 9 and stops if it is from another COSMoS package; reads `COSMoS_Observable_LOINC_Check.xlsx` from step 9 and stops if it is older than the derivation; reads `SDTM_Instrument_Identity.xlsx` and stops if it is older than `SDTM_Terminology.txt`; reads `Thesaurus.txt`; optionally reads a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`); also reads `SDTM_Terminology.txt` downloaded in step 1; set `PRIOR_FILE` to the previous output for the release diff; also rewrites `docs/analyses/domain-behaviour.html`) | — | yes |
 
 When both release together, run every step. `Scope_Check` stops the refresh if a domain with content is not classified in `SDTM_Domain_Metadata.xlsx`; classify it there, then continue. After the run: update `cosmos-graph/docs/COSMoS_Open_Work.md` and write the release note in `docs/`.
