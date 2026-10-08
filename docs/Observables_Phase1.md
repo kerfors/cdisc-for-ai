@@ -32,7 +32,7 @@ Method agrees in 8 BCs (one difference, below).
 
 **COSMoS publishes these variables consistently.** `--SPEC`, `--METHOD`, `--TSTDTL` and `--BDAGNT` each have a COSMoS predicate, a linking phrase and an SDTM CT codelist, and they are published the same way in every Findings domain where they occur. In the Findings rows, only 4 variables are published differently from the same generic variable in another domain: `LBCAT`, `RSCAT`, `MKLOC`, `TRGRPID` — grouping and context variables, not the core.
 
-**LOINC confirms the specimen axis.** For 30 LB and MB BCs that fan out and have DSSs with a LOINC code, COSMoS specimen and LOINC system agree in 26 BCs. The two exceptions are COSMoS pin errors already reported by the LOINC check: both nicotine DSSs pin the same serum/plasma codes, and `HGBBLDDIP` pins a urine code.
+**LOINC confirms the specimen axis.** For 30 LB BCs that fan out and have DSSs with a LOINC code, COSMoS specimen and LOINC system agree in 26 BCs. The two exceptions are COSMoS pin errors already reported by the LOINC check: both nicotine DSSs pin the same serum/plasma codes, and `HGBBLDDIP` pins a urine code.
 
 So the standards together give a component (test code, test detail, binding agent), a system (specimen) and a method. This is close to LOINC's own decomposition.
 
@@ -92,11 +92,13 @@ The rater phrases are matched with a phrase list of our own and quoted as found;
 
 ## What comes next
 
-This page is the input to a decision, not the decision. The next step records our own position, separate from what is published, for the rows that bear on the observable question: a hand-kept sheet `Variable_Meaning` in `SDTM_Domain_Metadata.xlsx`, checked by the notebook. Each position states its basis:
+This page is the input to a decision, not the decision. Our own position, separate from what is published, is recorded for the rows that bear on the observable question in a hand-kept sheet, `Variable_Meaning` in [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx), checked by the notebook (section 4f). Each position states its basis:
 
-- **sources agree** — specimen/system, test detail, binding agent;
-- **sources disagree, decided by a stated rule** — method, scale, test code within one BC;
-- **standards silent, open** — category, the GF and TR variables above, rater as an instrument property, subject state.
+- **sources agree** — specimen/system, test detail, binding agent, test method (`--METHOD`); where only COSMoS is read, the basis says so;
+- **sources disagree, decided by a stated rule** — scale, test code within one BC;
+- **standards silent, open** — category, the analysis method `GFANMETH`, the GF and TR variables above, rater (`QSEVAL`, `RSEVAL`), subject state (`VSPOS`).
+
+The positions are proposed, not yet accepted. Fasting has no row: it never separates sibling DSSs, so no sheet carries it.
 
 The silent rows are where the work will have to go beyond what the data standards say. Bridging study design and data standards needs distinctions — who rates, the subject's state, which response criteria — that the standards carry only in places that are not connected, or not at all.
 
