@@ -29,7 +29,7 @@ ax.text(50, 90, "cdisc-for-ai explores how the standards behave. Reference files
         fontsize=13, color="#666666", va="center")
 
 # headings and brackets
-ax.text(278, 145, "Study design (USDM)  \u2014  next: moving upstream", fontsize=12.5, fontweight="bold", color=BLUE, ha="center", va="center")
+ax.text(278, 145, "Study design (USDM)  \u2014  later, separate step", fontsize=12.5, fontweight="bold", color=BLUE, ha="center", va="center")
 ax.plot([50, 50, 507, 507], [185, 166, 166, 185], color=BLUE, lw=1.5, ls=(0, (4, 2.5)))
 ax.text(920, 145, "Data standards  \u2014  explored today", fontsize=12.5, fontweight="bold", color=GREEN, ha="center", va="center")
 ax.plot([692, 692, 1149, 1149], [178, 166, 166, 178], color=GREEN, lw=1.8)
