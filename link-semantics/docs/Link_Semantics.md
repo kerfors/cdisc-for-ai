@@ -254,6 +254,33 @@ it to a value list, and it is almost never open. `--FAST` is never assigned and
 always carries a value list. This is measured only; no reading is attached to
 the states here.
 
+## 9. Binding and denotation in the data standards
+
+Binding and denotation are published twice: in COSMoS, per DSS variable, and in
+the data standards themselves — the codelist SDTMIG binds to each domain
+variable, and the NCIt C-code the SDTM Model gives each variable. Read side by
+side, they mostly agree on binding and more often differ than agree on
+denotation.
+
+**Binding.** Where both sides bind, they usually name the same codelist. The
+differences are of a few kinds: COSMoS binds a variable the IG leaves unbound
+(results such as `EGORRES`, the instrument codelists in FT); COSMoS binds
+variables that are not in the IG (non-standard variables); COSMoS uses more
+codelists than the IG (a units codelist next to the one the IG names,
+instrument-specific codelists in RS); and in FA, COSMoS binds a different test
+codelist than the generic one the IG names. These are differences of scope and
+grain between two publications, not a different kind of link.
+
+**Denotation.** The two sides denote at different grains. A COSMoS DEC mostly
+names a domain-specific concept ("Adverse Event End Date Time"); the Model
+names the generic variable concept ("Observation End Date Time"). NCIt places
+the domain-specific concept under the generic one for part of the pairs, as a
+sibling for some, and relates them not at all within six levels for most of the
+rest. "This variable means that concept" therefore carries two statements: what
+the generic variable means, and what the variable means in its domain. A
+predicate for denotation has to say which one it makes, and the relation
+between the two concepts cannot be taken from NCIt as given.
+
 ---
 
 # Part B — Snapshot 2026-09-21
@@ -461,3 +488,53 @@ with at least 30 CT-bound rows (7,163 of the 7,438; all 68 suffixes are in the
 | `--EVALID` | 42 | 0 | 42 | 0 | 0.00 |
 | `--OCCUR` | 41 | 0 | 36 | 5 | 0.00 |
 | `--POS` | 40 | 0 | 9 | 31 | 0.00 |
+
+
+## B9. Binding and denotation against the data standards — 2026-10-12
+
+**Pins for this section.** `cdisc-for-ai` main at 8235604, COSMoS package
+2026-07-14, SDTMIG v3.4 and SDTM v2.0 variable tables (local copies, 2026-10-08),
+NCIt Thesaurus (local copy, 2026-09-30). B2 above predates the two inventory
+entries this section adds: binding from SDTMIG v3.4 (570 domain variables) and
+denotation from SDTM v2.0 (271 variables with a C-code).
+
+Unit: (domain, variable) present in a COSMoS DSS. Sheets `Binding_Compare` and
+`Denotation_Compare` of `Link_Kind_Audit.xlsx`.
+
+**Binding** — 459 pairs.
+
+| Result | Pairs |
+|---|---|
+| same codelist | 194 |
+| neither binds | 179 |
+| COSMoS binds, SDTMIG v3.4 does not | 33 |
+| COSMoS binds; variable not in SDTMIG v3.4 | 19 |
+| variable not in SDTMIG v3.4; no binding | 18 |
+| COSMoS uses more codelists than SDTMIG v3.4 | 8 |
+| SDTMIG v3.4 binds, COSMoS does not | 3 |
+| COSMoS uses a subset of the SDTMIG v3.4 codelists | 3 |
+| different codelists | 2 |
+
+The two with different codelists are `FATESTCD` and `FATEST`. The three where
+only the IG binds are `LBSTRESC`, `ECPSTRGU` and `PRDOSU`.
+
+**Denotation** — 373 pairs with a DEC.
+
+| Result | Pairs |
+|---|---|
+| DEC code differs from Model C-code | 191 |
+| DEC code = Model C-code | 85 |
+| SDTM v2.0 has no C-code for the variable | 79 |
+| variable not in SDTM v2.0 | 15 |
+| Model C-code is one of several DEC codes | 3 |
+
+Where the codes differ, the NCIt relation (Thesaurus parents, up to six levels):
+
+| Relation | Pairs |
+|---|---|
+| no hierarchy link within 6 levels | 120 |
+| DEC is a direct child of the Model concept | 50 |
+| DEC and Model concept share a parent | 15 |
+| DEC is an ancestor of the Model concept | 4 |
+| DEC is an ancestor of the Model concept + no hierarchy link within 6 levels | 1 |
+| DEC is a direct child of the Model concept + no hierarchy link within 6 levels | 1 |

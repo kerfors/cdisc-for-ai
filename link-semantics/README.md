@@ -59,7 +59,7 @@ as evidence. No reading is attached to a measurement here.
 
 | Notebook | Question | Output |
 |---|---|---|
-| [`Link_Kind_Audit.ipynb`](notebooks/Link_Kind_Audit.ipynb) | Which link kinds and provenance classes are there, and how many rows are behind each? Also: assignment states per variable suffix, LOINC at two grains, category token resolution. | [`Link_Kind_Audit.xlsx`](interim/Link_Kind_Audit.xlsx) |
+| [`Link_Kind_Audit.ipynb`](notebooks/Link_Kind_Audit.ipynb) | Which link kinds and provenance classes are there, and how many rows are behind each? Also: assignment states per variable suffix, LOINC at two grains, category token resolution, and binding and denotation compared with SDTMIG v3.4 and SDTM v2.0. | [`Link_Kind_Audit.xlsx`](interim/Link_Kind_Audit.xlsx) |
 | [`Code_Collision_Check.ipynb`](notebooks/Code_Collision_Check.ipynb) | Which C-codes are used in more than one role, or more than once within a role? Where would a transitive predicate bite? Includes the overlap with the USDM anchors in `usdm-rdf`. | [`Code_Collision_Check.xlsx`](interim/Code_Collision_Check.xlsx) |
 
 Each workbook has a `Pins` sheet: the `cdisc-for-ai` commit, the COSMoS package
@@ -80,10 +80,15 @@ cosmos-graph/interim/COSMoS_Graph_CT.xlsx ────────────�
 sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx ──────┤
 sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx ┼──→ link-semantics/
 sdtm-test-codes/interim/Codelist_Cross_References.xlsx ──────────┤
+sdtm-domain-reference/downloads/SDTMIG_v3.4.csv (gitignored) ────┤
+sdtm-domain-reference/downloads/SDTM_v2.0.csv (gitignored) ──────┤
+sdtm-test-codes/downloads/Thesaurus.txt (gitignored) ────────────┤
 ../usdm-rdf/usdm_v4.ttl (collision check only) ──────────────────┘
 ```
 
-Reads only repo artefacts, plus `usdm_v4.ttl` from a git checkout of
+Reads repo artefacts, the gitignored local copies of the SDTMIG v3.4 and SDTM
+v2.0 variable tables (cdisc.org sign-in) and the NCIt Thesaurus, plus
+`usdm_v4.ttl` from a git checkout of
 [`kerfors/usdm-rdf`](https://github.com/kerfors/usdm-rdf) beside this
 repository. Nothing in the repo reads from this track.
 
@@ -102,7 +107,7 @@ Run from `link-semantics/notebooks/`. The repo root is resolved two levels up.
   of the track: the link kinds, the provenance classes and the evidence for
   each. Narrative first, then a dated snapshot with the counts.
 
-Folders not present: `downloads/` (reads only repo artefacts and `usdm-rdf`),
+Folders not present: `downloads/` (the local copies it reads sit in other tracks' `downloads/`),
 `machine_actionable/` (no consumer file is produced).
 
 ## Cross-references
