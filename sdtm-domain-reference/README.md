@@ -4,7 +4,7 @@ A publicly sourced reference for all SDTMIG v3.4 domains, with a structural anal
 
 ## What this is
 
-**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists the 57 SDTMIG v3.4 domains, plus domains that SDTM CT brings test codes for and that are published in the CT SDTM Domain Abbreviation codelist (C66734), with their observation class and pipeline flags (`Has_Test_Codes`, `Specimen_Based`, `Measurement`). Sourced from public CDISC documentation and SDTM CT. Changes when a new SDTMIG version is published, or when CT adds such a domain -- `sdtm-findings-graph/notebooks/Scope_Check.ipynb` fails a refresh until it is classified. A domain added from CT gets its observation class at once; its consumer flag waits until published COSMoS content shows how it behaves. Intended for programmatic use by notebooks in other tracks.
+**Reference data** -- [`SDTM_Domain_Metadata.xlsx`](machine_actionable/SDTM_Domain_Metadata.xlsx) lists the 58 SDTMIG v3.4 domains, plus domains that SDTM CT brings test codes for and that are published in the CT SDTM Domain Abbreviation codelist (C66734), with their observation class and pipeline flags (`Has_Test_Codes`, `Specimen_Based`, `Measurement`). Sourced from public CDISC documentation and SDTM CT. Changes when a new SDTMIG version is published, or when CT adds such a domain -- `sdtm-findings-graph/notebooks/Scope_Check.ipynb` fails a refresh until it is classified. A domain added from CT gets its observation class at once; its consumer flag waits until published COSMoS content shows how it behaves. The five SDTMIG v3.4 datasets that are not domains of observations (RELREC, RELSPEC, RELSUB, SUPPQUAL, OI) are listed apart, in the sheet `Non_Observation_Datasets`, each with the reason. Intended for programmatic use by notebooks in other tracks.
 
 The March 2026 structural-type and behavioural-group analysis that motivated these flags is archived in [`docs/archive/behavioural-analysis-2026-03/`](../docs/archive/behavioural-analysis-2026-03/).
 
@@ -21,7 +21,7 @@ sdtm-domain-reference/
 
 ## Sources
 
-Domain list and observation classes: SDTMIG v3.4 public documentation.
+Domain list, sections, names and classes: the SDTMIG v3.4 variable table and table of contents (local copies in `downloads/`). `sdtm-findings-graph/notebooks/Scope_Check.ipynb` checks the sheet against them.
 
 Domains added from CT: the SDTM Domain Abbreviation codelist (C66734) in the NCI EVS SDTM CT file; see the Notes column.
 
