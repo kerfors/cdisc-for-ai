@@ -1,6 +1,6 @@
 # Direction: observables, more expressive reference files, RDF/OWL
 
-*Written 2026-10-01. Updated as the steps are done; last update 2026-10-08.*
+*Written 2026-10-01. Updated as the steps are done; last update 2026-10-12.*
 
 Three steps, in order: find out what identifies an observable in the CDISC standards and whether a conclusion can be drawn; then make the Excel reference files express it; later, move towards RDF/OWL.
 
@@ -79,6 +79,7 @@ The long-run aim: publish the reference files as RDF/OWL that expresses the beha
 
 ## See also
 
+- [Interpretation context](Interpretation_Context.md) — what the record carries beside a value so it can be read, and how COSMoS uses it (2026-10-12)
 - [Who rates?](https://kerfors.github.io/cdisc-for-ai/examples/who-rates.html) — worked example (early, exploratory): the instrument reclassifications in SDTM CT 2026-09-25, today's representation against an explicit graph
 - [Domain behaviour](https://kerfors.github.io/cdisc-for-ai/analyses/domain-behaviour.html) — the analysis page behind the table above, regenerated on each COSMoS release
 - [`Changes_2026-10.md`](Changes_2026-10.md) — the corrections that led here

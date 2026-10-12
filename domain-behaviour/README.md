@@ -35,6 +35,7 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 | `Rater_Evidence` | instrument codelist | CT class and the phrases in the NCIt definition that name who completes or rates it |
 | `Rater_COSMoS_EVAL` | `--EVAL` / `--EVALID` × assigned value | DSSs and BCs in QS, FT, RS |
 | `Rater_Class_Moves` | instrument whose class changed | Class in the prior and current SDTM CT, with the rater phrases in its NCIt definition |
+| `Interpretation_Context` | generic variable × domain | Every SDTM v2.0 Record Qualifier, Variable Qualifier and Timing variable: SDTMIG v3.4 Core and codelist, and how COSMoS uses it (absent, never assigned, always assigned, mixed). See [`Interpretation_Context.md`](../docs/Interpretation_Context.md) |
 | `Scale_Units` | domain × published result-scale combination | DSSs with and without units; flags |
 | `Exclusion_Claims` | claim in `Consumer_Exclusions` | Holds or not, with the evidence |
 | `Unclassified_Content` | domain | Domains with DSSs but no consumer class |
