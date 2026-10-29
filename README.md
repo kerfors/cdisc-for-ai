@@ -32,7 +32,7 @@ The reference files make those connections explicit today, as flat files with cl
 
 The repository is organized into source tracks, a graph track, a reference track, a view track, consumer tracks, and an analysis track. Source tracks extract and enrich from upstream standards. The graph track projects COSMoS into a multi-sheet traversable graph. The reference track provides shared domain metadata. The view track joins the graph into per-DSS views. Consumer tracks add structural-type-specific final shaping for study design and mapping workflows. The analysis track measures behaviour across the other tracks; nothing reads from it.
 
-Each reference file is self-describing, with a README sheet documenting columns, provenance, and design decisions.
+Each reference file is self-describing: its ReadMe sheet starts with purpose, scope, source versions, known gaps and sheets, then documents columns, provenance and design decisions. Versions are pinned in [`Reference_Versions.json`](Reference_Versions.json).
 
 ### Source tracks
 
@@ -68,9 +68,10 @@ Each reference file is self-describing, with a README sheet documenting columns,
 
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
-| [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded -- see behavioural analysis) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
+| [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF excluded -- see `Domain_Coverage.xlsx`) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
 | | Measurement | VS, EG, MK, CV, RE | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
-| | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- four-sheet (Test_Identity, Measurement_Specs, BC_Categories, BC_Parents) |
+| | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- adds BC_Categories, BC_Parents |
+| | All domains | every domain in `SDTM_Domain_Metadata.xlsx` | [`Domain_Coverage.xlsx`](sdtm-findings-graph/machine_actionable/Domain_Coverage.xlsx) -- which Findings file covers each domain, and why not where none does |
 
 ### Analysis track
 

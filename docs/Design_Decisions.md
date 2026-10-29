@@ -2,7 +2,7 @@
 
 *Moved from the root README, 2026-09-30.*
 
-**Why flat files?** Excel files with README sheets reach the broadest audience today: data managers, statisticians, LLMs, rule engines. The underlying relationships are graph-shaped, but flat projections are the most accessible delivery format until the standards are published as a traversable graph.
+**Why flat files?** Excel files with ReadMe sheets reach the broadest audience today: data managers, statisticians, LLMs, rule engines. The underlying relationships are graph-shaped, but flat projections are the most accessible delivery format until the standards are published as a traversable graph.
 
 **Why "machine-actionable" not "AI-friendly"?** Applies to any automated system, not just LLMs. Aligns with FAIR data principles.
 

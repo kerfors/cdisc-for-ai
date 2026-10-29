@@ -13,7 +13,7 @@ The green layer. Identity for every CDISC SDTM test code: what is it called, wha
 
 **Extract** auto-discovers all extensible Test Code / Test Name codelist pairs from the NCI EVS SDTM Terminology file, covering both the `*TESTCD` convention (e.g. LBTESTCD) and the `*CD` convention used by TA-specific and body-system codelists (e.g. CVFATSCD, MUSCTSCD). Captures cross-domain membership. Excludes Parameter Name-Code pairs (TSPARMCD/TSPARM) — study-level metadata, not observation test codes.
 
-**Enrich** adds NCIt preferred terms, definitions, synonyms, and UMLS cross-references (CUI mappings to SNOMED, MeSH, RxNorm). The reference file includes a README sheet with full column documentation.
+**Enrich** adds NCIt preferred terms, definitions, synonyms, and UMLS cross-references (CUI mappings to SNOMED, MeSH, RxNorm). The reference file includes a ReadMe sheet with full column documentation.
 
 Each notebook documents its own logic, sources, and design decisions in detail.
 

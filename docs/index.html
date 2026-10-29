@@ -81,15 +81,19 @@
 
 <p>Machine-actionable reference files built from CDISC SDTM Controlled Terminology, NCIt, and COSMoS Biomedical Concepts and Dataset Specializations, designed for both human review and AI consumption. The analyses behind them measure how the standards actually behave. This is the test bed. Ideas are explored here first. The long-run aim is to publish the reference files as RDF/OWL that can express that underlying behaviour, related to established ontologies, so the standards can take part in the picture above: from study design to data, linked and queried.</p>
 
-<p><strong>Reference versions:</strong> SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, SDTM v2.0. Latest release note: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">Changes_2026-10.md</a>.</p>
+<p><strong>Reference versions:</strong> SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, SDTM v2.0, pinned in <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/Reference_Versions.json"><code>Reference_Versions.json</code></a>. Latest release note: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">Changes_2026-10.md</a>.</p>
 
-<p>Source repository: <a href="https://github.com/kerfors/cdisc-for-ai">github.com/kerfors/cdisc-for-ai</a>. Each Excel file is self-describing, with a README sheet documenting columns, provenance, and design decisions. How the files are built from each other: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Data_Flow.md">Data_Flow.md</a>.</p>
+<p>Source repository: <a href="https://github.com/kerfors/cdisc-for-ai">github.com/kerfors/cdisc-for-ai</a>. Each Excel file is self-describing: its ReadMe sheet starts with purpose, scope, source versions, known gaps and sheets, then documents columns, provenance and design decisions. How the files are built from each other: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Data_Flow.md">Data_Flow.md</a>.</p>
 
 <h2>Reference files</h2>
 
-<p>The deliverables: test identity from SDTM CT + NCIt, and the sub-typed Findings consumer files fed from the graph.</p>
+<p>The deliverables: test identity from SDTM CT + NCIt, and the sub-typed Findings consumer files fed from the graph. Each Findings file also carries the codelists its columns name.</p>
 
 <ul class="files">
+    <li>
+        <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Domain_Coverage.xlsx"><code>Domain_Coverage.xlsx</code></a>
+        <span class="desc">start here: which Findings file covers each domain, and why not where none does</span>
+    </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx"><code>SDTM_Test_Identity.xlsx</code></a>
         <span class="desc">domain-level TESTCDs with NCIt identity</span>
@@ -104,7 +108,7 @@
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx"><code>Specimen_Findings.xlsx</code></a>
-        <span class="desc">specimen-based Findings consumer view (LB, MB, MI, CP, BS, MS, PC, PP)</span>
+        <span class="desc">specimen-based Findings consumer view (LB, MB, MI, CP, BS, MS, PC, PP; IS and GF: see Domain_Coverage)</span>
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx"><code>Measurement_Findings.xlsx</code></a>
@@ -112,7 +116,7 @@
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx"><code>Instrument_Findings.xlsx</code></a>
-        <span class="desc">instrument-based Findings consumer view (QS, FT, RS); four sheets: Test_Identity, Measurement_Specs, BC_Categories, BC_Parents</span>
+        <span class="desc">instrument-based Findings consumer view (QS, FT, RS), with BC category and parent edges</span>
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx"><code>SDTM_Domain_Metadata.xlsx</code></a>
@@ -170,7 +174,7 @@
     </li>
 </ul>
 
-<p style="color:#666; font-size:0.95em; margin-top:2rem;">Release notes: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">2026-10</a> (corrections at SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-09.md">2026-09</a> (SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-08.md">2026-08</a> (COSMoS 2026-07-14) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-06.md">2026-06</a> (COSMoS 2026-05-26) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-05.md">2026-05</a> (legacy <code>sdtm-findings/</code> consumer and pre-graph COSMoS flatten retired). Earlier versions remain in git history.</p>
+<p style="color:#666; font-size:0.95em; margin-top:2rem;">Release notes: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">2026-10</a> (corrections and self-contained reference files, at SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-09.md">2026-09</a> (SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-08.md">2026-08</a> (COSMoS 2026-07-14) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-06.md">2026-06</a> (COSMoS 2026-05-26) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-05.md">2026-05</a> (legacy <code>sdtm-findings/</code> consumer and pre-graph COSMoS flatten retired). Earlier versions remain in git history.</p>
 
 <footer>
     Authored by Kerstin Forsberg, with Claude as collaborative partner.
