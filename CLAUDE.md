@@ -18,6 +18,8 @@ Repository: https://github.com/kerfors/cdisc-for-ai
 - COSMoS BC/DSS: package **2026-07-14**
 - SDTMIG: **v3.4** / SDTM v2.0
 
+Pinned in `Reference_Versions.json` at the repo root. The notebooks that write `machine_actionable` files read it for their ReadMe; the ones that read COSMoS stop when the COSMoS pin differs from the newest `package_date` in DSS_View. Update the pin file at each refresh.
+
 ## Architecture — how tracks relate
 
 The repo has six track types. The domain code is the join key across all tracks.
@@ -75,7 +77,7 @@ Each track follows a consistent structure:
 2. **Never modify `pre-2026-03/` files.** They are frozen baselines.
 3. **Notebooks are the processing logic.** Changes to output files should come from notebook changes, not direct edits to xlsx/csv.
 4. **Diff before committing.** When updating outputs, generate diff CSVs so changes are reviewable.
-5. **README sheets.** Every machine_actionable xlsx has a README sheet documenting columns, provenance, and design decisions. Keep it current.
+5. **ReadMe sheets.** Every machine_actionable xlsx has a ReadMe sheet that starts with the same header — PURPOSE, SCOPE, SOURCE VERSIONS, KNOWN GAPS, SHEETS — followed by columns, provenance and design decisions. Keep it current.
 
 ## Data integrity — critical
 
