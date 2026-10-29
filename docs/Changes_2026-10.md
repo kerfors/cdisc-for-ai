@@ -48,6 +48,11 @@ chelonae (MCH in MB) carried the Dataset Specialization of Mean Corpuscular Hemo
 with Minute Volume (MV in RE) — the collision the September note itself pointed out.
 Coverage is now joined on the test code together with its NCIt code.
 
+The conflict flags (NCIt_Code_Conflict, NCIt_Reference_Disagree) still came across on
+the test code alone, so a test sharing a mnemonic with a COSMoS-pinned test carried that
+test's flags. They now use the same key as the coverage. A blank flag means not
+evaluated, and the ReadMe says so.
+
 ## Scope comes from the domain reference, checked every release
 
 Each consumer carried its own list of domains. The lists were written once and never
@@ -85,6 +90,28 @@ decomposing by result scale; it decomposes by test detail. Neither decomposes by
 specimen, so both exclusions stand, now with reasons that hold. The March wording is
 kept in the reasons for reference.
 
+## Each reference file stands on its own
+
+A reader of a Findings file had to know the pipeline to use it: which codelist a
+`*_codelist` column names, why a domain is missing, which versions the file was built
+on. That knowledge is now in the files.
+
+Each Findings file carries a Codelists sheet: every codelist its columns name, with all
+terms, C-codes, definitions and synonyms as SDTM CT publishes them. The set follows the
+file's own columns, not a list kept by hand.
+
+A new file, Domain_Coverage, has one row per domain. It says which Findings file holds
+the domain, how many of its Dataset Specializations are there, and if none, why: in
+scope but without COSMoS content, excluded by a recorded decision, not a Findings
+domain, or no consumer rule assigned. The last is stated as a fact, not a decision.
+The consumer is computed with the consumers' own rules, then checked against what the
+files contain; the run stops if they disagree.
+
+Every ReadMe now starts the same way: purpose, scope, source versions, known gaps,
+sheets. The versions come from one pin file. The Findings and coverage runs stop when
+the COSMoS pin is older than the newest package in the data. The SDTM CT file carries
+no version, so that pin is stated, not checked, and the ReadMe says this too.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
@@ -95,7 +122,7 @@ standards themselves.
 
 ## Authoritative current state
 
-File-level current state lives in the README sheet of each machine-actionable xlsx,
+File-level current state lives in the ReadMe sheet of each machine-actionable xlsx,
 regenerated on every run. Counts, column inventories, and coverage percentages are
 point-in-time and belong there rather than in this note.
 
