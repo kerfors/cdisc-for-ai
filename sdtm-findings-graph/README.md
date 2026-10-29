@@ -3,7 +3,7 @@
 Consumer-facing reference files for Findings, joined from the COSMoS graph
 projection and SDTM identity tracks. Sub-typed by structural pattern: specimen,
 measurement, instrument. Each sub-type produces a workbook
-(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`) designed for study design,
+(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`, `Codelists`) designed for study design,
 SoA-to-CDISC mapping, and USDM integration.
 
 This track is the graph-fed canonical Findings consumer, having replaced
@@ -24,14 +24,15 @@ consumer-bases/interim/DSS_View.xlsx ─────────────┘ 
                               sdtm-findings-graph/machine_actionable/
                                   ├── Specimen_Findings.xlsx
                                   ├── Measurement_Findings.xlsx
-                                  └── Instrument_Findings.xlsx
+                                  ├── Instrument_Findings.xlsx
+                                  └── Domain_Coverage.xlsx
 ```
 
 ## Scope discipline
 
 **In scope.** Editorial decisions a Findings consumer owns: sub-typing
-(specimen vs measurement vs instrument), behavioural exclusions (IS, GF,
-UR), the LOINC grain decision, the NCIt graph-vs-reference disagreement
+(specimen vs measurement vs instrument), behavioural exclusions (IS, GF),
+the LOINC grain decision, the NCIt graph-vs-reference disagreement
 surface, the `Allowed_Units` codelist expansion, the wider TESTCD universe
 self-join (the coverage-gap framing). Final column shape per sub-type is
 designed fresh — not ported from the legacy track.
@@ -49,9 +50,10 @@ along with its legacy consumer.
 
 | Notebook | Sub-type | Scope | Output |
 |---|---|---|---|
-| `Specimen_Findings.ipynb` | Specimen | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF, UR excluded) | `machine_actionable/Specimen_Findings.xlsx` |
+| `Specimen_Findings.ipynb` | Specimen | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF excluded) | `machine_actionable/Specimen_Findings.xlsx` |
 | `Measurement_Findings.ipynb` | Measurement | VS, EG, MK, CV, RE | `machine_actionable/Measurement_Findings.xlsx` |
 | `Instrument_Findings.ipynb` | Instrument | QS, FT, RS | `machine_actionable/Instrument_Findings.xlsx` |
+| `Domain_Coverage.ipynb` | — | All domains; run after the three above | `machine_actionable/Domain_Coverage.xlsx`: per domain the test-code and DSS counts, the consumer whose scope holds it, the DSSs in that file, and a coverage status. Fails when a Findings file holds a domain outside its scope or a covered domain's DSSs are not all in its file |
 | `Scope_Check.ipynb` | — | Release check, run before the three above | Fails when a domain with CT test codes or COSMoS DSSs is missing from `SDTM_Domain_Metadata.xlsx` or is not a domain code in the CT SDTM Domain Abbreviation codelist (C66734) |
 
 Scope is not listed in code. Each notebook reads it from `SDTM_Domain_Metadata.xlsx`
@@ -67,7 +69,7 @@ and COSMoS 2026-07-14.
 | [`DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx) | consumer-bases | Joined view: `Test_Identity` (COSMoS-pinned TESTCDs), `Measurement_Specs` (DSS-grain, BC + Coding + Variables slot pivot — pin and value_list) |
 | [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | sdtm-test-codes | Domain-level test codes with NCIt identity. Used to widen `Test_Identity` beyond DSS_View's COSMoS-pinned subset. |
 | [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata. `Observation_Class` joined per row. `Variable_Meaning` rows that apply to the file copied into `Axis_Meaning`. |
-| [`COSMoS_Graph_CT.xlsx`](../cosmos-graph/interim/COSMoS_Graph_CT.xlsx) | cosmos-graph | `CodelistTerms` sheet — drives the `Allowed_Units` permissible-value expansion (`ORRESU_codelist` → terms). |
+| [`COSMoS_Graph_CT.xlsx`](../cosmos-graph/interim/COSMoS_Graph_CT.xlsx) | cosmos-graph | `Codelists` and `CodelistTerms` sheets — drive the `Allowed_Units` permissible-value expansion (`ORRESU_codelist` → terms) and the `Codelists` sheet of each output. |
 
 For the instrument sub-type, when added:
 
@@ -78,7 +80,7 @@ For the instrument sub-type, when added:
 
 ## File structure
 
-Specimen and measurement outputs are three-sheet workbooks:
+Specimen and measurement outputs are four-sheet workbooks:
 
 - **`Test_Identity`** — one row per TESTCD. Concept-level identity.
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
@@ -92,6 +94,10 @@ Specimen and measurement outputs are three-sheet workbooks:
   `SDTM_Domain_Metadata.xlsx` that apply to the file (Position, Basis, Status),
   with the columns each row refers to. Not a published fact; the basis note for
   each row is in `Variable_Meaning`. A variable without a row: no position taken.
+- **`Codelists`** — every codelist named in a `*_codelist` column of
+  `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`;
+  `referenced_by` names the columns. A reader resolves every codelist reference
+  without opening another file.
 
 Link key between sheets: TESTCD + NCIt code. TESTCD alone is a mnemonic, reused
 across domains for unrelated tests (MCH in LB and MB, MV in MK and RE); COSMoS
@@ -99,8 +105,8 @@ coverage is joined on both. The two-step
 structure matches the mapping workflow: first resolve a term to a concept,
 then select the specific measurement variant.
 
-Instrument output is a five-sheet workbook — adds `BC_Categories` and
-`BC_Parents` to the three-sheet base. The two extra sheets carry COSMoS's
+Instrument output is a six-sheet workbook — adds `BC_Categories` and
+`BC_Parents` to the four-sheet base. The two extra sheets carry COSMoS's
 search-tag mechanism and the BC parent-child traversal explicitly. They
 are needed because instrument grouping operates outside the BC parent
 chain — the instrument-level BC and the wrapper concepts (e.g., `6 Minute
@@ -136,9 +142,6 @@ As they stand now:
   analysis found the target only in `DS_Code`.
 - **Specimen sub-type — GF excluded.** Decomposes by test detail (`TSTDTL`),
   not specimen. The March 2026 analysis recorded it as scale-driven.
-- **Specimen sub-type — UR excluded.** Zero decomposition despite the
-  `Specimen_Based` metadata flag. Behaviourally identical to
-  Domain-specific Findings.
 - **Measurement sub-type — no exclusions.** EG was excluded until
   2026-10-01 (all BCs marked `Qualitative` with units present on a sizeable
   share). Since the COSMoS 2026-05-26 package its scales are Nominal (no
