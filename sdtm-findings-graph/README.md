@@ -100,7 +100,9 @@ Specimen and measurement outputs are four-sheet workbooks:
   each row is in `Variable_Meaning`. A variable without a row: no position taken.
 - **`Codelists`** — every codelist named in a `*_codelist` column of
   `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`;
-  `referenced_by` names the columns. A reader resolves every codelist reference
+  `referenced_by` names the columns. `_codelist` covers pinned terms and value lists;
+  a `_codelist` column empty on every row is left out (core slots excepted).
+  A reader resolves every codelist reference
   without opening another file. `term_synonyms` are the CDISC synonyms from SDTM CT;
   `term_ncit_synonyms` adds the NCIt synonyms not already there (separated by `|`).
 - **`Shared_Strings`** — one row per string and term, for every string (lower case, letters and digits) that names

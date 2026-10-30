@@ -165,6 +165,25 @@ may be weak: where the name comes from, how many words it has, and how many term
 share it. It decides nothing. Building it found one name the rule could not handle, the unit %,
 and the rule now says what happens to it.
 
+## Codelists bound through value lists
+
+DSS_View carried a variable's codelist only where COSMoS pins a term. Where COSMoS restricts
+a variable to a value list, the bound codelist was used to resolve the list's NCIt codes but
+not written out. So the Codelists sheets missed codelists that Dataset Specializations bind
+only through value lists — in the immunogenicity file, the unit codelist and the codelist of
+the test operational objective. DSS_View now writes the bound codelist for value lists too,
+and the Findings files carry those codelists in full. A `_codelist` column that is empty on
+every row of a file is left out, which removes some empty columns published earlier.
+
+The test operational objective shows terminology moving after an IG is published: SDTMIG
+v3.4 lists three values and calls the codelist nonextensible; SDTM CT now has four.
+
+Two things surfaced on the way. Ethnic Group and Race, which COSMoS binds in Demographics,
+are not in the pinned SDTM CT; the domain coverage file names them as such instead of
+stopping. And the notebooks read the term NA (Not Applicable) in the No Yes Response
+codelist, and None in three instrument codelists, as empty values; they are now read as
+published.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
