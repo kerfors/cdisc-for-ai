@@ -182,7 +182,9 @@ Two things surfaced on the way. Ethnic Group and Race, which COSMoS binds in Dem
 are not in the pinned SDTM CT; the domain coverage file names them as such instead of
 stopping. And the notebooks read the term NA (Not Applicable) in the No Yes Response
 codelist, and None in three instrument codelists, as empty values; they are now read as
-published.
+published. The graph validation report had listed that NA as an unresolvable value-list
+member; it no longer does. The ReadMe of each file with such a term now says how to read it,
+since any reader using pandas defaults would lose it the same way.
 
 ## What this says about the method
 
