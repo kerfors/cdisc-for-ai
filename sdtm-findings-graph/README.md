@@ -26,7 +26,8 @@ consumer-bases/interim/DSS_View.xlsx ─────────────┘ 
                                   ├── Measurement_Findings.xlsx
                                   ├── Instrument_Findings.xlsx
                                   ├── Immunogenicity_Findings.xlsx
-                                  └── Domain_Coverage.xlsx
+                                  ├── Domain_Coverage.xlsx
+                                  └── Codelist_Phrases.xlsx
 ```
 
 ## Scope discipline
@@ -55,6 +56,7 @@ along with its legacy consumer.
 | `Measurement_Findings.ipynb` | Measurement | VS, EG, MK, CV, RE | `machine_actionable/Measurement_Findings.xlsx` |
 | `Instrument_Findings.ipynb` | Instrument | QS, FT, RS | `machine_actionable/Instrument_Findings.xlsx` |
 | `Immunogenicity_Findings.ipynb` | Immunogenicity | IS | `machine_actionable/Immunogenicity_Findings.xlsx` |
+| `Codelist_Phrases.ipynb` | — | The codelists of the four Findings files; run after Domain_Coverage | `machine_actionable/Codelist_Phrases.xlsx`: one row per codelist, term, field and published string, as a normalised phrase (rule in the ReadMe), with source (CT or NCIt), token count, and how many terms and codelists share it. Facts only: no flags, no stop list, no choosing. Fails when a submission value does not resolve to its term |
 | `Domain_Coverage.ipynb` | — | All domains; run after the four above | `machine_actionable/Domain_Coverage.xlsx`: per domain the test-code and DSS counts, the consumer whose scope holds it, the DSSs in that file, and a coverage status. Fails when a Findings file holds a domain outside its scope or a covered domain's DSSs are not all in its file |
 | `Scope_Check.ipynb` | — | Release check, run before the four above | Fails when a domain with CT test codes or COSMoS DSSs is missing from `SDTM_Domain_Metadata.xlsx` or is not a domain code in the CT SDTM Domain Abbreviation codelist (C66734) |
 

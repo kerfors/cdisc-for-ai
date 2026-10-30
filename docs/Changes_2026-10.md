@@ -156,6 +156,15 @@ Before, the repo used three conventions, and a semicolon could not be told apart
 semicolons some NCIt synonyms contain. The NCIt release the files are built on is now pinned
 beside SDTM CT and COSMoS.
 
+## A phrase index for looking up free text
+
+Every consumer that matches free text against the codelists had to decide how to normalise,
+and two consumers could get different hits from the same file. Codelist_Phrases states one rule
+and lists every published name of every term in that form, with the facts that show why a hit
+may be weak: where the name comes from, how many words it has, and how many terms or codelists
+share it. It decides nothing. Building it found one name the rule could not handle, the unit %,
+and the rule now says what happens to it.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
