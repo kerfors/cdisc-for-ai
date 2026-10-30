@@ -2,7 +2,7 @@
 
 Consumer-facing reference files for Findings, joined from the COSMoS graph
 projection and SDTM identity tracks. Sub-typed by structural pattern: specimen,
-measurement, instrument. Each sub-type produces a workbook
+measurement, instrument, immunogenicity. Each sub-type produces a workbook
 (`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`, `Codelists`) designed for study design,
 SoA-to-CDISC mapping, and USDM integration.
 
@@ -25,13 +25,14 @@ consumer-bases/interim/DSS_View.xlsx ─────────────┘ 
                                   ├── Specimen_Findings.xlsx
                                   ├── Measurement_Findings.xlsx
                                   ├── Instrument_Findings.xlsx
+                                  ├── Immunogenicity_Findings.xlsx
                                   └── Domain_Coverage.xlsx
 ```
 
 ## Scope discipline
 
 **In scope.** Editorial decisions a Findings consumer owns: sub-typing
-(specimen vs measurement vs instrument), behavioural exclusions (IS, GF),
+(specimen vs measurement vs instrument), behavioural exclusions (IS and GF from specimen),
 the LOINC grain decision, the NCIt graph-vs-reference disagreement
 surface, the `Allowed_Units` codelist expansion, the wider TESTCD universe
 self-join (the coverage-gap framing). Final column shape per sub-type is
@@ -50,14 +51,15 @@ along with its legacy consumer.
 
 | Notebook | Sub-type | Scope | Output |
 |---|---|---|---|
-| `Specimen_Findings.ipynb` | Specimen | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF excluded) | `machine_actionable/Specimen_Findings.xlsx` |
+| `Specimen_Findings.ipynb` | Specimen | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF excluded; IS in Immunogenicity_Findings) | `machine_actionable/Specimen_Findings.xlsx` |
 | `Measurement_Findings.ipynb` | Measurement | VS, EG, MK, CV, RE | `machine_actionable/Measurement_Findings.xlsx` |
 | `Instrument_Findings.ipynb` | Instrument | QS, FT, RS | `machine_actionable/Instrument_Findings.xlsx` |
-| `Domain_Coverage.ipynb` | — | All domains; run after the three above | `machine_actionable/Domain_Coverage.xlsx`: per domain the test-code and DSS counts, the consumer whose scope holds it, the DSSs in that file, and a coverage status. Fails when a Findings file holds a domain outside its scope or a covered domain's DSSs are not all in its file |
-| `Scope_Check.ipynb` | — | Release check, run before the three above | Fails when a domain with CT test codes or COSMoS DSSs is missing from `SDTM_Domain_Metadata.xlsx` or is not a domain code in the CT SDTM Domain Abbreviation codelist (C66734) |
+| `Immunogenicity_Findings.ipynb` | Immunogenicity | IS | `machine_actionable/Immunogenicity_Findings.xlsx` |
+| `Domain_Coverage.ipynb` | — | All domains; run after the four above | `machine_actionable/Domain_Coverage.xlsx`: per domain the test-code and DSS counts, the consumer whose scope holds it, the DSSs in that file, and a coverage status. Fails when a Findings file holds a domain outside its scope or a covered domain's DSSs are not all in its file |
+| `Scope_Check.ipynb` | — | Release check, run before the four above | Fails when a domain with CT test codes or COSMoS DSSs is missing from `SDTM_Domain_Metadata.xlsx` or is not a domain code in the CT SDTM Domain Abbreviation codelist (C66734) |
 
 Scope is not listed in code. Each notebook reads it from `SDTM_Domain_Metadata.xlsx`
-(`Specimen_Based`, `Measurement`, the `Instrument_Domain_Rules` sheet) and removes the
+(`Immunogenicity`, checked before `Specimen_Based`; `Measurement`; the `Instrument_Domain_Rules` sheet) and removes the
 exclusions it names, with their reasons. A domain classified in the metadata enters
 its consumer when content arrives; the domains above are the scope at SDTM CT 2026-09-25
 and COSMoS 2026-07-14.
@@ -139,7 +141,9 @@ As they stand now:
 
 - **Specimen sub-type — IS excluded.** Decomposes by target, not specimen:
   the DSSs of one BC differ by binding agent (`BDAGNT`). The March 2026
-  analysis found the target only in `DS_Code`.
+  analysis found the target only in `DS_Code`. The exclusion stands; since
+  2026-10 IS has its own file, `Immunogenicity_Findings`, with the binding
+  agent as its first column block.
 - **Specimen sub-type — GF excluded.** Decomposes by test detail (`TSTDTL`),
   not specimen. The March 2026 analysis recorded it as scale-driven.
 - **Measurement sub-type — no exclusions.** EG was excluded until

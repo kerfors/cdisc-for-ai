@@ -10,4 +10,4 @@
 
 **Why renamed columns?** COSMoS source field names are implementation-oriented (vlm_group_id, specimenIdentity, resultScale). The consumer files translate these to more transparent names (DS_Code, Specimen, Result_Scale) while documenting the mapping in the Flatten notebook for traceability.
 
-**Why three consumer notebooks?** The three Findings structural types (specimen-based, instrument-based, measurement) have fundamentally different data shapes and join logic. Splitting by structural type keeps each notebook focused and its output consumable.
+**Why three consumer notebooks?** The three Findings structural types (specimen-based, instrument-based, measurement) have fundamentally different data shapes and join logic. Splitting by structural type keeps each notebook focused and its output consumable. A fourth, immunogenicity, followed in October 2026, when IS needed a file of its own.

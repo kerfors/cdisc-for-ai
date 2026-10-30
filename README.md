@@ -68,9 +68,10 @@ Each reference file is self-describing: its ReadMe sheet starts with purpose, sc
 
 | Track | Structural type | Scope | Output |
 |---|---|---|---|
-| [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (IS, GF excluded -- see `Domain_Coverage.xlsx`) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
+| [`sdtm-findings-graph/`](sdtm-findings-graph/) | Specimen-based | LB, MB, MI, CP, BS, MS, PC, PP (GF excluded; IS has its own file -- see `Domain_Coverage.xlsx`) | [`Specimen_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx) |
 | | Measurement | VS, EG, MK, CV, RE | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- adds BC_Categories, BC_Parents |
+| | Immunogenicity | IS | [`Immunogenicity_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Immunogenicity_Findings.xlsx) -- binding agents (ISBDAGT, MICROORG) in Codelists |
 | | All domains | every domain in `SDTM_Domain_Metadata.xlsx` | [`Domain_Coverage.xlsx`](sdtm-findings-graph/machine_actionable/Domain_Coverage.xlsx) -- which Findings file covers each domain, and why not where none does |
 
 ### Analysis track

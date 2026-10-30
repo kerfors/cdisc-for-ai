@@ -112,6 +112,26 @@ sheets. The versions come from one pin file. The Findings and coverage runs stop
 the COSMoS pin is older than the newest package in the data. The SDTM CT file carries
 no version, so that pin is stated, not checked, and the ReadMe says this too.
 
+## Immunogenicity gets its own file
+
+Immunogenicity was excluded from the specimen consumer because its Dataset Specializations
+differ by the target an antibody binds, not by specimen. The exclusion was right, but it left
+IS without a reference file: a reader looking for the binding agents — allergens,
+microorganisms, autoantigens — had to open an interim file. IS now has a consumer of its own,
+`Immunogenicity_Findings`. Its Codelists sheet carries in full both codelists SDTMIG binds to
+the binding agent: Microorganism, and Binding Agent for Immunogenicity Tests.
+
+The domain reference gains a flag for it. IS stays specimen-based, as the IG places it, so the
+new flag is checked first wherever a consumer is assigned. The exclusion from the specimen
+consumer stays and is still tested on every release.
+
+Reading the IG for this sharpened three things. The binding agent is part of what is measured:
+test and binding agent together should describe the analyte, without other variables. For
+antidrug antibodies the binding agent is the study therapy, which CDISC does not control, so
+these tests have no binding-agent term by design and no COSMoS specialization yet. And the
+test's operational objective (screen, confirm, quantify) stays open: in COSMoS it goes together
+with the result scale.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
