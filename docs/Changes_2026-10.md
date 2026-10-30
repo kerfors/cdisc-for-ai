@@ -132,6 +132,26 @@ these tests have no binding-agent term by design and no COSMoS specialization ye
 test's operational objective (screen, confirm, quantify) stays open: in COSMoS it goes together
 with the result scale.
 
+## NCIt synonyms: one separator, more names, shared strings shown
+
+The Codelists sheets carried only the synonyms SDTM CT publishes, the CDISC synonyms. NCIt
+often knows a term by more names, and a reader matching free text against the codelists missed
+them. Each Codelists sheet now has a second synonym column with the NCIt synonyms that are not
+already a CDISC field, kept apart because they carry different authority: CDISC synonyms are part
+of the standard; NCIt synonyms are NCI's, and the file they come from does not say where each one
+comes from.
+
+More names also means more names that point to more than one term. A new sheet, Shared_Strings,
+lists every string that names more than one term within a codelist, and says whether the sharing
+is already in SDTM CT or comes with the NCIt synonyms. Some sharing was there all along: in the
+unit codelist, one abbreviation can name several units. A string that names more than one term
+identifies none of them.
+
+NCIt synonyms are now separated by `|` in every file, the separator the NCIt file itself uses.
+Before, the repo used three conventions, and a semicolon could not be told apart from the
+semicolons some NCIt synonyms contain. The NCIt release the files are built on is now pinned
+beside SDTM CT and COSMoS.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already

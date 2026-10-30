@@ -3,7 +3,7 @@
 Consumer-facing reference files for Findings, joined from the COSMoS graph
 projection and SDTM identity tracks. Sub-typed by structural pattern: specimen,
 measurement, instrument, immunogenicity. Each sub-type produces a workbook
-(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`, `Codelists`) designed for study design,
+(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`, `Codelists`, `Shared_Strings`) designed for study design,
 SoA-to-CDISC mapping, and USDM integration.
 
 This track is the graph-fed canonical Findings consumer, having replaced
@@ -99,7 +99,12 @@ Specimen and measurement outputs are four-sheet workbooks:
 - **`Codelists`** — every codelist named in a `*_codelist` column of
   `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`;
   `referenced_by` names the columns. A reader resolves every codelist reference
-  without opening another file.
+  without opening another file. `term_synonyms` are the CDISC synonyms from SDTM CT;
+  `term_ncit_synonyms` adds the NCIt synonyms not already there (separated by `|`).
+- **`Shared_Strings`** — every string (lower case, letters and digits) that names
+  more than one term within one codelist, with the terms and whether the sharing is
+  already in SDTM CT or comes with the NCIt synonyms. A string that names more than
+  one term identifies none of them; a lookup must return all candidates.
 
 Link key between sheets: TESTCD + NCIt code. TESTCD alone is a mnemonic, reused
 across domains for unrelated tests (MCH in LB and MB, MV in MK and RE); COSMoS

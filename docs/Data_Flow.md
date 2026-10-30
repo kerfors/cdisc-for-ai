@@ -124,11 +124,11 @@ The March 2026 behavioural analysis and the three-layer overview are archived in
 
 Run each notebook from its own folder. A step reads only files written by earlier steps.
 
-Before step 1, set the new versions in `Reference_Versions.json` at the repo root. The notebooks that write `machine_actionable` files put them in their ReadMe; the Findings and coverage notebooks stop when the COSMoS pin differs from the newest `package_date` in DSS_View.
+Before step 1, set the new versions in `Reference_Versions.json` at the repo root. The notebooks that write `machine_actionable` files put them in their ReadMe; the Findings and coverage notebooks stop when the COSMoS pin differs from the newest `package_date` in DSS_View. `NCIt` is the build date of the NCIt FLAT file; `SDTM_CT_Term_NCIt_Synonyms` stops when it differs.
 
 | Step | Track | Notebooks, in order | SDTM CT release | COSMoS release |
 |---|---|---|---|---|
-| 1 | `sdtm-test-codes/` | `SDTM_CT_Extract` → `SDTM_CT_NCIt_Enrich` → `SDTM_Instrument_Identity_Enrich` → `Codelist_Cross_References` | yes | — |
+| 1 | `sdtm-test-codes/` | `SDTM_CT_Extract` → `SDTM_CT_NCIt_Enrich` → `SDTM_CT_Term_NCIt_Synonyms` → `SDTM_Instrument_Identity_Enrich` → `Codelist_Cross_References` | yes | — |
 | 2 | `cosmos-graph/` | `10_flatten_schema_driven` | — | yes |
 | 3 | `cosmos-graph/` | `20_resolve_ct` → `30_validate_graph` | yes | yes |
 | 4 | `cosmos-graph/` | `50_instrument_category_resolution` → `51_instrument_parent_chain` | — | yes |
