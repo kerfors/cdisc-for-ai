@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30",
+  "generated": "2026-10-30",
   "inputs": [
     "COSMoS_Graph.xlsx",
     "COSMoS_Graph_CT.xlsx",
@@ -72,11 +72,11 @@
         },
         {
           "metric": "all_resolved",
-          "count": 2302
+          "count": 2304
         },
         {
           "metric": "partial",
-          "count": 6
+          "count": 4
         },
         {
           "metric": "none_resolved",
@@ -92,20 +92,15 @@
         },
         {
           "metric": "unique_unresolvable_pairs",
-          "count": 11
+          "count": 10
         }
       ]
     },
     {
       "check": "value_list_unresolved_members",
       "status": "INFO",
-      "count": 11,
+      "count": 10,
       "detail": [
-        {
-          "codelist": "NY",
-          "member": "NA",
-          "row_count": 2
-        },
         {
           "codelist": "PROCEDUR",
           "member": "RADIOSURGERY",

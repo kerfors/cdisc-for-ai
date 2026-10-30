@@ -1,6 +1,6 @@
 # COSMoS Graph Validation Report
 
-_Generated: 2026-09-30_
+_Generated: 2026-10-30_
 
 Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 
@@ -19,7 +19,7 @@ Inputs: `COSMoS_Graph.xlsx`, `COSMoS_Graph_CT.xlsx`
 | data_element_concepts_bc_id_referential_integrity | PASS | 0 |
 | value_list_codelist_binding_integrity | PASS | 0 |
 | value_list_resolution_summary | INFO | 3000 |
-| value_list_unresolved_members | INFO | 11 |
+| value_list_unresolved_members | INFO | 10 |
 | schema_column_coverage | FAIL | 13 |
 | vlm_source_hyphen_detail | INFO | 4 |
 | empty_reification_quad_rows | INFO | 337 |
@@ -80,19 +80,18 @@ _no details_
 | metric | count |
 | --- | --- |
 | total_value_list_rows | 3000 |
-| all_resolved | 2302 |
-| partial | 6 |
+| all_resolved | 2304 |
+| partial | 4 |
 | none_resolved | 0 |
 | no_codelist | 690 |
 | codelist_not_in_ct | 2 |
-| unique_unresolvable_pairs | 11 |
+| unique_unresolvable_pairs | 10 |
 
 
-### value_list_unresolved_members — INFO (11)
+### value_list_unresolved_members — INFO (10)
 
 | codelist | member | row_count |
 | --- | --- | --- |
-| NY | NA | 2 |
 | PROCEDUR | RADIOSURGERY | 2 |
 | PROCEDUR | STEREOTACTIC BODY RADIATION THERAPY | 2 |
 | METHOD | AUTOPSY | 1 |
