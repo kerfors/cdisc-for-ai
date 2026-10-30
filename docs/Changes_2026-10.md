@@ -112,6 +112,10 @@ sheets. The versions come from one pin file. The Findings and coverage runs stop
 the COSMoS pin is older than the newest package in the data. The SDTM CT file carries
 no version, so that pin is stated, not checked, and the ReadMe says this too.
 
+A Provenance sheet now carries the source versions as fixed keys, and a content hash per
+data sheet, so a program can tell whether the data changed without comparing every sheet:
+the file itself changes on every save, the content hash only when the data do.
+
 ## Immunogenicity gets its own file
 
 Immunogenicity was excluded from the specimen consumer because its Dataset Specializations

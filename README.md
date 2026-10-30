@@ -32,7 +32,7 @@ The reference files make those connections explicit today, as flat files with cl
 
 The repository is organized into source tracks, a graph track, a reference track, a view track, consumer tracks, and an analysis track. Source tracks extract and enrich from upstream standards. The graph track projects COSMoS into a multi-sheet traversable graph. The reference track provides shared domain metadata. The view track joins the graph into per-DSS views. Consumer tracks add structural-type-specific final shaping for study design and mapping workflows. The analysis track measures behaviour across the other tracks; nothing reads from it.
 
-Each reference file is self-describing: its ReadMe sheet starts with purpose, scope, source versions, known gaps and sheets, then documents columns, provenance and design decisions. Versions are pinned in [`Reference_Versions.json`](Reference_Versions.json).
+Each reference file is self-describing: its ReadMe sheet starts with purpose, scope, source versions, known gaps and sheets, then documents columns, provenance and design decisions. A Provenance sheet gives the source versions and a content hash per sheet as fixed keys for programs. Versions are pinned in [`Reference_Versions.json`](Reference_Versions.json).
 
 ### Source tracks
 
