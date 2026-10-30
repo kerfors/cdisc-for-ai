@@ -81,13 +81,13 @@
 
 <p>Machine-actionable reference files built from CDISC SDTM Controlled Terminology, NCIt, and COSMoS Biomedical Concepts and Dataset Specializations, designed for both human review and AI consumption. The analyses behind them measure how the standards actually behave. This is the test bed. Ideas are explored here first. The long-run aim is to publish the reference files as RDF/OWL that can express that underlying behaviour, related to established ontologies, so the standards can take part in the picture above: from study design to data, linked and queried.</p>
 
-<p><strong>Reference versions:</strong> SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, SDTM v2.0, pinned in <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/Reference_Versions.json"><code>Reference_Versions.json</code></a>. Latest release note: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">Changes_2026-10.md</a>.</p>
+<p><strong>Reference versions:</strong> SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, SDTM v2.0, NCIt FLAT 2026-09-29, pinned in <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/Reference_Versions.json"><code>Reference_Versions.json</code></a>. Latest release note: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">Changes_2026-10.md</a>.</p>
 
 <p>Source repository: <a href="https://github.com/kerfors/cdisc-for-ai">github.com/kerfors/cdisc-for-ai</a>. Each Excel file is self-describing: its ReadMe sheet starts with purpose, scope, source versions, known gaps and sheets, then documents columns, provenance and design decisions. How the files are built from each other: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Data_Flow.md">Data_Flow.md</a>.</p>
 
 <h2>Reference files</h2>
 
-<p>The deliverables: test identity from SDTM CT + NCIt, and the sub-typed Findings consumer files fed from the graph. Each Findings file also carries the codelists its columns name.</p>
+<p>The deliverables: test identity from SDTM CT + NCIt, and the sub-typed Findings consumer files fed from the graph. Each Findings file also carries the codelists its columns name, with CDISC and NCIt synonyms in separate columns, and a Shared_Strings sheet listing strings that name more than one term.</p>
 
 <ul class="files">
     <li>
@@ -124,7 +124,7 @@
     </li>
     <li>
         <a href="https://github.com/kerfors/cdisc-for-ai/raw/main/sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx"><code>SDTM_Domain_Metadata.xlsx</code></a>
-        <span class="desc">shared domain metadata: observation class and consumer classification (specimen, measurement, instrument); the scope source for the Findings consumers</span>
+        <span class="desc">shared domain metadata: observation class and consumer classification (specimen, measurement, instrument, immunogenicity); the scope source for the Findings consumers</span>
     </li>
 </ul>
 
@@ -178,7 +178,7 @@
     </li>
 </ul>
 
-<p style="color:#666; font-size:0.95em; margin-top:2rem;">Release notes: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">2026-10</a> (corrections and self-contained reference files, at SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-09.md">2026-09</a> (SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-08.md">2026-08</a> (COSMoS 2026-07-14) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-06.md">2026-06</a> (COSMoS 2026-05-26) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-05.md">2026-05</a> (legacy <code>sdtm-findings/</code> consumer and pre-graph COSMoS flatten retired). Earlier versions remain in git history.</p>
+<p style="color:#666; font-size:0.95em; margin-top:2rem;">Release notes: <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-10.md">2026-10</a> (corrections, self-contained reference files, an immunogenicity file, NCIt synonyms; at SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-09.md">2026-09</a> (SDTM CT 2026-09-25) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-08.md">2026-08</a> (COSMoS 2026-07-14) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-06.md">2026-06</a> (COSMoS 2026-05-26) · <a href="https://github.com/kerfors/cdisc-for-ai/blob/main/docs/Changes_2026-05.md">2026-05</a> (legacy <code>sdtm-findings/</code> consumer and pre-graph COSMoS flatten retired). Earlier versions remain in git history.</p>
 
 <footer>
     Authored by Kerstin Forsberg, with Claude as collaborative partner.

@@ -4,7 +4,7 @@ Explorative work on the CDISC clinical data standards, using linked data princip
 
 **Landing page:** [kerfors.github.io/cdisc-for-ai](https://kerfors.github.io/cdisc-for-ai/) -- all reference files in one place, at the latest SDTM CT and COSMoS releases.
 
-> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4. Latest release note: [`docs/Changes_2026-10.md`](docs/Changes_2026-10.md) (corrections at SDTM CT 2026-09-25). Previous: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh), [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
+> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, NCIt FLAT 2026-09-29. Latest release note: [`docs/Changes_2026-10.md`](docs/Changes_2026-10.md) (corrections, an immunogenicity file, NCIt synonyms; at SDTM CT 2026-09-25). Previous: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh), [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
 ## Purpose
 
@@ -54,7 +54,7 @@ Each reference file is self-describing: its ReadMe sheet starts with purpose, sc
 
 | Track | Purpose | Output |
 |---|---|---|
-| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: observation class and consumer classification (specimen, measurement, instrument) -- the scope source for the Findings consumers | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
+| [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: observation class and consumer classification (specimen, measurement, instrument, immunogenicity) -- the scope source for the Findings consumers | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
 
 ### View track
 
