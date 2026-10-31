@@ -75,6 +75,13 @@ and COSMoS 2026-07-14.
 | [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata. `Observation_Class` joined per row. `Variable_Meaning` rows that apply to the file copied into `Axis_Meaning`. |
 | [`COSMoS_Graph_CT.xlsx`](../cosmos-graph/interim/COSMoS_Graph_CT.xlsx) | cosmos-graph | `Codelists` and `CodelistTerms` sheets — drive the `Allowed_Units` permissible-value expansion (`ORRESU_codelist` → terms) and the `Codelists` sheet of each output. |
 
+For the immunogenicity sub-type (ReadMe only):
+
+| File | Track | Content |
+|---|---|---|
+| [`SDTMIG_Statements.xlsx`](../sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx) | sdtm-domain-reference | IS Assumptions 6 and 7b, quoted in the KNOWN GAPS lines on where SDTMIG v3.4 and published SDTM CT differ. |
+| `Approved-Non-Standard-Variable-Registry_2026-04-03.xlsx` | sdtm-domain-reference (`downloads/`, gitignored) | The CDISC NSV registry entry ABTRG (Antibody Target), cited in the same lines. |
+
 For the instrument sub-type, when added:
 
 | File | Track | Content |
@@ -95,9 +102,9 @@ Specimen and measurement outputs are four-sheet workbooks:
   `Key_Positions`. Scale uses units present or absent; its per-DSS reading is open.
 - **`Axis_Meaning`** — our position on what the axis columns of `Measurement_Specs`
   mean for the observable: the rows of `Variable_Meaning` in
-  `SDTM_Domain_Metadata.xlsx` that apply to the file (Position, Basis, Status),
-  with the columns each row refers to. Not a published fact; the basis note for
-  each row is in `Variable_Meaning`. A variable without a row: no position taken.
+  `SDTM_Domain_Metadata.xlsx` that apply to the file (Position, Basis, Basis_Note,
+  Status), with the columns each row refers to. Not a published fact. A variable
+  without a row: no position taken.
 - **`Codelists`** — every codelist named in a `*_codelist` column of
   `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`;
   `referenced_by` names the columns. `_codelist` covers pinned terms and value lists;

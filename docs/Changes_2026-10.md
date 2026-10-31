@@ -202,6 +202,12 @@ Building it found that the LB assumption on LOINC names position and location am
 aspects of a lab test, while the IG's own LB variable table has neither; they come from the
 SDTM model. The file shows these apart from the variables in the table.
 
+The immunogenicity file now quotes two of these statements where current terminology has
+moved on. The IG routes cytokines to LB, while one cytokine test is published for both LB and
+IS. And the IG's format for mixed allergen panels has no counterpart among the published
+binding-agent terms; the registry of non-standard variables now lists an antibody-target
+variable for the next IG version. The file states both differences and chooses neither.
+
 ## The basis travels with the position
 
 The Findings files copied our position on each variable (Axis_Meaning) without the note that
