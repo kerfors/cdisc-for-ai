@@ -202,6 +202,19 @@ Building it found that the LB assumption on LOINC names position and location am
 aspects of a lab test, while the IG's own LB variable table has neither; they come from the
 SDTM model. The file shows these apart from the variables in the table.
 
+## The basis travels with the position
+
+The Findings files copied our position on each variable (Axis_Meaning) without the note that
+says why; the note stayed in the domain reference. A reader of one file could see "sources
+agree" but not which sources. Axis_Meaning now carries the basis note as well, and the binding
+agent's note cites the IG statements it rests on.
+
+Reading the immunogenicity test detail against the published codelist moved it from settled to
+open. The codelist holds two kinds of value: neutralisation levels, and score systems that
+classify the amount of antibody. In COSMoS the score systems always come with a scale change
+that already tells the observations apart. Whether the test detail is identity or the form of
+the result is not said anywhere; the row now states both readings, as the tier variable does.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
