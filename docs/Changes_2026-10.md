@@ -186,6 +186,22 @@ published. The graph validation report had listed that NA as an unresolvable val
 member; it no longer does. The ReadMe of each file with such a term now says how to read it,
 since any reader using pandas defaults would lose it the same way.
 
+## The IG in its own words on test facets and routing
+
+Matching an activity label against CDISC terminology needs two things the terminology does
+not carry by itself: which aspects of a test sit beside the test name rather than in it, and
+which domain a kind of test belongs to. SDTMIG v3.4 states both, in prose: the natural-key
+section prefers a generic test code with qualifier variables, the LB assumptions list the
+aspects of a lab test associated with a LOINC code, and the IS, GF, MB and PC sections say
+where binding agents, gene symbols and test details go, and which tests belong to another
+domain. SDTMIG_Statements quotes these statements as published, with section, item and page,
+and adds the variable-table rows of the variables they name. The selection is ours; the text
+is the IG's; nothing is interpreted.
+
+Building it found that the LB assumption on LOINC names position and location among the
+aspects of a lab test, while the IG's own LB variable table has neither; they come from the
+SDTM model. The file shows these apart from the variables in the table.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
@@ -203,5 +219,6 @@ point-in-time and belong there rather than in this note.
 ## References
 
 - Domain reference: [`sdtm-domain-reference/`](../sdtm-domain-reference/)
+- IG statements: [`sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb`](../sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb)
 - Release check: [`sdtm-findings-graph/notebooks/Scope_Check.ipynb`](../sdtm-findings-graph/notebooks/Scope_Check.ipynb)
 - Previous release: [`Changes_2026-09.md`](Changes_2026-09.md)
