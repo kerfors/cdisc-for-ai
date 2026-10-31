@@ -221,6 +221,14 @@ classify the amount of antibody. In COSMoS the score systems always come with a 
 that already tells the observations apart. Whether the test detail is identity or the form of
 the result is not said anywhere; the row now states both readings, as the tier variable does.
 
+The basis notes now point to the IG statements file wherever the IG text they cite is quoted
+there, instead of to an interim sheet of the domain-behaviour analysis. One note was corrected
+on the way: the lab assumption that lists the aspects of a test names a position variable that
+the lab domain table does not carry; it comes from the SDTM Model. Some positions only restate
+what the IG says (specimen and method of a lab test, the binding agent with the immunogenicity
+test, the microbiology test detail). These rows stay, because the observable key is built from
+them; their note now says where the IG says it.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
