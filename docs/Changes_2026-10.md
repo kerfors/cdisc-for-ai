@@ -229,6 +229,21 @@ what the IG says (specimen and method of a lab test, the binding agent with the 
 test, the microbiology test detail). These rows stay, because the observable key is built from
 them; their note now says where the IG says it.
 
+## Observables re-based on the IG
+
+The observable pages were written before the IG's own statements were collected. Read
+against them, much of what those pages derived from COSMoS is stated in the IG. For lab tests,
+LB Assumption 8 names four base aspects of a test (test, specimen, method, units) and lists the
+others as refinements, needed only when they tell apart records with different LOINC codes. The
+published facet model is now the base; COSMoS and LOINC are cross-checks beside it. What the IG
+leaves to the sponsor is the natural key, and a natural key is about storage and transfer, as a
+Dataset Specialization is. What makes an observation specific stays our question.
+
+Test detail in microscopic findings and genomics reads, by the IG notes, as what is reported
+rather than a narrower test. Unlike the immunogenicity test detail it does not go with a change of
+scale, so it stays part of the observable; its notes now quote the IG and name both readings.
+The key has no part for the kind of quantity reported, which LOINC calls property. That is open.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already

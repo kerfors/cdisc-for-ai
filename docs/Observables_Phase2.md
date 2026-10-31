@@ -1,6 +1,6 @@
 # Observables, Phase 2: the reference files say what identifies an observable
 
-*Written 2026-10-08. COSMoS 2026-07-14, SDTM CT 2026-09-25. Findings consumers only.*
+*Written 2026-10-08. COSMoS 2026-07-14, SDTM CT 2026-09-25. Findings consumers only. Reassessed 2026-10-31: see [Reassessment 2026-10-31](#reassessment-2026-10-31).*
 
 Phase 2 of the [observables direction](Observables_Direction.md) (Step 2): state in the Excel reference files what [Phase 1](Observables_Phase1.md) settled, instead of leaving it implicit. Phase 1 settled the core axes at the level of the variable, not a key for every DSS, so Phase 2 was kept narrow: the variable level in all three Findings consumers, and a key per DSS for LB, MB and MI only.
 
@@ -49,6 +49,17 @@ Every number on this page comes from a cell: the `axis-meaning-code`, `observabl
 **An instrument anchor in `Instrument_Findings`.** The anchor is already there: `Instrument_NCIt_Code`, the class category term in the NCIt instrument branch, on 171 of 197 DSSs (`Instrument_Match_Method` = `class-category-term`; 26 `not_applicable`). The test code of an instrument comes from a codelist of that instrument, so it already ties a question to its instrument. An anchor adds grouping, not identity.
 
 **A concept for the open rows.** Category, rater, the analysis method `GFANMETH`, `GFSYMTYP` and subject state stay columns only, marked open in `Axis_Meaning`. The standards are silent on them (Phase 1), so there is no basis yet to give them a position.
+
+## Reassessment 2026-10-31
+
+Read against the IG statements (see [Phase 1, Reassessment](Observables_Phase1.md#reassessment-2026-10-31)):
+
+- `Axis_Meaning` is now in four Findings consumers (`Immunogenicity_Findings` added) and carries the basis note with each position.
+- The LB key uses only aspects that LB Assumption 8 names: test, specimen, method and units. Against LOINC, the key keeps apart two CDISC tests that share one LOINC code (occult blood and erythrocytes in urine, presence). LOINC keeps apart what the key joins, mostly by property (mass or substance concentration and similar), which CDISC carries in the units. LB Assumption 8 has LBORRESU among the base aspects; the key reduces it to units present or absent. The key has no property part. The same question comes up for test detail in MI and GF (component or property). Open.
+- Reading scale from units differs from LOINC scale in a few DSSs, in both directions: semi-quantitative dipstick results with units, quantities without units.
+- The agreement with `COSMoS_Observable_Derivation` is a regression check, not evidence: both keys are built from COSMoS.
+- MB test detail rests on MB Assumption 1a and 1c. MI has no IG statement; `MISPEC`, `MILOC` and `MIMETHOD` are assigned on the MI DSSs and stay outside the key.
+- Immunogenicity: the analyte part of a key, ISTEST with ISBDAGNT, could be taken from the IG (ISBDAGNT CDISC Notes). No key is built.
 
 ## What comes next
 

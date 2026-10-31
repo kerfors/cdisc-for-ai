@@ -1,6 +1,6 @@
 # Observables, Phase 1: what the standards publish
 
-*Written 2026-10-08. COSMoS 2026-07-14, SDTM CT 2026-09-25, SDTM v2.0, SDTMIG v3.4, LOINC 2.82. One pass, Findings domains only.*
+*Written 2026-10-08. COSMoS 2026-07-14, SDTM CT 2026-09-25, SDTM v2.0, SDTMIG v3.4, LOINC 2.82. One pass, Findings domains only. Reassessed 2026-10-31 against the IG's own statements: see [Reassessment 2026-10-31](#reassessment-2026-10-31).*
 
 Phase 1 of the [observables direction](Observables_Direction.md): read and record what the standards publish about what identifies an observable, and say where they agree, disagree and are silent. The standards have been developed over many years by different groups, so they are read as evidence, not as a specification that is right. Nothing on this page is classified by us; where we would have to decide, it is listed as open. The decisions come after this page (see [What comes next](#what-comes-next)).
 
@@ -96,6 +96,34 @@ The rater phrases are matched with a phrase list of our own and quoted as found;
 - [`Observables_Direction.md`](Observables_Direction.md) said that in RS, TR and TU no evaluator value is assigned on any DSS. For TU this is wrong: `TUEVAL` = INVESTIGATOR is assigned on four DSSs, the same on both siblings, so it is still not an axis.
 - The same page said who rates is "not a variable at all". It is: SDTM CT has the Evaluator codelist and COSMoS assigns `QSEVAL` and `RSEVAL` on some DSSs. What is missing is the rater as a property of the instrument.
 - [Who rates?](examples/who-rates.html) placed the four class moves in SDTM CT 2026-09-25. The repository holds no CT between 2026-03-27 and 2026-09-25, so they are moves since March.
+
+## Reassessment 2026-10-31
+
+After this page was written, the statements SDTMIG v3.4 makes about test facets and domain routing were collected, quoted, in [`SDTMIG_Statements.xlsx`](../sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx). Read against them, several findings on this page are published in CDISC's own words. COSMoS and LOINC move from basis to cross-check. Statement IDs below are from that file.
+
+**Now published.**
+
+- Lab tests. LB Assumption 8 (LB-A8) names LBTEST, LBSPEC, LBMETHOD and LBORRESU as aspects of a test associated with a LOINC code. It lists further variables (time point, fasting, position, test condition and others) that are "only required to be populated when necessary to provide a semantically meaningful distinction between records with different LBLOINC values". So the IG separates four base aspects from conditional refinements. We read this for LB only, and as what to populate, not as a definition of the observable.
+- Immunogenicity. ISTEST and ISBDAGNT together "describe the entity or the analyte being measured" (ISBDAGNT-Notes).
+- Microbiology. MBTSTDTL is "DETECTION" for identification, otherwise the characteristic being described (MB-A1a, MB-A1c, MBTSTDTL-Notes).
+- Genomics. Gene names are never in GFTEST; the gene goes in GFSYM, from HGNC (GF-A5, GF-A5a, GF-A5b). This page did not discuss GFSYM.
+- The principle behind all of these: a generic test code with qualifier variables, not test attributes inside the code (4.1.9-3).
+- Result scale has its own variable in LB (LBRESSCL-Notes), and LB-A8 lists it. COSMoS does not assign it.
+- RSCAT groups assessments by a disease response criterion (RS-DR-A1).
+
+The conclusion under [Where the standards agree](#where-the-standards-agree), that the standards together give a component, a system and a method, no longer has to be derived: for LB the IG states it. The fan-out counts stay as evidence that COSMoS follows it.
+
+**Still our position.** For specimen, method and test detail in GF, IS and MI there is no IG statement on identity; those rows rest on COSMoS and the SDTM roles. The scale rule and its per-DSS reading, the test code rule (GLUC and GLUCPE), the `MITSTDTL` rule and the open rows stay as they are in `Variable_Meaning`.
+
+**What the silence is.** [Where the standards are silent](#where-the-standards-are-silent) still holds. §4.1.9 leaves the uniqueness of a test to the sponsor's natural key. But a natural key is about how records are stored and transferred, not about what is observed. A Dataset Specialization is of the same kind: a specification for SDTM storage and transfer. The observable is a concept, what makes an observation specific. The IG does not define it.
+
+**Test detail: component or property.** The IG notes describe `MITSTDTL` as "specific attributes, such as intensity score or percentage of cells displaying presence of the biomarker or compound", and `GFTSTDTL` as "a reportable". In COSMoS these separate DSSs that report different things on the same scale. Two readings: the test detail narrows what is measured (component), or it names the kind of quantity reported (a property, in LOINC's terms). Both keep the DSSs apart. Immunogenicity test detail is different: there the score systems go with a change of scale, and the row is held open (see [`Changes_2026-10.md`](Changes_2026-10.md)). The observable key has no property part ([Phase 2](Observables_Phase2.md#reassessment-2026-10-31)).
+
+**Corrections.**
+
+- [Subject state](#where-the-standards-are-silent): LB Assumption 8 names LBPOS and LBLOC, but neither is in the SDTMIG v3.4 LB variable table. They are the SDTM v2.0 Findings variables `--POS` and `--LOC`.
+- `TRREASNE` (under [Where the standards disagree](#where-the-standards-disagree)) is not an observable question and is not carried further here.
+- [What comes next](#what-comes-next) is superseded: `Variable_Meaning` is kept against the IG statements, and each basis cites them where they exist.
 
 ## What comes next
 
