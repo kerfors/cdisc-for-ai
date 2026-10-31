@@ -208,6 +208,15 @@ IS. And the IG's format for mixed allergen panels has no counterpart among the p
 binding-agent terms; the registry of non-standard variables now lists an antibody-target
 variable for the next IG version. The file states both differences and chooses neither.
 
+The selection now also holds the IG statements that the basis notes of the domain reference cite:
+the microscopic and genomic test detail, the analysis method, the response categories, and a
+third kind, statements about the record rather than the test (who assesses, how records link).
+Every basis note now cites the IG by statement. One of them is new to the notes: the IG says the
+evaluator variables must not be used for questionnaire-type data, in the questionnaire and in the
+clinical-classification assumptions, while COSMoS assigns an evaluator on one questionnaire and on
+one clinical classification. Evaluator values on oncology response, where the IG uses them, are
+value lists only. The notes state both sides.
+
 ## The basis travels with the position
 
 The Findings files copied our position on each variable (Axis_Meaning) without the note that
