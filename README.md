@@ -111,6 +111,12 @@ AI skills for working with CDISC standards. The reference files above are design
 
 **Open questions.** Does the identity pattern classification match how the BC group thinks about these domains? And for sponsors implementing USDM-based study definitions: what CDISC content can already serve at the measurement specification level, and where are the gaps? Feedback is welcome.
 
+## What this repository does not read
+
+CDISC also publishes supplemental files to SDTM CT: Rules documents and Codetable Mapping files, listed on the [Controlled Terminology page](https://www.cdisc.org/standards/terminology/controlled-terminology). They give the decisions between published terms -- for example which test, binding agent and test detail to use in the IS domain. The IS files are described in public in a [CDISC webinar (2023-06-22)](https://www.cdisc.org/sites/default/files/pdf/Education%20Webinar_LB-MB-IS%20Scope%20Change%20and%20CT%20Imapact_2023-06-22_updated.pdf) and a [Knowledge Base article](https://www.cdisc.org/kb/articles/domain-scope-update-sdtmig-v3-4-development-history-and-difficulties-standardizing).
+
+This repository does not read these files. Routing and facet statements here are as published in SDTMIG v3.4 and SDTM CT, and the CT Rules may refine them. The IG itself refers to the CT Rules for how to choose between the two IS binding agent codelists (IS-A7 in [`SDTMIG_Statements.xlsx`](sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx)). Anyone mapping data or study activities to CDISC terms should read the files here together with the CT Rules and codetables.
+
 ## Status
 
 Early and exploratory. Not a finished product. Built iteratively with Claude (Anthropic), will evolve through interaction with the CDISC community. Design decisions: [`docs/Design_Decisions.md`](docs/Design_Decisions.md).
