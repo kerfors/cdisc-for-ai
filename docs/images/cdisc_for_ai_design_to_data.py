@@ -70,7 +70,7 @@ for i, (label, fc, ec, ls, lw) in enumerate(steps):
 
 # Observable: implicit in BC + DSS, read out by cdisc-for-ai
 ax.plot([620, 620, 960, 960], [282, 290, 290, 282], color=ORANGE, lw=1.6)
-ax.text(790, 306, "observable  —  implicit; read out by cdisc-for-ai", fontsize=10.5,
+ax.text(790, 306, "observable  —  the IG gives the facets, not the identity", fontsize=10.5,
         weight="bold", style="italic", color=ORANGE, ha="center", va="center")
 
 # Procedures: a second axis, not a step in the chain (USDM: an activity points to both)
@@ -108,17 +108,19 @@ def panel(x, title, hdr, bg, ec, sub, subcol, bullets, ls="-", step=34, first=57
             ax.text(x + 20, first + j * step, "•  " + b, fontsize=fs, color=DARK, va="center")
 
 
-panel(50, "CDISC publishes", LGREY, LGREY_BG, LGREY, "read as documents and files", LGREY,
-      ["USDM, SDTM / SDTMIG", "COSMoS BCs + Dataset Specializations",
-       "SDTM Controlled Terminology, NCIt"])
+panel(50, "CDISC publishes", LGREY, LGREY_BG, LGREY, "downloaded, read as published; LOINC beside", LGREY,
+      ["SDTMIG v3.4: the IG text and", "~variable tables; SDTM v2.0 model",
+       "Non-standard variable registry", "COSMoS BCs + Dataset Specializations",
+       "SDTM Controlled Terminology, NCIt"], step=21, first=565)
 panel(435, "cdisc-for-ai", ORANGE, ORANGE_BG, ORANGE, "measure and record  —  published today", ORANGE,
-      ["what identifies an observable,", "~read from what is published",
-       "reference files in Excel,", "~measured at each release",
-       "gaps and findings fed back to CDISC"], step=23, first=567)
+      ["the facets, quoted from the IG", "what identifies an observable:",
+       "~our position, with its basis", "reference files in Excel,", "~measured at each release",
+       "gaps and findings fed back to CDISC"], step=20, first=563)
 panel(820, "Heading for RDF/OWL", TEAL, TEAL_BG, TEAL, "linked and queried", TEAL,
       ["design and data in one graph,", "~related to established ontologies",
-       "usdm-rdf: USDM v4, OWL + SHACL", "~(draft)",
-       "cosmos-rdf: COSMoS as published", "~(early work)"], ls="--", step=19.5, first=563)
+       "published facts and our positions", "~kept apart, each with its source",
+       "usdm-rdf: USDM v4 in OWL (draft)", "cosmos-rdf: COSMoS as is (early)"],
+      ls="--", step=20, first=563)
 
 arrow(381, 562, 433, 562, lw=2.4)
 arrow(766, 562, 818, 562, ls="--", lw=2.4)
