@@ -96,7 +96,7 @@ Specimen and measurement outputs are four-sheet workbooks:
 - **`Test_Identity`** — one row per TESTCD. Concept-level identity.
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
   measurement detail (specimen, method, scale, units, coding). In
-  `Specimen_Findings` (LB, MB, MI) also an observable key per DSS, built from
+  `Specimen_Findings` (LB, MB, MI) and `Immunogenicity_Findings` (IS) also an observable key per DSS, built from
   `Axis_Meaning`: `Observable_Key` (`bc_id | component | system | scale | method`,
   NCIt codes except scale), `Observable_Key_Label`, `Key_Shared_With`,
   `Key_Positions`. Scale uses units present or absent; its per-DSS reading is open.

@@ -136,6 +136,12 @@ these tests have no binding-agent term by design and no COSMoS specialization ye
 test's operational objective (screen, confirm, quantify) stays open: in COSMoS it goes together
 with the result scale.
 
+IS now has an observable key too, built by the same rule as the specimen file: test and binding
+agent, specimen, scale and method. Every IS specialization has a key of its own. In eleven
+allergen pairs the key tells a RAST score from a MAST class only because one specialization pins
+specimen and method and the other leaves them to value lists; what differs between them is the
+test detail, whose position is open. The file says so.
+
 ## NCIt synonyms: one separator, more names, shared strings shown
 
 The Codelists sheets carried only the synonyms SDTM CT publishes, the CDISC synonyms. NCIt
