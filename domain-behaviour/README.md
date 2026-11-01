@@ -36,6 +36,7 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 | `Rater_COSMoS_EVAL` | `--EVAL` / `--EVALID` × assigned value | DSSs and BCs in QS, FT, RS |
 | `Rater_Class_Moves` | instrument whose class changed | Class in the prior and current SDTM CT, with the rater phrases in its NCIt definition |
 | `Interpretation_Context` | generic variable × domain | Every SDTM v2.0 Record Qualifier, Variable Qualifier and Timing variable: SDTMIG v3.4 Core and codelist, and how COSMoS uses it (absent, never assigned, always assigned, mixed). See [`Interpretation_Context.md`](../docs/Interpretation_Context.md) |
+| `Unit_Property` | DSS in `Specimen_Findings` with units | The property of each unit from its NCIt parents (mass, substance, number concentration, ...), the count per DSS, and the LOINC property of its codes |
 | `Scale_Units` | domain × published result-scale combination | DSSs with and without units; flags |
 | `Exclusion_Claims` | claim in `Consumer_Exclusions` | Holds or not, with the evidence |
 | `Unclassified_Content` | domain | Domains with DSSs but no consumer class |
@@ -64,7 +65,7 @@ and result values follow from the axes and are not counted.
 - `sdtm-domain-reference/downloads/Approved-Non-Standard-Variable-Registry_2026-04-03.xlsx` (CDISC NSV registry; gitignored)
 - `sdtm-domain-reference/downloads/SDTMIG v3.4-FINAL_2022-07-21.pdf` (the SDTMIG document, for the domain Assumptions; gitignored; read with pypdf, needs `cryptography`)
 - `sdtm-test-codes/machine_actionable/SDTM_Instrument_Identity.xlsx` (`Instruments`)
-- `sdtm-test-codes/downloads/Thesaurus.txt` (NCIt parents and definitions; gitignored, filled by the CT release run)
+- `sdtm-test-codes/downloads/Thesaurus.txt` (NCIt parents and definitions, also the unit categories for `Unit_Property`; gitignored, filled by the CT release run)
 - optional: a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`) for the instrument class moves
 
 Runs after `consumer-bases/` in a COSMoS refresh; see the release run order in

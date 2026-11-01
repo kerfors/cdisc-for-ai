@@ -263,6 +263,15 @@ rather than a narrower test. Unlike the immunogenicity test detail it does not g
 scale, so it stays part of the observable; its notes now quote the IG and name both readings.
 The key has no part for the kind of quantity reported, which LOINC calls property. That is open.
 
+## Units measured for property
+
+The observable key reads units only as present or absent. A new sheet of the domain-behaviour
+analysis reads the property of each unit from NCIt's unit categories (mass, substance and number
+concentration, and others) and sets it beside the LOINC property. Most quantitative lab
+specializations list units of two properties, mass and substance concentration the common pair,
+so a key with a property part would split them. The analysis reports this; the key is unchanged,
+and how property should enter it is open.
+
 ## What this says about the method
 
 Every one of these was a place where code stood in for information the standards already
