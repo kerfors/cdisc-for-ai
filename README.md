@@ -4,7 +4,7 @@ Explorative work on the CDISC clinical data standards, using linked data princip
 
 **Landing page:** [kerfors.github.io/cdisc-for-ai](https://kerfors.github.io/cdisc-for-ai/) -- all reference files in one place, at the latest SDTM CT and COSMoS releases.
 
-> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, SDTM v2.0, NCIt FLAT 2026-09-29. Latest release note: [`docs/Changes_2026-10.md`](docs/Changes_2026-10.md) (corrections, self-contained reference files, an immunogenicity file, NCIt synonyms, a phrase index, value-list codelists, the IG's own statements, basis notes citing the IG, observables re-based on the IG; at SDTM CT 2026-09-25). Previous: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh), [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
+> **Reference versions** — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS 2026-07-14, SDTMIG v3.4, SDTM v2.0, NCIt FLAT 2026-09-29. Latest release note: [`docs/Changes_2026-10.md`](docs/Changes_2026-10.md) (corrections, self-contained reference files, an immunogenicity file, NCIt synonyms, a phrase index, value-list codelists, the IG's own statements, basis notes citing the IG, observables re-based on the IG, units measured for property; at SDTM CT 2026-09-25). Previous: [`docs/Changes_2026-09.md`](docs/Changes_2026-09.md) (SDTM CT 2026-09-25 refresh), [`docs/Changes_2026-08.md`](docs/Changes_2026-08.md), [`docs/Changes_2026-06.md`](docs/Changes_2026-06.md), [`docs/Changes_2026-05.md`](docs/Changes_2026-05.md), [`docs/Changes_2026-04.md`](docs/Changes_2026-04.md).
 
 ## Purpose
 
@@ -81,7 +81,7 @@ Each reference file is self-describing: its ReadMe sheet starts with purpose, sc
 | Track | Question | Output |
 |---|---|---|
 | [`link-semantics/`](link-semantics/) | What kind of link is it? Link kinds and provenance classes behind every NCIt and LOINC link, and C-codes used in more than one role | [`Link_Kind_Audit.xlsx`](link-semantics/interim/Link_Kind_Audit.xlsx), [`Code_Collision_Check.xlsx`](link-semantics/interim/Code_Collision_Check.xlsx) -- evidence for choosing predicates when the reference files are rendered as RDF/OWL |
-| [`domain-behaviour/`](domain-behaviour/) | How does each domain behave? Fan-out, decomposition axes and scale/units per domain, re-derived from each COSMoS release; tests the exclusion claims behind the Findings consumers' scope | [`Domain_Behaviour.xlsx`](domain-behaviour/interim/Domain_Behaviour.xlsx) |
+| [`domain-behaviour/`](domain-behaviour/) | How does each domain behave? Fan-out, decomposition axes, scale/units and unit property per domain, re-derived from each COSMoS release; tests the exclusion claims behind the Findings consumers' scope | [`Domain_Behaviour.xlsx`](domain-behaviour/interim/Domain_Behaviour.xlsx) |
 
 Each consumer file links its sheets on TESTCD. How the files are built from each other: [`docs/Data_Flow.md`](docs/Data_Flow.md).
 
