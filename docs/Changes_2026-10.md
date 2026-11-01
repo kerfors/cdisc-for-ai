@@ -202,8 +202,9 @@ Building it found that the LB assumption on LOINC names position and location am
 aspects of a lab test, while the IG's own LB variable table has neither; they come from the
 SDTM model. The file shows these apart from the variables in the table.
 
-The immunogenicity file now quotes two of these statements where current terminology has
-moved on. The IG routes cytokines to LB, while one cytokine test is published for both LB and
+The immunogenicity file now quotes four of these statements: the IG's routing to the
+neighbouring domains (flow cytometry to CP, antigen/antibody combination tests to MB), and two
+where current terminology has moved on. The IG routes cytokines to LB, while one cytokine test is published for both LB and
 IS. And the IG's format for mixed allergen panels has no counterpart among the published
 binding-agent terms; the registry of non-standard variables now lists an antibody-target
 variable for the next IG version. The file states both differences and chooses neither.
@@ -237,6 +238,9 @@ the lab domain table does not carry; it comes from the SDTM Model. Some position
 what the IG says (specimen and method of a lab test, the binding agent with the immunogenicity
 test, the microbiology test detail). These rows stay, because the observable key is built from
 them; their note now says where the IG says it.
+
+Where a position rests on one source only, the note now says so, as it already did where the
+source is the IG alone. Every pointer to an analysis sheet names the file it is in.
 
 ## Observables re-based on the IG
 
