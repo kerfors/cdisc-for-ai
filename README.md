@@ -117,6 +117,13 @@ CDISC also publishes supplemental files to SDTM CT: Rules documents and Codetabl
 
 This repository does not read these files. Routing and facet statements here are as published in SDTMIG v3.4 and SDTM CT, and the CT Rules may refine them. The IG itself refers to the CT Rules for how to choose between the two IS binding agent codelists (IS-A7 in [`SDTMIG_Statements.xlsx`](sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx)). Anyone mapping data or study activities to CDISC terms should read the files here together with the CT Rules and codetables.
 
+The CT page describes the codetables as relationships between terms in different codelists --
+for example the response values or units that go with a test -- which the CT publication files do
+not show, and says CDISC is working on machine-readable versions in CDISC Library. Relationships
+of this kind are also in the files here, from COSMoS: the value-list and Allowed_Units columns of
+the Findings files give, per Dataset Specialization, the units, response values, positions and
+locations a test is specified with. They are COSMoS's specifications, not the codetables.
+
 ## Status
 
 Early and exploratory. Not a finished product. Built iteratively with Claude (Anthropic), will evolve through interaction with the CDISC community. Design decisions: [`docs/Design_Decisions.md`](docs/Design_Decisions.md).
