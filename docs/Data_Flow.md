@@ -108,6 +108,7 @@ graph TD
 
     subgraph domain-behaviour
         DB["Domain_Behaviour.xlsx"]
+        OH["Organism_Hierarchy.xlsx"]
     end
 
     CGX --> DB
@@ -118,6 +119,7 @@ graph TD
     OD --> OL
     OL --> DB
     EVSX --> DB
+    EVSX --> OH
     SI --> DB
     SV --> DB
     SFX --> DB
@@ -143,5 +145,6 @@ Before step 1, set the new versions in `Reference_Versions.json` at the repo roo
 | 8 | `link-semantics/` | `Link_Kind_Audit` → `Code_Collision_Check` (needs a `usdm-rdf` checkout beside this repo) | yes | yes |
 | 9 | `cosmos-bc-dss/` | `COSMoS_Observable_Derivation` → `COSMoS_Observable_LOINC_Check` | — | yes |
 | 10 | `domain-behaviour/` | `Domain_Behaviour` (reads `COSMoS_Observable_Derivation.xlsx` from step 9 and stops if it is from another COSMoS package; reads `COSMoS_Observable_LOINC_Check.xlsx` from step 9 and stops if it is older than the derivation; reads `Specimen_Findings.xlsx` from step 7 and stops if it has no observable key, is older than `SDTM_Domain_Metadata.xlsx`, or has a `package_date` other than `DSS_View`'s; reads `SDTM_Instrument_Identity.xlsx` and stops if it is older than `SDTM_Terminology.txt`; reads `Thesaurus.txt`; optionally reads a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`); checks `Variable_Meaning` in `SDTM_Domain_Metadata.xlsx` and stops if a key is not found; also reads `SDTM_Terminology.txt` downloaded in step 1; reads the SDTM v2.0 and SDTMIG v3.4 variable tables, the CDISC NSV registry and the SDTMIG v3.4 PDF from `sdtm-domain-reference/downloads/` (gitignored); set `PRIOR_FILE` to the previous output for the release diff; also rewrites `docs/analyses/domain-behaviour.html`) | — | yes |
+| 11 | `domain-behaviour/` | `Organism_Hierarchy` (reads `SDTM_Terminology.txt` and `Thesaurus.txt` from step 1; stops if the FLAT build date differs from the `NCIt` pin) | yes | — |
 
 When both release together, run every step. `Scope_Check` stops the refresh if a domain with content is not classified in `SDTM_Domain_Metadata.xlsx`; classify it there, then continue. After the run: update `cosmos-graph/docs/COSMoS_Open_Work.md` and write the release note in `docs/`.

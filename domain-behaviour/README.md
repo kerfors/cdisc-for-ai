@@ -21,6 +21,13 @@ from the [landing page](https://kerfors.github.io/cdisc-for-ai/) and rewritten o
 | Notebook | Output |
 |---|---|
 | [`notebooks/Domain_Behaviour.ipynb`](notebooks/Domain_Behaviour.ipynb) | [`interim/Domain_Behaviour.xlsx`](interim/Domain_Behaviour.xlsx) |
+| [`notebooks/Organism_Hierarchy.ipynb`](notebooks/Organism_Hierarchy.ipynb) | [`interim/Organism_Hierarchy.xlsx`](interim/Organism_Hierarchy.xlsx) |
+
+`Organism_Hierarchy` reads where NCI's hierarchy places each MICROORG term: its NCIt
+paths to the root, its branch, and whether a family-rank concept is on a path. NCIt
+publishes no rank; the family is our reading of the names (the nomenclature codes'
+family suffixes), marked blue in the file. It reads SDTM CT and the NCIt FLAT file
+only, and runs with an SDTM CT release.
 
 | Sheet | Grain | Content |
 |---|---|---|

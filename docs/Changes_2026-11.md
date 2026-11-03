@@ -52,6 +52,15 @@ the CT publication files do not show. Relationships of this kind are in the Find
 from COSMoS, in the value-list and unit columns. They are COSMoS's specifications, not the
 codetables, which are still not read here.
 
+## Where NCI places the organisms
+
+A consumer matching activity labels cannot carry the whole microorganism codelist. NCI's
+hierarchy could let it carry a group instead. A new report in domain-behaviour reads
+that hierarchy above every MICROORG term. Bacteria and most RNA viruses reach a family.
+DNA viruses, fungi, protozoa and helminths do not: there NCI groups by genome type or by
+higher taxa, and some groupings are not taxonomy at all. NCIt publishes no rank, so
+"family" is read from the name; the report marks that reading as ours.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
