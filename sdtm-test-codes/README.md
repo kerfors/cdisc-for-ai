@@ -10,7 +10,7 @@ The green layer. Identity for every CDISC SDTM test code: what is it called, wha
 |---|---|---|
 | [`SDTM_CT_Extract`](notebooks/SDTM_CT_Extract.ipynb) | Extract | [`interim/SDTM_CT_Extract.csv`](interim/SDTM_CT_Extract.csv) |
 | [`SDTM_CT_NCIt_Enrich`](notebooks/SDTM_CT_NCIt_Enrich.ipynb) | Enrich | [`machine_actionable/SDTM_Test_Identity.xlsx`](machine_actionable/SDTM_Test_Identity.xlsx) |
-| [`SDTM_CT_Term_NCIt_Synonyms`](notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb) | Enrich | [`interim/SDTM_CT_Term_NCIt_Synonyms.csv`](interim/SDTM_CT_Term_NCIt_Synonyms.csv) |
+| [`SDTM_CT_Term_NCIt_Synonyms`](notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb) | Enrich | [`interim/SDTM_CT_Term_NCIt_Synonyms.csv`](interim/SDTM_CT_Term_NCIt_Synonyms.csv), [`interim/SDTM_CT_Term_NCIt_Parents.csv`](interim/SDTM_CT_Term_NCIt_Parents.csv) |
 
 **Extract** auto-discovers all extensible Test Code / Test Name codelist pairs from the NCI EVS SDTM Terminology file, covering both the `*TESTCD` convention (e.g. LBTESTCD) and the `*CD` convention used by TA-specific and body-system codelists (e.g. CVFATSCD, MUSCTSCD). Captures cross-domain membership. Excludes Parameter Name-Code pairs (TSPARMCD/TSPARM) — study-level metadata, not observation test codes.
 
