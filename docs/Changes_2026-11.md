@@ -1,0 +1,71 @@
+# Changes — November 2026: the IG and NCIt, read further
+
+**Reference versions:** unchanged — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS
+2026-07-14, SDTMIG v3.4 / SDTM v2.0, NCIt FLAT 2026-09-29. No upstream data moved.
+
+Using the files to match study activity labels to CDISC terms showed where they stopped
+short. Some of it the standards already publish and the files did not carry: an IG
+description of a variable, a codelist the IG binds to it, NCI's own grouping of tests.
+This release reads those.
+
+## The IG's notes on every test facet
+
+SDTMIG_Statements quoted the IG's notes for a hand-picked set of variables. The test
+condition variables were not in the set, although the IG describes them — for the
+immunogenicity domain it names stimulating agents as the example. The selection is now a
+rule: the CDISC Notes of every Findings variable that describes a test beside its name
+(test condition and its agent, test detail, binding agent, operational objective, and the
+IS measurement basis) are quoted, and the run fails if one is missing. A quoted Notes
+statement now always brings its own variable into the Variables sheet, also when its text
+does not name it.
+
+## Positions cite the statements
+
+Where a position in Variable_Meaning rests on a variable's IG notes, it now cites the
+statement by its ID, as it already did for the assumptions. For the IS test detail and
+operational objective the citation was there in words but had no ID to resolve.
+
+## Codelists the IG names
+
+The Codelists sheet of a Findings file carried the codelists COSMoS names. The IG names
+some that COSMoS does not — the test condition codelist is one. The specimen and
+immunogenicity files now carry, for their domains, every codelist the IG variable table
+gives for a test facet variable. Terms come from the same SDTM CT file the graph is built
+from; a codelist found in both must have the same terms, or the run stops.
+referenced_by says which: the COSMoS column, the IG variable, or both.
+
+## NCI's hierarchy beside the test
+
+The immunogenicity file now carries the NCIt parents of each test. NCI groups these tests
+by antibody class — autoantibody, alloantibody, antidrug, and others — and that grouping is
+a published fact, not ours. It is NCI's classification, not CDISC's. Its fit differs by
+domain; for lab tests it has not been reliable. So it is added for IS only, and the file
+checks it against the test's own wording: no test where the two disagree, a few where the
+wording says more than the hierarchy. The ReadMe states both, and the run fails if they
+ever contradict.
+
+## What the repository does not read
+
+The README now describes the codetables in the words of the CT page: relationships
+between terms in different codelists — the responses or units that go with a test — that
+the CT publication files do not show. Relationships of this kind are in the Findings files,
+from COSMoS, in the value-list and unit columns. They are COSMoS's specifications, not the
+codetables, which are still not read here.
+
+## What this says about the method
+
+Each change replaces a list we kept with a rule the standards support, or puts a
+published fact beside a test where a consumer had to guess. The IG, SDTM CT and NCIt carry
+more than the files used; the work is to read it, say whose it is, and check it on each run.
+
+## Authoritative current state
+
+File-level current state lives in the ReadMe sheet of each machine-actionable xlsx,
+regenerated on every run. Counts and column inventories belong there, not in this note.
+
+## References
+
+- IG statements: [`sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb`](../sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb)
+- NCIt synonyms and parents: [`sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb`](../sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb)
+- Findings consumers: [`sdtm-findings-graph/`](../sdtm-findings-graph/)
+- Previous release: [`Changes_2026-10.md`](Changes_2026-10.md)
