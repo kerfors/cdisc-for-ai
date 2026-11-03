@@ -106,8 +106,11 @@ Specimen and measurement outputs are four-sheet workbooks:
   Status), with the columns each row refers to. Not a published fact. A variable
   without a row: no position taken.
 - **`Codelists`** — every codelist named in a `*_codelist` column of
-  `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`;
-  `referenced_by` names the columns. `_codelist` covers pinned terms and value lists;
+  `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`; in Specimen and
+  Immunogenicity also every codelist the SDTMIG v3.4 table gives for a facet variable of a domain
+  in scope (`--TSTCND`, `--CNDAGT`, `--TSTDTL`, `--BDAGNT`, `--TSTOPO`, `--MSCBCE`), from
+  `SDTM_Terminology.txt` when COSMoS does not reference it;
+  `referenced_by` names the columns and IG variables. `_codelist` covers pinned terms and value lists;
   a `_codelist` column empty on every row is left out (core slots excepted).
   A reader resolves every codelist reference
   without opening another file. `term_synonyms` are the CDISC synonyms from SDTM CT;
