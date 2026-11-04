@@ -61,6 +61,17 @@ DNA viruses, fungi, protozoa and helminths do not: there NCI groups by genome ty
 higher taxa, and some groupings are not taxonomy at all. NCIt publishes no rank, so
 "family" is read from the name; the report marks that reading as ours.
 
+## What the lab, cell phenotype and PK domains hold
+
+SDTMIG_Statements quoted where the IG sends a kind of test for the immunogenicity, genomics,
+microbiology and response domains, but nothing on what LB, CP, PC and PP hold, apart from the
+IS assumption that sends flow cytometry to CP. It now quotes the description of each of these
+domains, and their first assumptions where they state scope. The PP description says its
+parameters are derived from the PC concentrations, and its first assumption calls it a derived
+dataset. That is the IG on one domain, not a classification: elsewhere the IG decides derived or
+collected per value. The Variables sheet now also says why its codelist submission values are
+empty: they are empty in the published variable table.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
