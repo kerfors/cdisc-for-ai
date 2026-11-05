@@ -72,6 +72,11 @@ dataset. That is the IG on one domain, not a classification: elsewhere the IG de
 collected per value. The Variables sheet now also says why its codelist submission values are
 empty: they are empty in the published variable table.
 
+The IS description and its first and third assumptions are now quoted too. Until now only
+assumption 2 said which antibodies go to IS: those raised against an allergen, a microorganism
+or a self-antigen. Assumption 1 covers immune responses a therapy provoked, and assumption 3
+covers all other induced humoral responses, with antibodies against HLA proteins as its example.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
