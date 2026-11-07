@@ -77,6 +77,10 @@ assumption 2 said which antibodies go to IS: those raised against an allergen, a
 or a self-antigen. Assumption 1 covers immune responses a therapy provoked, and assumption 3
 covers all other induced humoral responses, with antibodies against HLA proteins as its example.
 
+The VS and CV descriptions are now quoted too, with the first CV assumption. VS holds
+measurements such as blood pressure, temperature, respiration, height and weight; CV holds
+findings of cardiovascular diagnostic procedures, and the conduct of the procedure goes to PR.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
