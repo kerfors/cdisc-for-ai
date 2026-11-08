@@ -177,6 +177,17 @@ in the test name and in the ECG analysis method codelist, which SDTMIG v3.4 does
 estimated glomerular filtration rate goes the other way: the formula is not in the test code but
 in the analysis method variable of the lab domain.
 
+## Strings that name more than one test
+
+The phrase index covered the codelists the Findings files carry, not the test codelists. A label
+looked up against the tests meets the same problem: a string that names more than one test
+identifies none of them. The phrase index now has a second sheet with every such string in the test
+codelists of the Findings domains. They all cross codelists: TAT is one lab test code and a synonym of
+another; EGFR is a receptor test code and, written eGFR, a synonym of the estimated glomerular
+filtration rate; MCH is a haematology and a microbiology test code; CMV a microbiology and a muscle
+test code. More come with the NCIt synonyms. Strings outside SDTM CT, such as visit labels, are not
+covered.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
