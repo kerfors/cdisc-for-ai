@@ -171,6 +171,16 @@ The domain metadata file is kept by hand. It now has a Provenance sheet like the
 with a content hash per sheet, written by a small notebook after each edit; the domain-behaviour run
 stops when a hash no longer matches its sheet.
 
+The remaining facet candidates now have rows too: the other aspects LB Assumption 8 names, and the
+specimen, method, position and anatomical location of the cell phenotype, microbiology, microscopic,
+PK concentration and cardiovascular domains, with the analysis method of the PK parameters. Most keep
+the position open: in those domains no source separates specimens or methods the way COSMoS does in
+the lab. Two rows take a position: the binding agent in the lab domain is part of the test, as the IG
+note says and as for immunogenicity; the lab result scale is the variable that carries the scale rule.
+The test name has no row, since it is the test code's name; neither have position and location in the
+lab domain, which LB Assumption 8 names but the LB variable table does not hold. A row for a variable
+no DSS gives a value never enters the observable key.
+
 ## Facets folded into the test code
 
 SDTM CT sometimes puts a facet into the test code itself. The IG says so once: the QT
