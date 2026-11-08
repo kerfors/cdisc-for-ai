@@ -80,6 +80,9 @@ covers all other induced humoral responses, with antibodies against HLA proteins
 The VS and CV descriptions are now quoted too, with the first CV assumption. VS holds
 measurements such as blood pressure, temperature, respiration, height and weight; CV holds
 findings of cardiovascular diagnostic procedures, and the conduct of the procedure goes to PR.
+The EG description is quoted too: ECG data, including the position of the subject, the method
+of evaluation, all cycle measurements and all findings, with an overall interpretation if
+collected or derived.
 
 ## How the IG describes ECG, vital signs and cardiovascular tests
 
