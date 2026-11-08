@@ -74,7 +74,7 @@ Each reference file is self-describing: its ReadMe sheet starts with purpose, sc
 | | Measurement | VS, EG, MK, CV, RE | [`Measurement_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Measurement_Findings.xlsx) |
 | | Instrument-based | QS, FT, RS | [`Instrument_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Instrument_Findings.xlsx) -- adds BC_Categories, BC_Parents |
 | | Immunogenicity | IS | [`Immunogenicity_Findings.xlsx`](sdtm-findings-graph/machine_actionable/Immunogenicity_Findings.xlsx) -- binding agents (ISBDAGT, MICROORG) in Codelists |
-| | Phrase index | the codelists of the four Findings files | [`Codelist_Phrases.xlsx`](sdtm-findings-graph/machine_actionable/Codelist_Phrases.xlsx) -- one row per phrase and term, normalisation stated; and the strings that name more than one test (Test_String_Collisions); facts only, for consistent free-text lookup |
+| | Phrase index | the codelists of the four Findings files | [`Codelist_Phrases.xlsx`](sdtm-findings-graph/machine_actionable/Codelist_Phrases.xlsx) -- one row per phrase and term, normalisation stated; the strings that name more than one test (Test_String_Collisions) and the candidates for a facet folded into the test code (Folded_Facets); facts only, for consistent free-text lookup |
 | | All domains | every domain in `SDTM_Domain_Metadata.xlsx` | [`Domain_Coverage.xlsx`](sdtm-findings-graph/machine_actionable/Domain_Coverage.xlsx) -- which Findings file covers each domain, and why not where none does |
 
 ### Analysis track

@@ -164,7 +164,7 @@ table alone, and the Findings file shows it as not in COSMoS.
 ## Facets folded into the test code
 
 SDTM CT sometimes puts a facet into the test code itself. The IG says so once: the QT
-correction method is in the ECG test name. The domain-behaviour report now lists the test
+correction method is in the ECG test name. The phrase index (Codelist_Phrases) now lists the test
 terms where the published content points to this, each with its evidence: an IG statement
 that quotes the test code; a test name of the form "head, tail" with other terms of the same
 head; a tail that is a term of a facet codelist; a tail found in an analysis method codelist.

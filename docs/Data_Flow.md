@@ -83,6 +83,7 @@ graph TD
     IF --> CPH
     IMF --> CPH
     EVS --> CPH
+    STM --> CPH
     DM --> DC
     DV --> DC
 ```
@@ -118,7 +119,6 @@ graph TD
     SI["sdtm-test-codes<br/>SDTM_Instrument_Identity.xlsx"]
     SV["sdtm-domain-reference/downloads<br/>SDTMIG v3.4 PDF, NSV registry"]
     SVT["sdtm-domain-reference<br/>SDTM_Variables.xlsx"]
-    STX["sdtm-domain-reference<br/>SDTMIG_Statements.xlsx"]
     SFX["sdtm-findings-graph<br/>Specimen_Findings.xlsx"]
 
     subgraph domain-behaviour
@@ -138,7 +138,6 @@ graph TD
     SI --> DB
     SV --> DB
     SVT --> DB
-    STX --> DB
     SFX --> DB
 ```
 
