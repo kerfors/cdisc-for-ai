@@ -161,6 +161,22 @@ are proposed, with the position open, since the IG names no facets for ECG beyon
 and units. COSMoS does not use several of these variables. A row can now rest on the IG variable
 table alone, and the Findings file shows it as not in COSMoS.
 
+## Facets folded into the test code
+
+SDTM CT sometimes puts a facet into the test code itself. The IG says so once: the QT
+correction method is in the ECG test name. The domain-behaviour report now lists the test
+terms where the published content points to this, each with its evidence: an IG statement
+that quotes the test code; a test name of the form "head, tail" with other terms of the same
+head; a tail that is a term of a facet codelist; a tail found in an analysis method codelist.
+It gives candidates, not verdicts.
+
+Most tails name something no SDTM variable holds: aggregate or single beat in ECG, free or
+intact forms in the lab, end diastole or systole in cardiovascular imaging. Only one tail is a
+term of a facet codelist (fibronectin in plasma). For ECG, CT now has the beat in two places:
+in the test name and in the ECG analysis method codelist, which SDTMIG v3.4 does not name. The
+estimated glomerular filtration rate goes the other way: the formula is not in the test code but
+in the analysis method variable of the lab domain.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a

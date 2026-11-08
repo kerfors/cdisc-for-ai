@@ -44,6 +44,7 @@ only, and runs with an SDTM CT release.
 | `Rater_Class_Moves` | instrument whose class changed | Class in the prior and current SDTM CT, with the rater phrases in its NCIt definition |
 | `Interpretation_Context` | generic variable × domain | Every SDTM v2.0 Record Qualifier, Variable Qualifier and Timing variable, in the domains of the general observation classes: SDTMIG v3.4 Core and codelist, and how COSMoS uses it (absent, never assigned, always assigned, mixed). See [`Interpretation_Context.md`](../docs/Interpretation_Context.md) |
 | `Unit_Property` | DSS in `Specimen_Findings` with units | The property of each unit from its NCIt parents (mass, substance, number concentration, ...), the count per DSS, and the LOINC property of its codes |
+| `Folded_Facets` | test term | Candidates for a facet folded into the test code (section 4k), with the evidence: an IG statement quoting the test code (EG-A5), CT naming ("<head>, <tail>" with a sibling of the same head), a facet codelist term, an analysis method codelist (EGANMET). Reports; no verdict |
 | `Scale_Units` | domain × published result-scale combination | DSSs with and without units; flags |
 | `Exclusion_Claims` | claim in `Consumer_Exclusions` | Holds or not, with the evidence |
 | `Unclassified_Content` | domain | Domains with DSSs but no consumer class |
@@ -68,6 +69,7 @@ and result values follow from the axes and are not counted.
 - `sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx` (`Measurement_Specs`: the consumer's observable key, LB, MB, MI)
 - `cosmos-bc-dss/reports/COSMoS_Observable_LOINC_Check.xlsx` (`Axis_Compare`; LOINC axes per pinned code)
 - `sdtm-test-codes/downloads/SDTM_Terminology.txt` (codelist names and definitions)
+- `sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx` (`Statements`: facet statements that quote a test code, for `Folded_Facets`)
 - `sdtm-domain-reference/machine_actionable/SDTM_Variables.xlsx` (`Model_Variables`, `Domain_Variables`: the SDTM v2.0 Model and SDTMIG v3.4 variable tables of the general observation classes: role, qualified variables, CDISC Notes)
 - `sdtm-domain-reference/downloads/Approved-Non-Standard-Variable-Registry_2026-04-03.xlsx` (CDISC NSV registry; gitignored)
 - `sdtm-domain-reference/downloads/SDTMIG v3.4-FINAL_2022-07-21.pdf` (the SDTMIG document, for the domain Assumptions; gitignored; read with pypdf, needs `cryptography`)
