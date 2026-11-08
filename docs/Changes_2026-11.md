@@ -81,6 +81,25 @@ The VS and CV descriptions are now quoted too, with the first CV assumption. VS 
 measurements such as blood pressure, temperature, respiration, height and weight; CV holds
 findings of cardiovascular diagnostic procedures, and the conduct of the procedure goes to PR.
 
+## How the IG describes ECG, vital signs and cardiovascular tests
+
+SDTMIG_Statements quoted what EG, VS and CV hold, but not what the IG says about their tests.
+It now quotes the EG assumptions on test codes: the method of QT correction is part of the
+test name in controlled terminology, and the sponsor names the tests of its own QT correction
+models. Also quoted: the separate test codelists for 10-second and Holter ECGs, and the EG, VS
+and CV assumptions on the qualifiers that would not generally be used, and the VS codetable
+that links some vital sign tests to qualifier codelists. EG recommends that --LOINC not be
+used; CV lists it among the qualifiers that would generally not be used. The EG notes on
+position, method and lead are quoted as published; their examples are not always CT terms
+("12-LEAD STANDARD" against the term 12 LEAD STANDARD, "LEAD 1" against LEAD I). The EG
+assumptions on beat-level, aggregate and repeated records are quoted as record statements:
+they say what identifies the record.
+
+The EG examples heading is printed with a hyphen, not a dash, so the last EG assumption ran
+on into the examples; an Assumptions block now ends there too. The first VS assumption
+(VSLOINC) is not quoted: in the text read from the PDF, the markers of items 1 and 2 come
+before both texts.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
