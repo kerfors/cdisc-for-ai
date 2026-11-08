@@ -139,6 +139,22 @@ or only the record — without opening another file. For ECG, for example: posit
 are Record Qualifiers; only the test name qualifies the test code. That position, method and lead
 describe the test is our position, not the IG's.
 
+## The kind of facet
+
+Variable_Meaning gains a Kind column: the kind of facet each variable carries — observable,
+practice, record, or open — beside the Position that says whether it makes a different
+observable. A facet is a value, beyond the test code, that describes the planned observation;
+the definition and the two rules that follow from it are on the observables direction page.
+Kind is our position, as Position is, and each row states its reason. The domain-behaviour
+checks hold the two together: a position in the key goes with observable, a position outside
+the observable with practice or record.
+
+The ECG variables now have rows: the position of the subject, the planned time and its
+reference, who reads and repetitions as practice; the method as observable; the lead open. All
+are proposed, with the position open, since the IG names no facets for ECG beyond the test name
+and units. COSMoS does not use several of these variables. A row can now rest on the IG variable
+table alone, and the Findings file shows it as not in COSMoS.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a

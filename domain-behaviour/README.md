@@ -9,7 +9,7 @@ made reproducible: run it on every COSMoS release and compare with the previous 
 It reports only. Scope and classification stay in
 [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx):
 the `Domains` flags and the `Consumer_Exclusions` sheet, whose claims this notebook tests.
-It also checks the hand-kept `Variable_Meaning` sheet (our position, section 4f): keys and fixed lists only.
+It also checks the hand-kept `Variable_Meaning` sheet (our position, section 4f): keys, fixed lists, and Kind against Position.
 Nothing reads from this track.
 
 The notebook also publishes the result as a page,

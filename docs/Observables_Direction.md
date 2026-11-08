@@ -1,6 +1,6 @@
 # Direction: observables, more expressive reference files, RDF/OWL
 
-*Written 2026-10-01. Updated as the steps are done; last update 2026-10-31.*
+*Written 2026-10-01. Updated as the steps are done; last update 2026-11-08.*
 
 Three steps, in order: find out what identifies an observable in the CDISC standards and whether a conclusion can be drawn; then make the Excel reference files express it; later, move towards RDF/OWL.
 
@@ -9,6 +9,19 @@ Three steps, in order: find out what identifies an observable in the CDISC stand
 SDTMIG v3.4 publishes more of the decomposition than this page first assumed. The IG statements are collected, quoted, in [`SDTMIG_Statements.xlsx`](../sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx): a generic test code with qualifier variables (§4.1.9); the aspects of a lab test associated with a LOINC code, four base and the rest conditional (LB Assumption 8); the analyte as ISTEST with ISBDAGNT; the microbiology test detail; the gene in GFSYM. That published facet model is now the base. The COSMoS fan-out and LOINC are cross-checks beside it.
 
 What the IG does not define is the observable. It leaves the uniqueness of a test to the sponsor's natural key, and a natural key, like a Dataset Specialization, is about SDTM storage and transfer. The observable is a concept: what makes an observation specific. Where the standards are silent or disagree, our position stays in `Variable_Meaning`, each basis citing the IG statements where they exist. See [Phase 1, Reassessment](Observables_Phase1.md#reassessment-2026-10-31).
+
+## Facets and their kind (2026-11-08)
+
+A facet is a value, beyond the test code, that describes the planned observation. Each facet has two properties, both our position: its kind and its identity.
+
+- **Kind**: *observable*, what is determined (specimen, method, scale); *practice*, how the observation is brought about (fasting, position of the subject, planned time point, repetitions, who reads); *record*, how the row is filed (category, links between records). *Open* where no source settles it, for example a rater or response criteria that may define the result.
+- **Identity**: whether the facet makes a different observable. This is the Position in `Variable_Meaning` (component, system, method, scale; not part of the observable; open).
+
+The facets the IG names are a subset: LB Assumption 8 for LB. For EG, VS and CV the IG names none beyond the test name and units; EG Assumption 5 puts the QT correction method into the test name. The SDTM v2.0 roles give the candidates, not the facets: the Record Qualifier role holds specimen, method, position, lead and fasting beside status, vendor and flags, and the Timing role holds planned and actual time. Each Findings file lists the candidates in `Domain_Variables`; `Variable_Meaning` gives Kind and Position per variable, and `Axis_Meaning` copies them into each file.
+
+What the definition leaves out: values that describe the record afterwards (actual dates, status, reason not done, flags); conditions that say whether an observation happens (only at screening, if positive); analysis of collected results (averaging repetitions). A calculation method is a facet, and CT sometimes folds it into the test code.
+
+Two rules follow. Recognising a facet is not using it for identity: a label must be read for facets of every kind, but only identity facets go into a key, and an identity facet a source does not state stays open. And two planned observations that differ only by a practice facet are the same observable, planned two ways.
 
 ## Where we stand (COSMoS 2026-07-14, SDTM CT 2026-09-25)
 
@@ -63,7 +76,7 @@ Once observables have a working definition, state it in the files instead of lea
 - a key would carry the assignment errors in COSMoS as they are, such as the two found by the LOINC check (nicotine, `HGBBLDDIP`);
 - Phase 1 read the BCs that fan out; for BCs with one DSS the key would come from a rule not tested against them.
 
-So Step 2 started at the variable level. The three Findings consumer files in [`sdtm-findings-graph/`](../sdtm-findings-graph/) now have an `Axis_Meaning` sheet: the rows of `Variable_Meaning` that apply to the file (Position, Basis, Status) and the `Measurement_Specs` columns each row refers to. It says which columns identify the observable, which are open, and on what basis. It is our position, not a published fact, and carries the basis note with each position (since 2026-10-31; `Immunogenicity_Findings` has one too).
+So Step 2 started at the variable level. The three Findings consumer files in [`sdtm-findings-graph/`](../sdtm-findings-graph/) now have an `Axis_Meaning` sheet: the rows of `Variable_Meaning` that apply to the file (Position, Basis, Status; Kind since 2026-11-08) and the `Measurement_Specs` columns each row refers to. It says which columns identify the observable, which are open, and on what basis. It is our position, not a published fact, and carries the basis note with each position (since 2026-10-31; `Immunogenicity_Findings` has one too).
 
 Then a key per DSS for LB, MB and MI only, in `Specimen_Findings`: `bc_id | component | system | scale | method`, built from the `Axis_Meaning` rows. Scale is in the key, by the accepted rule, read as units present or absent. That is the reading the file supports; it stays marked as open. Without scale, concentration and presence in urine (glucose, protein and others) would share a key. In MB and MI the key holds test code and test detail only, because `Variable_Meaning` has no rows for their specimen and method (they never separate sibling DSSs, so the grouping is the same either way).
 

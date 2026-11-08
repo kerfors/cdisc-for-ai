@@ -103,9 +103,10 @@ Specimen, measurement and immunogenicity outputs have these sheets after the Rea
   `Key_Positions`. Scale uses units present or absent; its per-DSS reading is open.
 - **`Axis_Meaning`** — our position on what the axis columns of `Measurement_Specs`
   mean for the observable: the rows of `Variable_Meaning` in
-  `SDTM_Domain_Metadata.xlsx` that apply to the file (Position, Basis, Basis_Note,
-  Status), with the columns each row refers to. Not a published fact. A variable
-  without a row: no position taken.
+  `SDTM_Domain_Metadata.xlsx` that apply to the file (Position, Kind, Basis, Basis_Note,
+  Status; Kind = the kind of facet: observable, practice, record or open), with the
+  columns each row refers to (*not in COSMoS* for a variable no DSS has). Not a published
+  fact. A variable without a row: no position taken.
 - **`Codelists`** — every codelist named in a `*_codelist` column of
   `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`; in Specimen and
   Immunogenicity also every codelist the SDTMIG v3.4 table gives for a facet variable of a domain
