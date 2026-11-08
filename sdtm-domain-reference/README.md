@@ -35,7 +35,7 @@ Domains added from CT: the SDTM Domain Abbreviation codelist (C66734) in the NCI
 
 COSMoS coverage is not carried here; see [`consumer-bases/interim/DSS_View.xlsx`](../consumer-bases/interim/DSS_View.xlsx).
 
-Variable-level metadata is not carried in `SDTM_Domain_Metadata.xlsx`. The CDISC variable tables for SDTM v2.0 and SDTMIG v3.4 are kept as local copies in `downloads/` (gitignored, downloaded with a cdisc.org sign-in). What is taken from them is published in `SDTM_Variables.xlsx` (the tables of the general observation classes) and `SDTMIG_Statements.xlsx` (the rows of the variables the statements name); the files themselves are not. They are also read by [`domain-behaviour/`](../domain-behaviour/) for role, qualified variables and CDISC Notes. The CDISC Approved Non-Standard Variable Registry sits there too, for variables not in a domain's SDTMIG table.
+Variable-level metadata is not carried in `SDTM_Domain_Metadata.xlsx`. The CDISC variable tables for SDTM v2.0 and SDTMIG v3.4 are kept as local copies in `downloads/` (gitignored, downloaded with a cdisc.org sign-in). What is taken from them is published in `SDTM_Variables.xlsx` (the tables of the general observation classes) and `SDTMIG_Statements.xlsx` (the rows of the variables the statements name); the files themselves are not. [`domain-behaviour/`](../domain-behaviour/) reads them through `SDTM_Variables.xlsx`; [`link-semantics/`](../link-semantics/) still reads the CSVs, for binding and denotation. The CDISC Approved Non-Standard Variable Registry sits there too, for variables not in a domain's SDTMIG table.
 
 ## About
 

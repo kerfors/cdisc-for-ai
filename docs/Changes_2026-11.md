@@ -124,6 +124,12 @@ them the route of administration, the LOINC code, the MI test detail and the VS 
 SDTMIG_Statements now also lists the generic forms a statement names, such as --SPEC, --FAST and
 --LOINC in the EG assumption on qualifiers that would not generally be used.
 
+Domain_Behaviour now reads the variable tables from this file. Its interpretation-context sheet
+matched variables by name and so also listed Special-Purpose and Trial Design variables that
+share a suffix with a generic variable, such as the demographics collection date. These datasets
+are not of the general observation classes, and the Model describes them with their own
+variables; they are no longer listed. The interpretation-context page says what changed.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a

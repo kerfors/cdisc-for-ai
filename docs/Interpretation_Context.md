@@ -36,6 +36,18 @@ The evaluation interval is the exception: COSMoS fixes it wherever it occurs. `Q
 
 LOINC reads the same context differently: it has separate codes for fasting glucose, for example, where SDTM records fasting beside the value. This is a difference in where the context is put, not a disagreement about what is measured.
 
+## Update 2026-11-08
+
+`Domain_Behaviour` now reads the variable tables from `SDTM_Variables.xlsx`, which holds the domains of the general observation classes. Until now the sheet matched variables by name, so it also listed 24 variables of Special-Purpose and Trial Design datasets that share a suffix with a generic variable, such as `DMDTC` and `SVSTDTC`; the Model describes these datasets with their own variables. They are no longer listed. The counts above are as written on 2026-10-12; they are now 157 generic variables and 940 pairs, 91 of the generic variables with COSMoS content:
+
+| Model role | Absent from COSMoS | Never assigned | Always assigned | Mixed |
+|---|---|---|---|---|
+| Record Qualifier | 277 | 77 | 11 | 20 |
+| Timing | 266 | 55 | 3 | 2 |
+| Variable Qualifier | 132 | 64 | 13 | 20 |
+
+The five findings and the reading do not change.
+
 ## Not read here
 
 The operational side of a study, and the SDTM Trial Design datasets (TA, TE, TV, TD, TM, TI, TS), which describe the planned study rather than the context of a recorded value.

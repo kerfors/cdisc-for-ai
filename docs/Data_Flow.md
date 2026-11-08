@@ -109,7 +109,8 @@ graph TD
     OL["cosmos-bc-dss<br/>COSMoS_Observable_LOINC_Check.xlsx"]
     EVSX["NCI EVS SDTM CT<br/>SDTM_Terminology.txt"]
     SI["sdtm-test-codes<br/>SDTM_Instrument_Identity.xlsx"]
-    SV["sdtm-domain-reference/downloads<br/>SDTM v2.0, SDTMIG v3.4 (tables + PDF), NSV registry"]
+    SV["sdtm-domain-reference/downloads<br/>SDTMIG v3.4 PDF, NSV registry"]
+    SVT["sdtm-domain-reference<br/>SDTM_Variables.xlsx"]
     SFX["sdtm-findings-graph<br/>Specimen_Findings.xlsx"]
 
     subgraph domain-behaviour
@@ -128,6 +129,7 @@ graph TD
     EVSX --> OH
     SI --> DB
     SV --> DB
+    SVT --> DB
     SFX --> DB
 ```
 
@@ -151,7 +153,7 @@ Before step 1, set the new versions in `Reference_Versions.json` at the repo roo
 | 7 | `sdtm-findings-graph/` | `Scope_Check` → `Specimen_Findings` → `Measurement_Findings` → `Instrument_Findings` → `Immunogenicity_Findings` → `Domain_Coverage` → `Codelist_Phrases` | yes | yes |
 | 8 | `link-semantics/` | `Link_Kind_Audit` → `Code_Collision_Check` (needs a `usdm-rdf` checkout beside this repo) | yes | yes |
 | 9 | `cosmos-bc-dss/` | `COSMoS_Observable_Derivation` → `COSMoS_Observable_LOINC_Check` | — | yes |
-| 10 | `domain-behaviour/` | `Domain_Behaviour` (reads `COSMoS_Observable_Derivation.xlsx` from step 9 and stops if it is from another COSMoS package; reads `COSMoS_Observable_LOINC_Check.xlsx` from step 9 and stops if it is older than the derivation; reads `Specimen_Findings.xlsx` from step 7 and stops if it has no observable key, is older than `SDTM_Domain_Metadata.xlsx`, or has a `package_date` other than `DSS_View`'s; reads `SDTM_Instrument_Identity.xlsx` and stops if it is older than `SDTM_Terminology.txt`; reads `Thesaurus.txt`; optionally reads a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`); checks `Variable_Meaning` in `SDTM_Domain_Metadata.xlsx` and stops if a key is not found; also reads `SDTM_Terminology.txt` downloaded in step 1; reads the SDTM v2.0 and SDTMIG v3.4 variable tables, the CDISC NSV registry and the SDTMIG v3.4 PDF from `sdtm-domain-reference/downloads/` (gitignored); set `PRIOR_FILE` to the previous output for the release diff; also rewrites `docs/analyses/domain-behaviour.html`) | — | yes |
+| 10 | `domain-behaviour/` | `Domain_Behaviour` (reads `COSMoS_Observable_Derivation.xlsx` from step 9 and stops if it is from another COSMoS package; reads `COSMoS_Observable_LOINC_Check.xlsx` from step 9 and stops if it is older than the derivation; reads `Specimen_Findings.xlsx` from step 7 and stops if it has no observable key, is older than `SDTM_Domain_Metadata.xlsx`, or has a `package_date` other than `DSS_View`'s; reads `SDTM_Instrument_Identity.xlsx` and stops if it is older than `SDTM_Terminology.txt`; reads `Thesaurus.txt`; optionally reads a prior `SDTM_Terminology.txt` (`CT_PRIOR_FILE`); checks `Variable_Meaning` in `SDTM_Domain_Metadata.xlsx` and stops if a key is not found; also reads `SDTM_Terminology.txt` downloaded in step 1; reads `SDTM_Variables.xlsx` from step 1b (the SDTM v2.0 and SDTMIG v3.4 variable tables), and the CDISC NSV registry and the SDTMIG v3.4 PDF from `sdtm-domain-reference/downloads/` (gitignored); set `PRIOR_FILE` to the previous output for the release diff; also rewrites `docs/analyses/domain-behaviour.html`) | — | yes |
 | 11 | `domain-behaviour/` | `Organism_Hierarchy` (reads `SDTM_Terminology.txt` and `Thesaurus.txt` from step 1; stops if the FLAT build date differs from the `NCIt` pin) | yes | — |
 
 When both release together, run every step. `Scope_Check` stops the refresh if a domain with content is not classified in `SDTM_Domain_Metadata.xlsx`; classify it there, then continue. After the run: update `cosmos-graph/docs/COSMoS_Open_Work.md` and write the release note in `docs/`.
