@@ -3,7 +3,7 @@
 Consumer-facing reference files for Findings, joined from the COSMoS graph
 projection and SDTM identity tracks. Sub-typed by structural pattern: specimen,
 measurement, instrument, immunogenicity. Each sub-type produces a workbook
-(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`, `Codelists`, `Shared_Strings`, `Provenance`) designed for study design,
+(`Test_Identity`, `Measurement_Specs`, `Axis_Meaning`, `Codelists`, `Shared_Strings`, `Domain_Variables`, `Provenance`) designed for study design,
 SoA-to-CDISC mapping, and USDM integration.
 
 This track is the graph-fed canonical Findings consumer, having replaced
@@ -74,6 +74,7 @@ and COSMoS 2026-07-14.
 | [`SDTM_Test_Identity.xlsx`](../sdtm-test-codes/machine_actionable/SDTM_Test_Identity.xlsx) | sdtm-test-codes | Domain-level test codes with NCIt identity. Used to widen `Test_Identity` beyond DSS_View's COSMoS-pinned subset. |
 | [`SDTM_Domain_Metadata.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) | sdtm-domain-reference | Domain metadata. `Observation_Class` joined per row. `Variable_Meaning` rows that apply to the file copied into `Axis_Meaning`. |
 | [`COSMoS_Graph_CT.xlsx`](../cosmos-graph/interim/COSMoS_Graph_CT.xlsx) | cosmos-graph | `Codelists` and `CodelistTerms` sheets — drive the `Allowed_Units` permissible-value expansion (`ORRESU_codelist` → terms) and the `Codelists` sheet of each output. |
+| [`SDTM_Variables.xlsx`](../sdtm-domain-reference/machine_actionable/SDTM_Variables.xlsx) | sdtm-domain-reference | `Domain_Variables` rows for the domains in scope, every Model role except Result Qualifier and Identifier, copied into the `Domain_Variables` sheet of each output. |
 
 For the immunogenicity sub-type (ReadMe only):
 
@@ -91,7 +92,7 @@ For the instrument sub-type, when added:
 
 ## File structure
 
-Specimen and measurement outputs are four-sheet workbooks:
+Specimen, measurement and immunogenicity outputs have these sheets after the ReadMe:
 
 - **`Test_Identity`** — one row per TESTCD. Concept-level identity.
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
@@ -119,6 +120,18 @@ Specimen and measurement outputs are four-sheet workbooks:
   more than one term within one codelist, with the terms and whether the sharing is
   already in SDTM CT or comes with the NCIt synonyms. A string that names more than
   one term identifies none of them; a lookup must return all candidates.
+- **`Domain_Variables`** — candidates for facets. A facet is a value, beyond the test code, that
+  describes the planned observation. The SDTMIG v3.4 variables of the domains in scope, as
+  `SDTM_Variables.xlsx` publishes them, every SDTM v2.0 Model role except Result Qualifier and
+  Identifier: no published source ties these two roles to describing a test (Result Qualifiers hold
+  the result value; EG-A3 and EG-A6 cite EGREFID and EGBEATNO only for telling records apart).
+  Grouping and Timing stay (LBCAT is standards silent, open; LB-A8 names LBTPT, LBPTFL, LBPDUR), and
+  so do Variable Qualifiers of a result (units, reference ranges, --NRIND). The Model role decides,
+  not the IG Role: VSLAT (IG Result Qualifier, Model Variable Qualifier of --SPEC/--LOC) is kept. Each
+  row: the IG row with the Model facts of its generic variable (`Model_Role`; `Model_Variables_Qualified`:
+  what a Variable Qualifier qualifies — `--TESTCD`, `--SPEC`/`--LOC`, a result, another qualifier; a
+  Record Qualifier names none), the NCIt concept of the Model variable, and the `SDTMIG_Statements`
+  that name it. Published facts. Which rows hold facets, their kind and identity are our position.
 - **`Provenance`** — fixed keys for programs: the source versions (`SDTM_CT`, `COSMoS`,
   `SDTMIG`, `SDTM`, `NCIt`) and per data sheet its rows, columns and a content hash. The
   file changes on every save; the content hash only when the data do.
@@ -129,8 +142,7 @@ coverage is joined on both. The two-step
 structure matches the mapping workflow: first resolve a term to a concept,
 then select the specific measurement variant.
 
-Instrument output is a six-sheet workbook — adds `BC_Categories` and
-`BC_Parents` to the four-sheet base. The two extra sheets carry COSMoS's
+Instrument output adds `BC_Categories` and `BC_Parents` to these sheets. The two extra sheets carry COSMoS's
 search-tag mechanism and the BC parent-child traversal explicitly. They
 are needed because instrument grouping operates outside the BC parent
 chain — the instrument-level BC and the wrapper concepts (e.g., `6 Minute

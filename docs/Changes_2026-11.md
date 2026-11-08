@@ -130,6 +130,15 @@ share a suffix with a generic variable, such as the demographics collection date
 are not of the general observation classes, and the Model describes them with their own
 variables; they are no longer listed. The interpretation-context page says what changed.
 
+Each Findings file now carries the variables of its own domains from this file in a
+Domain_Variables sheet: the candidates for facets. A facet is a value, beyond the test code, that
+describes the planned observation. Result Qualifiers and Identifiers are left out, by the Model's
+role: no published source ties them to describing a test. A consumer sees there what the Model says
+each qualifier qualifies — the test code, the specimen or location, a result, another qualifier,
+or only the record — without opening another file. For ECG, for example: position, method and lead
+are Record Qualifiers; only the test name qualifies the test code. That position, method and lead
+describe the test is our position, not the IG's.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
@@ -144,6 +153,7 @@ regenerated on every run. Counts and column inventories belong there, not in thi
 ## References
 
 - IG statements: [`sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb`](../sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb)
+- Variable tables: [`sdtm-domain-reference/notebooks/SDTM_Variables.ipynb`](../sdtm-domain-reference/notebooks/SDTM_Variables.ipynb)
 - NCIt synonyms and parents: [`sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb`](../sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb)
 - Findings consumers: [`sdtm-findings-graph/`](../sdtm-findings-graph/)
 - Previous release: [`Changes_2026-10.md`](Changes_2026-10.md)

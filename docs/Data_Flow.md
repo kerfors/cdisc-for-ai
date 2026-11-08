@@ -37,7 +37,7 @@ graph TD
     subgraph sdtm-findings-graph
         SF["Specimen_Findings.xlsx"]
         MF["Measurement_Findings.xlsx"]
-        IF["Instrument_Findings.xlsx<br/>(six-sheet)"]
+        IF["Instrument_Findings.xlsx<br/>(adds BC_Categories, BC_Parents)"]
         IMF["Immunogenicity_Findings.xlsx"]
         DC["Domain_Coverage.xlsx"]
         CPH["Codelist_Phrases.xlsx"]
@@ -64,6 +64,10 @@ graph TD
     EVS --> SVR
     STM --> SF
     STM --> IMF
+    SVR --> SF
+    SVR --> MF
+    SVR --> IF
+    SVR --> IMF
     DM --> IF
     DM --> IMF
     II --> IF
