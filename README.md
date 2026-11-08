@@ -56,6 +56,7 @@ Each reference file is self-describing: its ReadMe sheet starts with purpose, sc
 |---|---|---|
 | [`sdtm-domain-reference/`](sdtm-domain-reference/) | Domain metadata: observation class and consumer classification (specimen, measurement, instrument, immunogenicity) -- the scope source for the Findings consumers | [`SDTM_Domain_Metadata.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx) (pipeline input) |
 | | SDTMIG v3.4 in its own words: how a test is described beside --TEST, which domain a kind of test goes to, and what qualifies or links the record | [`SDTMIG_Statements.xlsx`](sdtm-domain-reference/machine_actionable/SDTMIG_Statements.xlsx) -- statements quoted with section, item and page; facts only |
+| | The SDTM v2.0 Model and SDTMIG v3.4 variable tables, joined: what each variable qualifies (the test, the specimen or location, the result, or only the record) and its NCIt concept | [`SDTM_Variables.xlsx`](sdtm-domain-reference/machine_actionable/SDTM_Variables.xlsx) -- Model_Variables, Domain_Variables; facts only |
 
 ### View track
 

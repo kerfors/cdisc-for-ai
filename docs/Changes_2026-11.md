@@ -103,6 +103,27 @@ on into the examples; an Assumptions block now ends there too. The first VS assu
 (VSLOINC) is not quoted: in the text read from the PDF, the markers of items 1 and 2 come
 before both texts.
 
+## The variable tables, as published
+
+The CDISC variable tables were read in several places, each for what it needed. A new file in
+sdtm-domain-reference, SDTM_Variables, now carries them for the general observation classes:
+the SDTM v2.0 Model variables, and every SDTMIG v3.4 domain variable with what the Model says
+about its generic variable. The Model says what a Variable Qualifier qualifies: the test code
+(--TSTDTL, --BDAGNT, --TSTCND), the specimen or location (--LAT, --DIR), the result (units,
+reference ranges) or another qualifier (--EVALID qualifies --EVAL). A Record Qualifier qualifies
+the record and names no variable: --SPEC, --METHOD, --POS, --LEAD and --FAST are all Record
+Qualifiers. Where a domain says more, as LB Assumption 8 does, the IG statements say so.
+
+The Model gives some variables an NCIt concept: --POS is Body Position During Assessment, --SPEC
+Biospecimen Type, --LEAD Electrical Lead Recording. The file carries the concept and its NCIt
+parents; --METHOD, --LOC and --TSTDTL have none.
+
+Read across all domains, the IG sometimes gives a variable a role other than the Model's: among
+them the route of administration, the LOINC code, the MI test detail and the VS laterality.
+
+SDTMIG_Statements now also lists the generic forms a statement names, such as --SPEC, --FAST and
+--LOINC in the EG assumption on qualifiers that would not generally be used.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a

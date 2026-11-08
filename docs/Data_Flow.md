@@ -26,6 +26,8 @@ graph TD
 
     subgraph sdtm-domain-reference
         DM["SDTM_Domain_Metadata.xlsx"]
+        STM["SDTMIG_Statements.xlsx"]
+        SVR["SDTM_Variables.xlsx"]
     end
 
     subgraph consumer-bases
@@ -58,6 +60,10 @@ graph TD
     DV --> IMF
     DM --> SF
     DM --> MF
+    STM --> SVR
+    EVS --> SVR
+    STM --> SF
+    STM --> IMF
     DM --> IF
     DM --> IMF
     II --> IF
@@ -136,6 +142,7 @@ Before step 1, set the new versions in `Reference_Versions.json` at the repo roo
 | Step | Track | Notebooks, in order | SDTM CT release | COSMoS release |
 |---|---|---|---|---|
 | 1 | `sdtm-test-codes/` | `SDTM_CT_Extract` → `SDTM_CT_NCIt_Enrich` → `SDTM_CT_Term_NCIt_Synonyms` → `SDTM_Instrument_Identity_Enrich` → `Codelist_Cross_References` | yes | — |
+| 1b | `sdtm-domain-reference/` | `SDTMIG_Statements` → `SDTM_Variables` (reads the SDTM v2.0 and SDTMIG v3.4 tables and the SDTMIG v3.4 PDF from `downloads/`, gitignored; `SDTM_Variables` reads `Thesaurus.txt` from step 1 and stops if the FLAT build date differs from the `NCIt` pin). Only `SDTM_Variables` needs a re-run for an SDTM CT release (NCIt moves with it); both for a new SDTMIG or SDTM | yes | — |
 | 2 | `cosmos-graph/` | `10_flatten_schema_driven` | — | yes |
 | 3 | `cosmos-graph/` | `20_resolve_ct` → `30_validate_graph` | yes | yes |
 | 4 | `cosmos-graph/` | `50_instrument_category_resolution` → `51_instrument_parent_chain` | — | yes |
