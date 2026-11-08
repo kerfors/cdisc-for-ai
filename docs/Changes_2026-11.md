@@ -161,6 +161,16 @@ are proposed, with the position open, since the IG names no facets for ECG beyon
 and units. COSMoS does not use several of these variables. A row can now rest on the IG variable
 table alone, and the Findings file shows it as not in COSMoS.
 
+The analysis method of the lab domain now has a row too. SDTM CT puts the formulas for the
+estimated glomerular filtration rate there, not in the test code, and LB Assumption 8 names the
+variable among the aspects of a lab test. Its kind is observable, since a calculation method is a
+facet; whether it changes the observable stays open. With the row, its codelist enters the specimen
+file and the phrase index, so a formula named in a label can be found.
+
+The domain metadata file is kept by hand. It now has a Provenance sheet like the generated files,
+with a content hash per sheet, written by a small notebook after each edit; the domain-behaviour run
+stops when a hash no longer matches its sheet.
+
 ## Facets folded into the test code
 
 SDTM CT sometimes puts a facet into the test code itself. The IG says so once: the QT

@@ -62,7 +62,7 @@ and result values follow from the axes and are not counted.
 
 - `cosmos-graph/interim/COSMoS_Graph.xlsx` (DSS, BC, Variables, DataElementConcepts)
 - `consumer-bases/interim/DSS_View.xlsx` (`Measurement_Specs`)
-- `sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx`
+- `sdtm-domain-reference/machine_actionable/SDTM_Domain_Metadata.xlsx` (the run stops when its `Provenance` does not match a sheet)
   (`Domains`, `Instrument_Domain_Rules`, `Consumer_Exclusions`, `Variable_Meaning`)
 - `cosmos-bc-dss/reports/COSMoS_Observable_Derivation.xlsx` (`DSS_Coordinates`)
 - `sdtm-findings-graph/machine_actionable/Specimen_Findings.xlsx` (`Measurement_Specs`: the consumer's observable key, LB, MB, MI)
