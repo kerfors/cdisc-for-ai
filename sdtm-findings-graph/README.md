@@ -108,9 +108,10 @@ Specimen, measurement and immunogenicity outputs have these sheets after the Rea
   columns each row refers to (*not in COSMoS* for a variable no DSS has). Not a published
   fact. A variable without a row: no position taken.
 - **`Codelists`** — every codelist named in a `*_codelist` column of
-  `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`; in Specimen and
-  Immunogenicity also every codelist the SDTMIG v3.4 table gives for a facet variable of a domain
-  in scope (`--TSTCND`, `--CNDAGT`, `--TSTDTL`, `--BDAGNT`, `--TSTOPO`, `--MSCBCE`), from
+  `Measurement_Specs`, one row per term, from `COSMoS_Graph_CT.xlsx`; also every codelist the
+  SDTMIG v3.4 table gives for a facet variable of a domain in scope (`--TSTCND`, `--CNDAGT`,
+  `--TSTDTL`, `--BDAGNT`, `--TSTOPO`, `--MSCBCE`) and for every variable `Variable_Meaning` gives a
+  Kind other than *record* (the test code excepted: `Test_Identity` holds the tests), from
   `SDTM_Terminology.txt` when COSMoS does not reference it;
   `referenced_by` names the columns and IG variables. `_codelist` covers pinned terms and value lists;
   a `_codelist` column empty on every row is left out (core slots excepted).

@@ -34,6 +34,12 @@ gives for a test facet variable. Terms come from the same SDTM CT file the graph
 from; a codelist found in both must have the same terms, or the run stops.
 referenced_by says which: the COSMoS column, the IG variable, or both.
 
+Since the kind of facet was added, the rule also follows our own positions: every Findings
+file carries the codelist the IG gives for each variable that has a Kind other than record,
+the test code excepted, since the tests have their own sheet. For ECG this brings the method
+and lead codelists, which COSMoS does not name: it has the method variable without a value and
+no lead variable. A variable that gets a position brings its codelist with it.
+
 ## NCI's hierarchy beside the test
 
 The immunogenicity file now carries the NCIt parents of each test. NCI groups these tests
