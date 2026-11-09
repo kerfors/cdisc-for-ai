@@ -208,6 +208,25 @@ filtration rate; MCH is a haematology and a microbiology test code; CMV a microb
 test code. More come with the NCIt synonyms. Strings outside SDTM CT, such as visit labels, are not
 covered.
 
+## The NCIt chain above the immunogenicity tests
+
+The immunogenicity tests name their target in the binding agent, not in the test, so a label
+that states a property — neutralizing, binding, an immunoglobulin class — does not reach a test
+code by its words. NCI's hierarchy states those properties: most IS tests sit under another IS
+test (the IgG neutralizing antidrug antibody test under the neutralizing antidrug antibody test),
+and the immunoglobulin class is a second parent. The immunogenicity file now carries the whole
+NCIt chain above each test, with the names of each ancestor and its test code where it is one,
+up to the root and without a cut-off. No property column is derived from it: a consumer reads the
+chain and cites NCIt. Where the test name says more than the chain, the ReadMe says so. The chain
+comes from a new interim file in sdtm-test-codes, the NCIt concepts above the SDTM CT terms, so
+the FLAT file still has one reader.
+
+The three IS variables the IG describes but had no position — the measurement basis of a
+cell-secretion test, the test condition and its agent — now have one, proposed. The
+measurement basis reads as the binding agent does: the IG note says that with the test it
+describes the analyte. The test condition reads as the lab one. Whether the agent that imposes
+the condition is part of the observable stays open.
+
 ## What this says about the method
 
 Each change replaces a list we kept with a rule the standards support, or puts a
@@ -223,6 +242,6 @@ regenerated on every run. Counts and column inventories belong there, not in thi
 
 - IG statements: [`sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb`](../sdtm-domain-reference/notebooks/SDTMIG_Statements.ipynb)
 - Variable tables: [`sdtm-domain-reference/notebooks/SDTM_Variables.ipynb`](../sdtm-domain-reference/notebooks/SDTM_Variables.ipynb)
-- NCIt synonyms and parents: [`sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb`](../sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb)
+- NCIt synonyms, parents and the hierarchy above the CT terms: [`sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb`](../sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb)
 - Findings consumers: [`sdtm-findings-graph/`](../sdtm-findings-graph/)
 - Previous release: [`Changes_2026-10.md`](Changes_2026-10.md)

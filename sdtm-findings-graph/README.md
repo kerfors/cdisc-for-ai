@@ -95,6 +95,9 @@ For the instrument sub-type, when added:
 Specimen, measurement and immunogenicity outputs have these sheets after the ReadMe:
 
 - **`Test_Identity`** — one row per TESTCD. Concept-level identity.
+- **`Test_Ancestors`** (`Immunogenicity_Findings` only) — one row per test and NCIt ancestor of its
+  concept, with the shortest distance, the ancestor's NCIt names, and its TESTCD where the ancestor is
+  itself a test of the file. NCI's hierarchy, read from the FLAT file; no property is derived from it.
 - **`Measurement_Specs`** — one row per Dataset Specialization. Variant-level
   measurement detail (specimen, method, scale, units, coding). In
   `Specimen_Findings` (LB, MB, MI) and `Immunogenicity_Findings` (IS) also an observable key per DSS, built from
