@@ -297,6 +297,26 @@ ReadMe notes this.
 Domain_Behaviour reads the variable tables of the general observation classes, as before; the
 Findings files take only their own domains. Their data is unchanged.
 
+**SDTM CT and NCIt, as published, for a scope.** Two new interim files sit beside the existing
+ones, which stay as they were. `SDTM_CT_Scoped.csv` is the SDTM CT file for the codelists COSMoS
+refers to or SDTMIG v3.4 binds to a variable: each codelist with all its terms, every column under
+the CT file's own name, values unchanged. `NCIt_FLAT_Scoped.csv` is the NCIt FLAT file for the
+concepts of that CT, the COSMoS BC and data element concepts and the SDTM v2.0 Model variable
+codes, with all their ancestors: all nine FLAT columns, synonyms unfiltered, definitions included,
+and the CUI of NCI's code–CUI map. That map carries no release; it is pinned by its download date
+and checksum. Neither file is all of SDTM CT or all of NCIt: a reader who needs more goes to the
+source. Codelists or concepts that are referred to but not in the pinned release are listed by the
+run, not filled in.
+
+Because the scope comes from COSMoS and the variable tables, the SDTM CT track now runs after the
+COSMoS projection and SDTM_Variables, and also on a COSMoS release; the release run order in
+Data_Flow is renumbered accordingly.
+
+**Smaller corrections.** The NCIt FLAT file is now read without quote handling everywhere, so a
+value that starts with a quote keeps it; no output changed. The NCIt parent check tells a BC that
+COSMoS publishes without an NCIt code apart from a concept missing from the FLAT file. Files whose
+Provenance still named the previous COSMoS package were re-run; their data is unchanged.
+
 ## Authoritative current state
 
 File-level current state lives in the ReadMe sheet of each machine-actionable xlsx,
