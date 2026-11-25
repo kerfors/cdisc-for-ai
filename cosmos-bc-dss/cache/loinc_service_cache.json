@@ -2007,6 +2007,96 @@
    "Method": null,
    "Class": "CHEM",
    "ExampleUCUMUnits": "mg/dL"
+  },
+  "109075-2": {
+   "Component": "C peptide",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Ser/Plas",
+   "ScaleType": "-",
+   "Method": null,
+   "Class": "LABORDERS.ONTOLOGY",
+   "ExampleUCUMUnits": null
+  },
+  "110676-4": {
+   "Component": "Insulin",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Ser/Plas",
+   "ScaleType": "-",
+   "Method": null,
+   "Class": "LABORDERS.ONTOLOGY",
+   "ExampleUCUMUnits": null
+  },
+  "111148-3": {
+   "Component": "C peptide",
+   "Property": "{Measurement}",
+   "TimeAspect": "-",
+   "System": "Urine",
+   "ScaleType": "-",
+   "Method": null,
+   "Class": "LABORDERS.ONTOLOGY",
+   "ExampleUCUMUnits": null
+  },
+  "30000-4": {
+   "Component": "Albumin/Creatinine",
+   "Property": "Ratio",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": "Detection limit <= 20 mg/L",
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "mg/mmol{creat}"
+  },
+  "30934-4": {
+   "Component": "Natriuretic peptide.B",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pg/mL"
+  },
+  "3854-7": {
+   "Component": "Nicotine",
+   "Property": "MCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "ng/mL"
+  },
+  "47092-2": {
+   "Component": "Natriuretic peptide.B",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Ser/Plas",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "CHEM",
+   "ExampleUCUMUnits": "pmol/L"
+  },
+  "59936-5": {
+   "Component": "Nicotine",
+   "Property": "SCnc",
+   "TimeAspect": "Pt",
+   "System": "Urine",
+   "ScaleType": "Qn",
+   "Method": null,
+   "Class": "DRUG/TOX",
+   "ExampleUCUMUnits": "nmol/L"
+  },
+  "717-9": {
+   "Component": "Hemoglobin",
+   "Property": "PrThr",
+   "TimeAspect": "Pt",
+   "System": "Bld",
+   "ScaleType": "Ord",
+   "Method": null,
+   "Class": "HEM/BC",
+   "ExampleUCUMUnits": null
   }
  },
  "LOINCSimilarTest_glucose_family": {

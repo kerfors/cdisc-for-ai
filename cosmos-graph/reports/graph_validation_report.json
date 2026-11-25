@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-30",
+  "generated": "2026-11-25",
   "inputs": [
     "COSMoS_Graph.xlsx",
     "COSMoS_Graph_CT.xlsx",
@@ -64,15 +64,15 @@
     {
       "check": "value_list_resolution_summary",
       "status": "INFO",
-      "count": 3000,
+      "count": 3279,
       "detail": [
         {
           "metric": "total_value_list_rows",
-          "count": 3000
+          "count": 3279
         },
         {
           "metric": "all_resolved",
-          "count": 2304
+          "count": 2554
         },
         {
           "metric": "partial",
@@ -84,7 +84,7 @@
         },
         {
           "metric": "no_codelist",
-          "count": 690
+          "count": 719
         },
         {
           "metric": "codelist_not_in_ct",
@@ -92,38 +92,23 @@
         },
         {
           "metric": "unique_unresolvable_pairs",
-          "count": 10
+          "count": 7
         }
       ]
     },
     {
       "check": "value_list_unresolved_members",
       "status": "INFO",
-      "count": 10,
+      "count": 7,
       "detail": [
         {
-          "codelist": "PROCEDUR",
-          "member": "RADIOSURGERY",
-          "row_count": 2
-        },
-        {
-          "codelist": "PROCEDUR",
-          "member": "STEREOTACTIC BODY RADIATION THERAPY",
-          "row_count": 2
+          "codelist": "LOC",
+          "member": "ABDOMEN",
+          "row_count": 1
         },
         {
           "codelist": "METHOD",
           "member": "AUTOPSY",
-          "row_count": 1
-        },
-        {
-          "codelist": "PROCEDUR",
-          "member": "INTERSTITIAL BRACHYTHERAPY",
-          "row_count": 1
-        },
-        {
-          "codelist": "PROCEDUR",
-          "member": "INTRACAVITY BRACHYTHERAPY",
           "row_count": 1
         },
         {
@@ -133,7 +118,7 @@
         },
         {
           "codelist": "PROCEDUR",
-          "member": "RADIOEMBOLIZATION",
+          "member": "RADIOSURGERY",
           "row_count": 1
         },
         {
@@ -143,7 +128,7 @@
         },
         {
           "codelist": "PROCEDUR",
-          "member": "TOTAL BODY IRRADIATION",
+          "member": "STEREOTACTIC BODY RADIATION THERAPY",
           "row_count": 1
         },
         {
@@ -246,7 +231,7 @@
     {
       "check": "empty_reification_quad_rows",
       "status": "INFO",
-      "count": 337,
+      "count": 705,
       "detail": [
         {
           "note": "Variables rows without a reification quad; not counted in Relationships sheet"
@@ -275,7 +260,7 @@
     {
       "check": "ct_unresolved_concept_ids",
       "status": "FAIL",
-      "count": 5,
+      "count": 18,
       "detail": [
         {
           "source": "Codelists",
@@ -291,7 +276,55 @@
         },
         {
           "source": "Variables",
+          "concept_id": "C126289",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
           "concept_id": "C132388",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 2
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C15221",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C15265",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C15271",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C15281",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C15284",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C15328",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C157425",
           "context": "assigned_term_concept_id",
           "variable_uses_count": 2
         },
@@ -303,17 +336,282 @@
         },
         {
           "source": "Variables",
+          "concept_id": "C172954",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 2
+        },
+        {
+          "source": "Variables",
           "concept_id": "C181502",
           "context": "assigned_term_concept_id",
           "variable_uses_count": 2
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C229123",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 2
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C229124",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 2
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C47850",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 2
+        },
+        {
+          "source": "Variables",
+          "concept_id": "C52006",
+          "context": "assigned_term_concept_id",
+          "variable_uses_count": 1
         }
       ]
     },
     {
       "check": "pinned_term_not_in_bound_codelist",
-      "status": "INFO",
-      "count": 0,
-      "detail": []
+      "status": "FAIL",
+      "count": 26,
+      "detail": [
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "DEPTHLIVER",
+          "variable_name": "GITESTCD",
+          "codelist_concept_id": "C128682",
+          "codelist_submission_value": "GASTROCD",
+          "assigned_term_concept_id": "C25333",
+          "assigned_term_value": "DEPTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "DEPTHLIVER",
+          "variable_name": "GITEST",
+          "codelist_concept_id": "C128681",
+          "codelist_submission_value": "GASTRO",
+          "assigned_term_concept_id": "C25333",
+          "assigned_term_value": "Depth"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LENGTHLIVER",
+          "variable_name": "GITESTCD",
+          "codelist_concept_id": "C128682",
+          "codelist_submission_value": "GASTROCD",
+          "assigned_term_concept_id": "C25334",
+          "assigned_term_value": "LENGTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LENGTHLIVER",
+          "variable_name": "GITEST",
+          "codelist_concept_id": "C128681",
+          "codelist_submission_value": "GASTRO",
+          "assigned_term_concept_id": "C25334",
+          "assigned_term_value": "Length"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "WIDTHLIVER",
+          "variable_name": "GITESTCD",
+          "codelist_concept_id": "C128682",
+          "codelist_submission_value": "GASTROCD",
+          "assigned_term_concept_id": "C25345",
+          "assigned_term_value": "WIDTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "WIDTHLIVER",
+          "variable_name": "GITEST",
+          "codelist_concept_id": "C128681",
+          "codelist_submission_value": "GASTRO",
+          "assigned_term_concept_id": "C25345",
+          "assigned_term_value": "Width"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "DEPTHSPLEEN",
+          "variable_name": "HMTESTCD",
+          "codelist_concept_id": "C228168",
+          "codelist_submission_value": "HMTESTCD",
+          "assigned_term_concept_id": "C25333",
+          "assigned_term_value": "DEPTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "DEPTHSPLEEN",
+          "variable_name": "HMTEST",
+          "codelist_concept_id": "C228167",
+          "codelist_submission_value": "HMTEST",
+          "assigned_term_concept_id": "C25333",
+          "assigned_term_value": "Depth"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LENGTHSPLEEN",
+          "variable_name": "HMTESTCD",
+          "codelist_concept_id": "C228168",
+          "codelist_submission_value": "HMTESTCD",
+          "assigned_term_concept_id": "C25334",
+          "assigned_term_value": "LENGTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LENGTHSPLEEN",
+          "variable_name": "HMTEST",
+          "codelist_concept_id": "C228167",
+          "codelist_submission_value": "HMTEST",
+          "assigned_term_concept_id": "C25334",
+          "assigned_term_value": "Length"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "VOLSPLEEN",
+          "variable_name": "HMTESTCD",
+          "codelist_concept_id": "C228168",
+          "codelist_submission_value": "HMTESTCD",
+          "assigned_term_concept_id": "C74720",
+          "assigned_term_value": "VOLUME"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "VOLSPLEEN",
+          "variable_name": "HMTEST",
+          "codelist_concept_id": "C228167",
+          "codelist_submission_value": "HMTEST",
+          "assigned_term_concept_id": "C74720",
+          "assigned_term_value": "Volume"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "WIDTHSPLEEN",
+          "variable_name": "HMTESTCD",
+          "codelist_concept_id": "C228168",
+          "codelist_submission_value": "HMTESTCD",
+          "assigned_term_concept_id": "C25345",
+          "assigned_term_value": "WIDTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "WIDTHSPLEEN",
+          "variable_name": "HMTEST",
+          "codelist_concept_id": "C228167",
+          "codelist_submission_value": "HMTEST",
+          "assigned_term_concept_id": "C25345",
+          "assigned_term_value": "Width"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LMNDEXAMBREAST",
+          "variable_name": "MITESTCD",
+          "codelist_concept_id": "C132263",
+          "codelist_submission_value": "MITSCD",
+          "assigned_term_concept_id": "C124446",
+          "assigned_term_value": "LMNDEXAM"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LMNDEXAMBREAST",
+          "variable_name": "MITEST",
+          "codelist_concept_id": "C132262",
+          "codelist_submission_value": "MITS",
+          "assigned_term_concept_id": "C124446",
+          "assigned_term_value": "Number of Lymph Nodes Examined"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LMNDPNUMBREAST",
+          "variable_name": "MITESTCD",
+          "codelist_concept_id": "C132263",
+          "codelist_submission_value": "MITSCD",
+          "assigned_term_concept_id": "C124447",
+          "assigned_term_value": "LMNDPNUM"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "LMNDPNUMBREAST",
+          "variable_name": "MITEST",
+          "codelist_concept_id": "C132262",
+          "codelist_submission_value": "MITS",
+          "assigned_term_concept_id": "C124447",
+          "assigned_term_value": "Number of Lymph Nodes Positive"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "ULTRASOUND",
+          "variable_name": "PRDECOD",
+          "codelist_concept_id": "C101858",
+          "codelist_submission_value": "PROCEDUR",
+          "assigned_term_concept_id": "C17230",
+          "assigned_term_value": "ULTRASOUND IMAGING"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "ULTRASOUNDELAST",
+          "variable_name": "PRDECOD",
+          "codelist_concept_id": "C101858",
+          "codelist_submission_value": "PROCEDUR",
+          "assigned_term_concept_id": "C172563",
+          "assigned_term_value": "ULTRASONOGRAPHIC ELASTOGRAPHY"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "DEPTHKIDNEY",
+          "variable_name": "URTESTCD",
+          "codelist_concept_id": "C129942",
+          "codelist_submission_value": "URNSTSCD",
+          "assigned_term_concept_id": "C25333",
+          "assigned_term_value": "DEPTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "DEPTHKIDNEY",
+          "variable_name": "URTEST",
+          "codelist_concept_id": "C129941",
+          "codelist_submission_value": "URNSTS",
+          "assigned_term_concept_id": "C25333",
+          "assigned_term_value": "Depth"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "VOLKIDNEY",
+          "variable_name": "URTESTCD",
+          "codelist_concept_id": "C129942",
+          "codelist_submission_value": "URNSTSCD",
+          "assigned_term_concept_id": "C74720",
+          "assigned_term_value": "VOLUME"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "VOLKIDNEY",
+          "variable_name": "URTEST",
+          "codelist_concept_id": "C129941",
+          "codelist_submission_value": "URNSTS",
+          "assigned_term_concept_id": "C74720",
+          "assigned_term_value": "Volume"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "WIDTHKIDNEY",
+          "variable_name": "URTESTCD",
+          "codelist_concept_id": "C129942",
+          "codelist_submission_value": "URNSTSCD",
+          "assigned_term_concept_id": "C25345",
+          "assigned_term_value": "WIDTH"
+        },
+        {
+          "issue_type": "pinned_term_not_in_bound_codelist",
+          "ds_id": "WIDTHKIDNEY",
+          "variable_name": "URTEST",
+          "codelist_concept_id": "C129941",
+          "codelist_submission_value": "URNSTS",
+          "assigned_term_concept_id": "C25345",
+          "assigned_term_value": "Width"
+        }
+      ]
     }
   ]
 }
