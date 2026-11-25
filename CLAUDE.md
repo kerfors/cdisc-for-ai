@@ -15,7 +15,7 @@ Repository: https://github.com/kerfors/cdisc-for-ai
 ## Reference versions
 
 - SDTM CT: NCI EVS package **2026-09-25**
-- COSMoS BC/DSS: package **2026-07-14**
+- COSMoS BC/DSS: package **2026-11-02** (Package 19)
 - SDTMIG: **v3.4** / SDTM v2.0
 
 Pinned in `Reference_Versions.json` at the repo root. The notebooks that write `machine_actionable` files read it for their ReadMe; the ones that read COSMoS stop when the COSMoS pin differs from the newest `package_date` in DSS_View. Update the pin file at each refresh. Every notebook-built machine_actionable file gets a Provenance sheet (versions, rows, columns, content hash per sheet); SDTM_Domain_Metadata (hand-kept) does not. NCIt synonyms are separated by `|` everywhere, as in the FLAT file.
@@ -44,7 +44,7 @@ The repo has six track types. The domain code is the join key across all tracks.
 - `link-semantics/` — "What kind of link is it?" Classifies every NCIt and LOINC link in the reference files by link kind and provenance class (`Link_Kind_Audit.ipynb`), and finds C-codes used in more than one role (`Code_Collision_Check.ipynb`, also reads `usdm_v4.ttl` from a `usdm-rdf` checkout beside this repo). Outputs in `interim/` are evidence, not deliverables; measurement only, no predicate decisions. Nothing reads from this track.
 - `domain-behaviour/` — "How does each domain behave?" Re-derives fan-out, decomposition axes (specimen, method, binding agent, test detail, location, category, evaluator, scale) and scale/units consistency per domain from COSMoS (`Domain_Behaviour.ipynb`), and evaluates the claims in the `Consumer_Exclusions` sheet of `SDTM_Domain_Metadata.xlsx`. `Organism_Hierarchy.ipynb` reports where NCIt places the MICROORG terms and which reach a family-rank concept (the family is read from the name; ours). Reports only; never changes scope or classification. Nothing reads from this track.
 
-The March 2026 three-layer overview and behavioural analysis are archived in `docs/archive/behavioural-analysis-2026-03/` — not maintained; the archive README lists what changed since. See `docs/Changes_2026-10.md` (and earlier `Changes_*.md` in `docs/`) for what changed in each release.
+The March 2026 three-layer overview and behavioural analysis are archived in `docs/archive/behavioural-analysis-2026-03/` — not maintained; the archive README lists what changed since. See `docs/Changes_2026-11.md` (and earlier `Changes_*.md` in `docs/`) for what changed in each release.
 
 ## Data flow and joins
 

@@ -1,7 +1,8 @@
 # Changes — November 2026: the IG and NCIt, read further
 
-**Reference versions:** unchanged — SDTM CT 2026-09-25 (NCI EVS), COSMoS BC/DSS
-2026-07-14, SDTMIG v3.4 / SDTM v2.0, NCIt FLAT 2026-09-29. No upstream data moved.
+**Reference versions:** COSMoS BC/DSS 2026-07-14 → 2026-11-02 (Package 19), late in the
+month; SDTM CT 2026-09-25 (NCI EVS), SDTMIG v3.4 / SDTM v2.0, NCIt FLAT 2026-09-29 unchanged.
+Until the COSMoS section at the end, no upstream data moved.
 
 Using the files to match study activity labels to CDISC terms showed where they stopped
 short. Some of it the standards already publish and the files did not carry: an IG
@@ -233,6 +234,45 @@ Each change replaces a list we kept with a rule the standards support, or puts a
 published fact beside a test where a consumer had to guess. The IG, SDTM CT and NCIt carry
 more than the files used; the work is to read it, say whose it is, and check it on each run.
 
+## COSMoS Package 19
+
+The graph and every file built on it were rebuilt on COSMoS Package 19 (package date
+2026-11-02). It is a content release: no concept and no Dataset Specialization is removed.
+The additions cluster around hypoglycaemia (events, meals, treatments and their disease
+milestones), meal tolerance tests, the glomerular filtration rate, healthcare encounters, kidney
+and liver procedures, breast cancer pathology and procedures, and organ measurements. COSMoS now has Dataset Specializations in domains it did
+not cover before, among them clinical events, healthcare encounters, meals, procedure agents,
+drug accountability, microbiology susceptibility and cardiovascular findings. The first
+Dataset Specializations that start in SDTMIG 4.0 appear, in the gastrointestinal and
+hematopoietic domains, which SDTMIG v3.4 does not have.
+
+What the files show:
+
+- The specimen file gains lab Dataset Specializations, and columns for the variables they
+  use: subcategory, specimen condition, time point reference.
+- The measurement file has its first cardiovascular content: two Dataset Specializations of
+  one concept, heart mass, told apart by anatomical location.
+- The instrument file follows edits in the response domain. The immunogenicity file is
+  unchanged apart from its version line.
+- The graph checks report more COSMoS terms that SDTM CT 2026-09-25 does not yet have, and
+  organ measurement, lymph node and ultrasound terms that are in CT but not in the codelist
+  their variable is bound to. Expected while the package is newer than the CT release; they
+  are listed in the graph's open work.
+
+Positions. Rows in Variable_Meaning that said COSMoS does not use a variable now say how it
+does: the lab analysis method and planned time point, and the cardiovascular method and
+location. The cardiovascular location takes a position: COSMoS separates the heart mass
+Dataset Specializations by location, and the observable key reads location as the system
+when no specimen is assigned. Both say the same; the location is part of the observable.
+
+Two notebooks assumed more than the content holds. The procedure reachability view assumed
+every procedure Dataset Specialization has a location; gastrostomy has none. The domain
+behaviour run assumed every variable carries its domain prefix; the SDTM disease milestone
+timing variables do not, and COSMoS now uses them. Both now follow the content.
+
+The LOINC check looked up the new LOINC codes COSMoS assigns. Three are LOINC grouper codes,
+not codes for an observation.
+
 ## Authoritative current state
 
 File-level current state lives in the ReadMe sheet of each machine-actionable xlsx,
@@ -244,4 +284,5 @@ regenerated on every run. Counts and column inventories belong there, not in thi
 - Variable tables: [`sdtm-domain-reference/notebooks/SDTM_Variables.ipynb`](../sdtm-domain-reference/notebooks/SDTM_Variables.ipynb)
 - NCIt synonyms, parents and the hierarchy above the CT terms: [`sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb`](../sdtm-test-codes/notebooks/SDTM_CT_Term_NCIt_Synonyms.ipynb)
 - Findings consumers: [`sdtm-findings-graph/`](../sdtm-findings-graph/)
+- COSMoS Package 19 refresh: [`cosmos-graph/docs/COSMoS_Refresh_2026-11-02.md`](../cosmos-graph/docs/COSMoS_Refresh_2026-11-02.md)
 - Previous release: [`Changes_2026-10.md`](Changes_2026-10.md)
