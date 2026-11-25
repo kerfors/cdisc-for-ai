@@ -273,6 +273,30 @@ timing variables do not, and COSMoS now uses them. Both now follow the content.
 The LOINC check looked up the new LOINC codes COSMoS assigns. Three are LOINC grouper codes,
 not codes for an observation.
 
+## The base layers, complete for a pure layer
+
+A layer is planned on top of the repository that carries the standards as published and
+nothing of ours. It reads only what the base layers carry, so the base layers first grow to
+carry all of it. Each of these changes leaves the existing consumer files as they were.
+
+**The variable tables, every class.** SDTM_Variables carried the general observation classes
+only. It now carries the SDTM v2.0 Model and the SDTMIG v3.4 variable tables in full: also
+Special-Purpose, Trial Design, Relationship, Study Reference and, in the Model, Associated
+Persons. For these classes the Model publishes each dataset's variables under the dataset
+name and has no generic form, so a domain variable is matched to the Model row with the same
+class, dataset and variable name; every one of them is found. The rows of the general
+observation classes are unchanged.
+
+**The Non-Standard Variable Registry.** A new sheet carries the CDISC Approved Non-Standard
+Variable Registry of 2026-04-03 as published, from its alphabetical sheet: every row and
+column. A name can have more than one row, with different labels and sources, so a row is
+identified by name and source together. The published cells are kept as they are, including
+stray leading and trailing whitespace and the carriage returns stored before line breaks; the
+ReadMe notes this.
+
+Domain_Behaviour reads the variable tables of the general observation classes, as before; the
+Findings files take only their own domains. Their data is unchanged.
+
 ## Authoritative current state
 
 File-level current state lives in the ReadMe sheet of each machine-actionable xlsx,
