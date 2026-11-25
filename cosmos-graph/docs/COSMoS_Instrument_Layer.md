@@ -25,8 +25,10 @@ The cosmos-graph `BC_Parents` sheet resolves every parent edge to a BC in the sa
 
 | Relation | What it encodes | What it answers |
 |---|---|---|
-| `BC_Parents` | Structural ancestry, single chain to root | "Where does this BC sit in the type tree" |
+| `BC_Parents` | The NCIt direct parent of the concept, where that parent is itself a BC (CDISC convention, BCD-87, 2026-11); single chain to root | "Where NCI places this BC, within the BCs" |
 | `BC_Categories` | Cross-cutting grouping tags, multi-value | "What other groupings does this BC participate in" |
+
+The convention is CDISC's: `parent_bc_id` carries the NCIt direct parent. NCI's hierarchy does not always follow how CDISC uses a concept, so grouping for search lives in `bc_categories` (later BC Grouping). Measured at Package 19 against NCIt FLAT 2026-09-29, the convention holds for most BCs but not all; `notebooks/51_instrument_parent_chain.ipynb` reports where it does not (sheet NCIt_Parent_Check).
 
 For the instrument layer specifically, `BC_Categories` is where the instrument-family grouping lives. A 6MWT distance question's structural ancestry runs `Clinical or Research Assessment Question → CDISC QRS Instruments Questions → 6MWT Functional Test Question`. Its membership in the "6 Minute Walk Functional Test" instrument family is reachable only through `BC_Categories`.
 
@@ -180,3 +182,17 @@ the Clinical or Research Assessment Classification family and does not use the t
 long-form classification labels join the unresolved token set, extending the section 5
 label-vs-identifier gap to the classification side. The watch item stays open for the
 next package.
+
+**Outcome, 2026-11-02 package: closed.** C222259 and C222260 still have no `parent_bc_id`.
+CDISC answered on BCD-87: the Functional Assessment tier will not be wired, `parent_bc_id` is
+the NCIt direct parent, and `bc_categories` covers the gap; the KB article will be updated.
+NCIt places both under C20993 Research or Clinical Assessment Tool, which is not a BC, so both
+are roots by that convention. C81250 Functional Assessment has no BC children in Package 19.
+Notebook 51 now checks the convention itself, for every BC.
+
+**Open, for later: BCD-91.** The parent convention will not link an instrument to its
+questions and scores. In Package 19 the ADAS-Cog instrument BC (C100762) has no children; its
+111 question and score BCs sit under C100106 in the CDISC QRS Instruments Questions branch.
+BCD-91 (filed 2026-11-18) asks for an identified link from each question and score BC to its
+instrument BC, with the kind of member (question or score). No answer from CDISC yet. Nothing
+in this repo depends on it.
