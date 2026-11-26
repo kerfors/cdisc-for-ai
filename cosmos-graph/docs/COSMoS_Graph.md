@@ -92,7 +92,7 @@ Two interim workbooks, both regenerable from CDISC source + LinkML schemas + SDT
 | Sheet | Grain | Purpose |
 |---|---|---|
 | `ReadMe` | — | Provenance, column dictionary links. |
-| `BC` | one per BC | BC-level identity: `bc_id`, `ncit_code`, `bc_short_name`, `bc_definition`, `bc_synonyms`, `bc_categories` (joined string), `bc_hierarchy_path` (joined string), `bc_parent_label`, `bc_type`, `result_scales`. Multi-value and inlined-child content is broken out into the BC-side edge and inline sheets below. |
+| `BC` | one per BC | BC-level identity: `bc_id`, `ncit_code`, `bc_short_name`, `bc_definition`, `bc_synonyms`, `bc_categories` (joined string), `bc_hierarchy_path` (joined string; COSMoS `bc_hierarchy_full`), `bc_parent_label`, `bc_type`, `result_scales`, and, as published under their own names, `bc_shortname_id`, `bc_hierarchy_level`, `dec_n`. Multi-value and inlined-child content is broken out into the BC-side edge and inline sheets below. |
 | `BC_Parents` | one per edge | BC-to-BC parent relation as edge list. 3 columns: `bc_id`, `parent_bc_id`, `parent_bc_short_name`. Makes the BC hierarchy traversable without parsing `bc_hierarchy_path`. |
 | `BC_Categories` | one per edge | BC-to-Category edges. 2 columns: `bc_id`, `category`. Normalised form of the semicolon-delimited `bc_categories` string on the BC sheet. |
 | `Categories` | one per token | Controlled vocabulary of category tokens. Source: the xlsx `Categories` sheet. Every category used on a `BC_Categories` edge resolves to this vocabulary. |
@@ -218,15 +218,15 @@ The BC xlsx has three sheets (`Biomedical Concepts`, `BC Hierarchy`, `Categories
 |---|---|---|
 | `short_name` | `shortName` (BiomedicalConcept) | |
 | `bc_id` | `conceptId` (BiomedicalConcept) | |
-| `bc_shortname_id` | — | **No LinkML slot.** xlsx-only surrogate identifier; not projected. |
+| `bc_shortname_id` | — | **No LinkML slot.** xlsx-only surrogate identifier; carried on the `BC` sheet under its own name (since 2026-11). |
 | `parent_bc_id` | — | **No LinkML slot.** Surfaced as `BC_Parents` edge list. |
 | `bc_categories` | `categories` (BiomedicalConcept) | multivalued; authoritative copy used to build `BC_Categories` edges |
 | `synonyms` | `synonyms` (BiomedicalConcept) | |
 | `result_scales` | `resultScales` (BiomedicalConcept) | |
 | `definition` | `definition` (BiomedicalConcept) | |
-| `bc_hierarchy_level` | — | **No LinkML slot.** Derived depth integer; not projected. |
-| `bc_hierarchy_full` | — | **No LinkML slot.** Derived path string; retained on the `BC` sheet as `bc_hierarchy_path` for locality. |
-| `dec_n` | — | **No LinkML slot.** Derived DEC count; not projected (recoverable as `COUNT(*)` over `DataElementConcepts`). |
+| `bc_hierarchy_level` | — | **No LinkML slot.** Published depth integer; carried on the `BC` sheet under its own name (since 2026-11). |
+| `bc_hierarchy_full` | — | **No LinkML slot.** Published path string; retained on the `BC` sheet as `bc_hierarchy_path` for locality. |
+| `dec_n` | — | **No LinkML slot.** Published DEC count; carried on the `BC` sheet under its own name (since 2026-11; also recoverable as `COUNT(*)` over `DataElementConcepts`). |
 
 **`Categories` sheet (1 column).** Controlled vocabulary of category tokens referenced by `BiomedicalConcept.categories`. No LinkML class — the category tokens are strings, not a modelled entity. Projected unchanged as the `Categories` sheet so the vocabulary is first-class and the `BC_Categories` edge list closes.
 

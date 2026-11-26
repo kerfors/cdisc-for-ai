@@ -312,6 +312,11 @@ Because the scope comes from COSMoS and the variable tables, the SDTM CT track n
 COSMoS projection and SDTM_Variables, and also on a COSMoS release; the release run order in
 Data_Flow is renumbered accordingly.
 
+**The BC sheet of the COSMoS projection, complete.** COSMoS_Graph left out three published
+columns of the BC Hierarchy sheet: the short-name identifier, the hierarchy level and the number
+of data element concepts. The BC sheet now carries them at the end, under their published names;
+nothing else in the file changes, and no consumer output changes.
+
 **Smaller corrections.** The NCIt FLAT file is now read without quote handling everywhere, so a
 value that starts with a quote keeps it; no output changed. The NCIt parent check tells a BC that
 COSMoS publishes without an NCIt code apart from a concept missing from the FLAT file. Files whose
